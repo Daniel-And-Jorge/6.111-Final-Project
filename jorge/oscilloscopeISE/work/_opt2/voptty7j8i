@@ -1,0 +1,95 @@
+m255
+K3
+13
+cModel Technology
+Z0 d/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/FinalProject/oscilloscopeISE
+T_opt
+Z1 VYK;]g[[60N5mj[;7IzSYZ2
+Z2 04 10 4 work Trigger_tb fast 0
+Z3 04 4 4 work glbl fast 0
+Z4 =1-f44d3044f090-580a66c6-b61ca-30db
+Z5 o-quiet -auto_acc_if_foreign -work work -L xilinxcorelib_ver -L unisims_ver -L unimacro_ver
+Z6 OE;O;6.4a;39
+T_opt1
+Z7 V04UBNGAh^=B:F4C28^j;C0
+R2
+R3
+Z8 =1-f44d3044f090-580a663a-a2596-30a1
+R5
+R6
+T_opt2
+Z9 V6Nj]DV3@V;0FLV5UTNZla0
+Z10 04 15 4 work GenerateWave_tb fast 0
+R3
+Z11 =1-f44d30467159-5813a505-59b0a-22e1
+R5
+R6
+vGenerateWave
+Z12 I]d7DiG:zfbgVSeODX[eXe1
+Z13 Vi]fbbzclDnO?QVY1ahXR`0
+Z14 w1477682368
+Z15 8GenerateWave.v
+Z16 FGenerateWave.v
+L0 22
+Z17 OE;L;6.4a;39
+r1
+31
+Z18 o+acc -L mtiAvm -L mtiOvm -L mtiUPF
+Z19 n@generate@wave
+Z20 !s100 SoF>MIINzhbAeXTY?]Re41
+!s85 0
+vGenerateWave_tb
+Z21 IPMLe;RUkME[Ne5:eHB87I2
+Z22 V3d57JgK08TleZEoX:PI910
+Z23 w1477682428
+Z24 8GenerateWave_tb.v
+Z25 FGenerateWave_tb.v
+L0 25
+R17
+r1
+31
+R18
+Z26 n@generate@wave_tb
+Z27 !s100 H7ZU68h=0?Ya;`EQojz9N3
+!s85 0
+vglbl
+Z28 IB;@1jEXmEfQXL`;Kf0IBZ3
+Z29 VnN]4Gon>inod6>M^M2[SV1
+Z30 w1202685744
+Z31 8/afs/csail.mit.edu/proj/redsocs/Xilinx10.1/ISE/verilog/src/glbl.v
+Z32 F/afs/csail.mit.edu/proj/redsocs/Xilinx10.1/ISE/verilog/src/glbl.v
+L0 5
+R17
+r1
+31
+R18
+Z33 !s100 T?5S;>bN`@zG_25]R_4A33
+!s85 0
+vTrigger
+Z34 IJ66?3DBinN?mVPT3gSOQC3
+Z35 VX7W:3[X3<XFWRQGW`?ZP10
+Z36 w1477075812
+Z37 8Trigger.v
+Z38 FTrigger.v
+L0 21
+R17
+r1
+31
+R18
+Z39 n@trigger
+Z40 !s100 3;G<ei@zJ^YH@SG>3o:eU3
+!s85 0
+vTrigger_tb
+Z41 Iec`F9<TNBN6Gad052NGF91
+Z42 V]46FEdzgzj5OR@iBRVA>i3
+Z43 w1477076675
+Z44 8Trigger_tb.v
+Z45 FTrigger_tb.v
+L0 25
+R17
+r1
+31
+R18
+Z46 n@trigger_tb
+Z47 !s100 FD?KS]?aQ?RN7RKjEhIHT3
+!s85 0

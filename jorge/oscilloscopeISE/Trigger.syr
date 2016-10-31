@@ -1,0 +1,398 @@
+Release 10.1.03 - xst K.39 (lin64)
+Copyright (c) 1995-2008 Xilinx, Inc.  All rights reserved.
+--> 
+Parameter TMPDIR set to /afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/FinalProject/oscilloscopeISE/xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.03 secs
+ 
+--> 
+Parameter xsthdpdir set to /afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/FinalProject/oscilloscopeISE/xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.03 secs
+ 
+--> 
+Reading design: Trigger.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Compilation
+  3) Design Hierarchy Analysis
+  4) HDL Analysis
+  5) HDL Synthesis
+     5.1) HDL Synthesis Report
+  6) Advanced HDL Synthesis
+     6.1) Advanced HDL Synthesis Report
+  7) Low Level Synthesis
+  8) Partition Report
+  9) Final Report
+     9.1) Device utilization summary
+     9.2) Partition Resource Summary
+     9.3) TIMING REPORT
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "Trigger.prj"
+Input Format                       : mixed
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "Trigger"
+Output Format                      : NGC
+Target Device                      : xc2v6000-4-bf957
+
+---- Source Options
+Top Module Name                    : Trigger
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : lut
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Mux Style                          : Auto
+Decoder Extraction                 : YES
+Priority Encoder Extraction        : YES
+Shift Register Extraction          : YES
+Logical Shifter Extraction         : YES
+XOR Collapsing                     : YES
+ROM Style                          : Auto
+Mux Extraction                     : YES
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Multiplier Style                   : auto
+Automatic Register Balancing       : No
+
+---- Target Options
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 500
+Add Generic Clock Buffer(BUFG)     : 16
+Register Duplication               : YES
+Slice Packing                      : YES
+Optimize Instantiated Primitives   : NO
+Convert Tristates To Logic         : Yes
+Use Clock Enable                   : Yes
+Use Synchronous Set                : Yes
+Use Synchronous Reset              : Yes
+Pack IO Registers into IOBs        : auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Library Search Order               : Trigger.lso
+Keep Hierarchy                     : NO
+Netlist Hierarchy                  : as_optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+Verilog 2001                       : YES
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling verilog file "Trigger.v" in library work
+Module <Trigger> compiled
+No errors in compilation
+Analysis of file <"Trigger.prj"> succeeded.
+ 
+
+=========================================================================
+*                     Design Hierarchy Analysis                         *
+=========================================================================
+Analyzing hierarchy for module <Trigger> in library <work> with parameters.
+	DATA_BITS = "00000000000000000000000000001000"
+
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing top module <Trigger>.
+	DATA_BITS = 32'sb00000000000000000000000000001000
+Module <Trigger> is correct for synthesis.
+ 
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Performing bidirectional port resolution...
+
+Synthesizing Unit <Trigger>.
+    Related source file is "Trigger.v".
+    Found 1-bit register for signal <isTriggered>.
+    Found 8-bit register for signal <previousData>.
+    Found 8-bit comparator greatequal for signal <isTriggered$cmp_ge0000> created at line 33.
+    Found 8-bit comparator less for signal <isTriggered$cmp_lt0000> created at line 33.
+    Summary:
+	inferred   9 D-type flip-flop(s).
+	inferred   2 Comparator(s).
+Unit <Trigger> synthesized.
+
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# Registers                                            : 2
+ 1-bit register                                        : 1
+ 8-bit register                                        : 1
+# Comparators                                          : 2
+ 8-bit comparator greatequal                           : 1
+ 8-bit comparator less                                 : 1
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+Loading device for application Rf_Device from file '2v6000.nph' in environment /afs/csail.mit.edu/proj/redsocs/Xilinx10.1/ISE.
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# Registers                                            : 9
+ Flip-Flops                                            : 9
+# Comparators                                          : 2
+ 8-bit comparator greatequal                           : 1
+ 8-bit comparator less                                 : 1
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+
+Optimizing unit <Trigger> ...
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block Trigger, actual ratio is 0.
+FlipFlop previousData_7 has been replicated 1 time(s) to handle iob=true attribute.
+FlipFlop previousData_6 has been replicated 1 time(s) to handle iob=true attribute.
+FlipFlop previousData_5 has been replicated 1 time(s) to handle iob=true attribute.
+FlipFlop previousData_4 has been replicated 1 time(s) to handle iob=true attribute.
+FlipFlop previousData_3 has been replicated 1 time(s) to handle iob=true attribute.
+FlipFlop previousData_2 has been replicated 1 time(s) to handle iob=true attribute.
+FlipFlop previousData_1 has been replicated 1 time(s) to handle iob=true attribute.
+FlipFlop previousData_0 has been replicated 1 time(s) to handle iob=true attribute.
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 17
+ Flip-Flops                                            : 17
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                             *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Final Report                               *
+=========================================================================
+Final Results
+RTL Top Level Output File Name     : Trigger.ngr
+Top Level Output File Name         : Trigger
+Output Format                      : NGC
+Optimization Goal                  : Speed
+Keep Hierarchy                     : NO
+
+Design Statistics
+# IOs                              : 27
+
+Cell Usage :
+# BELS                             : 34
+#      LUT2                        : 16
+#      LUT3                        : 1
+#      MUXCY                       : 16
+#      VCC                         : 1
+# FlipFlops/Latches                : 17
+#      FD                          : 16
+#      FDR                         : 1
+# Clock Buffers                    : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 26
+#      IBUF                        : 17
+#      OBUF                        : 9
+=========================================================================
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 2v6000bf957-4 
+
+ Number of Slices:                       14  out of  33792     0%  
+ Number of Slice Flip Flops:              9  out of  67584     0%  
+ Number of 4 input LUTs:                 17  out of  67584     0%  
+ Number of IOs:                          27
+ Number of bonded IOBs:                  27  out of    684     3%  
+    IOB Flip Flops:                       8
+ Number of GCLKs:                         1  out of     16     6%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+TIMING REPORT
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+clock                              | BUFGP                  | 17    |
+-----------------------------------+------------------------+-------+
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -4
+
+   Minimum period: 5.078ns (Maximum Frequency: 196.909MHz)
+   Minimum input arrival time before clock: 5.871ns
+   Maximum output required time after clock: 5.446ns
+   Maximum combinational path delay: No path found
+
+Timing Detail:
+--------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clock'
+  Clock period: 5.078ns (frequency: 196.909MHz)
+  Total number of paths / destination ports: 16 / 1
+-------------------------------------------------------------------------
+Delay:               5.078ns (Levels of Logic = 10)
+  Source:            previousData_0 (FF)
+  Destination:       isTriggered (FF)
+  Source Clock:      clock rising
+  Destination Clock: clock rising
+
+  Data Path: previousData_0 to isTriggered
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FD:C->Q               1   0.568   0.726  previousData_0 (previousData_0)
+     LUT2:I1->O            1   0.439   0.000  Mcompar_isTriggered_cmp_ge0000_lut<0> (Mcompar_isTriggered_cmp_ge0000_lut<0>)
+     MUXCY:S->O            1   0.298   0.000  Mcompar_isTriggered_cmp_ge0000_cy<0> (Mcompar_isTriggered_cmp_ge0000_cy<0>)
+     MUXCY:CI->O           1   0.053   0.000  Mcompar_isTriggered_cmp_ge0000_cy<1> (Mcompar_isTriggered_cmp_ge0000_cy<1>)
+     MUXCY:CI->O           1   0.053   0.000  Mcompar_isTriggered_cmp_ge0000_cy<2> (Mcompar_isTriggered_cmp_ge0000_cy<2>)
+     MUXCY:CI->O           1   0.053   0.000  Mcompar_isTriggered_cmp_ge0000_cy<3> (Mcompar_isTriggered_cmp_ge0000_cy<3>)
+     MUXCY:CI->O           1   0.053   0.000  Mcompar_isTriggered_cmp_ge0000_cy<4> (Mcompar_isTriggered_cmp_ge0000_cy<4>)
+     MUXCY:CI->O           1   0.053   0.000  Mcompar_isTriggered_cmp_ge0000_cy<5> (Mcompar_isTriggered_cmp_ge0000_cy<5>)
+     MUXCY:CI->O           1   0.053   0.000  Mcompar_isTriggered_cmp_ge0000_cy<6> (Mcompar_isTriggered_cmp_ge0000_cy<6>)
+     MUXCY:CI->O           1   0.942   0.551  Mcompar_isTriggered_cmp_ge0000_cy<7> (isTriggered_cmp_ge0000)
+     LUT3:I2->O            1   0.439   0.518  isTriggered_or00001 (isTriggered_or0000)
+     FDR:R                     0.280          isTriggered
+    ----------------------------------------
+    Total                      5.078ns (3.284ns logic, 1.795ns route)
+                                       (64.7% logic, 35.3% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'clock'
+  Total number of paths / destination ports: 49 / 17
+-------------------------------------------------------------------------
+Offset:              5.871ns (Levels of Logic = 11)
+  Source:            dataIn<0> (PAD)
+  Destination:       isTriggered (FF)
+  Destination Clock: clock rising
+
+  Data Path: dataIn<0> to isTriggered
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             3   0.825   1.010  dataIn_0_IBUF (dataIn_0_IBUF)
+     LUT2:I0->O            1   0.439   0.000  Mcompar_isTriggered_cmp_lt0000_lut<0> (Mcompar_isTriggered_cmp_lt0000_lut<0>)
+     MUXCY:S->O            1   0.298   0.000  Mcompar_isTriggered_cmp_lt0000_cy<0> (Mcompar_isTriggered_cmp_lt0000_cy<0>)
+     MUXCY:CI->O           1   0.053   0.000  Mcompar_isTriggered_cmp_lt0000_cy<1> (Mcompar_isTriggered_cmp_lt0000_cy<1>)
+     MUXCY:CI->O           1   0.053   0.000  Mcompar_isTriggered_cmp_lt0000_cy<2> (Mcompar_isTriggered_cmp_lt0000_cy<2>)
+     MUXCY:CI->O           1   0.053   0.000  Mcompar_isTriggered_cmp_lt0000_cy<3> (Mcompar_isTriggered_cmp_lt0000_cy<3>)
+     MUXCY:CI->O           1   0.053   0.000  Mcompar_isTriggered_cmp_lt0000_cy<4> (Mcompar_isTriggered_cmp_lt0000_cy<4>)
+     MUXCY:CI->O           1   0.053   0.000  Mcompar_isTriggered_cmp_lt0000_cy<5> (Mcompar_isTriggered_cmp_lt0000_cy<5>)
+     MUXCY:CI->O           1   0.053   0.000  Mcompar_isTriggered_cmp_lt0000_cy<6> (Mcompar_isTriggered_cmp_lt0000_cy<6>)
+     MUXCY:CI->O           1   0.942   0.803  Mcompar_isTriggered_cmp_lt0000_cy<7> (Mcompar_isTriggered_cmp_lt0000_cy<7>)
+     LUT3:I0->O            1   0.439   0.518  isTriggered_or00001 (isTriggered_or0000)
+     FDR:R                     0.280          isTriggered
+    ----------------------------------------
+    Total                      5.871ns (3.541ns logic, 2.330ns route)
+                                       (60.3% logic, 39.7% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clock'
+  Total number of paths / destination ports: 9 / 9
+-------------------------------------------------------------------------
+Offset:              5.446ns (Levels of Logic = 1)
+  Source:            isTriggered (FF)
+  Destination:       isTriggered (PAD)
+  Source Clock:      clock rising
+
+  Data Path: isTriggered to isTriggered
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDR:C->Q              1   0.568   0.517  isTriggered (isTriggered_OBUF)
+     OBUF:I->O                 4.361          isTriggered_OBUF (isTriggered)
+    ----------------------------------------
+    Total                      5.446ns (4.929ns logic, 0.517ns route)
+                                       (90.5% logic, 9.5% route)
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 2.00 secs
+Total CPU time to Xst completion: 2.18 secs
+ 
+--> 
+
+
+Total memory usage is 449080 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :    0 (   0 filtered)
+Number of infos    :    0 (   0 filtered)
+

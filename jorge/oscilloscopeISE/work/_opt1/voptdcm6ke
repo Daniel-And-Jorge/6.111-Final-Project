@@ -1,0 +1,75 @@
+m255
+K3
+13
+cModel Technology
+Z0 d/afs/athena.mit.edu/user/g/i/gim/Desktop/f2014j/test_sim
+vBRAM_SDP_MACRO
+I0aT@;c5V^`Z>h`LJObcDa2
+VWli3Zf37[AVPdEAKVknPa1
+Z1 w1220472683
+8/afs/csail.mit.edu/proj/redsocs/Xilinx10.1/ISE/verilog/src/unimacro/BRAM_SDP_MACRO.v
+F/afs/csail.mit.edu/proj/redsocs/Xilinx10.1/ISE/verilog/src/unimacro/BRAM_SDP_MACRO.v
+L0 30
+Z2 OE;L;6.4a;39
+r1
+31
+Z3 o-work /afs/csail.mit.edu/proj/redsocs/Xilinx10.1/ISE/verilog/mti_se/unimacro_ver -L mtiAvm -L mtiOvm -L mtiUPF
+n@b@r@a@m_@s@d@p_@m@a@c@r@o
+!s100 QDG6TbZJSfmlJ]MR6<cKj1
+!s85 0
+vBRAM_SINGLE_MACRO
+IB_Bg7EzMmJ=b8ITEBYm?M2
+V^IYc555kAoB7QzeFU<^Y33
+R1
+8/afs/csail.mit.edu/proj/redsocs/Xilinx10.1/ISE/verilog/src/unimacro/BRAM_SINGLE_MACRO.v
+F/afs/csail.mit.edu/proj/redsocs/Xilinx10.1/ISE/verilog/src/unimacro/BRAM_SINGLE_MACRO.v
+L0 31
+R2
+r1
+31
+R3
+n@b@r@a@m_@s@i@n@g@l@e_@m@a@c@r@o
+!s100 i?Sh?h>AnbdJg^?56U9:80
+!s85 0
+vBRAM_TDP_MACRO
+IAdb7Z^J7J>mEC5IJIR0od1
+VTFz29Z]QXh9f=`M:2NQXO0
+R1
+8/afs/csail.mit.edu/proj/redsocs/Xilinx10.1/ISE/verilog/src/unimacro/BRAM_TDP_MACRO.v
+F/afs/csail.mit.edu/proj/redsocs/Xilinx10.1/ISE/verilog/src/unimacro/BRAM_TDP_MACRO.v
+L0 30
+R2
+r1
+31
+R3
+n@b@r@a@m_@t@d@p_@m@a@c@r@o
+!s100 kEPD<5036]?=Bfj]2T_@K1
+!s85 0
+vFIFO_DUALCLOCK_MACRO
+I;:QFjO^J_33X>em]A;nlj3
+VDi41]?4nN9:C58<QFG[<i0
+w1220472641
+8/afs/csail.mit.edu/proj/redsocs/Xilinx10.1/ISE/verilog/src/unimacro/FIFO_DUALCLOCK_MACRO.v
+F/afs/csail.mit.edu/proj/redsocs/Xilinx10.1/ISE/verilog/src/unimacro/FIFO_DUALCLOCK_MACRO.v
+L0 30
+R2
+r1
+31
+R3
+n@f@i@f@o_@d@u@a@l@c@l@o@c@k_@m@a@c@r@o
+!s100 [j^Jd7XXLm8ojC16Vbz?W1
+!s85 0
+vFIFO_SYNC_MACRO
+IWhiW5PG>fNKT3UKfaR0eI2
+VcFFdiad]H;kD55deHk2LN1
+R1
+8/afs/csail.mit.edu/proj/redsocs/Xilinx10.1/ISE/verilog/src/unimacro/FIFO_SYNC_MACRO.v
+F/afs/csail.mit.edu/proj/redsocs/Xilinx10.1/ISE/verilog/src/unimacro/FIFO_SYNC_MACRO.v
+L0 29
+R2
+r1
+31
+R3
+n@f@i@f@o_@s@y@n@c_@m@a@c@r@o
+!s100 >b@IOaVKTSgFd6::oW:iW1
+!s85 0

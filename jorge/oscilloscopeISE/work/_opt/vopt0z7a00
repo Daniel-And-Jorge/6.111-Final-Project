@@ -1,0 +1,34 @@
+library verilog;
+use verilog.vl_types.all;
+entity GenerateWave is
+    generic(
+        DATA_IN_BITS    : integer := 12;
+        DISPLAY_X_BITS  : integer := 11;
+        DISPLAY_Y_BITS  : integer := 10;
+        RGB_COLOR       : integer := 16776960;
+        RGB_BITS        : integer := 24;
+        DISPLAY_WIDTH   : integer := 1024;
+        DISPLAY_HEIGHT  : integer := 768;
+        REAL_DISPLAY_WIDTH: integer := 1344;
+        REAL_DISPLAY_HEIGHT: integer := 806;
+        ADDITIONAL_WAVE_PIXELS: integer := 1;
+        SCALING_SHIFTS  : integer := 0;
+        ADDRESS_BITS    : integer := 11
+    );
+    port(
+        clock           : in     vl_logic;
+        dataIn          : in     vl_logic_vector;
+        displayX        : in     vl_logic_vector;
+        displayY        : in     vl_logic_vector;
+        hsync           : in     vl_logic;
+        vsync           : in     vl_logic;
+        blank           : in     vl_logic;
+        pixel           : out    vl_logic;
+        RGBColor        : out    vl_logic_vector;
+        drawStarting    : out    vl_logic;
+        address         : out    vl_logic_vector;
+        wHsync          : out    vl_logic;
+        wVsync          : out    vl_logic;
+        wBlank          : out    vl_logic
+    );
+end GenerateWave;

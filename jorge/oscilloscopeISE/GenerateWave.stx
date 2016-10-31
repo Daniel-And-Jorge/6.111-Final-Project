@@ -1,0 +1,31 @@
+Release 10.1.03 - xst K.39 (lin64)
+Copyright (c) 1995-2008 Xilinx, Inc.  All rights reserved.
+--> 
+Parameter TMPDIR set to ./xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.02 secs
+ 
+--> 
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling verilog file "GenerateWave.v" in library work
+ERROR:HDLCompilers:26 - "GenerateWave.v" line 47 unexpected token: 'reg'
+ERROR:HDLCompilers:28 - "GenerateWave.v" line 81 'address' has not been declared
+ERROR:HDLCompilers:28 - "GenerateWave.v" line 83 'address' has not been declared
+ERROR:HDLCompilers:28 - "GenerateWave.v" line 86 'address' has not been declared
+ERROR:HDLCompilers:28 - "GenerateWave.v" line 86 'address' has not been declared
+Module <GenerateWave> compiled
+Analysis of file <"GenerateWave.prj"> failed.
+--> 
+
+
+Total memory usage is 283632 kilobytes
+
+Number of errors   :    5 (   0 filtered)
+Number of warnings :    0 (   0 filtered)
+Number of infos    :    0 (   0 filtered)
+

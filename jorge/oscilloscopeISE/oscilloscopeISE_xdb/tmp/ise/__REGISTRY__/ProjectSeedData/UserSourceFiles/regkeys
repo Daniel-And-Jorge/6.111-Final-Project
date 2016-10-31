@@ -1,0 +1,15 @@
+NUM_USER_FILES
+4
+s
+user_file_1
+Trigger.v
+s
+user_file_2
+Trigger_tb.v
+s
+user_file_3
+GenerateWave.v
+s
+user_file_4
+GenerateWave_tb.v
+s

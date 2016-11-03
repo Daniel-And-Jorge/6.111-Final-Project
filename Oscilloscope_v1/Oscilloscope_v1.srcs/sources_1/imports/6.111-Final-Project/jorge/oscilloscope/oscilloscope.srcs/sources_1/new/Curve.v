@@ -45,14 +45,14 @@ module Curve
     output [RGB_BITS-1:0] pixel,
     output reg drawStarting,
     output reg [ADDRESS_BITS-1:0] address,
-    output wHsync,
-    output wVsync,
-    output wBlank
+    output curveHsync,
+    output curveVsync,
+    output curveBlank
     );
     
-    assign wHsync = hsync;
-    assign wVsync = vsync;
-    assign wBlank = blank;
+    assign curveHsync = hsync;
+    assign curveVsync = vsync;
+    assign curveBlank = blank;
     
     //scale dataIn
     wire [DATA_IN_BITS-1:0] scaledDataIn;

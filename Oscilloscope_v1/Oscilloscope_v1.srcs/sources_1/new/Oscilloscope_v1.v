@@ -23,7 +23,8 @@
 module Oscilloscope_v1
    #(parameter  TRIGGER_THRESHOLD = 2048,
                 DISPLAY_X_BITS = 11,
-                DISPLAY_Y_BITS = 10) 
+                DISPLAY_Y_BITS = 10,
+                ADDRESS_BITS = 11) 
    (input CLK100MHZ,
    input vauxp2,
    input vauxn2,
@@ -34,34 +35,35 @@ module Oscilloscope_v1
    input vauxp11,
    input vauxn11,
    input [1:0] sw,
+   input reset,
    output reg [15:0] LED,
    output [7:0] an,
    output dp,
    output [6:0] seg
     );
     
-    wire CLK60MHZ;
+    wire CLK65MHZ;
     //instantiate clock divider
-    clk_wiz_0 instance_name
+    clk_wiz_0 ClockDivider
        (
        // Clock in ports
         .clk_in1(CLK100MHZ),      // input clk_in1
         // Clock out ports
-        .clk_out1(CLK60MHZ),     // output clk_out1
+        .clk_out1(CLK65MHZ),     // output clk_out1
         // Status and control signals
         .reset(reset), // input reset
         .locked(locked));
+        
     
-    wire reset;
     
     // XADC IP module
     wire eoc;
     wire ready;
-    wire [15:0] data;   
-    reg [6:0] Address_in;   
+    wire [15:0] XADCdataOut;   
+    reg [6:0] Address_in = 7'h1b;   
     //xadc instantiation connect the eoc_out .den_in to get continuous conversion
     xadc_wiz_0  XLXI_7 (.daddr_in(Address_in), //addresses can be found in the artix 7 XADC user guide DRP register space
-                         .dclk_in(CLK60MHZ), 
+                         .dclk_in(CLK65MHZ), 
                          .den_in(eoc), 
                          .di_in(), 
                          .dwe_in(), 
@@ -71,7 +73,7 @@ module Oscilloscope_v1
                          .vn_in(),
                          .vp_in(),
                          .alarm_out(),
-                         .do_out(data),
+                         .do_out(XADCdataOut),
                          .reset_in(reset), // ddr
                          .eoc_out(eoc), // ddr high for one cycle on end of conversion
                          .channel_out(),
@@ -81,28 +83,27 @@ module Oscilloscope_v1
       wire adcc_ready;
       wire [11:0] ADCCdataOut;
       ADCController adcc(
-                             .clock(CLK60MHZ),
+                             .clock(CLK65MHZ),
                              .reset(reset),
                              .sampleEnabled(1),
                              .inputReady(eoc),
-                             .dataIn(data[15:4]),
+                             .dataIn(XADCdataOut[15:4]),
                              .ready(adcc_ready),
-                             .dataOut(dataOut)
+                             .dataOut(ADCCdataOut)
                              );
     
     wire [11:0] bufferDataOut;
-    buffer Buffer (.clock(CLK100MHZ), .ready(adcc_ready), .dataIn(ADCCdataOut),
-        .isTrigger(isTriggered), .disableCollection(0), .lockTrigger(???),
+    buffer Buffer (.clock(CLK65MHZ), .ready(adcc_ready), .dataIn(ADCCdataOut),
+        .isTrigger(isTriggered), .disableCollection(0), .lockTrigger(drawStarting),
         .reset(reset),
         .readTriggerRelative(1),
-        .readAddress(???),
+        .readAddress(curveAddressOut),
         .dataOut(bufferDataOut));
         
     wire isTriggered;
-        
     TriggerRisingEdge #(.DATA_BITS(12))
             Trigger
-            (.clock(CLK100MHZ),
+            (.clock(CLK65MHZ),
             .threshold(TRIGGER_THRESHOLD),
             .dataIn(ADCCdataOut),
             .triggerDisable(0),
@@ -112,11 +113,33 @@ module Oscilloscope_v1
      wire [DISPLAY_X_BITS-1:0] displayX;
      wire [DISPLAY_Y_BITS-1:0] displayY;
      wire vsync;
-     wire hsync
+     wire hsync;
      wire blank;
-     module xvga(.vclock(???),
+     module xvga(.vclock(CLK65MHZ),
         .displayX(displayX), // pixel number on current line
         .displayY(displayY), // line number
         .vsync(vsync), .hsync(hsync), .blank(blank));
+        
+    wire drawStarting;
+    wire [ADDRESS_BITS-1:0] curveAddressOut;
+    wire curveHsync;
+    wire curveVsync;
+    wire curveBlank;
+    Curve #(.ADDRESS_BITS(ADDRESS_BITS))
+            myCurve
+            (.clock(CLK65MHZ),
+            .dataIn(bufferDataOut),
+            .displayX(displayX),
+            .displayY(displayY),
+            .hsync(hsync),
+            .vsync(vsync),
+            .blank(blank),
+            .pixel(pixel???),
+            .drawStarting(drawStarting),
+            .address(curveAddressOut),
+            .curveHsync(curveHSync),
+            .curveVsync(curveVsync),
+            .curveBlank(curveBlank)
+            );
     
 endmodule

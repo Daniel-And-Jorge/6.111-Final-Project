@@ -3,7 +3,7 @@
 <!--                                                         -->
 <!-- Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.   -->
 
-<Project Version="7" Minor="14" Path="/afs/athena.mit.edu/user/d/d/ddr/6.111/project_xadc/proj/XADC_Demo.xpr">
+<Project Version="7" Minor="14" Path="/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/project_xadc/proj/XADC_Demo.xpr">
   <DefaultLaunch Dir="$PRUNDIR"/>
   <Configuration>
     <Option Name="Id" Val="0e2a99290ec0494d85b048fe6b0ac3a0"/>
@@ -22,6 +22,7 @@
     <Option Name="DefaultLib" Val="xil_defaultlib"/>
     <Option Name="IPRepoPath" Val="$PPRDIR/../repo"/>
     <Option Name="EnableCoreContainer" Val="FALSE"/>
+    <Option Name="XPMLibraries" Val="XPM_MEMORY"/>
     <Option Name="CreateRefXciForCoreContainers" Val="FALSE"/>
     <Option Name="IPUserFilesDir" Val="$PPRDIR/XADC_Demo.ip_user_files"/>
     <Option Name="IPStaticSourceDir" Val="$PPRDIR/XADC_Demo.ip_user_files/ipstatic"/>
@@ -33,13 +34,13 @@
     <Option Name="WTVcsLaunchSim" Val="0"/>
     <Option Name="WTRivieraLaunchSim" Val="0"/>
     <Option Name="WTActivehdlLaunchSim" Val="0"/>
-    <Option Name="WTXSimExportSim" Val="6"/>
-    <Option Name="WTModelSimExportSim" Val="6"/>
-    <Option Name="WTQuestaExportSim" Val="6"/>
-    <Option Name="WTIesExportSim" Val="6"/>
-    <Option Name="WTVcsExportSim" Val="6"/>
-    <Option Name="WTRivieraExportSim" Val="6"/>
-    <Option Name="WTActivehdlExportSim" Val="6"/>
+    <Option Name="WTXSimExportSim" Val="7"/>
+    <Option Name="WTModelSimExportSim" Val="7"/>
+    <Option Name="WTQuestaExportSim" Val="7"/>
+    <Option Name="WTIesExportSim" Val="7"/>
+    <Option Name="WTVcsExportSim" Val="7"/>
+    <Option Name="WTRivieraExportSim" Val="7"/>
+    <Option Name="WTActivehdlExportSim" Val="7"/>
   </Configuration>
   <FileSets Version="1" Minor="31">
     <FileSet Name="sources_1" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
@@ -163,6 +164,20 @@
         <Option Name="UseBlackboxStub" Val="1"/>
       </Config>
     </FileSet>
+    <FileSet Name="clk_wiz_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/clk_wiz_0">
+      <File Path="$PSRCDIR/sources_1/ip/clk_wiz_0/clk_wiz_0.xci">
+        <FileInfo>
+          <Attr Name="AutoDisabled" Val="1"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <Config>
+        <Option Name="TopModule" Val="clk_wiz_0"/>
+        <Option Name="UseBlackboxStub" Val="1"/>
+      </Config>
+    </FileSet>
   </FileSets>
   <Simulators>
     <Simulator Name="XSim">
@@ -190,12 +205,12 @@
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Flow_PerfOptimized_High" Flow="Vivado Synthesis 2014"/>
         <Step Id="synth_design">
-          <Option Id="ResourceSharing">2</Option>
           <Option Id="RepFanoutThreshold">400</Option>
+          <Option Id="ResourceSharing">2</Option>
           <Option Id="FsmExtraction">1</Option>
           <Option Id="NoCombineLuts">1</Option>
-          <Option Id="KeepEquivalentRegisters">1</Option>
           <Option Id="ShregMinSize">5</Option>
+          <Option Id="KeepEquivalentRegisters">1</Option>
         </Step>
       </Strategy>
       <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
@@ -208,6 +223,13 @@
       <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
     </Run>
     <Run Id="blk_mem_gen_0_synth_1" Type="Ft3:Synth" SrcSet="blk_mem_gen_0" Part="xc7a100tcsg324-1" ConstrsSet="blk_mem_gen_0" Description="Vivado Synthesis Defaults" Dir="$PRUNDIR/blk_mem_gen_0_synth_1" IncludeInArchive="true">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2016"/>
+        <Step Id="synth_design"/>
+      </Strategy>
+      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
+    </Run>
+    <Run Id="clk_wiz_0_synth_1" Type="Ft3:Synth" SrcSet="clk_wiz_0" Part="xc7a100tcsg324-1" ConstrsSet="clk_wiz_0" Description="Vivado Synthesis Defaults" Dir="$PRUNDIR/clk_wiz_0_synth_1" IncludeInArchive="true">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2016">
           <Desc>Vivado Synthesis Defaults</Desc>
@@ -247,6 +269,20 @@
       </Strategy>
     </Run>
     <Run Id="blk_mem_gen_0_impl_1" Type="Ft2:EntireDesign" Part="xc7a100tcsg324-1" ConstrsSet="blk_mem_gen_0" Description="Default settings for Implementation." SynthRun="blk_mem_gen_0_synth_1" IncludeInArchive="false">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2016"/>
+        <Step Id="init_design"/>
+        <Step Id="opt_design"/>
+        <Step Id="power_opt_design"/>
+        <Step Id="place_design"/>
+        <Step Id="post_place_power_opt_design"/>
+        <Step Id="phys_opt_design"/>
+        <Step Id="route_design"/>
+        <Step Id="post_route_phys_opt_design"/>
+        <Step Id="write_bitstream"/>
+      </Strategy>
+    </Run>
+    <Run Id="clk_wiz_0_impl_1" Type="Ft2:EntireDesign" Part="xc7a100tcsg324-1" ConstrsSet="clk_wiz_0" Description="Default settings for Implementation." SynthRun="clk_wiz_0_synth_1" IncludeInArchive="false">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2016">
           <Desc>Default settings for Implementation.</Desc>

@@ -3,7 +3,7 @@
 <!--The data in this file is primarily intended for consumption by Xilinx tools.
 The structure and the elements are likely to change over the next few releases.
 This means code written to parse this file will need to be revisited each subsequent release.-->
-<application name="pa" timeStamp="Mon Oct 31 21:47:10 2016">
+<application name="pa" timeStamp="Thu Nov  3 14:42:28 2016">
 <section name="Project Information" visible="false">
 <property name="ProjectID" value="5ef68269be8c4122b1169595348a69d8" type="ProjectID"/>
 <property name="ProjectIteration" value="5" type="ProjectIteration"/>
@@ -19,21 +19,24 @@ This means code written to parse this file will need to be revisited each subseq
 <item name="Java Command Handlers">
 <property name="AddSources" value="1" type="JavaHandler"/>
 <property name="AutoConnectTarget" value="1" type="JavaHandler"/>
-<property name="CoreView" value="1" type="JavaHandler"/>
-<property name="CustomizeCore" value="1" type="JavaHandler"/>
+<property name="CoreView" value="3" type="JavaHandler"/>
+<property name="CustomizeCore" value="3" type="JavaHandler"/>
 <property name="EditDelete" value="2" type="JavaHandler"/>
 <property name="LaunchProgramFpga" value="1" type="JavaHandler"/>
 <property name="NewFile" value="1" type="JavaHandler"/>
+<property name="NewProject" value="1" type="JavaHandler"/>
+<property name="OpenExampleProject" value="1" type="JavaHandler"/>
 <property name="OpenHardwareManager" value="3" type="JavaHandler"/>
-<property name="OpenProject" value="1" type="JavaHandler"/>
+<property name="OpenProject" value="2" type="JavaHandler"/>
 <property name="OpenRecentTarget" value="1" type="JavaHandler"/>
 <property name="ProgramDevice" value="1" type="JavaHandler"/>
 <property name="ProjectSettingsCmdHandler" value="2" type="JavaHandler"/>
-<property name="RecustomizeCore" value="12" type="JavaHandler"/>
+<property name="RecustomizeCore" value="13" type="JavaHandler"/>
 <property name="RunBitgen" value="3" type="JavaHandler"/>
 <property name="RunImplementation" value="1" type="JavaHandler"/>
 <property name="RunSynthesis" value="2" type="JavaHandler"/>
 <property name="ShowView" value="1" type="JavaHandler"/>
+<property name="ToolsTemplates" value="1" type="JavaHandler"/>
 <property name="UpgradeIP" value="1" type="JavaHandler"/>
 <property name="ViewTaskProgramandDebug" value="2" type="JavaHandler"/>
 <property name="ViewTaskProjectManager" value="4" type="JavaHandler"/>
@@ -41,49 +44,24 @@ This means code written to parse this file will need to be revisited each subseq
 </item>
 <item name="Gui Resources Info">
 <property name="CANCEL, Cancel" value="1" type="GuiResourceData"/>
-<property name="PAResourceAtoD.CustomizeCoreDialog_DOCUMENTATION, Documentation" value="1" type="GuiResourceData"/>
-<property name="PAResourceCommand.PACommandNames_AUTO_UPDATE_HIER, Hierarchy Update" value="1" type="GuiResourceData"/>
-<property name="PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, [root, Design Sources, UART_TX_CTRL - Behavioral (UART_TX_CTRL.vhd" value="1" type="GuiResourceData"/>
-<property name="PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, [root, Design Sources, XADCdemo (XADCdemo.v" value="2" type="GuiResourceData"/>
-<property name="PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, [root, Design Sources, blk_mem_gen_0 (blk_mem_gen_0.xci" value="2" type="GuiResourceData"/>
-<property name="PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, [root, Simulation Sources, sim_1, blk_mem_gen_0 (blk_mem_gen_0.xci" value="3" type="GuiResourceData"/>
-<property name="PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, [root, Simulation Sources, sim_1], 11" value="1" type="GuiResourceData"/>
-<property name="PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, [root, Simulation Sources], 10" value="1" type="GuiResourceData"/>
-<property name="PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, [, Project Manager, Project Settings], 1, false" value="1" type="GuiResourceData"/>
-<property name="PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, [, Project Manager], 0, true" value="2" type="GuiResourceData"/>
-<property name="PAResourceQtoS.SrcMenu_IP_HIERARCHY, IP Hierarchy" value="2" type="GuiResourceData"/>
-<property name="RDIResource.BaseDialog_CANCEL, Cancel" value="4" type="GuiResourceData"/>
-<property name="RDIResource.BaseDialog_OK, OK" value="1" type="GuiResourceData"/>
-<property name="XADCdemo.v, 1, 245" value="1" type="GuiResourceData"/>
-<property name="XADCdemo.v, 102, 210" value="1" type="GuiResourceData"/>
-<property name="XADCdemo.v, 104, 192" value="1" type="GuiResourceData"/>
-<property name="XADCdemo.v, 114, 203" value="1" type="GuiResourceData"/>
-<property name="XADCdemo.v, 138, 462" value="1" type="GuiResourceData"/>
-<property name="XADCdemo.v, 183, 250" value="1" type="GuiResourceData"/>
-<property name="XADCdemo.v, 183, 250, false, false, false, false, true" value="1" type="GuiResourceData"/>
-<property name="XADCdemo.v, 187, 86" value="1" type="GuiResourceData"/>
-<property name="XADCdemo.v, 198, 458" value="1" type="GuiResourceData"/>
-<property name="XADCdemo.v, 234, 306" value="1" type="GuiResourceData"/>
-<property name="XADCdemo.v, 245, 458" value="1" type="GuiResourceData"/>
-<property name="XADCdemo.v, 254, 290" value="1" type="GuiResourceData"/>
-<property name="XADCdemo.v, 264, 184" value="1" type="GuiResourceData"/>
-<property name="XADCdemo.v, 269, 248" value="1" type="GuiResourceData"/>
-<property name="XADCdemo.v, 273, 236" value="1" type="GuiResourceData"/>
-<property name="XADCdemo.v, 274, 166" value="1" type="GuiResourceData"/>
-<property name="XADCdemo.v, 274, 408" value="1" type="GuiResourceData"/>
-<property name="XADCdemo.v, 306, 242" value="1" type="GuiResourceData"/>
-<property name="XADCdemo.v, 311, 525" value="1" type="GuiResourceData"/>
-<property name="XADCdemo.v, 336, 242" value="1" type="GuiResourceData"/>
-<property name="XADCdemo.v, 340, 234" value="1" type="GuiResourceData"/>
-<property name="XADCdemo.v, 77, 229" value="1" type="GuiResourceData"/>
-<property name="XADCdemo.v, 80, 324" value="1" type="GuiResourceData"/>
-<property name="XADCdemo.v, 80, 324, false, false, false, false, true" value="1" type="GuiResourceData"/>
-<property name="XADCdemo.v, 86, 219" value="1" type="GuiResourceData"/>
+<property name="NEXT, Next " value="8" type="GuiResourceData"/>
+<property name="PAResourceCommand.PACommandNames_NEW_PROJECT, New Project..." value="1" type="GuiResourceData"/>
+<property name="PAResourceCommand.PACommandNames_OPEN_EXAMPLE_PROJECT, Open Example Project..." value="1" type="GuiResourceData"/>
+<property name="PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, [root, Design Sources, XADCdemo (XADCdemo.v" value="3" type="GuiResourceData"/>
+<property name="PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, [root, Design Sources, clk_wiz_0 (clk_wiz_0.xci" value="1" type="GuiResourceData"/>
+<property name="PAResourceItoN.MainMenuMgr_FILE, File" value="4" type="GuiResourceData"/>
+<property name="PAResourceItoN.MainMenuMgr_OPEN_RECENT_PROJECT, Open Recent Project" value="1" type="GuiResourceData"/>
+<property name="PAResourceOtoP.PartChooser_FAMILY_CHOOSER, Artix-7, 1" value="1" type="GuiResourceData"/>
+<property name="PAResourceOtoP.PartChooser_PARTS, xc7a100tcsg324-3 ; 324 ; 135 ; 240 ; 126800 ; 0 ; 0 ; 210 ; 63400 ; 6 ; 1 ; 85 ; 0 ; 85 ; C ; 1.05 ; 0.95 ; 0.95, 0, xc7a100tcsg324-3, 0" value="1" type="GuiResourceData"/>
+<property name="PAResourceOtoP.PartChooser_PART_PACKAGE_CHOOSER, csg324, 2" value="1" type="GuiResourceData"/>
+<property name="PAResourceOtoP.ProjectNameChooser_PROJECT_NAME, project_xvga_disp" value="1" type="GuiResourceData"/>
+<property name="PAResourceQtoS.SrcChooserPanel_ADD_HDL_AND_NETLIST_FILES_TO_YOUR_PROJECT, Add Files" value="1" type="GuiResourceData"/>
+<property name="RDIResource.BaseDialog_CANCEL, Cancel" value="2" type="GuiResourceData"/>
 </item>
 <item name="Other">
-<property name="GuiMode" value="12" type="GuiMode"/>
+<property name="GuiMode" value="13" type="GuiMode"/>
 <property name="BatchMode" value="0" type="BatchMode"/>
-<property name="TclMode" value="8" type="TclMode"/>
+<property name="TclMode" value="9" type="TclMode"/>
 </item>
 </section>
 </application>

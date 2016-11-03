@@ -53,6 +53,14 @@ module xvga(input vclock,
    end
 endmodule
 
+module mysprite(input [10:0]displayX, input [9:0]displayY, input vsync, input hsync, input blank,
+  output [3:0]vga_r, output [3:0]vga_g, output [3:0] vga_b);
+
+    assign vga_r = 4'b0;
+    assign vga_b = blank ? 4'b0 : 4'b1111;
+    assign vga_g = 4'b0;
+endmodule
+
 module xvga_signal_delayer(input vclock,
                            input [10:0] displayX_in, // pixel number on current line
                            input [9:0]  displayY_in, // line number
@@ -72,6 +80,7 @@ endmodule
 
 // This is the
 // Instantiate a whole array of these boys in one go.
+/*
 module xvga_delayed_group #(parameter NUM_DELAYS=1)
   (input vclock,
    output wire [10:0] displayX[NUM_DELAYS:0],
@@ -93,3 +102,4 @@ module xvga_delayed_group #(parameter NUM_DELAYS=1)
   end
   endgenerate
 endmodule
+*/

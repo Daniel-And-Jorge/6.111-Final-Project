@@ -26,21 +26,21 @@ module Oscilloscope_v1
                 DISPLAY_Y_BITS = 10,
                 ADDRESS_BITS = 11) 
    (input CLK100MHZ,
-   input vauxp2,
-   input vauxn2,
-   input vauxp3,
-   input vauxn3,
-   input vauxp10,
-   input vauxn10,
    input vauxp11,
    input vauxn11,
    input [1:0] sw,
-   input reset,
+   input CPU_RESETN,
    output reg [15:0] LED,
    output [7:0] an,
-   output dp,
-   output [6:0] seg
+   output [6:0] seg,
+   output VGA_HS,
+   output VGA_VS,
+   output [3:0] VGA_R, output [3:0] VGA_G, output [3:0] VGA_B
     );
+    
+    wire reset;
+    assign reset = 0;
+    //debounce rdb(.reset(reset), .clock(CLK100MHZ), .noisy(CPU_RESETN), .clean(reset));
     
     wire CLK65MHZ;
     //instantiate clock divider
@@ -53,8 +53,7 @@ module Oscilloscope_v1
         // Status and control signals
         .reset(reset), // input reset
         .locked(locked));
-        
-    
+
     
     // XADC IP module
     wire eoc;
@@ -115,7 +114,7 @@ module Oscilloscope_v1
      wire vsync;
      wire hsync;
      wire blank;
-     module xvga(.vclock(CLK65MHZ),
+     xvga(.vclock(CLK65MHZ),
         .displayX(displayX), // pixel number on current line
         .displayY(displayY), // line number
         .vsync(vsync), .hsync(hsync), .blank(blank));
@@ -125,6 +124,7 @@ module Oscilloscope_v1
     wire curveHsync;
     wire curveVsync;
     wire curveBlank;
+    wire [23:0] curvePixel;
     Curve #(.ADDRESS_BITS(ADDRESS_BITS))
             myCurve
             (.clock(CLK65MHZ),
@@ -134,12 +134,24 @@ module Oscilloscope_v1
             .hsync(hsync),
             .vsync(vsync),
             .blank(blank),
-            .pixel(pixel???),
+            .pixel(pixel),
             .drawStarting(drawStarting),
             .address(curveAddressOut),
-            .curveHsync(curveHSync),
+            .curveHsync(curveHsync),
             .curveVsync(curveVsync),
             .curveBlank(curveBlank)
             );
+   /* 
+    assign VGA_HS = curveHsync;
+    assign VGA_VS = curveVsync;
+    assign VGA_R = (curvePixel > 0) && !curveBlank ? 4'b1100 : 0;
+    assign VGA_B = 0;
+    assign VGA_G = 0;
+    */
     
+    assign VGA_HS = hsync;
+    assign VGA_VS = vsync;
+    assign VGA_R = blank ? 0 : 4'b1111;
+    assign VGA_G = 0;
+    assign VGA_B = 0;
 endmodule

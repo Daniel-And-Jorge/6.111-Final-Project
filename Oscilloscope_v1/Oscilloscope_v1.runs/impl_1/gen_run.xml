@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenRun Id="impl_1" LaunchPart="xc7a100tcsg324-3" LaunchTime="1478213425">
+  <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
+  <File Type="RDI-RDI" Name="Oscilloscope_v1.vdi"/>
+  <File Type="BG-DRC" Name="Oscilloscope_v1.drc"/>
+  <File Type="BG-BGN" Name="Oscilloscope_v1.bgn"/>
+  <File Type="BITSTR-SYSDEF" Name="Oscilloscope_v1.sysdef"/>
+  <File Type="BITSTR-MMI" Name="Oscilloscope_v1.mmi"/>
+  <File Type="BITSTR-BMM" Name="Oscilloscope_v1_bd.bmm"/>
+  <File Type="BITSTR-NKY" Name="Oscilloscope_v1.nky"/>
+  <File Type="BITSTR-RBT" Name="Oscilloscope_v1.rbt"/>
+  <File Type="BITSTR-MSK" Name="Oscilloscope_v1.msk"/>
+  <File Type="BG-BIN" Name="Oscilloscope_v1.bin"/>
+  <File Type="BG-BIT" Name="Oscilloscope_v1.bit"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-RPX" Name="Oscilloscope_v1_timing_summary_postroute_physopted.rpx"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-PB" Name="Oscilloscope_v1_timing_summary_postroute_physopted.pb"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING" Name="Oscilloscope_v1_timing_summary_postroute_physopted.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="Oscilloscope_v1_postroute_physopt_bb.dcp"/>
+  <File Type="ROUTE-CLK" Name="Oscilloscope_v1_clock_utilization_routed.rpt"/>
+  <File Type="ROUTE-SIMILARITY" Name="Oscilloscope_v1_incremental_reuse_routed.rpt"/>
+  <File Type="ROUTE-TIMING-RPX" Name="Oscilloscope_v1_timing_summary_routed.rpx"/>
+  <File Type="ROUTE-TIMING-PB" Name="Oscilloscope_v1_timing_summary_routed.pb"/>
+  <File Type="ROUTE-TIMINGSUMMARY" Name="Oscilloscope_v1_timing_summary_routed.rpt"/>
+  <File Type="ROUTE-STATUS-PB" Name="Oscilloscope_v1_route_status.pb"/>
+  <File Type="ROUTE-STATUS" Name="Oscilloscope_v1_route_status.rpt"/>
+  <File Type="ROUTE-PWR-RPX" Name="Oscilloscope_v1_power_routed.rpx"/>
+  <File Type="ROUTE-PWR-SUM" Name="Oscilloscope_v1_power_summary_routed.pb"/>
+  <File Type="ROUTE-PWR" Name="Oscilloscope_v1_power_routed.rpt"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="Oscilloscope_v1_methodology_drc_routed.pb"/>
+  <File Type="ROUTE-METHODOLOGY-DRC" Name="Oscilloscope_v1_methodology_drc_routed.rpt"/>
+  <File Type="ROUTE-DRC-PB" Name="Oscilloscope_v1_drc_routed.pb"/>
+  <File Type="ROUTE-DRC" Name="Oscilloscope_v1_drc_routed.rpt"/>
+  <File Type="ROUTE-BLACKBOX-DCP" Name="Oscilloscope_v1_routed_bb.dcp"/>
+  <File Type="ROUTE-DCP" Name="Oscilloscope_v1_routed.dcp"/>
+  <File Type="PHYSOPT-TIMING" Name="Oscilloscope_v1_timing_summary_physopted.rpt"/>
+  <File Type="PHYSOPT-DRC" Name="Oscilloscope_v1_drc_physopted.rpt"/>
+  <File Type="PHYSOPT-DCP" Name="Oscilloscope_v1_physopt.dcp"/>
+  <File Type="POSTPLACE-PWROPT-TIMING" Name="Oscilloscope_v1_timing_summary_postplace_pwropted.rpt"/>
+  <File Type="POSTPLACE-PWROPT-DCP" Name="Oscilloscope_v1_postplace_pwropt.dcp"/>
+  <File Type="PLACE-TIMING" Name="Oscilloscope_v1_timing_summary_placed.rpt"/>
+  <File Type="PLACE-PRE-SIMILARITY" Name="Oscilloscope_v1_incremental_reuse_pre_placed.rpt"/>
+  <File Type="PLACE-SIMILARITY" Name="Oscilloscope_v1_incremental_reuse_placed.rpt"/>
+  <File Type="PLACE-CTRL" Name="Oscilloscope_v1_control_sets_placed.rpt"/>
+  <File Type="PLACE-UTIL-PB" Name="Oscilloscope_v1_utilization_placed.pb"/>
+  <File Type="PLACE-UTIL" Name="Oscilloscope_v1_utilization_placed.rpt"/>
+  <File Type="PLACE-CLK" Name="Oscilloscope_v1_clock_utilization_placed.rpt"/>
+  <File Type="PLACE-IO" Name="Oscilloscope_v1_io_placed.rpt"/>
+  <File Type="PLACE-DCP" Name="Oscilloscope_v1_placed.dcp"/>
+  <File Type="PWROPT-TIMING" Name="Oscilloscope_v1_timing_summary_pwropted.rpt"/>
+  <File Type="PWROPT-DRC" Name="Oscilloscope_v1_drc_pwropted.rpt"/>
+  <File Type="PWROPT-DCP" Name="Oscilloscope_v1_pwropt.dcp"/>
+  <File Type="OPT-TIMING" Name="Oscilloscope_v1_timing_summary_opted.rpt"/>
+  <File Type="OPT-HWDEF" Name="Oscilloscope_v1.hwdef"/>
+  <File Type="OPT-METHODOLOGY-DRC" Name="Oscilloscope_v1_methodology_drc_opted.rpt"/>
+  <File Type="OPT-DRC" Name="Oscilloscope_v1_drc_opted.rpt"/>
+  <File Type="OPT-DCP" Name="Oscilloscope_v1_opt.dcp"/>
+  <File Type="INIT-TIMING" Name="Oscilloscope_v1_timing_summary_init.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-DCP" Name="Oscilloscope_v1_postroute_physopt.dcp"/>
+  <File Type="PA-TCL" Name="Oscilloscope_v1.tcl"/>
+  <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
+    <Filter Type="Srcs"/>
+    <File Path="$PSRCDIR/sources_1/imports/6.111-Final-Project/project_xadc/src/hdl/DigitToSeg.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../project_xadc/src/hdl/DigitToSeg.v"/>
+        <Attr Name="ImportTime" Val="1478194716"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/6.111-Final-Project/project_xadc/proj/XADC_Demo.srcs/sources_1/new/ADCController.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../project_xadc/proj/XADC_Demo.srcs/sources_1/new/ADCController.v"/>
+        <Attr Name="ImportTime" Val="1478194716"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/6.111-Final-Project/project_xadc/src/hdl/xvga.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../project_xadc/src/hdl/xvga.v"/>
+        <Attr Name="ImportTime" Val="1478194716"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/6.111-Final-Project/project_xadc/src/hdl/XADCdemo.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../project_xadc/src/hdl/XADCdemo.v"/>
+        <Attr Name="ImportTime" Val="1478194716"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/6.111-Final-Project/jorge/oscilloscope/oscilloscope.srcs/sources_1/new/TriggerRisingEdge.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../jorge/oscilloscope/oscilloscope.srcs/sources_1/new/TriggerRisingEdge.v"/>
+        <Attr Name="ImportTime" Val="1478191500"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/6.111-Final-Project/jorge/oscilloscope/oscilloscope.srcs/sources_1/new/Curve.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../jorge/oscilloscope/oscilloscope.srcs/sources_1/new/Curve.v"/>
+        <Attr Name="ImportTime" Val="1478194176"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/6.111-Final-Project/project_xadc/src/hdl/buffer.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../project_xadc/src/hdl/buffer.v"/>
+        <Attr Name="ImportTime" Val="1478194716"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/Oscilloscope_v1.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/debounce.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="DesignMode" Val="RTL"/>
+      <Option Name="TopModule" Val="Oscilloscope_v1"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
+    <Filter Type="Constrs"/>
+    <File Path="$PSRCDIR/constrs_1/imports/constraints/Nexys4DDR_Master.xdc">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../project_xadc/src/constraints/Nexys4DDR_Master.xdc"/>
+        <Attr Name="ImportTime" Val="1478194716"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="ConstrsType" Val="XDC"/>
+    </Config>
+  </FileSet>
+  <Strategy Version="1" Minor="2">
+    <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2016"/>
+    <Step Id="init_design"/>
+    <Step Id="opt_design"/>
+    <Step Id="power_opt_design"/>
+    <Step Id="place_design"/>
+    <Step Id="post_place_power_opt_design"/>
+    <Step Id="phys_opt_design"/>
+    <Step Id="route_design"/>
+    <Step Id="post_route_phys_opt_design"/>
+    <Step Id="write_bitstream"/>
+  </Strategy>
+  <BlockFileSet Type="BlockSrcs" Name="clk_wiz_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="blk_mem_gen_1"/>
+  <BlockFileSet Type="BlockSrcs" Name="xadc_wiz_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="blk_mem_gen_0"/>
+</GenRun>

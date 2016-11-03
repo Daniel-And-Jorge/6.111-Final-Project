@@ -1,6 +1,6 @@
 
 *** Running vivado
-    with args -log XADCdemo.vds -m64 -mode batch -messageDb vivado.pb -notrace -source XADCdemo.tcl
+    with args -log Oscilloscope_v1.vds -m64 -mode batch -messageDb vivado.pb -notrace -source Oscilloscope_v1.tcl
 
 
 ****** Vivado v2016.2 (64-bit)
@@ -8,46 +8,628 @@
   **** IP Build 1577682 on Fri Jun  3 12:00:54 MDT 2016
     ** Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 
-source XADCdemo.tcl -notrace
-Command: synth_design -top XADCdemo -part xc7a100tcsg324-3
+source Oscilloscope_v1.tcl -notrace
+Command: synth_design -top Oscilloscope_v1 -part xc7a100tcsg324-3
 Starting synth_design
-INFO: [IP_Flow 19-2162] IP 'xadc_wiz_0' is locked:
-* Current project part 'xc7a100tcsg324-3' and the part 'xc7a100tcsg324-1' used to customize the IP 'xadc_wiz_0' do not match.
-Please select 'Report IP Status' from the 'Tools/Report' menu or run Tcl command 'report_ip_status' for more information.
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
+WARNING: [filemgmt 56-147] Overwrite of existing file isn't enabled.  Please specify -force to overwrite file  [/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/synth_1/.Xil/Vivado-24895-eecs-digital-16/xadc_wiz_0/xadc_wiz_0.dcp]
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 12611 
+INFO: Helper process launched with PID 24899 
+WARNING: [Synth 8-992] isTriggered is already implicitly declared earlier [/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Oscilloscope_v1.v:102]
+WARNING: [Synth 8-992] drawStarting is already implicitly declared earlier [/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Oscilloscope_v1.v:122]
+WARNING: [Synth 8-992] curveAddressOut is already implicitly declared earlier [/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Oscilloscope_v1.v:123]
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1070.320 ; gain = 175.137 ; free physical = 299 ; free virtual = 11715
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 1067.512 ; gain = 172.324 ; free physical = 1476 ; free virtual = 12547
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-638] synthesizing module 'XADCdemo' [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/imports/6.111-Final-Project/project_xadc/src/hdl/XADCdemo.v:22]
-INFO: [Synth 8-638] synthesizing module 'xadc_wiz_0' [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/synth_1/.Xil/Vivado-12603-eecs-digital-16/realtime/xadc_wiz_0_stub.v:5]
-INFO: [Synth 8-256] done synthesizing module 'xadc_wiz_0' (1#1) [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/synth_1/.Xil/Vivado-12603-eecs-digital-16/realtime/xadc_wiz_0_stub.v:5]
-WARNING: [Synth 8-350] instance 'XLXI_7' of module 'xadc_wiz_0' requires 20 connections, but only 16 given [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/imports/6.111-Final-Project/project_xadc/src/hdl/XADCdemo.v:57]
-INFO: [Synth 8-638] synthesizing module 'ADCController' [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/imports/6.111-Final-Project/project_xadc/proj/XADC_Demo.srcs/sources_1/new/ADCController.v:25]
+INFO: [Synth 8-638] synthesizing module 'Oscilloscope_v1' [/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Oscilloscope_v1.v:23]
+	Parameter TRIGGER_THRESHOLD bound to: 2048 - type: integer 
+	Parameter DISPLAY_X_BITS bound to: 11 - type: integer 
+	Parameter DISPLAY_Y_BITS bound to: 10 - type: integer 
+	Parameter ADDRESS_BITS bound to: 11 - type: integer 
+INFO: [Synth 8-638] synthesizing module 'clk_wiz_0' [/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/synth_1/.Xil/Vivado-24895-eecs-digital-16/realtime/clk_wiz_0_stub.v:5]
+INFO: [Synth 8-256] done synthesizing module 'clk_wiz_0' (1#1) [/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/synth_1/.Xil/Vivado-24895-eecs-digital-16/realtime/clk_wiz_0_stub.v:5]
+INFO: [Synth 8-638] synthesizing module 'xadc_wiz_0' [/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/synth_1/.Xil/Vivado-24895-eecs-digital-16/realtime/xadc_wiz_0_stub.v:5]
+INFO: [Synth 8-256] done synthesizing module 'xadc_wiz_0' (2#1) [/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/synth_1/.Xil/Vivado-24895-eecs-digital-16/realtime/xadc_wiz_0_stub.v:5]
+WARNING: [Synth 8-350] instance 'XLXI_7' of module 'xadc_wiz_0' requires 20 connections, but only 16 given [/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Oscilloscope_v1.v:64]
+INFO: [Synth 8-638] synthesizing module 'ADCController' [/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/imports/6.111-Final-Project/project_xadc/proj/XADC_Demo.srcs/sources_1/new/ADCController.v:25]
 	Parameter IO_BITS bound to: 12 - type: integer 
 	Parameter INPUT_OFFSET bound to: 1024 - type: integer 
 	Parameter LOG_SCALE_FACTOR bound to: 3 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'ADCController' (2#1) [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/imports/6.111-Final-Project/project_xadc/proj/XADC_Demo.srcs/sources_1/new/ADCController.v:25]
-INFO: [Synth 8-638] synthesizing module 'blk_mem_gen_0' [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/synth_1/.Xil/Vivado-12603-eecs-digital-16/realtime/blk_mem_gen_0_stub.v:6]
-INFO: [Synth 8-256] done synthesizing module 'blk_mem_gen_0' (3#1) [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/synth_1/.Xil/Vivado-12603-eecs-digital-16/realtime/blk_mem_gen_0_stub.v:6]
-WARNING: [Synth 8-689] width (1) of port connection 'addra' does not match port width (4) of module 'blk_mem_gen_0' [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/imports/6.111-Final-Project/project_xadc/src/hdl/XADCdemo.v:92]
-WARNING: [Synth 8-689] width (1) of port connection 'dina' does not match port width (12) of module 'blk_mem_gen_0' [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/imports/6.111-Final-Project/project_xadc/src/hdl/XADCdemo.v:93]
-WARNING: [Synth 8-689] width (1) of port connection 'douta' does not match port width (12) of module 'blk_mem_gen_0' [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/imports/6.111-Final-Project/project_xadc/src/hdl/XADCdemo.v:94]
-WARNING: [Synth 8-689] width (1) of port connection 'addrb' does not match port width (4) of module 'blk_mem_gen_0' [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/imports/6.111-Final-Project/project_xadc/src/hdl/XADCdemo.v:98]
-WARNING: [Synth 8-689] width (1) of port connection 'dinb' does not match port width (12) of module 'blk_mem_gen_0' [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/imports/6.111-Final-Project/project_xadc/src/hdl/XADCdemo.v:99]
-WARNING: [Synth 8-689] width (1) of port connection 'doutb' does not match port width (12) of module 'blk_mem_gen_0' [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/imports/6.111-Final-Project/project_xadc/src/hdl/XADCdemo.v:100]
-INFO: [Synth 8-638] synthesizing module 'DigitToSeg' [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/imports/6.111-Final-Project/project_xadc/src/hdl/DigitToSeg.v:23]
-ERROR: [Synth 8-439] module 'sevensegdecoder' not found [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/imports/6.111-Final-Project/project_xadc/src/hdl/DigitToSeg.v:54]
-ERROR: [Synth 8-285] failed synthesizing module 'DigitToSeg' [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/imports/6.111-Final-Project/project_xadc/src/hdl/DigitToSeg.v:23]
-ERROR: [Synth 8-285] failed synthesizing module 'XADCdemo' [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/imports/6.111-Final-Project/project_xadc/src/hdl/XADCdemo.v:22]
+INFO: [Synth 8-256] done synthesizing module 'ADCController' (3#1) [/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/imports/6.111-Final-Project/project_xadc/proj/XADC_Demo.srcs/sources_1/new/ADCController.v:25]
+INFO: [Synth 8-638] synthesizing module 'buffer' [/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/imports/6.111-Final-Project/project_xadc/src/hdl/buffer.v:31]
+	Parameter LOG_SAMPLES bound to: 10 - type: integer 
+	Parameter SAMPLE_SIZE bound to: 12 - type: integer 
+INFO: [Synth 8-638] synthesizing module 'blk_mem_gen_0' [/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/synth_1/.Xil/Vivado-24895-eecs-digital-16/realtime/blk_mem_gen_0_stub.v:6]
+INFO: [Synth 8-256] done synthesizing module 'blk_mem_gen_0' (4#1) [/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/synth_1/.Xil/Vivado-24895-eecs-digital-16/realtime/blk_mem_gen_0_stub.v:6]
+WARNING: [Synth 8-689] width (10) of port connection 'addra' does not match port width (4) of module 'blk_mem_gen_0' [/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/imports/6.111-Final-Project/project_xadc/src/hdl/buffer.v:56]
+WARNING: [Synth 8-689] width (13) of port connection 'dina' does not match port width (12) of module 'blk_mem_gen_0' [/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/imports/6.111-Final-Project/project_xadc/src/hdl/buffer.v:57]
+WARNING: [Synth 8-689] width (10) of port connection 'addrb' does not match port width (4) of module 'blk_mem_gen_0' [/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/imports/6.111-Final-Project/project_xadc/src/hdl/buffer.v:62]
+WARNING: [Synth 8-689] width (13) of port connection 'doutb' does not match port width (12) of module 'blk_mem_gen_0' [/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/imports/6.111-Final-Project/project_xadc/src/hdl/buffer.v:64]
+INFO: [Synth 8-638] synthesizing module 'blk_mem_gen_1' [/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/synth_1/.Xil/Vivado-24895-eecs-digital-16/realtime/blk_mem_gen_1_stub.v:6]
+INFO: [Synth 8-256] done synthesizing module 'blk_mem_gen_1' (5#1) [/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/synth_1/.Xil/Vivado-24895-eecs-digital-16/realtime/blk_mem_gen_1_stub.v:6]
+WARNING: [Synth 8-689] width (10) of port connection 'addra' does not match port width (4) of module 'blk_mem_gen_1' [/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/imports/6.111-Final-Project/project_xadc/src/hdl/buffer.v:76]
+WARNING: [Synth 8-689] width (13) of port connection 'dina' does not match port width (12) of module 'blk_mem_gen_1' [/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/imports/6.111-Final-Project/project_xadc/src/hdl/buffer.v:77]
+WARNING: [Synth 8-689] width (10) of port connection 'addrb' does not match port width (4) of module 'blk_mem_gen_1' [/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/imports/6.111-Final-Project/project_xadc/src/hdl/buffer.v:82]
+WARNING: [Synth 8-689] width (13) of port connection 'doutb' does not match port width (12) of module 'blk_mem_gen_1' [/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/imports/6.111-Final-Project/project_xadc/src/hdl/buffer.v:84]
+INFO: [Synth 8-256] done synthesizing module 'buffer' (6#1) [/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/imports/6.111-Final-Project/project_xadc/src/hdl/buffer.v:31]
+WARNING: [Synth 8-689] width (11) of port connection 'readAddress' does not match port width (10) of module 'buffer' [/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Oscilloscope_v1.v:99]
+INFO: [Synth 8-638] synthesizing module 'TriggerRisingEdge' [/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/imports/6.111-Final-Project/jorge/oscilloscope/oscilloscope.srcs/sources_1/new/TriggerRisingEdge.v:23]
+	Parameter DATA_BITS bound to: 12 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'TriggerRisingEdge' (7#1) [/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/imports/6.111-Final-Project/jorge/oscilloscope/oscilloscope.srcs/sources_1/new/TriggerRisingEdge.v:23]
+WARNING: [Synth 8-387] label required on module instance [/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Oscilloscope_v1.v:117]
+INFO: [Synth 8-638] synthesizing module 'xvga' [/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/imports/6.111-Final-Project/project_xadc/src/hdl/xvga.v:17]
+INFO: [Synth 8-256] done synthesizing module 'xvga' (8#1) [/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/imports/6.111-Final-Project/project_xadc/src/hdl/xvga.v:17]
+INFO: [Synth 8-638] synthesizing module 'Curve' [/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/imports/6.111-Final-Project/jorge/oscilloscope/oscilloscope.srcs/sources_1/new/Curve.v:23]
+	Parameter DATA_IN_BITS bound to: 12 - type: integer 
+	Parameter DISPLAY_X_BITS bound to: 11 - type: integer 
+	Parameter DISPLAY_Y_BITS bound to: 10 - type: integer 
+	Parameter RGB_COLOR bound to: 24'b111111111111111100000000 
+	Parameter RGB_BITS bound to: 24 - type: integer 
+	Parameter DISPLAY_WIDTH bound to: 1024 - type: integer 
+	Parameter DISPLAY_HEIGHT bound to: 768 - type: integer 
+	Parameter REAL_DISPLAY_WIDTH bound to: 1344 - type: integer 
+	Parameter REAL_DISPLAY_HEIGHT bound to: 806 - type: integer 
+	Parameter HEIGHT_ZERO_PIXEL bound to: 384 - type: integer 
+	Parameter ADDITIONAL_WAVE_PIXELS bound to: 1 - type: integer 
+	Parameter SCALING_SHIFTS bound to: 0 - type: integer 
+	Parameter ADDRESS_BITS bound to: 11 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'Curve' (9#1) [/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/imports/6.111-Final-Project/jorge/oscilloscope/oscilloscope.srcs/sources_1/new/Curve.v:23]
+WARNING: [Synth 8-689] width (1) of port connection 'pixel' does not match port width (24) of module 'Curve' [/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Oscilloscope_v1.v:137]
+WARNING: [Synth 8-3848] Net LED in module/entity Oscilloscope_v1 does not have driver. [/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Oscilloscope_v1.v:33]
+WARNING: [Synth 8-3848] Net an in module/entity Oscilloscope_v1 does not have driver. [/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Oscilloscope_v1.v:34]
+WARNING: [Synth 8-3848] Net seg in module/entity Oscilloscope_v1 does not have driver. [/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Oscilloscope_v1.v:35]
+INFO: [Synth 8-256] done synthesizing module 'Oscilloscope_v1' (10#1) [/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Oscilloscope_v1.v:23]
+WARNING: [Synth 8-3917] design Oscilloscope_v1 has port VGA_G[3] driven by constant 0
+WARNING: [Synth 8-3917] design Oscilloscope_v1 has port VGA_G[2] driven by constant 0
+WARNING: [Synth 8-3917] design Oscilloscope_v1 has port VGA_G[1] driven by constant 0
+WARNING: [Synth 8-3917] design Oscilloscope_v1 has port VGA_G[0] driven by constant 0
+WARNING: [Synth 8-3917] design Oscilloscope_v1 has port VGA_B[3] driven by constant 0
+WARNING: [Synth 8-3917] design Oscilloscope_v1 has port VGA_B[2] driven by constant 0
+WARNING: [Synth 8-3917] design Oscilloscope_v1 has port VGA_B[1] driven by constant 0
+WARNING: [Synth 8-3917] design Oscilloscope_v1 has port VGA_B[0] driven by constant 0
+WARNING: [Synth 8-3331] design Oscilloscope_v1 has unconnected port LED[15]
+WARNING: [Synth 8-3331] design Oscilloscope_v1 has unconnected port LED[14]
+WARNING: [Synth 8-3331] design Oscilloscope_v1 has unconnected port LED[13]
+WARNING: [Synth 8-3331] design Oscilloscope_v1 has unconnected port LED[12]
+WARNING: [Synth 8-3331] design Oscilloscope_v1 has unconnected port LED[11]
+WARNING: [Synth 8-3331] design Oscilloscope_v1 has unconnected port LED[10]
+WARNING: [Synth 8-3331] design Oscilloscope_v1 has unconnected port LED[9]
+WARNING: [Synth 8-3331] design Oscilloscope_v1 has unconnected port LED[8]
+WARNING: [Synth 8-3331] design Oscilloscope_v1 has unconnected port LED[7]
+WARNING: [Synth 8-3331] design Oscilloscope_v1 has unconnected port LED[6]
+WARNING: [Synth 8-3331] design Oscilloscope_v1 has unconnected port LED[5]
+WARNING: [Synth 8-3331] design Oscilloscope_v1 has unconnected port LED[4]
+WARNING: [Synth 8-3331] design Oscilloscope_v1 has unconnected port LED[3]
+WARNING: [Synth 8-3331] design Oscilloscope_v1 has unconnected port LED[2]
+WARNING: [Synth 8-3331] design Oscilloscope_v1 has unconnected port LED[1]
+WARNING: [Synth 8-3331] design Oscilloscope_v1 has unconnected port LED[0]
+WARNING: [Synth 8-3331] design Oscilloscope_v1 has unconnected port an[7]
+WARNING: [Synth 8-3331] design Oscilloscope_v1 has unconnected port an[6]
+WARNING: [Synth 8-3331] design Oscilloscope_v1 has unconnected port an[5]
+WARNING: [Synth 8-3331] design Oscilloscope_v1 has unconnected port an[4]
+WARNING: [Synth 8-3331] design Oscilloscope_v1 has unconnected port an[3]
+WARNING: [Synth 8-3331] design Oscilloscope_v1 has unconnected port an[2]
+WARNING: [Synth 8-3331] design Oscilloscope_v1 has unconnected port an[1]
+WARNING: [Synth 8-3331] design Oscilloscope_v1 has unconnected port an[0]
+WARNING: [Synth 8-3331] design Oscilloscope_v1 has unconnected port seg[6]
+WARNING: [Synth 8-3331] design Oscilloscope_v1 has unconnected port seg[5]
+WARNING: [Synth 8-3331] design Oscilloscope_v1 has unconnected port seg[4]
+WARNING: [Synth 8-3331] design Oscilloscope_v1 has unconnected port seg[3]
+WARNING: [Synth 8-3331] design Oscilloscope_v1 has unconnected port seg[2]
+WARNING: [Synth 8-3331] design Oscilloscope_v1 has unconnected port seg[1]
+WARNING: [Synth 8-3331] design Oscilloscope_v1 has unconnected port seg[0]
+WARNING: [Synth 8-3331] design Oscilloscope_v1 has unconnected port sw[1]
+WARNING: [Synth 8-3331] design Oscilloscope_v1 has unconnected port sw[0]
+WARNING: [Synth 8-3331] design Oscilloscope_v1 has unconnected port CPU_RESETN
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 1110.758 ; gain = 215.574 ; free physical = 257 ; free virtual = 11674
+Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 1093.770 ; gain = 198.582 ; free physical = 1449 ; free virtual = 12521
 ---------------------------------------------------------------------------------
-RTL Elaboration failed
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 1093.770 ; gain = 198.582 ; free physical = 1449 ; free virtual = 12521
+---------------------------------------------------------------------------------
+WARNING: [filemgmt 56-147] Overwrite of existing file isn't enabled.  Please specify -force to overwrite file  [/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/synth_1/.Xil/Vivado-24895-eecs-digital-16/xadc_wiz_0/xadc_wiz_0.dcp]
+WARNING: [Project 1-486] Could not resolve non-primitive black box cell 'blk_mem_gen_0' instantiated as 'Buffer/bram0' [/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/imports/6.111-Final-Project/project_xadc/src/hdl/buffer.v:52]
+WARNING: [Project 1-486] Could not resolve non-primitive black box cell 'blk_mem_gen_1' instantiated as 'Buffer/bram1' [/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/imports/6.111-Final-Project/project_xadc/src/hdl/buffer.v:72]
+WARNING: [Project 1-486] Could not resolve non-primitive black box cell 'clk_wiz_0' instantiated as 'ClockDivider' [/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Oscilloscope_v1.v:47]
+WARNING: [Project 1-486] Could not resolve non-primitive black box cell 'xadc_wiz_0' instantiated as 'XLXI_7' [/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Oscilloscope_v1.v:64]
+INFO: [Device 21-403] Loading part xc7a100tcsg324-3
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/synth_1/.Xil/Vivado-24895-eecs-digital-16/dcp/blk_mem_gen_0_in_context.xdc] for cell 'Buffer/bram0'
+Finished Parsing XDC File [/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/synth_1/.Xil/Vivado-24895-eecs-digital-16/dcp/blk_mem_gen_0_in_context.xdc] for cell 'Buffer/bram0'
+Parsing XDC File [/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/synth_1/.Xil/Vivado-24895-eecs-digital-16/dcp_2/blk_mem_gen_1_in_context.xdc] for cell 'Buffer/bram1'
+Finished Parsing XDC File [/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/synth_1/.Xil/Vivado-24895-eecs-digital-16/dcp_2/blk_mem_gen_1_in_context.xdc] for cell 'Buffer/bram1'
+Parsing XDC File [/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/synth_1/.Xil/Vivado-24895-eecs-digital-16/dcp_3/clk_wiz_0_in_context.xdc] for cell 'ClockDivider'
+Finished Parsing XDC File [/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/synth_1/.Xil/Vivado-24895-eecs-digital-16/dcp_3/clk_wiz_0_in_context.xdc] for cell 'ClockDivider'
+Parsing XDC File [/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/synth_1/.Xil/Vivado-24895-eecs-digital-16/dcp_4/xadc_wiz_0_in_context.xdc] for cell 'XLXI_7'
+Finished Parsing XDC File [/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/synth_1/.Xil/Vivado-24895-eecs-digital-16/dcp_4/xadc_wiz_0_in_context.xdc] for cell 'XLXI_7'
+Parsing XDC File [/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/constrs_1/imports/constraints/Nexys4DDR_Master.xdc]
+WARNING: [Vivado 12-584] No ports matched 'dp'. [/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/constrs_1/imports/constraints/Nexys4DDR_Master.xdc:68]
+WARNING: [Vivado 12-584] No ports matched 'vauxn3'. [/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/constrs_1/imports/constraints/Nexys4DDR_Master.xdc:144]
+WARNING: [Vivado 12-584] No ports matched 'vauxp3'. [/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/constrs_1/imports/constraints/Nexys4DDR_Master.xdc:145]
+WARNING: [Vivado 12-584] No ports matched 'vauxn10'. [/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/constrs_1/imports/constraints/Nexys4DDR_Master.xdc:146]
+WARNING: [Vivado 12-584] No ports matched 'vauxp10'. [/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/constrs_1/imports/constraints/Nexys4DDR_Master.xdc:147]
+WARNING: [Vivado 12-584] No ports matched 'vauxn2'. [/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/constrs_1/imports/constraints/Nexys4DDR_Master.xdc:148]
+WARNING: [Vivado 12-584] No ports matched 'vauxp2'. [/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/constrs_1/imports/constraints/Nexys4DDR_Master.xdc:149]
+Finished Parsing XDC File [/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/constrs_1/imports/constraints/Nexys4DDR_Master.xdc]
+WARNING: [Project 1-498] One or more constraints failed evaluation while reading constraint file [/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/constrs_1/imports/constraints/Nexys4DDR_Master.xdc] and the design contains unresolved black boxes. These constraints will be read post-synthesis (as long as their source constraint file is marked as used_in_implementation) and should be applied correctly then. You should review the constraints listed in the file [.Xil/Oscilloscope_v1_propImpl.xdc] and check the run log file to verify that these constraints were correctly applied.
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/constrs_1/imports/constraints/Nexys4DDR_Master.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/Oscilloscope_v1_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/Oscilloscope_v1_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Completed Processing XDC Constraints
+
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 1463.453 ; gain = 0.004 ; free physical = 1261 ; free virtual = 12333
+WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'Buffer/bram0' at clock pin 'clka' is different from the actual clock period '15.385', this can result in different synthesis results.
+WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'Buffer/bram1' at clock pin 'clka' is different from the actual clock period '15.385', this can result in different synthesis results.
+WARNING: [filemgmt 56-147] Overwrite of existing file isn't enabled.  Please specify -force to overwrite file  [/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/synth_1/.Xil/Vivado-24895-eecs-digital-16/xadc_wiz_0/xadc_wiz_0.dcp]
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:10 ; elapsed = 00:00:13 . Memory (MB): peak = 1463.453 ; gain = 568.266 ; free physical = 1260 ; free virtual = 12332
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a100tcsg324-3
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:10 ; elapsed = 00:00:13 . Memory (MB): peak = 1463.453 ; gain = 568.266 ; free physical = 1260 ; free virtual = 12332
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+Applied set_property IO_BUFFER_TYPE = NONE for CLK100MHZ. (constraint file  /afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/synth_1/.Xil/Vivado-24895-eecs-digital-16/dcp_3/clk_wiz_0_in_context.xdc, line 3).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for CLK100MHZ. (constraint file  /afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/synth_1/.Xil/Vivado-24895-eecs-digital-16/dcp_3/clk_wiz_0_in_context.xdc, line 4).
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:10 ; elapsed = 00:00:13 . Memory (MB): peak = 1463.453 ; gain = 568.266 ; free physical = 1260 ; free virtual = 12332
+---------------------------------------------------------------------------------
+INFO: [Synth 8-4471] merging register 'pointer1_reg[9:0]' into 'pointer0_reg[9:0]' [/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/imports/6.111-Final-Project/project_xadc/src/hdl/buffer.v:93]
+INFO: [Synth 8-4471] merging register 'ram1_addra_reg[9:0]' into 'ram0_addra_reg[9:0]' [/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/imports/6.111-Final-Project/project_xadc/src/hdl/buffer.v:76]
+INFO: [Synth 8-4471] merging register 'ram1_din_reg[12:0]' into 'ram0_din_reg[12:0]' [/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/imports/6.111-Final-Project/project_xadc/src/hdl/buffer.v:77]
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:11 ; elapsed = 00:00:13 . Memory (MB): peak = 1463.453 ; gain = 568.266 ; free physical = 1258 ; free virtual = 12330
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 2     
+	   2 Input     12 Bit       Adders := 1     
+	   2 Input     11 Bit       Adders := 3     
+	   2 Input     10 Bit       Adders := 4     
++---Registers : 
+	               12 Bit    Registers := 4     
+	               11 Bit    Registers := 2     
+	               10 Bit    Registers := 7     
+	                1 Bit    Registers := 12    
++---Muxes : 
+	   2 Input     12 Bit        Muxes := 1     
+	   2 Input     11 Bit        Muxes := 1     
+	   2 Input     10 Bit        Muxes := 2     
+	   2 Input      4 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 3     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module Oscilloscope_v1 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      4 Bit        Muxes := 1     
+Module ADCController 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     12 Bit       Adders := 1     
++---Registers : 
+	               12 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
+Module buffer 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     10 Bit       Adders := 3     
++---Registers : 
+	               12 Bit    Registers := 2     
+	               10 Bit    Registers := 6     
+	                1 Bit    Registers := 3     
++---Muxes : 
+	   2 Input     12 Bit        Muxes := 1     
+	   2 Input     10 Bit        Muxes := 2     
+Module TriggerRisingEdge 
+Detailed RTL Component Info : 
++---Registers : 
+	               12 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
+Module xvga 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     11 Bit       Adders := 1     
+	   2 Input     10 Bit       Adders := 1     
++---Registers : 
+	               11 Bit    Registers := 1     
+	               10 Bit    Registers := 1     
+	                1 Bit    Registers := 5     
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 2     
+Module Curve 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 2     
+	   2 Input     11 Bit       Adders := 2     
++---Registers : 
+	               11 Bit    Registers := 1     
+	                1 Bit    Registers := 2     
++---Muxes : 
+	   2 Input     11 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 1     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 240 (col length:80)
+BRAMs: 270 (col length: RAMB18 80 RAMB36 40)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+Start Parallel Synthesis Optimization  : Time (s): cpu = 00:00:11 ; elapsed = 00:00:13 . Memory (MB): peak = 1463.453 ; gain = 568.266 ; free physical = 1258 ; free virtual = 12330
+---------------------------------------------------------------------------------
+Start Cross Boundary Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-3936] Found unconnected internal register 'Buffer/ram0_addra_reg' and it is trimmed from '10' to '4' bits. [/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/imports/6.111-Final-Project/project_xadc/src/hdl/buffer.v:56]
+WARNING: [Synth 8-3936] Found unconnected internal register 'Buffer/ram0_addrb_reg' and it is trimmed from '10' to '4' bits. [/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/imports/6.111-Final-Project/project_xadc/src/hdl/buffer.v:62]
+WARNING: [Synth 8-3936] Found unconnected internal register 'Buffer/ram1_addrb_reg' and it is trimmed from '10' to '4' bits. [/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/imports/6.111-Final-Project/project_xadc/src/hdl/buffer.v:82]
+WARNING: [Synth 8-3936] Found unconnected internal register 'myCurve/address_reg' and it is trimmed from '11' to '4' bits. [/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/imports/6.111-Final-Project/jorge/oscilloscope/oscilloscope.srcs/sources_1/new/Curve.v:81]
+WARNING: [Synth 8-3917] design Oscilloscope_v1 has port VGA_G[3] driven by constant 0
+WARNING: [Synth 8-3917] design Oscilloscope_v1 has port VGA_G[2] driven by constant 0
+WARNING: [Synth 8-3917] design Oscilloscope_v1 has port VGA_G[1] driven by constant 0
+WARNING: [Synth 8-3917] design Oscilloscope_v1 has port VGA_G[0] driven by constant 0
+WARNING: [Synth 8-3917] design Oscilloscope_v1 has port VGA_B[3] driven by constant 0
+WARNING: [Synth 8-3917] design Oscilloscope_v1 has port VGA_B[2] driven by constant 0
+WARNING: [Synth 8-3917] design Oscilloscope_v1 has port VGA_B[1] driven by constant 0
+WARNING: [Synth 8-3917] design Oscilloscope_v1 has port VGA_B[0] driven by constant 0
+WARNING: [Synth 8-3331] design Oscilloscope_v1 has unconnected port LED[15]
+WARNING: [Synth 8-3331] design Oscilloscope_v1 has unconnected port LED[14]
+WARNING: [Synth 8-3331] design Oscilloscope_v1 has unconnected port LED[13]
+WARNING: [Synth 8-3331] design Oscilloscope_v1 has unconnected port LED[12]
+WARNING: [Synth 8-3331] design Oscilloscope_v1 has unconnected port LED[11]
+WARNING: [Synth 8-3331] design Oscilloscope_v1 has unconnected port LED[10]
+WARNING: [Synth 8-3331] design Oscilloscope_v1 has unconnected port LED[9]
+WARNING: [Synth 8-3331] design Oscilloscope_v1 has unconnected port LED[8]
+WARNING: [Synth 8-3331] design Oscilloscope_v1 has unconnected port LED[7]
+WARNING: [Synth 8-3331] design Oscilloscope_v1 has unconnected port LED[6]
+WARNING: [Synth 8-3331] design Oscilloscope_v1 has unconnected port LED[5]
+WARNING: [Synth 8-3331] design Oscilloscope_v1 has unconnected port LED[4]
+WARNING: [Synth 8-3331] design Oscilloscope_v1 has unconnected port LED[3]
+WARNING: [Synth 8-3331] design Oscilloscope_v1 has unconnected port LED[2]
+WARNING: [Synth 8-3331] design Oscilloscope_v1 has unconnected port LED[1]
+WARNING: [Synth 8-3331] design Oscilloscope_v1 has unconnected port LED[0]
+WARNING: [Synth 8-3331] design Oscilloscope_v1 has unconnected port an[7]
+WARNING: [Synth 8-3331] design Oscilloscope_v1 has unconnected port an[6]
+WARNING: [Synth 8-3331] design Oscilloscope_v1 has unconnected port an[5]
+WARNING: [Synth 8-3331] design Oscilloscope_v1 has unconnected port an[4]
+WARNING: [Synth 8-3331] design Oscilloscope_v1 has unconnected port an[3]
+WARNING: [Synth 8-3331] design Oscilloscope_v1 has unconnected port an[2]
+WARNING: [Synth 8-3331] design Oscilloscope_v1 has unconnected port an[1]
+WARNING: [Synth 8-3331] design Oscilloscope_v1 has unconnected port an[0]
+WARNING: [Synth 8-3331] design Oscilloscope_v1 has unconnected port seg[6]
+WARNING: [Synth 8-3331] design Oscilloscope_v1 has unconnected port seg[5]
+WARNING: [Synth 8-3331] design Oscilloscope_v1 has unconnected port seg[4]
+WARNING: [Synth 8-3331] design Oscilloscope_v1 has unconnected port seg[3]
+WARNING: [Synth 8-3331] design Oscilloscope_v1 has unconnected port seg[2]
+WARNING: [Synth 8-3331] design Oscilloscope_v1 has unconnected port seg[1]
+WARNING: [Synth 8-3331] design Oscilloscope_v1 has unconnected port seg[0]
+WARNING: [Synth 8-3331] design Oscilloscope_v1 has unconnected port sw[1]
+WARNING: [Synth 8-3331] design Oscilloscope_v1 has unconnected port sw[0]
+WARNING: [Synth 8-3331] design Oscilloscope_v1 has unconnected port CPU_RESETN
+---------------------------------------------------------------------------------
+Finished Cross Boundary Optimization : Time (s): cpu = 00:00:11 ; elapsed = 00:00:13 . Memory (MB): peak = 1463.453 ; gain = 568.266 ; free physical = 1251 ; free virtual = 12323
+---------------------------------------------------------------------------------
+Finished Parallel Reinference  : Time (s): cpu = 00:00:11 ; elapsed = 00:00:13 . Memory (MB): peak = 1463.453 ; gain = 568.266 ; free physical = 1251 ; free virtual = 12323
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-3332] Sequential element (Buffer/pointer0_reg[9]) is unused and will be removed from module Oscilloscope_v1.
+WARNING: [Synth 8-3332] Sequential element (Buffer/pointer0_reg[8]) is unused and will be removed from module Oscilloscope_v1.
+WARNING: [Synth 8-3332] Sequential element (Buffer/pointer0_reg[7]) is unused and will be removed from module Oscilloscope_v1.
+WARNING: [Synth 8-3332] Sequential element (Buffer/pointer0_reg[6]) is unused and will be removed from module Oscilloscope_v1.
+WARNING: [Synth 8-3332] Sequential element (Buffer/pointer0_reg[5]) is unused and will be removed from module Oscilloscope_v1.
+WARNING: [Synth 8-3332] Sequential element (Buffer/pointer0_reg[4]) is unused and will be removed from module Oscilloscope_v1.
+WARNING: [Synth 8-3332] Sequential element (Buffer/trigger_address0_reg[9]) is unused and will be removed from module Oscilloscope_v1.
+WARNING: [Synth 8-3332] Sequential element (Buffer/trigger_address0_reg[8]) is unused and will be removed from module Oscilloscope_v1.
+WARNING: [Synth 8-3332] Sequential element (Buffer/trigger_address0_reg[7]) is unused and will be removed from module Oscilloscope_v1.
+WARNING: [Synth 8-3332] Sequential element (Buffer/trigger_address0_reg[6]) is unused and will be removed from module Oscilloscope_v1.
+WARNING: [Synth 8-3332] Sequential element (Buffer/trigger_address0_reg[5]) is unused and will be removed from module Oscilloscope_v1.
+WARNING: [Synth 8-3332] Sequential element (Buffer/trigger_address0_reg[4]) is unused and will be removed from module Oscilloscope_v1.
+WARNING: [Synth 8-3332] Sequential element (Buffer/trigger_address1_reg[9]) is unused and will be removed from module Oscilloscope_v1.
+WARNING: [Synth 8-3332] Sequential element (Buffer/trigger_address1_reg[8]) is unused and will be removed from module Oscilloscope_v1.
+WARNING: [Synth 8-3332] Sequential element (Buffer/trigger_address1_reg[7]) is unused and will be removed from module Oscilloscope_v1.
+WARNING: [Synth 8-3332] Sequential element (Buffer/trigger_address1_reg[6]) is unused and will be removed from module Oscilloscope_v1.
+WARNING: [Synth 8-3332] Sequential element (Buffer/trigger_address1_reg[5]) is unused and will be removed from module Oscilloscope_v1.
+WARNING: [Synth 8-3332] Sequential element (Buffer/trigger_address1_reg[4]) is unused and will be removed from module Oscilloscope_v1.
+WARNING: [Synth 8-3332] Sequential element (Trigger/previousData_reg[10]) is unused and will be removed from module Oscilloscope_v1.
+WARNING: [Synth 8-3332] Sequential element (Trigger/previousData_reg[9]) is unused and will be removed from module Oscilloscope_v1.
+WARNING: [Synth 8-3332] Sequential element (Trigger/previousData_reg[8]) is unused and will be removed from module Oscilloscope_v1.
+WARNING: [Synth 8-3332] Sequential element (Trigger/previousData_reg[7]) is unused and will be removed from module Oscilloscope_v1.
+WARNING: [Synth 8-3332] Sequential element (Trigger/previousData_reg[6]) is unused and will be removed from module Oscilloscope_v1.
+WARNING: [Synth 8-3332] Sequential element (Trigger/previousData_reg[5]) is unused and will be removed from module Oscilloscope_v1.
+WARNING: [Synth 8-3332] Sequential element (Trigger/previousData_reg[4]) is unused and will be removed from module Oscilloscope_v1.
+WARNING: [Synth 8-3332] Sequential element (Trigger/previousData_reg[3]) is unused and will be removed from module Oscilloscope_v1.
+WARNING: [Synth 8-3332] Sequential element (Trigger/previousData_reg[2]) is unused and will be removed from module Oscilloscope_v1.
+WARNING: [Synth 8-3332] Sequential element (Trigger/previousData_reg[1]) is unused and will be removed from module Oscilloscope_v1.
+WARNING: [Synth 8-3332] Sequential element (Trigger/previousData_reg[0]) is unused and will be removed from module Oscilloscope_v1.
+WARNING: [Synth 8-3332] Sequential element (Buffer/dataOut_reg[11]) is unused and will be removed from module Oscilloscope_v1.
+WARNING: [Synth 8-3332] Sequential element (Buffer/dataOut_reg[10]) is unused and will be removed from module Oscilloscope_v1.
+WARNING: [Synth 8-3332] Sequential element (Buffer/dataOut_reg[9]) is unused and will be removed from module Oscilloscope_v1.
+WARNING: [Synth 8-3332] Sequential element (Buffer/dataOut_reg[8]) is unused and will be removed from module Oscilloscope_v1.
+WARNING: [Synth 8-3332] Sequential element (Buffer/dataOut_reg[7]) is unused and will be removed from module Oscilloscope_v1.
+WARNING: [Synth 8-3332] Sequential element (Buffer/dataOut_reg[6]) is unused and will be removed from module Oscilloscope_v1.
+WARNING: [Synth 8-3332] Sequential element (Buffer/dataOut_reg[5]) is unused and will be removed from module Oscilloscope_v1.
+WARNING: [Synth 8-3332] Sequential element (Buffer/dataOut_reg[4]) is unused and will be removed from module Oscilloscope_v1.
+WARNING: [Synth 8-3332] Sequential element (Buffer/dataOut_reg[3]) is unused and will be removed from module Oscilloscope_v1.
+WARNING: [Synth 8-3332] Sequential element (Buffer/dataOut_reg[2]) is unused and will be removed from module Oscilloscope_v1.
+WARNING: [Synth 8-3332] Sequential element (Buffer/dataOut_reg[1]) is unused and will be removed from module Oscilloscope_v1.
+WARNING: [Synth 8-3332] Sequential element (Buffer/dataOut_reg[0]) is unused and will be removed from module Oscilloscope_v1.
+---------------------------------------------------------------------------------
+Finished Area Optimization : Time (s): cpu = 00:00:11 ; elapsed = 00:00:13 . Memory (MB): peak = 1463.453 ; gain = 568.266 ; free physical = 1235 ; free virtual = 12307
+---------------------------------------------------------------------------------
+Finished Parallel Area Optimization  : Time (s): cpu = 00:00:11 ; elapsed = 00:00:13 . Memory (MB): peak = 1463.453 ; gain = 568.266 ; free physical = 1235 ; free virtual = 12307
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+INFO: [Synth 8-5578] Moved timing constraint from pin 'ClockDivider/clk_out1' to pin 'ClockDivider/bbstub_clk_out1/O'
+INFO: [Synth 8-5820] Moved 1 constraints on hierarchical pins to their respective driving/loading pins
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:16 ; elapsed = 00:00:18 . Memory (MB): peak = 1463.453 ; gain = 568.266 ; free physical = 1209 ; free virtual = 12281
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:16 ; elapsed = 00:00:18 . Memory (MB): peak = 1463.453 ; gain = 568.266 ; free physical = 1200 ; free virtual = 12272
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-3332] Sequential element (Buffer/pointer0_reg[3]) is unused and will be removed from module Oscilloscope_v1.
+WARNING: [Synth 8-3332] Sequential element (Buffer/pointer0_reg[2]) is unused and will be removed from module Oscilloscope_v1.
+WARNING: [Synth 8-3332] Sequential element (Buffer/pointer0_reg[1]) is unused and will be removed from module Oscilloscope_v1.
+WARNING: [Synth 8-3332] Sequential element (Buffer/pointer0_reg[0]) is unused and will be removed from module Oscilloscope_v1.
+WARNING: [Synth 8-3332] Sequential element (Buffer/ram0_addra_reg[3]) is unused and will be removed from module Oscilloscope_v1.
+WARNING: [Synth 8-3332] Sequential element (Buffer/ram0_addra_reg[2]) is unused and will be removed from module Oscilloscope_v1.
+WARNING: [Synth 8-3332] Sequential element (Buffer/ram0_addra_reg[1]) is unused and will be removed from module Oscilloscope_v1.
+WARNING: [Synth 8-3332] Sequential element (Buffer/ram0_addra_reg[0]) is unused and will be removed from module Oscilloscope_v1.
+WARNING: [Synth 8-3332] Sequential element (adcc/dataOut_reg[2]) is unused and will be removed from module Oscilloscope_v1.
+WARNING: [Synth 8-3332] Sequential element (adcc/dataOut_reg[1]) is unused and will be removed from module Oscilloscope_v1.
+WARNING: [Synth 8-3332] Sequential element (adcc/dataOut_reg[0]) is unused and will be removed from module Oscilloscope_v1.
+WARNING: [Synth 8-3332] Sequential element (Buffer/ram0_din_reg[2]) is unused and will be removed from module Oscilloscope_v1.
+WARNING: [Synth 8-3332] Sequential element (Buffer/ram0_din_reg[1]) is unused and will be removed from module Oscilloscope_v1.
+WARNING: [Synth 8-3332] Sequential element (Buffer/ram0_din_reg[0]) is unused and will be removed from module Oscilloscope_v1.
+WARNING: [Synth 8-3332] Sequential element (Buffer/trigger_address0_reg[3]) is unused and will be removed from module Oscilloscope_v1.
+WARNING: [Synth 8-3332] Sequential element (Buffer/trigger_address0_reg[2]) is unused and will be removed from module Oscilloscope_v1.
+WARNING: [Synth 8-3332] Sequential element (Buffer/trigger_address0_reg[1]) is unused and will be removed from module Oscilloscope_v1.
+WARNING: [Synth 8-3332] Sequential element (Buffer/trigger_address0_reg[0]) is unused and will be removed from module Oscilloscope_v1.
+WARNING: [Synth 8-3332] Sequential element (Buffer/trigger_address1_reg[3]) is unused and will be removed from module Oscilloscope_v1.
+WARNING: [Synth 8-3332] Sequential element (Buffer/trigger_address1_reg[2]) is unused and will be removed from module Oscilloscope_v1.
+WARNING: [Synth 8-3332] Sequential element (Buffer/trigger_address1_reg[1]) is unused and will be removed from module Oscilloscope_v1.
+WARNING: [Synth 8-3332] Sequential element (Buffer/trigger_address1_reg[0]) is unused and will be removed from module Oscilloscope_v1.
+WARNING: [Synth 8-3332] Sequential element (Trigger/previousData_reg[11]) is unused and will be removed from module Oscilloscope_v1.
+WARNING: [Synth 8-3332] Sequential element (Trigger/isTriggered_reg) is unused and will be removed from module Oscilloscope_v1.
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:16 ; elapsed = 00:00:18 . Memory (MB): peak = 1463.453 ; gain = 568.266 ; free physical = 1191 ; free virtual = 12263
+---------------------------------------------------------------------------------
+Finished Parallel Technology Mapping Optimization  : Time (s): cpu = 00:00:16 ; elapsed = 00:00:18 . Memory (MB): peak = 1463.453 ; gain = 568.266 ; free physical = 1191 ; free virtual = 12263
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+Finished Parallel Synthesis Optimization  : Time (s): cpu = 00:00:16 ; elapsed = 00:00:18 . Memory (MB): peak = 1463.453 ; gain = 568.266 ; free physical = 1191 ; free virtual = 12263
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+INFO: [Synth 8-5365] Flop nolabel_line117/blank_reg is being inverted and renamed to nolabel_line117/blank_reg_inv.
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+CRITICAL WARNING: [Synth 8-4442] BlackBox module XLXI_7 has unconnected pin di_in[15]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module XLXI_7 has unconnected pin di_in[14]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module XLXI_7 has unconnected pin di_in[13]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module XLXI_7 has unconnected pin di_in[12]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module XLXI_7 has unconnected pin di_in[11]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module XLXI_7 has unconnected pin di_in[10]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module XLXI_7 has unconnected pin di_in[9]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module XLXI_7 has unconnected pin di_in[8]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module XLXI_7 has unconnected pin di_in[7]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module XLXI_7 has unconnected pin di_in[6]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module XLXI_7 has unconnected pin di_in[5]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module XLXI_7 has unconnected pin di_in[4]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module XLXI_7 has unconnected pin di_in[3]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module XLXI_7 has unconnected pin di_in[2]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module XLXI_7 has unconnected pin di_in[1]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module XLXI_7 has unconnected pin di_in[0]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module XLXI_7 has unconnected pin dwe_in
+CRITICAL WARNING: [Synth 8-4442] BlackBox module XLXI_7 has unconnected pin vp_in
+CRITICAL WARNING: [Synth 8-4442] BlackBox module XLXI_7 has unconnected pin vn_in
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \Buffer/bram0  has unconnected pin dinb[11]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \Buffer/bram0  has unconnected pin dinb[10]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \Buffer/bram0  has unconnected pin dinb[9]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \Buffer/bram0  has unconnected pin dinb[8]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \Buffer/bram0  has unconnected pin dinb[7]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \Buffer/bram0  has unconnected pin dinb[6]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \Buffer/bram0  has unconnected pin dinb[5]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \Buffer/bram0  has unconnected pin dinb[4]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \Buffer/bram0  has unconnected pin dinb[3]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \Buffer/bram0  has unconnected pin dinb[2]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \Buffer/bram0  has unconnected pin dinb[1]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \Buffer/bram0  has unconnected pin dinb[0]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \Buffer/bram1  has unconnected pin dinb[11]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \Buffer/bram1  has unconnected pin dinb[10]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \Buffer/bram1  has unconnected pin dinb[9]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \Buffer/bram1  has unconnected pin dinb[8]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \Buffer/bram1  has unconnected pin dinb[7]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \Buffer/bram1  has unconnected pin dinb[6]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \Buffer/bram1  has unconnected pin dinb[5]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \Buffer/bram1  has unconnected pin dinb[4]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \Buffer/bram1  has unconnected pin dinb[3]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \Buffer/bram1  has unconnected pin dinb[2]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \Buffer/bram1  has unconnected pin dinb[1]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \Buffer/bram1  has unconnected pin dinb[0]
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:16 ; elapsed = 00:00:19 . Memory (MB): peak = 1463.453 ; gain = 568.266 ; free physical = 1191 ; free virtual = 12263
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:16 ; elapsed = 00:00:19 . Memory (MB): peak = 1463.453 ; gain = 568.266 ; free physical = 1191 ; free virtual = 12263
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:16 ; elapsed = 00:00:19 . Memory (MB): peak = 1463.453 ; gain = 568.266 ; free physical = 1191 ; free virtual = 12263
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:16 ; elapsed = 00:00:19 . Memory (MB): peak = 1463.453 ; gain = 568.266 ; free physical = 1191 ; free virtual = 12263
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:16 ; elapsed = 00:00:19 . Memory (MB): peak = 1463.453 ; gain = 568.266 ; free physical = 1191 ; free virtual = 12263
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:16 ; elapsed = 00:00:19 . Memory (MB): peak = 1463.453 ; gain = 568.266 ; free physical = 1191 ; free virtual = 12263
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++------+--------------+----------+
+|      |BlackBox name |Instances |
++------+--------------+----------+
+|1     |clk_wiz_0     |         1|
+|2     |xadc_wiz_0    |         1|
+|3     |blk_mem_gen_0 |         1|
+|4     |blk_mem_gen_1 |         1|
++------+--------------+----------+
+
+Report Cell Usage: 
++------+--------------+------+
+|      |Cell          |Count |
++------+--------------+------+
+|1     |blk_mem_gen_0 |     1|
+|2     |blk_mem_gen_1 |     1|
+|3     |clk_wiz_0     |     1|
+|4     |xadc_wiz_0    |     1|
+|5     |LUT1          |     3|
+|6     |LUT2          |     6|
+|7     |LUT3          |     9|
+|8     |LUT4          |     9|
+|9     |LUT5          |     9|
+|10    |LUT6          |    18|
+|11    |FDRE          |    61|
+|12    |IBUF          |     2|
+|13    |OBUF          |    14|
+|14    |OBUFT         |    31|
++------+--------------+------+
+
+Report Instance Areas: 
++------+------------------+--------------+------+
+|      |Instance          |Module        |Cells |
++------+------------------+--------------+------+
+|1     |top               |              |   241|
+|2     |  Buffer          |buffer        |    70|
+|3     |  adcc            |ADCController |    11|
+|4     |  myCurve         |Curve         |     5|
+|5     |  nolabel_line117 |xvga          |    77|
++------+------------------+--------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:16 ; elapsed = 00:00:19 . Memory (MB): peak = 1463.453 ; gain = 568.266 ; free physical = 1191 ; free virtual = 12263
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 43 critical warnings and 111 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 1463.453 ; gain = 101.438 ; free physical = 1191 ; free virtual = 12263
+Synthesis Optimization Complete : Time (s): cpu = 00:00:16 ; elapsed = 00:00:19 . Memory (MB): peak = 1463.453 ; gain = 568.266 ; free physical = 1191 ; free virtual = 12263
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Netlist 29-17] Analyzing 2 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
 INFO: [Common 17-83] Releasing license: Synthesis
-11 Infos, 7 Warnings, 0 Critical Warnings and 4 Errors encountered.
-synth_design failed
-ERROR: [Common 17-69] Command failed: Synthesis failed - please see the console or run log file for details
-INFO: [Common 17-206] Exiting Vivado at Thu Nov  3 14:15:02 2016...
+38 Infos, 188 Warnings, 43 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:15 ; elapsed = 00:00:17 . Memory (MB): peak = 1463.453 ; gain = 483.703 ; free physical = 1192 ; free virtual = 12264
+report_utilization: Time (s): cpu = 00:00:00.07 ; elapsed = 00:00:00.09 . Memory (MB): peak = 1495.469 ; gain = 0.000 ; free physical = 1193 ; free virtual = 12265
+INFO: [Common 17-206] Exiting Vivado at Thu Nov  3 18:50:49 2016...

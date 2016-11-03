@@ -1,0 +1,58 @@
+Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
+--------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2016.2 (lin64) Build 1577090 Thu Jun  2 16:32:35 MDT 2016
+| Date         : Thu Nov  3 18:51:08 2016
+| Host         : eecs-digital-16 running 64-bit Ubuntu 14.04.5 LTS
+| Command      : report_control_sets -verbose -file Oscilloscope_v1_control_sets_placed.rpt
+| Design       : Oscilloscope_v1
+| Device       : xc7a100t
+--------------------------------------------------------------------------------------------
+
+Control Set Information
+
+Table of Contents
+-----------------
+1. Summary
+2. Flip-Flop Distribution
+3. Detailed Control Set Information
+
+1. Summary
+----------
+
++----------------------------------------------------------+-------+
+|                          Status                          | Count |
++----------------------------------------------------------+-------+
+| Number of unique control sets                            |     5 |
+| Unused register locations in slices containing registers |    30 |
++----------------------------------------------------------+-------+
+
+
+2. Flip-Flop Distribution
+-------------------------
+
++--------------+-----------------------+------------------------+-----------------+--------------+
+| Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
++--------------+-----------------------+------------------------+-----------------+--------------+
+| No           | No                    | No                     |               3 |            2 |
+| No           | No                    | Yes                    |               0 |            0 |
+| No           | Yes                   | No                     |              11 |            4 |
+| Yes          | No                    | No                     |               0 |            0 |
+| Yes          | No                    | Yes                    |               0 |            0 |
+| Yes          | Yes                   | No                     |              12 |            6 |
++--------------+-----------------------+------------------------+-----------------+--------------+
+
+
+3. Detailed Control Set Information
+-----------------------------------
+
++-----------------------------+--------------------------------------+--------------------------------------+------------------+----------------+
+|         Clock Signal        |             Enable Signal            |           Set/Reset Signal           | Slice Load Count | Bel Load Count |
++-----------------------------+--------------------------------------+--------------------------------------+------------------+----------------+
+|  ClockDivider/inst/clk_out1 | nolabel_line117/vsyncoff             | nolabel_line117/vsyncon              |                1 |              1 |
+|  ClockDivider/inst/clk_out1 | nolabel_line117/hsyncoff             | nolabel_line117/hsyncon              |                1 |              1 |
+|  ClockDivider/inst/clk_out1 |                                      |                                      |                2 |              3 |
+|  ClockDivider/inst/clk_out1 | nolabel_line117/displayX[10]_i_1_n_0 | nolabel_line117/displayY0            |                4 |             10 |
+|  ClockDivider/inst/clk_out1 |                                      | nolabel_line117/displayX[10]_i_1_n_0 |                4 |             11 |
++-----------------------------+--------------------------------------+--------------------------------------+------------------+----------------+
+
+

@@ -1,14 +1,14 @@
 -- Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2016.2 (lin64) Build 1577090 Thu Jun  2 16:32:35 MDT 2016
--- Date        : Mon Oct 31 21:19:38 2016
--- Host        : eecs-digital-22 running 64-bit Ubuntu 14.04.5 LTS
+-- Date        : Thu Nov  3 15:08:29 2016
+-- Host        : eecs-digital-16 running 64-bit Ubuntu 14.04.5 LTS
 -- Command     : write_vhdl -force -mode funcsim
---               /afs/athena.mit.edu/user/d/d/ddr/6.111/project_xadc/src/ip/xadc_wiz_0/xadc_wiz_0_sim_netlist.vhdl
+--               /afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/xadc_wiz_0_synth_1/xadc_wiz_0_sim_netlist.vhdl
 -- Design      : xadc_wiz_0
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
--- Device      : xc7a100tcsg324-1
+-- Device      : xc7a100tcsg324-3
 -- --------------------------------------------------------------------------------
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
@@ -17,17 +17,17 @@ use UNISIM.VCOMPONENTS.ALL;
 entity xadc_wiz_0 is
   port (
     daddr_in : in STD_LOGIC_VECTOR ( 6 downto 0 );
+    dclk_in : in STD_LOGIC;
     den_in : in STD_LOGIC;
     di_in : in STD_LOGIC_VECTOR ( 15 downto 0 );
     dwe_in : in STD_LOGIC;
-    do_out : out STD_LOGIC_VECTOR ( 15 downto 0 );
-    drdy_out : out STD_LOGIC;
-    dclk_in : in STD_LOGIC;
     reset_in : in STD_LOGIC;
     vauxp11 : in STD_LOGIC;
     vauxn11 : in STD_LOGIC;
     busy_out : out STD_LOGIC;
     channel_out : out STD_LOGIC_VECTOR ( 4 downto 0 );
+    do_out : out STD_LOGIC_VECTOR ( 15 downto 0 );
+    drdy_out : out STD_LOGIC;
     eoc_out : out STD_LOGIC;
     eos_out : out STD_LOGIC;
     vccaux_alarm_out : out STD_LOGIC;
@@ -42,20 +42,20 @@ entity xadc_wiz_0 is
 end xadc_wiz_0;
 
 architecture STRUCTURE of xadc_wiz_0 is
-  signal NLW_U0_JTAGBUSY_UNCONNECTED : STD_LOGIC;
-  signal NLW_U0_JTAGLOCKED_UNCONNECTED : STD_LOGIC;
-  signal NLW_U0_JTAGMODIFIED_UNCONNECTED : STD_LOGIC;
-  signal NLW_U0_OT_UNCONNECTED : STD_LOGIC;
-  signal NLW_U0_ALM_UNCONNECTED : STD_LOGIC_VECTOR ( 6 downto 3 );
-  signal NLW_U0_MUXADDR_UNCONNECTED : STD_LOGIC_VECTOR ( 4 downto 0 );
-  attribute box_type : string;
-  attribute box_type of U0 : label is "PRIMITIVE";
+  signal NLW_inst_JTAGBUSY_UNCONNECTED : STD_LOGIC;
+  signal NLW_inst_JTAGLOCKED_UNCONNECTED : STD_LOGIC;
+  signal NLW_inst_JTAGMODIFIED_UNCONNECTED : STD_LOGIC;
+  signal NLW_inst_OT_UNCONNECTED : STD_LOGIC;
+  signal NLW_inst_ALM_UNCONNECTED : STD_LOGIC_VECTOR ( 6 downto 3 );
+  signal NLW_inst_MUXADDR_UNCONNECTED : STD_LOGIC_VECTOR ( 4 downto 0 );
+  attribute BOX_TYPE : string;
+  attribute BOX_TYPE of inst : label is "PRIMITIVE";
 begin
-U0: unisim.vcomponents.XADC
+inst: unisim.vcomponents.XADC
     generic map(
       INIT_40 => X"8000",
       INIT_41 => X"21A1",
-      INIT_42 => X"0400",
+      INIT_42 => X"0300",
       INIT_43 => X"0000",
       INIT_44 => X"0000",
       INIT_45 => X"0000",
@@ -92,7 +92,7 @@ U0: unisim.vcomponents.XADC
     )
         port map (
       ALM(7) => alarm_out,
-      ALM(6 downto 3) => NLW_U0_ALM_UNCONNECTED(6 downto 3),
+      ALM(6 downto 3) => NLW_inst_ALM_UNCONNECTED(6 downto 3),
       ALM(2) => vccaux_alarm_out,
       ALM(1) => vccint_alarm_out,
       ALM(0) => user_temp_alarm_out,
@@ -109,11 +109,11 @@ U0: unisim.vcomponents.XADC
       DWE => dwe_in,
       EOC => eoc_out,
       EOS => eos_out,
-      JTAGBUSY => NLW_U0_JTAGBUSY_UNCONNECTED,
-      JTAGLOCKED => NLW_U0_JTAGLOCKED_UNCONNECTED,
-      JTAGMODIFIED => NLW_U0_JTAGMODIFIED_UNCONNECTED,
-      MUXADDR(4 downto 0) => NLW_U0_MUXADDR_UNCONNECTED(4 downto 0),
-      OT => NLW_U0_OT_UNCONNECTED,
+      JTAGBUSY => NLW_inst_JTAGBUSY_UNCONNECTED,
+      JTAGLOCKED => NLW_inst_JTAGLOCKED_UNCONNECTED,
+      JTAGMODIFIED => NLW_inst_JTAGMODIFIED_UNCONNECTED,
+      MUXADDR(4 downto 0) => NLW_inst_MUXADDR_UNCONNECTED(4 downto 0),
+      OT => NLW_inst_OT_UNCONNECTED,
       RESET => reset_in,
       VAUXN(15 downto 12) => B"0000",
       VAUXN(11) => vauxn11,

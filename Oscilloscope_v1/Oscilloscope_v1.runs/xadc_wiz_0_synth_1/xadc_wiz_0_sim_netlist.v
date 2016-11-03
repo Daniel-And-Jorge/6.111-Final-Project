@@ -1,31 +1,31 @@
 // Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2016.2 (lin64) Build 1577090 Thu Jun  2 16:32:35 MDT 2016
-// Date        : Mon Oct 31 21:19:38 2016
-// Host        : eecs-digital-22 running 64-bit Ubuntu 14.04.5 LTS
+// Date        : Thu Nov  3 15:08:29 2016
+// Host        : eecs-digital-16 running 64-bit Ubuntu 14.04.5 LTS
 // Command     : write_verilog -force -mode funcsim
-//               /afs/athena.mit.edu/user/d/d/ddr/6.111/project_xadc/src/ip/xadc_wiz_0/xadc_wiz_0_sim_netlist.v
+//               /afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/xadc_wiz_0_synth_1/xadc_wiz_0_sim_netlist.v
 // Design      : xadc_wiz_0
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
 //               or synthesized. This netlist cannot be used for SDF annotated simulation.
-// Device      : xc7a100tcsg324-1
+// Device      : xc7a100tcsg324-3
 // --------------------------------------------------------------------------------
 `timescale 1 ps / 1 ps
 
 (* NotValidForBitStream *)
 module xadc_wiz_0
    (daddr_in,
+    dclk_in,
     den_in,
     di_in,
     dwe_in,
-    do_out,
-    drdy_out,
-    dclk_in,
     reset_in,
     vauxp11,
     vauxn11,
     busy_out,
     channel_out,
+    do_out,
+    drdy_out,
     eoc_out,
     eos_out,
     vccaux_alarm_out,
@@ -35,17 +35,17 @@ module xadc_wiz_0
     vp_in,
     vn_in);
   input [6:0]daddr_in;
+  input dclk_in;
   input den_in;
   input [15:0]di_in;
   input dwe_in;
-  output [15:0]do_out;
-  output drdy_out;
-  input dclk_in;
   input reset_in;
   input vauxp11;
   input vauxn11;
   output busy_out;
   output [4:0]channel_out;
+  output [15:0]do_out;
+  output drdy_out;
   output eoc_out;
   output eos_out;
   output vccaux_alarm_out;
@@ -75,18 +75,18 @@ module xadc_wiz_0
   wire vccint_alarm_out;
   wire vn_in;
   wire vp_in;
-  wire NLW_U0_JTAGBUSY_UNCONNECTED;
-  wire NLW_U0_JTAGLOCKED_UNCONNECTED;
-  wire NLW_U0_JTAGMODIFIED_UNCONNECTED;
-  wire NLW_U0_OT_UNCONNECTED;
-  wire [6:3]NLW_U0_ALM_UNCONNECTED;
-  wire [4:0]NLW_U0_MUXADDR_UNCONNECTED;
+  wire NLW_inst_JTAGBUSY_UNCONNECTED;
+  wire NLW_inst_JTAGLOCKED_UNCONNECTED;
+  wire NLW_inst_JTAGMODIFIED_UNCONNECTED;
+  wire NLW_inst_OT_UNCONNECTED;
+  wire [6:3]NLW_inst_ALM_UNCONNECTED;
+  wire [4:0]NLW_inst_MUXADDR_UNCONNECTED;
 
-  (* box_type = "PRIMITIVE" *) 
+  (* BOX_TYPE = "PRIMITIVE" *) 
   XADC #(
     .INIT_40(16'h8000),
     .INIT_41(16'h21A1),
-    .INIT_42(16'h0400),
+    .INIT_42(16'h0300),
     .INIT_43(16'h0000),
     .INIT_44(16'h0000),
     .INIT_45(16'h0000),
@@ -120,8 +120,8 @@ module xadc_wiz_0
     .IS_DCLK_INVERTED(1'b0),
     .SIM_DEVICE("7SERIES"),
     .SIM_MONITOR_FILE("design.txt")) 
-    U0
-       (.ALM({alarm_out,NLW_U0_ALM_UNCONNECTED[6:3],vccaux_alarm_out,vccint_alarm_out,user_temp_alarm_out}),
+    inst
+       (.ALM({alarm_out,NLW_inst_ALM_UNCONNECTED[6:3],vccaux_alarm_out,vccint_alarm_out,user_temp_alarm_out}),
         .BUSY(busy_out),
         .CHANNEL(channel_out),
         .CONVST(1'b0),
@@ -135,11 +135,11 @@ module xadc_wiz_0
         .DWE(dwe_in),
         .EOC(eoc_out),
         .EOS(eos_out),
-        .JTAGBUSY(NLW_U0_JTAGBUSY_UNCONNECTED),
-        .JTAGLOCKED(NLW_U0_JTAGLOCKED_UNCONNECTED),
-        .JTAGMODIFIED(NLW_U0_JTAGMODIFIED_UNCONNECTED),
-        .MUXADDR(NLW_U0_MUXADDR_UNCONNECTED[4:0]),
-        .OT(NLW_U0_OT_UNCONNECTED),
+        .JTAGBUSY(NLW_inst_JTAGBUSY_UNCONNECTED),
+        .JTAGLOCKED(NLW_inst_JTAGLOCKED_UNCONNECTED),
+        .JTAGMODIFIED(NLW_inst_JTAGMODIFIED_UNCONNECTED),
+        .MUXADDR(NLW_inst_MUXADDR_UNCONNECTED[4:0]),
+        .OT(NLW_inst_OT_UNCONNECTED),
         .RESET(reset_in),
         .VAUXN({1'b0,1'b0,1'b0,1'b0,vauxn11,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0}),
         .VAUXP({1'b0,1'b0,1'b0,1'b0,vauxp11,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0}),

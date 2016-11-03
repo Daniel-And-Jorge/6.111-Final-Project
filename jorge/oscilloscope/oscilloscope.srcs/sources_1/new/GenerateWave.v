@@ -42,8 +42,7 @@ module GenerateWave
     input hsync,
     input vsync,
     input blank,
-    output reg pixel,
-    output [RGB_BITS-1:0] RGBColor,
+    output [RGB_BITS-1:0] pixel,
     output reg drawStarting,
     output reg [ADDRESS_BITS-1:0] address,
     output wHsync,
@@ -55,11 +54,11 @@ module GenerateWave
     assign wVsync = vsync;
     assign wBlank = blank;
     
-    assign RGBColor = RGB_COLOR;
-    
     //scale dataIn
     wire [DATA_IN_BITS-1:0] scaledDataIn;
     assign scaledDataIn = dataIn >> SCALING_SHIFTS;
+    
+    reg pixelOn;
     
     always @(posedge clock) begin
         //control drawStarting
@@ -72,9 +71,9 @@ module GenerateWave
         //control pixel
         if ( (HEIGHT_ZERO_PIXEL-scaledDataIn-ADDITIONAL_WAVE_PIXELS)<=displayY &&
              displayY<=(HEIGHT_ZERO_PIXEL-scaledDataIn+ADDITIONAL_WAVE_PIXELS) ) begin
-            pixel <= 1;     
+            pixelOn <= 1;     
         end else begin
-            pixel <= 0;
+            pixelOn <= 0;
         end
         
         //control address
@@ -87,5 +86,7 @@ module GenerateWave
             address <= address;
         end
     end
+    
+    assign pixel = pixelOn ? RGB_COLOR : 0;
     
 endmodule

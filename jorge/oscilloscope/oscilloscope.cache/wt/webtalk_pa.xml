@@ -3,7 +3,7 @@
 <!--The data in this file is primarily intended for consumption by Xilinx tools.
 The structure and the elements are likely to change over the next few releases.
 This means code written to parse this file will need to be revisited each subsequent release.-->
-<application name="pa" timeStamp="Fri Oct 28 15:59:35 2016">
+<application name="pa" timeStamp="Thu Nov  3 13:35:54 2016">
 <section name="Project Information" visible="false">
 <property name="ProjectID" value="1ac7c62580bd47c38d4db0f608faa861" type="ProjectID"/>
 <property name="ProjectIteration" value="1" type="ProjectIteration"/>
@@ -17,147 +17,84 @@ This means code written to parse this file will need to be revisited each subseq
 <property name="ImplStrategy" value="Vivado Implementation Defaults" type="ImplStrategy"/>
 </item>
 <item name="Java Command Handlers">
-<property name="AddSources" value="4" type="JavaHandler"/>
+<property name="AddSources" value="7" type="JavaHandler"/>
 <property name="CoreView" value="1" type="JavaHandler"/>
 <property name="CreateBlockDesign" value="1" type="JavaHandler"/>
 <property name="CustomizeCore" value="1" type="JavaHandler"/>
-<property name="NewProject" value="1" type="JavaHandler"/>
-<property name="OpenProject" value="5" type="JavaHandler"/>
+<property name="EditDelete" value="3" type="JavaHandler"/>
+<property name="NewProject" value="2" type="JavaHandler"/>
+<property name="OpenProject" value="6" type="JavaHandler"/>
 <property name="RecustomizeCore" value="2" type="JavaHandler"/>
 <property name="ShowProductGuide" value="1" type="JavaHandler"/>
 </item>
 <item name="Gui Resources Info">
-<property name="GenerateWave.v, 105, 400" value="1" type="GuiResourceData"/>
-<property name="GenerateWave.v, 106, 504" value="1" type="GuiResourceData"/>
-<property name="GenerateWave.v, 107, 603" value="1" type="GuiResourceData"/>
-<property name="GenerateWave.v, 110, 561" value="1" type="GuiResourceData"/>
-<property name="GenerateWave.v, 113, 534" value="1" type="GuiResourceData"/>
-<property name="GenerateWave.v, 113, 563" value="1" type="GuiResourceData"/>
-<property name="GenerateWave.v, 114, 578" value="1" type="GuiResourceData"/>
-<property name="GenerateWave.v, 115, 559" value="1" type="GuiResourceData"/>
-<property name="GenerateWave.v, 119, 332" value="1" type="GuiResourceData"/>
-<property name="GenerateWave.v, 128, 403" value="1" type="GuiResourceData"/>
-<property name="GenerateWave.v, 129, 531" value="1" type="GuiResourceData"/>
-<property name="GenerateWave.v, 130, 548" value="1" type="GuiResourceData"/>
-<property name="GenerateWave.v, 134, 501" value="1" type="GuiResourceData"/>
-<property name="GenerateWave.v, 146, 281" value="1" type="GuiResourceData"/>
-<property name="GenerateWave.v, 148, 548" value="1" type="GuiResourceData"/>
-<property name="GenerateWave.v, 148, 557" value="1" type="GuiResourceData"/>
-<property name="GenerateWave.v, 149, 514" value="1" type="GuiResourceData"/>
-<property name="GenerateWave.v, 156, 566" value="1" type="GuiResourceData"/>
-<property name="GenerateWave.v, 170, 566" value="1" type="GuiResourceData"/>
-<property name="GenerateWave.v, 181, 474" value="1" type="GuiResourceData"/>
-<property name="GenerateWave.v, 182, 112" value="1" type="GuiResourceData"/>
-<property name="GenerateWave.v, 186, 368" value="1" type="GuiResourceData"/>
-<property name="GenerateWave.v, 186, 430, false, false, false, true, false" value="1" type="GuiResourceData"/>
-<property name="GenerateWave.v, 187, 562" value="1" type="GuiResourceData"/>
-<property name="GenerateWave.v, 193, 535" value="1" type="GuiResourceData"/>
-<property name="GenerateWave.v, 2, 339" value="1" type="GuiResourceData"/>
-<property name="GenerateWave.v, 208, 341" value="1" type="GuiResourceData"/>
-<property name="GenerateWave.v, 208, 408" value="1" type="GuiResourceData"/>
-<property name="GenerateWave.v, 208, 413" value="1" type="GuiResourceData"/>
-<property name="GenerateWave.v, 215, 580" value="1" type="GuiResourceData"/>
-<property name="GenerateWave.v, 217, 339" value="1" type="GuiResourceData"/>
-<property name="GenerateWave.v, 219, 214" value="1" type="GuiResourceData"/>
-<property name="GenerateWave.v, 220, 215" value="1" type="GuiResourceData"/>
-<property name="GenerateWave.v, 220, 551" value="1" type="GuiResourceData"/>
-<property name="GenerateWave.v, 221, 550" value="1" type="GuiResourceData"/>
-<property name="GenerateWave.v, 223, 352" value="1" type="GuiResourceData"/>
-<property name="GenerateWave.v, 223, 573" value="1" type="GuiResourceData"/>
-<property name="GenerateWave.v, 225, 488" value="1" type="GuiResourceData"/>
-<property name="GenerateWave.v, 229, 546" value="1" type="GuiResourceData"/>
-<property name="GenerateWave.v, 230, 578" value="1" type="GuiResourceData"/>
-<property name="GenerateWave.v, 234, 164" value="1" type="GuiResourceData"/>
-<property name="GenerateWave.v, 234, 537" value="1" type="GuiResourceData"/>
-<property name="GenerateWave.v, 237, 552" value="1" type="GuiResourceData"/>
-<property name="GenerateWave.v, 240, 354" value="1" type="GuiResourceData"/>
-<property name="GenerateWave.v, 243, 579" value="1" type="GuiResourceData"/>
-<property name="GenerateWave.v, 248, 563" value="1" type="GuiResourceData"/>
-<property name="GenerateWave.v, 250, 295" value="1" type="GuiResourceData"/>
-<property name="GenerateWave.v, 253, 546" value="1" type="GuiResourceData"/>
-<property name="GenerateWave.v, 257, 275" value="1" type="GuiResourceData"/>
-<property name="GenerateWave.v, 257, 305" value="1" type="GuiResourceData"/>
-<property name="GenerateWave.v, 259, 440" value="1" type="GuiResourceData"/>
-<property name="GenerateWave.v, 263, 565" value="1" type="GuiResourceData"/>
-<property name="GenerateWave.v, 269, 114" value="1" type="GuiResourceData"/>
-<property name="GenerateWave.v, 274, 442" value="1" type="GuiResourceData"/>
-<property name="GenerateWave.v, 279, 140" value="1" type="GuiResourceData"/>
-<property name="GenerateWave.v, 280, 210" value="1" type="GuiResourceData"/>
-<property name="GenerateWave.v, 281, 328" value="1" type="GuiResourceData"/>
-<property name="GenerateWave.v, 283, 418" value="1" type="GuiResourceData"/>
-<property name="GenerateWave.v, 284, 549" value="1" type="GuiResourceData"/>
-<property name="GenerateWave.v, 287, 489" value="1" type="GuiResourceData"/>
-<property name="GenerateWave.v, 289, 527" value="1" type="GuiResourceData"/>
-<property name="GenerateWave.v, 29, 234" value="1" type="GuiResourceData"/>
-<property name="GenerateWave.v, 291, 454" value="1" type="GuiResourceData"/>
-<property name="GenerateWave.v, 292, 366" value="1" type="GuiResourceData"/>
-<property name="GenerateWave.v, 292, 414" value="1" type="GuiResourceData"/>
-<property name="GenerateWave.v, 293, 588" value="1" type="GuiResourceData"/>
-<property name="GenerateWave.v, 295, 112" value="1" type="GuiResourceData"/>
-<property name="GenerateWave.v, 297, 566" value="1" type="GuiResourceData"/>
-<property name="GenerateWave.v, 303, 127" value="1" type="GuiResourceData"/>
-<property name="GenerateWave.v, 306, 124" value="1" type="GuiResourceData"/>
-<property name="GenerateWave.v, 315, 125, false, false, false, true, false" value="1" type="GuiResourceData"/>
-<property name="GenerateWave.v, 326, 234" value="1" type="GuiResourceData"/>
-<property name="GenerateWave.v, 332, 585" value="1" type="GuiResourceData"/>
-<property name="GenerateWave.v, 338, 128" value="1" type="GuiResourceData"/>
-<property name="GenerateWave.v, 344, 518" value="1" type="GuiResourceData"/>
-<property name="GenerateWave.v, 354, 556" value="1" type="GuiResourceData"/>
-<property name="GenerateWave.v, 363, 323" value="1" type="GuiResourceData"/>
-<property name="GenerateWave.v, 365, 437" value="1" type="GuiResourceData"/>
-<property name="GenerateWave.v, 379, 413" value="1" type="GuiResourceData"/>
-<property name="GenerateWave.v, 380, 575" value="1" type="GuiResourceData"/>
-<property name="GenerateWave.v, 387, 98" value="1" type="GuiResourceData"/>
-<property name="GenerateWave.v, 393, 473" value="1" type="GuiResourceData"/>
-<property name="GenerateWave.v, 426, 565" value="1" type="GuiResourceData"/>
-<property name="GenerateWave.v, 43, 591" value="1" type="GuiResourceData"/>
-<property name="GenerateWave.v, 480, 112" value="1" type="GuiResourceData"/>
-<property name="GenerateWave.v, 481, 558" value="1" type="GuiResourceData"/>
-<property name="GenerateWave.v, 484, 568" value="1" type="GuiResourceData"/>
-<property name="GenerateWave.v, 492, 493, false, false, false, true, false" value="1" type="GuiResourceData"/>
-<property name="GenerateWave.v, 544, 564" value="2" type="GuiResourceData"/>
-<property name="GenerateWave.v, 552, 562" value="1" type="GuiResourceData"/>
-<property name="GenerateWave.v, 56, 579" value="1" type="GuiResourceData"/>
-<property name="GenerateWave.v, 563, 578" value="1" type="GuiResourceData"/>
-<property name="GenerateWave.v, 565, 573" value="1" type="GuiResourceData"/>
-<property name="GenerateWave.v, 574, 563" value="1" type="GuiResourceData"/>
-<property name="GenerateWave.v, 596, 577" value="1" type="GuiResourceData"/>
-<property name="GenerateWave.v, 621, 561" value="1" type="GuiResourceData"/>
-<property name="GenerateWave.v, 647, 117" value="1" type="GuiResourceData"/>
-<property name="GenerateWave.v, 66, 594" value="1" type="GuiResourceData"/>
-<property name="GenerateWave.v, 699, 109" value="1" type="GuiResourceData"/>
-<property name="GenerateWave.v, 724, 114" value="1" type="GuiResourceData"/>
-<property name="GenerateWave.v, 738, 109" value="1" type="GuiResourceData"/>
-<property name="GenerateWave.v, 738, 109, false, false, false, false, true" value="1" type="GuiResourceData"/>
-<property name="GenerateWave.v, 746, 114" value="1" type="GuiResourceData"/>
-<property name="GenerateWave.v, 746, 114, false, false, false, false, true" value="1" type="GuiResourceData"/>
-<property name="GenerateWave.v, 75, 320" value="1" type="GuiResourceData"/>
-<property name="GenerateWave.v, 76, 383" value="1" type="GuiResourceData"/>
-<property name="GenerateWave.v, 77, 401" value="1" type="GuiResourceData"/>
-<property name="GenerateWave.v, 78, 95" value="1" type="GuiResourceData"/>
-<property name="GenerateWave.v, 79, 595" value="1" type="GuiResourceData"/>
-<property name="GenerateWave.v, 794, 107" value="1" type="GuiResourceData"/>
-<property name="GenerateWave.v, 83, 582" value="1" type="GuiResourceData"/>
-<property name="GenerateWave.v, 86, 557" value="1" type="GuiResourceData"/>
-<property name="GenerateWave.v, 88, 607" value="1" type="GuiResourceData"/>
-<property name="GenerateWave.v, 94, 572" value="1" type="GuiResourceData"/>
-<property name="GenerateWave.v, 95, 564" value="1" type="GuiResourceData"/>
-<property name="GenerateWave.v, 98, 307" value="1" type="GuiResourceData"/>
-<property name="PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, [root, Design Sources, Syntax Error Files, GenerateWave.v], 2, false" value="1" type="GuiResourceData"/>
-<property name="PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, [root, Design Sources, Syntax Error Files, GenerateWave.v], 2, false, false, false, false, false, true" value="1" type="GuiResourceData"/>
-<property name="PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, [root, Design Sources, Syntax Error Files], 1, true" value="1" type="GuiResourceData"/>
-<property name="PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, [root, Design Sources, Syntax Error Files], 1, true, false, false, false, false, true" value="1" type="GuiResourceData"/>
-<property name="PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, [root, Design Sources, Trigger (Trigger.v" value="2" type="GuiResourceData"/>
+<property name="BACK,  Back" value="1" type="GuiResourceData"/>
+<property name="Curve.v, 203, 474" value="1" type="GuiResourceData"/>
+<property name="Curve.v, 215, 477" value="1" type="GuiResourceData"/>
+<property name="Curve.v, 226, 468" value="1" type="GuiResourceData"/>
+<property name="Curve.v, 349, 455" value="1" type="GuiResourceData"/>
+<property name="Curve.v, 352, 248" value="1" type="GuiResourceData"/>
+<property name="Curve.v, 366, 472" value="1" type="GuiResourceData"/>
+<property name="Curve.v, 370, 442" value="1" type="GuiResourceData"/>
+<property name="Curve.v, 398, 471" value="1" type="GuiResourceData"/>
+<property name="Curve.v, 436, 458" value="1" type="GuiResourceData"/>
+<property name="Curve.v, 471, 471" value="1" type="GuiResourceData"/>
+<property name="Curve.v, 509, 487" value="1" type="GuiResourceData"/>
+<property name="Curve.v, 536, 237" value="1" type="GuiResourceData"/>
+<property name="Curve.v, 611, 471" value="1" type="GuiResourceData"/>
+<property name="Curve.v, 84, 143" value="1" type="GuiResourceData"/>
+<property name="Curve.v, 85, 336" value="1" type="GuiResourceData"/>
+<property name="FINISH, Finish" value="3" type="GuiResourceData"/>
+<property name="GenerateWave.v, 116, 369" value="1" type="GuiResourceData"/>
+<property name="GenerateWave.v, 120, 340" value="1" type="GuiResourceData"/>
+<property name="GenerateWave.v, 190, 432" value="1" type="GuiResourceData"/>
+<property name="GenerateWave.v, 194, 451" value="1" type="GuiResourceData"/>
+<property name="GenerateWave.v, 229, 489" value="1" type="GuiResourceData"/>
+<property name="GenerateWave.v, 244, 306" value="1" type="GuiResourceData"/>
+<property name="GenerateWave.v, 25, 174" value="1" type="GuiResourceData"/>
+<property name="GenerateWave.v, 282, 415" value="1" type="GuiResourceData"/>
+<property name="GenerateWave.v, 308, 195" value="1" type="GuiResourceData"/>
+<property name="GenerateWave.v, 369, 278" value="1" type="GuiResourceData"/>
+<property name="GenerateWave.v, 77, 580" value="1" type="GuiResourceData"/>
+<property name="GenerateWave.v, 90, 222" value="1" type="GuiResourceData"/>
+<property name="GenerateWave.v, 90, 222, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="NEXT, Next " value="11" type="GuiResourceData"/>
+<property name="PAResourceAtoD.AddSrcWizard_SPECIFY_HDL_AND_NETLIST_FILES_OR_DIRECTORIES, Add or create design sources" value="1" type="GuiResourceData"/>
+<property name="PAResourceAtoD.AddSrcWizard_SPECIFY_OR_CREATE_CONSTRAINT_FILES, Add or create constraints" value="1" type="GuiResourceData"/>
+<property name="PAResourceAtoD.CreateSrcFileDialog_FILE_NAME, Curve" value="1" type="GuiResourceData"/>
+<property name="PAResourceAtoD.CreateSrcFileDialog_FILE_NAME, TriggerRisingEdge" value="1" type="GuiResourceData"/>
+<property name="PAResourceCommand.PACommandNames_ADD_SOURCES, Add Sources..." value="3" type="GuiResourceData"/>
+<property name="PAResourceCommand.PACommandNames_AUTO_UPDATE_HIER, Hierarchy Update" value="6" type="GuiResourceData"/>
+<property name="PAResourceCommand.PACommandNames_NEW_PROJECT, New Project..." value="1" type="GuiResourceData"/>
+<property name="PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, [root, Design Sources, Buffer (Buffer.v" value="1" type="GuiResourceData"/>
+<property name="PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, [root, Design Sources, Curve (Curve.v" value="9" type="GuiResourceData"/>
+<property name="PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, [root, Design Sources, GenerateWave (GenerateWave.v" value="9" type="GuiResourceData"/>
+<property name="PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, [root, Design Sources, Trigger (Trigger.v" value="6" type="GuiResourceData"/>
+<property name="PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, [root, Design Sources, TriggerRisingEdge (TriggerRisingEdge.v" value="4" type="GuiResourceData"/>
+<property name="PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, [root, Design Sources], 0, true" value="2" type="GuiResourceData"/>
+<property name="PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, [root, Design Sources], 0, true, false, false, false, true, false" value="3" type="GuiResourceData"/>
 <property name="PAResourceEtoH.GettingStartedView_OPEN_PROJECT, Open Project" value="1" type="GuiResourceData"/>
-<property name="RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, address, true" value="1" type="GuiResourceData"/>
-<property name="RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, whscync, true" value="1" type="GuiResourceData"/>
-<property name="RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, whsync, true" value="2" type="GuiResourceData"/>
-<property name="RDIResourceCommand.RDICommands_COPY, Copy" value="1" type="GuiResourceData"/>
+<property name="PAResourceItoN.MainMenuMgr_FILE, File" value="2" type="GuiResourceData"/>
+<property name="PAResourceItoN.MainMenuMgr_OPEN_RECENT_PROJECT, Open Recent Project" value="2" type="GuiResourceData"/>
+<property name="PAResourceOtoP.PAViews_CODE, Code" value="3" type="GuiResourceData"/>
+<property name="PAResourceOtoP.PartChooser_PARTS, xc7a100tcsg324-3 ; 324 ; 135 ; 240 ; 126800 ; 0 ; 0 ; 210 ; 63400 ; 6 ; 1 ; 85 ; 0 ; 85 ; C ; 1.05 ; 0.95 ; 0.95 ; 0 ; 0 ; 0 ; 0 ; 0 ; 0 ; 0 ; 0, 0, xc7a100tcsg324-3, 0" value="1" type="GuiResourceData"/>
+<property name="PAResourceOtoP.ProjectNameChooser_PROJECT_NAME, Oscilloscope_v1" value="1" type="GuiResourceData"/>
+<property name="PAResourceQtoS.SrcChooserPanel_ADD_HDL_AND_NETLIST_FILES_TO_YOUR_PROJECT, Add Files" value="1" type="GuiResourceData"/>
+<property name="PAResourceQtoS.SrcChooserPanel_CREATE_FILE, Create File" value="2" type="GuiResourceData"/>
+<property name="PAResourceQtoS.SrcMenu_IP_HIERARCHY, IP Hierarchy" value="8" type="GuiResourceData"/>
+<property name="RDIResource.BaseDialog_OK, OK" value="7" type="GuiResourceData"/>
+<property name="RDIResource.ConfirmSaveTextEditsDialog_CANCEL, Cancel" value="1" type="GuiResourceData"/>
+<property name="RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, rgbcolor, true" value="1" type="GuiResourceData"/>
+<property name="RDIResourceCommand.RDICommands_DELETE, Remove File from Project..." value="3" type="GuiResourceData"/>
+<property name="Trigger.v, 102, 248" value="1" type="GuiResourceData"/>
+<property name="TriggerRisingEdge.v, 166, 338" value="1" type="GuiResourceData"/>
+<property name="TriggerRisingEdge.v, 280, 432" value="1" type="GuiResourceData"/>
+<property name="TriggerRisingEdge.v, 385, 460" value="1" type="GuiResourceData"/>
 </item>
 <item name="Other">
-<property name="GuiMode" value="13" type="GuiMode"/>
+<property name="GuiMode" value="14" type="GuiMode"/>
 <property name="BatchMode" value="0" type="BatchMode"/>
-<property name="TclMode" value="12" type="TclMode"/>
+<property name="TclMode" value="13" type="TclMode"/>
 </item>
 </section>
 </application>

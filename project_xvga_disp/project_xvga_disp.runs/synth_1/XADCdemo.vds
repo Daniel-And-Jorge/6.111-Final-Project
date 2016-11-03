@@ -1,0 +1,423 @@
+#-----------------------------------------------------------
+# Vivado v2016.2 (64-bit)
+# SW Build 1577090 on Thu Jun  2 16:32:35 MDT 2016
+# IP Build 1577682 on Fri Jun  3 12:00:54 MDT 2016
+# Start of session at: Thu Nov  3 15:53:56 2016
+# Process ID: 24506
+# Current directory: /afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/project_xvga_disp/project_xvga_disp.runs/synth_1
+# Command line: vivado -log XADCdemo.vds -mode batch -messageDb vivado.pb -notrace -source XADCdemo.tcl
+# Log file: /afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/project_xvga_disp/project_xvga_disp.runs/synth_1/XADCdemo.vds
+# Journal file: /afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/project_xvga_disp/project_xvga_disp.runs/synth_1/vivado.jou
+#-----------------------------------------------------------
+source XADCdemo.tcl -notrace
+Command: synth_design -top XADCdemo -part xc7a100tcsg324-3
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 24510 
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 1057.320 ; gain = 162.137 ; free physical = 3349 ; free virtual = 13782
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'XADCdemo' [/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/project_xvga_disp/project_xvga_disp.srcs/sources_1/imports/hdl/XADCdemo.v:22]
+INFO: [Synth 8-638] synthesizing module 'clk_wiz_0' [/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/project_xvga_disp/project_xvga_disp.runs/synth_1/.Xil/Vivado-24506-eecs-digital-14/realtime/clk_wiz_0_stub.v:5]
+INFO: [Synth 8-256] done synthesizing module 'clk_wiz_0' (1#1) [/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/project_xvga_disp/project_xvga_disp.runs/synth_1/.Xil/Vivado-24506-eecs-digital-14/realtime/clk_wiz_0_stub.v:5]
+INFO: [Synth 8-638] synthesizing module 'xvga' [/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/project_xvga_disp/project_xvga_disp.srcs/sources_1/imports/hdl/xvga.v:17]
+INFO: [Synth 8-256] done synthesizing module 'xvga' (2#1) [/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/project_xvga_disp/project_xvga_disp.srcs/sources_1/imports/hdl/xvga.v:17]
+INFO: [Synth 8-638] synthesizing module 'mysprite' [/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/project_xvga_disp/project_xvga_disp.srcs/sources_1/imports/hdl/xvga.v:56]
+INFO: [Synth 8-256] done synthesizing module 'mysprite' (3#1) [/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/project_xvga_disp/project_xvga_disp.srcs/sources_1/imports/hdl/xvga.v:56]
+WARNING: [Synth 8-3848] Net LED in module/entity XADCdemo does not have driver. [/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/project_xvga_disp/project_xvga_disp.srcs/sources_1/imports/hdl/XADCdemo.v:33]
+WARNING: [Synth 8-3848] Net an in module/entity XADCdemo does not have driver. [/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/project_xvga_disp/project_xvga_disp.srcs/sources_1/imports/hdl/XADCdemo.v:34]
+WARNING: [Synth 8-3848] Net dp in module/entity XADCdemo does not have driver. [/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/project_xvga_disp/project_xvga_disp.srcs/sources_1/imports/hdl/XADCdemo.v:35]
+WARNING: [Synth 8-3848] Net seg in module/entity XADCdemo does not have driver. [/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/project_xvga_disp/project_xvga_disp.srcs/sources_1/imports/hdl/XADCdemo.v:36]
+INFO: [Synth 8-256] done synthesizing module 'XADCdemo' (4#1) [/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/project_xvga_disp/project_xvga_disp.srcs/sources_1/imports/hdl/XADCdemo.v:22]
+WARNING: [Synth 8-3331] design mysprite has unconnected port displayX[10]
+WARNING: [Synth 8-3331] design mysprite has unconnected port displayX[9]
+WARNING: [Synth 8-3331] design mysprite has unconnected port displayX[8]
+WARNING: [Synth 8-3331] design mysprite has unconnected port displayX[7]
+WARNING: [Synth 8-3331] design mysprite has unconnected port displayX[6]
+WARNING: [Synth 8-3331] design mysprite has unconnected port displayX[5]
+WARNING: [Synth 8-3331] design mysprite has unconnected port displayX[4]
+WARNING: [Synth 8-3331] design mysprite has unconnected port displayX[3]
+WARNING: [Synth 8-3331] design mysprite has unconnected port displayX[2]
+WARNING: [Synth 8-3331] design mysprite has unconnected port displayX[1]
+WARNING: [Synth 8-3331] design mysprite has unconnected port displayX[0]
+WARNING: [Synth 8-3331] design mysprite has unconnected port displayY[9]
+WARNING: [Synth 8-3331] design mysprite has unconnected port displayY[8]
+WARNING: [Synth 8-3331] design mysprite has unconnected port displayY[7]
+WARNING: [Synth 8-3331] design mysprite has unconnected port displayY[6]
+WARNING: [Synth 8-3331] design mysprite has unconnected port displayY[5]
+WARNING: [Synth 8-3331] design mysprite has unconnected port displayY[4]
+WARNING: [Synth 8-3331] design mysprite has unconnected port displayY[3]
+WARNING: [Synth 8-3331] design mysprite has unconnected port displayY[2]
+WARNING: [Synth 8-3331] design mysprite has unconnected port displayY[1]
+WARNING: [Synth 8-3331] design mysprite has unconnected port displayY[0]
+WARNING: [Synth 8-3331] design mysprite has unconnected port vsync
+WARNING: [Synth 8-3331] design mysprite has unconnected port hsync
+WARNING: [Synth 8-3331] design XADCdemo has unconnected port LED[15]
+WARNING: [Synth 8-3331] design XADCdemo has unconnected port LED[14]
+WARNING: [Synth 8-3331] design XADCdemo has unconnected port LED[13]
+WARNING: [Synth 8-3331] design XADCdemo has unconnected port LED[12]
+WARNING: [Synth 8-3331] design XADCdemo has unconnected port LED[11]
+WARNING: [Synth 8-3331] design XADCdemo has unconnected port LED[10]
+WARNING: [Synth 8-3331] design XADCdemo has unconnected port LED[9]
+WARNING: [Synth 8-3331] design XADCdemo has unconnected port LED[8]
+WARNING: [Synth 8-3331] design XADCdemo has unconnected port LED[7]
+WARNING: [Synth 8-3331] design XADCdemo has unconnected port LED[6]
+WARNING: [Synth 8-3331] design XADCdemo has unconnected port LED[5]
+WARNING: [Synth 8-3331] design XADCdemo has unconnected port LED[4]
+WARNING: [Synth 8-3331] design XADCdemo has unconnected port LED[3]
+WARNING: [Synth 8-3331] design XADCdemo has unconnected port LED[2]
+WARNING: [Synth 8-3331] design XADCdemo has unconnected port LED[1]
+WARNING: [Synth 8-3331] design XADCdemo has unconnected port LED[0]
+WARNING: [Synth 8-3331] design XADCdemo has unconnected port an[7]
+WARNING: [Synth 8-3331] design XADCdemo has unconnected port an[6]
+WARNING: [Synth 8-3331] design XADCdemo has unconnected port an[5]
+WARNING: [Synth 8-3331] design XADCdemo has unconnected port an[4]
+WARNING: [Synth 8-3331] design XADCdemo has unconnected port an[3]
+WARNING: [Synth 8-3331] design XADCdemo has unconnected port an[2]
+WARNING: [Synth 8-3331] design XADCdemo has unconnected port an[1]
+WARNING: [Synth 8-3331] design XADCdemo has unconnected port an[0]
+WARNING: [Synth 8-3331] design XADCdemo has unconnected port dp
+WARNING: [Synth 8-3331] design XADCdemo has unconnected port seg[6]
+WARNING: [Synth 8-3331] design XADCdemo has unconnected port seg[5]
+WARNING: [Synth 8-3331] design XADCdemo has unconnected port seg[4]
+WARNING: [Synth 8-3331] design XADCdemo has unconnected port seg[3]
+WARNING: [Synth 8-3331] design XADCdemo has unconnected port seg[2]
+WARNING: [Synth 8-3331] design XADCdemo has unconnected port seg[1]
+WARNING: [Synth 8-3331] design XADCdemo has unconnected port seg[0]
+WARNING: [Synth 8-3331] design XADCdemo has unconnected port vauxp2
+WARNING: [Synth 8-3331] design XADCdemo has unconnected port vauxn2
+WARNING: [Synth 8-3331] design XADCdemo has unconnected port vauxp3
+WARNING: [Synth 8-3331] design XADCdemo has unconnected port vauxn3
+WARNING: [Synth 8-3331] design XADCdemo has unconnected port vauxp10
+WARNING: [Synth 8-3331] design XADCdemo has unconnected port vauxn10
+WARNING: [Synth 8-3331] design XADCdemo has unconnected port vauxp11
+WARNING: [Synth 8-3331] design XADCdemo has unconnected port vauxn11
+WARNING: [Synth 8-3331] design XADCdemo has unconnected port sw[1]
+WARNING: [Synth 8-3331] design XADCdemo has unconnected port sw[0]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1097.766 ; gain = 202.582 ; free physical = 3306 ; free virtual = 13740
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1097.766 ; gain = 202.582 ; free physical = 3307 ; free virtual = 13740
+---------------------------------------------------------------------------------
+WARNING: [Project 1-486] Could not resolve non-primitive black box cell 'clk_wiz_0' instantiated as 'instance_name' [/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/project_xvga_disp/project_xvga_disp.srcs/sources_1/imports/hdl/XADCdemo.v:42]
+INFO: [Device 21-403] Loading part xc7a100tcsg324-3
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/project_xvga_disp/project_xvga_disp.runs/synth_1/.Xil/Vivado-24506-eecs-digital-14/dcp/clk_wiz_0_in_context.xdc] for cell 'instance_name'
+Finished Parsing XDC File [/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/project_xvga_disp/project_xvga_disp.runs/synth_1/.Xil/Vivado-24506-eecs-digital-14/dcp/clk_wiz_0_in_context.xdc] for cell 'instance_name'
+Parsing XDC File [/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/project_xvga_disp/project_xvga_disp.srcs/constrs_1/imports/tmp/Nexys4DDR_Master.xdc]
+Finished Parsing XDC File [/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/project_xvga_disp/project_xvga_disp.srcs/constrs_1/imports/tmp/Nexys4DDR_Master.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/project_xvga_disp/project_xvga_disp.srcs/constrs_1/imports/tmp/Nexys4DDR_Master.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/XADCdemo_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/XADCdemo_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Completed Processing XDC Constraints
+
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 1451.457 ; gain = 0.004 ; free physical = 3121 ; free virtual = 13554
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:10 ; elapsed = 00:00:12 . Memory (MB): peak = 1451.457 ; gain = 556.273 ; free physical = 3120 ; free virtual = 13554
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a100tcsg324-3
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:10 ; elapsed = 00:00:12 . Memory (MB): peak = 1451.457 ; gain = 556.273 ; free physical = 3120 ; free virtual = 13554
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+Applied set_property IO_BUFFER_TYPE = NONE for CLK100MHZ. (constraint file  /afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/project_xvga_disp/project_xvga_disp.runs/synth_1/.Xil/Vivado-24506-eecs-digital-14/dcp/clk_wiz_0_in_context.xdc, line 3).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for CLK100MHZ. (constraint file  /afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/project_xvga_disp/project_xvga_disp.runs/synth_1/.Xil/Vivado-24506-eecs-digital-14/dcp/clk_wiz_0_in_context.xdc, line 4).
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:10 ; elapsed = 00:00:12 . Memory (MB): peak = 1451.457 ; gain = 556.273 ; free physical = 3120 ; free virtual = 13554
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:10 ; elapsed = 00:00:12 . Memory (MB): peak = 1451.457 ; gain = 556.273 ; free physical = 3117 ; free virtual = 13550
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     11 Bit       Adders := 1     
+	   2 Input     10 Bit       Adders := 1     
++---Registers : 
+	               11 Bit    Registers := 1     
+	               10 Bit    Registers := 1     
+	                1 Bit    Registers := 5     
++---Muxes : 
+	   2 Input      4 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 2     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module xvga 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     11 Bit       Adders := 1     
+	   2 Input     10 Bit       Adders := 1     
++---Registers : 
+	               11 Bit    Registers := 1     
+	               10 Bit    Registers := 1     
+	                1 Bit    Registers := 5     
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 2     
+Module mysprite 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      4 Bit        Muxes := 1     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 240 (col length:80)
+BRAMs: 270 (col length: RAMB18 80 RAMB36 40)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+Start Parallel Synthesis Optimization  : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 1451.457 ; gain = 556.273 ; free physical = 3117 ; free virtual = 13550
+---------------------------------------------------------------------------------
+Start Cross Boundary Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-3917] design XADCdemo has port VGA_R[3] driven by constant 0
+WARNING: [Synth 8-3917] design XADCdemo has port VGA_R[2] driven by constant 0
+WARNING: [Synth 8-3917] design XADCdemo has port VGA_R[1] driven by constant 0
+WARNING: [Synth 8-3917] design XADCdemo has port VGA_R[0] driven by constant 0
+WARNING: [Synth 8-3917] design XADCdemo has port VGA_G[3] driven by constant 0
+WARNING: [Synth 8-3917] design XADCdemo has port VGA_G[2] driven by constant 0
+WARNING: [Synth 8-3917] design XADCdemo has port VGA_G[1] driven by constant 0
+WARNING: [Synth 8-3917] design XADCdemo has port VGA_G[0] driven by constant 0
+WARNING: [Synth 8-3331] design XADCdemo has unconnected port LED[15]
+WARNING: [Synth 8-3331] design XADCdemo has unconnected port LED[14]
+WARNING: [Synth 8-3331] design XADCdemo has unconnected port LED[13]
+WARNING: [Synth 8-3331] design XADCdemo has unconnected port LED[12]
+WARNING: [Synth 8-3331] design XADCdemo has unconnected port LED[11]
+WARNING: [Synth 8-3331] design XADCdemo has unconnected port LED[10]
+WARNING: [Synth 8-3331] design XADCdemo has unconnected port LED[9]
+WARNING: [Synth 8-3331] design XADCdemo has unconnected port LED[8]
+WARNING: [Synth 8-3331] design XADCdemo has unconnected port LED[7]
+WARNING: [Synth 8-3331] design XADCdemo has unconnected port LED[6]
+WARNING: [Synth 8-3331] design XADCdemo has unconnected port LED[5]
+WARNING: [Synth 8-3331] design XADCdemo has unconnected port LED[4]
+WARNING: [Synth 8-3331] design XADCdemo has unconnected port LED[3]
+WARNING: [Synth 8-3331] design XADCdemo has unconnected port LED[2]
+WARNING: [Synth 8-3331] design XADCdemo has unconnected port LED[1]
+WARNING: [Synth 8-3331] design XADCdemo has unconnected port LED[0]
+WARNING: [Synth 8-3331] design XADCdemo has unconnected port an[7]
+WARNING: [Synth 8-3331] design XADCdemo has unconnected port an[6]
+WARNING: [Synth 8-3331] design XADCdemo has unconnected port an[5]
+WARNING: [Synth 8-3331] design XADCdemo has unconnected port an[4]
+WARNING: [Synth 8-3331] design XADCdemo has unconnected port an[3]
+WARNING: [Synth 8-3331] design XADCdemo has unconnected port an[2]
+WARNING: [Synth 8-3331] design XADCdemo has unconnected port an[1]
+WARNING: [Synth 8-3331] design XADCdemo has unconnected port an[0]
+WARNING: [Synth 8-3331] design XADCdemo has unconnected port dp
+WARNING: [Synth 8-3331] design XADCdemo has unconnected port seg[6]
+WARNING: [Synth 8-3331] design XADCdemo has unconnected port seg[5]
+WARNING: [Synth 8-3331] design XADCdemo has unconnected port seg[4]
+WARNING: [Synth 8-3331] design XADCdemo has unconnected port seg[3]
+WARNING: [Synth 8-3331] design XADCdemo has unconnected port seg[2]
+WARNING: [Synth 8-3331] design XADCdemo has unconnected port seg[1]
+WARNING: [Synth 8-3331] design XADCdemo has unconnected port seg[0]
+WARNING: [Synth 8-3331] design XADCdemo has unconnected port vauxp2
+WARNING: [Synth 8-3331] design XADCdemo has unconnected port vauxn2
+WARNING: [Synth 8-3331] design XADCdemo has unconnected port vauxp3
+INFO: [Common 17-14] Message 'Synth 8-3331' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+---------------------------------------------------------------------------------
+Finished Cross Boundary Optimization : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 1451.457 ; gain = 556.273 ; free physical = 3109 ; free virtual = 13543
+---------------------------------------------------------------------------------
+Finished Parallel Reinference  : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 1451.457 ; gain = 556.273 ; free physical = 3109 ; free virtual = 13543
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Area Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Area Optimization : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 1451.457 ; gain = 556.273 ; free physical = 3095 ; free virtual = 13528
+---------------------------------------------------------------------------------
+Finished Parallel Area Optimization  : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 1451.457 ; gain = 556.273 ; free physical = 3095 ; free virtual = 13528
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+INFO: [Synth 8-5578] Moved timing constraint from pin 'instance_name/clk_out1' to pin 'instance_name/bbstub_clk_out1/O'
+INFO: [Synth 8-5820] Moved 1 constraints on hierarchical pins to their respective driving/loading pins
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:15 ; elapsed = 00:00:17 . Memory (MB): peak = 1451.457 ; gain = 556.273 ; free physical = 3069 ; free virtual = 13502
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 1451.457 ; gain = 556.273 ; free physical = 3058 ; free virtual = 13491
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 1451.457 ; gain = 556.273 ; free physical = 3058 ; free virtual = 13492
+---------------------------------------------------------------------------------
+Finished Parallel Technology Mapping Optimization  : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 1451.457 ; gain = 556.273 ; free physical = 3058 ; free virtual = 13492
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+Finished Parallel Synthesis Optimization  : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 1451.457 ; gain = 556.273 ; free physical = 3058 ; free virtual = 13492
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+INFO: [Synth 8-5365] Flop x/blank_reg is being inverted and renamed to x/blank_reg_inv.
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 1451.457 ; gain = 556.273 ; free physical = 3058 ; free virtual = 13492
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 1451.457 ; gain = 556.273 ; free physical = 3058 ; free virtual = 13492
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 1451.457 ; gain = 556.273 ; free physical = 3058 ; free virtual = 13492
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 1451.457 ; gain = 556.273 ; free physical = 3058 ; free virtual = 13492
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 1451.457 ; gain = 556.273 ; free physical = 3058 ; free virtual = 13492
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 1451.457 ; gain = 556.273 ; free physical = 3058 ; free virtual = 13492
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++------+--------------+----------+
+|      |BlackBox name |Instances |
++------+--------------+----------+
+|1     |clk_wiz_0     |         1|
++------+--------------+----------+
+
+Report Cell Usage: 
++------+----------+------+
+|      |Cell      |Count |
++------+----------+------+
+|1     |clk_wiz_0 |     1|
+|2     |LUT1      |     2|
+|3     |LUT2      |     4|
+|4     |LUT3      |     7|
+|5     |LUT4      |     8|
+|6     |LUT5      |    10|
+|7     |LUT6      |    11|
+|8     |FDRE      |    26|
+|9     |OBUF      |    14|
+|10    |OBUFT     |    32|
++------+----------+------+
+
+Report Instance Areas: 
++------+---------+-------+------+
+|      |Instance |Module |Cells |
++------+---------+-------+------+
+|1     |top      |       |   116|
+|2     |  x      |xvga   |    68|
++------+---------+-------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 1451.457 ; gain = 556.273 ; free physical = 3058 ; free virtual = 13492
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 50 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 1451.457 ; gain = 106.441 ; free physical = 3058 ; free virtual = 13492
+Synthesis Optimization Complete : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 1451.457 ; gain = 556.273 ; free physical = 3058 ; free virtual = 13492
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Common 17-83] Releasing license: Synthesis
+22 Infos, 113 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 1451.457 ; gain = 472.715 ; free physical = 3055 ; free virtual = 13489
+report_utilization: Time (s): cpu = 00:00:00.07 ; elapsed = 00:00:00.09 . Memory (MB): peak = 1483.473 ; gain = 0.000 ; free physical = 3054 ; free virtual = 13488
+INFO: [Common 17-206] Exiting Vivado at Thu Nov  3 15:54:18 2016...

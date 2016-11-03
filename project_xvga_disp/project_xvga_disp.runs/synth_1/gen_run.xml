@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenRun Id="synth_1" LaunchPart="xc7a100tcsg324-3" LaunchTime="1478202835">
+  <File Type="VDS-TIMING-PB" Name="XADCdemo_timing_summary_synth.pb"/>
+  <File Type="VDS-TIMINGSUMMARY" Name="XADCdemo_timing_summary_synth.rpt"/>
+  <File Type="RDS-DCP" Name="XADCdemo.dcp"/>
+  <File Type="RDS-UTIL-PB" Name="XADCdemo_utilization_synth.pb"/>
+  <File Type="RDS-UTIL" Name="XADCdemo_utilization_synth.rpt"/>
+  <File Type="RDS-PROPCONSTRS" Name="XADCdemo_drc_synth.rpt"/>
+  <File Type="RDS-RDS" Name="XADCdemo.vds"/>
+  <File Type="PA-TCL" Name="XADCdemo.tcl"/>
+  <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
+    <Filter Type="Srcs"/>
+    <File Path="$PSRCDIR/sources_1/imports/hdl/xvga.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../project_xadc/src/hdl/xvga.v"/>
+        <Attr Name="ImportTime" Val="1478194618"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/hdl/XADCdemo.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/imports/6.111-Final-Project/project_xadc/src/hdl/XADCdemo.v"/>
+        <Attr Name="ImportTime" Val="1478198932"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/disp.v">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="DesignMode" Val="RTL"/>
+      <Option Name="TopModule" Val="XADCdemo"/>
+      <Option Name="TopAutoSet" Val="TRUE"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
+    <Filter Type="Constrs"/>
+    <File Path="$PSRCDIR/constrs_1/imports/tmp/Nexys4DDR_Master.xdc">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../../../../../../../tmp/Nexys4DDR_Master.xdc"/>
+        <Attr Name="ImportTime" Val="1418246284"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="ConstrsType" Val="XDC"/>
+    </Config>
+  </FileSet>
+  <Strategy Version="1" Minor="2">
+    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2016"/>
+    <Step Id="synth_design"/>
+  </Strategy>
+  <BlockFileSet Type="BlockSrcs" Name="clk_wiz_0"/>
+</GenRun>

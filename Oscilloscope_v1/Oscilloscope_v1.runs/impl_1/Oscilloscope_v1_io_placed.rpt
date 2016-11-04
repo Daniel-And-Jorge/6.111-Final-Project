@@ -1,8 +1,8 @@
 Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2016.2 (lin64) Build 1577090 Thu Jun  2 16:32:35 MDT 2016
-| Date         : Fri Nov  4 15:52:36 2016
-| Host         : eecs-digital-16 running 64-bit Ubuntu 14.04.5 LTS
+| Date         : Fri Nov  4 16:34:19 2016
+| Host         : eecs-digital-10 running 64-bit Ubuntu 14.04.5 LTS
 | Command      : report_io -file Oscilloscope_v1_io_placed.rpt
 | Design       : Oscilloscope_v1
 | Device       : xc7a100t
@@ -23,7 +23,7 @@ Table of Contents
 +---------------+
 | Total User IO |
 +---------------+
-|            57 |
+|            51 |
 +---------------+
 
 
@@ -45,10 +45,10 @@ Table of Contents
 | A10        |             | High Range | IO_L14P_T2_SRCC_16           | User IO     |             |      16 |            |      |                     |                      |         |            |           |          |      |                  |
 | A11        |             | High Range | IO_L4N_T0_15                 | User IO     |             |      15 |            |      |                     |                      |         |            |           |          |      |                  |
 | A12        |             |            | GND                          | GND         |             |         |            |      |                     |                      |     0.0 |            |           |          |      |                  |
-| A13        | vauxp3      | High Range | IO_L9P_T1_DQS_AD3P_15        | INPUT       | LVCMOS33    |      15 |            |      |                     |                 NONE |         | FIXED      |           |          |      | NONE             |
-| A14        | vauxn3      | High Range | IO_L9N_T1_DQS_AD3N_15        | INPUT       | LVCMOS33    |      15 |            |      |                     |                 NONE |         | FIXED      |           |          |      | NONE             |
-| A15        | vauxp10     | High Range | IO_L8P_T1_AD10P_15           | INPUT       | LVCMOS33    |      15 |            |      |                     |                 NONE |         | FIXED      |           |          |      | NONE             |
-| A16        | vauxn10     | High Range | IO_L8N_T1_AD10N_15           | INPUT       | LVCMOS33    |      15 |            |      |                     |                 NONE |         | FIXED      |           |          |      | NONE             |
+| A13        |             | High Range | IO_L9P_T1_DQS_AD3P_15        | User IO     |             |      15 |            |      |                     |                      |         |            |           |          |      |                  |
+| A14        |             | High Range | IO_L9N_T1_DQS_AD3N_15        | User IO     |             |      15 |            |      |                     |                      |         |            |           |          |      |                  |
+| A15        |             | High Range | IO_L8P_T1_AD10P_15           | User IO     |             |      15 |            |      |                     |                      |         |            |           |          |      |                  |
+| A16        |             | High Range | IO_L8N_T1_AD10N_15           | User IO     |             |      15 |            |      |                     |                      |         |            |           |          |      |                  |
 | A17        |             | High Range | VCCO_15                      | VCCO        |             |      15 |            |      |                     |                      |    3.30 |            |           |          |      |                  |
 | A18        | vauxn11     | High Range | IO_L10N_T1_AD11N_15          | INPUT       | LVCMOS33    |      15 |            |      |                     |                 NONE |         | FIXED      |           |          |      | NONE             |
 | B1         |             | High Range | IO_L9P_T1_DQS_AD7P_35        | User IO     |             |      35 |            |      |                     |                      |         |            |           |          |      |                  |
@@ -66,8 +66,8 @@ Table of Contents
 | B13        |             | High Range | IO_L2P_T0_AD8P_15            | User IO     |             |      15 |            |      |                     |                      |         |            |           |          |      |                  |
 | B14        |             | High Range | IO_L2N_T0_AD8N_15            | User IO     |             |      15 |            |      |                     |                      |         |            |           |          |      |                  |
 | B15        |             |            | GND                          | GND         |             |         |            |      |                     |                      |     0.0 |            |           |          |      |                  |
-| B16        | vauxp2      | High Range | IO_L7P_T1_AD2P_15            | INPUT       | LVCMOS33    |      15 |            |      |                     |                 NONE |         | FIXED      |           |          |      | NONE             |
-| B17        | vauxn2      | High Range | IO_L7N_T1_AD2N_15            | INPUT       | LVCMOS33    |      15 |            |      |                     |                 NONE |         | FIXED      |           |          |      | NONE             |
+| B16        |             | High Range | IO_L7P_T1_AD2P_15            | User IO     |             |      15 |            |      |                     |                      |         |            |           |          |      |                  |
+| B17        |             | High Range | IO_L7N_T1_AD2N_15            | User IO     |             |      15 |            |      |                     |                      |         |            |           |          |      |                  |
 | B18        | vauxp11     | High Range | IO_L10P_T1_AD11P_15          | INPUT       | LVCMOS33    |      15 |            |      |                     |                 NONE |         | FIXED      |           |          |      | NONE             |
 | C1         |             | High Range | IO_L16N_T2_35                | User IO     |             |      35 |            |      |                     |                      |         |            |           |          |      |                  |
 | C2         |             | High Range | IO_L16P_T2_35                | User IO     |             |      35 |            |      |                     |                      |         |            |           |          |      |                  |

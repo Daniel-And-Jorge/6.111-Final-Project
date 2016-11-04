@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="blk_mem_gen_1_synth_1" LaunchPart="xc7a100tcsg324-3" LaunchTime="1478195883">
+<GenRun Id="blk_mem_gen_1_synth_1" LaunchPart="xc7a100tcsg324-3" LaunchTime="1478291522">
+  <File Type="VDS-TIMING-PB" Name="blk_mem_gen_1_timing_summary_synth.pb"/>
+  <File Type="VDS-TIMINGSUMMARY" Name="blk_mem_gen_1_timing_summary_synth.rpt"/>
+  <File Type="RDS-DCP" Name="blk_mem_gen_1.dcp"/>
+  <File Type="RDS-UTIL-PB" Name="blk_mem_gen_1_utilization_synth.pb"/>
   <File Type="RDS-UTIL" Name="blk_mem_gen_1_utilization_synth.rpt"/>
   <File Type="RDS-PROPCONSTRS" Name="blk_mem_gen_1_drc_synth.rpt"/>
-  <File Type="RDS-UTIL-PB" Name="blk_mem_gen_1_utilization_synth.pb"/>
-  <File Type="RDS-DCP" Name="blk_mem_gen_1.dcp"/>
-  <File Type="VDS-TIMINGSUMMARY" Name="blk_mem_gen_1_timing_summary_synth.rpt"/>
-  <File Type="VDS-TIMING-PB" Name="blk_mem_gen_1_timing_summary_synth.pb"/>
   <File Type="RDS-RDS" Name="blk_mem_gen_1.vds"/>
   <File Type="PA-TCL" Name="blk_mem_gen_1.tcl"/>
   <FileSet Name="sources" Type="BlockSrcs" RelSrcDir="$PSRCDIR/blk_mem_gen_1">

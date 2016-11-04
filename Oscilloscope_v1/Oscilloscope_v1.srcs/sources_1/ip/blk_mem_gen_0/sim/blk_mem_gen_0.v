@@ -75,7 +75,7 @@ input wire ena;
 (* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 BRAM_PORTA WE" *)
 input wire [0 : 0] wea;
 (* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 BRAM_PORTA ADDR" *)
-input wire [3 : 0] addra;
+input wire [9 : 0] addra;
 (* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 BRAM_PORTA DIN" *)
 input wire [11 : 0] dina;
 (* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 BRAM_PORTA DOUT" *)
@@ -87,7 +87,7 @@ input wire enb;
 (* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 BRAM_PORTB WE" *)
 input wire [0 : 0] web;
 (* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 BRAM_PORTB ADDR" *)
-input wire [3 : 0] addrb;
+input wire [9 : 0] addrb;
 (* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 BRAM_PORTB DIN" *)
 input wire [11 : 0] dinb;
 (* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 BRAM_PORTB DOUT" *)
@@ -125,9 +125,9 @@ output wire [11 : 0] doutb;
     .C_WRITE_MODE_A("WRITE_FIRST"),
     .C_WRITE_WIDTH_A(12),
     .C_READ_WIDTH_A(12),
-    .C_WRITE_DEPTH_A(10),
-    .C_READ_DEPTH_A(10),
-    .C_ADDRA_WIDTH(4),
+    .C_WRITE_DEPTH_A(1024),
+    .C_READ_DEPTH_A(1024),
+    .C_ADDRA_WIDTH(10),
     .C_HAS_RSTB(0),
     .C_RST_PRIORITY_B("CE"),
     .C_RSTRAM_B(0),
@@ -139,9 +139,9 @@ output wire [11 : 0] doutb;
     .C_WRITE_MODE_B("WRITE_FIRST"),
     .C_WRITE_WIDTH_B(12),
     .C_READ_WIDTH_B(12),
-    .C_WRITE_DEPTH_B(10),
-    .C_READ_DEPTH_B(10),
-    .C_ADDRB_WIDTH(4),
+    .C_WRITE_DEPTH_B(1024),
+    .C_READ_DEPTH_B(1024),
+    .C_ADDRB_WIDTH(10),
     .C_HAS_MEM_OUTPUT_REGS_A(1),
     .C_HAS_MEM_OUTPUT_REGS_B(1),
     .C_HAS_MUX_OUTPUT_REGS_A(0),

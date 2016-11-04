@@ -1,8 +1,8 @@
 Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2016.2 (lin64) Build 1577090 Thu Jun  2 16:32:35 MDT 2016
-| Date             : Fri Nov  4 15:52:51 2016
-| Host             : eecs-digital-16 running 64-bit Ubuntu 14.04.5 LTS
+| Date             : Fri Nov  4 16:34:34 2016
+| Host             : eecs-digital-10 running 64-bit Ubuntu 14.04.5 LTS
 | Command          : report_power -file Oscilloscope_v1_power_routed.rpt -pb Oscilloscope_v1_power_summary_routed.pb -rpx Oscilloscope_v1_power_routed.rpx
 | Design           : Oscilloscope_v1
 | Device           : xc7a100tcsg324-3
@@ -50,12 +50,12 @@ Table of Contents
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
 | Clocks         |     0.001 |        8 |       --- |             --- |
-| Slice Logic    |    <0.001 |      311 |       --- |             --- |
-|   LUT as Logic |    <0.001 |      111 |     63400 |            0.18 |
-|   Register     |    <0.001 |      117 |    126800 |            0.09 |
-|   CARRY4       |    <0.001 |       19 |     15850 |            0.12 |
+| Slice Logic    |    <0.001 |      402 |       --- |             --- |
+|   LUT as Logic |    <0.001 |      142 |     63400 |            0.22 |
+|   Register     |    <0.001 |      171 |    126800 |            0.13 |
+|   CARRY4       |    <0.001 |       25 |     15850 |            0.16 |
 |   Others       |     0.000 |       18 |       --- |             --- |
-| Signals        |    <0.001 |      218 |       --- |             --- |
+| Signals        |    <0.001 |      278 |       --- |             --- |
 | Block RAM      |     0.002 |        1 |       135 |            0.74 |
 | MMCM           |     0.122 |        1 |         6 |           16.67 |
 | I/O            |    <0.001 |       17 |       210 |            8.10 |

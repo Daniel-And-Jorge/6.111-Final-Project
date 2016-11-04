@@ -72,6 +72,7 @@ endmodule
 
 // This is the
 // Instantiate a whole array of these boys in one go.
+/*
 module xvga_delayed_group #(parameter NUM_DELAYS=1)
   (input vclock,
    output wire [10:0] displayX[NUM_DELAYS:0],
@@ -93,3 +94,4 @@ module xvga_delayed_group #(parameter NUM_DELAYS=1)
   end
   endgenerate
 endmodule
+*/

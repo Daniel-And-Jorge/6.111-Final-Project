@@ -1,25 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="xadc_wiz_0_synth_1" LaunchPart="xc7a100tcsg324-3" LaunchTime="1478200086">
+<GenRun Id="xadc_wiz_0_synth_1" LaunchPart="xc7a100tcsg324-3" LaunchTime="1478287613">
   <File Type="VDS-TIMING-PB" Name="xadc_wiz_0_timing_summary_synth.pb"/>
   <File Type="VDS-TIMINGSUMMARY" Name="xadc_wiz_0_timing_summary_synth.rpt"/>
+  <File Type="RDS-DCP" Name="xadc_wiz_0.dcp"/>
+  <File Type="RDS-UTIL-PB" Name="xadc_wiz_0_utilization_synth.pb"/>
+  <File Type="RDS-UTIL" Name="xadc_wiz_0_utilization_synth.rpt"/>
+  <File Type="RDS-PROPCONSTRS" Name="xadc_wiz_0_drc_synth.rpt"/>
   <File Type="RDS-RDS" Name="xadc_wiz_0.vds"/>
   <File Type="PA-TCL" Name="xadc_wiz_0.tcl"/>
-  <File Type="RDS-PROPCONSTRS" Name="xadc_wiz_0_drc_synth.rpt"/>
-  <File Type="RDS-UTIL" Name="xadc_wiz_0_utilization_synth.rpt"/>
-  <File Type="RDS-UTIL-PB" Name="xadc_wiz_0_utilization_synth.pb"/>
-  <File Type="RDS-DCP" Name="xadc_wiz_0.dcp"/>
   <FileSet Name="sources" Type="BlockSrcs" RelSrcDir="$PSRCDIR/xadc_wiz_0">
-    <File Path="$PSRCDIR/sources_1/ip/xadc_wiz_0/xadc_wiz_0.xci">
+    <File Path="$PSRCDIR/sources_1/ip/xadc_wiz_0.xcix">
       <FileInfo>
-        <Attr Name="ImportPath" Val="$PPRDIR/../project_xadc/src/ip/xadc_wiz_0/xadc_wiz_0.xci"/>
-        <Attr Name="ImportTime" Val="1478194716"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/ip/xadc_wiz_0.xcix">
+    <File Path="$PSRCDIR/sources_1/ip/xadc_wiz_0/xadc_wiz_0.xci">
       <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../project_xadc/src/ip/xadc_wiz_0/xadc_wiz_0.xci"/>
+        <Attr Name="ImportTime" Val="1478194716"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -31,17 +31,17 @@
     </Config>
   </FileSet>
   <FileSet Name="constrs_in" Type="BlockSrcs" RelSrcDir="$PSRCDIR/xadc_wiz_0">
-    <File Path="$PSRCDIR/sources_1/ip/xadc_wiz_0/xadc_wiz_0.xci">
+    <File Path="$PSRCDIR/sources_1/ip/xadc_wiz_0.xcix">
       <FileInfo>
-        <Attr Name="ImportPath" Val="$PPRDIR/../project_xadc/src/ip/xadc_wiz_0/xadc_wiz_0.xci"/>
-        <Attr Name="ImportTime" Val="1478194716"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/ip/xadc_wiz_0.xcix">
+    <File Path="$PSRCDIR/sources_1/ip/xadc_wiz_0/xadc_wiz_0.xci">
       <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../project_xadc/src/ip/xadc_wiz_0/xadc_wiz_0.xci"/>
+        <Attr Name="ImportTime" Val="1478194716"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -53,9 +53,7 @@
     </Config>
   </FileSet>
   <Strategy Version="1" Minor="2">
-    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2016">
-      <Desc>Vivado Synthesis Defaults</Desc>
-    </StratHandle>
+    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2016"/>
     <Step Id="synth_design"/>
   </Strategy>
 </GenRun>

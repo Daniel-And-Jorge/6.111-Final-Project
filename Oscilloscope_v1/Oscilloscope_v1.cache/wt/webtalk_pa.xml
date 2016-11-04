@@ -3,10 +3,10 @@
 <!--The data in this file is primarily intended for consumption by Xilinx tools.
 The structure and the elements are likely to change over the next few releases.
 This means code written to parse this file will need to be revisited each subsequent release.-->
-<application name="pa" timeStamp="Thu Nov  3 15:43:57 2016">
+<application name="pa" timeStamp="Fri Nov  4 15:51:52 2016">
 <section name="Project Information" visible="false">
 <property name="ProjectID" value="7dbb474a934f41f1a261a32857fce38d" type="ProjectID"/>
-<property name="ProjectIteration" value="1" type="ProjectIteration"/>
+<property name="ProjectIteration" value="6" type="ProjectIteration"/>
 </section>
 <section name="PlanAhead Usage" visible="true">
 <item name="Project Data">
@@ -17,77 +17,26 @@ This means code written to parse this file will need to be revisited each subseq
 <property name="ImplStrategy" value="Vivado Implementation Defaults" type="ImplStrategy"/>
 </item>
 <item name="Java Command Handlers">
-<property name="AddSources" value="11" type="JavaHandler"/>
+<property name="AddSources" value="13" type="JavaHandler"/>
+<property name="AutoConnectTarget" value="1" type="JavaHandler"/>
 <property name="CoreView" value="4" type="JavaHandler"/>
 <property name="CustomizeCore" value="3" type="JavaHandler"/>
 <property name="EditUndo" value="8" type="JavaHandler"/>
-<property name="OpenProject" value="1" type="JavaHandler"/>
+<property name="LaunchProgramFpga" value="2" type="JavaHandler"/>
+<property name="OpenHardwareManager" value="4" type="JavaHandler"/>
+<property name="OpenProject" value="2" type="JavaHandler"/>
+<property name="OpenRecentTarget" value="1" type="JavaHandler"/>
+<property name="ProgramDevice" value="2" type="JavaHandler"/>
 <property name="ProjectSettingsCmdHandler" value="1" type="JavaHandler"/>
 <property name="RecustomizeCore" value="8" type="JavaHandler"/>
 <property name="ReportIPStatus" value="1" type="JavaHandler"/>
+<property name="RunBitgen" value="5" type="JavaHandler"/>
 <property name="RunSynthesis" value="2" type="JavaHandler"/>
 <property name="SaveFileProxyHandler" value="2" type="JavaHandler"/>
-<property name="ShowView" value="1" type="JavaHandler"/>
+<property name="ShowView" value="3" type="JavaHandler"/>
 <property name="UpgradeIP" value="2" type="JavaHandler"/>
+<property name="ViewTaskProjectManager" value="2" type="JavaHandler"/>
 <property name="ui.views.b.aG" value="1" type="JavaHandler"/>
-</item>
-<item name="Gui Resources Info">
-<property name="CLKOUT1 REQUESTED OUT FREQ, 65" value="1" type="GuiResourceData"/>
-<property name="Curve.v, 125, 568" value="1" type="GuiResourceData"/>
-<property name="Curve.v, 207, 447" value="1" type="GuiResourceData"/>
-<property name="Curve.v, 286, 500" value="1" type="GuiResourceData"/>
-<property name="Curve.v, 77, 231" value="1" type="GuiResourceData"/>
-<property name="Curve.v, 84, 314" value="1" type="GuiResourceData"/>
-<property name="Curve.v, 85, 231" value="1" type="GuiResourceData"/>
-<property name="Curve.v, 93, 239" value="2" type="GuiResourceData"/>
-<property name="Curve.v, 93, 239, false, false, false, false, true" value="1" type="GuiResourceData"/>
-<property name="DCLK Frequency(MHz" value="1" type="GuiResourceData"/>
-<property name="Oscilloscope_v1.v, 114, 553" value="1" type="GuiResourceData"/>
-<property name="Oscilloscope_v1.v, 119, 413" value="1" type="GuiResourceData"/>
-<property name="Oscilloscope_v1.v, 137, 130" value="1" type="GuiResourceData"/>
-<property name="Oscilloscope_v1.v, 161, 414" value="1" type="GuiResourceData"/>
-<property name="Oscilloscope_v1.v, 167, 207" value="1" type="GuiResourceData"/>
-<property name="Oscilloscope_v1.v, 172, 531" value="1" type="GuiResourceData"/>
-<property name="Oscilloscope_v1.v, 174, 257" value="1" type="GuiResourceData"/>
-<property name="Oscilloscope_v1.v, 174, 409" value="1" type="GuiResourceData"/>
-<property name="Oscilloscope_v1.v, 176, 508" value="1" type="GuiResourceData"/>
-<property name="Oscilloscope_v1.v, 177, 310" value="1" type="GuiResourceData"/>
-<property name="Oscilloscope_v1.v, 177, 318" value="1" type="GuiResourceData"/>
-<property name="Oscilloscope_v1.v, 191, 457" value="1" type="GuiResourceData"/>
-<property name="Oscilloscope_v1.v, 210, 414" value="1" type="GuiResourceData"/>
-<property name="Oscilloscope_v1.v, 219, 489" value="1" type="GuiResourceData"/>
-<property name="Oscilloscope_v1.v, 227, 293" value="1" type="GuiResourceData"/>
-<property name="Oscilloscope_v1.v, 231, 439" value="1" type="GuiResourceData"/>
-<property name="Oscilloscope_v1.v, 243, 526" value="1" type="GuiResourceData"/>
-<property name="Oscilloscope_v1.v, 260, 446" value="1" type="GuiResourceData"/>
-<property name="Oscilloscope_v1.v, 266, 529" value="1" type="GuiResourceData"/>
-<property name="Oscilloscope_v1.v, 270, 446" value="1" type="GuiResourceData"/>
-<property name="Oscilloscope_v1.v, 285, 407" value="1" type="GuiResourceData"/>
-<property name="Oscilloscope_v1.v, 285, 498" value="1" type="GuiResourceData"/>
-<property name="Oscilloscope_v1.v, 292, 458" value="1" type="GuiResourceData"/>
-<property name="Oscilloscope_v1.v, 351, 412" value="1" type="GuiResourceData"/>
-<property name="Oscilloscope_v1.v, 363, 472" value="1" type="GuiResourceData"/>
-<property name="Oscilloscope_v1.v, 423, 497" value="1" type="GuiResourceData"/>
-<property name="Oscilloscope_v1.v, 81, 322" value="1" type="GuiResourceData"/>
-<property name="Oscilloscope_v1.v, 94, 172" value="1" type="GuiResourceData"/>
-<property name="Oscilloscope_v1.v, 98, 506" value="1" type="GuiResourceData"/>
-<property name="PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, [root, Design Sources, Curve (Curve.v" value="4" type="GuiResourceData"/>
-<property name="PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, [root, Design Sources, Syntax Error Files, Oscilloscope_v1.v], 2, false" value="4" type="GuiResourceData"/>
-<property name="PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, [root, Design Sources, Syntax Error Files, Oscilloscope_v1.v], 2, false, false, false, false, false, true" value="3" type="GuiResourceData"/>
-<property name="PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, [root, Design Sources, XADCdemo (XADCdemo.v" value="8" type="GuiResourceData"/>
-<property name="PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, [root, Design Sources, clk_wiz_0 (clk_wiz_0.xci" value="2" type="GuiResourceData"/>
-<property name="PAResourceQtoS.SimpleOutputProductDialog_CLOSE_DIALOG_UNSAVED_CHANGES_WILL, Skip" value="3" type="GuiResourceData"/>
-<property name="RDIResource.BaseDialog_OK, OK" value="5" type="GuiResourceData"/>
-<property name="RDIResource.BaseReportTab_RERUN, Rerun" value="3" type="GuiResourceData"/>
-<property name="RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, 60" value="1" type="GuiResourceData"/>
-<property name="RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, 60, true" value="1" type="GuiResourceData"/>
-<property name="RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, data, true" value="2" type="GuiResourceData"/>
-<property name="RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, hsync, true" value="1" type="GuiResourceData"/>
-</item>
-<item name="Other">
-<property name="GuiMode" value="15" type="GuiMode"/>
-<property name="BatchMode" value="0" type="BatchMode"/>
-<property name="TclMode" value="14" type="TclMode"/>
 </item>
 </section>
 </application>

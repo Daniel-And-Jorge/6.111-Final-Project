@@ -6,4 +6,4 @@
 # Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 #
 
-vivado -log XADCdemo.vds -m64 -mode batch -messageDb vivado.pb -notrace -source XADCdemo.tcl
+vivado -log Oscilloscope_v1.vds -m64 -mode batch -messageDb vivado.pb -notrace -source Oscilloscope_v1.tcl

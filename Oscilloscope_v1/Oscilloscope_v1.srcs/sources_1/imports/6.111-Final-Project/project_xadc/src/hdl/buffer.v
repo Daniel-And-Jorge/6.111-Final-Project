@@ -106,9 +106,11 @@ module buffer #(parameter LOG_SAMPLES=10, SAMPLE_SIZE=12)
         if (bram0_is_active) begin
           ram0_we <= 1;
           ram1_we <= 0;
+          pointer0 <= pointer0 + 1;
         end else begin
           ram0_we <= 0;
           ram1_we <= 1;
+          pointer1 <= pointer1 + 1;
         end
 
         if (isTrigger) begin

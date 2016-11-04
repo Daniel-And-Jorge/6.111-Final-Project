@@ -36,4 +36,4 @@ EAStep()
      fi
 }
 
-EAStep vivado -log XADCdemo.vds -m64 -mode batch -messageDb vivado.pb -notrace -source XADCdemo.tcl
+EAStep vivado -log Oscilloscope_v1.vds -m64 -mode batch -messageDb vivado.pb -notrace -source Oscilloscope_v1.tcl

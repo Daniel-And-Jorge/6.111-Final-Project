@@ -21,7 +21,7 @@
 
 
 module TriggerRisingEdge
-    #(parameter DATA_BITS = 8)
+    #(parameter DATA_BITS = 12)
     (input clock,
     input [DATA_BITS-1:0] threshold,
     input [DATA_BITS-1:0] dataIn,

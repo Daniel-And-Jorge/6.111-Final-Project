@@ -21,10 +21,11 @@
 
 
 module Oscilloscope_v1
-   #(parameter  TRIGGER_THRESHOLD = 2048,
+   #(parameter  TRIGGER_THRESHOLD = 300,
                 DISPLAY_X_BITS = 11,
                 DISPLAY_Y_BITS = 10,
-                ADDRESS_BITS = 11) 
+                ADDRESS_BITS = 11,
+                RGB_BITS = 12) 
    (input CLK100MHZ,
    input vauxp2,
    input vauxn2,
@@ -35,11 +36,14 @@ module Oscilloscope_v1
    input vauxp11,
    input vauxn11,
    input [1:0] sw,
-   input reset,
+   //input reset,
    output reg [15:0] LED,
    output [7:0] an,
    output dp,
-   output [6:0] seg
+   output [6:0] seg,
+   output reg VGA_HS,
+   output reg VGA_VS,
+   output reg [3:0] VGA_R, output reg [3:0] VGA_G, output reg [3:0] VGA_B
     );
     
     wire CLK65MHZ;
@@ -80,17 +84,22 @@ module Oscilloscope_v1
                          .drdy_out(ready));
          
       // ADC controller
-      wire adcc_ready;
-      wire [11:0] ADCCdataOut;
-      ADCController adcc(
-                             .clock(CLK65MHZ),
-                             .reset(reset),
-                             .sampleEnabled(1),
-                             .inputReady(eoc),
-                             .dataIn(XADCdataOut[15:4]),
-                             .ready(adcc_ready),
-                             .dataOut(ADCCdataOut)
-                             );
+//      wire adcc_ready;
+//      wire [11:0] ADCCdataOut;
+//      ADCController adcc(
+//                             .clock(CLK65MHZ),
+//                             .reset(reset),
+//                             .sampleEnabled(1),
+//                             .inputReady(eoc),
+//                             .dataIn(XADCdataOut[15:4]),
+//                             .ready(adcc_ready),
+//                             .dataOut(ADCCdataOut)
+//                             );
+
+    wire adcc_ready;
+    wire [11:0] ADCCdataOut;
+    assign adcc_ready = 1;
+    FakeADCC adcc(.clock(CLK65MHZ), .dataOut(ADCCdataOut));
     
     wire [11:0] bufferDataOut;
     buffer Buffer (.clock(CLK65MHZ), .ready(adcc_ready), .dataIn(ADCCdataOut),
@@ -99,6 +108,9 @@ module Oscilloscope_v1
         .readTriggerRelative(1),
         .readAddress(curveAddressOut),
         .dataOut(bufferDataOut));
+
+//    wire [11:0] bufferDataOut;
+//    ConstantFakeBuffer buffer(.address(), .dataOut(bufferDataOut));
         
     wire isTriggered;
     TriggerRisingEdge #(.DATA_BITS(12))
@@ -115,7 +127,7 @@ module Oscilloscope_v1
      wire vsync;
      wire hsync;
      wire blank;
-     module xvga(.vclock(CLK65MHZ),
+     xvga myXVGA(.vclock(CLK65MHZ),
         .displayX(displayX), // pixel number on current line
         .displayY(displayY), // line number
         .vsync(vsync), .hsync(hsync), .blank(blank));
@@ -125,6 +137,7 @@ module Oscilloscope_v1
     wire curveHsync;
     wire curveVsync;
     wire curveBlank;
+    wire [RGB_BITS-1:0] curvePixel;
     Curve #(.ADDRESS_BITS(ADDRESS_BITS))
             myCurve
             (.clock(CLK65MHZ),
@@ -134,12 +147,24 @@ module Oscilloscope_v1
             .hsync(hsync),
             .vsync(vsync),
             .blank(blank),
-            .pixel(pixel???),
+            .pixel(curvePixel),
             .drawStarting(drawStarting),
             .address(curveAddressOut),
-            .curveHsync(curveHSync),
+            .curveHsync(curveHsync),
             .curveVsync(curveVsync),
             .curveBlank(curveBlank)
             );
-    
+     
+     always @(posedge CLK65MHZ) begin
+        VGA_R <= 4'b0;
+        VGA_B <= 4'b0;
+        VGA_HS <= curveHsync;
+        VGA_VS <= curveVsync;
+        if (curvePixel > 0 && !curveBlank) begin
+          VGA_G <= 4'b1111;
+        end else begin
+          VGA_G <= 4'b0000;
+        end
+      end
+         
 endmodule

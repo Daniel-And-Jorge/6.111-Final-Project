@@ -24,8 +24,8 @@ module Curve
     #(parameter DATA_IN_BITS = 12,
                 DISPLAY_X_BITS = 11,
                 DISPLAY_Y_BITS = 10,
-                RGB_COLOR = 24'hFFFF00,  //yellow
-                RGB_BITS = 24,
+                RGB_COLOR = 12'hFF0,  //yellow
+                RGB_BITS = 12,
                 DISPLAY_WIDTH = 1024,
                 DISPLAY_HEIGHT = 768,
                 REAL_DISPLAY_WIDTH = 1344,

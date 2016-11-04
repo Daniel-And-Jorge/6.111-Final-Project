@@ -27,12 +27,6 @@ module Oscilloscope_v1
                 ADDRESS_BITS = 11,
                 RGB_BITS = 12) 
    (input CLK100MHZ,
-   input vauxp2,
-   input vauxn2,
-   input vauxp3,
-   input vauxn3,
-   input vauxp10,
-   input vauxn10,
    input vauxp11,
    input vauxn11,
    input [1:0] sw,
@@ -46,6 +40,10 @@ module Oscilloscope_v1
    output reg [3:0] VGA_R, output reg [3:0] VGA_G, output reg [3:0] VGA_B
     );
     
+    wire reset;
+    assign reset = 0;
+    //debounce rdb(.reset(reset), .clock(CLK100MHZ), .noisy(CPU_RESETN), .clean(reset));
+    
     wire CLK65MHZ;
     //instantiate clock divider
     clk_wiz_0 ClockDivider
@@ -57,8 +55,7 @@ module Oscilloscope_v1
         // Status and control signals
         .reset(reset), // input reset
         .locked(locked));
-        
-    
+
     
     // XADC IP module
     wire eoc;

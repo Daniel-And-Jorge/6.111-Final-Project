@@ -6,7 +6,7 @@
 # Process ID: 32553
 # Current directory: /afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/xadc_wiz_0_synth_1
 # Command line: vivado -log xadc_wiz_0.vds -mode batch -messageDb vivado.pb -notrace -source xadc_wiz_0.tcl
-# Log file: /afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/xadc_wiz_0_synth_1/xadc_wiz_0.vds
-# Journal file: /afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/xadc_wiz_0_synth_1/vivado.jou
+# Log file: /afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/xadc_wiz_0_synth_1/xadc_wiz_0.vds
+# Journal file: /afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/xadc_wiz_0_synth_1/vivado.jou
 #-----------------------------------------------------------
 source xadc_wiz_0.tcl -notrace

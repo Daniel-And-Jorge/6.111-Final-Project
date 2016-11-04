@@ -6,7 +6,7 @@
 # Process ID: 32552
 # Current directory: /afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/clk_wiz_0_synth_1
 # Command line: vivado -log clk_wiz_0.vds -mode batch -messageDb vivado.pb -notrace -source clk_wiz_0.tcl
-# Log file: /afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/clk_wiz_0_synth_1/clk_wiz_0.vds
-# Journal file: /afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/clk_wiz_0_synth_1/vivado.jou
+# Log file: /afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/clk_wiz_0_synth_1/clk_wiz_0.vds
+# Journal file: /afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/clk_wiz_0_synth_1/vivado.jou
 #-----------------------------------------------------------
 source clk_wiz_0.tcl -notrace

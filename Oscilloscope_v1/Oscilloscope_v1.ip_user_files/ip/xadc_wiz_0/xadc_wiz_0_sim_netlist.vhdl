@@ -4,7 +4,7 @@
 -- Date        : Fri Nov  4 15:27:17 2016
 -- Host        : eecs-digital-16 running 64-bit Ubuntu 14.04.5 LTS
 -- Command     : write_vhdl -force -mode funcsim
---               /afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/xadc_wiz_0_synth_1/xadc_wiz_0_sim_netlist.vhdl
+--               /afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/xadc_wiz_0_synth_1/xadc_wiz_0_sim_netlist.vhdl
 -- Design      : xadc_wiz_0
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.

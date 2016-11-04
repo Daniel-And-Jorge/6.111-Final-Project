@@ -4,7 +4,7 @@
 // Date        : Fri Nov  4 15:27:16 2016
 // Host        : eecs-digital-16 running 64-bit Ubuntu 14.04.5 LTS
 // Command     : write_verilog -force -mode synth_stub
-//               /afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/xadc_wiz_0_synth_1/xadc_wiz_0_stub.v
+//               /afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/xadc_wiz_0_synth_1/xadc_wiz_0_stub.v
 // Design      : xadc_wiz_0
 // Purpose     : Stub declaration of top-level module interface
 // Device      : xc7a100tcsg324-3

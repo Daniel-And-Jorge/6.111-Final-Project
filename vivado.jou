@@ -2,8 +2,8 @@
 # Vivado v2016.2 (64-bit)
 # SW Build 1577090 on Thu Jun  2 16:32:35 MDT 2016
 # IP Build 1577682 on Fri Jun  3 12:00:54 MDT 2016
-# Start of session at: Thu Nov  3 18:25:52 2016
-# Process ID: 16396
+# Start of session at: Thu Nov  3 21:19:10 2016
+# Process ID: 27935
 # Current directory: /afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project
 # Command line: vivado
 # Log file: /afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/vivado.log
@@ -11,62 +11,59 @@
 #-----------------------------------------------------------
 start_gui
 open_project /afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.xpr
-reset_run blk_mem_gen_0_synth_1
-reset_run blk_mem_gen_1_synth_1
+file mkdir /afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sim_1/new
+set_property SOURCE_SET sources_1 [get_filesets sim_1]
+close [ open /afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sim_1/new/tb_buf.v w ]
+add_files -fileset sim_1 /afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sim_1/new/tb_buf.v
+remove_files -fileset sim_1 /afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sim_1/new/tb_buf.v
+file delete -force /afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sim_1/new/tb_buf.v
+close [ open /afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/fake_data_source.v w ]
+add_files /afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/fake_data_source.v
+import_files -norecurse {/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/project_xadc/src/hdl/sevensegdecoder.v /afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/project_xadc/src/hdl/DigitToSeg.v}
+remove_files /afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/imports/hdl/DigitToSeg.v
+file delete -force /afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/imports/hdl/DigitToSeg.v
+close_project
+open_project /afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/project_xvga_disp/project_xvga_disp.xpr
+update_compile_order -fileset sources_1
+close_project
+open_project /afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/project_buffer_test/project_xvga_disp.xpr
+update_compile_order -fileset sources_1
+import_files -norecurse /afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/imports/6.111-Final-Project/project_xadc/src/hdl/buffer.v
+update_compile_order -fileset sources_1
+import_files  {/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/ip/blk_mem_gen_0/blk_mem_gen_0.xci /afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/ip/blk_mem_gen_1/blk_mem_gen_1.xci}
+export_ip_user_files -of_objects [get_files  {/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/project_buffer_test/project_xvga_disp.srcs/sources_1/ip/blk_mem_gen_0/blk_mem_gen_0.xci /afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/project_buffer_test/project_xvga_disp.srcs/sources_1/ip/blk_mem_gen_1/blk_mem_gen_1.xci}] -force -quiet
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+reset_run synth_1
 reset_run clk_wiz_0_synth_1
-reset_run xadc_wiz_0_synth_1
-reset_run synth_1
-launch_runs synth_1 -jobs 4
-wait_on_run synth_1
-reset_run synth_1
-launch_runs impl_1 -to_step write_bitstream -jobs 4
-wait_on_run impl_1
-reset_run synth_1
-launch_runs impl_1 -to_step write_bitstream -jobs 4
-wait_on_run impl_1
-close [ open /afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/debounce.v w ]
-add_files /afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/debounce.v
-reset_run synth_1
 launch_runs impl_1 -to_step write_bitstream -jobs 4
 wait_on_run impl_1
 open_hw
 connect_hw_server
 open_hw_target
-set_property PROGRAM.FILE {/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/impl_1/Oscilloscope_v1.bit} [lindex [get_hw_devices] 0]
+set_property PROGRAM.FILE {/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/project_buffer_test/project_xvga_disp.runs/impl_1/XADCdemo.bit} [lindex [get_hw_devices] 0]
 current_hw_device [lindex [get_hw_devices] 0]
 refresh_hw_device -update_hw_probes false [lindex [get_hw_devices] 0]
 set_property PROBES.FILE {} [lindex [get_hw_devices] 0]
-set_property PROGRAM.FILE {/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/impl_1/Oscilloscope_v1.bit} [lindex [get_hw_devices] 0]
+set_property PROGRAM.FILE {/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/project_buffer_test/project_xvga_disp.runs/impl_1/XADCdemo.bit} [lindex [get_hw_devices] 0]
 program_hw_devices [lindex [get_hw_devices] 0]
 refresh_hw_device [lindex [get_hw_devices] 0]
-reset_run synth_1
-launch_runs impl_1 -to_step write_bitstream -jobs 4
-wait_on_run impl_1
-set_property PROBES.FILE {} [lindex [get_hw_devices] 0]
-set_property PROGRAM.FILE {/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/impl_1/Oscilloscope_v1.bit} [lindex [get_hw_devices] 0]
-program_hw_devices [lindex [get_hw_devices] 0]
-refresh_hw_device [lindex [get_hw_devices] 0]
-close_project
-open_project /afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/project_xvga_disp/project_xvga_disp.xpr
+import_files -norecurse {/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/project_xadc/src/hdl/sevensegdecoder.v /afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/project_xadc/src/hdl/decoder3_8.v /afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/project_xadc/src/hdl/mux4_4bus.v /afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/project_xadc/src/hdl/segClkDevider.v /afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/project_xadc/src/hdl/counter3bit.v /afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/project_xadc/src/hdl/DigitToSeg.v}
 update_compile_order -fileset sources_1
-open_hw
-connect_hw_server
-open_hw_target
-set_property PROGRAM.FILE {/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/project_xvga_disp/project_xvga_disp.runs/impl_1/XADCdemo.bit} [lindex [get_hw_devices] 0]
-current_hw_device [lindex [get_hw_devices] 0]
-refresh_hw_device -update_hw_probes false [lindex [get_hw_devices] 0]
-set_property PROBES.FILE {} [lindex [get_hw_devices] 0]
-set_property PROGRAM.FILE {/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/project_xvga_disp/project_xvga_disp.runs/impl_1/XADCdemo.bit} [lindex [get_hw_devices] 0]
-program_hw_devices [lindex [get_hw_devices] 0]
-refresh_hw_device [lindex [get_hw_devices] 0]
-close_project
-open_project /afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.xpr
-close_project
-open_project /afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/project_xvga_disp/project_xvga_disp.xpr
+import_files -force -norecurse {/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/project_xadc/src/hdl/sevensegdecoder.v /afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/project_xadc/src/hdl/decoder3_8.v /afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/project_xadc/src/hdl/mux4_4bus.v /afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/project_xadc/src/hdl/segClkDevider.v /afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/project_xadc/src/hdl/counter3bit.v /afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/project_xadc/src/hdl/DigitToSeg.v}
 update_compile_order -fileset sources_1
 close_project
-open_project /afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.xpr
+open_project /afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/project_xadc/proj/XADC_Demo.xpr
+update_compile_order -fileset sources_1
+close_project
+open_project /afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/project_buffer_test/project_xvga_disp.xpr
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
 reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+wait_on_run impl_1
+reset_run impl_1 -prev_step 
 launch_runs impl_1 -to_step write_bitstream -jobs 4
 wait_on_run impl_1
 reset_run synth_1
@@ -75,10 +72,130 @@ wait_on_run impl_1
 open_hw
 connect_hw_server
 open_hw_target
-set_property PROGRAM.FILE {/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/impl_1/Oscilloscope_v1.bit} [lindex [get_hw_devices] 0]
+set_property PROGRAM.FILE {/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/project_buffer_test/project_xvga_disp.runs/impl_1/XADCdemo.bit} [lindex [get_hw_devices] 0]
 current_hw_device [lindex [get_hw_devices] 0]
 refresh_hw_device -update_hw_probes false [lindex [get_hw_devices] 0]
 set_property PROBES.FILE {} [lindex [get_hw_devices] 0]
-set_property PROGRAM.FILE {/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/impl_1/Oscilloscope_v1.bit} [lindex [get_hw_devices] 0]
+set_property PROGRAM.FILE {/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/project_buffer_test/project_xvga_disp.runs/impl_1/XADCdemo.bit} [lindex [get_hw_devices] 0]
+program_hw_devices [lindex [get_hw_devices] 0]
+refresh_hw_device [lindex [get_hw_devices] 0]
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+wait_on_run impl_1
+set_property PROBES.FILE {} [lindex [get_hw_devices] 0]
+set_property PROGRAM.FILE {/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/project_buffer_test/project_xvga_disp.runs/impl_1/XADCdemo.bit} [lindex [get_hw_devices] 0]
+program_hw_devices [lindex [get_hw_devices] 0]
+refresh_hw_device [lindex [get_hw_devices] 0]
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+wait_on_run impl_1
+set_property PROBES.FILE {} [lindex [get_hw_devices] 0]
+set_property PROGRAM.FILE {/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/project_buffer_test/project_xvga_disp.runs/impl_1/XADCdemo.bit} [lindex [get_hw_devices] 0]
+program_hw_devices [lindex [get_hw_devices] 0]
+refresh_hw_device [lindex [get_hw_devices] 0]
+close [ open /afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/project_buffer_test/project_xvga_disp.srcs/sources_1/new/buffer_simple.v w ]
+add_files /afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/project_buffer_test/project_xvga_disp.srcs/sources_1/new/buffer_simple.v
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+wait_on_run impl_1
+reset_run impl_1 -prev_step 
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+wait_on_run impl_1
+set_property PROBES.FILE {} [lindex [get_hw_devices] 0]
+set_property PROGRAM.FILE {/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/project_buffer_test/project_xvga_disp.runs/impl_1/XADCdemo.bit} [lindex [get_hw_devices] 0]
+program_hw_devices [lindex [get_hw_devices] 0]
+refresh_hw_device [lindex [get_hw_devices] 0]
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+wait_on_run impl_1
+set_property PROBES.FILE {} [lindex [get_hw_devices] 0]
+set_property PROGRAM.FILE {/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/project_buffer_test/project_xvga_disp.runs/impl_1/XADCdemo.bit} [lindex [get_hw_devices] 0]
+program_hw_devices [lindex [get_hw_devices] 0]
+refresh_hw_device [lindex [get_hw_devices] 0]
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+wait_on_run impl_1
+set_property PROBES.FILE {} [lindex [get_hw_devices] 0]
+set_property PROGRAM.FILE {/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/project_buffer_test/project_xvga_disp.runs/impl_1/XADCdemo.bit} [lindex [get_hw_devices] 0]
+program_hw_devices [lindex [get_hw_devices] 0]
+refresh_hw_device [lindex [get_hw_devices] 0]
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+wait_on_run impl_1
+set_property PROBES.FILE {} [lindex [get_hw_devices] 0]
+set_property PROGRAM.FILE {/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/project_buffer_test/project_xvga_disp.runs/impl_1/XADCdemo.bit} [lindex [get_hw_devices] 0]
+program_hw_devices [lindex [get_hw_devices] 0]
+refresh_hw_device [lindex [get_hw_devices] 0]
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+wait_on_run impl_1
+set_property PROBES.FILE {} [lindex [get_hw_devices] 0]
+set_property PROGRAM.FILE {/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/project_buffer_test/project_xvga_disp.runs/impl_1/XADCdemo.bit} [lindex [get_hw_devices] 0]
+program_hw_devices [lindex [get_hw_devices] 0]
+refresh_hw_device [lindex [get_hw_devices] 0]
+undo
+undo
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+wait_on_run impl_1
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+set_property PROBES.FILE {} [lindex [get_hw_devices] 0]
+set_property PROGRAM.FILE {/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/project_buffer_test/project_xvga_disp.runs/impl_1/XADCdemo.bit} [lindex [get_hw_devices] 0]
+program_hw_devices [lindex [get_hw_devices] 0]
+refresh_hw_device [lindex [get_hw_devices] 0]
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+wait_on_run impl_1
+set_property PROBES.FILE {} [lindex [get_hw_devices] 0]
+set_property PROGRAM.FILE {/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/project_buffer_test/project_xvga_disp.runs/impl_1/XADCdemo.bit} [lindex [get_hw_devices] 0]
+program_hw_devices [lindex [get_hw_devices] 0]
+refresh_hw_device [lindex [get_hw_devices] 0]
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+wait_on_run impl_1
+set_property PROBES.FILE {} [lindex [get_hw_devices] 0]
+set_property PROGRAM.FILE {/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/project_buffer_test/project_xvga_disp.runs/impl_1/XADCdemo.bit} [lindex [get_hw_devices] 0]
+program_hw_devices [lindex [get_hw_devices] 0]
+refresh_hw_device [lindex [get_hw_devices] 0]
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+wait_on_run impl_1
+set_property PROBES.FILE {} [lindex [get_hw_devices] 0]
+set_property PROGRAM.FILE {/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/project_buffer_test/project_xvga_disp.runs/impl_1/XADCdemo.bit} [lindex [get_hw_devices] 0]
+program_hw_devices [lindex [get_hw_devices] 0]
+refresh_hw_device [lindex [get_hw_devices] 0]
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+wait_on_run impl_1
+set_property PROBES.FILE {} [lindex [get_hw_devices] 0]
+set_property PROGRAM.FILE {/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/project_buffer_test/project_xvga_disp.runs/impl_1/XADCdemo.bit} [lindex [get_hw_devices] 0]
+program_hw_devices [lindex [get_hw_devices] 0]
+refresh_hw_device [lindex [get_hw_devices] 0]
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+wait_on_run impl_1
+set_property PROBES.FILE {} [lindex [get_hw_devices] 0]
+set_property PROGRAM.FILE {/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/project_buffer_test/project_xvga_disp.runs/impl_1/XADCdemo.bit} [lindex [get_hw_devices] 0]
+program_hw_devices [lindex [get_hw_devices] 0]
+refresh_hw_device [lindex [get_hw_devices] 0]
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+wait_on_run impl_1
+set_property PROBES.FILE {} [lindex [get_hw_devices] 0]
+set_property PROGRAM.FILE {/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/project_buffer_test/project_xvga_disp.runs/impl_1/XADCdemo.bit} [lindex [get_hw_devices] 0]
+program_hw_devices [lindex [get_hw_devices] 0]
+refresh_hw_device [lindex [get_hw_devices] 0]
+set_property PROBES.FILE {} [lindex [get_hw_devices] 0]
+set_property PROGRAM.FILE {/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/project_buffer_test/project_xvga_disp.runs/impl_1/XADCdemo.bit} [lindex [get_hw_devices] 0]
+program_hw_devices [lindex [get_hw_devices] 0]
+refresh_hw_device [lindex [get_hw_devices] 0]
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+wait_on_run impl_1
+set_property PROBES.FILE {} [lindex [get_hw_devices] 0]
+set_property PROGRAM.FILE {/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/project_buffer_test/project_xvga_disp.runs/impl_1/XADCdemo.bit} [lindex [get_hw_devices] 0]
 program_hw_devices [lindex [get_hw_devices] 0]
 refresh_hw_device [lindex [get_hw_devices] 0]

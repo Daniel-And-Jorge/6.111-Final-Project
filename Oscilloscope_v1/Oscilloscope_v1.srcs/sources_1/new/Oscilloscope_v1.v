@@ -30,7 +30,12 @@ module Oscilloscope_v1
    input vauxp11,
    input vauxn11,
    input [1:0] sw,
+<<<<<<< Updated upstream
    //input reset,
+=======
+   input CPU_RESETN,
+   input BTNC,
+>>>>>>> Stashed changes
    output reg [15:0] LED,
    output [7:0] an,
    output dp,
@@ -40,9 +45,15 @@ module Oscilloscope_v1
    output reg [3:0] VGA_R, output reg [3:0] VGA_G, output reg [3:0] VGA_B
     );
     
+    // reset button is active low, others not
+    wire reset_inv;
     wire reset;
-    assign reset = 0;
-    //debounce rdb(.reset(reset), .clock(CLK100MHZ), .noisy(CPU_RESETN), .clean(reset));
+    assign reset = ~reset_inv;
+    debounce rdb(.reset(0), .clock(CLK100MHZ), .noisy(CPU_RESETN), .clean(reset_inv));
+    
+    // center button
+    wire button_ctr;
+    debounce cdb(.reset(reset), .clock(CLK100MHZ), .noisy(BTNC), .clean(button_ctr));
     
     wire CLK65MHZ;
     //instantiate clock divider
@@ -98,17 +109,34 @@ module Oscilloscope_v1
     assign adcc_ready = 1;
     FakeADCC adcc(.clock(CLK65MHZ), .dataOut(ADCCdataOut));
     
-    wire [11:0] bufferDataOut;
-    buffer Buffer (.clock(CLK65MHZ), .ready(adcc_ready), .dataIn(ADCCdataOut),
-        .isTrigger(isTriggered), .disableCollection(0), .lockTrigger(drawStarting),
+    //buffer Buffer (.clock(CLK65MHZ), .ready(adcc_ready), .dataIn(ADCCdataOut),
+    //  .isTrigger(isTriggered), .disableCollection(0), .lockTrigger(drawStarting),
+    buffer Buffer (.clock(CLK65MHZ), .ready(fds_ready), .dataIn(fds_data),
+        .isTrigger(fds_ready), .disableCollection(0), .lockTrigger(drawStarting),
         .reset(reset),
         .readTriggerRelative(1),
         .readAddress(curveAddressOut),
         .dataOut(bufferDataOut));
+<<<<<<< Updated upstream
 
 //    wire [11:0] bufferDataOut;
 //    ConstantFakeBuffer buffer(.address(), .dataOut(bufferDataOut));
         
+=======
+    
+    // test
+    wire fds_ready;
+    wire [11:0] fds_data;
+    reg drawStarting;
+    reg [9:0]readAddress;
+    reg [11:0] trigger_data;
+    
+    fake_data_source myfds(.clock(CLK65MHZ),
+        .ready(fds_ready),
+        .dataOut(fds_data)
+        );
+    /*    
+>>>>>>> Stashed changes
     wire isTriggered;
     TriggerRisingEdge #(.DATA_BITS(12))
             Trigger
@@ -118,7 +146,7 @@ module Oscilloscope_v1
             .triggerDisable(0),
             .isTriggered(isTriggered)
             );
-            
+      */      
      wire [DISPLAY_X_BITS-1:0] displayX;
      wire [DISPLAY_Y_BITS-1:0] displayY;
      wire vsync;
@@ -128,7 +156,7 @@ module Oscilloscope_v1
         .displayX(displayX), // pixel number on current line
         .displayY(displayY), // line number
         .vsync(vsync), .hsync(hsync), .blank(blank));
-        
+        /*
     wire drawStarting;
     wire [ADDRESS_BITS-1:0] curveAddressOut;
     wire curveHsync;
@@ -150,6 +178,7 @@ module Oscilloscope_v1
             .curveHsync(curveHsync),
             .curveVsync(curveVsync),
             .curveBlank(curveBlank)
+<<<<<<< Updated upstream
             );
      
      always @(posedge CLK65MHZ) begin
@@ -165,3 +194,30 @@ module Oscilloscope_v1
       end
          
 endmodule
+=======
+            );*/
+   /* 
+    assign VGA_HS = curveHsync;
+    assign VGA_VS = curveVsync;
+    assign VGA_R = (curvePixel > 0) && !curveBlank ? 4'b1100 : 0;
+    assign VGA_B = 0;
+    assign VGA_G = 0;
+    */
+    
+    reg [5:0] counter;
+    
+    always @(posedge CLK65MHZ) begin
+        counter <= counter + 1;
+        if (counter % 8 == 0 && button_ctr) begin
+            drawStarting <= 1;
+            
+        end else
+            drawStarting <= 0;
+    
+    assign VGA_HS = hsync;
+    assign VGA_VS = vsync;
+    assign VGA_R = blank ? 0 : 4'b1111;
+    assign VGA_G = 0;
+    assign VGA_B = 0;
+endmodule
+>>>>>>> Stashed changes

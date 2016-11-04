@@ -2,8 +2,8 @@
 # Vivado v2016.2 (64-bit)
 # SW Build 1577090 on Thu Jun  2 16:32:35 MDT 2016
 # IP Build 1577682 on Fri Jun  3 12:00:54 MDT 2016
-# Start of session at: Thu Nov  3 18:25:52 2016
-# Process ID: 16396
+# Start of session at: Thu Nov  3 21:19:10 2016
+# Process ID: 27935
 # Current directory: /afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project
 # Command line: vivado
 # Log file: /afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/vivado.log
@@ -11,49 +11,57 @@
 #-----------------------------------------------------------
 start_gui
 open_project /afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.xpr
-INFO: [Project 1-313] Project file moved from '/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1' since last save.
 Scanning sources...
 Finished scanning sources
 INFO: [IP_Flow 19-234] Refreshing IP repositories
 INFO: [IP_Flow 19-1704] No user IP repositories specified
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/var/local/xilinx-local/Vivado/2016.2/data/ip'.
-reset_run blk_mem_gen_0_synth_1
-reset_run blk_mem_gen_1_synth_1
+open_project: Time (s): cpu = 00:00:14 ; elapsed = 00:00:06 . Memory (MB): peak = 5924.695 ; gain = 157.730 ; free physical = 2018 ; free virtual = 13628
+file mkdir /afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sim_1/new
+set_property SOURCE_SET sources_1 [get_filesets sim_1]
+close [ open /afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sim_1/new/tb_buf.v w ]
+add_files -fileset sim_1 /afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sim_1/new/tb_buf.v
+remove_files -fileset sim_1 /afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sim_1/new/tb_buf.v
+file delete -force /afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sim_1/new/tb_buf.v
+close [ open /afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/fake_data_source.v w ]
+add_files /afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/fake_data_source.v
+import_files -norecurse {/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/project_xadc/src/hdl/sevensegdecoder.v /afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/project_xadc/src/hdl/DigitToSeg.v}
+remove_files /afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/imports/hdl/DigitToSeg.v
+file delete -force /afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/imports/hdl/DigitToSeg.v
+close_project
+open_project /afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/project_xvga_disp/project_xvga_disp.xpr
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/var/local/xilinx-local/Vivado/2016.2/data/ip'.
+update_compile_order -fileset sources_1
+close_project
+open_project /afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/project_buffer_test/project_xvga_disp.xpr
+INFO: [Project 1-313] Project file moved from '/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/project_xvga_disp' since last save.
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/var/local/xilinx-local/Vivado/2016.2/data/ip'.
+update_compile_order -fileset sources_1
+import_files -norecurse /afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/imports/6.111-Final-Project/project_xadc/src/hdl/buffer.v
+update_compile_order -fileset sources_1
+import_files  {/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/ip/blk_mem_gen_0/blk_mem_gen_0.xci /afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/ip/blk_mem_gen_1/blk_mem_gen_1.xci}
+export_ip_user_files -of_objects [get_files  {/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/project_buffer_test/project_xvga_disp.srcs/sources_1/ip/blk_mem_gen_0/blk_mem_gen_0.xci /afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/project_buffer_test/project_xvga_disp.srcs/sources_1/ip/blk_mem_gen_1/blk_mem_gen_1.xci}] -force -quiet
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+reset_run synth_1
 reset_run clk_wiz_0_synth_1
-reset_run xadc_wiz_0_synth_1
-reset_run synth_1
-launch_runs synth_1 -jobs 4
-INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'clk_wiz_0'...
-INFO: [IP_Flow 19-1686] Generating 'Implementation' target for IP 'clk_wiz_0'...
-INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'xadc_wiz_0'...
-[Thu Nov  3 18:31:39 2016] Launched blk_mem_gen_0_synth_1, blk_mem_gen_1_synth_1, clk_wiz_0_synth_1, xadc_wiz_0_synth_1...
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+INFO: [Vivado 12-4149] The synthesis checkpoint for IP '/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/project_buffer_test/project_xvga_disp.srcs/sources_1/ip/blk_mem_gen_1/blk_mem_gen_1.xci' is already up-to-date
+INFO: [Vivado 12-4149] The synthesis checkpoint for IP '/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/project_buffer_test/project_xvga_disp.srcs/sources_1/ip/blk_mem_gen_0/blk_mem_gen_0.xci' is already up-to-date
+[Thu Nov  3 21:49:45 2016] Launched clk_wiz_0_synth_1, synth_1...
 Run output will be captured here:
-blk_mem_gen_0_synth_1: /afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/blk_mem_gen_0_synth_1/runme.log
-blk_mem_gen_1_synth_1: /afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/blk_mem_gen_1_synth_1/runme.log
-clk_wiz_0_synth_1: /afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/clk_wiz_0_synth_1/runme.log
-xadc_wiz_0_synth_1: /afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/xadc_wiz_0_synth_1/runme.log
-[Thu Nov  3 18:31:39 2016] Launched synth_1...
-Run output will be captured here: /afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/synth_1/runme.log
-reset_run synth_1
-launch_runs impl_1 -to_step write_bitstream -jobs 4
-[Thu Nov  3 18:34:44 2016] Launched synth_1...
-Run output will be captured here: /afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/synth_1/runme.log
-[Thu Nov  3 18:34:44 2016] Launched impl_1...
-Run output will be captured here: /afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/impl_1/runme.log
-reset_run synth_1
-launch_runs impl_1 -to_step write_bitstream -jobs 4
-[Thu Nov  3 18:36:29 2016] Launched synth_1...
-Run output will be captured here: /afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/synth_1/runme.log
-[Thu Nov  3 18:36:29 2016] Launched impl_1...
-Run output will be captured here: /afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/impl_1/runme.log
-close [ open /afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/debounce.v w ]
-add_files /afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/debounce.v
-reset_run synth_1
-launch_runs impl_1 -to_step write_bitstream -jobs 4
-[Thu Nov  3 18:42:14 2016] Launched synth_1...
-Run output will be captured here: /afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/synth_1/runme.log
-[Thu Nov  3 18:42:14 2016] Launched impl_1...
-Run output will be captured here: /afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/impl_1/runme.log
+clk_wiz_0_synth_1: /afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/project_buffer_test/project_xvga_disp.runs/clk_wiz_0_synth_1/runme.log
+synth_1: /afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/project_buffer_test/project_xvga_disp.runs/synth_1/runme.log
+[Thu Nov  3 21:49:45 2016] Launched impl_1...
+Run output will be captured here: /afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/project_buffer_test/project_xvga_disp.runs/impl_1/runme.log
 open_hw
 connect_hw_server
 INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
@@ -66,17 +74,13 @@ INFO: [Labtools 27-2221] Launch Output:
 
 
 open_hw_target
-INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210292645629A
-set_property PROGRAM.FILE {/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/impl_1/Oscilloscope_v1.bit} [lindex [get_hw_devices] 0]
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210292645754A
+set_property PROGRAM.FILE {/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/project_buffer_test/project_xvga_disp.runs/impl_1/XADCdemo.bit} [lindex [get_hw_devices] 0]
 current_hw_device [lindex [get_hw_devices] 0]
 refresh_hw_device -update_hw_probes false [lindex [get_hw_devices] 0]
-INFO: [Labtools 27-1434] Device xc7a100t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
-WARNING: [Labtools 27-3123] The debug hub core was not detected at User Scan Chain 1 or 3.
-Resolution: 
-1. Make sure the clock connected to the debug hub (dbg_hub) core is a free running clock and is active OR
-2. Manually launch hw_server with -e "set xsdb-user-bscan <C_USER_SCAN_CHAIN scan_chain_number>" to detect the debug hub at User Scan Chain of 2 or 4. To determine the user scan chain setting, open the implemented design and use: get_property C_USER_SCAN_CHAIN [get_debug_cores dbg_hub].
+INFO: [Labtools 27-1435] Device xc7a100t (JTAG device index = 0) is not programmed (DONE status = 0).
 set_property PROBES.FILE {} [lindex [get_hw_devices] 0]
-set_property PROGRAM.FILE {/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/impl_1/Oscilloscope_v1.bit} [lindex [get_hw_devices] 0]
+set_property PROGRAM.FILE {/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/project_buffer_test/project_xvga_disp.runs/impl_1/XADCdemo.bit} [lindex [get_hw_devices] 0]
 program_hw_devices [lindex [get_hw_devices] 0]
 INFO: [Labtools 27-3164] End of startup status: HIGH
 refresh_hw_device [lindex [get_hw_devices] 0]
@@ -85,95 +89,53 @@ WARNING: [Labtools 27-3123] The debug hub core was not detected at User Scan Cha
 Resolution: 
 1. Make sure the clock connected to the debug hub (dbg_hub) core is a free running clock and is active OR
 2. Manually launch hw_server with -e "set xsdb-user-bscan <C_USER_SCAN_CHAIN scan_chain_number>" to detect the debug hub at User Scan Chain of 2 or 4. To determine the user scan chain setting, open the implemented design and use: get_property C_USER_SCAN_CHAIN [get_debug_cores dbg_hub].
-reset_run synth_1
-launch_runs impl_1 -to_step write_bitstream -jobs 4
-[Thu Nov  3 18:45:15 2016] Launched synth_1...
-Run output will be captured here: /afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/synth_1/runme.log
-[Thu Nov  3 18:45:15 2016] Launched impl_1...
-Run output will be captured here: /afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/impl_1/runme.log
-set_property PROBES.FILE {} [lindex [get_hw_devices] 0]
-set_property PROGRAM.FILE {/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/impl_1/Oscilloscope_v1.bit} [lindex [get_hw_devices] 0]
-program_hw_devices [lindex [get_hw_devices] 0]
-INFO: [Labtools 27-3164] End of startup status: HIGH
-refresh_hw_device [lindex [get_hw_devices] 0]
-INFO: [Labtools 27-1434] Device xc7a100t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
-WARNING: [Labtools 27-3123] The debug hub core was not detected at User Scan Chain 1 or 3.
-Resolution: 
-1. Make sure the clock connected to the debug hub (dbg_hub) core is a free running clock and is active OR
-2. Manually launch hw_server with -e "set xsdb-user-bscan <C_USER_SCAN_CHAIN scan_chain_number>" to detect the debug hub at User Scan Chain of 2 or 4. To determine the user scan chain setting, open the implemented design and use: get_property C_USER_SCAN_CHAIN [get_debug_cores dbg_hub].
+import_files -norecurse {/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/project_xadc/src/hdl/sevensegdecoder.v /afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/project_xadc/src/hdl/decoder3_8.v /afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/project_xadc/src/hdl/mux4_4bus.v /afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/project_xadc/src/hdl/segClkDevider.v /afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/project_xadc/src/hdl/counter3bit.v /afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/project_xadc/src/hdl/DigitToSeg.v}
+update_compile_order -fileset sources_1
+import_files -force -norecurse {/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/project_xadc/src/hdl/sevensegdecoder.v /afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/project_xadc/src/hdl/decoder3_8.v /afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/project_xadc/src/hdl/mux4_4bus.v /afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/project_xadc/src/hdl/segClkDevider.v /afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/project_xadc/src/hdl/counter3bit.v /afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/project_xadc/src/hdl/DigitToSeg.v}
+update_compile_order -fileset sources_1
 close_project
-****** Webtalk v2016.2 (64-bit)
-  **** SW Build 1577090 on Thu Jun  2 16:32:35 MDT 2016
-  **** IP Build 1577682 on Fri Jun  3 12:00:54 MDT 2016
-    ** Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
-
-source /afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.hw/webtalk/labtool_webtalk.tcl -notrace
-INFO: [Common 17-206] Exiting Webtalk at Thu Nov  3 18:47:01 2016...
-open_project /afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/project_xvga_disp/project_xvga_disp.xpr
+open_project /afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/project_xadc/proj/XADC_Demo.xpr
+Scanning sources...
+Finished scanning sources
+WARNING: [filemgmt 56-3] IP Repository Path: Could not find the directory '/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/project_xadc/repo'.
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+WARNING: [IP_Flow 19-2248] Failed to load user IP repository '/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/project_xadc/repo'; Can't find the specified path.
+If this directory should no longer be in your list of user repositories, go to the IP Settings dialog and remove it.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/var/local/xilinx-local/Vivado/2016.2/data/ip'.
+update_compile_order -fileset sources_1
+close_project
+open_project /afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/project_buffer_test/project_xvga_disp.xpr
 Scanning sources...
 Finished scanning sources
 INFO: [IP_Flow 19-234] Refreshing IP repositories
 INFO: [IP_Flow 19-1704] No user IP repositories specified
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/var/local/xilinx-local/Vivado/2016.2/data/ip'.
 update_compile_order -fileset sources_1
-open_hw
-connect_hw_server
-INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
-open_hw_target
-INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210292645629A
-set_property PROGRAM.FILE {/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/project_xvga_disp/project_xvga_disp.runs/impl_1/XADCdemo.bit} [lindex [get_hw_devices] 0]
-current_hw_device [lindex [get_hw_devices] 0]
-refresh_hw_device -update_hw_probes false [lindex [get_hw_devices] 0]
-INFO: [Labtools 27-1434] Device xc7a100t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
-WARNING: [Labtools 27-3123] The debug hub core was not detected at User Scan Chain 1 or 3.
-Resolution: 
-1. Make sure the clock connected to the debug hub (dbg_hub) core is a free running clock and is active OR
-2. Manually launch hw_server with -e "set xsdb-user-bscan <C_USER_SCAN_CHAIN scan_chain_number>" to detect the debug hub at User Scan Chain of 2 or 4. To determine the user scan chain setting, open the implemented design and use: get_property C_USER_SCAN_CHAIN [get_debug_cores dbg_hub].
-set_property PROBES.FILE {} [lindex [get_hw_devices] 0]
-set_property PROGRAM.FILE {/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/project_xvga_disp/project_xvga_disp.runs/impl_1/XADCdemo.bit} [lindex [get_hw_devices] 0]
-program_hw_devices [lindex [get_hw_devices] 0]
-INFO: [Labtools 27-3164] End of startup status: HIGH
-refresh_hw_device [lindex [get_hw_devices] 0]
-INFO: [Labtools 27-1434] Device xc7a100t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
-WARNING: [Labtools 27-3123] The debug hub core was not detected at User Scan Chain 1 or 3.
-Resolution: 
-1. Make sure the clock connected to the debug hub (dbg_hub) core is a free running clock and is active OR
-2. Manually launch hw_server with -e "set xsdb-user-bscan <C_USER_SCAN_CHAIN scan_chain_number>" to detect the debug hub at User Scan Chain of 2 or 4. To determine the user scan chain setting, open the implemented design and use: get_property C_USER_SCAN_CHAIN [get_debug_cores dbg_hub].
-close_project
-open_project /afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.xpr
-Scanning sources...
-Finished scanning sources
-INFO: [IP_Flow 19-234] Refreshing IP repositories
-INFO: [IP_Flow 19-1704] No user IP repositories specified
-INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/var/local/xilinx-local/Vivado/2016.2/data/ip'.
-close_project
-open_project /afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/project_xvga_disp/project_xvga_disp.xpr
-Scanning sources...
-Finished scanning sources
-INFO: [IP_Flow 19-234] Refreshing IP repositories
-INFO: [IP_Flow 19-1704] No user IP repositories specified
-INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/var/local/xilinx-local/Vivado/2016.2/data/ip'.
 update_compile_order -fileset sources_1
-close_project
-close_project: Time (s): cpu = 00:00:00.82 ; elapsed = 00:00:11 . Memory (MB): peak = 6200.918 ; gain = 0.000 ; free physical = 1721 ; free virtual = 12803
-open_project /afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.xpr
-Scanning sources...
-Finished scanning sources
-INFO: [IP_Flow 19-234] Refreshing IP repositories
-INFO: [IP_Flow 19-1704] No user IP repositories specified
-INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/var/local/xilinx-local/Vivado/2016.2/data/ip'.
+update_compile_order -fileset sources_1
 reset_run synth_1
 launch_runs impl_1 -to_step write_bitstream -jobs 4
-[Thu Nov  3 18:49:00 2016] Launched synth_1...
-Run output will be captured here: /afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/synth_1/runme.log
-[Thu Nov  3 18:49:00 2016] Launched impl_1...
-Run output will be captured here: /afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/impl_1/runme.log
+INFO: [Vivado 12-4149] The synthesis checkpoint for IP '/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/project_buffer_test/project_xvga_disp.srcs/sources_1/ip/blk_mem_gen_1/blk_mem_gen_1.xci' is already up-to-date
+INFO: [Vivado 12-4149] The synthesis checkpoint for IP '/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/project_buffer_test/project_xvga_disp.srcs/sources_1/ip/blk_mem_gen_0/blk_mem_gen_0.xci' is already up-to-date
+[Thu Nov  3 21:59:45 2016] Launched synth_1...
+Run output will be captured here: /afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/project_buffer_test/project_xvga_disp.runs/synth_1/runme.log
+[Thu Nov  3 21:59:45 2016] Launched impl_1...
+Run output will be captured here: /afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/project_buffer_test/project_xvga_disp.runs/impl_1/runme.log
+reset_run impl_1 -prev_step 
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+INFO: [Vivado 12-4149] The synthesis checkpoint for IP '/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/project_buffer_test/project_xvga_disp.srcs/sources_1/ip/blk_mem_gen_1/blk_mem_gen_1.xci' is already up-to-date
+INFO: [Vivado 12-4149] The synthesis checkpoint for IP '/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/project_buffer_test/project_xvga_disp.srcs/sources_1/ip/blk_mem_gen_0/blk_mem_gen_0.xci' is already up-to-date
+WARNING: [Vivado 12-872] Run step 'Design Initialization' is out-of-date.
+[Thu Nov  3 22:02:22 2016] Launched impl_1...
+Run output will be captured here: /afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/project_buffer_test/project_xvga_disp.runs/impl_1/runme.log
 reset_run synth_1
 launch_runs impl_1 -to_step write_bitstream -jobs 4
-[Thu Nov  3 18:50:26 2016] Launched synth_1...
-Run output will be captured here: /afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/synth_1/runme.log
-[Thu Nov  3 18:50:26 2016] Launched impl_1...
-Run output will be captured here: /afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/impl_1/runme.log
+INFO: [Vivado 12-4149] The synthesis checkpoint for IP '/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/project_buffer_test/project_xvga_disp.srcs/sources_1/ip/blk_mem_gen_1/blk_mem_gen_1.xci' is already up-to-date
+INFO: [Vivado 12-4149] The synthesis checkpoint for IP '/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/project_buffer_test/project_xvga_disp.srcs/sources_1/ip/blk_mem_gen_0/blk_mem_gen_0.xci' is already up-to-date
+[Thu Nov  3 22:02:45 2016] Launched synth_1...
+Run output will be captured here: /afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/project_buffer_test/project_xvga_disp.runs/synth_1/runme.log
+[Thu Nov  3 22:02:45 2016] Launched impl_1...
+Run output will be captured here: /afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/project_buffer_test/project_xvga_disp.runs/impl_1/runme.log
 open_hw
 connect_hw_server
 INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
@@ -186,8 +148,8 @@ INFO: [Labtools 27-2221] Launch Output:
 
 
 open_hw_target
-INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210292645629A
-set_property PROGRAM.FILE {/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/impl_1/Oscilloscope_v1.bit} [lindex [get_hw_devices] 0]
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210292645754A
+set_property PROGRAM.FILE {/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/project_buffer_test/project_xvga_disp.runs/impl_1/XADCdemo.bit} [lindex [get_hw_devices] 0]
 current_hw_device [lindex [get_hw_devices] 0]
 refresh_hw_device -update_hw_probes false [lindex [get_hw_devices] 0]
 INFO: [Labtools 27-1434] Device xc7a100t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
@@ -196,7 +158,289 @@ Resolution:
 1. Make sure the clock connected to the debug hub (dbg_hub) core is a free running clock and is active OR
 2. Manually launch hw_server with -e "set xsdb-user-bscan <C_USER_SCAN_CHAIN scan_chain_number>" to detect the debug hub at User Scan Chain of 2 or 4. To determine the user scan chain setting, open the implemented design and use: get_property C_USER_SCAN_CHAIN [get_debug_cores dbg_hub].
 set_property PROBES.FILE {} [lindex [get_hw_devices] 0]
-set_property PROGRAM.FILE {/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/impl_1/Oscilloscope_v1.bit} [lindex [get_hw_devices] 0]
+set_property PROGRAM.FILE {/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/project_buffer_test/project_xvga_disp.runs/impl_1/XADCdemo.bit} [lindex [get_hw_devices] 0]
+program_hw_devices [lindex [get_hw_devices] 0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices] 0]
+INFO: [Labtools 27-1434] Device xc7a100t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+WARNING: [Labtools 27-3123] The debug hub core was not detected at User Scan Chain 1 or 3.
+Resolution: 
+1. Make sure the clock connected to the debug hub (dbg_hub) core is a free running clock and is active OR
+2. Manually launch hw_server with -e "set xsdb-user-bscan <C_USER_SCAN_CHAIN scan_chain_number>" to detect the debug hub at User Scan Chain of 2 or 4. To determine the user scan chain setting, open the implemented design and use: get_property C_USER_SCAN_CHAIN [get_debug_cores dbg_hub].
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+INFO: [Vivado 12-4149] The synthesis checkpoint for IP '/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/project_buffer_test/project_xvga_disp.srcs/sources_1/ip/blk_mem_gen_1/blk_mem_gen_1.xci' is already up-to-date
+INFO: [Vivado 12-4149] The synthesis checkpoint for IP '/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/project_buffer_test/project_xvga_disp.srcs/sources_1/ip/blk_mem_gen_0/blk_mem_gen_0.xci' is already up-to-date
+[Thu Nov  3 22:08:37 2016] Launched synth_1...
+Run output will be captured here: /afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/project_buffer_test/project_xvga_disp.runs/synth_1/runme.log
+[Thu Nov  3 22:08:37 2016] Launched impl_1...
+Run output will be captured here: /afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/project_buffer_test/project_xvga_disp.runs/impl_1/runme.log
+set_property PROBES.FILE {} [lindex [get_hw_devices] 0]
+set_property PROGRAM.FILE {/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/project_buffer_test/project_xvga_disp.runs/impl_1/XADCdemo.bit} [lindex [get_hw_devices] 0]
+program_hw_devices [lindex [get_hw_devices] 0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices] 0]
+INFO: [Labtools 27-1434] Device xc7a100t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+WARNING: [Labtools 27-3123] The debug hub core was not detected at User Scan Chain 1 or 3.
+Resolution: 
+1. Make sure the clock connected to the debug hub (dbg_hub) core is a free running clock and is active OR
+2. Manually launch hw_server with -e "set xsdb-user-bscan <C_USER_SCAN_CHAIN scan_chain_number>" to detect the debug hub at User Scan Chain of 2 or 4. To determine the user scan chain setting, open the implemented design and use: get_property C_USER_SCAN_CHAIN [get_debug_cores dbg_hub].
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+INFO: [Vivado 12-4149] The synthesis checkpoint for IP '/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/project_buffer_test/project_xvga_disp.srcs/sources_1/ip/blk_mem_gen_1/blk_mem_gen_1.xci' is already up-to-date
+INFO: [Vivado 12-4149] The synthesis checkpoint for IP '/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/project_buffer_test/project_xvga_disp.srcs/sources_1/ip/blk_mem_gen_0/blk_mem_gen_0.xci' is already up-to-date
+[Thu Nov  3 22:17:28 2016] Launched synth_1...
+Run output will be captured here: /afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/project_buffer_test/project_xvga_disp.runs/synth_1/runme.log
+[Thu Nov  3 22:17:28 2016] Launched impl_1...
+Run output will be captured here: /afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/project_buffer_test/project_xvga_disp.runs/impl_1/runme.log
+set_property PROBES.FILE {} [lindex [get_hw_devices] 0]
+set_property PROGRAM.FILE {/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/project_buffer_test/project_xvga_disp.runs/impl_1/XADCdemo.bit} [lindex [get_hw_devices] 0]
+program_hw_devices [lindex [get_hw_devices] 0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices] 0]
+INFO: [Labtools 27-1434] Device xc7a100t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+WARNING: [Labtools 27-3123] The debug hub core was not detected at User Scan Chain 1 or 3.
+Resolution: 
+1. Make sure the clock connected to the debug hub (dbg_hub) core is a free running clock and is active OR
+2. Manually launch hw_server with -e "set xsdb-user-bscan <C_USER_SCAN_CHAIN scan_chain_number>" to detect the debug hub at User Scan Chain of 2 or 4. To determine the user scan chain setting, open the implemented design and use: get_property C_USER_SCAN_CHAIN [get_debug_cores dbg_hub].
+close [ open /afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/project_buffer_test/project_xvga_disp.srcs/sources_1/new/buffer_simple.v w ]
+add_files /afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/project_buffer_test/project_xvga_disp.srcs/sources_1/new/buffer_simple.v
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+INFO: [Vivado 12-4149] The synthesis checkpoint for IP '/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/project_buffer_test/project_xvga_disp.srcs/sources_1/ip/blk_mem_gen_0/blk_mem_gen_0.xci' is already up-to-date
+[Thu Nov  3 22:21:48 2016] Launched synth_1...
+Run output will be captured here: /afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/project_buffer_test/project_xvga_disp.runs/synth_1/runme.log
+[Thu Nov  3 22:21:48 2016] Launched impl_1...
+Run output will be captured here: /afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/project_buffer_test/project_xvga_disp.runs/impl_1/runme.log
+reset_run impl_1 -prev_step 
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+INFO: [Vivado 12-4149] The synthesis checkpoint for IP '/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/project_buffer_test/project_xvga_disp.srcs/sources_1/ip/blk_mem_gen_0/blk_mem_gen_0.xci' is already up-to-date
+[Thu Nov  3 22:24:33 2016] Launched impl_1...
+Run output will be captured here: /afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/project_buffer_test/project_xvga_disp.runs/impl_1/runme.log
+set_property PROBES.FILE {} [lindex [get_hw_devices] 0]
+set_property PROGRAM.FILE {/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/project_buffer_test/project_xvga_disp.runs/impl_1/XADCdemo.bit} [lindex [get_hw_devices] 0]
+program_hw_devices [lindex [get_hw_devices] 0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices] 0]
+INFO: [Labtools 27-1434] Device xc7a100t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+WARNING: [Labtools 27-3123] The debug hub core was not detected at User Scan Chain 1 or 3.
+Resolution: 
+1. Make sure the clock connected to the debug hub (dbg_hub) core is a free running clock and is active OR
+2. Manually launch hw_server with -e "set xsdb-user-bscan <C_USER_SCAN_CHAIN scan_chain_number>" to detect the debug hub at User Scan Chain of 2 or 4. To determine the user scan chain setting, open the implemented design and use: get_property C_USER_SCAN_CHAIN [get_debug_cores dbg_hub].
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+INFO: [Vivado 12-4149] The synthesis checkpoint for IP '/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/project_buffer_test/project_xvga_disp.srcs/sources_1/ip/blk_mem_gen_0/blk_mem_gen_0.xci' is already up-to-date
+[Thu Nov  3 22:26:44 2016] Launched synth_1...
+Run output will be captured here: /afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/project_buffer_test/project_xvga_disp.runs/synth_1/runme.log
+[Thu Nov  3 22:26:44 2016] Launched impl_1...
+Run output will be captured here: /afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/project_buffer_test/project_xvga_disp.runs/impl_1/runme.log
+set_property PROBES.FILE {} [lindex [get_hw_devices] 0]
+set_property PROGRAM.FILE {/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/project_buffer_test/project_xvga_disp.runs/impl_1/XADCdemo.bit} [lindex [get_hw_devices] 0]
+program_hw_devices [lindex [get_hw_devices] 0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices] 0]
+INFO: [Labtools 27-1434] Device xc7a100t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+WARNING: [Labtools 27-3123] The debug hub core was not detected at User Scan Chain 1 or 3.
+Resolution: 
+1. Make sure the clock connected to the debug hub (dbg_hub) core is a free running clock and is active OR
+2. Manually launch hw_server with -e "set xsdb-user-bscan <C_USER_SCAN_CHAIN scan_chain_number>" to detect the debug hub at User Scan Chain of 2 or 4. To determine the user scan chain setting, open the implemented design and use: get_property C_USER_SCAN_CHAIN [get_debug_cores dbg_hub].
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+INFO: [Vivado 12-4149] The synthesis checkpoint for IP '/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/project_buffer_test/project_xvga_disp.srcs/sources_1/ip/blk_mem_gen_0/blk_mem_gen_0.xci' is already up-to-date
+[Thu Nov  3 22:30:02 2016] Launched synth_1...
+Run output will be captured here: /afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/project_buffer_test/project_xvga_disp.runs/synth_1/runme.log
+[Thu Nov  3 22:30:02 2016] Launched impl_1...
+Run output will be captured here: /afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/project_buffer_test/project_xvga_disp.runs/impl_1/runme.log
+set_property PROBES.FILE {} [lindex [get_hw_devices] 0]
+set_property PROGRAM.FILE {/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/project_buffer_test/project_xvga_disp.runs/impl_1/XADCdemo.bit} [lindex [get_hw_devices] 0]
+program_hw_devices [lindex [get_hw_devices] 0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices] 0]
+INFO: [Labtools 27-1434] Device xc7a100t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+WARNING: [Labtools 27-3123] The debug hub core was not detected at User Scan Chain 1 or 3.
+Resolution: 
+1. Make sure the clock connected to the debug hub (dbg_hub) core is a free running clock and is active OR
+2. Manually launch hw_server with -e "set xsdb-user-bscan <C_USER_SCAN_CHAIN scan_chain_number>" to detect the debug hub at User Scan Chain of 2 or 4. To determine the user scan chain setting, open the implemented design and use: get_property C_USER_SCAN_CHAIN [get_debug_cores dbg_hub].
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+INFO: [Vivado 12-4149] The synthesis checkpoint for IP '/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/project_buffer_test/project_xvga_disp.srcs/sources_1/ip/blk_mem_gen_0/blk_mem_gen_0.xci' is already up-to-date
+[Thu Nov  3 22:35:09 2016] Launched synth_1...
+Run output will be captured here: /afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/project_buffer_test/project_xvga_disp.runs/synth_1/runme.log
+[Thu Nov  3 22:35:09 2016] Launched impl_1...
+Run output will be captured here: /afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/project_buffer_test/project_xvga_disp.runs/impl_1/runme.log
+set_property PROBES.FILE {} [lindex [get_hw_devices] 0]
+set_property PROGRAM.FILE {/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/project_buffer_test/project_xvga_disp.runs/impl_1/XADCdemo.bit} [lindex [get_hw_devices] 0]
+program_hw_devices [lindex [get_hw_devices] 0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices] 0]
+INFO: [Labtools 27-1434] Device xc7a100t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+WARNING: [Labtools 27-3123] The debug hub core was not detected at User Scan Chain 1 or 3.
+Resolution: 
+1. Make sure the clock connected to the debug hub (dbg_hub) core is a free running clock and is active OR
+2. Manually launch hw_server with -e "set xsdb-user-bscan <C_USER_SCAN_CHAIN scan_chain_number>" to detect the debug hub at User Scan Chain of 2 or 4. To determine the user scan chain setting, open the implemented design and use: get_property C_USER_SCAN_CHAIN [get_debug_cores dbg_hub].
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+INFO: [Vivado 12-4149] The synthesis checkpoint for IP '/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/project_buffer_test/project_xvga_disp.srcs/sources_1/ip/blk_mem_gen_0/blk_mem_gen_0.xci' is already up-to-date
+[Thu Nov  3 22:37:27 2016] Launched synth_1...
+Run output will be captured here: /afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/project_buffer_test/project_xvga_disp.runs/synth_1/runme.log
+[Thu Nov  3 22:37:27 2016] Launched impl_1...
+Run output will be captured here: /afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/project_buffer_test/project_xvga_disp.runs/impl_1/runme.log
+set_property PROBES.FILE {} [lindex [get_hw_devices] 0]
+set_property PROGRAM.FILE {/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/project_buffer_test/project_xvga_disp.runs/impl_1/XADCdemo.bit} [lindex [get_hw_devices] 0]
+program_hw_devices [lindex [get_hw_devices] 0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices] 0]
+INFO: [Labtools 27-1434] Device xc7a100t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+WARNING: [Labtools 27-3123] The debug hub core was not detected at User Scan Chain 1 or 3.
+Resolution: 
+1. Make sure the clock connected to the debug hub (dbg_hub) core is a free running clock and is active OR
+2. Manually launch hw_server with -e "set xsdb-user-bscan <C_USER_SCAN_CHAIN scan_chain_number>" to detect the debug hub at User Scan Chain of 2 or 4. To determine the user scan chain setting, open the implemented design and use: get_property C_USER_SCAN_CHAIN [get_debug_cores dbg_hub].
+undo
+INFO: [Common 17-17] undo 'set_property PROGRAM.FILE {/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/project_buffer_test/project_xvga_disp.runs/impl_1/XADCdemo.bit} [lindex [get_hw_devices] 0]'
+undo
+INFO: [Common 17-17] undo 'set_property PROBES.FILE {} [lindex [get_hw_devices] 0]'
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+INFO: [Vivado 12-4149] The synthesis checkpoint for IP '/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/project_buffer_test/project_xvga_disp.srcs/sources_1/ip/blk_mem_gen_0/blk_mem_gen_0.xci' is already up-to-date
+[Thu Nov  3 22:39:07 2016] Launched synth_1...
+Run output will be captured here: /afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/project_buffer_test/project_xvga_disp.runs/synth_1/runme.log
+[Thu Nov  3 22:39:07 2016] Launched impl_1...
+Run output will be captured here: /afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/project_buffer_test/project_xvga_disp.runs/impl_1/runme.log
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+set_property PROBES.FILE {} [lindex [get_hw_devices] 0]
+set_property PROGRAM.FILE {/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/project_buffer_test/project_xvga_disp.runs/impl_1/XADCdemo.bit} [lindex [get_hw_devices] 0]
+program_hw_devices [lindex [get_hw_devices] 0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices] 0]
+INFO: [Labtools 27-1434] Device xc7a100t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+WARNING: [Labtools 27-3123] The debug hub core was not detected at User Scan Chain 1 or 3.
+Resolution: 
+1. Make sure the clock connected to the debug hub (dbg_hub) core is a free running clock and is active OR
+2. Manually launch hw_server with -e "set xsdb-user-bscan <C_USER_SCAN_CHAIN scan_chain_number>" to detect the debug hub at User Scan Chain of 2 or 4. To determine the user scan chain setting, open the implemented design and use: get_property C_USER_SCAN_CHAIN [get_debug_cores dbg_hub].
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+INFO: [Vivado 12-4149] The synthesis checkpoint for IP '/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/project_buffer_test/project_xvga_disp.srcs/sources_1/ip/blk_mem_gen_0/blk_mem_gen_0.xci' is already up-to-date
+[Thu Nov  3 22:40:34 2016] Launched synth_1...
+Run output will be captured here: /afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/project_buffer_test/project_xvga_disp.runs/synth_1/runme.log
+[Thu Nov  3 22:40:34 2016] Launched impl_1...
+Run output will be captured here: /afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/project_buffer_test/project_xvga_disp.runs/impl_1/runme.log
+set_property PROBES.FILE {} [lindex [get_hw_devices] 0]
+set_property PROGRAM.FILE {/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/project_buffer_test/project_xvga_disp.runs/impl_1/XADCdemo.bit} [lindex [get_hw_devices] 0]
+program_hw_devices [lindex [get_hw_devices] 0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices] 0]
+INFO: [Labtools 27-1434] Device xc7a100t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+WARNING: [Labtools 27-3123] The debug hub core was not detected at User Scan Chain 1 or 3.
+Resolution: 
+1. Make sure the clock connected to the debug hub (dbg_hub) core is a free running clock and is active OR
+2. Manually launch hw_server with -e "set xsdb-user-bscan <C_USER_SCAN_CHAIN scan_chain_number>" to detect the debug hub at User Scan Chain of 2 or 4. To determine the user scan chain setting, open the implemented design and use: get_property C_USER_SCAN_CHAIN [get_debug_cores dbg_hub].
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+INFO: [Vivado 12-4149] The synthesis checkpoint for IP '/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/project_buffer_test/project_xvga_disp.srcs/sources_1/ip/blk_mem_gen_0/blk_mem_gen_0.xci' is already up-to-date
+[Thu Nov  3 22:42:18 2016] Launched synth_1...
+Run output will be captured here: /afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/project_buffer_test/project_xvga_disp.runs/synth_1/runme.log
+[Thu Nov  3 22:42:18 2016] Launched impl_1...
+Run output will be captured here: /afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/project_buffer_test/project_xvga_disp.runs/impl_1/runme.log
+set_property PROBES.FILE {} [lindex [get_hw_devices] 0]
+set_property PROGRAM.FILE {/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/project_buffer_test/project_xvga_disp.runs/impl_1/XADCdemo.bit} [lindex [get_hw_devices] 0]
+program_hw_devices [lindex [get_hw_devices] 0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices] 0]
+INFO: [Labtools 27-1434] Device xc7a100t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+WARNING: [Labtools 27-3123] The debug hub core was not detected at User Scan Chain 1 or 3.
+Resolution: 
+1. Make sure the clock connected to the debug hub (dbg_hub) core is a free running clock and is active OR
+2. Manually launch hw_server with -e "set xsdb-user-bscan <C_USER_SCAN_CHAIN scan_chain_number>" to detect the debug hub at User Scan Chain of 2 or 4. To determine the user scan chain setting, open the implemented design and use: get_property C_USER_SCAN_CHAIN [get_debug_cores dbg_hub].
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+INFO: [Vivado 12-4149] The synthesis checkpoint for IP '/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/project_buffer_test/project_xvga_disp.srcs/sources_1/ip/blk_mem_gen_0/blk_mem_gen_0.xci' is already up-to-date
+[Thu Nov  3 22:43:58 2016] Launched synth_1...
+Run output will be captured here: /afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/project_buffer_test/project_xvga_disp.runs/synth_1/runme.log
+[Thu Nov  3 22:43:58 2016] Launched impl_1...
+Run output will be captured here: /afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/project_buffer_test/project_xvga_disp.runs/impl_1/runme.log
+set_property PROBES.FILE {} [lindex [get_hw_devices] 0]
+set_property PROGRAM.FILE {/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/project_buffer_test/project_xvga_disp.runs/impl_1/XADCdemo.bit} [lindex [get_hw_devices] 0]
+program_hw_devices [lindex [get_hw_devices] 0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices] 0]
+INFO: [Labtools 27-1434] Device xc7a100t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+WARNING: [Labtools 27-3123] The debug hub core was not detected at User Scan Chain 1 or 3.
+Resolution: 
+1. Make sure the clock connected to the debug hub (dbg_hub) core is a free running clock and is active OR
+2. Manually launch hw_server with -e "set xsdb-user-bscan <C_USER_SCAN_CHAIN scan_chain_number>" to detect the debug hub at User Scan Chain of 2 or 4. To determine the user scan chain setting, open the implemented design and use: get_property C_USER_SCAN_CHAIN [get_debug_cores dbg_hub].
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+INFO: [Vivado 12-4149] The synthesis checkpoint for IP '/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/project_buffer_test/project_xvga_disp.srcs/sources_1/ip/blk_mem_gen_0/blk_mem_gen_0.xci' is already up-to-date
+[Thu Nov  3 22:46:07 2016] Launched synth_1...
+Run output will be captured here: /afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/project_buffer_test/project_xvga_disp.runs/synth_1/runme.log
+[Thu Nov  3 22:46:07 2016] Launched impl_1...
+Run output will be captured here: /afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/project_buffer_test/project_xvga_disp.runs/impl_1/runme.log
+set_property PROBES.FILE {} [lindex [get_hw_devices] 0]
+set_property PROGRAM.FILE {/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/project_buffer_test/project_xvga_disp.runs/impl_1/XADCdemo.bit} [lindex [get_hw_devices] 0]
+program_hw_devices [lindex [get_hw_devices] 0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices] 0]
+INFO: [Labtools 27-1434] Device xc7a100t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+WARNING: [Labtools 27-3123] The debug hub core was not detected at User Scan Chain 1 or 3.
+Resolution: 
+1. Make sure the clock connected to the debug hub (dbg_hub) core is a free running clock and is active OR
+2. Manually launch hw_server with -e "set xsdb-user-bscan <C_USER_SCAN_CHAIN scan_chain_number>" to detect the debug hub at User Scan Chain of 2 or 4. To determine the user scan chain setting, open the implemented design and use: get_property C_USER_SCAN_CHAIN [get_debug_cores dbg_hub].
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+INFO: [Vivado 12-4149] The synthesis checkpoint for IP '/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/project_buffer_test/project_xvga_disp.srcs/sources_1/ip/blk_mem_gen_0/blk_mem_gen_0.xci' is already up-to-date
+[Thu Nov  3 22:47:46 2016] Launched synth_1...
+Run output will be captured here: /afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/project_buffer_test/project_xvga_disp.runs/synth_1/runme.log
+[Thu Nov  3 22:47:46 2016] Launched impl_1...
+Run output will be captured here: /afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/project_buffer_test/project_xvga_disp.runs/impl_1/runme.log
+set_property PROBES.FILE {} [lindex [get_hw_devices] 0]
+set_property PROGRAM.FILE {/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/project_buffer_test/project_xvga_disp.runs/impl_1/XADCdemo.bit} [lindex [get_hw_devices] 0]
+program_hw_devices [lindex [get_hw_devices] 0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices] 0]
+INFO: [Labtools 27-1434] Device xc7a100t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+WARNING: [Labtools 27-3123] The debug hub core was not detected at User Scan Chain 1 or 3.
+Resolution: 
+1. Make sure the clock connected to the debug hub (dbg_hub) core is a free running clock and is active OR
+2. Manually launch hw_server with -e "set xsdb-user-bscan <C_USER_SCAN_CHAIN scan_chain_number>" to detect the debug hub at User Scan Chain of 2 or 4. To determine the user scan chain setting, open the implemented design and use: get_property C_USER_SCAN_CHAIN [get_debug_cores dbg_hub].
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+INFO: [Vivado 12-4149] The synthesis checkpoint for IP '/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/project_buffer_test/project_xvga_disp.srcs/sources_1/ip/blk_mem_gen_0/blk_mem_gen_0.xci' is already up-to-date
+[Thu Nov  3 22:50:11 2016] Launched synth_1...
+Run output will be captured here: /afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/project_buffer_test/project_xvga_disp.runs/synth_1/runme.log
+[Thu Nov  3 22:50:11 2016] Launched impl_1...
+Run output will be captured here: /afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/project_buffer_test/project_xvga_disp.runs/impl_1/runme.log
+set_property PROBES.FILE {} [lindex [get_hw_devices] 0]
+set_property PROGRAM.FILE {/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/project_buffer_test/project_xvga_disp.runs/impl_1/XADCdemo.bit} [lindex [get_hw_devices] 0]
+program_hw_devices [lindex [get_hw_devices] 0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices] 0]
+INFO: [Labtools 27-1434] Device xc7a100t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+WARNING: [Labtools 27-3123] The debug hub core was not detected at User Scan Chain 1 or 3.
+Resolution: 
+1. Make sure the clock connected to the debug hub (dbg_hub) core is a free running clock and is active OR
+2. Manually launch hw_server with -e "set xsdb-user-bscan <C_USER_SCAN_CHAIN scan_chain_number>" to detect the debug hub at User Scan Chain of 2 or 4. To determine the user scan chain setting, open the implemented design and use: get_property C_USER_SCAN_CHAIN [get_debug_cores dbg_hub].
+set_property PROBES.FILE {} [lindex [get_hw_devices] 0]
+set_property PROGRAM.FILE {/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/project_buffer_test/project_xvga_disp.runs/impl_1/XADCdemo.bit} [lindex [get_hw_devices] 0]
+program_hw_devices [lindex [get_hw_devices] 0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices] 0]
+INFO: [Labtools 27-1434] Device xc7a100t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+WARNING: [Labtools 27-3123] The debug hub core was not detected at User Scan Chain 1 or 3.
+Resolution: 
+1. Make sure the clock connected to the debug hub (dbg_hub) core is a free running clock and is active OR
+2. Manually launch hw_server with -e "set xsdb-user-bscan <C_USER_SCAN_CHAIN scan_chain_number>" to detect the debug hub at User Scan Chain of 2 or 4. To determine the user scan chain setting, open the implemented design and use: get_property C_USER_SCAN_CHAIN [get_debug_cores dbg_hub].
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+INFO: [Vivado 12-4149] The synthesis checkpoint for IP '/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/project_buffer_test/project_xvga_disp.srcs/sources_1/ip/blk_mem_gen_0/blk_mem_gen_0.xci' is already up-to-date
+[Thu Nov  3 22:51:50 2016] Launched synth_1...
+Run output will be captured here: /afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/project_buffer_test/project_xvga_disp.runs/synth_1/runme.log
+[Thu Nov  3 22:51:50 2016] Launched impl_1...
+Run output will be captured here: /afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/project_buffer_test/project_xvga_disp.runs/impl_1/runme.log
+set_property PROBES.FILE {} [lindex [get_hw_devices] 0]
+set_property PROGRAM.FILE {/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/project_buffer_test/project_xvga_disp.runs/impl_1/XADCdemo.bit} [lindex [get_hw_devices] 0]
 program_hw_devices [lindex [get_hw_devices] 0]
 INFO: [Labtools 27-3164] End of startup status: HIGH
 refresh_hw_device [lindex [get_hw_devices] 0]
@@ -206,4 +450,4 @@ Resolution:
 1. Make sure the clock connected to the debug hub (dbg_hub) core is a free running clock and is active OR
 2. Manually launch hw_server with -e "set xsdb-user-bscan <C_USER_SCAN_CHAIN scan_chain_number>" to detect the debug hub at User Scan Chain of 2 or 4. To determine the user scan chain setting, open the implemented design and use: get_property C_USER_SCAN_CHAIN [get_debug_cores dbg_hub].
 exit
-INFO: [Common 17-206] Exiting Vivado at Thu Nov  3 18:55:44 2016...
+INFO: [Common 17-206] Exiting Vivado at Thu Nov  3 22:54:00 2016...

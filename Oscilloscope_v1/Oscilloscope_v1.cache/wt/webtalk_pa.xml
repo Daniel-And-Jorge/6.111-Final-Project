@@ -3,7 +3,11 @@
 <!--The data in this file is primarily intended for consumption by Xilinx tools.
 The structure and the elements are likely to change over the next few releases.
 This means code written to parse this file will need to be revisited each subsequent release.-->
+<<<<<<< Updated upstream
 <application name="pa" timeStamp="Fri Nov  4 15:51:52 2016">
+=======
+<application name="pa" timeStamp="Thu Nov  3 21:40:50 2016">
+>>>>>>> Stashed changes
 <section name="Project Information" visible="false">
 <property name="ProjectID" value="7dbb474a934f41f1a261a32857fce38d" type="ProjectID"/>
 <property name="ProjectIteration" value="6" type="ProjectIteration"/>
@@ -17,6 +21,7 @@ This means code written to parse this file will need to be revisited each subseq
 <property name="ImplStrategy" value="Vivado Implementation Defaults" type="ImplStrategy"/>
 </item>
 <item name="Java Command Handlers">
+<<<<<<< Updated upstream
 <property name="AddSources" value="13" type="JavaHandler"/>
 <property name="AutoConnectTarget" value="1" type="JavaHandler"/>
 <property name="CoreView" value="4" type="JavaHandler"/>
@@ -24,6 +29,18 @@ This means code written to parse this file will need to be revisited each subseq
 <property name="EditUndo" value="8" type="JavaHandler"/>
 <property name="LaunchProgramFpga" value="2" type="JavaHandler"/>
 <property name="OpenHardwareManager" value="4" type="JavaHandler"/>
+=======
+<property name="AddSources" value="17" type="JavaHandler"/>
+<property name="AutoConnectTarget" value="2" type="JavaHandler"/>
+<property name="CloseProject" value="3" type="JavaHandler"/>
+<property name="CoreView" value="4" type="JavaHandler"/>
+<property name="CustomizeCore" value="3" type="JavaHandler"/>
+<property name="EditDelete" value="2" type="JavaHandler"/>
+<property name="EditUndo" value="10" type="JavaHandler"/>
+<property name="LaunchProgramFpga" value="3" type="JavaHandler"/>
+<property name="NewFile" value="1" type="JavaHandler"/>
+<property name="OpenHardwareManager" value="7" type="JavaHandler"/>
+>>>>>>> Stashed changes
 <property name="OpenProject" value="2" type="JavaHandler"/>
 <property name="OpenRecentTarget" value="1" type="JavaHandler"/>
 <property name="ProgramDevice" value="2" type="JavaHandler"/>
@@ -38,6 +55,146 @@ This means code written to parse this file will need to be revisited each subseq
 <property name="ViewTaskProjectManager" value="2" type="JavaHandler"/>
 <property name="ui.views.b.aG" value="1" type="JavaHandler"/>
 </item>
+<<<<<<< Updated upstream
+=======
+<item name="Gui Resources Info">
+<property name="CANCEL, Cancel" value="1" type="GuiResourceData"/>
+<property name="FINISH, Finish" value="3" type="GuiResourceData"/>
+<property name="NEXT, Next " value="4" type="GuiResourceData"/>
+<property name="Nexys4DDR_Master.xdc, 9, 397" value="1" type="GuiResourceData"/>
+<property name="Oscilloscope_v1.v, 101, 323" value="1" type="GuiResourceData"/>
+<property name="Oscilloscope_v1.v, 104, 382" value="2" type="GuiResourceData"/>
+<property name="Oscilloscope_v1.v, 104, 382, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="Oscilloscope_v1.v, 106, 408" value="1" type="GuiResourceData"/>
+<property name="Oscilloscope_v1.v, 106, 408, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="Oscilloscope_v1.v, 11, 201" value="1" type="GuiResourceData"/>
+<property name="Oscilloscope_v1.v, 129, 487" value="1" type="GuiResourceData"/>
+<property name="Oscilloscope_v1.v, 129, 487, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="Oscilloscope_v1.v, 130, 432" value="1" type="GuiResourceData"/>
+<property name="Oscilloscope_v1.v, 134, 69" value="1" type="GuiResourceData"/>
+<property name="Oscilloscope_v1.v, 139, 140" value="1" type="GuiResourceData"/>
+<property name="Oscilloscope_v1.v, 146, 150" value="1" type="GuiResourceData"/>
+<property name="Oscilloscope_v1.v, 149, 409" value="1" type="GuiResourceData"/>
+<property name="Oscilloscope_v1.v, 153, 242" value="1" type="GuiResourceData"/>
+<property name="Oscilloscope_v1.v, 163, 390" value="1" type="GuiResourceData"/>
+<property name="Oscilloscope_v1.v, 164, 516" value="1" type="GuiResourceData"/>
+<property name="Oscilloscope_v1.v, 167, 227" value="1" type="GuiResourceData"/>
+<property name="Oscilloscope_v1.v, 167, 227, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="Oscilloscope_v1.v, 168, 184" value="1" type="GuiResourceData"/>
+<property name="Oscilloscope_v1.v, 168, 184, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="Oscilloscope_v1.v, 170, 381" value="1" type="GuiResourceData"/>
+<property name="Oscilloscope_v1.v, 177, 178" value="1" type="GuiResourceData"/>
+<property name="Oscilloscope_v1.v, 177, 178, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="Oscilloscope_v1.v, 186, 386" value="1" type="GuiResourceData"/>
+<property name="Oscilloscope_v1.v, 191, 155" value="1" type="GuiResourceData"/>
+<property name="Oscilloscope_v1.v, 197, 489" value="1" type="GuiResourceData"/>
+<property name="Oscilloscope_v1.v, 198, 432" value="1" type="GuiResourceData"/>
+<property name="Oscilloscope_v1.v, 199, 3" value="1" type="GuiResourceData"/>
+<property name="Oscilloscope_v1.v, 199, 519" value="1" type="GuiResourceData"/>
+<property name="Oscilloscope_v1.v, 205, 478" value="1" type="GuiResourceData"/>
+<property name="Oscilloscope_v1.v, 217, 57" value="1" type="GuiResourceData"/>
+<property name="Oscilloscope_v1.v, 218, 414" value="1" type="GuiResourceData"/>
+<property name="Oscilloscope_v1.v, 234, 385" value="1" type="GuiResourceData"/>
+<property name="Oscilloscope_v1.v, 255, 486" value="1" type="GuiResourceData"/>
+<property name="Oscilloscope_v1.v, 26, 277" value="1" type="GuiResourceData"/>
+<property name="Oscilloscope_v1.v, 260, 292" value="1" type="GuiResourceData"/>
+<property name="Oscilloscope_v1.v, 265, 280" value="1" type="GuiResourceData"/>
+<property name="Oscilloscope_v1.v, 266, 230" value="1" type="GuiResourceData"/>
+<property name="Oscilloscope_v1.v, 27, 453" value="1" type="GuiResourceData"/>
+<property name="Oscilloscope_v1.v, 282, 225" value="1" type="GuiResourceData"/>
+<property name="Oscilloscope_v1.v, 284, 447" value="1" type="GuiResourceData"/>
+<property name="Oscilloscope_v1.v, 302, 481" value="1" type="GuiResourceData"/>
+<property name="Oscilloscope_v1.v, 351, 294" value="1" type="GuiResourceData"/>
+<property name="Oscilloscope_v1.v, 351, 294, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="Oscilloscope_v1.v, 370, 460" value="1" type="GuiResourceData"/>
+<property name="Oscilloscope_v1.v, 386, 366" value="1" type="GuiResourceData"/>
+<property name="Oscilloscope_v1.v, 466, 295" value="1" type="GuiResourceData"/>
+<property name="Oscilloscope_v1.v, 466, 295, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="Oscilloscope_v1.v, 489, 295" value="1" type="GuiResourceData"/>
+<property name="Oscilloscope_v1.v, 506, 422" value="1" type="GuiResourceData"/>
+<property name="Oscilloscope_v1.v, 506, 422, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="Oscilloscope_v1.v, 509, 309, false, false, false, true, false" value="1" type="GuiResourceData"/>
+<property name="Oscilloscope_v1.v, 520, 427" value="1" type="GuiResourceData"/>
+<property name="Oscilloscope_v1.v, 520, 427, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="Oscilloscope_v1.v, 55, 366" value="1" type="GuiResourceData"/>
+<property name="Oscilloscope_v1.v, 562, 187" value="1" type="GuiResourceData"/>
+<property name="Oscilloscope_v1.v, 568, 466, false, false, false, true, false" value="1" type="GuiResourceData"/>
+<property name="Oscilloscope_v1.v, 624, 366" value="1" type="GuiResourceData"/>
+<property name="Oscilloscope_v1.v, 66, 365" value="1" type="GuiResourceData"/>
+<property name="Oscilloscope_v1.v, 693, 275" value="1" type="GuiResourceData"/>
+<property name="Oscilloscope_v1.v, 81, 29" value="1" type="GuiResourceData"/>
+<property name="PAResourceAtoD.AddSrcWizard_SPECIFY_HDL_AND_NETLIST_FILES_OR_DIRECTORIES, Add or create design sources" value="1" type="GuiResourceData"/>
+<property name="PAResourceAtoD.AddSrcWizard_SPECIFY_OR_CREATE_CONSTRAINT_FILES, Add or create constraints" value="1" type="GuiResourceData"/>
+<property name="PAResourceAtoD.AddSrcWizard_SPECIFY_SIMULATION_SPECIFIC_HDL_FILES, Add or create simulation sources" value="1" type="GuiResourceData"/>
+<property name="PAResourceAtoD.CreateSrcFileDialog_FILE_NAME, fake_data_source.v" value="1" type="GuiResourceData"/>
+<property name="PAResourceAtoD.CreateSrcFileDialog_FILE_NAME, tb_buf.v" value="1" type="GuiResourceData"/>
+<property name="PAResourceAtoD.CreateSrcFileDialog_FILE_NAME, test_buf.v" value="1" type="GuiResourceData"/>
+<property name="PAResourceAtoD.CreateSrcFileDialog_FILE_TYPE, Verilog, 0" value="1" type="GuiResourceData"/>
+<property name="PAResourceAtoD.DefineModulesDialog_DEFINE_MODULES_AND_SPECIFY_IO_PORTS,  ; input ; false ; 0 ; 0, 0, (String" value="1" type="GuiResourceData"/>
+<property name="PAResourceAtoD.DefineModulesDialog_DEFINE_MODULES_AND_SPECIFY_IO_PORTS,  ; input ; false ; 0 ; 0, 1, input, 1" value="1" type="GuiResourceData"/>
+<property name="PAResourceAtoD.DefineModulesDialog_DEFINE_MODULES_AND_SPECIFY_IO_PORTS,  ; input ; false ; 0 ; 0, 2, input, 1" value="1" type="GuiResourceData"/>
+<property name="PAResourceAtoD.DefineModulesDialog_DEFINE_MODULES_AND_SPECIFY_IO_PORTS,  ; output ; false ; 0 ; 0, 1, (String" value="1" type="GuiResourceData"/>
+<property name="PAResourceAtoD.DefineModulesDialog_DEFINE_MODULES_AND_SPECIFY_IO_PORTS,  ; output ; false ; 0 ; 0, 2, false, 2" value="1" type="GuiResourceData"/>
+<property name="PAResourceAtoD.DefineModulesDialog_DEFINE_MODULES_AND_SPECIFY_IO_PORTS,  ; output ; true ; 0 ; 0, 2, 0, 3" value="1" type="GuiResourceData"/>
+<property name="PAResourceAtoD.DefineModulesDialog_DEFINE_MODULES_AND_SPECIFY_IO_PORTS,  ; output ; true ; 11 ; 0, 2, (String" value="1" type="GuiResourceData"/>
+<property name="PAResourceAtoD.DefineModulesDialog_DEFINE_MODULES_AND_SPECIFY_IO_PORTS, 0, 2, LSB, 4" value="1" type="GuiResourceData"/>
+<property name="PAResourceAtoD.DefineModulesDialog_DEFINE_MODULES_AND_SPECIFY_IO_PORTS, 11, 2, MSB, 3" value="1" type="GuiResourceData"/>
+<property name="PAResourceAtoD.DefineModulesDialog_DEFINE_MODULES_AND_SPECIFY_IO_PORTS, clock, 0, Port Name, 0" value="1" type="GuiResourceData"/>
+<property name="PAResourceAtoD.DefineModulesDialog_DEFINE_MODULES_AND_SPECIFY_IO_PORTS, dataOut, 2, Port Name, 0" value="1" type="GuiResourceData"/>
+<property name="PAResourceAtoD.DefineModulesDialog_DEFINE_MODULES_AND_SPECIFY_IO_PORTS, output, 1, Direction, 1" value="1" type="GuiResourceData"/>
+<property name="PAResourceAtoD.DefineModulesDialog_DEFINE_MODULES_AND_SPECIFY_IO_PORTS, output, 2, Direction, 1" value="1" type="GuiResourceData"/>
+<property name="PAResourceAtoD.DefineModulesDialog_DEFINE_MODULES_AND_SPECIFY_IO_PORTS, ready, 1, Port Name, 0" value="1" type="GuiResourceData"/>
+<property name="PAResourceCommand.PACommandNames_ADD_SOURCES, Add Sources..." value="1" type="GuiResourceData"/>
+<property name="PAResourceCommand.PACommandNames_AUTO_UPDATE_HIER, Hierarchy Update" value="3" type="GuiResourceData"/>
+<property name="PAResourceCommand.PACommandNames_CLOSE_PROJECT, Close Project" value="1" type="GuiResourceData"/>
+<property name="PAResourceCommand.PACommandNames_NEW_FILE, New File..." value="1" type="GuiResourceData"/>
+<property name="PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, [root, Constraints, constrs_1, Nexys4DDR_Master.xdc], 16, false" value="1" type="GuiResourceData"/>
+<property name="PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, [root, Constraints, constrs_1, Nexys4DDR_Master.xdc], 16, false, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, [root, Constraints], 14" value="1" type="GuiResourceData"/>
+<property name="PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, [root, Design Sources, DigitToSeg (DigitToSeg.v" value="3" type="GuiResourceData"/>
+<property name="PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, [root, Design Sources, Oscilloscope_v1 (Oscilloscope_v1.v" value="11" type="GuiResourceData"/>
+<property name="PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, [root, Design Sources, Syntax Error Files, Oscilloscope_v1.v], 2, false" value="2" type="GuiResourceData"/>
+<property name="PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, [root, Design Sources, Syntax Error Files, Oscilloscope_v1.v], 2, false, false, false, false, false, true" value="2" type="GuiResourceData"/>
+<property name="PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, [root, Design Sources, Syntax Error Files], 1" value="1" type="GuiResourceData"/>
+<property name="PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, [root, Design Sources, Syntax Error Files], 1, true" value="3" type="GuiResourceData"/>
+<property name="PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, [root, Design Sources, Syntax Error Files], 1, true, false, false, false, false, true" value="2" type="GuiResourceData"/>
+<property name="PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, [root, Design Sources, buffer (buffer.v" value="3" type="GuiResourceData"/>
+<property name="PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, [root, Design Sources, fake_data_source (fake_data_source.v" value="2" type="GuiResourceData"/>
+<property name="PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, [root, Simulation Sources, sim_1, Non-module Files, tb_buf.v], 19, false" value="1" type="GuiResourceData"/>
+<property name="PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, [root, Simulation Sources, sim_1, Non-module Files, tb_buf.v], 19, false, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, [root, Simulation Sources, sim_1, Non-module Files, tb_buf.v], 19, false, false, false, false, true, false" value="1" type="GuiResourceData"/>
+<property name="PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, [root, Simulation Sources, sim_1, Non-module Files], 18" value="1" type="GuiResourceData"/>
+<property name="PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, [root, Simulation Sources, sim_1], 17" value="1" type="GuiResourceData"/>
+<property name="PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, [root, Simulation Sources], 16" value="1" type="GuiResourceData"/>
+<property name="PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, [, Project Manager, Add Sources], 2, false" value="3" type="GuiResourceData"/>
+<property name="PAResourceEtoH.GettingStartedView_RECENT_PROJECTS, /afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.xpr, 0" value="1" type="GuiResourceData"/>
+<property name="PAResourceItoN.MainMenuMgr_FILE, File" value="4" type="GuiResourceData"/>
+<property name="PAResourceItoN.MainMenuMgr_OPEN_RECENT_FILE, Open Recent File" value="1" type="GuiResourceData"/>
+<property name="PAResourceItoN.MainMenuMgr_OPEN_RECENT_PROJECT, Open Recent Project" value="3" type="GuiResourceData"/>
+<property name="PAResourceItoN.MainMenuMgr_REPORT, Report" value="2" type="GuiResourceData"/>
+<property name="PAResourceItoN.MainMenuMgr_TOOLS, Tools" value="2" type="GuiResourceData"/>
+<property name="PAResourceOtoP.PAViews_CODE, Code" value="2" type="GuiResourceData"/>
+<property name="PAResourceQtoS.RemoveSourcesDialog_ALSO_DELETE, Also delete the project local file/directory from disk, true" value="1" type="GuiResourceData"/>
+<property name="PAResourceQtoS.SaveProjectUtils_SAVE, Save" value="1" type="GuiResourceData"/>
+<property name="PAResourceQtoS.SrcChooserPanel_ADD_HDL_AND_NETLIST_FILES_TO_YOUR_PROJECT, Add Files" value="1" type="GuiResourceData"/>
+<property name="PAResourceQtoS.SrcChooserPanel_CREATE_FILE, Create File" value="3" type="GuiResourceData"/>
+<property name="PAResourceQtoS.SrcChooserTable_SRC_CHOOSER_TABLE, Library, 3" value="1" type="GuiResourceData"/>
+<property name="PAResourceQtoS.SrcMenu_IP_HIERARCHY, IP Hierarchy" value="3" type="GuiResourceData"/>
+<property name="PAResourceQtoS.SrcMenu_OPEN_SELECTED_SOURCE_FILES, Open File" value="1" type="GuiResourceData"/>
+<property name="RDIResource.AbstractCombinedPanel_REMOVE_SELECTED_ELEMENTS, Remove" value="1" type="GuiResourceData"/>
+<property name="RDIResource.BaseDialog_CANCEL, Cancel" value="2" type="GuiResourceData"/>
+<property name="RDIResource.BaseDialog_OK, OK" value="5" type="GuiResourceData"/>
+<property name="RDIResourceCommand.RDICommands_DELETE, Remove File from Project..." value="2" type="GuiResourceData"/>
+<property name="fake_data_source.v, 227, 398" value="1" type="GuiResourceData"/>
+<property name="fake_data_source.v, 68, 398" value="1" type="GuiResourceData"/>
+<property name="tb_buf.v, 209, 169" value="1" type="GuiResourceData"/>
+</item>
+<item name="Other">
+<property name="GuiMode" value="18" type="GuiMode"/>
+<property name="BatchMode" value="0" type="BatchMode"/>
+<property name="TclMode" value="13" type="TclMode"/>
+</item>
+>>>>>>> Stashed changes
 </section>
 </application>
 </document>

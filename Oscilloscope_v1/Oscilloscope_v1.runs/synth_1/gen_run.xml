@@ -1,13 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<<<<<<< Updated upstream
 <GenRun Id="synth_1" LaunchPart="xc7a100tcsg324-3" LaunchTime="1478289112">
   <File Type="VDS-TIMING-PB" Name="Oscilloscope_v1_timing_summary_synth.pb"/>
+=======
+<GenRun Id="synth_1" LaunchPart="xc7a100tcsg324-3" LaunchTime="1478213425">
+  <File Type="PA-TCL" Name="Oscilloscope_v1.tcl"/>
+  <File Type="RDS-RDS" Name="Oscilloscope_v1.vds"/>
+>>>>>>> Stashed changes
   <File Type="VDS-TIMINGSUMMARY" Name="Oscilloscope_v1_timing_summary_synth.rpt"/>
+  <File Type="VDS-TIMING-PB" Name="Oscilloscope_v1_timing_summary_synth.pb"/>
   <File Type="RDS-DCP" Name="Oscilloscope_v1.dcp"/>
   <File Type="RDS-UTIL-PB" Name="Oscilloscope_v1_utilization_synth.pb"/>
   <File Type="RDS-UTIL" Name="Oscilloscope_v1_utilization_synth.rpt"/>
   <File Type="RDS-PROPCONSTRS" Name="Oscilloscope_v1_drc_synth.rpt"/>
-  <File Type="RDS-RDS" Name="Oscilloscope_v1.vds"/>
-  <File Type="PA-TCL" Name="Oscilloscope_v1.tcl"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
     <Filter Type="Srcs"/>
     <File Path="$PSRCDIR/sources_1/imports/6.111-Final-Project/project_xadc/src/hdl/DigitToSeg.v">
@@ -117,8 +122,8 @@
     <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2016"/>
     <Step Id="synth_design"/>
   </Strategy>
+  <BlockFileSet Type="BlockSrcs" Name="blk_mem_gen_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="xadc_wiz_0"/>
   <BlockFileSet Type="BlockSrcs" Name="clk_wiz_0"/>
   <BlockFileSet Type="BlockSrcs" Name="blk_mem_gen_1"/>
-  <BlockFileSet Type="BlockSrcs" Name="xadc_wiz_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="blk_mem_gen_0"/>
 </GenRun>

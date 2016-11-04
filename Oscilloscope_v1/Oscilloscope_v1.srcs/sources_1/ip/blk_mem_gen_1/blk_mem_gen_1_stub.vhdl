@@ -1,7 +1,7 @@
 -- Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2016.2 (lin64) Build 1577090 Thu Jun  2 16:32:35 MDT 2016
--- Date        : Fri Nov  4 16:33:03 2016
+-- Date        : Fri Nov  4 17:20:27 2016
 -- Host        : eecs-digital-10 running 64-bit Ubuntu 14.04.5 LTS
 -- Command     : write_vhdl -force -mode synth_stub
 --               /afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/ip/blk_mem_gen_1/blk_mem_gen_1_stub.vhdl
@@ -17,13 +17,13 @@ entity blk_mem_gen_1 is
     clka : in STD_LOGIC;
     ena : in STD_LOGIC;
     wea : in STD_LOGIC_VECTOR ( 0 to 0 );
-    addra : in STD_LOGIC_VECTOR ( 9 downto 0 );
+    addra : in STD_LOGIC_VECTOR ( 10 downto 0 );
     dina : in STD_LOGIC_VECTOR ( 11 downto 0 );
     douta : out STD_LOGIC_VECTOR ( 11 downto 0 );
     clkb : in STD_LOGIC;
     enb : in STD_LOGIC;
     web : in STD_LOGIC_VECTOR ( 0 to 0 );
-    addrb : in STD_LOGIC_VECTOR ( 9 downto 0 );
+    addrb : in STD_LOGIC_VECTOR ( 10 downto 0 );
     dinb : in STD_LOGIC_VECTOR ( 11 downto 0 );
     doutb : out STD_LOGIC_VECTOR ( 11 downto 0 )
   );
@@ -34,7 +34,7 @@ architecture stub of blk_mem_gen_1 is
 attribute syn_black_box : boolean;
 attribute black_box_pad_pin : string;
 attribute syn_black_box of stub : architecture is true;
-attribute black_box_pad_pin of stub : architecture is "clka,ena,wea[0:0],addra[9:0],dina[11:0],douta[11:0],clkb,enb,web[0:0],addrb[9:0],dinb[11:0],doutb[11:0]";
+attribute black_box_pad_pin of stub : architecture is "clka,ena,wea[0:0],addra[10:0],dina[11:0],douta[11:0],clkb,enb,web[0:0],addrb[10:0],dinb[11:0],doutb[11:0]";
 attribute x_core_info : string;
 attribute x_core_info of stub : architecture is "blk_mem_gen_v8_3_3,Vivado 2016.2";
 begin

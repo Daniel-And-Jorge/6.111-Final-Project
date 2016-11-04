@@ -24,7 +24,7 @@
 
 module ADCController
    #(parameter IO_BITS = 12,
-               INPUT_OFFSET = 1 << 10,
+               INPUT_OFFSET = 2048,
                LOG_SCALE_FACTOR = 3)
    (
     input clock,
@@ -42,7 +42,7 @@ module ADCController
         
         if (!reset && sampleEnabled && inputReady) begin
             ready <= 1;
-            dataOut <= (dataIn - INPUT_OFFSET) << LOG_SCALE_FACTOR;
+            dataOut <= (dataIn - INPUT_OFFSET); // << LOG_SCALE_FACTOR;
         end
         
         if (reset) begin

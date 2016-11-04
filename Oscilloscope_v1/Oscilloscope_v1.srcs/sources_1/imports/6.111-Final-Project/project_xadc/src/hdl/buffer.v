@@ -28,15 +28,14 @@
 
 // discuss naming convention (snake or camel) with Jorge
 
-module buffer #(parameter LOG_SAMPLES=10, SAMPLE_SIZE=12)
-              (input clock, input ready, input [SAMPLE_SIZE-1:0]dataIn,
-               input isTrigger, input disableCollection, input lockTrigger,
+module buffer #(parameter LOG_SAMPLES=11, SAMPLE_SIZE=12)
+              (input clock, input ready, input signed [SAMPLE_SIZE-1:0]dataIn,
+               input isTrigger, input disableCollection, input activeBramSelect, // 0 if BRAM 0 is active
                input reset,
                input readTriggerRelative,
                input signed [LOG_SAMPLES-1:0]readAddress,
-               output reg [SAMPLE_SIZE-1:0]dataOut);
+               output reg signed [SAMPLE_SIZE-1:0]dataOut);
 
-    reg bram0_is_active; // the other BRAM is the locked BRAM
     reg [LOG_SAMPLES-1:0] pointer0; // points to the next open slot in the BRAM
     reg [LOG_SAMPLES-1:0] pointer1;
     reg [LOG_SAMPLES-1:0] trigger_address0;
@@ -92,8 +91,6 @@ module buffer #(parameter LOG_SAMPLES=10, SAMPLE_SIZE=12)
       pointer0 <= 0;
       pointer1 <= 0;
 
-      bram0_is_active <= 1;
-
     end else begin
       if (ready && !disableCollection) begin
         // store dataIn to pointer
@@ -103,7 +100,7 @@ module buffer #(parameter LOG_SAMPLES=10, SAMPLE_SIZE=12)
         ram1_din <= dataIn;
 
         // only write to the active BRAM
-        if (bram0_is_active) begin
+        if (activeBramSelect == 0) begin
           ram0_we <= 1;
           ram1_we <= 0;
           pointer0 <= pointer0 + 1;
@@ -114,28 +111,25 @@ module buffer #(parameter LOG_SAMPLES=10, SAMPLE_SIZE=12)
         end
 
         if (isTrigger) begin
-          if (bram0_is_active) begin
+          if (activeBramSelect == 0) begin
             trigger_address0 <= pointer0;
           end else begin
             trigger_address1 <= pointer1;
           end
         end
-
-        if (lockTrigger)
-          bram0_is_active <= !bram0_is_active;
       end
 
       // read data
       if (readTriggerRelative) begin
-        ram0_addrb <= (trigger_address0 + readAddress) & 10'b1111111111;
-        ram1_addrb <= (trigger_address1 + readAddress) & 10'b1111111111;
+        ram0_addrb <= (trigger_address0 + readAddress) & 11'b11111111111;
+        ram1_addrb <= (trigger_address1 + readAddress) & 11'b11111111111;
       end else begin
-        ram0_addrb <= (pointer0 + readAddress) & 10'b1111111111;
-        ram1_addrb <= (pointer1 + readAddress) & 10'b1111111111;
+        ram0_addrb <= (pointer0 + readAddress) & 11'b11111111111;
+        ram1_addrb <= (pointer1 + readAddress) & 11'b11111111111;
       end
 
       // the bram we actually output is the locked (non-active) one
-      if (bram0_is_active)
+      if (activeBramSelect == 0)
         dataOut <= ram1_dout;
       else
         dataOut <= ram0_dout;

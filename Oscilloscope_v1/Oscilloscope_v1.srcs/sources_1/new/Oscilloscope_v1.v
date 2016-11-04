@@ -61,7 +61,7 @@ module Oscilloscope_v1
     wire eoc;
     wire ready;
     wire [15:0] XADCdataOut;   
-    reg [6:0] Address_in = 7'h1b;   
+    reg [6:0] Address_in = 7'h1b; // select VAUXP/N11 as input [see Artix 7 XADC]
     //xadc instantiation connect the eoc_out .den_in to get continuous conversion
     xadc_wiz_0  XLXI_7 (.daddr_in(Address_in), //addresses can be found in the artix 7 XADC user guide DRP register space
                          .dclk_in(CLK65MHZ), 
@@ -81,26 +81,34 @@ module Oscilloscope_v1
                          .drdy_out(ready));
          
       // ADC controller
-//      wire adcc_ready;
-//      wire [11:0] ADCCdataOut;
-//      ADCController adcc(
-//                             .clock(CLK65MHZ),
-//                             .reset(reset),
-//                             .sampleEnabled(1),
-//                             .inputReady(eoc),
-//                             .dataIn(XADCdataOut[15:4]),
-//                             .ready(adcc_ready),
-//                             .dataOut(ADCCdataOut)
-//                             );
+      wire adcc_ready;
+      wire [11:0] ADCCdataOut;
+      ADCController adcc(
+                             .clock(CLK65MHZ),
+                             .reset(reset),
+                             .sampleEnabled(1),
+                             .inputReady(eoc),
+                             .dataIn(XADCdataOut[15:4]),
+                             .ready(adcc_ready),
+                             .dataOut(ADCCdataOut)
+                             );
 
-    wire adcc_ready;
-    wire [11:0] ADCCdataOut;
-    assign adcc_ready = 1;
-    FakeADCC adcc(.clock(CLK65MHZ), .dataOut(ADCCdataOut));
+//    wire adcc_ready;
+//    wire [11:0] ADCCdataOut;
+//    assign adcc_ready = 1;
+//    FakeADCC adcc(.clock(CLK65MHZ), .dataOut(ADCCdataOut));
     
     wire [11:0] bufferDataOut;
+    wire activeBramSelect;
+    BufferSelector mybs(
+        .clock(CLK65MHZ),
+        .drawStarting(drawStarting),
+        .activeBramSelect(activeBramSelect)
+        );
+    
     buffer Buffer (.clock(CLK65MHZ), .ready(adcc_ready), .dataIn(ADCCdataOut),
-        .isTrigger(isTriggered), .disableCollection(0), .lockTrigger(drawStarting),
+        .isTrigger(isTriggered), .disableCollection(0), .activeBramSelect(activeBramSelect),
+        //.isTrigger(isTriggered), .disableCollection(0), .activeBramSelect(sw[0]),
         .reset(reset),
         .readTriggerRelative(1),
         .readAddress(curveAddressOut),

@@ -26,22 +26,15 @@ module TriggerRisingEdge
     input [DATA_BITS-1:0] threshold,
     input [DATA_BITS-1:0] dataIn,
     input triggerDisable,
-    output reg isTriggered
+    output isTriggered
     );
     
     reg [DATA_BITS-1:0] previousData;
 
     always @(posedge clock) begin
         previousData <= dataIn;
-        if (previousData<threshold && dataIn>=threshold) begin
-            if (triggerDisable!=1) begin
-                isTriggered <= 1;
-            end else begin
-                isTriggered <= 0;
-            end
-        end else begin
-            isTriggered <= 0;
-        end
     end
+    
+    assign isTriggered = (previousData<threshold && dataIn>=threshold && !triggerDisable);
         
 endmodule

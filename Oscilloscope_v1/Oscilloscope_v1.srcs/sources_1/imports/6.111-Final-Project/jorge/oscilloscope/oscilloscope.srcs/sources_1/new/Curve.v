@@ -36,7 +36,7 @@ module Curve
                 ADDRESS_BITS = 11
                 )
     (input clock,
-    input [DATA_IN_BITS-1:0] dataIn,
+    input signed [DATA_IN_BITS-1:0] dataIn,
     input [DISPLAY_X_BITS-1:0] displayX,
     input [DISPLAY_Y_BITS-1:0] displayY,
     input hsync,
@@ -45,22 +45,27 @@ module Curve
     output [RGB_BITS-1:0] pixel,
     output reg drawStarting,
     output reg [ADDRESS_BITS-1:0] address,
-    output curveHsync,
-    output curveVsync,
-    output curveBlank
-    );
-    
-    assign curveHsync = hsync;
-    assign curveVsync = vsync;
-    assign curveBlank = blank;
+    output reg curveHsync,
+    output reg curveVsync,
+    output reg curveBlank
+    );    
     
     //scale dataIn
-    wire [DATA_IN_BITS-1:0] scaledDataIn;
+    wire signed [DATA_IN_BITS-1:0] scaledDataIn;
     assign scaledDataIn = dataIn >> SCALING_SHIFTS;
+    
+    // figure out horiz location on screen
+    // this has to be unsigned!
+    wire [DATA_IN_BITS-1:0] dataScreenLocation;
+    assign dataScreenLocation = HEIGHT_ZERO_PIXEL - scaledDataIn;
     
     reg pixelOn;
     
     always @(posedge clock) begin
+        curveHsync <= hsync;
+        curveVsync <= vsync;
+        curveBlank <= blank;
+        
         //control drawStarting
         if (displayX==(DISPLAY_WIDTH-1) && displayY==(DISPLAY_HEIGHT-1)) begin
             drawStarting <= 1;
@@ -69,9 +74,11 @@ module Curve
         end
         
         //control pixel
-        if ( (HEIGHT_ZERO_PIXEL-scaledDataIn-ADDITIONAL_WAVE_PIXELS)<=displayY &&
-             displayY<=(HEIGHT_ZERO_PIXEL-scaledDataIn+ADDITIONAL_WAVE_PIXELS) ) begin
-            pixelOn <= 1;     
+        
+        // data value above zero
+        if ( (dataScreenLocation - ADDITIONAL_WAVE_PIXELS)<=displayY &&
+             displayY<=(dataScreenLocation + ADDITIONAL_WAVE_PIXELS) ) begin
+            pixelOn <= 1;
         end else begin
             pixelOn <= 0;
         end

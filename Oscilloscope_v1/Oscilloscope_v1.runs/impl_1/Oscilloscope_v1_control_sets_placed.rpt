@@ -1,7 +1,7 @@
 Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 --------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2016.2 (lin64) Build 1577090 Thu Jun  2 16:32:35 MDT 2016
-| Date         : Fri Nov  4 16:34:19 2016
+| Date         : Fri Nov  4 19:12:57 2016
 | Host         : eecs-digital-10 running 64-bit Ubuntu 14.04.5 LTS
 | Command      : report_control_sets -verbose -file Oscilloscope_v1_control_sets_placed.rpt
 | Design       : Oscilloscope_v1
@@ -22,8 +22,8 @@ Table of Contents
 +----------------------------------------------------------+-------+
 |                          Status                          | Count |
 +----------------------------------------------------------+-------+
-| Number of unique control sets                            |     9 |
-| Unused register locations in slices containing registers |    45 |
+| Number of unique control sets                            |    10 |
+| Unused register locations in slices containing registers |    49 |
 +----------------------------------------------------------+-------+
 
 
@@ -33,30 +33,31 @@ Table of Contents
 +--------------+-----------------------+------------------------+-----------------+--------------+
 | Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
 +--------------+-----------------------+------------------------+-----------------+--------------+
-| No           | No                    | No                     |              88 |           20 |
+| No           | No                    | No                     |              60 |           18 |
 | No           | No                    | Yes                    |               0 |            0 |
-| No           | Yes                   | No                     |              23 |            6 |
-| Yes          | No                    | No                     |              50 |           12 |
+| No           | Yes                   | No                     |              11 |            4 |
+| Yes          | No                    | No                     |             102 |           27 |
 | Yes          | No                    | Yes                    |               0 |            0 |
-| Yes          | Yes                   | No                     |              10 |            4 |
+| Yes          | Yes                   | No                     |              10 |            3 |
 +--------------+-----------------------+------------------------+-----------------+--------------+
 
 
 3. Detailed Control Set Information
 -----------------------------------
 
-+-----------------------------+----------------------------+------------------+------------------+----------------+
-|         Clock Signal        |        Enable Signal       | Set/Reset Signal | Slice Load Count | Bel Load Count |
-+-----------------------------+----------------------------+------------------+------------------+----------------+
-|  ClockDivider/inst/clk_out1 | Trigger/trigger_address1   |                  |                3 |             10 |
-|  ClockDivider/inst/clk_out1 | Buffer/trigger_address0_0  |                  |                2 |             10 |
-|  ClockDivider/inst/clk_out1 | Buffer/pointer1[9]_i_1_n_0 |                  |                2 |             10 |
-|  ClockDivider/inst/clk_out1 | Buffer/bram0_is_active     |                  |                2 |             10 |
-|  ClockDivider/inst/clk_out1 | myXVGA/E[0]                |                  |                3 |             10 |
-|  ClockDivider/inst/clk_out1 | myXVGA/hreset              | myXVGA/displayY0 |                4 |             10 |
-|  ClockDivider/inst/clk_out1 |                            | myXVGA/hreset    |                3 |             11 |
-|  ClockDivider/inst/clk_out1 |                            | adcc/clear       |                3 |             12 |
-|  ClockDivider/inst/clk_out1 |                            |                  |               20 |             88 |
-+-----------------------------+----------------------------+------------------+------------------+----------------+
++-----------------------------+-------------------------------+------------------+------------------+----------------+
+|         Clock Signal        |         Enable Signal         | Set/Reset Signal | Slice Load Count | Bel Load Count |
++-----------------------------+-------------------------------+------------------+------------------+----------------+
+|  ClockDivider/inst/clk_out1 | myXVGA/hreset                 | myXVGA/displayY0 |                3 |             10 |
+|  ClockDivider/inst/clk_out1 |                               | myXVGA/hreset    |                4 |             11 |
+|  ClockDivider/inst/clk_out1 | adcc/trigger_address1         |                  |                4 |             11 |
+|  ClockDivider/inst/clk_out1 | adcc/trigger_address0_reg[10] |                  |                2 |             11 |
+|  ClockDivider/inst/clk_out1 | adcc/ram0_we                  |                  |                3 |             11 |
+|  ClockDivider/inst/clk_out1 | adcc/pointer1                 |                  |                3 |             11 |
+|  ClockDivider/inst/clk_out1 | myXVGA/E[0]                   |                  |                5 |             11 |
+|  ClockDivider/inst/clk_out1 | XLXI_7/eoc_out                |                  |                2 |             12 |
+|  ClockDivider/inst/clk_out1 | adcc/adcc_ready               |                  |                8 |             35 |
+|  ClockDivider/inst/clk_out1 |                               |                  |               18 |             60 |
++-----------------------------+-------------------------------+------------------+------------------+----------------+
 
 

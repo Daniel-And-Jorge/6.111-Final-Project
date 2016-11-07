@@ -38,3 +38,33 @@ module TriggerRisingEdge
     assign isTriggered = (previousData<threshold && dataIn>=threshold && !triggerDisable);
         
 endmodule
+
+module TriggerRisingEdgeSteady
+    #(parameter DATA_BITS = 12,
+                HOLDOFF_SAMPLES = 10)
+    (input clock,
+    input signed [DATA_BITS-1:0] threshold,
+    input signed [DATA_BITS-1:0] dataIn,
+    input triggerDisable,
+    output isTriggered
+    );
+    
+    reg [4:0]samplesSinceTrigger = 0;
+    
+    reg [DATA_BITS-1:0] previousData;
+    reg [DATA_BITS-1:0] previousData2;
+
+    always @(posedge clock) begin
+        previousData2 <= previousData;
+        previousData <= dataIn;
+        
+        if (isTriggered)
+          samplesSinceTrigger <= 0;
+        else if (samplesSinceTrigger < HOLDOFF_SAMPLES)
+          samplesSinceTrigger <= samplesSinceTrigger + 1;
+    end
+    
+    assign isTriggered = (previousData2<threshold && previousData<threshold
+                          && dataIn>=threshold && !triggerDisable && samplesSinceTrigger >= HOLDOFF_SAMPLES);
+        
+endmodule

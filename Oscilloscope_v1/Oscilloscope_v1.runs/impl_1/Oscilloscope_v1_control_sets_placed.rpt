@@ -1,8 +1,8 @@
 Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 --------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2016.2 (lin64) Build 1577090 Thu Jun  2 16:32:35 MDT 2016
-| Date         : Sun Nov  6 20:45:44 2016
-| Host         : eecs-digital-10 running 64-bit Ubuntu 14.04.5 LTS
+| Date         : Sun Nov  6 23:08:55 2016
+| Host         : eecs-digital-11 running 64-bit Ubuntu 14.04.5 LTS
 | Command      : report_control_sets -verbose -file Oscilloscope_v1_control_sets_placed.rpt
 | Design       : Oscilloscope_v1
 | Device       : xc7a100t
@@ -22,8 +22,8 @@ Table of Contents
 +----------------------------------------------------------+-------+
 |                          Status                          | Count |
 +----------------------------------------------------------+-------+
-| Number of unique control sets                            |    10 |
-| Unused register locations in slices containing registers |    39 |
+| Number of unique control sets                            |    11 |
+| Unused register locations in slices containing registers |    40 |
 +----------------------------------------------------------+-------+
 
 
@@ -33,31 +33,32 @@ Table of Contents
 +--------------+-----------------------+------------------------+-----------------+--------------+
 | Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
 +--------------+-----------------------+------------------------+-----------------+--------------+
-| No           | No                    | No                     |              62 |           18 |
+| No           | No                    | No                     |              88 |           31 |
 | No           | No                    | Yes                    |               0 |            0 |
-| No           | Yes                   | No                     |              11 |            4 |
-| Yes          | No                    | No                     |             109 |           31 |
+| No           | Yes                   | No                     |              11 |            5 |
+| Yes          | No                    | No                     |             109 |           32 |
 | Yes          | No                    | Yes                    |               0 |            0 |
-| Yes          | Yes                   | No                     |              11 |            4 |
+| Yes          | Yes                   | No                     |              16 |            5 |
 +--------------+-----------------------+------------------------+-----------------+--------------+
 
 
 3. Detailed Control Set Information
 -----------------------------------
 
-+-----------------------------+-------------------------------+------------------+------------------+----------------+
-|         Clock Signal        |         Enable Signal         | Set/Reset Signal | Slice Load Count | Bel Load Count |
-+-----------------------------+-------------------------------+------------------+------------------+----------------+
-|  ClockDivider/inst/clk_out2 |                               | myXVGA/hreset    |                4 |             11 |
-|  ClockDivider/inst/clk_out2 | myXVGA/hreset                 | myXVGA/displayY0 |                4 |             11 |
-|  ClockDivider/inst/clk_out2 | XLXI_7/eoc_out                |                  |                3 |             12 |
-|  ClockDivider/inst/clk_out2 | adcc/trigger_address1         |                  |                3 |             12 |
-|  ClockDivider/inst/clk_out2 | adcc/trigger_address0_reg[11] |                  |                5 |             12 |
-|  ClockDivider/inst/clk_out2 | adcc/ram0_we                  |                  |                3 |             12 |
-|  ClockDivider/inst/clk_out2 | adcc/pointer1                 |                  |                3 |             12 |
-|  ClockDivider/inst/clk_out2 | myXVGA/E[0]                   |                  |                4 |             12 |
-|  ClockDivider/inst/clk_out2 | adcc/adcc_ready               |                  |               10 |             37 |
-|  ClockDivider/inst/clk_out2 |                               |                  |               18 |             62 |
-+-----------------------------+-------------------------------+------------------+------------------+----------------+
++-----------------------------+----------------------------------+---------------------+------------------+----------------+
+|         Clock Signal        |           Enable Signal          |   Set/Reset Signal  | Slice Load Count | Bel Load Count |
++-----------------------------+----------------------------------+---------------------+------------------+----------------+
+|  ClockDivider/inst/clk_out2 | Trigger/sel                      | Trigger/isTriggered |                1 |              5 |
+|  ClockDivider/inst/clk_out2 |                                  | myXVGA/hreset       |                5 |             11 |
+|  ClockDivider/inst/clk_out2 | myXVGA/hreset                    | myXVGA/displayY0    |                4 |             11 |
+|  ClockDivider/inst/clk_out2 | XLXI_7/eoc_out                   |                     |                5 |             12 |
+|  ClockDivider/inst/clk_out2 | adcc/ram0_we                     |                     |                3 |             12 |
+|  ClockDivider/inst/clk_out2 | adcc/pointer1                    |                     |                3 |             12 |
+|  ClockDivider/inst/clk_out2 | Trigger/trigger_address1         |                     |                3 |             12 |
+|  ClockDivider/inst/clk_out2 | Trigger/trigger_address0_reg[11] |                     |                3 |             12 |
+|  ClockDivider/inst/clk_out2 | myXVGA/E[0]                      |                     |                4 |             12 |
+|  ClockDivider/inst/clk_out2 | adcc/adcc_ready                  |                     |               11 |             37 |
+|  ClockDivider/inst/clk_out2 |                                  |                     |               33 |             90 |
++-----------------------------+----------------------------------+---------------------+------------------+----------------+
 
 

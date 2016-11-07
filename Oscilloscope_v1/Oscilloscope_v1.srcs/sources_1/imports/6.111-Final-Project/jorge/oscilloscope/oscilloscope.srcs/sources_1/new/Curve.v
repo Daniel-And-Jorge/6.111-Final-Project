@@ -45,6 +45,8 @@ module Curve
     output [RGB_BITS-1:0] pixel,
     output reg drawStarting,
     output reg [ADDRESS_BITS-1:0] address,
+    output reg [DISPLAY_X_BITS-1:0] curveDisplayX,
+    output reg [DISPLAY_Y_BITS-1:0] curveDisplayY,
     output reg curveHsync,
     output reg curveVsync,
     output reg curveBlank
@@ -62,9 +64,12 @@ module Curve
     reg pixelOn;
     
     always @(posedge clock) begin
+        // todo delay these by the correct number of cycles
         curveHsync <= hsync;
         curveVsync <= vsync;
         curveBlank <= blank;
+        curveDisplayX <= displayX;
+        curveDisplayY <= displayY;
         
         //control drawStarting
         if (displayX==(DISPLAY_WIDTH-1) && displayY==(DISPLAY_HEIGHT-1)) begin

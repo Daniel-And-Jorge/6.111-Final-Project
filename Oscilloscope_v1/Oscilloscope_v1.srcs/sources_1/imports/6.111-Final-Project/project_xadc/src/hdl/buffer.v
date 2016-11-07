@@ -47,9 +47,9 @@ module buffer #(parameter LOG_SAMPLES=12, SAMPLE_SIZE=12)
     // Need the IP for this
     reg ram0_we;
     reg [LOG_SAMPLES-1:0] ram0_addra;
-    reg [SAMPLE_SIZE:0] ram0_din;
+    reg [SAMPLE_SIZE-1:0] ram0_din;
     reg [LOG_SAMPLES-1:0] ram0_addrb;
-    wire [SAMPLE_SIZE:0] ram0_dout;
+    wire [SAMPLE_SIZE-1:0] ram0_dout;
     
     blk_mem_gen_0 bram0 (
       .clka(clock),    // input wire clka
@@ -68,9 +68,9 @@ module buffer #(parameter LOG_SAMPLES=12, SAMPLE_SIZE=12)
     
     reg ram1_we;
     reg [LOG_SAMPLES-1:0] ram1_addra;
-    reg [SAMPLE_SIZE:0] ram1_din;
+    reg [SAMPLE_SIZE-1:0] ram1_din;
     reg [LOG_SAMPLES-1:0] ram1_addrb;
-    wire [SAMPLE_SIZE:0] ram1_dout;
+    wire [SAMPLE_SIZE-1:0] ram1_dout;
     blk_mem_gen_1 bram1 (
           .clka(clock),    // input wire clka
           .ena(1),      // input wire ena

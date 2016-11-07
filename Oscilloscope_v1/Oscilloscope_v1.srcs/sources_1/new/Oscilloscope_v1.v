@@ -21,15 +21,14 @@
 
 
 module Oscilloscope_v1
-   #(parameter  TRIGGER_THRESHOLD = 300,
-                DISPLAY_X_BITS = 11,
+   #(parameter  DISPLAY_X_BITS = 11,
                 DISPLAY_Y_BITS = 11,
                 ADDRESS_BITS = 12,
                 RGB_BITS = 12) 
    (input CLK100MHZ,
    input vauxp11,
    input vauxn11,
-   input [1:0] sw,
+   input [7:0] SW,
    //input reset,
    output reg [15:0] LED,
    output [7:0] an,
@@ -57,7 +56,10 @@ module Oscilloscope_v1
         // Status and control signals
         .reset(reset), // input reset
         .locked(locked));
-
+        
+    // Scope settings
+    wire [11:0] triggerThreshold;
+    ScopeSettings myss(.sw(SW[7:0]), .triggerThreshold(triggerThreshold));
     
     // XADC IP module
     wire eoc;
@@ -120,15 +122,17 @@ module Oscilloscope_v1
 //    ConstantFakeBuffer buffer(.address(), .dataOut(bufferDataOut));
         
     wire isTriggered;
-    TriggerRisingEdge #(.DATA_BITS(12))
+    TriggerRisingEdgeSteady #(.DATA_BITS(12), .HOLDOFF_SAMPLES(10))
             Trigger
             (.clock(CLK108MHZ),
-            .threshold(TRIGGER_THRESHOLD),
+            .threshold(triggerThreshold),
             .dataIn(ADCCdataOut),
             .triggerDisable(0),
             .isTriggered(isTriggered)
             );
-            
+     
+     
+     // Create display system and sprites    
      wire [DISPLAY_X_BITS-1:0] displayX;
      wire [DISPLAY_Y_BITS-1:0] displayY;
      wire vsync;
@@ -141,6 +145,8 @@ module Oscilloscope_v1
         
     wire drawStarting;
     wire [ADDRESS_BITS-1:0] curveAddressOut;
+    wire [DISPLAY_X_BITS-1:0] curveDisplayX;
+    wire [DISPLAY_Y_BITS-1:0] curveDisplayY;
     wire curveHsync;
     wire curveVsync;
     wire curveBlank;
@@ -157,21 +163,34 @@ module Oscilloscope_v1
             .pixel(curvePixel),
             .drawStarting(drawStarting),
             .address(curveAddressOut),
+            .curveDisplayX(curveDisplayX),
+            .curveDisplayY(curveDisplayY),
             .curveHsync(curveHsync),
             .curveVsync(curveVsync),
             .curveBlank(curveBlank)
             );
      
+     wire [RGB_BITS-1:0] tlsPixel;
+     TriggerLevelSprite mytls
+                (.clock(CLK108MHZ),
+                .threshold(triggerThreshold),
+                .displayX(curveDisplayX),
+                .displayY(curveDisplayY),
+                .hsync(curveHsync),
+                .vsync(curveVsync),
+                .blank(curveBlank),
+                .previousPixel(curvePixel),
+                .pixel(tlsPixel),
+                .spriteHsync(tlsHsync),
+                .spriteVsync(tlsVsync),
+                .spriteBlank(tlsBlank)
+                );       
+     
+     
      always @(posedge CLK108MHZ) begin
-        VGA_R <= 4'b0;
-        VGA_B <= 4'b0;
-        VGA_HS <= curveHsync;
-        VGA_VS <= curveVsync;
-        if (curvePixel > 0 && !curveBlank) begin
-          VGA_G <= 4'b1111;
-        end else begin
-          VGA_G <= 4'b0000;
-        end
+        {VGA_R, VGA_G, VGA_B} <= !curveBlank ? tlsPixel : 12'b0;
+        VGA_HS <= tlsHsync;
+        VGA_VS <= tlsVsync;
      end
          
 endmodule

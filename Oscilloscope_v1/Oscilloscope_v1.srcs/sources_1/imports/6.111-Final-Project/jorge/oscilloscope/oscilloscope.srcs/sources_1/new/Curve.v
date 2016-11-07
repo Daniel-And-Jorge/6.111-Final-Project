@@ -22,18 +22,18 @@
 
 module Curve
     #(parameter DATA_IN_BITS = 12,
-                DISPLAY_X_BITS = 11,
-                DISPLAY_Y_BITS = 10,
+                DISPLAY_X_BITS = 12,
+                DISPLAY_Y_BITS = 12,
                 RGB_COLOR = 12'hFF0,  //yellow
                 RGB_BITS = 12,
-                DISPLAY_WIDTH = 1024,
-                DISPLAY_HEIGHT = 768,
-                REAL_DISPLAY_WIDTH = 1344,
-                REAL_DISPLAY_HEIGHT = 806,
+                DISPLAY_WIDTH = 1280,
+                DISPLAY_HEIGHT = 1024,
+                REAL_DISPLAY_WIDTH = 1688,
+                REAL_DISPLAY_HEIGHT = 1066,
                 HEIGHT_ZERO_PIXEL = DISPLAY_HEIGHT/2,
                 ADDITIONAL_WAVE_PIXELS = 1,  //number of colored pixels below and on top of the actual wave
                 SCALING_SHIFTS = 0,
-                ADDRESS_BITS = 11
+                ADDRESS_BITS = 12
                 )
     (input clock,
     input signed [DATA_IN_BITS-1:0] dataIn,

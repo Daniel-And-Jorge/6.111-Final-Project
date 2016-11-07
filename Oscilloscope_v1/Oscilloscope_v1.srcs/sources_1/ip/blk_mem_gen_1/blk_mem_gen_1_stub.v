@@ -1,7 +1,7 @@
 // Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2016.2 (lin64) Build 1577090 Thu Jun  2 16:32:35 MDT 2016
-// Date        : Fri Nov  4 17:20:27 2016
+// Date        : Sun Nov  6 20:32:50 2016
 // Host        : eecs-digital-10 running 64-bit Ubuntu 14.04.5 LTS
 // Command     : write_verilog -force -mode synth_stub
 //               /afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/ip/blk_mem_gen_1/blk_mem_gen_1_stub.v
@@ -15,17 +15,17 @@
 // Please paste the declaration into a Verilog source file or add the file as an additional source.
 (* x_core_info = "blk_mem_gen_v8_3_3,Vivado 2016.2" *)
 module blk_mem_gen_1(clka, ena, wea, addra, dina, douta, clkb, enb, web, addrb, dinb, doutb)
-/* synthesis syn_black_box black_box_pad_pin="clka,ena,wea[0:0],addra[10:0],dina[11:0],douta[11:0],clkb,enb,web[0:0],addrb[10:0],dinb[11:0],doutb[11:0]" */;
+/* synthesis syn_black_box black_box_pad_pin="clka,ena,wea[0:0],addra[11:0],dina[11:0],douta[11:0],clkb,enb,web[0:0],addrb[11:0],dinb[11:0],doutb[11:0]" */;
   input clka;
   input ena;
   input [0:0]wea;
-  input [10:0]addra;
+  input [11:0]addra;
   input [11:0]dina;
   output [11:0]douta;
   input clkb;
   input enb;
   input [0:0]web;
-  input [10:0]addrb;
+  input [11:0]addrb;
   input [11:0]dinb;
   output [11:0]doutb;
 endmodule

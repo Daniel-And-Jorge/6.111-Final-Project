@@ -28,7 +28,7 @@
 
 // discuss naming convention (snake or camel) with Jorge
 
-module buffer #(parameter LOG_SAMPLES=11, SAMPLE_SIZE=12)
+module buffer #(parameter LOG_SAMPLES=12, SAMPLE_SIZE=12)
               (input clock, input ready, input signed [SAMPLE_SIZE-1:0]dataIn,
                input isTrigger, input disableCollection, input activeBramSelect, // 0 if BRAM 0 is active
                input reset,
@@ -40,6 +40,9 @@ module buffer #(parameter LOG_SAMPLES=11, SAMPLE_SIZE=12)
     reg [LOG_SAMPLES-1:0] pointer1;
     reg [LOG_SAMPLES-1:0] trigger_address0;
     reg [LOG_SAMPLES-1:0] trigger_address1;
+    
+    wire [LOG_SAMPLES-1:0] addressAllOnes;
+    assign addressAllOnes = 'hFFFFFFFFFFF; // more one bits than allOnes will possibly need
 
     // Need the IP for this
     reg ram0_we;
@@ -121,11 +124,11 @@ module buffer #(parameter LOG_SAMPLES=11, SAMPLE_SIZE=12)
 
       // read data
       if (readTriggerRelative) begin
-        ram0_addrb <= (trigger_address0 + readAddress) & 11'b11111111111;
-        ram1_addrb <= (trigger_address1 + readAddress) & 11'b11111111111;
+        ram0_addrb <= (trigger_address0 + readAddress) & addressAllOnes;
+        ram1_addrb <= (trigger_address1 + readAddress) & addressAllOnes;
       end else begin
-        ram0_addrb <= (pointer0 + readAddress) & 11'b11111111111;
-        ram1_addrb <= (pointer1 + readAddress) & 11'b11111111111;
+        ram0_addrb <= (pointer0 + readAddress) & addressAllOnes;
+        ram1_addrb <= (pointer1 + readAddress) & addressAllOnes;
       end
 
       // the bram we actually output is the locked (non-active) one

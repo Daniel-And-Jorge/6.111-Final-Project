@@ -23,8 +23,8 @@
 module Oscilloscope_v1
    #(parameter  TRIGGER_THRESHOLD = 300,
                 DISPLAY_X_BITS = 11,
-                DISPLAY_Y_BITS = 10,
-                ADDRESS_BITS = 11,
+                DISPLAY_Y_BITS = 11,
+                ADDRESS_BITS = 12,
                 RGB_BITS = 12) 
    (input CLK100MHZ,
    input vauxp11,
@@ -45,6 +45,7 @@ module Oscilloscope_v1
     //debounce rdb(.reset(reset), .clock(CLK100MHZ), .noisy(CPU_RESETN), .clean(reset));
     
     wire CLK65MHZ;
+    wire CLK108MHZ;
     //instantiate clock divider
     clk_wiz_0 ClockDivider
        (
@@ -52,6 +53,7 @@ module Oscilloscope_v1
         .clk_in1(CLK100MHZ),      // input clk_in1
         // Clock out ports
         .clk_out1(CLK65MHZ),     // output clk_out1
+        .clk_out2(CLK108MHZ),    // output clk_out2
         // Status and control signals
         .reset(reset), // input reset
         .locked(locked));
@@ -64,7 +66,7 @@ module Oscilloscope_v1
     reg [6:0] Address_in = 7'h1b; // select VAUXP/N11 as input [see Artix 7 XADC]
     //xadc instantiation connect the eoc_out .den_in to get continuous conversion
     xadc_wiz_0  XLXI_7 (.daddr_in(Address_in), //addresses can be found in the artix 7 XADC user guide DRP register space
-                         .dclk_in(CLK65MHZ), 
+                         .dclk_in(CLK108MHZ), 
                          .den_in(eoc), 
                          .di_in(), 
                          .dwe_in(), 
@@ -79,12 +81,12 @@ module Oscilloscope_v1
                          .eoc_out(eoc), // ddr high for one cycle on end of conversion
                          .channel_out(),
                          .drdy_out(ready));
-         
+      
       // ADC controller
       wire adcc_ready;
       wire [11:0] ADCCdataOut;
       ADCController adcc(
-                             .clock(CLK65MHZ),
+                             .clock(CLK108MHZ),
                              .reset(reset),
                              .sampleEnabled(1),
                              .inputReady(eoc),
@@ -101,12 +103,12 @@ module Oscilloscope_v1
     wire [11:0] bufferDataOut;
     wire activeBramSelect;
     BufferSelector mybs(
-        .clock(CLK65MHZ),
+        .clock(CLK108MHZ),
         .drawStarting(drawStarting),
         .activeBramSelect(activeBramSelect)
         );
     
-    buffer Buffer (.clock(CLK65MHZ), .ready(adcc_ready), .dataIn(ADCCdataOut),
+    buffer Buffer (.clock(CLK108MHZ), .ready(adcc_ready), .dataIn(ADCCdataOut),
         .isTrigger(isTriggered), .disableCollection(0), .activeBramSelect(activeBramSelect),
         //.isTrigger(isTriggered), .disableCollection(0), .activeBramSelect(sw[0]),
         .reset(reset),
@@ -120,7 +122,7 @@ module Oscilloscope_v1
     wire isTriggered;
     TriggerRisingEdge #(.DATA_BITS(12))
             Trigger
-            (.clock(CLK65MHZ),
+            (.clock(CLK108MHZ),
             .threshold(TRIGGER_THRESHOLD),
             .dataIn(ADCCdataOut),
             .triggerDisable(0),
@@ -132,7 +134,7 @@ module Oscilloscope_v1
      wire vsync;
      wire hsync;
      wire blank;
-     xvga myXVGA(.vclock(CLK65MHZ),
+     xvga1280_1024 myXVGA(.vclock(CLK108MHZ),
         .displayX(displayX), // pixel number on current line
         .displayY(displayY), // line number
         .vsync(vsync), .hsync(hsync), .blank(blank));
@@ -145,7 +147,7 @@ module Oscilloscope_v1
     wire [RGB_BITS-1:0] curvePixel;
     Curve #(.ADDRESS_BITS(ADDRESS_BITS))
             myCurve
-            (.clock(CLK65MHZ),
+            (.clock(CLK108MHZ),
             .dataIn(bufferDataOut),
             .displayX(displayX),
             .displayY(displayY),
@@ -160,7 +162,7 @@ module Oscilloscope_v1
             .curveBlank(curveBlank)
             );
      
-     always @(posedge CLK65MHZ) begin
+     always @(posedge CLK108MHZ) begin
         VGA_R <= 4'b0;
         VGA_B <= 4'b0;
         VGA_HS <= curveHsync;
@@ -170,6 +172,6 @@ module Oscilloscope_v1
         end else begin
           VGA_G <= 4'b0000;
         end
-      end
+     end
          
 endmodule

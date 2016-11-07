@@ -53,6 +53,44 @@ module xvga(input vclock,
    end
 endmodule
 
+module xvga1280_1024(input vclock,
+            output reg [10:0] displayX, // pixel number on current line
+            output reg [10:0]  displayY, // line number
+            output reg 	      vsync,hsync,blank);
+
+   // Settings from http://tinyvga.com/vga-timing/1280x1024@60Hz
+   reg 			      hblank,vblank;
+   wire 		      hsyncon,hsyncoff,hreset,hblankon;
+   assign hblankon = (displayX == 1279);
+   assign hsyncon = (displayX == 1329);
+   assign hsyncoff = (displayX == 1439);
+   assign hreset = (displayX == 1687);
+
+   // vertical: 806 lines total
+   // display 768 lines
+   wire 		      vsyncon,vsyncoff,vreset,vblankon;
+   assign vblankon = hreset & (displayY == 1023);
+   assign vsyncon = hreset & (displayY == 1024);
+   assign vsyncoff = hreset & (displayY == 1027);
+   assign vreset = hreset & (displayY == 1065);
+
+   // sync and blanking
+   wire 		      next_hblank,next_vblank;
+   assign next_hblank = hreset ? 0 : hblankon ? 1 : hblank;
+   assign next_vblank = vreset ? 0 : vblankon ? 1 : vblank;
+   always @(posedge vclock) begin
+      displayX <= hreset ? 0 : displayX + 1;
+      hblank <= next_hblank;
+      hsync <= hsyncon ? 0 : hsyncoff ? 1 : hsync;  // active low
+
+      displayY <= hreset ? (vreset ? 0 : displayY + 1) : displayY;
+      vblank <= next_vblank;
+      vsync <= vsyncon ? 0 : vsyncoff ? 1 : vsync;  // active low
+
+      blank <= next_vblank | (next_hblank & ~hreset);
+   end
+endmodule
+
 module mysprite(input [10:0]displayX, input [9:0]displayY, input vsync, input hsync, input blank,
   output [3:0]vga_r, output [3:0]vga_g, output [3:0] vga_b);
 

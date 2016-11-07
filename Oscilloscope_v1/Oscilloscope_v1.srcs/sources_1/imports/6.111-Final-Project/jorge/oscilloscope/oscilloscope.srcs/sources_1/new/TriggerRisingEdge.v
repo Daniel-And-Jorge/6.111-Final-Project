@@ -23,13 +23,13 @@
 module TriggerRisingEdge
     #(parameter DATA_BITS = 12)
     (input clock,
-    input [DATA_BITS-1:0] threshold,
-    input [DATA_BITS-1:0] dataIn,
+    input signed [DATA_BITS-1:0] threshold,
+    input signed [DATA_BITS-1:0] dataIn,
     input triggerDisable,
     output isTriggered
     );
     
-    reg [DATA_BITS-1:0] previousData;
+    reg signed [DATA_BITS-1:0] previousData;
 
     always @(posedge clock) begin
         previousData <= dataIn;
@@ -51,8 +51,8 @@ module TriggerRisingEdgeSteady
     
     reg [4:0]samplesSinceTrigger = 0;
     
-    reg [DATA_BITS-1:0] previousData;
-    reg [DATA_BITS-1:0] previousData2;
+    reg signed [DATA_BITS-1:0] previousData;
+    reg signed [DATA_BITS-1:0] previousData2;
 
     always @(posedge clock) begin
         previousData2 <= previousData;

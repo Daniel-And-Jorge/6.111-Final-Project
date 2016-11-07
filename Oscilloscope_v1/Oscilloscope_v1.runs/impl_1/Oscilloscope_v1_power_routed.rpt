@@ -1,8 +1,8 @@
 Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2016.2 (lin64) Build 1577090 Thu Jun  2 16:32:35 MDT 2016
-| Date             : Sun Nov  6 23:19:01 2016
-| Host             : eecs-digital-11 running 64-bit Ubuntu 14.04.5 LTS
+| Date             : Mon Nov  7 16:43:45 2016
+| Host             : eecs-digital-02 running 64-bit Ubuntu 14.04.5 LTS
 | Command          : report_power -file Oscilloscope_v1_power_routed.rpt -pb Oscilloscope_v1_power_summary_routed.pb -rpx Oscilloscope_v1_power_routed.rpx
 | Design           : Oscilloscope_v1
 | Device           : xc7a100tcsg324-3
@@ -30,7 +30,7 @@ Table of Contents
 ----------
 
 +--------------------------+-------+
-| Total On-Chip Power (W)  | 0.233 |
+| Total On-Chip Power (W)  | 0.232 |
 | Dynamic (W)              | 0.135 |
 | Device Static (W)        | 0.098 |
 | Effective TJA (C/W)      | 4.6   |
@@ -49,21 +49,21 @@ Table of Contents
 +-------------------------+-----------+----------+-----------+-----------------+
 | On-Chip                 | Power (W) | Used     | Available | Utilization (%) |
 +-------------------------+-----------+----------+-----------+-----------------+
-| Clocks                  |     0.003 |        8 |       --- |             --- |
-| Slice Logic             |     0.001 |      563 |       --- |             --- |
-|   LUT as Logic          |    <0.001 |      185 |     63400 |            0.29 |
+| Clocks                  |     0.002 |        8 |       --- |             --- |
+| Slice Logic             |     0.001 |      623 |       --- |             --- |
+|   LUT as Logic          |    <0.001 |      210 |     63400 |            0.33 |
 |   CARRY4                |    <0.001 |       42 |     15850 |            0.26 |
-|   Register              |    <0.001 |      224 |    126800 |            0.18 |
-|   LUT as Shift Register |    <0.001 |        2 |     19000 |            0.01 |
-|   Others                |     0.000 |       34 |       --- |             --- |
-| Signals                 |     0.001 |      426 |       --- |             --- |
+|   Register              |    <0.001 |      252 |    126800 |            0.20 |
+|   LUT as Shift Register |    <0.001 |        3 |     19000 |            0.02 |
+|   Others                |     0.000 |       36 |       --- |             --- |
+| Signals                 |     0.001 |      486 |       --- |             --- |
 | Block RAM               |     0.006 |        3 |       135 |            2.22 |
 | MMCM                    |     0.121 |        1 |         6 |           16.67 |
 | DSPs                    |    <0.001 |        1 |       240 |            0.42 |
-| I/O                     |     0.002 |       25 |       210 |           11.90 |
+| I/O                     |    <0.001 |       25 |       210 |           11.90 |
 | XADC                    |     0.002 |        1 |       --- |             --- |
 | Static Power            |     0.098 |          |           |                 |
-| Total                   |     0.233 |          |           |                 |
+| Total                   |     0.232 |          |           |                 |
 +-------------------------+-----------+----------+-----------+-----------------+
 
 
@@ -173,6 +173,7 @@ Table of Contents
 |   XLXI_7                                       |     0.002 |
 |   adcc                                         |    <0.001 |
 |   myCurve                                      |    <0.001 |
+|   myGrid                                       |    <0.001 |
 |   myXVGA                                       |    <0.001 |
 |   mybs                                         |    <0.001 |
 |   myss                                         |    <0.001 |

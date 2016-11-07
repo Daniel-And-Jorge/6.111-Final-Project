@@ -142,6 +142,17 @@ module Oscilloscope_v1
         .displayX(displayX), // pixel number on current line
         .displayY(displayY), // line number
         .vsync(vsync), .hsync(hsync), .blank(blank));
+    
+    // draw grid lines
+    wire [DISPLAY_X_BITS-1:0] gridDisplayX;
+    wire [DISPLAY_Y_BITS-1:0] gridDisplayY;
+    wire gridVsync;
+    wire gridHsync;
+    wire gridBlank;
+    wire [RGB_BITS-1:0] gridPixel;
+    Grid myGrid(.clock(CLK108MHZ), .displayX(displayX), .displayY(displayY), .hsync(hsync), .vsync(vsync), .blank(blank),
+                .gridDisplayX(gridDisplayX), .gridDisplayY(gridDisplayY), .gridHsync(gridHsync), 
+                .gridVsync(gridVsync), .gridBlank(gridBlank), .pixel(gridPixel));
         
     wire drawStarting;
     wire [ADDRESS_BITS-1:0] curveAddressOut;
@@ -155,11 +166,12 @@ module Oscilloscope_v1
             myCurve
             (.clock(CLK108MHZ),
             .dataIn(bufferDataOut),
-            .displayX(displayX),
-            .displayY(displayY),
-            .hsync(hsync),
-            .vsync(vsync),
-            .blank(blank),
+            .displayX(gridDisplayX),
+            .displayY(gridDisplayY),
+            .hsync(gridHsync),
+            .vsync(gridVsync),
+            .blank(gridBlank),
+            .previousPixel(gridPixel),
             .pixel(curvePixel),
             .drawStarting(drawStarting),
             .address(curveAddressOut),

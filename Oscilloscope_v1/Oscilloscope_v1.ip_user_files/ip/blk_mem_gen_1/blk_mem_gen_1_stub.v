@@ -1,10 +1,10 @@
 // Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2016.2 (lin64) Build 1577090 Thu Jun  2 16:32:35 MDT 2016
-// Date        : Sun Nov  6 20:32:50 2016
+// Date        : Mon Nov  7 15:20:37 2016
 // Host        : eecs-digital-10 running 64-bit Ubuntu 14.04.5 LTS
 // Command     : write_verilog -force -mode synth_stub
-//               /afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/ip/blk_mem_gen_1/blk_mem_gen_1_stub.v
+//               /afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/ip/blk_mem_gen_1/blk_mem_gen_1_stub.v
 // Design      : blk_mem_gen_1
 // Purpose     : Stub declaration of top-level module interface
 // Device      : xc7a100tcsg324-3

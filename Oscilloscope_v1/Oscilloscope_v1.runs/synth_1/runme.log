@@ -13,50 +13,63 @@ Command: synth_design -top Oscilloscope_v1 -part xc7a100tcsg324-3
 Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
-WARNING: [filemgmt 56-147] Overwrite of existing file isn't enabled.  Please specify -force to overwrite file  [/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/synth_1/.Xil/Vivado-27834-eecs-digital-11/xadc_wiz_0/xadc_wiz_0.dcp]
+WARNING: [filemgmt 56-147] Overwrite of existing file isn't enabled.  Please specify -force to overwrite file  [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/synth_1/.Xil/Vivado-19050-eecs-digital-02/xadc_wiz_0/xadc_wiz_0.dcp]
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 27838 
-WARNING: [Synth 8-992] isTriggered is already implicitly declared earlier [/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Oscilloscope_v1.v:124]
-WARNING: [Synth 8-992] drawStarting is already implicitly declared earlier [/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Oscilloscope_v1.v:146]
-WARNING: [Synth 8-992] curveAddressOut is already implicitly declared earlier [/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Oscilloscope_v1.v:147]
+INFO: Helper process launched with PID 19055 
+WARNING: [Synth 8-992] isTriggered is already implicitly declared earlier [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Oscilloscope_v1.v:124]
+WARNING: [Synth 8-992] drawStarting is already implicitly declared earlier [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Oscilloscope_v1.v:157]
+WARNING: [Synth 8-992] curveAddressOut is already implicitly declared earlier [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Oscilloscope_v1.v:158]
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 1067.512 ; gain = 172.324 ; free physical = 2707 ; free virtual = 13832
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 1067.508 ; gain = 172.324 ; free physical = 1142 ; free virtual = 11949
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-638] synthesizing module 'Oscilloscope_v1' [/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Oscilloscope_v1.v:23]
+INFO: [Synth 8-638] synthesizing module 'Oscilloscope_v1' [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Oscilloscope_v1.v:23]
 	Parameter DISPLAY_X_BITS bound to: 11 - type: integer 
 	Parameter DISPLAY_Y_BITS bound to: 11 - type: integer 
 	Parameter ADDRESS_BITS bound to: 12 - type: integer 
 	Parameter RGB_BITS bound to: 12 - type: integer 
-INFO: [Synth 8-638] synthesizing module 'clk_wiz_0' [/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/synth_1/.Xil/Vivado-27834-eecs-digital-11/realtime/clk_wiz_0_stub.v:5]
-INFO: [Synth 8-256] done synthesizing module 'clk_wiz_0' (1#1) [/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/synth_1/.Xil/Vivado-27834-eecs-digital-11/realtime/clk_wiz_0_stub.v:5]
-INFO: [Synth 8-638] synthesizing module 'ScopeSettings' [/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/ScopeSettings.v:23]
+INFO: [Synth 8-638] synthesizing module 'clk_wiz_0' [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/synth_1/.Xil/Vivado-19050-eecs-digital-02/realtime/clk_wiz_0_stub.v:5]
+INFO: [Synth 8-256] done synthesizing module 'clk_wiz_0' (1#1) [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/synth_1/.Xil/Vivado-19050-eecs-digital-02/realtime/clk_wiz_0_stub.v:5]
+INFO: [Synth 8-638] synthesizing module 'ScopeSettings' [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/ScopeSettings.v:23]
 	Parameter DATA_BITS bound to: 12 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'ScopeSettings' (2#1) [/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/ScopeSettings.v:23]
-INFO: [Synth 8-638] synthesizing module 'xadc_wiz_0' [/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/synth_1/.Xil/Vivado-27834-eecs-digital-11/realtime/xadc_wiz_0_stub.v:5]
-INFO: [Synth 8-256] done synthesizing module 'xadc_wiz_0' (3#1) [/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/synth_1/.Xil/Vivado-27834-eecs-digital-11/realtime/xadc_wiz_0_stub.v:5]
-WARNING: [Synth 8-350] instance 'XLXI_7' of module 'xadc_wiz_0' requires 20 connections, but only 16 given [/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Oscilloscope_v1.v:70]
-INFO: [Synth 8-638] synthesizing module 'ADCController' [/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/imports/6.111-Final-Project/project_xadc/proj/XADC_Demo.srcs/sources_1/new/ADCController.v:25]
+INFO: [Synth 8-256] done synthesizing module 'ScopeSettings' (2#1) [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/ScopeSettings.v:23]
+INFO: [Synth 8-638] synthesizing module 'xadc_wiz_0' [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/synth_1/.Xil/Vivado-19050-eecs-digital-02/realtime/xadc_wiz_0_stub.v:5]
+INFO: [Synth 8-256] done synthesizing module 'xadc_wiz_0' (3#1) [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/synth_1/.Xil/Vivado-19050-eecs-digital-02/realtime/xadc_wiz_0_stub.v:5]
+WARNING: [Synth 8-350] instance 'XLXI_7' of module 'xadc_wiz_0' requires 20 connections, but only 16 given [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Oscilloscope_v1.v:70]
+INFO: [Synth 8-638] synthesizing module 'ADCController' [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/imports/6.111-Final-Project/project_xadc/proj/XADC_Demo.srcs/sources_1/new/ADCController.v:25]
 	Parameter IO_BITS bound to: 12 - type: integer 
 	Parameter INPUT_OFFSET bound to: 2048 - type: integer 
 	Parameter LOG_SCALE_FACTOR bound to: 3 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'ADCController' (4#1) [/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/imports/6.111-Final-Project/project_xadc/proj/XADC_Demo.srcs/sources_1/new/ADCController.v:25]
-INFO: [Synth 8-638] synthesizing module 'BufferSelector' [/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/BufferSelector.v:9]
-INFO: [Synth 8-256] done synthesizing module 'BufferSelector' (5#1) [/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/BufferSelector.v:9]
-INFO: [Synth 8-638] synthesizing module 'buffer' [/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/imports/6.111-Final-Project/project_xadc/src/hdl/buffer.v:31]
+INFO: [Synth 8-256] done synthesizing module 'ADCController' (4#1) [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/imports/6.111-Final-Project/project_xadc/proj/XADC_Demo.srcs/sources_1/new/ADCController.v:25]
+INFO: [Synth 8-638] synthesizing module 'BufferSelector' [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/BufferSelector.v:9]
+INFO: [Synth 8-256] done synthesizing module 'BufferSelector' (5#1) [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/BufferSelector.v:9]
+INFO: [Synth 8-638] synthesizing module 'buffer' [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/imports/6.111-Final-Project/project_xadc/src/hdl/buffer.v:31]
 	Parameter LOG_SAMPLES bound to: 12 - type: integer 
 	Parameter SAMPLE_SIZE bound to: 12 - type: integer 
-INFO: [Synth 8-638] synthesizing module 'blk_mem_gen_0' [/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/synth_1/.Xil/Vivado-27834-eecs-digital-11/realtime/blk_mem_gen_0_stub.v:6]
-INFO: [Synth 8-256] done synthesizing module 'blk_mem_gen_0' (6#1) [/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/synth_1/.Xil/Vivado-27834-eecs-digital-11/realtime/blk_mem_gen_0_stub.v:6]
-INFO: [Synth 8-638] synthesizing module 'blk_mem_gen_1' [/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/synth_1/.Xil/Vivado-27834-eecs-digital-11/realtime/blk_mem_gen_1_stub.v:6]
-INFO: [Synth 8-256] done synthesizing module 'blk_mem_gen_1' (7#1) [/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/synth_1/.Xil/Vivado-27834-eecs-digital-11/realtime/blk_mem_gen_1_stub.v:6]
-INFO: [Synth 8-256] done synthesizing module 'buffer' (8#1) [/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/imports/6.111-Final-Project/project_xadc/src/hdl/buffer.v:31]
-INFO: [Synth 8-638] synthesizing module 'TriggerRisingEdgeSteady' [/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/imports/6.111-Final-Project/jorge/oscilloscope/oscilloscope.srcs/sources_1/new/TriggerRisingEdge.v:42]
+INFO: [Synth 8-638] synthesizing module 'blk_mem_gen_0' [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/synth_1/.Xil/Vivado-19050-eecs-digital-02/realtime/blk_mem_gen_0_stub.v:6]
+INFO: [Synth 8-256] done synthesizing module 'blk_mem_gen_0' (6#1) [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/synth_1/.Xil/Vivado-19050-eecs-digital-02/realtime/blk_mem_gen_0_stub.v:6]
+INFO: [Synth 8-638] synthesizing module 'blk_mem_gen_1' [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/synth_1/.Xil/Vivado-19050-eecs-digital-02/realtime/blk_mem_gen_1_stub.v:6]
+INFO: [Synth 8-256] done synthesizing module 'blk_mem_gen_1' (7#1) [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/synth_1/.Xil/Vivado-19050-eecs-digital-02/realtime/blk_mem_gen_1_stub.v:6]
+INFO: [Synth 8-256] done synthesizing module 'buffer' (8#1) [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/imports/6.111-Final-Project/project_xadc/src/hdl/buffer.v:31]
+INFO: [Synth 8-638] synthesizing module 'TriggerRisingEdgeSteady' [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/imports/6.111-Final-Project/jorge/oscilloscope/oscilloscope.srcs/sources_1/new/TriggerRisingEdge.v:42]
 	Parameter DATA_BITS bound to: 12 - type: integer 
 	Parameter HOLDOFF_SAMPLES bound to: 10 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'TriggerRisingEdgeSteady' (9#1) [/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/imports/6.111-Final-Project/jorge/oscilloscope/oscilloscope.srcs/sources_1/new/TriggerRisingEdge.v:42]
-INFO: [Synth 8-638] synthesizing module 'xvga1280_1024' [/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/imports/6.111-Final-Project/project_xadc/src/hdl/xvga.v:56]
-INFO: [Synth 8-256] done synthesizing module 'xvga1280_1024' (10#1) [/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/imports/6.111-Final-Project/project_xadc/src/hdl/xvga.v:56]
-INFO: [Synth 8-638] synthesizing module 'Curve' [/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/imports/6.111-Final-Project/jorge/oscilloscope/oscilloscope.srcs/sources_1/new/Curve.v:23]
+INFO: [Synth 8-256] done synthesizing module 'TriggerRisingEdgeSteady' (9#1) [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/imports/6.111-Final-Project/jorge/oscilloscope/oscilloscope.srcs/sources_1/new/TriggerRisingEdge.v:42]
+INFO: [Synth 8-638] synthesizing module 'xvga1280_1024' [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/imports/6.111-Final-Project/project_xadc/src/hdl/xvga.v:56]
+INFO: [Synth 8-256] done synthesizing module 'xvga1280_1024' (10#1) [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/imports/6.111-Final-Project/project_xadc/src/hdl/xvga.v:56]
+INFO: [Synth 8-638] synthesizing module 'Grid' [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Grid.v:24]
+	Parameter DISPLAY_X_BITS bound to: 12 - type: integer 
+	Parameter DISPLAY_Y_BITS bound to: 12 - type: integer 
+	Parameter GRID_COLOR bound to: 12'b110011001100 
+	Parameter COLOR_PIXELS bound to: 100 - type: integer 
+	Parameter ADDITIONAL_LINE_PIXELS bound to: 0 - type: integer 
+	Parameter ADDITIONAL_ZERO_LINE_PIXELS bound to: 1 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'Grid' (11#1) [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Grid.v:24]
+WARNING: [Synth 8-689] width (11) of port connection 'displayX' does not match port width (12) of module 'Grid' [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Oscilloscope_v1.v:153]
+WARNING: [Synth 8-689] width (11) of port connection 'displayY' does not match port width (12) of module 'Grid' [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Oscilloscope_v1.v:153]
+WARNING: [Synth 8-689] width (11) of port connection 'gridDisplayX' does not match port width (12) of module 'Grid' [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Oscilloscope_v1.v:154]
+WARNING: [Synth 8-689] width (11) of port connection 'gridDisplayY' does not match port width (12) of module 'Grid' [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Oscilloscope_v1.v:154]
+WARNING: [Synth 8-689] width (12) of port connection 'pixel' does not match port width (100) of module 'Grid' [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Oscilloscope_v1.v:155]
+INFO: [Synth 8-638] synthesizing module 'Curve' [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/imports/6.111-Final-Project/jorge/oscilloscope/oscilloscope.srcs/sources_1/new/Curve.v:23]
 	Parameter DATA_IN_BITS bound to: 12 - type: integer 
 	Parameter DISPLAY_X_BITS bound to: 12 - type: integer 
 	Parameter DISPLAY_Y_BITS bound to: 12 - type: integer 
@@ -70,12 +83,12 @@ INFO: [Synth 8-638] synthesizing module 'Curve' [/afs/athena.mit.edu/user/d/d/dd
 	Parameter ADDITIONAL_WAVE_PIXELS bound to: 1 - type: integer 
 	Parameter SCALING_SHIFTS bound to: 0 - type: integer 
 	Parameter ADDRESS_BITS bound to: 12 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'Curve' (11#1) [/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/imports/6.111-Final-Project/jorge/oscilloscope/oscilloscope.srcs/sources_1/new/Curve.v:23]
-WARNING: [Synth 8-689] width (11) of port connection 'displayX' does not match port width (12) of module 'Curve' [/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Oscilloscope_v1.v:158]
-WARNING: [Synth 8-689] width (11) of port connection 'displayY' does not match port width (12) of module 'Curve' [/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Oscilloscope_v1.v:159]
-WARNING: [Synth 8-689] width (11) of port connection 'curveDisplayX' does not match port width (12) of module 'Curve' [/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Oscilloscope_v1.v:166]
-WARNING: [Synth 8-689] width (11) of port connection 'curveDisplayY' does not match port width (12) of module 'Curve' [/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Oscilloscope_v1.v:167]
-INFO: [Synth 8-638] synthesizing module 'TriggerLevelSprite' [/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/TriggerLevelSprite.v:23]
+INFO: [Synth 8-256] done synthesizing module 'Curve' (12#1) [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/imports/6.111-Final-Project/jorge/oscilloscope/oscilloscope.srcs/sources_1/new/Curve.v:23]
+WARNING: [Synth 8-689] width (11) of port connection 'displayX' does not match port width (12) of module 'Curve' [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Oscilloscope_v1.v:169]
+WARNING: [Synth 8-689] width (11) of port connection 'displayY' does not match port width (12) of module 'Curve' [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Oscilloscope_v1.v:170]
+WARNING: [Synth 8-689] width (11) of port connection 'curveDisplayX' does not match port width (12) of module 'Curve' [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Oscilloscope_v1.v:178]
+WARNING: [Synth 8-689] width (11) of port connection 'curveDisplayY' does not match port width (12) of module 'Curve' [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Oscilloscope_v1.v:179]
+INFO: [Synth 8-638] synthesizing module 'TriggerLevelSprite' [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/TriggerLevelSprite.v:23]
 	Parameter DATA_IN_BITS bound to: 12 - type: integer 
 	Parameter DISPLAY_X_BITS bound to: 12 - type: integer 
 	Parameter DISPLAY_Y_BITS bound to: 12 - type: integer 
@@ -85,14 +98,14 @@ INFO: [Synth 8-638] synthesizing module 'TriggerLevelSprite' [/afs/athena.mit.ed
 	Parameter DISPLAY_HEIGHT bound to: 1024 - type: integer 
 	Parameter HEIGHT_ZERO_PIXEL bound to: 512 - type: integer 
 	Parameter ADDITIONAL_LINE_PIXELS bound to: 1 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'TriggerLevelSprite' (12#1) [/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/TriggerLevelSprite.v:23]
-WARNING: [Synth 8-689] width (11) of port connection 'displayX' does not match port width (12) of module 'TriggerLevelSprite' [/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Oscilloscope_v1.v:177]
-WARNING: [Synth 8-689] width (11) of port connection 'displayY' does not match port width (12) of module 'TriggerLevelSprite' [/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Oscilloscope_v1.v:178]
-WARNING: [Synth 8-3848] Net LED in module/entity Oscilloscope_v1 does not have driver. [/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Oscilloscope_v1.v:33]
-WARNING: [Synth 8-3848] Net an in module/entity Oscilloscope_v1 does not have driver. [/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Oscilloscope_v1.v:34]
-WARNING: [Synth 8-3848] Net dp in module/entity Oscilloscope_v1 does not have driver. [/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Oscilloscope_v1.v:35]
-WARNING: [Synth 8-3848] Net seg in module/entity Oscilloscope_v1 does not have driver. [/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Oscilloscope_v1.v:36]
-INFO: [Synth 8-256] done synthesizing module 'Oscilloscope_v1' (13#1) [/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Oscilloscope_v1.v:23]
+INFO: [Synth 8-256] done synthesizing module 'TriggerLevelSprite' (13#1) [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/TriggerLevelSprite.v:23]
+WARNING: [Synth 8-689] width (11) of port connection 'displayX' does not match port width (12) of module 'TriggerLevelSprite' [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Oscilloscope_v1.v:189]
+WARNING: [Synth 8-689] width (11) of port connection 'displayY' does not match port width (12) of module 'TriggerLevelSprite' [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Oscilloscope_v1.v:190]
+WARNING: [Synth 8-3848] Net LED in module/entity Oscilloscope_v1 does not have driver. [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Oscilloscope_v1.v:33]
+WARNING: [Synth 8-3848] Net an in module/entity Oscilloscope_v1 does not have driver. [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Oscilloscope_v1.v:34]
+WARNING: [Synth 8-3848] Net dp in module/entity Oscilloscope_v1 does not have driver. [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Oscilloscope_v1.v:35]
+WARNING: [Synth 8-3848] Net seg in module/entity Oscilloscope_v1 does not have driver. [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Oscilloscope_v1.v:36]
+INFO: [Synth 8-256] done synthesizing module 'Oscilloscope_v1' (14#1) [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Oscilloscope_v1.v:23]
 WARNING: [Synth 8-3331] design TriggerLevelSprite has unconnected port displayX[11]
 WARNING: [Synth 8-3331] design TriggerLevelSprite has unconnected port displayX[10]
 WARNING: [Synth 8-3331] design TriggerLevelSprite has unconnected port displayX[9]
@@ -138,7 +151,7 @@ WARNING: [Synth 8-3331] design Oscilloscope_v1 has unconnected port seg[2]
 WARNING: [Synth 8-3331] design Oscilloscope_v1 has unconnected port seg[1]
 WARNING: [Synth 8-3331] design Oscilloscope_v1 has unconnected port seg[0]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 1093.770 ; gain = 198.582 ; free physical = 2679 ; free virtual = 13805
+Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 1094.766 ; gain = 199.582 ; free physical = 1112 ; free virtual = 11920
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -148,70 +161,70 @@ Report Check Netlist:
 |1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
 +------+------------------+-------+---------+-------+------------------+
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 1093.770 ; gain = 198.582 ; free physical = 2679 ; free virtual = 13804
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 1094.766 ; gain = 199.582 ; free physical = 1111 ; free virtual = 11919
 ---------------------------------------------------------------------------------
-WARNING: [filemgmt 56-147] Overwrite of existing file isn't enabled.  Please specify -force to overwrite file  [/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/synth_1/.Xil/Vivado-27834-eecs-digital-11/xadc_wiz_0/xadc_wiz_0.dcp]
-WARNING: [Project 1-486] Could not resolve non-primitive black box cell 'blk_mem_gen_0' instantiated as 'Buffer/bram0' [/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/imports/6.111-Final-Project/project_xadc/src/hdl/buffer.v:54]
-WARNING: [Project 1-486] Could not resolve non-primitive black box cell 'blk_mem_gen_1' instantiated as 'Buffer/bram1' [/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/imports/6.111-Final-Project/project_xadc/src/hdl/buffer.v:74]
-WARNING: [Project 1-486] Could not resolve non-primitive black box cell 'clk_wiz_0' instantiated as 'ClockDivider' [/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Oscilloscope_v1.v:49]
-WARNING: [Project 1-486] Could not resolve non-primitive black box cell 'xadc_wiz_0' instantiated as 'XLXI_7' [/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Oscilloscope_v1.v:70]
+WARNING: [filemgmt 56-147] Overwrite of existing file isn't enabled.  Please specify -force to overwrite file  [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/synth_1/.Xil/Vivado-19050-eecs-digital-02/xadc_wiz_0/xadc_wiz_0.dcp]
+WARNING: [Project 1-486] Could not resolve non-primitive black box cell 'blk_mem_gen_0' instantiated as 'Buffer/bram0' [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/imports/6.111-Final-Project/project_xadc/src/hdl/buffer.v:54]
+WARNING: [Project 1-486] Could not resolve non-primitive black box cell 'blk_mem_gen_1' instantiated as 'Buffer/bram1' [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/imports/6.111-Final-Project/project_xadc/src/hdl/buffer.v:74]
+WARNING: [Project 1-486] Could not resolve non-primitive black box cell 'clk_wiz_0' instantiated as 'ClockDivider' [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Oscilloscope_v1.v:49]
+WARNING: [Project 1-486] Could not resolve non-primitive black box cell 'xadc_wiz_0' instantiated as 'XLXI_7' [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Oscilloscope_v1.v:70]
 INFO: [Device 21-403] Loading part xc7a100tcsg324-3
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
 Initializing timing engine
-Parsing XDC File [/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/synth_1/.Xil/Vivado-27834-eecs-digital-11/dcp/blk_mem_gen_0_in_context.xdc] for cell 'Buffer/bram0'
-Finished Parsing XDC File [/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/synth_1/.Xil/Vivado-27834-eecs-digital-11/dcp/blk_mem_gen_0_in_context.xdc] for cell 'Buffer/bram0'
-Parsing XDC File [/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/synth_1/.Xil/Vivado-27834-eecs-digital-11/dcp_2/blk_mem_gen_1_in_context.xdc] for cell 'Buffer/bram1'
-Finished Parsing XDC File [/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/synth_1/.Xil/Vivado-27834-eecs-digital-11/dcp_2/blk_mem_gen_1_in_context.xdc] for cell 'Buffer/bram1'
-Parsing XDC File [/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/synth_1/.Xil/Vivado-27834-eecs-digital-11/dcp_3/clk_wiz_0_in_context.xdc] for cell 'ClockDivider'
-Finished Parsing XDC File [/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/synth_1/.Xil/Vivado-27834-eecs-digital-11/dcp_3/clk_wiz_0_in_context.xdc] for cell 'ClockDivider'
-Parsing XDC File [/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/synth_1/.Xil/Vivado-27834-eecs-digital-11/dcp_4/xadc_wiz_0_in_context.xdc] for cell 'XLXI_7'
-Finished Parsing XDC File [/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/synth_1/.Xil/Vivado-27834-eecs-digital-11/dcp_4/xadc_wiz_0_in_context.xdc] for cell 'XLXI_7'
-Parsing XDC File [/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/constrs_1/imports/constraints/Nexys4DDR_Master.xdc]
-WARNING: [Vivado 12-584] No ports matched 'CPU_RESETN'. [/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/constrs_1/imports/constraints/Nexys4DDR_Master.xdc:82]
-WARNING: [Vivado 12-584] No ports matched 'vauxn3'. [/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/constrs_1/imports/constraints/Nexys4DDR_Master.xdc:144]
-WARNING: [Vivado 12-584] No ports matched 'vauxp3'. [/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/constrs_1/imports/constraints/Nexys4DDR_Master.xdc:145]
-WARNING: [Vivado 12-584] No ports matched 'vauxn10'. [/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/constrs_1/imports/constraints/Nexys4DDR_Master.xdc:146]
-WARNING: [Vivado 12-584] No ports matched 'vauxp10'. [/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/constrs_1/imports/constraints/Nexys4DDR_Master.xdc:147]
-WARNING: [Vivado 12-584] No ports matched 'vauxn2'. [/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/constrs_1/imports/constraints/Nexys4DDR_Master.xdc:148]
-WARNING: [Vivado 12-584] No ports matched 'vauxp2'. [/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/constrs_1/imports/constraints/Nexys4DDR_Master.xdc:149]
-Finished Parsing XDC File [/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/constrs_1/imports/constraints/Nexys4DDR_Master.xdc]
-WARNING: [Project 1-498] One or more constraints failed evaluation while reading constraint file [/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/constrs_1/imports/constraints/Nexys4DDR_Master.xdc] and the design contains unresolved black boxes. These constraints will be read post-synthesis (as long as their source constraint file is marked as used_in_implementation) and should be applied correctly then. You should review the constraints listed in the file [.Xil/Oscilloscope_v1_propImpl.xdc] and check the run log file to verify that these constraints were correctly applied.
-INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/constrs_1/imports/constraints/Nexys4DDR_Master.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/Oscilloscope_v1_propImpl.xdc].
+Parsing XDC File [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/synth_1/.Xil/Vivado-19050-eecs-digital-02/dcp/blk_mem_gen_0_in_context.xdc] for cell 'Buffer/bram0'
+Finished Parsing XDC File [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/synth_1/.Xil/Vivado-19050-eecs-digital-02/dcp/blk_mem_gen_0_in_context.xdc] for cell 'Buffer/bram0'
+Parsing XDC File [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/synth_1/.Xil/Vivado-19050-eecs-digital-02/dcp_2/blk_mem_gen_1_in_context.xdc] for cell 'Buffer/bram1'
+Finished Parsing XDC File [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/synth_1/.Xil/Vivado-19050-eecs-digital-02/dcp_2/blk_mem_gen_1_in_context.xdc] for cell 'Buffer/bram1'
+Parsing XDC File [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/synth_1/.Xil/Vivado-19050-eecs-digital-02/dcp_3/clk_wiz_0_in_context.xdc] for cell 'ClockDivider'
+Finished Parsing XDC File [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/synth_1/.Xil/Vivado-19050-eecs-digital-02/dcp_3/clk_wiz_0_in_context.xdc] for cell 'ClockDivider'
+Parsing XDC File [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/synth_1/.Xil/Vivado-19050-eecs-digital-02/dcp_4/xadc_wiz_0_in_context.xdc] for cell 'XLXI_7'
+Finished Parsing XDC File [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/synth_1/.Xil/Vivado-19050-eecs-digital-02/dcp_4/xadc_wiz_0_in_context.xdc] for cell 'XLXI_7'
+Parsing XDC File [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/constrs_1/imports/constraints/Nexys4DDR_Master.xdc]
+WARNING: [Vivado 12-584] No ports matched 'CPU_RESETN'. [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/constrs_1/imports/constraints/Nexys4DDR_Master.xdc:82]
+WARNING: [Vivado 12-584] No ports matched 'vauxn3'. [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/constrs_1/imports/constraints/Nexys4DDR_Master.xdc:144]
+WARNING: [Vivado 12-584] No ports matched 'vauxp3'. [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/constrs_1/imports/constraints/Nexys4DDR_Master.xdc:145]
+WARNING: [Vivado 12-584] No ports matched 'vauxn10'. [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/constrs_1/imports/constraints/Nexys4DDR_Master.xdc:146]
+WARNING: [Vivado 12-584] No ports matched 'vauxp10'. [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/constrs_1/imports/constraints/Nexys4DDR_Master.xdc:147]
+WARNING: [Vivado 12-584] No ports matched 'vauxn2'. [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/constrs_1/imports/constraints/Nexys4DDR_Master.xdc:148]
+WARNING: [Vivado 12-584] No ports matched 'vauxp2'. [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/constrs_1/imports/constraints/Nexys4DDR_Master.xdc:149]
+Finished Parsing XDC File [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/constrs_1/imports/constraints/Nexys4DDR_Master.xdc]
+WARNING: [Project 1-498] One or more constraints failed evaluation while reading constraint file [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/constrs_1/imports/constraints/Nexys4DDR_Master.xdc] and the design contains unresolved black boxes. These constraints will be read post-synthesis (as long as their source constraint file is marked as used_in_implementation) and should be applied correctly then. You should review the constraints listed in the file [.Xil/Oscilloscope_v1_propImpl.xdc] and check the run log file to verify that these constraints were correctly applied.
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/constrs_1/imports/constraints/Nexys4DDR_Master.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/Oscilloscope_v1_propImpl.xdc].
 Resolution: To avoid this warning, move constraints listed in [.Xil/Oscilloscope_v1_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Completed Processing XDC Constraints
 
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 1464.453 ; gain = 0.004 ; free physical = 2493 ; free virtual = 13605
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 1465.449 ; gain = 0.004 ; free physical = 911 ; free virtual = 11719
 WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'Buffer/bram0' at clock pin 'clka' is different from the actual clock period '9.231', this can result in different synthesis results.
 WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'Buffer/bram1' at clock pin 'clka' is different from the actual clock period '9.231', this can result in different synthesis results.
-WARNING: [filemgmt 56-147] Overwrite of existing file isn't enabled.  Please specify -force to overwrite file  [/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/synth_1/.Xil/Vivado-27834-eecs-digital-11/xadc_wiz_0/xadc_wiz_0.dcp]
+WARNING: [filemgmt 56-147] Overwrite of existing file isn't enabled.  Please specify -force to overwrite file  [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/synth_1/.Xil/Vivado-19050-eecs-digital-02/xadc_wiz_0/xadc_wiz_0.dcp]
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:11 ; elapsed = 00:00:13 . Memory (MB): peak = 1464.453 ; gain = 569.266 ; free physical = 2491 ; free virtual = 13603
+Finished Constraint Validation : Time (s): cpu = 00:00:11 ; elapsed = 00:00:14 . Memory (MB): peak = 1465.449 ; gain = 570.266 ; free physical = 909 ; free virtual = 11717
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a100tcsg324-3
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:11 ; elapsed = 00:00:13 . Memory (MB): peak = 1464.453 ; gain = 569.266 ; free physical = 2491 ; free virtual = 13603
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:11 ; elapsed = 00:00:14 . Memory (MB): peak = 1465.449 ; gain = 570.266 ; free physical = 909 ; free virtual = 11717
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
-Applied set_property IO_BUFFER_TYPE = NONE for CLK100MHZ. (constraint file  /afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/synth_1/.Xil/Vivado-27834-eecs-digital-11/dcp_3/clk_wiz_0_in_context.xdc, line 4).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for CLK100MHZ. (constraint file  /afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/synth_1/.Xil/Vivado-27834-eecs-digital-11/dcp_3/clk_wiz_0_in_context.xdc, line 5).
+Applied set_property IO_BUFFER_TYPE = NONE for CLK100MHZ. (constraint file  /afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/synth_1/.Xil/Vivado-19050-eecs-digital-02/dcp_3/clk_wiz_0_in_context.xdc, line 4).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for CLK100MHZ. (constraint file  /afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/synth_1/.Xil/Vivado-19050-eecs-digital-02/dcp_3/clk_wiz_0_in_context.xdc, line 5).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:11 ; elapsed = 00:00:13 . Memory (MB): peak = 1464.453 ; gain = 569.266 ; free physical = 2491 ; free virtual = 13603
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:11 ; elapsed = 00:00:14 . Memory (MB): peak = 1465.449 ; gain = 570.266 ; free physical = 909 ; free virtual = 11717
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-4471] merging register 'ram1_din_reg[11:0]' into 'ram0_din_reg[11:0]' [/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/imports/6.111-Final-Project/project_xadc/src/hdl/buffer.v:79]
-INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/imports/6.111-Final-Project/project_xadc/src/hdl/buffer.v:64]
-INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/imports/6.111-Final-Project/project_xadc/src/hdl/buffer.v:84]
+INFO: [Synth 8-4471] merging register 'ram1_din_reg[11:0]' into 'ram0_din_reg[11:0]' [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/imports/6.111-Final-Project/project_xadc/src/hdl/buffer.v:79]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/imports/6.111-Final-Project/project_xadc/src/hdl/buffer.v:64]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/imports/6.111-Final-Project/project_xadc/src/hdl/buffer.v:84]
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:11 ; elapsed = 00:00:14 . Memory (MB): peak = 1464.453 ; gain = 569.266 ; free physical = 2486 ; free virtual = 13598
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:11 ; elapsed = 00:00:14 . Memory (MB): peak = 1465.449 ; gain = 570.266 ; free physical = 906 ; free virtual = 11714
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -230,13 +243,15 @@ Detailed RTL Component Info :
 	   2 Input     11 Bit       Adders := 2     
 	   2 Input      5 Bit       Adders := 1     
 +---Registers : 
-	               12 Bit    Registers := 15    
+	              100 Bit    Registers := 1     
+	               12 Bit    Registers := 17    
 	               11 Bit    Registers := 2     
 	                5 Bit    Registers := 1     
 	                4 Bit    Registers := 3     
-	                1 Bit    Registers := 19    
+	                1 Bit    Registers := 22    
 +---Muxes : 
-	   2 Input     12 Bit        Muxes := 4     
+	   2 Input     12 Bit        Muxes := 5     
+	  24 Input     12 Bit        Muxes := 1     
 	   2 Input      1 Bit        Muxes := 3     
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
@@ -286,6 +301,14 @@ Detailed RTL Component Info :
 	                1 Bit    Registers := 5     
 +---Muxes : 
 	   2 Input      1 Bit        Muxes := 2     
+Module Grid 
+Detailed RTL Component Info : 
++---Registers : 
+	              100 Bit    Registers := 1     
+	               12 Bit    Registers := 2     
+	                1 Bit    Registers := 3     
++---Muxes : 
+	  24 Input     12 Bit        Muxes := 1     
 Module Curve 
 Detailed RTL Component Info : 
 +---Adders : 
@@ -296,7 +319,7 @@ Detailed RTL Component Info :
 	               12 Bit    Registers := 3     
 	                1 Bit    Registers := 5     
 +---Muxes : 
-	   2 Input     12 Bit        Muxes := 1     
+	   2 Input     12 Bit        Muxes := 2     
 	   2 Input      1 Bit        Muxes := 1     
 Module TriggerLevelSprite 
 Detailed RTL Component Info : 
@@ -319,11 +342,13 @@ BRAMs: 270 (col length: RAMB18 80 RAMB36 40)
 ---------------------------------------------------------------------------------
 Finished Part Resource Summary
 ---------------------------------------------------------------------------------
-Start Parallel Synthesis Optimization  : Time (s): cpu = 00:00:11 ; elapsed = 00:00:14 . Memory (MB): peak = 1464.453 ; gain = 569.266 ; free physical = 2486 ; free virtual = 13598
+Start Parallel Synthesis Optimization  : Time (s): cpu = 00:00:11 ; elapsed = 00:00:14 . Memory (MB): peak = 1465.449 ; gain = 570.266 ; free physical = 906 ; free virtual = 11714
 ---------------------------------------------------------------------------------
 Start Cross Boundary Optimization
 ---------------------------------------------------------------------------------
-WARNING: [Synth 8-3936] Found unconnected internal register 'myCurve/curveDisplayY_reg' and it is trimmed from '12' to '11' bits. [/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/imports/6.111-Final-Project/jorge/oscilloscope/oscilloscope.srcs/sources_1/new/Curve.v:72]
+WARNING: [Synth 8-3936] Found unconnected internal register 'myCurve/curveDisplayY_reg' and it is trimmed from '12' to '11' bits. [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/imports/6.111-Final-Project/jorge/oscilloscope/oscilloscope.srcs/sources_1/new/Curve.v:73]
+WARNING: [Synth 8-3936] Found unconnected internal register 'myGrid/gridDisplayY_reg' and it is trimmed from '12' to '11' bits. [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Grid.v:106]
+WARNING: [Synth 8-3936] Found unconnected internal register 'myGrid/gridDisplayX_reg' and it is trimmed from '12' to '11' bits. [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Grid.v:105]
 DSP Report: Generating DSP myss/triggerThreshold, operation Mode is: A*B.
 DSP Report: operator myss/triggerThreshold is absorbed into DSP myss/triggerThreshold.
 WARNING: [Synth 8-3331] design Oscilloscope_v1 has unconnected port LED[15]
@@ -359,9 +384,9 @@ WARNING: [Synth 8-3331] design Oscilloscope_v1 has unconnected port seg[2]
 WARNING: [Synth 8-3331] design Oscilloscope_v1 has unconnected port seg[1]
 WARNING: [Synth 8-3331] design Oscilloscope_v1 has unconnected port seg[0]
 ---------------------------------------------------------------------------------
-Finished Cross Boundary Optimization : Time (s): cpu = 00:00:11 ; elapsed = 00:00:14 . Memory (MB): peak = 1464.453 ; gain = 569.266 ; free physical = 2478 ; free virtual = 13590
+Finished Cross Boundary Optimization : Time (s): cpu = 00:00:11 ; elapsed = 00:00:14 . Memory (MB): peak = 1465.449 ; gain = 570.266 ; free physical = 902 ; free virtual = 11710
 ---------------------------------------------------------------------------------
-Finished Parallel Reinference  : Time (s): cpu = 00:00:11 ; elapsed = 00:00:14 . Memory (MB): peak = 1464.453 ; gain = 569.266 ; free physical = 2478 ; free virtual = 13590
+Finished Parallel Reinference  : Time (s): cpu = 00:00:11 ; elapsed = 00:00:14 . Memory (MB): peak = 1465.449 ; gain = 570.266 ; free physical = 902 ; free virtual = 11710
 
 Report RTL Partitions: 
 +-+--------------+------------+----------+
@@ -386,50 +411,214 @@ Finished ROM, RAM, DSP and Shift Register Reporting
 ---------------------------------------------------------------------------------
 Start Area Optimization
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-3886] merging instance 'mytls/pixel_reg[0]' (FDR) to 'mytls/pixel_reg[3]'
-INFO: [Synth 8-3886] merging instance 'mytls/pixel_reg[1]' (FDR) to 'mytls/pixel_reg[3]'
+INFO: [Synth 8-3886] merging instance 'myGrid/pixel_reg[99]' (FDR) to 'myGrid/pixel_reg[0]'
+INFO: [Synth 8-3886] merging instance 'myGrid/pixel_reg[98]' (FDR) to 'myGrid/pixel_reg[0]'
+INFO: [Synth 8-3886] merging instance 'myGrid/pixel_reg[97]' (FDR) to 'myGrid/pixel_reg[0]'
+INFO: [Synth 8-3886] merging instance 'myGrid/pixel_reg[96]' (FDR) to 'myGrid/pixel_reg[0]'
+INFO: [Synth 8-3886] merging instance 'myGrid/pixel_reg[95]' (FDR) to 'myGrid/pixel_reg[0]'
+INFO: [Synth 8-3886] merging instance 'myGrid/pixel_reg[94]' (FDR) to 'myGrid/pixel_reg[0]'
+INFO: [Synth 8-3886] merging instance 'myGrid/pixel_reg[93]' (FDR) to 'myGrid/pixel_reg[0]'
+INFO: [Synth 8-3886] merging instance 'myGrid/pixel_reg[92]' (FDR) to 'myGrid/pixel_reg[0]'
+INFO: [Synth 8-3886] merging instance 'myGrid/pixel_reg[91]' (FDR) to 'myGrid/pixel_reg[0]'
+INFO: [Synth 8-3886] merging instance 'myGrid/pixel_reg[90]' (FDR) to 'myGrid/pixel_reg[0]'
+INFO: [Synth 8-3886] merging instance 'myGrid/pixel_reg[89]' (FDR) to 'myGrid/pixel_reg[0]'
+INFO: [Synth 8-3886] merging instance 'myGrid/pixel_reg[88]' (FDR) to 'myGrid/pixel_reg[0]'
+INFO: [Synth 8-3886] merging instance 'myGrid/pixel_reg[87]' (FDR) to 'myGrid/pixel_reg[0]'
+INFO: [Synth 8-3886] merging instance 'myGrid/pixel_reg[86]' (FDR) to 'myGrid/pixel_reg[0]'
+INFO: [Synth 8-3886] merging instance 'myGrid/pixel_reg[85]' (FDR) to 'myGrid/pixel_reg[0]'
+INFO: [Synth 8-3886] merging instance 'myGrid/pixel_reg[84]' (FDR) to 'myGrid/pixel_reg[0]'
+INFO: [Synth 8-3886] merging instance 'myGrid/pixel_reg[83]' (FDR) to 'myGrid/pixel_reg[0]'
+INFO: [Synth 8-3886] merging instance 'myGrid/pixel_reg[82]' (FDR) to 'myGrid/pixel_reg[0]'
+INFO: [Synth 8-3886] merging instance 'myGrid/pixel_reg[81]' (FDR) to 'myGrid/pixel_reg[0]'
+INFO: [Synth 8-3886] merging instance 'myGrid/pixel_reg[80]' (FDR) to 'myGrid/pixel_reg[0]'
+INFO: [Synth 8-3886] merging instance 'myGrid/pixel_reg[79]' (FDR) to 'myGrid/pixel_reg[0]'
+INFO: [Synth 8-3886] merging instance 'myGrid/pixel_reg[78]' (FDR) to 'myGrid/pixel_reg[0]'
+INFO: [Synth 8-3886] merging instance 'myGrid/pixel_reg[77]' (FDR) to 'myGrid/pixel_reg[0]'
+INFO: [Synth 8-3886] merging instance 'myGrid/pixel_reg[76]' (FDR) to 'myGrid/pixel_reg[0]'
+INFO: [Synth 8-3886] merging instance 'myGrid/pixel_reg[75]' (FDR) to 'myGrid/pixel_reg[0]'
+INFO: [Synth 8-3886] merging instance 'myGrid/pixel_reg[74]' (FDR) to 'myGrid/pixel_reg[0]'
+INFO: [Synth 8-3886] merging instance 'myGrid/pixel_reg[73]' (FDR) to 'myGrid/pixel_reg[0]'
+INFO: [Synth 8-3886] merging instance 'myGrid/pixel_reg[72]' (FDR) to 'myGrid/pixel_reg[0]'
+INFO: [Synth 8-3886] merging instance 'myGrid/pixel_reg[71]' (FDR) to 'myGrid/pixel_reg[0]'
+INFO: [Synth 8-3886] merging instance 'myGrid/pixel_reg[70]' (FDR) to 'myGrid/pixel_reg[0]'
+INFO: [Synth 8-3886] merging instance 'myGrid/pixel_reg[69]' (FDR) to 'myGrid/pixel_reg[0]'
+INFO: [Synth 8-3886] merging instance 'myGrid/pixel_reg[68]' (FDR) to 'myGrid/pixel_reg[0]'
+INFO: [Synth 8-3886] merging instance 'myGrid/pixel_reg[67]' (FDR) to 'myGrid/pixel_reg[0]'
+INFO: [Synth 8-3886] merging instance 'myGrid/pixel_reg[66]' (FDR) to 'myGrid/pixel_reg[0]'
+INFO: [Synth 8-3886] merging instance 'myGrid/pixel_reg[65]' (FDR) to 'myGrid/pixel_reg[0]'
+INFO: [Synth 8-3886] merging instance 'myGrid/pixel_reg[64]' (FDR) to 'myGrid/pixel_reg[0]'
+INFO: [Synth 8-3886] merging instance 'myGrid/pixel_reg[63]' (FDR) to 'myGrid/pixel_reg[0]'
+INFO: [Synth 8-3886] merging instance 'myGrid/pixel_reg[62]' (FDR) to 'myGrid/pixel_reg[0]'
+INFO: [Synth 8-3886] merging instance 'myGrid/pixel_reg[61]' (FDR) to 'myGrid/pixel_reg[0]'
+INFO: [Synth 8-3886] merging instance 'myGrid/pixel_reg[60]' (FDR) to 'myGrid/pixel_reg[0]'
+INFO: [Synth 8-3886] merging instance 'myGrid/pixel_reg[59]' (FDR) to 'myGrid/pixel_reg[0]'
+INFO: [Synth 8-3886] merging instance 'myGrid/pixel_reg[58]' (FDR) to 'myGrid/pixel_reg[0]'
+INFO: [Synth 8-3886] merging instance 'myGrid/pixel_reg[57]' (FDR) to 'myGrid/pixel_reg[0]'
+INFO: [Synth 8-3886] merging instance 'myGrid/pixel_reg[56]' (FDR) to 'myGrid/pixel_reg[0]'
+INFO: [Synth 8-3886] merging instance 'myGrid/pixel_reg[55]' (FDR) to 'myGrid/pixel_reg[0]'
+INFO: [Synth 8-3886] merging instance 'myGrid/pixel_reg[54]' (FDR) to 'myGrid/pixel_reg[0]'
+INFO: [Synth 8-3886] merging instance 'myGrid/pixel_reg[53]' (FDR) to 'myGrid/pixel_reg[0]'
+INFO: [Synth 8-3886] merging instance 'myGrid/pixel_reg[52]' (FDR) to 'myGrid/pixel_reg[0]'
+INFO: [Synth 8-3886] merging instance 'myGrid/pixel_reg[51]' (FDR) to 'myGrid/pixel_reg[0]'
+INFO: [Synth 8-3886] merging instance 'myGrid/pixel_reg[50]' (FDR) to 'myGrid/pixel_reg[0]'
+INFO: [Synth 8-3886] merging instance 'myGrid/pixel_reg[49]' (FDR) to 'myGrid/pixel_reg[0]'
+INFO: [Synth 8-3886] merging instance 'myGrid/pixel_reg[48]' (FDR) to 'myGrid/pixel_reg[0]'
+INFO: [Synth 8-3886] merging instance 'myGrid/pixel_reg[47]' (FDR) to 'myGrid/pixel_reg[0]'
+INFO: [Synth 8-3886] merging instance 'myGrid/pixel_reg[46]' (FDR) to 'myGrid/pixel_reg[0]'
+INFO: [Synth 8-3886] merging instance 'myGrid/pixel_reg[45]' (FDR) to 'myGrid/pixel_reg[0]'
+INFO: [Synth 8-3886] merging instance 'myGrid/pixel_reg[44]' (FDR) to 'myGrid/pixel_reg[0]'
+INFO: [Synth 8-3886] merging instance 'myGrid/pixel_reg[43]' (FDR) to 'myGrid/pixel_reg[0]'
+INFO: [Synth 8-3886] merging instance 'myGrid/pixel_reg[42]' (FDR) to 'myGrid/pixel_reg[0]'
+INFO: [Synth 8-3886] merging instance 'myGrid/pixel_reg[41]' (FDR) to 'myGrid/pixel_reg[0]'
+INFO: [Synth 8-3886] merging instance 'myGrid/pixel_reg[40]' (FDR) to 'myGrid/pixel_reg[0]'
+INFO: [Synth 8-3886] merging instance 'myGrid/pixel_reg[39]' (FDR) to 'myGrid/pixel_reg[0]'
+INFO: [Synth 8-3886] merging instance 'myGrid/pixel_reg[38]' (FDR) to 'myGrid/pixel_reg[0]'
+INFO: [Synth 8-3886] merging instance 'myGrid/pixel_reg[37]' (FDR) to 'myGrid/pixel_reg[0]'
+INFO: [Synth 8-3886] merging instance 'myGrid/pixel_reg[36]' (FDR) to 'myGrid/pixel_reg[0]'
+INFO: [Synth 8-3886] merging instance 'myGrid/pixel_reg[35]' (FDR) to 'myGrid/pixel_reg[0]'
+INFO: [Synth 8-3886] merging instance 'myGrid/pixel_reg[34]' (FDR) to 'myGrid/pixel_reg[0]'
+INFO: [Synth 8-3886] merging instance 'myGrid/pixel_reg[33]' (FDR) to 'myGrid/pixel_reg[0]'
+INFO: [Synth 8-3886] merging instance 'myGrid/pixel_reg[32]' (FDR) to 'myGrid/pixel_reg[0]'
+INFO: [Synth 8-3886] merging instance 'myGrid/pixel_reg[31]' (FDR) to 'myGrid/pixel_reg[0]'
+INFO: [Synth 8-3886] merging instance 'myGrid/pixel_reg[30]' (FDR) to 'myGrid/pixel_reg[0]'
+INFO: [Synth 8-3886] merging instance 'myGrid/pixel_reg[29]' (FDR) to 'myGrid/pixel_reg[0]'
+INFO: [Synth 8-3886] merging instance 'myGrid/pixel_reg[28]' (FDR) to 'myGrid/pixel_reg[0]'
+INFO: [Synth 8-3886] merging instance 'myGrid/pixel_reg[27]' (FDR) to 'myGrid/pixel_reg[0]'
+INFO: [Synth 8-3886] merging instance 'myGrid/pixel_reg[26]' (FDR) to 'myGrid/pixel_reg[0]'
+INFO: [Synth 8-3886] merging instance 'myGrid/pixel_reg[25]' (FDR) to 'myGrid/pixel_reg[0]'
+INFO: [Synth 8-3886] merging instance 'myGrid/pixel_reg[24]' (FDR) to 'myGrid/pixel_reg[0]'
+INFO: [Synth 8-3886] merging instance 'myGrid/pixel_reg[23]' (FDR) to 'myGrid/pixel_reg[0]'
+INFO: [Synth 8-3886] merging instance 'myGrid/pixel_reg[22]' (FDR) to 'myGrid/pixel_reg[0]'
+INFO: [Synth 8-3886] merging instance 'myGrid/pixel_reg[21]' (FDR) to 'myGrid/pixel_reg[0]'
+INFO: [Synth 8-3886] merging instance 'myGrid/pixel_reg[20]' (FDR) to 'myGrid/pixel_reg[0]'
+INFO: [Synth 8-3886] merging instance 'myGrid/pixel_reg[19]' (FDR) to 'myGrid/pixel_reg[0]'
+INFO: [Synth 8-3886] merging instance 'myGrid/pixel_reg[18]' (FDR) to 'myGrid/pixel_reg[0]'
+INFO: [Synth 8-3886] merging instance 'myGrid/pixel_reg[17]' (FDR) to 'myGrid/pixel_reg[0]'
+INFO: [Synth 8-3886] merging instance 'myGrid/pixel_reg[16]' (FDR) to 'myGrid/pixel_reg[0]'
+INFO: [Synth 8-3886] merging instance 'myGrid/pixel_reg[15]' (FDR) to 'myGrid/pixel_reg[0]'
+INFO: [Synth 8-3886] merging instance 'myGrid/pixel_reg[14]' (FDR) to 'myGrid/pixel_reg[0]'
+INFO: [Synth 8-3886] merging instance 'myGrid/pixel_reg[13]' (FDR) to 'myGrid/pixel_reg[0]'
+INFO: [Synth 8-3886] merging instance 'myGrid/pixel_reg[12]' (FDR) to 'myGrid/pixel_reg[0]'
+INFO: [Synth 8-3886] merging instance 'myGrid/pixel_reg[0]' (FDR) to 'myGrid/pixel_reg[9]'
+INFO: [Synth 8-3886] merging instance 'myGrid/pixel_reg[1]' (FDR) to 'myGrid/pixel_reg[9]'
+INFO: [Synth 8-3886] merging instance 'myGrid/pixel_reg[2]' (FDS) to 'myGrid/pixel_reg[3]'
+INFO: [Synth 8-3886] merging instance 'myGrid/pixel_reg[3]' (FDS) to 'myGrid/pixel_reg[6]'
+INFO: [Synth 8-3886] merging instance 'myGrid/pixel_reg[4]' (FDR) to 'myGrid/pixel_reg[9]'
+INFO: [Synth 8-3886] merging instance 'myGrid/pixel_reg[5]' (FDR) to 'myGrid/pixel_reg[9]'
+INFO: [Synth 8-3886] merging instance 'myGrid/pixel_reg[6]' (FDS) to 'myGrid/pixel_reg[7]'
+INFO: [Synth 8-3886] merging instance 'myGrid/pixel_reg[7]' (FDS) to 'myGrid/pixel_reg[10]'
+INFO: [Synth 8-3886] merging instance 'myGrid/pixel_reg[8]' (FDR) to 'myGrid/pixel_reg[9]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\myGrid/pixel_reg[9] )
+INFO: [Synth 8-3886] merging instance 'myGrid/pixel_reg[10]' (FDS) to 'myGrid/pixel_reg[11]'
 INFO: [Synth 8-3886] merging instance 'mytls/pixel_reg[2]' (FDR) to 'mytls/pixel_reg[3]'
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\mytls/pixel_reg[3] )
-INFO: [Synth 8-3886] merging instance 'mytls/pixel_reg[4]' (FDR) to 'mytls/pixel_reg[7]'
-INFO: [Synth 8-3886] merging instance 'mytls/pixel_reg[5]' (FDR) to 'mytls/pixel_reg[7]'
-INFO: [Synth 8-3886] merging instance 'mytls/pixel_reg[6]' (FDR) to 'mytls/pixel_reg[7]'
-INFO: [Synth 8-3886] merging instance 'mytls/pixel_reg[8]' (FDS) to 'mytls/pixel_reg[11]'
-INFO: [Synth 8-3886] merging instance 'mytls/pixel_reg[9]' (FDS) to 'mytls/pixel_reg[11]'
-INFO: [Synth 8-3886] merging instance 'mytls/pixel_reg[10]' (FDS) to 'mytls/pixel_reg[11]'
-INFO: [Synth 8-3886] merging instance 'VGA_B_reg[0]' (FD) to 'VGA_B_reg[3]'
-INFO: [Synth 8-3886] merging instance 'VGA_B_reg[1]' (FD) to 'VGA_B_reg[3]'
-INFO: [Synth 8-3886] merging instance 'VGA_B_reg[2]' (FD) to 'VGA_B_reg[3]'
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\VGA_B_reg[3] )
-INFO: [Synth 8-3886] merging instance 'VGA_G_reg[0]' (FD) to 'VGA_G_reg[1]'
-INFO: [Synth 8-3886] merging instance 'VGA_G_reg[1]' (FD) to 'VGA_G_reg[2]'
-INFO: [Synth 8-3886] merging instance 'VGA_G_reg[2]' (FD) to 'VGA_G_reg[3]'
-INFO: [Synth 8-3886] merging instance 'VGA_R_reg[0]' (FD) to 'VGA_R_reg[1]'
-INFO: [Synth 8-3886] merging instance 'VGA_R_reg[1]' (FD) to 'VGA_R_reg[2]'
-INFO: [Synth 8-3886] merging instance 'VGA_R_reg[2]' (FD) to 'VGA_R_reg[3]'
+INFO: [Synth 8-3886] merging instance 'mytls/pixel_reg[4]' (FDR) to 'mytls/pixel_reg[5]'
+INFO: [Common 17-14] Message 'Synth 8-3886' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\VGA_B_reg[1] )
+WARNING: [Synth 8-3332] Sequential element (myGrid/pixel_reg[99]) is unused and will be removed from module Oscilloscope_v1.
+WARNING: [Synth 8-3332] Sequential element (myGrid/pixel_reg[98]) is unused and will be removed from module Oscilloscope_v1.
+WARNING: [Synth 8-3332] Sequential element (myGrid/pixel_reg[97]) is unused and will be removed from module Oscilloscope_v1.
+WARNING: [Synth 8-3332] Sequential element (myGrid/pixel_reg[96]) is unused and will be removed from module Oscilloscope_v1.
+WARNING: [Synth 8-3332] Sequential element (myGrid/pixel_reg[95]) is unused and will be removed from module Oscilloscope_v1.
+WARNING: [Synth 8-3332] Sequential element (myGrid/pixel_reg[94]) is unused and will be removed from module Oscilloscope_v1.
+WARNING: [Synth 8-3332] Sequential element (myGrid/pixel_reg[93]) is unused and will be removed from module Oscilloscope_v1.
+WARNING: [Synth 8-3332] Sequential element (myGrid/pixel_reg[92]) is unused and will be removed from module Oscilloscope_v1.
+WARNING: [Synth 8-3332] Sequential element (myGrid/pixel_reg[91]) is unused and will be removed from module Oscilloscope_v1.
+WARNING: [Synth 8-3332] Sequential element (myGrid/pixel_reg[90]) is unused and will be removed from module Oscilloscope_v1.
+WARNING: [Synth 8-3332] Sequential element (myGrid/pixel_reg[89]) is unused and will be removed from module Oscilloscope_v1.
+WARNING: [Synth 8-3332] Sequential element (myGrid/pixel_reg[88]) is unused and will be removed from module Oscilloscope_v1.
+WARNING: [Synth 8-3332] Sequential element (myGrid/pixel_reg[87]) is unused and will be removed from module Oscilloscope_v1.
+WARNING: [Synth 8-3332] Sequential element (myGrid/pixel_reg[86]) is unused and will be removed from module Oscilloscope_v1.
+WARNING: [Synth 8-3332] Sequential element (myGrid/pixel_reg[85]) is unused and will be removed from module Oscilloscope_v1.
+WARNING: [Synth 8-3332] Sequential element (myGrid/pixel_reg[84]) is unused and will be removed from module Oscilloscope_v1.
+WARNING: [Synth 8-3332] Sequential element (myGrid/pixel_reg[83]) is unused and will be removed from module Oscilloscope_v1.
+WARNING: [Synth 8-3332] Sequential element (myGrid/pixel_reg[82]) is unused and will be removed from module Oscilloscope_v1.
+WARNING: [Synth 8-3332] Sequential element (myGrid/pixel_reg[81]) is unused and will be removed from module Oscilloscope_v1.
+WARNING: [Synth 8-3332] Sequential element (myGrid/pixel_reg[80]) is unused and will be removed from module Oscilloscope_v1.
+WARNING: [Synth 8-3332] Sequential element (myGrid/pixel_reg[79]) is unused and will be removed from module Oscilloscope_v1.
+WARNING: [Synth 8-3332] Sequential element (myGrid/pixel_reg[78]) is unused and will be removed from module Oscilloscope_v1.
+WARNING: [Synth 8-3332] Sequential element (myGrid/pixel_reg[77]) is unused and will be removed from module Oscilloscope_v1.
+WARNING: [Synth 8-3332] Sequential element (myGrid/pixel_reg[76]) is unused and will be removed from module Oscilloscope_v1.
+WARNING: [Synth 8-3332] Sequential element (myGrid/pixel_reg[75]) is unused and will be removed from module Oscilloscope_v1.
+WARNING: [Synth 8-3332] Sequential element (myGrid/pixel_reg[74]) is unused and will be removed from module Oscilloscope_v1.
+WARNING: [Synth 8-3332] Sequential element (myGrid/pixel_reg[73]) is unused and will be removed from module Oscilloscope_v1.
+WARNING: [Synth 8-3332] Sequential element (myGrid/pixel_reg[72]) is unused and will be removed from module Oscilloscope_v1.
+WARNING: [Synth 8-3332] Sequential element (myGrid/pixel_reg[71]) is unused and will be removed from module Oscilloscope_v1.
+WARNING: [Synth 8-3332] Sequential element (myGrid/pixel_reg[70]) is unused and will be removed from module Oscilloscope_v1.
+WARNING: [Synth 8-3332] Sequential element (myGrid/pixel_reg[69]) is unused and will be removed from module Oscilloscope_v1.
+WARNING: [Synth 8-3332] Sequential element (myGrid/pixel_reg[68]) is unused and will be removed from module Oscilloscope_v1.
+WARNING: [Synth 8-3332] Sequential element (myGrid/pixel_reg[67]) is unused and will be removed from module Oscilloscope_v1.
+WARNING: [Synth 8-3332] Sequential element (myGrid/pixel_reg[66]) is unused and will be removed from module Oscilloscope_v1.
+WARNING: [Synth 8-3332] Sequential element (myGrid/pixel_reg[65]) is unused and will be removed from module Oscilloscope_v1.
+WARNING: [Synth 8-3332] Sequential element (myGrid/pixel_reg[64]) is unused and will be removed from module Oscilloscope_v1.
+WARNING: [Synth 8-3332] Sequential element (myGrid/pixel_reg[63]) is unused and will be removed from module Oscilloscope_v1.
+WARNING: [Synth 8-3332] Sequential element (myGrid/pixel_reg[62]) is unused and will be removed from module Oscilloscope_v1.
+WARNING: [Synth 8-3332] Sequential element (myGrid/pixel_reg[61]) is unused and will be removed from module Oscilloscope_v1.
+WARNING: [Synth 8-3332] Sequential element (myGrid/pixel_reg[60]) is unused and will be removed from module Oscilloscope_v1.
+WARNING: [Synth 8-3332] Sequential element (myGrid/pixel_reg[59]) is unused and will be removed from module Oscilloscope_v1.
+WARNING: [Synth 8-3332] Sequential element (myGrid/pixel_reg[58]) is unused and will be removed from module Oscilloscope_v1.
+WARNING: [Synth 8-3332] Sequential element (myGrid/pixel_reg[57]) is unused and will be removed from module Oscilloscope_v1.
+WARNING: [Synth 8-3332] Sequential element (myGrid/pixel_reg[56]) is unused and will be removed from module Oscilloscope_v1.
+WARNING: [Synth 8-3332] Sequential element (myGrid/pixel_reg[55]) is unused and will be removed from module Oscilloscope_v1.
+WARNING: [Synth 8-3332] Sequential element (myGrid/pixel_reg[54]) is unused and will be removed from module Oscilloscope_v1.
+WARNING: [Synth 8-3332] Sequential element (myGrid/pixel_reg[53]) is unused and will be removed from module Oscilloscope_v1.
+WARNING: [Synth 8-3332] Sequential element (myGrid/pixel_reg[52]) is unused and will be removed from module Oscilloscope_v1.
+WARNING: [Synth 8-3332] Sequential element (myGrid/pixel_reg[51]) is unused and will be removed from module Oscilloscope_v1.
+WARNING: [Synth 8-3332] Sequential element (myGrid/pixel_reg[50]) is unused and will be removed from module Oscilloscope_v1.
+WARNING: [Synth 8-3332] Sequential element (myGrid/pixel_reg[49]) is unused and will be removed from module Oscilloscope_v1.
+WARNING: [Synth 8-3332] Sequential element (myGrid/pixel_reg[48]) is unused and will be removed from module Oscilloscope_v1.
+WARNING: [Synth 8-3332] Sequential element (myGrid/pixel_reg[47]) is unused and will be removed from module Oscilloscope_v1.
+WARNING: [Synth 8-3332] Sequential element (myGrid/pixel_reg[46]) is unused and will be removed from module Oscilloscope_v1.
+WARNING: [Synth 8-3332] Sequential element (myGrid/pixel_reg[45]) is unused and will be removed from module Oscilloscope_v1.
+WARNING: [Synth 8-3332] Sequential element (myGrid/pixel_reg[44]) is unused and will be removed from module Oscilloscope_v1.
+WARNING: [Synth 8-3332] Sequential element (myGrid/pixel_reg[43]) is unused and will be removed from module Oscilloscope_v1.
+WARNING: [Synth 8-3332] Sequential element (myGrid/pixel_reg[42]) is unused and will be removed from module Oscilloscope_v1.
+WARNING: [Synth 8-3332] Sequential element (myGrid/pixel_reg[41]) is unused and will be removed from module Oscilloscope_v1.
+WARNING: [Synth 8-3332] Sequential element (myGrid/pixel_reg[40]) is unused and will be removed from module Oscilloscope_v1.
+WARNING: [Synth 8-3332] Sequential element (myGrid/pixel_reg[39]) is unused and will be removed from module Oscilloscope_v1.
+WARNING: [Synth 8-3332] Sequential element (myGrid/pixel_reg[38]) is unused and will be removed from module Oscilloscope_v1.
+WARNING: [Synth 8-3332] Sequential element (myGrid/pixel_reg[37]) is unused and will be removed from module Oscilloscope_v1.
+WARNING: [Synth 8-3332] Sequential element (myGrid/pixel_reg[36]) is unused and will be removed from module Oscilloscope_v1.
+WARNING: [Synth 8-3332] Sequential element (myGrid/pixel_reg[35]) is unused and will be removed from module Oscilloscope_v1.
+WARNING: [Synth 8-3332] Sequential element (myGrid/pixel_reg[34]) is unused and will be removed from module Oscilloscope_v1.
+WARNING: [Synth 8-3332] Sequential element (myGrid/pixel_reg[33]) is unused and will be removed from module Oscilloscope_v1.
+WARNING: [Synth 8-3332] Sequential element (myGrid/pixel_reg[32]) is unused and will be removed from module Oscilloscope_v1.
+WARNING: [Synth 8-3332] Sequential element (myGrid/pixel_reg[31]) is unused and will be removed from module Oscilloscope_v1.
+WARNING: [Synth 8-3332] Sequential element (myGrid/pixel_reg[30]) is unused and will be removed from module Oscilloscope_v1.
+WARNING: [Synth 8-3332] Sequential element (myGrid/pixel_reg[29]) is unused and will be removed from module Oscilloscope_v1.
+WARNING: [Synth 8-3332] Sequential element (myGrid/pixel_reg[28]) is unused and will be removed from module Oscilloscope_v1.
+WARNING: [Synth 8-3332] Sequential element (myGrid/pixel_reg[27]) is unused and will be removed from module Oscilloscope_v1.
+WARNING: [Synth 8-3332] Sequential element (myGrid/pixel_reg[26]) is unused and will be removed from module Oscilloscope_v1.
+WARNING: [Synth 8-3332] Sequential element (myGrid/pixel_reg[25]) is unused and will be removed from module Oscilloscope_v1.
+WARNING: [Synth 8-3332] Sequential element (myGrid/pixel_reg[24]) is unused and will be removed from module Oscilloscope_v1.
+WARNING: [Synth 8-3332] Sequential element (myGrid/pixel_reg[23]) is unused and will be removed from module Oscilloscope_v1.
+WARNING: [Synth 8-3332] Sequential element (myGrid/pixel_reg[22]) is unused and will be removed from module Oscilloscope_v1.
+WARNING: [Synth 8-3332] Sequential element (myGrid/pixel_reg[21]) is unused and will be removed from module Oscilloscope_v1.
+WARNING: [Synth 8-3332] Sequential element (myGrid/pixel_reg[20]) is unused and will be removed from module Oscilloscope_v1.
+WARNING: [Synth 8-3332] Sequential element (myGrid/pixel_reg[19]) is unused and will be removed from module Oscilloscope_v1.
+WARNING: [Synth 8-3332] Sequential element (myGrid/pixel_reg[18]) is unused and will be removed from module Oscilloscope_v1.
+WARNING: [Synth 8-3332] Sequential element (myGrid/pixel_reg[17]) is unused and will be removed from module Oscilloscope_v1.
+WARNING: [Synth 8-3332] Sequential element (myGrid/pixel_reg[16]) is unused and will be removed from module Oscilloscope_v1.
+WARNING: [Synth 8-3332] Sequential element (myGrid/pixel_reg[15]) is unused and will be removed from module Oscilloscope_v1.
+WARNING: [Synth 8-3332] Sequential element (myGrid/pixel_reg[14]) is unused and will be removed from module Oscilloscope_v1.
+WARNING: [Synth 8-3332] Sequential element (myGrid/pixel_reg[13]) is unused and will be removed from module Oscilloscope_v1.
+WARNING: [Synth 8-3332] Sequential element (myGrid/pixel_reg[12]) is unused and will be removed from module Oscilloscope_v1.
+WARNING: [Synth 8-3332] Sequential element (myGrid/pixel_reg[10]) is unused and will be removed from module Oscilloscope_v1.
+WARNING: [Synth 8-3332] Sequential element (myGrid/pixel_reg[9]) is unused and will be removed from module Oscilloscope_v1.
+WARNING: [Synth 8-3332] Sequential element (myGrid/pixel_reg[8]) is unused and will be removed from module Oscilloscope_v1.
+WARNING: [Synth 8-3332] Sequential element (myGrid/pixel_reg[7]) is unused and will be removed from module Oscilloscope_v1.
+WARNING: [Synth 8-3332] Sequential element (myGrid/pixel_reg[6]) is unused and will be removed from module Oscilloscope_v1.
+WARNING: [Synth 8-3332] Sequential element (myGrid/pixel_reg[5]) is unused and will be removed from module Oscilloscope_v1.
+WARNING: [Synth 8-3332] Sequential element (myGrid/pixel_reg[4]) is unused and will be removed from module Oscilloscope_v1.
+WARNING: [Synth 8-3332] Sequential element (myGrid/pixel_reg[3]) is unused and will be removed from module Oscilloscope_v1.
+WARNING: [Synth 8-3332] Sequential element (myGrid/pixel_reg[2]) is unused and will be removed from module Oscilloscope_v1.
+WARNING: [Synth 8-3332] Sequential element (myGrid/pixel_reg[1]) is unused and will be removed from module Oscilloscope_v1.
+WARNING: [Synth 8-3332] Sequential element (myGrid/pixel_reg[0]) is unused and will be removed from module Oscilloscope_v1.
 WARNING: [Synth 8-3332] Sequential element (mytls/pixel_reg[10]) is unused and will be removed from module Oscilloscope_v1.
-WARNING: [Synth 8-3332] Sequential element (mytls/pixel_reg[9]) is unused and will be removed from module Oscilloscope_v1.
-WARNING: [Synth 8-3332] Sequential element (mytls/pixel_reg[8]) is unused and will be removed from module Oscilloscope_v1.
-WARNING: [Synth 8-3332] Sequential element (mytls/pixel_reg[6]) is unused and will be removed from module Oscilloscope_v1.
-WARNING: [Synth 8-3332] Sequential element (mytls/pixel_reg[5]) is unused and will be removed from module Oscilloscope_v1.
-WARNING: [Synth 8-3332] Sequential element (mytls/pixel_reg[4]) is unused and will be removed from module Oscilloscope_v1.
-WARNING: [Synth 8-3332] Sequential element (mytls/pixel_reg[3]) is unused and will be removed from module Oscilloscope_v1.
-WARNING: [Synth 8-3332] Sequential element (mytls/pixel_reg[2]) is unused and will be removed from module Oscilloscope_v1.
-WARNING: [Synth 8-3332] Sequential element (mytls/pixel_reg[1]) is unused and will be removed from module Oscilloscope_v1.
-WARNING: [Synth 8-3332] Sequential element (mytls/pixel_reg[0]) is unused and will be removed from module Oscilloscope_v1.
-WARNING: [Synth 8-3332] Sequential element (VGA_R_reg[2]) is unused and will be removed from module Oscilloscope_v1.
-WARNING: [Synth 8-3332] Sequential element (VGA_R_reg[1]) is unused and will be removed from module Oscilloscope_v1.
-WARNING: [Synth 8-3332] Sequential element (VGA_R_reg[0]) is unused and will be removed from module Oscilloscope_v1.
-WARNING: [Synth 8-3332] Sequential element (VGA_G_reg[2]) is unused and will be removed from module Oscilloscope_v1.
-WARNING: [Synth 8-3332] Sequential element (VGA_G_reg[1]) is unused and will be removed from module Oscilloscope_v1.
-WARNING: [Synth 8-3332] Sequential element (VGA_G_reg[0]) is unused and will be removed from module Oscilloscope_v1.
-WARNING: [Synth 8-3332] Sequential element (VGA_B_reg[3]) is unused and will be removed from module Oscilloscope_v1.
-WARNING: [Synth 8-3332] Sequential element (VGA_B_reg[2]) is unused and will be removed from module Oscilloscope_v1.
-WARNING: [Synth 8-3332] Sequential element (VGA_B_reg[1]) is unused and will be removed from module Oscilloscope_v1.
-WARNING: [Synth 8-3332] Sequential element (VGA_B_reg[0]) is unused and will be removed from module Oscilloscope_v1.
+INFO: [Common 17-14] Message 'Synth 8-3332' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished Area Optimization : Time (s): cpu = 00:00:12 ; elapsed = 00:00:14 . Memory (MB): peak = 1464.453 ; gain = 569.266 ; free physical = 2462 ; free virtual = 13574
+Finished Area Optimization : Time (s): cpu = 00:00:12 ; elapsed = 00:00:15 . Memory (MB): peak = 1465.449 ; gain = 570.266 ; free physical = 886 ; free virtual = 11694
 ---------------------------------------------------------------------------------
-Finished Parallel Area Optimization  : Time (s): cpu = 00:00:12 ; elapsed = 00:00:14 . Memory (MB): peak = 1464.453 ; gain = 569.266 ; free physical = 2462 ; free virtual = 13574
+Finished Parallel Area Optimization  : Time (s): cpu = 00:00:12 ; elapsed = 00:00:15 . Memory (MB): peak = 1465.449 ; gain = 570.266 ; free physical = 886 ; free virtual = 11694
 
 Report RTL Partitions: 
 +-+--------------+------------+----------+
@@ -446,10 +635,10 @@ INFO: [Synth 8-5578] Moved timing constraint from pin 'ClockDivider/clk_out1' to
 INFO: [Synth 8-5578] Moved timing constraint from pin 'ClockDivider/clk_out2' to pin 'ClockDivider/bbstub_clk_out2/O'
 INFO: [Synth 8-5820] Moved 2 constraints on hierarchical pins to their respective driving/loading pins
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:19 ; elapsed = 00:00:21 . Memory (MB): peak = 1464.453 ; gain = 569.266 ; free physical = 2423 ; free virtual = 13535
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:19 ; elapsed = 00:00:22 . Memory (MB): peak = 1465.449 ; gain = 570.266 ; free physical = 824 ; free virtual = 11632
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:19 ; elapsed = 00:00:22 . Memory (MB): peak = 1464.453 ; gain = 569.266 ; free physical = 2404 ; free virtual = 13515
+Finished Timing Optimization : Time (s): cpu = 00:00:20 ; elapsed = 00:00:22 . Memory (MB): peak = 1465.449 ; gain = 570.266 ; free physical = 801 ; free virtual = 11609
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -461,16 +650,16 @@ Report RTL Partitions:
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:20 ; elapsed = 00:00:22 . Memory (MB): peak = 1464.453 ; gain = 569.266 ; free physical = 2395 ; free virtual = 13506
+Finished Technology Mapping : Time (s): cpu = 00:00:20 ; elapsed = 00:00:22 . Memory (MB): peak = 1465.449 ; gain = 570.266 ; free physical = 746 ; free virtual = 11554
 ---------------------------------------------------------------------------------
-Finished Parallel Technology Mapping Optimization  : Time (s): cpu = 00:00:20 ; elapsed = 00:00:22 . Memory (MB): peak = 1464.453 ; gain = 569.266 ; free physical = 2395 ; free virtual = 13506
+Finished Parallel Technology Mapping Optimization  : Time (s): cpu = 00:00:20 ; elapsed = 00:00:22 . Memory (MB): peak = 1465.449 ; gain = 570.266 ; free physical = 746 ; free virtual = 11554
 
 Report RTL Partitions: 
 +-+--------------+------------+----------+
 | |RTL Partition |Replication |Instances |
 +-+--------------+------------+----------+
 +-+--------------+------------+----------+
-Finished Parallel Synthesis Optimization  : Time (s): cpu = 00:00:20 ; elapsed = 00:00:22 . Memory (MB): peak = 1464.453 ; gain = 569.266 ; free physical = 2395 ; free virtual = 13506
+Finished Parallel Synthesis Optimization  : Time (s): cpu = 00:00:20 ; elapsed = 00:00:22 . Memory (MB): peak = 1465.449 ; gain = 570.266 ; free physical = 746 ; free virtual = 11554
 ---------------------------------------------------------------------------------
 Start IO Insertion
 ---------------------------------------------------------------------------------
@@ -540,7 +729,7 @@ CRITICAL WARNING: [Synth 8-4442] BlackBox module \Buffer/bram1  has unconnected 
 CRITICAL WARNING: [Synth 8-4442] BlackBox module \Buffer/bram1  has unconnected pin dinb[1]
 CRITICAL WARNING: [Synth 8-4442] BlackBox module \Buffer/bram1  has unconnected pin dinb[0]
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:20 ; elapsed = 00:00:22 . Memory (MB): peak = 1464.453 ; gain = 569.266 ; free physical = 2395 ; free virtual = 13506
+Finished IO Insertion : Time (s): cpu = 00:00:20 ; elapsed = 00:00:23 . Memory (MB): peak = 1465.449 ; gain = 570.266 ; free physical = 769 ; free virtual = 11584
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -553,7 +742,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:20 ; elapsed = 00:00:22 . Memory (MB): peak = 1464.453 ; gain = 569.266 ; free physical = 2395 ; free virtual = 13506
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:20 ; elapsed = 00:00:23 . Memory (MB): peak = 1465.449 ; gain = 570.266 ; free physical = 769 ; free virtual = 11584
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -565,37 +754,38 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:20 ; elapsed = 00:00:22 . Memory (MB): peak = 1464.453 ; gain = 569.266 ; free physical = 2395 ; free virtual = 13506
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:20 ; elapsed = 00:00:23 . Memory (MB): peak = 1465.449 ; gain = 570.266 ; free physical = 769 ; free virtual = 11584
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:20 ; elapsed = 00:00:22 . Memory (MB): peak = 1464.453 ; gain = 569.266 ; free physical = 2395 ; free virtual = 13506
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:20 ; elapsed = 00:00:23 . Memory (MB): peak = 1465.449 ; gain = 570.266 ; free physical = 769 ; free virtual = 11584
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:20 ; elapsed = 00:00:23 . Memory (MB): peak = 1464.453 ; gain = 569.266 ; free physical = 2395 ; free virtual = 13506
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:20 ; elapsed = 00:00:23 . Memory (MB): peak = 1465.449 ; gain = 570.266 ; free physical = 768 ; free virtual = 11583
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:20 ; elapsed = 00:00:23 . Memory (MB): peak = 1464.453 ; gain = 569.266 ; free physical = 2395 ; free virtual = 13506
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:20 ; elapsed = 00:00:23 . Memory (MB): peak = 1465.449 ; gain = 570.266 ; free physical = 768 ; free virtual = 11583
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
 ---------------------------------------------------------------------------------
 
 Static Shift Register Report:
-+----------------+------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
-|Module Name     | RTL Name   | Length | Width | Reset Signal | Pull out first Reg | Pull out last Reg | SRL16E | SRLC32E | 
-+----------------+------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
-|Oscilloscope_v1 | VGA_HS_reg | 3      | 1     | NO           | NO                 | YES               | 1      | 0       | 
-|Oscilloscope_v1 | VGA_VS_reg | 3      | 1     | NO           | NO                 | YES               | 1      | 0       | 
-+----------------+------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
++----------------+------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+|Module Name     | RTL Name               | Length | Width | Reset Signal | Pull out first Reg | Pull out last Reg | SRL16E | SRLC32E | 
++----------------+------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+|Oscilloscope_v1 | myCurve/curveBlank_reg | 3      | 1     | NO           | NO                 | YES               | 1      | 0       | 
+|Oscilloscope_v1 | VGA_HS_reg             | 4      | 1     | NO           | NO                 | YES               | 1      | 0       | 
+|Oscilloscope_v1 | VGA_VS_reg             | 4      | 1     | NO           | NO                 | YES               | 1      | 0       | 
++----------------+------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
 
 ---------------------------------------------------------------------------------
 Finished ROM, RAM, DSP and Shift Register Reporting
@@ -625,38 +815,40 @@ Report Cell Usage:
 |5     |CARRY4        |    42|
 |6     |DSP48E1       |     1|
 |7     |LUT1          |    78|
-|8     |LUT2          |    40|
-|9     |LUT3          |    33|
-|10    |LUT4          |    81|
-|11    |LUT5          |    26|
-|12    |LUT6          |    43|
-|13    |SRL16E        |     2|
-|14    |FDRE          |   224|
-|15    |IBUF          |    10|
-|16    |OBUF          |    14|
-|17    |OBUFT         |    32|
+|8     |LUT2          |    42|
+|9     |LUT3          |    32|
+|10    |LUT4          |    88|
+|11    |LUT5          |    33|
+|12    |LUT6          |    57|
+|13    |SRL16E        |     3|
+|14    |FDRE          |   250|
+|15    |FDSE          |     2|
+|16    |IBUF          |    10|
+|17    |OBUF          |    14|
+|18    |OBUFT         |    32|
 +------+--------------+------+
 
 Report Instance Areas: 
 +------+----------+------------------------+------+
 |      |Instance  |Module                  |Cells |
 +------+----------+------------------------+------+
-|1     |top       |                        |   706|
-|2     |  Buffer  |buffer                  |   239|
-|3     |  Trigger |TriggerRisingEdgeSteady |    45|
-|4     |  adcc    |ADCController           |    22|
-|5     |  myCurve |Curve                   |   127|
-|6     |  myXVGA  |xvga1280_1024           |   120|
-|7     |  mybs    |BufferSelector          |     1|
-|8     |  myss    |ScopeSettings           |    46|
-|9     |  mytls   |TriggerLevelSprite      |    14|
+|1     |top       |                        |   764|
+|2     |  Buffer  |buffer                  |   249|
+|3     |  Trigger |TriggerRisingEdgeSteady |    59|
+|4     |  adcc    |ADCController           |    27|
+|5     |  myCurve |Curve                   |   134|
+|6     |  myGrid  |Grid                    |    56|
+|7     |  myXVGA  |xvga1280_1024           |   102|
+|8     |  mybs    |BufferSelector          |     1|
+|9     |  myss    |ScopeSettings           |    28|
+|10    |  mytls   |TriggerLevelSprite      |    13|
 +------+----------+------------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:20 ; elapsed = 00:00:23 . Memory (MB): peak = 1464.453 ; gain = 569.266 ; free physical = 2395 ; free virtual = 13506
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:20 ; elapsed = 00:00:23 . Memory (MB): peak = 1465.449 ; gain = 570.266 ; free physical = 768 ; free virtual = 11583
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 43 critical warnings and 53 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 1464.453 ; gain = 100.438 ; free physical = 2394 ; free virtual = 13506
-Synthesis Optimization Complete : Time (s): cpu = 00:00:20 ; elapsed = 00:00:23 . Memory (MB): peak = 1464.453 ; gain = 569.266 ; free physical = 2394 ; free virtual = 13506
+Synthesis finished with 0 errors, 43 critical warnings and 148 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 1465.449 ; gain = 102.438 ; free physical = 768 ; free virtual = 11583
+Synthesis Optimization Complete : Time (s): cpu = 00:00:20 ; elapsed = 00:00:23 . Memory (MB): peak = 1465.449 ; gain = 570.266 ; free physical = 768 ; free virtual = 11583
 INFO: [Project 1-571] Translating synthesized netlist
 INFO: [Netlist 29-17] Analyzing 53 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
@@ -666,8 +858,8 @@ INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
 INFO: [Common 17-83] Releasing license: Synthesis
-74 Infos, 128 Warnings, 43 Critical Warnings and 0 Errors encountered.
+160 Infos, 215 Warnings, 43 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 1494.484 ; gain = 513.734 ; free physical = 2396 ; free virtual = 13508
-report_utilization: Time (s): cpu = 00:00:00.06 ; elapsed = 00:00:00.10 . Memory (MB): peak = 1526.500 ; gain = 0.000 ; free physical = 2395 ; free virtual = 13507
-INFO: [Common 17-206] Exiting Vivado at Sun Nov  6 23:18:10 2016...
+synth_design: Time (s): cpu = 00:00:20 ; elapsed = 00:00:22 . Memory (MB): peak = 1495.480 ; gain = 515.734 ; free physical = 764 ; free virtual = 11579
+report_utilization: Time (s): cpu = 00:00:00.07 ; elapsed = 00:00:00.10 . Memory (MB): peak = 1527.496 ; gain = 0.000 ; free physical = 763 ; free virtual = 11578
+INFO: [Common 17-206] Exiting Vivado at Mon Nov  7 16:42:48 2016...

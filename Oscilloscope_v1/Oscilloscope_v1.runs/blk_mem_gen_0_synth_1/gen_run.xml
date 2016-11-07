@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="blk_mem_gen_0_synth_1" LaunchPart="xc7a100tcsg324-3" LaunchTime="1478482285">
+<GenRun Id="blk_mem_gen_0_synth_1" LaunchPart="xc7a100tcsg324-3" LaunchTime="1478549974">
   <File Type="PA-TCL" Name="blk_mem_gen_0.tcl"/>
   <File Type="RDS-RDS" Name="blk_mem_gen_0.vds"/>
   <File Type="VDS-TIMINGSUMMARY" Name="blk_mem_gen_0_timing_summary_synth.rpt"/>

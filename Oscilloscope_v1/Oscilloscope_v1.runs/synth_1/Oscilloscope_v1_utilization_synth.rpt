@@ -1,8 +1,8 @@
 Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2016.2 (lin64) Build 1577090 Thu Jun  2 16:32:35 MDT 2016
-| Date         : Sun Nov  6 23:18:10 2016
-| Host         : eecs-digital-11 running 64-bit Ubuntu 14.04.5 LTS
+| Date         : Mon Nov  7 16:42:48 2016
+| Host         : eecs-digital-02 running 64-bit Ubuntu 14.04.5 LTS
 | Command      : report_utilization -file Oscilloscope_v1_utilization_synth.rpt -pb Oscilloscope_v1_utilization_synth.pb
 | Design       : Oscilloscope_v1
 | Device       : 7a100tcsg324-3
@@ -30,13 +30,13 @@ Table of Contents
 +----------------------------+------+-------+-----------+-------+
 |          Site Type         | Used | Fixed | Available | Util% |
 +----------------------------+------+-------+-----------+-------+
-| Slice LUTs*                |  183 |     0 |     63400 |  0.29 |
-|   LUT as Logic             |  181 |     0 |     63400 |  0.29 |
-|   LUT as Memory            |    2 |     0 |     19000 |  0.01 |
+| Slice LUTs*                |  208 |     0 |     63400 |  0.33 |
+|   LUT as Logic             |  205 |     0 |     63400 |  0.32 |
+|   LUT as Memory            |    3 |     0 |     19000 |  0.02 |
 |     LUT as Distributed RAM |    0 |     0 |           |       |
-|     LUT as Shift Register  |    2 |     0 |           |       |
-| Slice Registers            |  224 |     0 |    126800 |  0.18 |
-|   Register as Flip Flop    |  224 |     0 |    126800 |  0.18 |
+|     LUT as Shift Register  |    3 |     0 |           |       |
+| Slice Registers            |  252 |     0 |    126800 |  0.20 |
+|   Register as Flip Flop    |  252 |     0 |    126800 |  0.20 |
 |   Register as Latch        |    0 |     0 |    126800 |  0.00 |
 | F7 Muxes                   |    0 |     0 |     31700 |  0.00 |
 | F8 Muxes                   |    0 |     0 |     15850 |  0.00 |
@@ -58,8 +58,8 @@ Table of Contents
 | 0     |          Yes |           - |            - |
 | 0     |          Yes |           - |          Set |
 | 0     |          Yes |           - |        Reset |
-| 0     |          Yes |         Set |            - |
-| 224   |          Yes |       Reset |            - |
+| 2     |          Yes |         Set |            - |
+| 250   |          Yes |       Reset |            - |
 +-------+--------------+-------------+--------------+
 
 
@@ -149,18 +149,19 @@ Table of Contents
 +----------+------+---------------------+
 | Ref Name | Used | Functional Category |
 +----------+------+---------------------+
-| FDRE     |  224 |        Flop & Latch |
-| LUT4     |   81 |                 LUT |
-| LUT6     |   43 |                 LUT |
+| FDRE     |  250 |        Flop & Latch |
+| LUT4     |   88 |                 LUT |
+| LUT6     |   57 |                 LUT |
+| LUT2     |   42 |                 LUT |
 | CARRY4   |   42 |          CarryLogic |
-| LUT2     |   40 |                 LUT |
-| LUT3     |   33 |                 LUT |
+| LUT5     |   33 |                 LUT |
 | LUT1     |   33 |                 LUT |
 | OBUFT    |   32 |                  IO |
-| LUT5     |   26 |                 LUT |
+| LUT3     |   32 |                 LUT |
 | OBUF     |   14 |                  IO |
 | IBUF     |   10 |                  IO |
-| SRL16E   |    2 |  Distributed Memory |
+| SRL16E   |    3 |  Distributed Memory |
+| FDSE     |    2 |        Flop & Latch |
 | DSP48E1  |    1 |    Block Arithmetic |
 +----------+------+---------------------+
 

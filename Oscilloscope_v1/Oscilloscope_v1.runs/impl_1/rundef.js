@@ -27,7 +27,7 @@ eval( EAInclude(ISEJScriptLib) );
 
 
 // pre-commands:
-ISETouchFile( "init_design", "begin" );
+ISETouchFile( "write_bitstream", "begin" );
 ISEStep( "vivado",
          "-log Oscilloscope_v1.vdi -applog -m64 -messageDb vivado.pb -mode batch -source Oscilloscope_v1.tcl -notrace" );
 

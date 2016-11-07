@@ -42,6 +42,7 @@ module Curve
     input hsync,
     input vsync,
     input blank,
+    input [RGB_BITS-1:0] previousPixel,
     output [RGB_BITS-1:0] pixel,
     output reg drawStarting,
     output reg [ADDRESS_BITS-1:0] address,
@@ -64,7 +65,7 @@ module Curve
     reg pixelOn;
     
     always @(posedge clock) begin
-        // todo delay these by the correct number of cycles
+        // TODO delay these by the correct number of cycles
         curveHsync <= hsync;
         curveVsync <= vsync;
         curveBlank <= blank;
@@ -99,6 +100,6 @@ module Curve
         end
     end
     
-    assign pixel = pixelOn ? RGB_COLOR : 0;
+    assign pixel = pixelOn ? RGB_COLOR : previousPixel;
     
 endmodule

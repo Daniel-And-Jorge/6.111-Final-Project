@@ -1,8 +1,8 @@
 Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2016.2 (lin64) Build 1577090 Thu Jun  2 16:32:35 MDT 2016
-| Date         : Mon Nov  7 16:43:13 2016
-| Host         : eecs-digital-02 running 64-bit Ubuntu 14.04.5 LTS
+| Date         : Tue Nov 15 16:27:37 2016
+| Host         : eecs-digital-03 running 64-bit Ubuntu 14.04.5 LTS
 | Command      : report_drc -file Oscilloscope_v1_drc_opted.rpt
 | Design       : Oscilloscope_v1
 | Device       : xc7a100tcsg324-3
@@ -23,7 +23,7 @@ Table of Contents
       Design limits: <entire design considered>
            Ruledeck: default
              Max violations: <unlimited>
-             Violations found: 5
+             Violations found: 2
 
 2. REPORT DETAILS
 -----------------
@@ -40,24 +40,9 @@ Neither the CFGBVS nor CONFIG_VOLTAGE voltage property is set in the current_des
 Refer to the device configuration user guide for more information.
 Related violations: <none>
 
-DPIP-1#1 Warning
-Input pipelining  
-DSP myss/triggerThreshold input myss/triggerThreshold/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
-Related violations: <none>
-
-DPIP-1#2 Warning
-Input pipelining  
-DSP myss/triggerThreshold input myss/triggerThreshold/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
-Related violations: <none>
-
-DPOP-1#1 Warning
-PREG Output pipelining  
-DSP myss/triggerThreshold output myss/triggerThreshold/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
-Related violations: <none>
-
-DPOP-2#1 Warning
-MREG Output pipelining  
-DSP myss/triggerThreshold multiplier stage myss/triggerThreshold/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+PLIO-7#1 Warning
+Placement Constraints Check for IO constraints  
+An IO Bus SW[9:0] with more than one IO standard is found. Components associated with this bus are: LVCMOS18 (SW[9], SW[8]); LVCMOS33 (SW[7], SW[6], SW[5], SW[4], SW[3], SW[2], SW[1], SW[0]); 
 Related violations: <none>
 
 

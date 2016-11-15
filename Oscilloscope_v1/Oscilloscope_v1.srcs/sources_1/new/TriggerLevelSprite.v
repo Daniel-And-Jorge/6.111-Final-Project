@@ -1,26 +1,7 @@
-`timescale 1ns / 1ps
-//////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
-// 
-// Create Date: 11/06/2016 10:45:10 PM
-// Design Name: 
-// Module Name: TriggerLevelSprite
-// Project Name: 
-// Target Devices: 
-// Tool Versions: 
-// Description: 
-// 
-// Dependencies: 
-// 
-// Revision:
-// Revision 0.01 - File Created
-// Additional Comments:
-// 
-//////////////////////////////////////////////////////////////////////////////////
+// Daniel D. Richman
+// November 2016
 
-
-module TriggerLevelSprite
+module HorizontalLineSprite
     #(parameter DATA_IN_BITS = 12,
                 DISPLAY_X_BITS = 12,
                 DISPLAY_Y_BITS = 12,
@@ -32,7 +13,7 @@ module TriggerLevelSprite
                 ADDITIONAL_LINE_PIXELS = 1  //number of colored pixels below and on top of the actual wave
                 )
     (input clock,
-    input signed [DATA_IN_BITS-1:0] threshold,
+    input signed [DATA_IN_BITS-1:0] level,
     input [DISPLAY_X_BITS-1:0] displayX,
     input [DISPLAY_Y_BITS-1:0] displayY,
     input hsync,
@@ -48,7 +29,7 @@ module TriggerLevelSprite
     // figure out horiz location on screen
     // this has to be unsigned!
     wire [DATA_IN_BITS-1:0] dataScreenLocation;
-    assign dataScreenLocation = HEIGHT_ZERO_PIXEL - threshold;
+    assign dataScreenLocation = HEIGHT_ZERO_PIXEL - level;
     
     always @(posedge clock) begin
         if (displayY - ADDITIONAL_LINE_PIXELS <= dataScreenLocation &&

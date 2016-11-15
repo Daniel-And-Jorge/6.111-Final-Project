@@ -21,11 +21,30 @@
 
 
 module ScopeSettings
-    #(parameter DATA_BITS = 12)
-    (input [7:0] sw,
-    output wire signed [DATA_BITS-1:0]triggerThreshold
+    #(parameter DATA_BITS = 12, SCALE_FACTOR_SIZE = 5,
+      parameter TRIGGER_THRESHOLD_ADJUST = 3 << (DATA_BITS - 7))
+    (input clock,
+     input [7:0] sw,
+     input btnu, input btnd, input btnc,
+    output reg signed [DATA_BITS-1:0]triggerThreshold = 0,
+    output reg signed [SCALE_FACTOR_SIZE-1:0]verticalShiftLeftFactor = 0 // negative means shift right
     );
     
-    // interpret as ones complement for ease of use
-    assign triggerThreshold = (sw[6:0] << (DATA_BITS - 7)) * (sw[7] ? -1 : 1);
+    always @(posedge clock) begin
+        case (sw[1:0])
+          2'b00: 
+             // adjust trigger threshold
+             if (btnu) triggerThreshold <= triggerThreshold + TRIGGER_THRESHOLD_ADJUST;
+             else if (btnd) triggerThreshold <= triggerThreshold - TRIGGER_THRESHOLD_ADJUST;
+         2'b01:
+            // adjust vertical scaling
+            if (btnu) verticalShiftLeftFactor <= verticalShiftLeftFactor + 1;
+            else if (btnd) verticalShiftLeftFactor <= verticalShiftLeftFactor - 1;
+       endcase
+       
+       if (btnc) begin
+            triggerThreshold <= 0;
+            verticalShiftLeftFactor <= 0;
+       end
+    end
 endmodule

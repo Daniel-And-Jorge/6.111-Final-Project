@@ -14,6 +14,6 @@ module BufferSelector(
     
     always @(posedge clock) begin
         if (drawStarting)
-            activeBramSelect = ~activeBramSelect;
+            activeBramSelect <= ~activeBramSelect;
     end
 endmodule

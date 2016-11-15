@@ -1,8 +1,8 @@
 // Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2016.2 (lin64) Build 1577090 Thu Jun  2 16:32:35 MDT 2016
-// Date        : Sun Nov  6 20:13:21 2016
-// Host        : eecs-digital-10 running 64-bit Ubuntu 14.04.5 LTS
+// Date        : Sun Nov 13 22:03:55 2016
+// Host        : eecs-digital-03 running 64-bit Ubuntu 14.04.5 LTS
 // Command     : write_verilog -force -mode funcsim
 //               /afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/xadc_wiz_0_synth_1/xadc_wiz_0_sim_netlist.v
 // Design      : xadc_wiz_0

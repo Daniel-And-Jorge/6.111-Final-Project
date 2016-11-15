@@ -71,7 +71,7 @@ module buffer #(parameter LOG_SAMPLES=12, SAMPLE_SIZE=12)
     reg [SAMPLE_SIZE-1:0] ram1_din;
     reg [LOG_SAMPLES-1:0] ram1_addrb;
     wire [SAMPLE_SIZE-1:0] ram1_dout;
-    blk_mem_gen_1 bram1 (
+    blk_mem_gen_0 bram1 (
           .clka(clock),    // input wire clka
           .ena(1),      // input wire ena
           .wea(ram1_we),      // input wire [0 : 0] wea

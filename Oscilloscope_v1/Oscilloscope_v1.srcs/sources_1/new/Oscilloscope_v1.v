@@ -1,4 +1,5 @@
 `timescale 1ns / 1ps
+`include "VerticalScaler.vh"
 //////////////////////////////////////////////////////////////////////////////////
 // Company: 
 // Engineer: 
@@ -28,9 +29,10 @@ module Oscilloscope_v1
    (input CLK100MHZ,
    input vauxp11,
    input vauxn11,
-   input [7:0] SW,
+   input [9:0] SW,
+   input BTNU, input BTND, input BTNC,
    //input reset,
-   output reg [15:0] LED,
+   output wire [15:0] LED,
    output [7:0] an,
    output dp,
    output [6:0] seg,
@@ -59,7 +61,23 @@ module Oscilloscope_v1
         
     // Scope settings
     wire [11:0] triggerThreshold;
-    ScopeSettings myss(.sw(SW[7:0]), .triggerThreshold(triggerThreshold));
+    wire signed [4:0] verticalShiftLeftFactor;
+    ScopeSettings myss(.clock(CLK108MHZ), .sw(SW[7:0]),
+                        .triggerThreshold(triggerThreshold), .verticalShiftLeftFactor(verticalShiftLeftFactor),
+                        .btnu(btnu_1pulse), .btnd(btnd_1pulse), .btnc(btnc_1pulse));
+    
+    // Button input debouncers
+    debounce (.reset(reset), .clock(CLK108MHZ), .noisy(BTNU), .clean(btnu_clean));
+    debounce (.reset(reset), .clock(CLK108MHZ), .noisy(BTND), .clean(btnd_clean));
+    debounce (.reset(reset), .clock(CLK108MHZ), .noisy(BTNC), .clean(btnc_clean));
+    
+    ButtonSinglePulse(.clock(CLK108MHZ), .btn(btnu_clean), .btn1pulse(btnu_1pulse));
+    ButtonSinglePulse(.clock(CLK108MHZ), .btn(btnd_clean), .btn1pulse(btnd_1pulse));
+    ButtonSinglePulse(.clock(CLK108MHZ), .btn(btnc_clean), .btn1pulse(btnc_1pulse));
+    
+    assign LED[0] = btnu_clean;
+    assign LED[1] = btnd_clean;
+    assign LED[13:2] = triggerThreshold;
     
     // XADC IP module
     wire eoc;
@@ -101,6 +119,17 @@ module Oscilloscope_v1
 //    wire [11:0] ADCCdataOut;
 //    assign adcc_ready = 1;
 //    FakeADCC adcc(.clock(CLK65MHZ), .dataOut(ADCCdataOut));
+
+   // edge type detector
+   wire risingEdgeReady;
+   wire signed [13:0] slope;
+    EdgeTypeDetector myed
+     (.clock(CLK108MHZ),
+      .dataReady(adcc_ready),
+      .dataIn(ADCCdataOut),
+      .risingEdgeReady(risingEdgeReady),
+      .estimatedSlope(slope),
+      .estimatedSlopeIsPositive(positiveSlope));
     
     wire [11:0] bufferDataOut;
     wire activeBramSelect;
@@ -117,17 +146,27 @@ module Oscilloscope_v1
         .readTriggerRelative(1),
         .readAddress(curveAddressOut),
         .dataOut(bufferDataOut));
+    
+    wire [11:0] buffer2DataOut;  
+    buffer Buffer2 (.clock(CLK108MHZ), .ready(risingEdgeReady), .dataIn(slope),
+                .isTrigger(isTriggered), .disableCollection(0), .activeBramSelect(activeBramSelect),
+                //.isTrigger(isTriggered), .disableCollection(0), .activeBramSelect(sw[0]),
+                .reset(reset),
+                .readTriggerRelative(1),
+                .readAddress(curveAddressOut2),
+                .dataOut(buffer2DataOut));
 
 //    wire [11:0] bufferDataOut;
 //    ConstantFakeBuffer buffer(.address(), .dataOut(bufferDataOut));
         
     wire isTriggered;
-    TriggerRisingEdgeSteady #(.DATA_BITS(12), .HOLDOFF_SAMPLES(10))
+    TriggerRisingEdgeSteady #(.DATA_BITS(12))
             Trigger
             (.clock(CLK108MHZ),
             .threshold(triggerThreshold),
+            .dataReady(adcc_ready),
             .dataIn(ADCCdataOut),
-            .triggerDisable(0),
+            .triggerDisable(~positiveSlope),
             .isTriggered(isTriggered)
             );
      
@@ -162,10 +201,14 @@ module Oscilloscope_v1
     wire curveVsync;
     wire curveBlank;
     wire [RGB_BITS-1:0] curvePixel;
+    
+    wire [11:0] dataIn;
+    assign dataIn = bufferDataOut;
     Curve #(.ADDRESS_BITS(ADDRESS_BITS))
             myCurve
             (.clock(CLK108MHZ),
-            .dataIn(bufferDataOut),
+            .dataIn(dataIn),
+            .verticalShiftLeftFactor(verticalShiftLeftFactor),
             .displayX(gridDisplayX),
             .displayY(gridDisplayY),
             .hsync(gridHsync),
@@ -181,17 +224,48 @@ module Oscilloscope_v1
             .curveVsync(curveVsync),
             .curveBlank(curveBlank)
             );
+            
+    wire [ADDRESS_BITS-1:0] curveAddressOut2;
+    wire [DISPLAY_X_BITS-1:0] curveDisplayX2;
+    wire [DISPLAY_Y_BITS-1:0] curveDisplayY2;
+    wire curveHsync2;
+    wire curveVsync2;
+    wire curveBlank2;
+    wire [RGB_BITS-1:0] curvePixel2;
+            
+            wire [11:0] dataIn2;
+            assign dataIn2 = buffer2DataOut;
+            Curve #(.ADDRESS_BITS(ADDRESS_BITS), .RGB_COLOR(12'h0FF))
+                    myCurve2
+                    (.clock(CLK108MHZ),
+                    .dataIn(dataIn2),
+                    .verticalShiftLeftFactor(0),
+                    .displayX(curveDisplayX),
+                    .displayY(curveDisplayY),
+                    .hsync(curveHsync),
+                    .vsync(curveVsync),
+                    .blank(curveBlank),
+                    .previousPixel(curvePixel),
+                    .pixel(curvePixel2),
+                    .drawStarting(),
+                    .address(curveAddressOut2),
+                    .curveDisplayX(curveDisplayX2),
+                    .curveDisplayY(curveDisplayY2),
+                    .curveHsync(curveHsync2),
+                    .curveVsync(curveVsync2),
+                    .curveBlank(curveBlank2)
+                    );
      
      wire [RGB_BITS-1:0] tlsPixel;
-     TriggerLevelSprite mytls
+     HorizontalLineSprite mytls
                 (.clock(CLK108MHZ),
-                .threshold(triggerThreshold),
-                .displayX(curveDisplayX),
-                .displayY(curveDisplayY),
-                .hsync(curveHsync),
-                .vsync(curveVsync),
-                .blank(curveBlank),
-                .previousPixel(curvePixel),
+                .level(`VERTICAL_SCALE(triggerThreshold, verticalShiftLeftFactor)),
+                .displayX(curveDisplayX2),
+                .displayY(curveDisplayY2),
+                .hsync(curveHsync2),
+                .vsync(curveVsync2),
+                .blank(curveBlank2),
+                .previousPixel(curvePixel2),
                 .pixel(tlsPixel),
                 .spriteHsync(tlsHsync),
                 .spriteVsync(tlsVsync),

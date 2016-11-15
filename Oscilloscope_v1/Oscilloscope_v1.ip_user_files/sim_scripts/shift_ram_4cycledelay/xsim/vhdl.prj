@@ -1,0 +1,11 @@
+vhdl xpm "/var/local/xilinx-local/Vivado/2016.2/data/ip/xpm/xpm_VCOMP.vhd" 
+vhdl xbip_utils_v3_0_6 "../../../ipstatic/xbip_utils_v3_0_6/hdl/xbip_utils_v3_0_vh_rfs.vhd" 
+vhdl c_reg_fd_v12_0_2 "../../../ipstatic/c_reg_fd_v12_0_2/hdl/c_reg_fd_v12_0_vh_rfs.vhd" 
+vhdl c_reg_fd_v12_0_2 "../../../ipstatic/c_reg_fd_v12_0_2/hdl/c_reg_fd_v12_0.vhd" 
+vhdl c_mux_bit_v12_0_2 "../../../ipstatic/c_mux_bit_v12_0_2/hdl/c_mux_bit_v12_0_vh_rfs.vhd" 
+vhdl c_mux_bit_v12_0_2 "../../../ipstatic/c_mux_bit_v12_0_2/hdl/c_mux_bit_v12_0.vhd" 
+vhdl c_shift_ram_v12_0_9 "../../../ipstatic/c_shift_ram_v12_0_9/hdl/c_shift_ram_v12_0_vh_rfs.vhd" 
+vhdl c_shift_ram_v12_0_9 "../../../ipstatic/c_shift_ram_v12_0_9/hdl/c_shift_ram_v12_0.vhd" 
+vhdl xil_defaultlib "../../../ip/shift_ram_4cycledelay/sim/shift_ram_4cycledelay.vhd" 
+
+nosort

@@ -1,7 +1,7 @@
 Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 --------------------------------------------------------------------------------------------------
 | Tool Version      : Vivado v.2016.2 (lin64) Build 1577090 Thu Jun  2 16:32:35 MDT 2016
-| Date              : Tue Nov 15 16:27:58 2016
+| Date              : Tue Nov 15 17:17:11 2016
 | Host              : eecs-digital-03 running 64-bit Ubuntu 14.04.5 LTS
 | Command           : report_clock_utilization -file Oscilloscope_v1_clock_utilization_routed.rpt
 | Design            : Oscilloscope_v1
@@ -48,7 +48,7 @@ Table of Contents
 +-------+-------+-----------------+------------+----------------+--------------+------+-------------------+---------------+-------------+-----------------+--------------+----------+---------------------------------+------------------------------------------+
 | GlbID | SrcId | Driver Type/Pin | Constraint | Site           | Clock Region | Root | Clock Delay Group | Clock Regions | Clock Loads | Non-Clock Loads | Clock Period | Clock    | Driver Pin                      | Net                                      |
 +-------+-------+-----------------+------------+----------------+--------------+------+-------------------+---------------+-------------+-----------------+--------------+----------+---------------------------------+------------------------------------------+
-| g0    | src0  | BUFG/O          | None       | BUFGCTRL_X0Y16 | n/a          |      |                   |             2 |         668 |               0 |        9.231 | Multiple | ClockDivider/inst/clkout2_buf/O | ClockDivider/inst/clk_out2               |
+| g0    | src0  | BUFG/O          | None       | BUFGCTRL_X0Y16 | n/a          |      |                   |             2 |         668 |               1 |        9.231 | Multiple | ClockDivider/inst/clkout2_buf/O | ClockDivider/inst/clk_out2               |
 | g1    | src0  | BUFG/O          | None       | BUFGCTRL_X0Y17 | n/a          |      |                   |             1 |           1 |               0 |       10.000 | Multiple | ClockDivider/inst/clkf_buf/O    | ClockDivider/inst/clkfbout_buf_clk_wiz_0 |
 +-------+-------+-----------------+------------+----------------+--------------+------+-------------------+---------------+-------------+-----------------+--------------+----------+---------------------------------+------------------------------------------+
 * Note: Multiple constraint types applied to the driver. Please check for potential conflicts.

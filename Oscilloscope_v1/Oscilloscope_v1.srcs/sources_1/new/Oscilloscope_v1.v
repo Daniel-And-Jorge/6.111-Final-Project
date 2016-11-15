@@ -87,10 +87,11 @@ module Oscilloscope_v1
     //xadc instantiation connect the eoc_out .den_in to get continuous conversion
     xadc_wiz_0  XLXI_7 (.daddr_in(Address_in), //addresses can be found in the artix 7 XADC user guide DRP register space
                          .dclk_in(CLK108MHZ), 
-                         .den_in(eoc), 
+                         .den_in(eoc),
+                         .convst_in(CLK108MHZ), 
                          .di_in(), 
                          .dwe_in(), 
-                         .busy_out(),                    
+                         .busy_out(),
                          .vauxp11(vauxp11),
                          .vauxn11(vauxn11),
                          .vn_in(),
@@ -109,6 +110,7 @@ module Oscilloscope_v1
                              .clock(CLK108MHZ),
                              .reset(reset),
                              .sampleEnabled(1),
+                             .requestConversion(requestConversion),
                              .inputReady(eoc),
                              .dataIn(XADCdataOut[15:4]),
                              .ready(adcc_ready),

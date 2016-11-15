@@ -1,7 +1,7 @@
 // Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2016.2 (lin64) Build 1577090 Thu Jun  2 16:32:35 MDT 2016
-// Date        : Sun Nov 13 22:03:55 2016
+// Date        : Tue Nov 15 17:15:46 2016
 // Host        : eecs-digital-03 running 64-bit Ubuntu 14.04.5 LTS
 // Command     : write_verilog -force -mode funcsim
 //               /afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/xadc_wiz_0_synth_1/xadc_wiz_0_sim_netlist.v
@@ -14,7 +14,8 @@
 
 (* NotValidForBitStream *)
 module xadc_wiz_0
-   (daddr_in,
+   (convst_in,
+    daddr_in,
     dclk_in,
     den_in,
     di_in,
@@ -34,6 +35,7 @@ module xadc_wiz_0
     alarm_out,
     vp_in,
     vn_in);
+  input convst_in;
   input [6:0]daddr_in;
   input dclk_in;
   input den_in;
@@ -58,6 +60,7 @@ module xadc_wiz_0
   wire alarm_out;
   wire busy_out;
   wire [4:0]channel_out;
+  wire convst_in;
   wire [6:0]daddr_in;
   wire dclk_in;
   wire den_in;
@@ -84,16 +87,16 @@ module xadc_wiz_0
 
   (* BOX_TYPE = "PRIMITIVE" *) 
   XADC #(
-    .INIT_40(16'h8000),
-    .INIT_41(16'h21A1),
+    .INIT_40(16'h821B),
+    .INIT_41(16'h31A1),
     .INIT_42(16'h0500),
     .INIT_43(16'h0000),
     .INIT_44(16'h0000),
     .INIT_45(16'h0000),
     .INIT_46(16'h0000),
     .INIT_47(16'h0000),
-    .INIT_48(16'h0000),
-    .INIT_49(16'h0800),
+    .INIT_48(16'h0100),
+    .INIT_49(16'h0000),
     .INIT_4A(16'h0000),
     .INIT_4B(16'h0000),
     .INIT_4C(16'h0000),
@@ -124,7 +127,7 @@ module xadc_wiz_0
        (.ALM({alarm_out,NLW_inst_ALM_UNCONNECTED[6:3],vccaux_alarm_out,vccint_alarm_out,user_temp_alarm_out}),
         .BUSY(busy_out),
         .CHANNEL(channel_out),
-        .CONVST(1'b0),
+        .CONVST(convst_in),
         .CONVSTCLK(1'b0),
         .DADDR(daddr_in),
         .DCLK(dclk_in),

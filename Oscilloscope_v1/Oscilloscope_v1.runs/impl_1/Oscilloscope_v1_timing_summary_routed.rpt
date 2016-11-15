@@ -1,7 +1,7 @@
 Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2016.2 (lin64) Build 1577090 Thu Jun  2 16:32:35 MDT 2016
-| Date         : Tue Nov 15 16:27:57 2016
+| Date         : Tue Nov 15 17:17:10 2016
 | Host         : eecs-digital-03 running 64-bit Ubuntu 14.04.5 LTS
 | Command      : report_timing_summary -warn_on_violation -max_paths 10 -file Oscilloscope_v1_timing_summary_routed.rpt -rpx Oscilloscope_v1_timing_summary_routed.rpx
 | Design       : Oscilloscope_v1
@@ -126,10 +126,10 @@ Table of Contents
 
     WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints     WPWS(ns)     TPWS(ns)  TPWS Failing Endpoints  TPWS Total Endpoints  
     -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------     --------     --------  ----------------------  --------------------  
-      2.247        0.000                      0                 1475        0.057        0.000                      0                 1475        3.000        0.000                       0                   674  
+      2.247        0.000                      0                 1475        0.057        0.000                      0                 1475     -990.769     -990.769                       1                   675  
 
 
-All user specified timing constraints are met.
+Timing constraints are not met.
 
 
 ------------------------------------------------------------------------------------------------
@@ -155,10 +155,10 @@ sys_clk_pin             {0.000 5.000}        10.000          100.000
 Clock                       WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints     WPWS(ns)     TPWS(ns)  TPWS Failing Endpoints  TPWS Total Endpoints  
 -----                       -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------     --------     --------  ----------------------  --------------------  
 CLK100MHZ                                                                                                                                                                 3.000        0.000                       0                     1  
-  clk_out2_clk_wiz_0          2.247        0.000                      0                 1475        0.130        0.000                      0                 1475        3.845        0.000                       0                   670  
+  clk_out2_clk_wiz_0          2.247        0.000                      0                 1475        0.130        0.000                      0                 1475     -990.769     -990.769                       1                   671  
   clkfbout_clk_wiz_0                                                                                                                                                      8.408        0.000                       0                     3  
 sys_clk_pin                                                                                                                                                               3.000        0.000                       0                     1  
-  clk_out2_clk_wiz_0_1        2.248        0.000                      0                 1475        0.130        0.000                      0                 1475        3.845        0.000                       0                   670  
+  clk_out2_clk_wiz_0_1        2.248        0.000                      0                 1475        0.130        0.000                      0                 1475     -990.769     -990.769                       1                   671  
   clkfbout_clk_wiz_0_1                                                                                                                                                    8.408        0.000                       0                     3  
 
 
@@ -221,7 +221,7 @@ From Clock:  clk_out2_clk_wiz_0
 
 Setup :            0  Failing Endpoints,  Worst Slack        2.247ns,  Total Violation        0.000ns
 Hold  :            0  Failing Endpoints,  Worst Slack        0.130ns,  Total Violation        0.000ns
-PW    :            0  Failing Endpoints,  Worst Slack        3.845ns,  Total Violation        0.000ns
+PW    :            1  Failing Endpoint ,  Worst Slack     -990.769ns,  Total Violation     -990.769ns
 ---------------------------------------------------------------------------------------------------
 
 
@@ -258,7 +258,7 @@ Slack (MET) :             2.247ns  (required time - arrival time)
                                                      -5.294    -2.990 r  ClockDivider/inst/mmcm_adv_inst/CLKOUT1
                          net (fo=1, routed)           1.297    -1.693    ClockDivider/inst/clk_out2_clk_wiz_0
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.076    -1.617 r  ClockDivider/inst/clkout2_buf/O
-                         net (fo=668, routed)         1.239    -0.378    Buffer/clock
+                         net (fo=669, routed)         1.239    -0.378    Buffer/clock
     SLICE_X8Y105         FDRE                                         r  Buffer/dataOut_reg[1]/C
   -------------------------------------------------------------------    -------------------
     SLICE_X8Y105         FDRE (Prop_fdre_C_Q)         0.361    -0.017 f  Buffer/dataOut_reg[1]/Q
@@ -309,7 +309,7 @@ Slack (MET) :             2.247ns  (required time - arrival time)
                                                      -5.390     6.020 r  ClockDivider/inst/mmcm_adv_inst/CLKOUT1
                          net (fo=1, routed)           1.234     7.255    ClockDivider/inst/clk_out2_clk_wiz_0
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.072     7.327 r  ClockDivider/inst/clkout2_buf/O
-                         net (fo=668, routed)         1.137     8.464    myCurve/clock
+                         net (fo=669, routed)         1.137     8.464    myCurve/clock
     SLICE_X11Y100        FDRE                                         r  myCurve/pixelOn_reg/C
                          clock pessimism              0.346     8.810    
                          clock uncertainty           -0.073     8.737    
@@ -351,7 +351,7 @@ Slack (MET) :             2.353ns  (required time - arrival time)
                                                      -5.294    -2.990 r  ClockDivider/inst/mmcm_adv_inst/CLKOUT1
                          net (fo=1, routed)           1.297    -1.693    ClockDivider/inst/clk_out2_clk_wiz_0
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.076    -1.617 r  ClockDivider/inst/clkout2_buf/O
-                         net (fo=668, routed)         1.262    -0.355    myss/clock
+                         net (fo=669, routed)         1.262    -0.355    myss/clock
     SLICE_X10Y99         FDRE                                         r  myss/verticalShiftLeftFactor_reg[1]/C
   -------------------------------------------------------------------    -------------------
     SLICE_X10Y99         FDRE (Prop_fdre_C_Q)         0.361     0.006 r  myss/verticalShiftLeftFactor_reg[1]/Q
@@ -395,7 +395,7 @@ Slack (MET) :             2.353ns  (required time - arrival time)
                                                      -5.390     6.020 r  ClockDivider/inst/mmcm_adv_inst/CLKOUT1
                          net (fo=1, routed)           1.234     7.255    ClockDivider/inst/clk_out2_clk_wiz_0
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.072     7.327 r  ClockDivider/inst/clkout2_buf/O
-                         net (fo=668, routed)         1.136     8.463    mytls/clock
+                         net (fo=669, routed)         1.136     8.463    mytls/clock
     SLICE_X15Y100        FDSE                                         r  mytls/pixel_reg[11]/C
                          clock pessimism              0.287     8.750    
                          clock uncertainty           -0.073     8.677    
@@ -437,7 +437,7 @@ Slack (MET) :             2.353ns  (required time - arrival time)
                                                      -5.294    -2.990 r  ClockDivider/inst/mmcm_adv_inst/CLKOUT1
                          net (fo=1, routed)           1.297    -1.693    ClockDivider/inst/clk_out2_clk_wiz_0
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.076    -1.617 r  ClockDivider/inst/clkout2_buf/O
-                         net (fo=668, routed)         1.262    -0.355    myss/clock
+                         net (fo=669, routed)         1.262    -0.355    myss/clock
     SLICE_X10Y99         FDRE                                         r  myss/verticalShiftLeftFactor_reg[1]/C
   -------------------------------------------------------------------    -------------------
     SLICE_X10Y99         FDRE (Prop_fdre_C_Q)         0.361     0.006 r  myss/verticalShiftLeftFactor_reg[1]/Q
@@ -481,7 +481,7 @@ Slack (MET) :             2.353ns  (required time - arrival time)
                                                      -5.390     6.020 r  ClockDivider/inst/mmcm_adv_inst/CLKOUT1
                          net (fo=1, routed)           1.234     7.255    ClockDivider/inst/clk_out2_clk_wiz_0
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.072     7.327 r  ClockDivider/inst/clkout2_buf/O
-                         net (fo=668, routed)         1.136     8.463    mytls/clock
+                         net (fo=669, routed)         1.136     8.463    mytls/clock
     SLICE_X15Y100        FDRE                                         r  mytls/pixel_reg[3]/C
                          clock pessimism              0.287     8.750    
                          clock uncertainty           -0.073     8.677    
@@ -523,7 +523,7 @@ Slack (MET) :             2.353ns  (required time - arrival time)
                                                      -5.294    -2.990 r  ClockDivider/inst/mmcm_adv_inst/CLKOUT1
                          net (fo=1, routed)           1.297    -1.693    ClockDivider/inst/clk_out2_clk_wiz_0
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.076    -1.617 r  ClockDivider/inst/clkout2_buf/O
-                         net (fo=668, routed)         1.262    -0.355    myss/clock
+                         net (fo=669, routed)         1.262    -0.355    myss/clock
     SLICE_X10Y99         FDRE                                         r  myss/verticalShiftLeftFactor_reg[1]/C
   -------------------------------------------------------------------    -------------------
     SLICE_X10Y99         FDRE (Prop_fdre_C_Q)         0.361     0.006 r  myss/verticalShiftLeftFactor_reg[1]/Q
@@ -567,7 +567,7 @@ Slack (MET) :             2.353ns  (required time - arrival time)
                                                      -5.390     6.020 r  ClockDivider/inst/mmcm_adv_inst/CLKOUT1
                          net (fo=1, routed)           1.234     7.255    ClockDivider/inst/clk_out2_clk_wiz_0
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.072     7.327 r  ClockDivider/inst/clkout2_buf/O
-                         net (fo=668, routed)         1.136     8.463    mytls/clock
+                         net (fo=669, routed)         1.136     8.463    mytls/clock
     SLICE_X15Y100        FDRE                                         r  mytls/pixel_reg[5]/C
                          clock pessimism              0.287     8.750    
                          clock uncertainty           -0.073     8.677    
@@ -609,7 +609,7 @@ Slack (MET) :             2.353ns  (required time - arrival time)
                                                      -5.294    -2.990 r  ClockDivider/inst/mmcm_adv_inst/CLKOUT1
                          net (fo=1, routed)           1.297    -1.693    ClockDivider/inst/clk_out2_clk_wiz_0
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.076    -1.617 r  ClockDivider/inst/clkout2_buf/O
-                         net (fo=668, routed)         1.262    -0.355    myss/clock
+                         net (fo=669, routed)         1.262    -0.355    myss/clock
     SLICE_X10Y99         FDRE                                         r  myss/verticalShiftLeftFactor_reg[1]/C
   -------------------------------------------------------------------    -------------------
     SLICE_X10Y99         FDRE (Prop_fdre_C_Q)         0.361     0.006 r  myss/verticalShiftLeftFactor_reg[1]/Q
@@ -653,7 +653,7 @@ Slack (MET) :             2.353ns  (required time - arrival time)
                                                      -5.390     6.020 r  ClockDivider/inst/mmcm_adv_inst/CLKOUT1
                          net (fo=1, routed)           1.234     7.255    ClockDivider/inst/clk_out2_clk_wiz_0
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.072     7.327 r  ClockDivider/inst/clkout2_buf/O
-                         net (fo=668, routed)         1.136     8.463    mytls/clock
+                         net (fo=669, routed)         1.136     8.463    mytls/clock
     SLICE_X15Y100        FDRE                                         r  mytls/pixel_reg[7]/C
                          clock pessimism              0.287     8.750    
                          clock uncertainty           -0.073     8.677    
@@ -695,7 +695,7 @@ Slack (MET) :             2.434ns  (required time - arrival time)
                                                      -5.294    -2.990 r  ClockDivider/inst/mmcm_adv_inst/CLKOUT1
                          net (fo=1, routed)           1.297    -1.693    ClockDivider/inst/clk_out2_clk_wiz_0
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.076    -1.617 r  ClockDivider/inst/clkout2_buf/O
-                         net (fo=668, routed)         1.262    -0.355    myss/clock
+                         net (fo=669, routed)         1.262    -0.355    myss/clock
     SLICE_X10Y99         FDRE                                         r  myss/verticalShiftLeftFactor_reg[1]/C
   -------------------------------------------------------------------    -------------------
     SLICE_X10Y99         FDRE (Prop_fdre_C_Q)         0.361     0.006 r  myss/verticalShiftLeftFactor_reg[1]/Q
@@ -739,7 +739,7 @@ Slack (MET) :             2.434ns  (required time - arrival time)
                                                      -5.390     6.020 r  ClockDivider/inst/mmcm_adv_inst/CLKOUT1
                          net (fo=1, routed)           1.234     7.255    ClockDivider/inst/clk_out2_clk_wiz_0
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.072     7.327 r  ClockDivider/inst/clkout2_buf/O
-                         net (fo=668, routed)         1.136     8.463    mytls/clock
+                         net (fo=669, routed)         1.136     8.463    mytls/clock
     SLICE_X13Y100        FDRE                                         r  mytls/pixel_reg[1]/C
                          clock pessimism              0.287     8.750    
                          clock uncertainty           -0.073     8.677    
@@ -781,7 +781,7 @@ Slack (MET) :             2.434ns  (required time - arrival time)
                                                      -5.294    -2.990 r  ClockDivider/inst/mmcm_adv_inst/CLKOUT1
                          net (fo=1, routed)           1.297    -1.693    ClockDivider/inst/clk_out2_clk_wiz_0
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.076    -1.617 r  ClockDivider/inst/clkout2_buf/O
-                         net (fo=668, routed)         1.262    -0.355    myss/clock
+                         net (fo=669, routed)         1.262    -0.355    myss/clock
     SLICE_X10Y99         FDRE                                         r  myss/verticalShiftLeftFactor_reg[1]/C
   -------------------------------------------------------------------    -------------------
     SLICE_X10Y99         FDRE (Prop_fdre_C_Q)         0.361     0.006 r  myss/verticalShiftLeftFactor_reg[1]/Q
@@ -825,7 +825,7 @@ Slack (MET) :             2.434ns  (required time - arrival time)
                                                      -5.390     6.020 r  ClockDivider/inst/mmcm_adv_inst/CLKOUT1
                          net (fo=1, routed)           1.234     7.255    ClockDivider/inst/clk_out2_clk_wiz_0
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.072     7.327 r  ClockDivider/inst/clkout2_buf/O
-                         net (fo=668, routed)         1.136     8.463    mytls/clock
+                         net (fo=669, routed)         1.136     8.463    mytls/clock
     SLICE_X13Y100        FDSE                                         r  mytls/pixel_reg[9]/C
                          clock pessimism              0.287     8.750    
                          clock uncertainty           -0.073     8.677    
@@ -867,7 +867,7 @@ Slack (MET) :             3.353ns  (required time - arrival time)
                                                      -5.294    -2.990 r  ClockDivider/inst/mmcm_adv_inst/CLKOUT1
                          net (fo=1, routed)           1.297    -1.693    ClockDivider/inst/clk_out2_clk_wiz_0
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.076    -1.617 r  ClockDivider/inst/clkout2_buf/O
-                         net (fo=668, routed)         1.258    -0.359    Buffer2/clock
+                         net (fo=669, routed)         1.258    -0.359    Buffer2/clock
     SLICE_X9Y87          FDRE                                         r  Buffer2/dataOut_reg[0]/C
   -------------------------------------------------------------------    -------------------
     SLICE_X9Y87          FDRE (Prop_fdre_C_Q)         0.341    -0.018 f  Buffer2/dataOut_reg[0]/Q
@@ -906,7 +906,7 @@ Slack (MET) :             3.353ns  (required time - arrival time)
                                                      -5.390     6.020 r  ClockDivider/inst/mmcm_adv_inst/CLKOUT1
                          net (fo=1, routed)           1.234     7.255    ClockDivider/inst/clk_out2_clk_wiz_0
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.072     7.327 r  ClockDivider/inst/clkout2_buf/O
-                         net (fo=668, routed)         1.217     8.544    myCurve2/clock
+                         net (fo=669, routed)         1.217     8.544    myCurve2/clock
     SLICE_X7Y96          FDRE                                         r  myCurve2/pixelOn_reg/C
                          clock pessimism              0.348     8.891    
                          clock uncertainty           -0.073     8.818    
@@ -948,7 +948,7 @@ Slack (MET) :             3.417ns  (required time - arrival time)
                                                      -5.294    -2.990 r  ClockDivider/inst/mmcm_adv_inst/CLKOUT1
                          net (fo=1, routed)           1.297    -1.693    ClockDivider/inst/clk_out2_clk_wiz_0
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.076    -1.617 r  ClockDivider/inst/clkout2_buf/O
-                         net (fo=668, routed)         1.238    -0.379    myed/clock
+                         net (fo=669, routed)         1.238    -0.379    myed/clock
     SLICE_X14Y107        FDRE                                         r  myed/intermediates_reg[1][0]/C
   -------------------------------------------------------------------    -------------------
     SLICE_X14Y107        FDRE (Prop_fdre_C_Q)         0.361    -0.018 r  myed/intermediates_reg[1][0]/Q
@@ -991,7 +991,7 @@ Slack (MET) :             3.417ns  (required time - arrival time)
                                                      -5.390     6.020 r  ClockDivider/inst/mmcm_adv_inst/CLKOUT1
                          net (fo=1, routed)           1.234     7.255    ClockDivider/inst/clk_out2_clk_wiz_0
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.072     7.327 r  ClockDivider/inst/clkout2_buf/O
-                         net (fo=668, routed)         1.137     8.464    myed/clock
+                         net (fo=669, routed)         1.137     8.464    myed/clock
     SLICE_X10Y107        FDRE                                         r  myed/smoothedSample_reg[3]/C
                          clock pessimism              0.346     8.810    
                          clock uncertainty           -0.073     8.737    
@@ -1033,7 +1033,7 @@ Slack (MET) :             3.449ns  (required time - arrival time)
                                                      -5.294    -2.990 r  ClockDivider/inst/mmcm_adv_inst/CLKOUT1
                          net (fo=1, routed)           1.297    -1.693    ClockDivider/inst/clk_out2_clk_wiz_0
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.076    -1.617 r  ClockDivider/inst/clkout2_buf/O
-                         net (fo=668, routed)         1.238    -0.379    myed/clock
+                         net (fo=669, routed)         1.238    -0.379    myed/clock
     SLICE_X14Y107        FDRE                                         r  myed/intermediates_reg[1][0]/C
   -------------------------------------------------------------------    -------------------
     SLICE_X14Y107        FDRE (Prop_fdre_C_Q)         0.361    -0.018 r  myed/intermediates_reg[1][0]/Q
@@ -1076,7 +1076,7 @@ Slack (MET) :             3.449ns  (required time - arrival time)
                                                      -5.390     6.020 r  ClockDivider/inst/mmcm_adv_inst/CLKOUT1
                          net (fo=1, routed)           1.234     7.255    ClockDivider/inst/clk_out2_clk_wiz_0
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.072     7.327 r  ClockDivider/inst/clkout2_buf/O
-                         net (fo=668, routed)         1.137     8.464    myed/clock
+                         net (fo=669, routed)         1.137     8.464    myed/clock
     SLICE_X10Y107        FDRE                                         r  myed/smoothedSample_reg[6]/C
                          clock pessimism              0.346     8.810    
                          clock uncertainty           -0.073     8.737    
@@ -1120,7 +1120,7 @@ Slack (MET) :             0.130ns  (arrival time - required time)
                                                      -2.379    -1.689 r  ClockDivider/inst/mmcm_adv_inst/CLKOUT1
                          net (fo=1, routed)           0.499    -1.190    ClockDivider/inst/clk_out2_clk_wiz_0
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026    -1.164 r  ClockDivider/inst/clkout2_buf/O
-                         net (fo=668, routed)         0.571    -0.593    Buffer2/clock
+                         net (fo=669, routed)         0.571    -0.593    Buffer2/clock
     SLICE_X8Y86          FDRE                                         r  Buffer2/ram0_addrb_reg[1]/C
   -------------------------------------------------------------------    -------------------
     SLICE_X8Y86          FDRE (Prop_fdre_C_Q)         0.164    -0.429 r  Buffer2/ram0_addrb_reg[1]/Q
@@ -1138,7 +1138,7 @@ Slack (MET) :             0.130ns  (arrival time - required time)
                                                      -3.163    -2.245 r  ClockDivider/inst/mmcm_adv_inst/CLKOUT1
                          net (fo=1, routed)           0.544    -1.702    ClockDivider/inst/clk_out2_clk_wiz_0
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029    -1.673 r  ClockDivider/inst/clkout2_buf/O
-                         net (fo=668, routed)         0.877    -0.796    Buffer2/bram0/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_init.ram/clkb
+                         net (fo=669, routed)         0.877    -0.796    Buffer2/bram0/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_init.ram/clkb
     RAMB18_X0Y35         RAMB18E1                                     r  Buffer2/bram0/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM18.ram/CLKBWRCLK
                          clock pessimism              0.254    -0.542    
     RAMB18_X0Y35         RAMB18E1 (Hold_ramb18e1_CLKBWRCLK_ADDRBWRADDR[3])
@@ -1176,7 +1176,7 @@ Slack (MET) :             0.150ns  (arrival time - required time)
                                                      -2.379    -1.689 r  ClockDivider/inst/mmcm_adv_inst/CLKOUT1
                          net (fo=1, routed)           0.499    -1.190    ClockDivider/inst/clk_out2_clk_wiz_0
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026    -1.164 r  ClockDivider/inst/clkout2_buf/O
-                         net (fo=668, routed)         0.568    -0.596    myed/clock
+                         net (fo=669, routed)         0.568    -0.596    myed/clock
     SLICE_X9Y109         FDRE                                         r  myed/previousSamples_reg[1][3]/C
   -------------------------------------------------------------------    -------------------
     SLICE_X9Y109         FDRE (Prop_fdre_C_Q)         0.141    -0.455 r  myed/previousSamples_reg[1][3]/Q
@@ -1194,7 +1194,7 @@ Slack (MET) :             0.150ns  (arrival time - required time)
                                                      -3.163    -2.245 r  ClockDivider/inst/mmcm_adv_inst/CLKOUT1
                          net (fo=1, routed)           0.544    -1.702    ClockDivider/inst/clk_out2_clk_wiz_0
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029    -1.673 r  ClockDivider/inst/clkout2_buf/O
-                         net (fo=668, routed)         0.839    -0.834    myed/clock
+                         net (fo=669, routed)         0.839    -0.834    myed/clock
     SLICE_X10Y109        FDRE                                         r  myed/previousSamples_reg[2][3]/C
                          clock pessimism              0.275    -0.559    
     SLICE_X10Y109        FDRE (Hold_fdre_C_D)         0.076    -0.483    myed/previousSamples_reg[2][3]
@@ -1231,7 +1231,7 @@ Slack (MET) :             0.153ns  (arrival time - required time)
                                                      -2.379    -1.689 r  ClockDivider/inst/mmcm_adv_inst/CLKOUT1
                          net (fo=1, routed)           0.499    -1.190    ClockDivider/inst/clk_out2_clk_wiz_0
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026    -1.164 r  ClockDivider/inst/clkout2_buf/O
-                         net (fo=668, routed)         0.569    -0.595    myed/clock
+                         net (fo=669, routed)         0.569    -0.595    myed/clock
     SLICE_X13Y106        FDRE                                         r  myed/previousSamples_reg[2][1]/C
   -------------------------------------------------------------------    -------------------
     SLICE_X13Y106        FDRE (Prop_fdre_C_Q)         0.141    -0.454 r  myed/previousSamples_reg[2][1]/Q
@@ -1249,7 +1249,7 @@ Slack (MET) :             0.153ns  (arrival time - required time)
                                                      -3.163    -2.245 r  ClockDivider/inst/mmcm_adv_inst/CLKOUT1
                          net (fo=1, routed)           0.544    -1.702    ClockDivider/inst/clk_out2_clk_wiz_0
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029    -1.673 r  ClockDivider/inst/clkout2_buf/O
-                         net (fo=668, routed)         0.840    -0.833    myed/clock
+                         net (fo=669, routed)         0.840    -0.833    myed/clock
     SLICE_X15Y106        FDRE                                         r  myed/previousSamples_reg[3][1]/C
                          clock pessimism              0.254    -0.579    
     SLICE_X15Y106        FDRE (Hold_fdre_C_D)         0.070    -0.509    myed/previousSamples_reg[3][1]
@@ -1286,7 +1286,7 @@ Slack (MET) :             0.158ns  (arrival time - required time)
                                                      -2.379    -1.689 r  ClockDivider/inst/mmcm_adv_inst/CLKOUT1
                          net (fo=1, routed)           0.499    -1.190    ClockDivider/inst/clk_out2_clk_wiz_0
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026    -1.164 r  ClockDivider/inst/clkout2_buf/O
-                         net (fo=668, routed)         0.568    -0.596    myed/clock
+                         net (fo=669, routed)         0.568    -0.596    myed/clock
     SLICE_X10Y107        FDRE                                         r  myed/smoothedSample_reg[3]/C
   -------------------------------------------------------------------    -------------------
     SLICE_X10Y107        FDRE (Prop_fdre_C_Q)         0.164    -0.432 r  myed/smoothedSample_reg[3]/Q
@@ -1304,7 +1304,7 @@ Slack (MET) :             0.158ns  (arrival time - required time)
                                                      -3.163    -2.245 r  ClockDivider/inst/mmcm_adv_inst/CLKOUT1
                          net (fo=1, routed)           0.544    -1.702    ClockDivider/inst/clk_out2_clk_wiz_0
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029    -1.673 r  ClockDivider/inst/clkout2_buf/O
-                         net (fo=668, routed)         0.840    -0.833    myed/clock
+                         net (fo=669, routed)         0.840    -0.833    myed/clock
     SLICE_X10Y106        SRL16E                                       r  myed/previousSmoothedSamples_reg[3][3]_srl4/CLK
                          clock pessimism              0.254    -0.579    
     SLICE_X10Y106        SRL16E (Hold_srl16e_CLK_D)
@@ -1342,7 +1342,7 @@ Slack (MET) :             0.160ns  (arrival time - required time)
                                                      -2.379    -1.689 r  ClockDivider/inst/mmcm_adv_inst/CLKOUT1
                          net (fo=1, routed)           0.499    -1.190    ClockDivider/inst/clk_out2_clk_wiz_0
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026    -1.164 r  ClockDivider/inst/clkout2_buf/O
-                         net (fo=668, routed)         0.573    -0.591    Buffer2/clock
+                         net (fo=669, routed)         0.573    -0.591    Buffer2/clock
     SLICE_X11Y88         FDRE                                         r  Buffer2/pointer0_reg[9]/C
   -------------------------------------------------------------------    -------------------
     SLICE_X11Y88         FDRE (Prop_fdre_C_Q)         0.141    -0.450 r  Buffer2/pointer0_reg[9]/Q
@@ -1360,7 +1360,7 @@ Slack (MET) :             0.160ns  (arrival time - required time)
                                                      -3.163    -2.245 r  ClockDivider/inst/mmcm_adv_inst/CLKOUT1
                          net (fo=1, routed)           0.544    -1.702    ClockDivider/inst/clk_out2_clk_wiz_0
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029    -1.673 r  ClockDivider/inst/clkout2_buf/O
-                         net (fo=668, routed)         0.844    -0.829    Buffer2/clock
+                         net (fo=669, routed)         0.844    -0.829    Buffer2/clock
     SLICE_X9Y88          FDRE                                         r  Buffer2/ram0_addra_reg[9]/C
                          clock pessimism              0.275    -0.554    
     SLICE_X9Y88          FDRE (Hold_fdre_C_D)         0.071    -0.483    Buffer2/ram0_addra_reg[9]
@@ -1397,7 +1397,7 @@ Slack (MET) :             0.161ns  (arrival time - required time)
                                                      -2.379    -1.689 r  ClockDivider/inst/mmcm_adv_inst/CLKOUT1
                          net (fo=1, routed)           0.499    -1.190    ClockDivider/inst/clk_out2_clk_wiz_0
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026    -1.164 r  ClockDivider/inst/clkout2_buf/O
-                         net (fo=668, routed)         0.569    -0.595    myed/clock
+                         net (fo=669, routed)         0.569    -0.595    myed/clock
     SLICE_X15Y105        FDRE                                         r  myed/state_reg[1]/C
   -------------------------------------------------------------------    -------------------
     SLICE_X15Y105        FDRE (Prop_fdre_C_Q)         0.141    -0.454 r  myed/state_reg[1]/Q
@@ -1417,7 +1417,7 @@ Slack (MET) :             0.161ns  (arrival time - required time)
                                                      -3.163    -2.245 r  ClockDivider/inst/mmcm_adv_inst/CLKOUT1
                          net (fo=1, routed)           0.544    -1.702    ClockDivider/inst/clk_out2_clk_wiz_0
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029    -1.673 r  ClockDivider/inst/clkout2_buf/O
-                         net (fo=668, routed)         0.840    -0.833    myed/clock
+                         net (fo=669, routed)         0.840    -0.833    myed/clock
     SLICE_X14Y105        FDRE                                         r  myed/state_reg[4]/C
                          clock pessimism              0.251    -0.582    
     SLICE_X14Y105        FDRE (Hold_fdre_C_D)         0.131    -0.451    myed/state_reg[4]
@@ -1454,7 +1454,7 @@ Slack (MET) :             0.161ns  (arrival time - required time)
                                                      -2.379    -1.689 r  ClockDivider/inst/mmcm_adv_inst/CLKOUT1
                          net (fo=1, routed)           0.499    -1.190    ClockDivider/inst/clk_out2_clk_wiz_0
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026    -1.164 r  ClockDivider/inst/clkout2_buf/O
-                         net (fo=668, routed)         0.575    -0.589    myGrid/clock
+                         net (fo=669, routed)         0.575    -0.589    myGrid/clock
     SLICE_X11Y94         FDRE                                         r  myGrid/gridDisplayY_reg[2]/C
   -------------------------------------------------------------------    -------------------
     SLICE_X11Y94         FDRE (Prop_fdre_C_Q)         0.141    -0.448 r  myGrid/gridDisplayY_reg[2]/Q
@@ -1472,7 +1472,7 @@ Slack (MET) :             0.161ns  (arrival time - required time)
                                                      -3.163    -2.245 r  ClockDivider/inst/mmcm_adv_inst/CLKOUT1
                          net (fo=1, routed)           0.544    -1.702    ClockDivider/inst/clk_out2_clk_wiz_0
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029    -1.673 r  ClockDivider/inst/clkout2_buf/O
-                         net (fo=668, routed)         0.846    -0.827    myCurve/clock
+                         net (fo=669, routed)         0.846    -0.827    myCurve/clock
     SLICE_X9Y94          FDRE                                         r  myCurve/curveDisplayY_reg[2]/C
                          clock pessimism              0.275    -0.552    
     SLICE_X9Y94          FDRE (Hold_fdre_C_D)         0.070    -0.482    myCurve/curveDisplayY_reg[2]
@@ -1509,7 +1509,7 @@ Slack (MET) :             0.162ns  (arrival time - required time)
                                                      -2.379    -1.689 r  ClockDivider/inst/mmcm_adv_inst/CLKOUT1
                          net (fo=1, routed)           0.499    -1.190    ClockDivider/inst/clk_out2_clk_wiz_0
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026    -1.164 r  ClockDivider/inst/clkout2_buf/O
-                         net (fo=668, routed)         0.569    -0.595    myed/clock
+                         net (fo=669, routed)         0.569    -0.595    myed/clock
     SLICE_X13Y105        FDRE                                         r  myed/previousSamples_reg[1][0]/C
   -------------------------------------------------------------------    -------------------
     SLICE_X13Y105        FDRE (Prop_fdre_C_Q)         0.141    -0.454 r  myed/previousSamples_reg[1][0]/Q
@@ -1527,7 +1527,7 @@ Slack (MET) :             0.162ns  (arrival time - required time)
                                                      -3.163    -2.245 r  ClockDivider/inst/mmcm_adv_inst/CLKOUT1
                          net (fo=1, routed)           0.544    -1.702    ClockDivider/inst/clk_out2_clk_wiz_0
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029    -1.673 r  ClockDivider/inst/clkout2_buf/O
-                         net (fo=668, routed)         0.840    -0.833    myed/clock
+                         net (fo=669, routed)         0.840    -0.833    myed/clock
     SLICE_X13Y106        FDRE                                         r  myed/previousSamples_reg[2][0]/C
                          clock pessimism              0.254    -0.579    
     SLICE_X13Y106        FDRE (Hold_fdre_C_D)         0.070    -0.509    myed/previousSamples_reg[2][0]
@@ -1564,7 +1564,7 @@ Slack (MET) :             0.164ns  (arrival time - required time)
                                                      -2.379    -1.689 r  ClockDivider/inst/mmcm_adv_inst/CLKOUT1
                          net (fo=1, routed)           0.499    -1.190    ClockDivider/inst/clk_out2_clk_wiz_0
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026    -1.164 r  ClockDivider/inst/clkout2_buf/O
-                         net (fo=668, routed)         0.570    -0.594    mytls/clock
+                         net (fo=669, routed)         0.570    -0.594    mytls/clock
     SLICE_X13Y100        FDSE                                         r  mytls/pixel_reg[9]/C
   -------------------------------------------------------------------    -------------------
     SLICE_X13Y100        FDSE (Prop_fdse_C_Q)         0.141    -0.453 r  mytls/pixel_reg[9]/Q
@@ -1582,7 +1582,7 @@ Slack (MET) :             0.164ns  (arrival time - required time)
                                                      -3.163    -2.245 r  ClockDivider/inst/mmcm_adv_inst/CLKOUT1
                          net (fo=1, routed)           0.544    -1.702    ClockDivider/inst/clk_out2_clk_wiz_0
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029    -1.673 r  ClockDivider/inst/clkout2_buf/O
-                         net (fo=668, routed)         0.841    -0.832    CLK108MHZ
+                         net (fo=669, routed)         0.841    -0.832    CLK108MHZ
     SLICE_X14Y100        FDRE                                         r  VGA_R_reg[1]/C
                          clock pessimism              0.254    -0.578    
     SLICE_X14Y100        FDRE (Hold_fdre_C_D)         0.059    -0.519    VGA_R_reg[1]
@@ -1619,7 +1619,7 @@ Slack (MET) :             0.165ns  (arrival time - required time)
                                                      -2.379    -1.689 r  ClockDivider/inst/mmcm_adv_inst/CLKOUT1
                          net (fo=1, routed)           0.499    -1.190    ClockDivider/inst/clk_out2_clk_wiz_0
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026    -1.164 r  ClockDivider/inst/clkout2_buf/O
-                         net (fo=668, routed)         0.570    -0.594    Buffer/clock
+                         net (fo=669, routed)         0.570    -0.594    Buffer/clock
     SLICE_X10Y102        FDRE                                         r  Buffer/ram1_addra_reg[2]/C
   -------------------------------------------------------------------    -------------------
     SLICE_X10Y102        FDRE (Prop_fdre_C_Q)         0.164    -0.430 r  Buffer/ram1_addra_reg[2]/Q
@@ -1637,7 +1637,7 @@ Slack (MET) :             0.165ns  (arrival time - required time)
                                                      -3.163    -2.245 r  ClockDivider/inst/mmcm_adv_inst/CLKOUT1
                          net (fo=1, routed)           0.544    -1.702    ClockDivider/inst/clk_out2_clk_wiz_0
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029    -1.673 r  ClockDivider/inst/clkout2_buf/O
-                         net (fo=668, routed)         0.874    -0.798    Buffer/bram1/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_init.ram/clka
+                         net (fo=669, routed)         0.874    -0.798    Buffer/bram1/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_init.ram/clka
     RAMB18_X0Y42         RAMB18E1                                     r  Buffer/bram1/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM18.ram/CLKARDCLK
                          clock pessimism              0.275    -0.523    
     RAMB18_X0Y42         RAMB18E1 (Hold_ramb18e1_CLKARDCLK_ADDRARDADDR[4])
@@ -1660,6 +1660,7 @@ Period(ns):         9.231
 Sources:            { ClockDivider/inst/mmcm_adv_inst/CLKOUT1 }
 
 Check Type        Corner  Lib Pin             Reference Pin  Required(ns)  Actual(ns)  Slack(ns)  Location         Pin
+Min Period        n/a     XADC/CONVST         n/a            1000.000      9.231       -990.769   XADC_X0Y0        XLXI_7/inst/CONVST
 Min Period        n/a     XADC/DCLK           n/a            4.000         9.231       5.231      XADC_X0Y0        XLXI_7/inst/DCLK
 Min Period        n/a     RAMB18E1/CLKARDCLK  n/a            1.962         9.231       7.269      RAMB18_X0Y43     Buffer/bram0/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM18.ram/CLKARDCLK
 Min Period        n/a     RAMB18E1/CLKBWRCLK  n/a            1.962         9.231       7.269      RAMB18_X0Y43     Buffer/bram0/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM18.ram/CLKBWRCLK
@@ -1669,7 +1670,6 @@ Min Period        n/a     RAMB18E1/CLKARDCLK  n/a            1.962         9.231
 Min Period        n/a     RAMB18E1/CLKBWRCLK  n/a            1.962         9.231       7.269      RAMB18_X0Y34     Buffer2/bram1/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM18.ram/CLKBWRCLK
 Min Period        n/a     RAMB36E1/CLKARDCLK  n/a            1.962         9.231       7.269      RAMB36_X0Y18     Buffer2/bram0/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[1].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram/CLKARDCLK
 Min Period        n/a     RAMB36E1/CLKBWRCLK  n/a            1.962         9.231       7.269      RAMB36_X0Y18     Buffer2/bram0/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[1].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram/CLKBWRCLK
-Min Period        n/a     RAMB36E1/CLKARDCLK  n/a            1.962         9.231       7.269      RAMB36_X0Y22     Buffer/bram0/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[1].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram/CLKARDCLK
 Max Period        n/a     MMCME2_ADV/CLKOUT1  n/a            213.360       9.231       204.129    MMCME2_ADV_X1Y2  ClockDivider/inst/mmcm_adv_inst/CLKOUT1
 Low Pulse Width   Slow    SRL16E/CLK          n/a            0.770         4.615       3.845      SLICE_X10Y106    myed/previousSmoothedSamples_reg[3][0]_srl4/CLK
 Low Pulse Width   Slow    SRL16E/CLK          n/a            0.770         4.615       3.845      SLICE_X10Y106    myed/previousSmoothedSamples_reg[3][1]_srl4/CLK
@@ -1753,7 +1753,7 @@ From Clock:  clk_out2_clk_wiz_0_1
 
 Setup :            0  Failing Endpoints,  Worst Slack        2.248ns,  Total Violation        0.000ns
 Hold  :            0  Failing Endpoints,  Worst Slack        0.130ns,  Total Violation        0.000ns
-PW    :            0  Failing Endpoints,  Worst Slack        3.845ns,  Total Violation        0.000ns
+PW    :            1  Failing Endpoint ,  Worst Slack     -990.769ns,  Total Violation     -990.769ns
 ---------------------------------------------------------------------------------------------------
 
 
@@ -1790,7 +1790,7 @@ Slack (MET) :             2.248ns  (required time - arrival time)
                                                      -5.294    -2.990 r  ClockDivider/inst/mmcm_adv_inst/CLKOUT1
                          net (fo=1, routed)           1.297    -1.693    ClockDivider/inst/clk_out2_clk_wiz_0
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.076    -1.617 r  ClockDivider/inst/clkout2_buf/O
-                         net (fo=668, routed)         1.239    -0.378    Buffer/clock
+                         net (fo=669, routed)         1.239    -0.378    Buffer/clock
     SLICE_X8Y105         FDRE                                         r  Buffer/dataOut_reg[1]/C
   -------------------------------------------------------------------    -------------------
     SLICE_X8Y105         FDRE (Prop_fdre_C_Q)         0.361    -0.017 f  Buffer/dataOut_reg[1]/Q
@@ -1841,7 +1841,7 @@ Slack (MET) :             2.248ns  (required time - arrival time)
                                                      -5.390     6.020 r  ClockDivider/inst/mmcm_adv_inst/CLKOUT1
                          net (fo=1, routed)           1.234     7.255    ClockDivider/inst/clk_out2_clk_wiz_0
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.072     7.327 r  ClockDivider/inst/clkout2_buf/O
-                         net (fo=668, routed)         1.137     8.464    myCurve/clock
+                         net (fo=669, routed)         1.137     8.464    myCurve/clock
     SLICE_X11Y100        FDRE                                         r  myCurve/pixelOn_reg/C
                          clock pessimism              0.346     8.810    
                          clock uncertainty           -0.072     8.737    
@@ -1883,7 +1883,7 @@ Slack (MET) :             2.353ns  (required time - arrival time)
                                                      -5.294    -2.990 r  ClockDivider/inst/mmcm_adv_inst/CLKOUT1
                          net (fo=1, routed)           1.297    -1.693    ClockDivider/inst/clk_out2_clk_wiz_0
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.076    -1.617 r  ClockDivider/inst/clkout2_buf/O
-                         net (fo=668, routed)         1.262    -0.355    myss/clock
+                         net (fo=669, routed)         1.262    -0.355    myss/clock
     SLICE_X10Y99         FDRE                                         r  myss/verticalShiftLeftFactor_reg[1]/C
   -------------------------------------------------------------------    -------------------
     SLICE_X10Y99         FDRE (Prop_fdre_C_Q)         0.361     0.006 r  myss/verticalShiftLeftFactor_reg[1]/Q
@@ -1927,7 +1927,7 @@ Slack (MET) :             2.353ns  (required time - arrival time)
                                                      -5.390     6.020 r  ClockDivider/inst/mmcm_adv_inst/CLKOUT1
                          net (fo=1, routed)           1.234     7.255    ClockDivider/inst/clk_out2_clk_wiz_0
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.072     7.327 r  ClockDivider/inst/clkout2_buf/O
-                         net (fo=668, routed)         1.136     8.463    mytls/clock
+                         net (fo=669, routed)         1.136     8.463    mytls/clock
     SLICE_X15Y100        FDSE                                         r  mytls/pixel_reg[11]/C
                          clock pessimism              0.287     8.750    
                          clock uncertainty           -0.072     8.678    
@@ -1969,7 +1969,7 @@ Slack (MET) :             2.353ns  (required time - arrival time)
                                                      -5.294    -2.990 r  ClockDivider/inst/mmcm_adv_inst/CLKOUT1
                          net (fo=1, routed)           1.297    -1.693    ClockDivider/inst/clk_out2_clk_wiz_0
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.076    -1.617 r  ClockDivider/inst/clkout2_buf/O
-                         net (fo=668, routed)         1.262    -0.355    myss/clock
+                         net (fo=669, routed)         1.262    -0.355    myss/clock
     SLICE_X10Y99         FDRE                                         r  myss/verticalShiftLeftFactor_reg[1]/C
   -------------------------------------------------------------------    -------------------
     SLICE_X10Y99         FDRE (Prop_fdre_C_Q)         0.361     0.006 r  myss/verticalShiftLeftFactor_reg[1]/Q
@@ -2013,7 +2013,7 @@ Slack (MET) :             2.353ns  (required time - arrival time)
                                                      -5.390     6.020 r  ClockDivider/inst/mmcm_adv_inst/CLKOUT1
                          net (fo=1, routed)           1.234     7.255    ClockDivider/inst/clk_out2_clk_wiz_0
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.072     7.327 r  ClockDivider/inst/clkout2_buf/O
-                         net (fo=668, routed)         1.136     8.463    mytls/clock
+                         net (fo=669, routed)         1.136     8.463    mytls/clock
     SLICE_X15Y100        FDRE                                         r  mytls/pixel_reg[3]/C
                          clock pessimism              0.287     8.750    
                          clock uncertainty           -0.072     8.678    
@@ -2055,7 +2055,7 @@ Slack (MET) :             2.353ns  (required time - arrival time)
                                                      -5.294    -2.990 r  ClockDivider/inst/mmcm_adv_inst/CLKOUT1
                          net (fo=1, routed)           1.297    -1.693    ClockDivider/inst/clk_out2_clk_wiz_0
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.076    -1.617 r  ClockDivider/inst/clkout2_buf/O
-                         net (fo=668, routed)         1.262    -0.355    myss/clock
+                         net (fo=669, routed)         1.262    -0.355    myss/clock
     SLICE_X10Y99         FDRE                                         r  myss/verticalShiftLeftFactor_reg[1]/C
   -------------------------------------------------------------------    -------------------
     SLICE_X10Y99         FDRE (Prop_fdre_C_Q)         0.361     0.006 r  myss/verticalShiftLeftFactor_reg[1]/Q
@@ -2099,7 +2099,7 @@ Slack (MET) :             2.353ns  (required time - arrival time)
                                                      -5.390     6.020 r  ClockDivider/inst/mmcm_adv_inst/CLKOUT1
                          net (fo=1, routed)           1.234     7.255    ClockDivider/inst/clk_out2_clk_wiz_0
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.072     7.327 r  ClockDivider/inst/clkout2_buf/O
-                         net (fo=668, routed)         1.136     8.463    mytls/clock
+                         net (fo=669, routed)         1.136     8.463    mytls/clock
     SLICE_X15Y100        FDRE                                         r  mytls/pixel_reg[5]/C
                          clock pessimism              0.287     8.750    
                          clock uncertainty           -0.072     8.678    
@@ -2141,7 +2141,7 @@ Slack (MET) :             2.353ns  (required time - arrival time)
                                                      -5.294    -2.990 r  ClockDivider/inst/mmcm_adv_inst/CLKOUT1
                          net (fo=1, routed)           1.297    -1.693    ClockDivider/inst/clk_out2_clk_wiz_0
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.076    -1.617 r  ClockDivider/inst/clkout2_buf/O
-                         net (fo=668, routed)         1.262    -0.355    myss/clock
+                         net (fo=669, routed)         1.262    -0.355    myss/clock
     SLICE_X10Y99         FDRE                                         r  myss/verticalShiftLeftFactor_reg[1]/C
   -------------------------------------------------------------------    -------------------
     SLICE_X10Y99         FDRE (Prop_fdre_C_Q)         0.361     0.006 r  myss/verticalShiftLeftFactor_reg[1]/Q
@@ -2185,7 +2185,7 @@ Slack (MET) :             2.353ns  (required time - arrival time)
                                                      -5.390     6.020 r  ClockDivider/inst/mmcm_adv_inst/CLKOUT1
                          net (fo=1, routed)           1.234     7.255    ClockDivider/inst/clk_out2_clk_wiz_0
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.072     7.327 r  ClockDivider/inst/clkout2_buf/O
-                         net (fo=668, routed)         1.136     8.463    mytls/clock
+                         net (fo=669, routed)         1.136     8.463    mytls/clock
     SLICE_X15Y100        FDRE                                         r  mytls/pixel_reg[7]/C
                          clock pessimism              0.287     8.750    
                          clock uncertainty           -0.072     8.678    
@@ -2227,7 +2227,7 @@ Slack (MET) :             2.435ns  (required time - arrival time)
                                                      -5.294    -2.990 r  ClockDivider/inst/mmcm_adv_inst/CLKOUT1
                          net (fo=1, routed)           1.297    -1.693    ClockDivider/inst/clk_out2_clk_wiz_0
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.076    -1.617 r  ClockDivider/inst/clkout2_buf/O
-                         net (fo=668, routed)         1.262    -0.355    myss/clock
+                         net (fo=669, routed)         1.262    -0.355    myss/clock
     SLICE_X10Y99         FDRE                                         r  myss/verticalShiftLeftFactor_reg[1]/C
   -------------------------------------------------------------------    -------------------
     SLICE_X10Y99         FDRE (Prop_fdre_C_Q)         0.361     0.006 r  myss/verticalShiftLeftFactor_reg[1]/Q
@@ -2271,7 +2271,7 @@ Slack (MET) :             2.435ns  (required time - arrival time)
                                                      -5.390     6.020 r  ClockDivider/inst/mmcm_adv_inst/CLKOUT1
                          net (fo=1, routed)           1.234     7.255    ClockDivider/inst/clk_out2_clk_wiz_0
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.072     7.327 r  ClockDivider/inst/clkout2_buf/O
-                         net (fo=668, routed)         1.136     8.463    mytls/clock
+                         net (fo=669, routed)         1.136     8.463    mytls/clock
     SLICE_X13Y100        FDRE                                         r  mytls/pixel_reg[1]/C
                          clock pessimism              0.287     8.750    
                          clock uncertainty           -0.072     8.678    
@@ -2313,7 +2313,7 @@ Slack (MET) :             2.435ns  (required time - arrival time)
                                                      -5.294    -2.990 r  ClockDivider/inst/mmcm_adv_inst/CLKOUT1
                          net (fo=1, routed)           1.297    -1.693    ClockDivider/inst/clk_out2_clk_wiz_0
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.076    -1.617 r  ClockDivider/inst/clkout2_buf/O
-                         net (fo=668, routed)         1.262    -0.355    myss/clock
+                         net (fo=669, routed)         1.262    -0.355    myss/clock
     SLICE_X10Y99         FDRE                                         r  myss/verticalShiftLeftFactor_reg[1]/C
   -------------------------------------------------------------------    -------------------
     SLICE_X10Y99         FDRE (Prop_fdre_C_Q)         0.361     0.006 r  myss/verticalShiftLeftFactor_reg[1]/Q
@@ -2357,7 +2357,7 @@ Slack (MET) :             2.435ns  (required time - arrival time)
                                                      -5.390     6.020 r  ClockDivider/inst/mmcm_adv_inst/CLKOUT1
                          net (fo=1, routed)           1.234     7.255    ClockDivider/inst/clk_out2_clk_wiz_0
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.072     7.327 r  ClockDivider/inst/clkout2_buf/O
-                         net (fo=668, routed)         1.136     8.463    mytls/clock
+                         net (fo=669, routed)         1.136     8.463    mytls/clock
     SLICE_X13Y100        FDSE                                         r  mytls/pixel_reg[9]/C
                          clock pessimism              0.287     8.750    
                          clock uncertainty           -0.072     8.678    
@@ -2399,7 +2399,7 @@ Slack (MET) :             3.354ns  (required time - arrival time)
                                                      -5.294    -2.990 r  ClockDivider/inst/mmcm_adv_inst/CLKOUT1
                          net (fo=1, routed)           1.297    -1.693    ClockDivider/inst/clk_out2_clk_wiz_0
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.076    -1.617 r  ClockDivider/inst/clkout2_buf/O
-                         net (fo=668, routed)         1.258    -0.359    Buffer2/clock
+                         net (fo=669, routed)         1.258    -0.359    Buffer2/clock
     SLICE_X9Y87          FDRE                                         r  Buffer2/dataOut_reg[0]/C
   -------------------------------------------------------------------    -------------------
     SLICE_X9Y87          FDRE (Prop_fdre_C_Q)         0.341    -0.018 f  Buffer2/dataOut_reg[0]/Q
@@ -2438,7 +2438,7 @@ Slack (MET) :             3.354ns  (required time - arrival time)
                                                      -5.390     6.020 r  ClockDivider/inst/mmcm_adv_inst/CLKOUT1
                          net (fo=1, routed)           1.234     7.255    ClockDivider/inst/clk_out2_clk_wiz_0
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.072     7.327 r  ClockDivider/inst/clkout2_buf/O
-                         net (fo=668, routed)         1.217     8.544    myCurve2/clock
+                         net (fo=669, routed)         1.217     8.544    myCurve2/clock
     SLICE_X7Y96          FDRE                                         r  myCurve2/pixelOn_reg/C
                          clock pessimism              0.348     8.891    
                          clock uncertainty           -0.072     8.819    
@@ -2480,7 +2480,7 @@ Slack (MET) :             3.417ns  (required time - arrival time)
                                                      -5.294    -2.990 r  ClockDivider/inst/mmcm_adv_inst/CLKOUT1
                          net (fo=1, routed)           1.297    -1.693    ClockDivider/inst/clk_out2_clk_wiz_0
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.076    -1.617 r  ClockDivider/inst/clkout2_buf/O
-                         net (fo=668, routed)         1.238    -0.379    myed/clock
+                         net (fo=669, routed)         1.238    -0.379    myed/clock
     SLICE_X14Y107        FDRE                                         r  myed/intermediates_reg[1][0]/C
   -------------------------------------------------------------------    -------------------
     SLICE_X14Y107        FDRE (Prop_fdre_C_Q)         0.361    -0.018 r  myed/intermediates_reg[1][0]/Q
@@ -2523,7 +2523,7 @@ Slack (MET) :             3.417ns  (required time - arrival time)
                                                      -5.390     6.020 r  ClockDivider/inst/mmcm_adv_inst/CLKOUT1
                          net (fo=1, routed)           1.234     7.255    ClockDivider/inst/clk_out2_clk_wiz_0
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.072     7.327 r  ClockDivider/inst/clkout2_buf/O
-                         net (fo=668, routed)         1.137     8.464    myed/clock
+                         net (fo=669, routed)         1.137     8.464    myed/clock
     SLICE_X10Y107        FDRE                                         r  myed/smoothedSample_reg[3]/C
                          clock pessimism              0.346     8.810    
                          clock uncertainty           -0.072     8.737    
@@ -2565,7 +2565,7 @@ Slack (MET) :             3.450ns  (required time - arrival time)
                                                      -5.294    -2.990 r  ClockDivider/inst/mmcm_adv_inst/CLKOUT1
                          net (fo=1, routed)           1.297    -1.693    ClockDivider/inst/clk_out2_clk_wiz_0
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.076    -1.617 r  ClockDivider/inst/clkout2_buf/O
-                         net (fo=668, routed)         1.238    -0.379    myed/clock
+                         net (fo=669, routed)         1.238    -0.379    myed/clock
     SLICE_X14Y107        FDRE                                         r  myed/intermediates_reg[1][0]/C
   -------------------------------------------------------------------    -------------------
     SLICE_X14Y107        FDRE (Prop_fdre_C_Q)         0.361    -0.018 r  myed/intermediates_reg[1][0]/Q
@@ -2608,7 +2608,7 @@ Slack (MET) :             3.450ns  (required time - arrival time)
                                                      -5.390     6.020 r  ClockDivider/inst/mmcm_adv_inst/CLKOUT1
                          net (fo=1, routed)           1.234     7.255    ClockDivider/inst/clk_out2_clk_wiz_0
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.072     7.327 r  ClockDivider/inst/clkout2_buf/O
-                         net (fo=668, routed)         1.137     8.464    myed/clock
+                         net (fo=669, routed)         1.137     8.464    myed/clock
     SLICE_X10Y107        FDRE                                         r  myed/smoothedSample_reg[6]/C
                          clock pessimism              0.346     8.810    
                          clock uncertainty           -0.072     8.737    
@@ -2652,7 +2652,7 @@ Slack (MET) :             0.130ns  (arrival time - required time)
                                                      -2.379    -1.689 r  ClockDivider/inst/mmcm_adv_inst/CLKOUT1
                          net (fo=1, routed)           0.499    -1.190    ClockDivider/inst/clk_out2_clk_wiz_0
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026    -1.164 r  ClockDivider/inst/clkout2_buf/O
-                         net (fo=668, routed)         0.571    -0.593    Buffer2/clock
+                         net (fo=669, routed)         0.571    -0.593    Buffer2/clock
     SLICE_X8Y86          FDRE                                         r  Buffer2/ram0_addrb_reg[1]/C
   -------------------------------------------------------------------    -------------------
     SLICE_X8Y86          FDRE (Prop_fdre_C_Q)         0.164    -0.429 r  Buffer2/ram0_addrb_reg[1]/Q
@@ -2670,7 +2670,7 @@ Slack (MET) :             0.130ns  (arrival time - required time)
                                                      -3.163    -2.245 r  ClockDivider/inst/mmcm_adv_inst/CLKOUT1
                          net (fo=1, routed)           0.544    -1.702    ClockDivider/inst/clk_out2_clk_wiz_0
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029    -1.673 r  ClockDivider/inst/clkout2_buf/O
-                         net (fo=668, routed)         0.877    -0.796    Buffer2/bram0/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_init.ram/clkb
+                         net (fo=669, routed)         0.877    -0.796    Buffer2/bram0/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_init.ram/clkb
     RAMB18_X0Y35         RAMB18E1                                     r  Buffer2/bram0/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM18.ram/CLKBWRCLK
                          clock pessimism              0.254    -0.542    
     RAMB18_X0Y35         RAMB18E1 (Hold_ramb18e1_CLKBWRCLK_ADDRBWRADDR[3])
@@ -2708,7 +2708,7 @@ Slack (MET) :             0.150ns  (arrival time - required time)
                                                      -2.379    -1.689 r  ClockDivider/inst/mmcm_adv_inst/CLKOUT1
                          net (fo=1, routed)           0.499    -1.190    ClockDivider/inst/clk_out2_clk_wiz_0
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026    -1.164 r  ClockDivider/inst/clkout2_buf/O
-                         net (fo=668, routed)         0.568    -0.596    myed/clock
+                         net (fo=669, routed)         0.568    -0.596    myed/clock
     SLICE_X9Y109         FDRE                                         r  myed/previousSamples_reg[1][3]/C
   -------------------------------------------------------------------    -------------------
     SLICE_X9Y109         FDRE (Prop_fdre_C_Q)         0.141    -0.455 r  myed/previousSamples_reg[1][3]/Q
@@ -2726,7 +2726,7 @@ Slack (MET) :             0.150ns  (arrival time - required time)
                                                      -3.163    -2.245 r  ClockDivider/inst/mmcm_adv_inst/CLKOUT1
                          net (fo=1, routed)           0.544    -1.702    ClockDivider/inst/clk_out2_clk_wiz_0
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029    -1.673 r  ClockDivider/inst/clkout2_buf/O
-                         net (fo=668, routed)         0.839    -0.834    myed/clock
+                         net (fo=669, routed)         0.839    -0.834    myed/clock
     SLICE_X10Y109        FDRE                                         r  myed/previousSamples_reg[2][3]/C
                          clock pessimism              0.275    -0.559    
     SLICE_X10Y109        FDRE (Hold_fdre_C_D)         0.076    -0.483    myed/previousSamples_reg[2][3]
@@ -2763,7 +2763,7 @@ Slack (MET) :             0.153ns  (arrival time - required time)
                                                      -2.379    -1.689 r  ClockDivider/inst/mmcm_adv_inst/CLKOUT1
                          net (fo=1, routed)           0.499    -1.190    ClockDivider/inst/clk_out2_clk_wiz_0
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026    -1.164 r  ClockDivider/inst/clkout2_buf/O
-                         net (fo=668, routed)         0.569    -0.595    myed/clock
+                         net (fo=669, routed)         0.569    -0.595    myed/clock
     SLICE_X13Y106        FDRE                                         r  myed/previousSamples_reg[2][1]/C
   -------------------------------------------------------------------    -------------------
     SLICE_X13Y106        FDRE (Prop_fdre_C_Q)         0.141    -0.454 r  myed/previousSamples_reg[2][1]/Q
@@ -2781,7 +2781,7 @@ Slack (MET) :             0.153ns  (arrival time - required time)
                                                      -3.163    -2.245 r  ClockDivider/inst/mmcm_adv_inst/CLKOUT1
                          net (fo=1, routed)           0.544    -1.702    ClockDivider/inst/clk_out2_clk_wiz_0
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029    -1.673 r  ClockDivider/inst/clkout2_buf/O
-                         net (fo=668, routed)         0.840    -0.833    myed/clock
+                         net (fo=669, routed)         0.840    -0.833    myed/clock
     SLICE_X15Y106        FDRE                                         r  myed/previousSamples_reg[3][1]/C
                          clock pessimism              0.254    -0.579    
     SLICE_X15Y106        FDRE (Hold_fdre_C_D)         0.070    -0.509    myed/previousSamples_reg[3][1]
@@ -2818,7 +2818,7 @@ Slack (MET) :             0.158ns  (arrival time - required time)
                                                      -2.379    -1.689 r  ClockDivider/inst/mmcm_adv_inst/CLKOUT1
                          net (fo=1, routed)           0.499    -1.190    ClockDivider/inst/clk_out2_clk_wiz_0
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026    -1.164 r  ClockDivider/inst/clkout2_buf/O
-                         net (fo=668, routed)         0.568    -0.596    myed/clock
+                         net (fo=669, routed)         0.568    -0.596    myed/clock
     SLICE_X10Y107        FDRE                                         r  myed/smoothedSample_reg[3]/C
   -------------------------------------------------------------------    -------------------
     SLICE_X10Y107        FDRE (Prop_fdre_C_Q)         0.164    -0.432 r  myed/smoothedSample_reg[3]/Q
@@ -2836,7 +2836,7 @@ Slack (MET) :             0.158ns  (arrival time - required time)
                                                      -3.163    -2.245 r  ClockDivider/inst/mmcm_adv_inst/CLKOUT1
                          net (fo=1, routed)           0.544    -1.702    ClockDivider/inst/clk_out2_clk_wiz_0
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029    -1.673 r  ClockDivider/inst/clkout2_buf/O
-                         net (fo=668, routed)         0.840    -0.833    myed/clock
+                         net (fo=669, routed)         0.840    -0.833    myed/clock
     SLICE_X10Y106        SRL16E                                       r  myed/previousSmoothedSamples_reg[3][3]_srl4/CLK
                          clock pessimism              0.254    -0.579    
     SLICE_X10Y106        SRL16E (Hold_srl16e_CLK_D)
@@ -2874,7 +2874,7 @@ Slack (MET) :             0.160ns  (arrival time - required time)
                                                      -2.379    -1.689 r  ClockDivider/inst/mmcm_adv_inst/CLKOUT1
                          net (fo=1, routed)           0.499    -1.190    ClockDivider/inst/clk_out2_clk_wiz_0
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026    -1.164 r  ClockDivider/inst/clkout2_buf/O
-                         net (fo=668, routed)         0.573    -0.591    Buffer2/clock
+                         net (fo=669, routed)         0.573    -0.591    Buffer2/clock
     SLICE_X11Y88         FDRE                                         r  Buffer2/pointer0_reg[9]/C
   -------------------------------------------------------------------    -------------------
     SLICE_X11Y88         FDRE (Prop_fdre_C_Q)         0.141    -0.450 r  Buffer2/pointer0_reg[9]/Q
@@ -2892,7 +2892,7 @@ Slack (MET) :             0.160ns  (arrival time - required time)
                                                      -3.163    -2.245 r  ClockDivider/inst/mmcm_adv_inst/CLKOUT1
                          net (fo=1, routed)           0.544    -1.702    ClockDivider/inst/clk_out2_clk_wiz_0
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029    -1.673 r  ClockDivider/inst/clkout2_buf/O
-                         net (fo=668, routed)         0.844    -0.829    Buffer2/clock
+                         net (fo=669, routed)         0.844    -0.829    Buffer2/clock
     SLICE_X9Y88          FDRE                                         r  Buffer2/ram0_addra_reg[9]/C
                          clock pessimism              0.275    -0.554    
     SLICE_X9Y88          FDRE (Hold_fdre_C_D)         0.071    -0.483    Buffer2/ram0_addra_reg[9]
@@ -2929,7 +2929,7 @@ Slack (MET) :             0.161ns  (arrival time - required time)
                                                      -2.379    -1.689 r  ClockDivider/inst/mmcm_adv_inst/CLKOUT1
                          net (fo=1, routed)           0.499    -1.190    ClockDivider/inst/clk_out2_clk_wiz_0
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026    -1.164 r  ClockDivider/inst/clkout2_buf/O
-                         net (fo=668, routed)         0.569    -0.595    myed/clock
+                         net (fo=669, routed)         0.569    -0.595    myed/clock
     SLICE_X15Y105        FDRE                                         r  myed/state_reg[1]/C
   -------------------------------------------------------------------    -------------------
     SLICE_X15Y105        FDRE (Prop_fdre_C_Q)         0.141    -0.454 r  myed/state_reg[1]/Q
@@ -2949,7 +2949,7 @@ Slack (MET) :             0.161ns  (arrival time - required time)
                                                      -3.163    -2.245 r  ClockDivider/inst/mmcm_adv_inst/CLKOUT1
                          net (fo=1, routed)           0.544    -1.702    ClockDivider/inst/clk_out2_clk_wiz_0
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029    -1.673 r  ClockDivider/inst/clkout2_buf/O
-                         net (fo=668, routed)         0.840    -0.833    myed/clock
+                         net (fo=669, routed)         0.840    -0.833    myed/clock
     SLICE_X14Y105        FDRE                                         r  myed/state_reg[4]/C
                          clock pessimism              0.251    -0.582    
     SLICE_X14Y105        FDRE (Hold_fdre_C_D)         0.131    -0.451    myed/state_reg[4]
@@ -2986,7 +2986,7 @@ Slack (MET) :             0.161ns  (arrival time - required time)
                                                      -2.379    -1.689 r  ClockDivider/inst/mmcm_adv_inst/CLKOUT1
                          net (fo=1, routed)           0.499    -1.190    ClockDivider/inst/clk_out2_clk_wiz_0
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026    -1.164 r  ClockDivider/inst/clkout2_buf/O
-                         net (fo=668, routed)         0.575    -0.589    myGrid/clock
+                         net (fo=669, routed)         0.575    -0.589    myGrid/clock
     SLICE_X11Y94         FDRE                                         r  myGrid/gridDisplayY_reg[2]/C
   -------------------------------------------------------------------    -------------------
     SLICE_X11Y94         FDRE (Prop_fdre_C_Q)         0.141    -0.448 r  myGrid/gridDisplayY_reg[2]/Q
@@ -3004,7 +3004,7 @@ Slack (MET) :             0.161ns  (arrival time - required time)
                                                      -3.163    -2.245 r  ClockDivider/inst/mmcm_adv_inst/CLKOUT1
                          net (fo=1, routed)           0.544    -1.702    ClockDivider/inst/clk_out2_clk_wiz_0
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029    -1.673 r  ClockDivider/inst/clkout2_buf/O
-                         net (fo=668, routed)         0.846    -0.827    myCurve/clock
+                         net (fo=669, routed)         0.846    -0.827    myCurve/clock
     SLICE_X9Y94          FDRE                                         r  myCurve/curveDisplayY_reg[2]/C
                          clock pessimism              0.275    -0.552    
     SLICE_X9Y94          FDRE (Hold_fdre_C_D)         0.070    -0.482    myCurve/curveDisplayY_reg[2]
@@ -3041,7 +3041,7 @@ Slack (MET) :             0.162ns  (arrival time - required time)
                                                      -2.379    -1.689 r  ClockDivider/inst/mmcm_adv_inst/CLKOUT1
                          net (fo=1, routed)           0.499    -1.190    ClockDivider/inst/clk_out2_clk_wiz_0
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026    -1.164 r  ClockDivider/inst/clkout2_buf/O
-                         net (fo=668, routed)         0.569    -0.595    myed/clock
+                         net (fo=669, routed)         0.569    -0.595    myed/clock
     SLICE_X13Y105        FDRE                                         r  myed/previousSamples_reg[1][0]/C
   -------------------------------------------------------------------    -------------------
     SLICE_X13Y105        FDRE (Prop_fdre_C_Q)         0.141    -0.454 r  myed/previousSamples_reg[1][0]/Q
@@ -3059,7 +3059,7 @@ Slack (MET) :             0.162ns  (arrival time - required time)
                                                      -3.163    -2.245 r  ClockDivider/inst/mmcm_adv_inst/CLKOUT1
                          net (fo=1, routed)           0.544    -1.702    ClockDivider/inst/clk_out2_clk_wiz_0
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029    -1.673 r  ClockDivider/inst/clkout2_buf/O
-                         net (fo=668, routed)         0.840    -0.833    myed/clock
+                         net (fo=669, routed)         0.840    -0.833    myed/clock
     SLICE_X13Y106        FDRE                                         r  myed/previousSamples_reg[2][0]/C
                          clock pessimism              0.254    -0.579    
     SLICE_X13Y106        FDRE (Hold_fdre_C_D)         0.070    -0.509    myed/previousSamples_reg[2][0]
@@ -3096,7 +3096,7 @@ Slack (MET) :             0.164ns  (arrival time - required time)
                                                      -2.379    -1.689 r  ClockDivider/inst/mmcm_adv_inst/CLKOUT1
                          net (fo=1, routed)           0.499    -1.190    ClockDivider/inst/clk_out2_clk_wiz_0
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026    -1.164 r  ClockDivider/inst/clkout2_buf/O
-                         net (fo=668, routed)         0.570    -0.594    mytls/clock
+                         net (fo=669, routed)         0.570    -0.594    mytls/clock
     SLICE_X13Y100        FDSE                                         r  mytls/pixel_reg[9]/C
   -------------------------------------------------------------------    -------------------
     SLICE_X13Y100        FDSE (Prop_fdse_C_Q)         0.141    -0.453 r  mytls/pixel_reg[9]/Q
@@ -3114,7 +3114,7 @@ Slack (MET) :             0.164ns  (arrival time - required time)
                                                      -3.163    -2.245 r  ClockDivider/inst/mmcm_adv_inst/CLKOUT1
                          net (fo=1, routed)           0.544    -1.702    ClockDivider/inst/clk_out2_clk_wiz_0
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029    -1.673 r  ClockDivider/inst/clkout2_buf/O
-                         net (fo=668, routed)         0.841    -0.832    CLK108MHZ
+                         net (fo=669, routed)         0.841    -0.832    CLK108MHZ
     SLICE_X14Y100        FDRE                                         r  VGA_R_reg[1]/C
                          clock pessimism              0.254    -0.578    
     SLICE_X14Y100        FDRE (Hold_fdre_C_D)         0.059    -0.519    VGA_R_reg[1]
@@ -3151,7 +3151,7 @@ Slack (MET) :             0.165ns  (arrival time - required time)
                                                      -2.379    -1.689 r  ClockDivider/inst/mmcm_adv_inst/CLKOUT1
                          net (fo=1, routed)           0.499    -1.190    ClockDivider/inst/clk_out2_clk_wiz_0
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026    -1.164 r  ClockDivider/inst/clkout2_buf/O
-                         net (fo=668, routed)         0.570    -0.594    Buffer/clock
+                         net (fo=669, routed)         0.570    -0.594    Buffer/clock
     SLICE_X10Y102        FDRE                                         r  Buffer/ram1_addra_reg[2]/C
   -------------------------------------------------------------------    -------------------
     SLICE_X10Y102        FDRE (Prop_fdre_C_Q)         0.164    -0.430 r  Buffer/ram1_addra_reg[2]/Q
@@ -3169,7 +3169,7 @@ Slack (MET) :             0.165ns  (arrival time - required time)
                                                      -3.163    -2.245 r  ClockDivider/inst/mmcm_adv_inst/CLKOUT1
                          net (fo=1, routed)           0.544    -1.702    ClockDivider/inst/clk_out2_clk_wiz_0
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029    -1.673 r  ClockDivider/inst/clkout2_buf/O
-                         net (fo=668, routed)         0.874    -0.798    Buffer/bram1/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_init.ram/clka
+                         net (fo=669, routed)         0.874    -0.798    Buffer/bram1/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_init.ram/clka
     RAMB18_X0Y42         RAMB18E1                                     r  Buffer/bram1/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM18.ram/CLKARDCLK
                          clock pessimism              0.275    -0.523    
     RAMB18_X0Y42         RAMB18E1 (Hold_ramb18e1_CLKARDCLK_ADDRARDADDR[4])
@@ -3192,6 +3192,7 @@ Period(ns):         9.231
 Sources:            { ClockDivider/inst/mmcm_adv_inst/CLKOUT1 }
 
 Check Type        Corner  Lib Pin             Reference Pin  Required(ns)  Actual(ns)  Slack(ns)  Location         Pin
+Min Period        n/a     XADC/CONVST         n/a            1000.000      9.231       -990.769   XADC_X0Y0        XLXI_7/inst/CONVST
 Min Period        n/a     XADC/DCLK           n/a            4.000         9.231       5.231      XADC_X0Y0        XLXI_7/inst/DCLK
 Min Period        n/a     RAMB18E1/CLKARDCLK  n/a            1.962         9.231       7.269      RAMB18_X0Y43     Buffer/bram0/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM18.ram/CLKARDCLK
 Min Period        n/a     RAMB18E1/CLKBWRCLK  n/a            1.962         9.231       7.269      RAMB18_X0Y43     Buffer/bram0/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM18.ram/CLKBWRCLK
@@ -3201,7 +3202,6 @@ Min Period        n/a     RAMB18E1/CLKARDCLK  n/a            1.962         9.231
 Min Period        n/a     RAMB18E1/CLKBWRCLK  n/a            1.962         9.231       7.269      RAMB18_X0Y34     Buffer2/bram1/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM18.ram/CLKBWRCLK
 Min Period        n/a     RAMB36E1/CLKARDCLK  n/a            1.962         9.231       7.269      RAMB36_X0Y18     Buffer2/bram0/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[1].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram/CLKARDCLK
 Min Period        n/a     RAMB36E1/CLKBWRCLK  n/a            1.962         9.231       7.269      RAMB36_X0Y18     Buffer2/bram0/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[1].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram/CLKBWRCLK
-Min Period        n/a     RAMB36E1/CLKARDCLK  n/a            1.962         9.231       7.269      RAMB36_X0Y22     Buffer/bram0/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[1].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram/CLKARDCLK
 Max Period        n/a     MMCME2_ADV/CLKOUT1  n/a            213.360       9.231       204.129    MMCME2_ADV_X1Y2  ClockDivider/inst/mmcm_adv_inst/CLKOUT1
 Low Pulse Width   Slow    SRL16E/CLK          n/a            0.770         4.615       3.845      SLICE_X10Y106    myed/previousSmoothedSamples_reg[3][0]_srl4/CLK
 Low Pulse Width   Slow    SRL16E/CLK          n/a            0.770         4.615       3.845      SLICE_X10Y106    myed/previousSmoothedSamples_reg[3][1]_srl4/CLK
@@ -3295,7 +3295,7 @@ Slack (MET) :             2.247ns  (required time - arrival time)
                                                      -5.294    -2.990 r  ClockDivider/inst/mmcm_adv_inst/CLKOUT1
                          net (fo=1, routed)           1.297    -1.693    ClockDivider/inst/clk_out2_clk_wiz_0
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.076    -1.617 r  ClockDivider/inst/clkout2_buf/O
-                         net (fo=668, routed)         1.239    -0.378    Buffer/clock
+                         net (fo=669, routed)         1.239    -0.378    Buffer/clock
     SLICE_X8Y105         FDRE                                         r  Buffer/dataOut_reg[1]/C
   -------------------------------------------------------------------    -------------------
     SLICE_X8Y105         FDRE (Prop_fdre_C_Q)         0.361    -0.017 f  Buffer/dataOut_reg[1]/Q
@@ -3346,7 +3346,7 @@ Slack (MET) :             2.247ns  (required time - arrival time)
                                                      -5.390     6.020 r  ClockDivider/inst/mmcm_adv_inst/CLKOUT1
                          net (fo=1, routed)           1.234     7.255    ClockDivider/inst/clk_out2_clk_wiz_0
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.072     7.327 r  ClockDivider/inst/clkout2_buf/O
-                         net (fo=668, routed)         1.137     8.464    myCurve/clock
+                         net (fo=669, routed)         1.137     8.464    myCurve/clock
     SLICE_X11Y100        FDRE                                         r  myCurve/pixelOn_reg/C
                          clock pessimism              0.346     8.810    
                          clock uncertainty           -0.073     8.737    
@@ -3389,7 +3389,7 @@ Slack (MET) :             2.353ns  (required time - arrival time)
                                                      -5.294    -2.990 r  ClockDivider/inst/mmcm_adv_inst/CLKOUT1
                          net (fo=1, routed)           1.297    -1.693    ClockDivider/inst/clk_out2_clk_wiz_0
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.076    -1.617 r  ClockDivider/inst/clkout2_buf/O
-                         net (fo=668, routed)         1.262    -0.355    myss/clock
+                         net (fo=669, routed)         1.262    -0.355    myss/clock
     SLICE_X10Y99         FDRE                                         r  myss/verticalShiftLeftFactor_reg[1]/C
   -------------------------------------------------------------------    -------------------
     SLICE_X10Y99         FDRE (Prop_fdre_C_Q)         0.361     0.006 r  myss/verticalShiftLeftFactor_reg[1]/Q
@@ -3433,7 +3433,7 @@ Slack (MET) :             2.353ns  (required time - arrival time)
                                                      -5.390     6.020 r  ClockDivider/inst/mmcm_adv_inst/CLKOUT1
                          net (fo=1, routed)           1.234     7.255    ClockDivider/inst/clk_out2_clk_wiz_0
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.072     7.327 r  ClockDivider/inst/clkout2_buf/O
-                         net (fo=668, routed)         1.136     8.463    mytls/clock
+                         net (fo=669, routed)         1.136     8.463    mytls/clock
     SLICE_X15Y100        FDSE                                         r  mytls/pixel_reg[11]/C
                          clock pessimism              0.287     8.750    
                          clock uncertainty           -0.073     8.677    
@@ -3476,7 +3476,7 @@ Slack (MET) :             2.353ns  (required time - arrival time)
                                                      -5.294    -2.990 r  ClockDivider/inst/mmcm_adv_inst/CLKOUT1
                          net (fo=1, routed)           1.297    -1.693    ClockDivider/inst/clk_out2_clk_wiz_0
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.076    -1.617 r  ClockDivider/inst/clkout2_buf/O
-                         net (fo=668, routed)         1.262    -0.355    myss/clock
+                         net (fo=669, routed)         1.262    -0.355    myss/clock
     SLICE_X10Y99         FDRE                                         r  myss/verticalShiftLeftFactor_reg[1]/C
   -------------------------------------------------------------------    -------------------
     SLICE_X10Y99         FDRE (Prop_fdre_C_Q)         0.361     0.006 r  myss/verticalShiftLeftFactor_reg[1]/Q
@@ -3520,7 +3520,7 @@ Slack (MET) :             2.353ns  (required time - arrival time)
                                                      -5.390     6.020 r  ClockDivider/inst/mmcm_adv_inst/CLKOUT1
                          net (fo=1, routed)           1.234     7.255    ClockDivider/inst/clk_out2_clk_wiz_0
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.072     7.327 r  ClockDivider/inst/clkout2_buf/O
-                         net (fo=668, routed)         1.136     8.463    mytls/clock
+                         net (fo=669, routed)         1.136     8.463    mytls/clock
     SLICE_X15Y100        FDRE                                         r  mytls/pixel_reg[3]/C
                          clock pessimism              0.287     8.750    
                          clock uncertainty           -0.073     8.677    
@@ -3563,7 +3563,7 @@ Slack (MET) :             2.353ns  (required time - arrival time)
                                                      -5.294    -2.990 r  ClockDivider/inst/mmcm_adv_inst/CLKOUT1
                          net (fo=1, routed)           1.297    -1.693    ClockDivider/inst/clk_out2_clk_wiz_0
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.076    -1.617 r  ClockDivider/inst/clkout2_buf/O
-                         net (fo=668, routed)         1.262    -0.355    myss/clock
+                         net (fo=669, routed)         1.262    -0.355    myss/clock
     SLICE_X10Y99         FDRE                                         r  myss/verticalShiftLeftFactor_reg[1]/C
   -------------------------------------------------------------------    -------------------
     SLICE_X10Y99         FDRE (Prop_fdre_C_Q)         0.361     0.006 r  myss/verticalShiftLeftFactor_reg[1]/Q
@@ -3607,7 +3607,7 @@ Slack (MET) :             2.353ns  (required time - arrival time)
                                                      -5.390     6.020 r  ClockDivider/inst/mmcm_adv_inst/CLKOUT1
                          net (fo=1, routed)           1.234     7.255    ClockDivider/inst/clk_out2_clk_wiz_0
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.072     7.327 r  ClockDivider/inst/clkout2_buf/O
-                         net (fo=668, routed)         1.136     8.463    mytls/clock
+                         net (fo=669, routed)         1.136     8.463    mytls/clock
     SLICE_X15Y100        FDRE                                         r  mytls/pixel_reg[5]/C
                          clock pessimism              0.287     8.750    
                          clock uncertainty           -0.073     8.677    
@@ -3650,7 +3650,7 @@ Slack (MET) :             2.353ns  (required time - arrival time)
                                                      -5.294    -2.990 r  ClockDivider/inst/mmcm_adv_inst/CLKOUT1
                          net (fo=1, routed)           1.297    -1.693    ClockDivider/inst/clk_out2_clk_wiz_0
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.076    -1.617 r  ClockDivider/inst/clkout2_buf/O
-                         net (fo=668, routed)         1.262    -0.355    myss/clock
+                         net (fo=669, routed)         1.262    -0.355    myss/clock
     SLICE_X10Y99         FDRE                                         r  myss/verticalShiftLeftFactor_reg[1]/C
   -------------------------------------------------------------------    -------------------
     SLICE_X10Y99         FDRE (Prop_fdre_C_Q)         0.361     0.006 r  myss/verticalShiftLeftFactor_reg[1]/Q
@@ -3694,7 +3694,7 @@ Slack (MET) :             2.353ns  (required time - arrival time)
                                                      -5.390     6.020 r  ClockDivider/inst/mmcm_adv_inst/CLKOUT1
                          net (fo=1, routed)           1.234     7.255    ClockDivider/inst/clk_out2_clk_wiz_0
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.072     7.327 r  ClockDivider/inst/clkout2_buf/O
-                         net (fo=668, routed)         1.136     8.463    mytls/clock
+                         net (fo=669, routed)         1.136     8.463    mytls/clock
     SLICE_X15Y100        FDRE                                         r  mytls/pixel_reg[7]/C
                          clock pessimism              0.287     8.750    
                          clock uncertainty           -0.073     8.677    
@@ -3737,7 +3737,7 @@ Slack (MET) :             2.434ns  (required time - arrival time)
                                                      -5.294    -2.990 r  ClockDivider/inst/mmcm_adv_inst/CLKOUT1
                          net (fo=1, routed)           1.297    -1.693    ClockDivider/inst/clk_out2_clk_wiz_0
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.076    -1.617 r  ClockDivider/inst/clkout2_buf/O
-                         net (fo=668, routed)         1.262    -0.355    myss/clock
+                         net (fo=669, routed)         1.262    -0.355    myss/clock
     SLICE_X10Y99         FDRE                                         r  myss/verticalShiftLeftFactor_reg[1]/C
   -------------------------------------------------------------------    -------------------
     SLICE_X10Y99         FDRE (Prop_fdre_C_Q)         0.361     0.006 r  myss/verticalShiftLeftFactor_reg[1]/Q
@@ -3781,7 +3781,7 @@ Slack (MET) :             2.434ns  (required time - arrival time)
                                                      -5.390     6.020 r  ClockDivider/inst/mmcm_adv_inst/CLKOUT1
                          net (fo=1, routed)           1.234     7.255    ClockDivider/inst/clk_out2_clk_wiz_0
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.072     7.327 r  ClockDivider/inst/clkout2_buf/O
-                         net (fo=668, routed)         1.136     8.463    mytls/clock
+                         net (fo=669, routed)         1.136     8.463    mytls/clock
     SLICE_X13Y100        FDRE                                         r  mytls/pixel_reg[1]/C
                          clock pessimism              0.287     8.750    
                          clock uncertainty           -0.073     8.677    
@@ -3824,7 +3824,7 @@ Slack (MET) :             2.434ns  (required time - arrival time)
                                                      -5.294    -2.990 r  ClockDivider/inst/mmcm_adv_inst/CLKOUT1
                          net (fo=1, routed)           1.297    -1.693    ClockDivider/inst/clk_out2_clk_wiz_0
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.076    -1.617 r  ClockDivider/inst/clkout2_buf/O
-                         net (fo=668, routed)         1.262    -0.355    myss/clock
+                         net (fo=669, routed)         1.262    -0.355    myss/clock
     SLICE_X10Y99         FDRE                                         r  myss/verticalShiftLeftFactor_reg[1]/C
   -------------------------------------------------------------------    -------------------
     SLICE_X10Y99         FDRE (Prop_fdre_C_Q)         0.361     0.006 r  myss/verticalShiftLeftFactor_reg[1]/Q
@@ -3868,7 +3868,7 @@ Slack (MET) :             2.434ns  (required time - arrival time)
                                                      -5.390     6.020 r  ClockDivider/inst/mmcm_adv_inst/CLKOUT1
                          net (fo=1, routed)           1.234     7.255    ClockDivider/inst/clk_out2_clk_wiz_0
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.072     7.327 r  ClockDivider/inst/clkout2_buf/O
-                         net (fo=668, routed)         1.136     8.463    mytls/clock
+                         net (fo=669, routed)         1.136     8.463    mytls/clock
     SLICE_X13Y100        FDSE                                         r  mytls/pixel_reg[9]/C
                          clock pessimism              0.287     8.750    
                          clock uncertainty           -0.073     8.677    
@@ -3911,7 +3911,7 @@ Slack (MET) :             3.353ns  (required time - arrival time)
                                                      -5.294    -2.990 r  ClockDivider/inst/mmcm_adv_inst/CLKOUT1
                          net (fo=1, routed)           1.297    -1.693    ClockDivider/inst/clk_out2_clk_wiz_0
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.076    -1.617 r  ClockDivider/inst/clkout2_buf/O
-                         net (fo=668, routed)         1.258    -0.359    Buffer2/clock
+                         net (fo=669, routed)         1.258    -0.359    Buffer2/clock
     SLICE_X9Y87          FDRE                                         r  Buffer2/dataOut_reg[0]/C
   -------------------------------------------------------------------    -------------------
     SLICE_X9Y87          FDRE (Prop_fdre_C_Q)         0.341    -0.018 f  Buffer2/dataOut_reg[0]/Q
@@ -3950,7 +3950,7 @@ Slack (MET) :             3.353ns  (required time - arrival time)
                                                      -5.390     6.020 r  ClockDivider/inst/mmcm_adv_inst/CLKOUT1
                          net (fo=1, routed)           1.234     7.255    ClockDivider/inst/clk_out2_clk_wiz_0
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.072     7.327 r  ClockDivider/inst/clkout2_buf/O
-                         net (fo=668, routed)         1.217     8.544    myCurve2/clock
+                         net (fo=669, routed)         1.217     8.544    myCurve2/clock
     SLICE_X7Y96          FDRE                                         r  myCurve2/pixelOn_reg/C
                          clock pessimism              0.348     8.891    
                          clock uncertainty           -0.073     8.818    
@@ -3993,7 +3993,7 @@ Slack (MET) :             3.417ns  (required time - arrival time)
                                                      -5.294    -2.990 r  ClockDivider/inst/mmcm_adv_inst/CLKOUT1
                          net (fo=1, routed)           1.297    -1.693    ClockDivider/inst/clk_out2_clk_wiz_0
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.076    -1.617 r  ClockDivider/inst/clkout2_buf/O
-                         net (fo=668, routed)         1.238    -0.379    myed/clock
+                         net (fo=669, routed)         1.238    -0.379    myed/clock
     SLICE_X14Y107        FDRE                                         r  myed/intermediates_reg[1][0]/C
   -------------------------------------------------------------------    -------------------
     SLICE_X14Y107        FDRE (Prop_fdre_C_Q)         0.361    -0.018 r  myed/intermediates_reg[1][0]/Q
@@ -4036,7 +4036,7 @@ Slack (MET) :             3.417ns  (required time - arrival time)
                                                      -5.390     6.020 r  ClockDivider/inst/mmcm_adv_inst/CLKOUT1
                          net (fo=1, routed)           1.234     7.255    ClockDivider/inst/clk_out2_clk_wiz_0
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.072     7.327 r  ClockDivider/inst/clkout2_buf/O
-                         net (fo=668, routed)         1.137     8.464    myed/clock
+                         net (fo=669, routed)         1.137     8.464    myed/clock
     SLICE_X10Y107        FDRE                                         r  myed/smoothedSample_reg[3]/C
                          clock pessimism              0.346     8.810    
                          clock uncertainty           -0.073     8.737    
@@ -4079,7 +4079,7 @@ Slack (MET) :             3.449ns  (required time - arrival time)
                                                      -5.294    -2.990 r  ClockDivider/inst/mmcm_adv_inst/CLKOUT1
                          net (fo=1, routed)           1.297    -1.693    ClockDivider/inst/clk_out2_clk_wiz_0
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.076    -1.617 r  ClockDivider/inst/clkout2_buf/O
-                         net (fo=668, routed)         1.238    -0.379    myed/clock
+                         net (fo=669, routed)         1.238    -0.379    myed/clock
     SLICE_X14Y107        FDRE                                         r  myed/intermediates_reg[1][0]/C
   -------------------------------------------------------------------    -------------------
     SLICE_X14Y107        FDRE (Prop_fdre_C_Q)         0.361    -0.018 r  myed/intermediates_reg[1][0]/Q
@@ -4122,7 +4122,7 @@ Slack (MET) :             3.449ns  (required time - arrival time)
                                                      -5.390     6.020 r  ClockDivider/inst/mmcm_adv_inst/CLKOUT1
                          net (fo=1, routed)           1.234     7.255    ClockDivider/inst/clk_out2_clk_wiz_0
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.072     7.327 r  ClockDivider/inst/clkout2_buf/O
-                         net (fo=668, routed)         1.137     8.464    myed/clock
+                         net (fo=669, routed)         1.137     8.464    myed/clock
     SLICE_X10Y107        FDRE                                         r  myed/smoothedSample_reg[6]/C
                          clock pessimism              0.346     8.810    
                          clock uncertainty           -0.073     8.737    
@@ -4171,7 +4171,7 @@ Slack (MET) :             0.057ns  (arrival time - required time)
                                                      -2.379    -1.689 r  ClockDivider/inst/mmcm_adv_inst/CLKOUT1
                          net (fo=1, routed)           0.499    -1.190    ClockDivider/inst/clk_out2_clk_wiz_0
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026    -1.164 r  ClockDivider/inst/clkout2_buf/O
-                         net (fo=668, routed)         0.571    -0.593    Buffer2/clock
+                         net (fo=669, routed)         0.571    -0.593    Buffer2/clock
     SLICE_X8Y86          FDRE                                         r  Buffer2/ram0_addrb_reg[1]/C
   -------------------------------------------------------------------    -------------------
     SLICE_X8Y86          FDRE (Prop_fdre_C_Q)         0.164    -0.429 r  Buffer2/ram0_addrb_reg[1]/Q
@@ -4189,7 +4189,7 @@ Slack (MET) :             0.057ns  (arrival time - required time)
                                                      -3.163    -2.245 r  ClockDivider/inst/mmcm_adv_inst/CLKOUT1
                          net (fo=1, routed)           0.544    -1.702    ClockDivider/inst/clk_out2_clk_wiz_0
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029    -1.673 r  ClockDivider/inst/clkout2_buf/O
-                         net (fo=668, routed)         0.877    -0.796    Buffer2/bram0/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_init.ram/clkb
+                         net (fo=669, routed)         0.877    -0.796    Buffer2/bram0/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_init.ram/clkb
     RAMB18_X0Y35         RAMB18E1                                     r  Buffer2/bram0/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM18.ram/CLKBWRCLK
                          clock pessimism              0.254    -0.542    
                          clock uncertainty            0.073    -0.469    
@@ -4233,7 +4233,7 @@ Slack (MET) :             0.077ns  (arrival time - required time)
                                                      -2.379    -1.689 r  ClockDivider/inst/mmcm_adv_inst/CLKOUT1
                          net (fo=1, routed)           0.499    -1.190    ClockDivider/inst/clk_out2_clk_wiz_0
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026    -1.164 r  ClockDivider/inst/clkout2_buf/O
-                         net (fo=668, routed)         0.568    -0.596    myed/clock
+                         net (fo=669, routed)         0.568    -0.596    myed/clock
     SLICE_X9Y109         FDRE                                         r  myed/previousSamples_reg[1][3]/C
   -------------------------------------------------------------------    -------------------
     SLICE_X9Y109         FDRE (Prop_fdre_C_Q)         0.141    -0.455 r  myed/previousSamples_reg[1][3]/Q
@@ -4251,7 +4251,7 @@ Slack (MET) :             0.077ns  (arrival time - required time)
                                                      -3.163    -2.245 r  ClockDivider/inst/mmcm_adv_inst/CLKOUT1
                          net (fo=1, routed)           0.544    -1.702    ClockDivider/inst/clk_out2_clk_wiz_0
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029    -1.673 r  ClockDivider/inst/clkout2_buf/O
-                         net (fo=668, routed)         0.839    -0.834    myed/clock
+                         net (fo=669, routed)         0.839    -0.834    myed/clock
     SLICE_X10Y109        FDRE                                         r  myed/previousSamples_reg[2][3]/C
                          clock pessimism              0.275    -0.559    
                          clock uncertainty            0.073    -0.486    
@@ -4294,7 +4294,7 @@ Slack (MET) :             0.080ns  (arrival time - required time)
                                                      -2.379    -1.689 r  ClockDivider/inst/mmcm_adv_inst/CLKOUT1
                          net (fo=1, routed)           0.499    -1.190    ClockDivider/inst/clk_out2_clk_wiz_0
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026    -1.164 r  ClockDivider/inst/clkout2_buf/O
-                         net (fo=668, routed)         0.569    -0.595    myed/clock
+                         net (fo=669, routed)         0.569    -0.595    myed/clock
     SLICE_X13Y106        FDRE                                         r  myed/previousSamples_reg[2][1]/C
   -------------------------------------------------------------------    -------------------
     SLICE_X13Y106        FDRE (Prop_fdre_C_Q)         0.141    -0.454 r  myed/previousSamples_reg[2][1]/Q
@@ -4312,7 +4312,7 @@ Slack (MET) :             0.080ns  (arrival time - required time)
                                                      -3.163    -2.245 r  ClockDivider/inst/mmcm_adv_inst/CLKOUT1
                          net (fo=1, routed)           0.544    -1.702    ClockDivider/inst/clk_out2_clk_wiz_0
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029    -1.673 r  ClockDivider/inst/clkout2_buf/O
-                         net (fo=668, routed)         0.840    -0.833    myed/clock
+                         net (fo=669, routed)         0.840    -0.833    myed/clock
     SLICE_X15Y106        FDRE                                         r  myed/previousSamples_reg[3][1]/C
                          clock pessimism              0.254    -0.579    
                          clock uncertainty            0.073    -0.506    
@@ -4355,7 +4355,7 @@ Slack (MET) :             0.084ns  (arrival time - required time)
                                                      -2.379    -1.689 r  ClockDivider/inst/mmcm_adv_inst/CLKOUT1
                          net (fo=1, routed)           0.499    -1.190    ClockDivider/inst/clk_out2_clk_wiz_0
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026    -1.164 r  ClockDivider/inst/clkout2_buf/O
-                         net (fo=668, routed)         0.568    -0.596    myed/clock
+                         net (fo=669, routed)         0.568    -0.596    myed/clock
     SLICE_X10Y107        FDRE                                         r  myed/smoothedSample_reg[3]/C
   -------------------------------------------------------------------    -------------------
     SLICE_X10Y107        FDRE (Prop_fdre_C_Q)         0.164    -0.432 r  myed/smoothedSample_reg[3]/Q
@@ -4373,7 +4373,7 @@ Slack (MET) :             0.084ns  (arrival time - required time)
                                                      -3.163    -2.245 r  ClockDivider/inst/mmcm_adv_inst/CLKOUT1
                          net (fo=1, routed)           0.544    -1.702    ClockDivider/inst/clk_out2_clk_wiz_0
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029    -1.673 r  ClockDivider/inst/clkout2_buf/O
-                         net (fo=668, routed)         0.840    -0.833    myed/clock
+                         net (fo=669, routed)         0.840    -0.833    myed/clock
     SLICE_X10Y106        SRL16E                                       r  myed/previousSmoothedSamples_reg[3][3]_srl4/CLK
                          clock pessimism              0.254    -0.579    
                          clock uncertainty            0.073    -0.506    
@@ -4417,7 +4417,7 @@ Slack (MET) :             0.087ns  (arrival time - required time)
                                                      -2.379    -1.689 r  ClockDivider/inst/mmcm_adv_inst/CLKOUT1
                          net (fo=1, routed)           0.499    -1.190    ClockDivider/inst/clk_out2_clk_wiz_0
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026    -1.164 r  ClockDivider/inst/clkout2_buf/O
-                         net (fo=668, routed)         0.573    -0.591    Buffer2/clock
+                         net (fo=669, routed)         0.573    -0.591    Buffer2/clock
     SLICE_X11Y88         FDRE                                         r  Buffer2/pointer0_reg[9]/C
   -------------------------------------------------------------------    -------------------
     SLICE_X11Y88         FDRE (Prop_fdre_C_Q)         0.141    -0.450 r  Buffer2/pointer0_reg[9]/Q
@@ -4435,7 +4435,7 @@ Slack (MET) :             0.087ns  (arrival time - required time)
                                                      -3.163    -2.245 r  ClockDivider/inst/mmcm_adv_inst/CLKOUT1
                          net (fo=1, routed)           0.544    -1.702    ClockDivider/inst/clk_out2_clk_wiz_0
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029    -1.673 r  ClockDivider/inst/clkout2_buf/O
-                         net (fo=668, routed)         0.844    -0.829    Buffer2/clock
+                         net (fo=669, routed)         0.844    -0.829    Buffer2/clock
     SLICE_X9Y88          FDRE                                         r  Buffer2/ram0_addra_reg[9]/C
                          clock pessimism              0.275    -0.554    
                          clock uncertainty            0.073    -0.481    
@@ -4478,7 +4478,7 @@ Slack (MET) :             0.088ns  (arrival time - required time)
                                                      -2.379    -1.689 r  ClockDivider/inst/mmcm_adv_inst/CLKOUT1
                          net (fo=1, routed)           0.499    -1.190    ClockDivider/inst/clk_out2_clk_wiz_0
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026    -1.164 r  ClockDivider/inst/clkout2_buf/O
-                         net (fo=668, routed)         0.569    -0.595    myed/clock
+                         net (fo=669, routed)         0.569    -0.595    myed/clock
     SLICE_X15Y105        FDRE                                         r  myed/state_reg[1]/C
   -------------------------------------------------------------------    -------------------
     SLICE_X15Y105        FDRE (Prop_fdre_C_Q)         0.141    -0.454 r  myed/state_reg[1]/Q
@@ -4498,7 +4498,7 @@ Slack (MET) :             0.088ns  (arrival time - required time)
                                                      -3.163    -2.245 r  ClockDivider/inst/mmcm_adv_inst/CLKOUT1
                          net (fo=1, routed)           0.544    -1.702    ClockDivider/inst/clk_out2_clk_wiz_0
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029    -1.673 r  ClockDivider/inst/clkout2_buf/O
-                         net (fo=668, routed)         0.840    -0.833    myed/clock
+                         net (fo=669, routed)         0.840    -0.833    myed/clock
     SLICE_X14Y105        FDRE                                         r  myed/state_reg[4]/C
                          clock pessimism              0.251    -0.582    
                          clock uncertainty            0.073    -0.509    
@@ -4541,7 +4541,7 @@ Slack (MET) :             0.088ns  (arrival time - required time)
                                                      -2.379    -1.689 r  ClockDivider/inst/mmcm_adv_inst/CLKOUT1
                          net (fo=1, routed)           0.499    -1.190    ClockDivider/inst/clk_out2_clk_wiz_0
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026    -1.164 r  ClockDivider/inst/clkout2_buf/O
-                         net (fo=668, routed)         0.575    -0.589    myGrid/clock
+                         net (fo=669, routed)         0.575    -0.589    myGrid/clock
     SLICE_X11Y94         FDRE                                         r  myGrid/gridDisplayY_reg[2]/C
   -------------------------------------------------------------------    -------------------
     SLICE_X11Y94         FDRE (Prop_fdre_C_Q)         0.141    -0.448 r  myGrid/gridDisplayY_reg[2]/Q
@@ -4559,7 +4559,7 @@ Slack (MET) :             0.088ns  (arrival time - required time)
                                                      -3.163    -2.245 r  ClockDivider/inst/mmcm_adv_inst/CLKOUT1
                          net (fo=1, routed)           0.544    -1.702    ClockDivider/inst/clk_out2_clk_wiz_0
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029    -1.673 r  ClockDivider/inst/clkout2_buf/O
-                         net (fo=668, routed)         0.846    -0.827    myCurve/clock
+                         net (fo=669, routed)         0.846    -0.827    myCurve/clock
     SLICE_X9Y94          FDRE                                         r  myCurve/curveDisplayY_reg[2]/C
                          clock pessimism              0.275    -0.552    
                          clock uncertainty            0.073    -0.479    
@@ -4602,7 +4602,7 @@ Slack (MET) :             0.089ns  (arrival time - required time)
                                                      -2.379    -1.689 r  ClockDivider/inst/mmcm_adv_inst/CLKOUT1
                          net (fo=1, routed)           0.499    -1.190    ClockDivider/inst/clk_out2_clk_wiz_0
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026    -1.164 r  ClockDivider/inst/clkout2_buf/O
-                         net (fo=668, routed)         0.569    -0.595    myed/clock
+                         net (fo=669, routed)         0.569    -0.595    myed/clock
     SLICE_X13Y105        FDRE                                         r  myed/previousSamples_reg[1][0]/C
   -------------------------------------------------------------------    -------------------
     SLICE_X13Y105        FDRE (Prop_fdre_C_Q)         0.141    -0.454 r  myed/previousSamples_reg[1][0]/Q
@@ -4620,7 +4620,7 @@ Slack (MET) :             0.089ns  (arrival time - required time)
                                                      -3.163    -2.245 r  ClockDivider/inst/mmcm_adv_inst/CLKOUT1
                          net (fo=1, routed)           0.544    -1.702    ClockDivider/inst/clk_out2_clk_wiz_0
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029    -1.673 r  ClockDivider/inst/clkout2_buf/O
-                         net (fo=668, routed)         0.840    -0.833    myed/clock
+                         net (fo=669, routed)         0.840    -0.833    myed/clock
     SLICE_X13Y106        FDRE                                         r  myed/previousSamples_reg[2][0]/C
                          clock pessimism              0.254    -0.579    
                          clock uncertainty            0.073    -0.506    
@@ -4663,7 +4663,7 @@ Slack (MET) :             0.091ns  (arrival time - required time)
                                                      -2.379    -1.689 r  ClockDivider/inst/mmcm_adv_inst/CLKOUT1
                          net (fo=1, routed)           0.499    -1.190    ClockDivider/inst/clk_out2_clk_wiz_0
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026    -1.164 r  ClockDivider/inst/clkout2_buf/O
-                         net (fo=668, routed)         0.570    -0.594    mytls/clock
+                         net (fo=669, routed)         0.570    -0.594    mytls/clock
     SLICE_X13Y100        FDSE                                         r  mytls/pixel_reg[9]/C
   -------------------------------------------------------------------    -------------------
     SLICE_X13Y100        FDSE (Prop_fdse_C_Q)         0.141    -0.453 r  mytls/pixel_reg[9]/Q
@@ -4681,7 +4681,7 @@ Slack (MET) :             0.091ns  (arrival time - required time)
                                                      -3.163    -2.245 r  ClockDivider/inst/mmcm_adv_inst/CLKOUT1
                          net (fo=1, routed)           0.544    -1.702    ClockDivider/inst/clk_out2_clk_wiz_0
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029    -1.673 r  ClockDivider/inst/clkout2_buf/O
-                         net (fo=668, routed)         0.841    -0.832    CLK108MHZ
+                         net (fo=669, routed)         0.841    -0.832    CLK108MHZ
     SLICE_X14Y100        FDRE                                         r  VGA_R_reg[1]/C
                          clock pessimism              0.254    -0.578    
                          clock uncertainty            0.073    -0.505    
@@ -4724,7 +4724,7 @@ Slack (MET) :             0.092ns  (arrival time - required time)
                                                      -2.379    -1.689 r  ClockDivider/inst/mmcm_adv_inst/CLKOUT1
                          net (fo=1, routed)           0.499    -1.190    ClockDivider/inst/clk_out2_clk_wiz_0
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026    -1.164 r  ClockDivider/inst/clkout2_buf/O
-                         net (fo=668, routed)         0.570    -0.594    Buffer/clock
+                         net (fo=669, routed)         0.570    -0.594    Buffer/clock
     SLICE_X10Y102        FDRE                                         r  Buffer/ram1_addra_reg[2]/C
   -------------------------------------------------------------------    -------------------
     SLICE_X10Y102        FDRE (Prop_fdre_C_Q)         0.164    -0.430 r  Buffer/ram1_addra_reg[2]/Q
@@ -4742,7 +4742,7 @@ Slack (MET) :             0.092ns  (arrival time - required time)
                                                      -3.163    -2.245 r  ClockDivider/inst/mmcm_adv_inst/CLKOUT1
                          net (fo=1, routed)           0.544    -1.702    ClockDivider/inst/clk_out2_clk_wiz_0
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029    -1.673 r  ClockDivider/inst/clkout2_buf/O
-                         net (fo=668, routed)         0.874    -0.798    Buffer/bram1/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_init.ram/clka
+                         net (fo=669, routed)         0.874    -0.798    Buffer/bram1/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_init.ram/clka
     RAMB18_X0Y42         RAMB18E1                                     r  Buffer/bram1/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM18.ram/CLKARDCLK
                          clock pessimism              0.275    -0.523    
                          clock uncertainty            0.073    -0.450    
@@ -4801,7 +4801,7 @@ Slack (MET) :             2.247ns  (required time - arrival time)
                                                      -5.294    -2.990 r  ClockDivider/inst/mmcm_adv_inst/CLKOUT1
                          net (fo=1, routed)           1.297    -1.693    ClockDivider/inst/clk_out2_clk_wiz_0
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.076    -1.617 r  ClockDivider/inst/clkout2_buf/O
-                         net (fo=668, routed)         1.239    -0.378    Buffer/clock
+                         net (fo=669, routed)         1.239    -0.378    Buffer/clock
     SLICE_X8Y105         FDRE                                         r  Buffer/dataOut_reg[1]/C
   -------------------------------------------------------------------    -------------------
     SLICE_X8Y105         FDRE (Prop_fdre_C_Q)         0.361    -0.017 f  Buffer/dataOut_reg[1]/Q
@@ -4852,7 +4852,7 @@ Slack (MET) :             2.247ns  (required time - arrival time)
                                                      -5.390     6.020 r  ClockDivider/inst/mmcm_adv_inst/CLKOUT1
                          net (fo=1, routed)           1.234     7.255    ClockDivider/inst/clk_out2_clk_wiz_0
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.072     7.327 r  ClockDivider/inst/clkout2_buf/O
-                         net (fo=668, routed)         1.137     8.464    myCurve/clock
+                         net (fo=669, routed)         1.137     8.464    myCurve/clock
     SLICE_X11Y100        FDRE                                         r  myCurve/pixelOn_reg/C
                          clock pessimism              0.346     8.810    
                          clock uncertainty           -0.073     8.737    
@@ -4895,7 +4895,7 @@ Slack (MET) :             2.353ns  (required time - arrival time)
                                                      -5.294    -2.990 r  ClockDivider/inst/mmcm_adv_inst/CLKOUT1
                          net (fo=1, routed)           1.297    -1.693    ClockDivider/inst/clk_out2_clk_wiz_0
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.076    -1.617 r  ClockDivider/inst/clkout2_buf/O
-                         net (fo=668, routed)         1.262    -0.355    myss/clock
+                         net (fo=669, routed)         1.262    -0.355    myss/clock
     SLICE_X10Y99         FDRE                                         r  myss/verticalShiftLeftFactor_reg[1]/C
   -------------------------------------------------------------------    -------------------
     SLICE_X10Y99         FDRE (Prop_fdre_C_Q)         0.361     0.006 r  myss/verticalShiftLeftFactor_reg[1]/Q
@@ -4939,7 +4939,7 @@ Slack (MET) :             2.353ns  (required time - arrival time)
                                                      -5.390     6.020 r  ClockDivider/inst/mmcm_adv_inst/CLKOUT1
                          net (fo=1, routed)           1.234     7.255    ClockDivider/inst/clk_out2_clk_wiz_0
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.072     7.327 r  ClockDivider/inst/clkout2_buf/O
-                         net (fo=668, routed)         1.136     8.463    mytls/clock
+                         net (fo=669, routed)         1.136     8.463    mytls/clock
     SLICE_X15Y100        FDSE                                         r  mytls/pixel_reg[11]/C
                          clock pessimism              0.287     8.750    
                          clock uncertainty           -0.073     8.677    
@@ -4982,7 +4982,7 @@ Slack (MET) :             2.353ns  (required time - arrival time)
                                                      -5.294    -2.990 r  ClockDivider/inst/mmcm_adv_inst/CLKOUT1
                          net (fo=1, routed)           1.297    -1.693    ClockDivider/inst/clk_out2_clk_wiz_0
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.076    -1.617 r  ClockDivider/inst/clkout2_buf/O
-                         net (fo=668, routed)         1.262    -0.355    myss/clock
+                         net (fo=669, routed)         1.262    -0.355    myss/clock
     SLICE_X10Y99         FDRE                                         r  myss/verticalShiftLeftFactor_reg[1]/C
   -------------------------------------------------------------------    -------------------
     SLICE_X10Y99         FDRE (Prop_fdre_C_Q)         0.361     0.006 r  myss/verticalShiftLeftFactor_reg[1]/Q
@@ -5026,7 +5026,7 @@ Slack (MET) :             2.353ns  (required time - arrival time)
                                                      -5.390     6.020 r  ClockDivider/inst/mmcm_adv_inst/CLKOUT1
                          net (fo=1, routed)           1.234     7.255    ClockDivider/inst/clk_out2_clk_wiz_0
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.072     7.327 r  ClockDivider/inst/clkout2_buf/O
-                         net (fo=668, routed)         1.136     8.463    mytls/clock
+                         net (fo=669, routed)         1.136     8.463    mytls/clock
     SLICE_X15Y100        FDRE                                         r  mytls/pixel_reg[3]/C
                          clock pessimism              0.287     8.750    
                          clock uncertainty           -0.073     8.677    
@@ -5069,7 +5069,7 @@ Slack (MET) :             2.353ns  (required time - arrival time)
                                                      -5.294    -2.990 r  ClockDivider/inst/mmcm_adv_inst/CLKOUT1
                          net (fo=1, routed)           1.297    -1.693    ClockDivider/inst/clk_out2_clk_wiz_0
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.076    -1.617 r  ClockDivider/inst/clkout2_buf/O
-                         net (fo=668, routed)         1.262    -0.355    myss/clock
+                         net (fo=669, routed)         1.262    -0.355    myss/clock
     SLICE_X10Y99         FDRE                                         r  myss/verticalShiftLeftFactor_reg[1]/C
   -------------------------------------------------------------------    -------------------
     SLICE_X10Y99         FDRE (Prop_fdre_C_Q)         0.361     0.006 r  myss/verticalShiftLeftFactor_reg[1]/Q
@@ -5113,7 +5113,7 @@ Slack (MET) :             2.353ns  (required time - arrival time)
                                                      -5.390     6.020 r  ClockDivider/inst/mmcm_adv_inst/CLKOUT1
                          net (fo=1, routed)           1.234     7.255    ClockDivider/inst/clk_out2_clk_wiz_0
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.072     7.327 r  ClockDivider/inst/clkout2_buf/O
-                         net (fo=668, routed)         1.136     8.463    mytls/clock
+                         net (fo=669, routed)         1.136     8.463    mytls/clock
     SLICE_X15Y100        FDRE                                         r  mytls/pixel_reg[5]/C
                          clock pessimism              0.287     8.750    
                          clock uncertainty           -0.073     8.677    
@@ -5156,7 +5156,7 @@ Slack (MET) :             2.353ns  (required time - arrival time)
                                                      -5.294    -2.990 r  ClockDivider/inst/mmcm_adv_inst/CLKOUT1
                          net (fo=1, routed)           1.297    -1.693    ClockDivider/inst/clk_out2_clk_wiz_0
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.076    -1.617 r  ClockDivider/inst/clkout2_buf/O
-                         net (fo=668, routed)         1.262    -0.355    myss/clock
+                         net (fo=669, routed)         1.262    -0.355    myss/clock
     SLICE_X10Y99         FDRE                                         r  myss/verticalShiftLeftFactor_reg[1]/C
   -------------------------------------------------------------------    -------------------
     SLICE_X10Y99         FDRE (Prop_fdre_C_Q)         0.361     0.006 r  myss/verticalShiftLeftFactor_reg[1]/Q
@@ -5200,7 +5200,7 @@ Slack (MET) :             2.353ns  (required time - arrival time)
                                                      -5.390     6.020 r  ClockDivider/inst/mmcm_adv_inst/CLKOUT1
                          net (fo=1, routed)           1.234     7.255    ClockDivider/inst/clk_out2_clk_wiz_0
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.072     7.327 r  ClockDivider/inst/clkout2_buf/O
-                         net (fo=668, routed)         1.136     8.463    mytls/clock
+                         net (fo=669, routed)         1.136     8.463    mytls/clock
     SLICE_X15Y100        FDRE                                         r  mytls/pixel_reg[7]/C
                          clock pessimism              0.287     8.750    
                          clock uncertainty           -0.073     8.677    
@@ -5243,7 +5243,7 @@ Slack (MET) :             2.434ns  (required time - arrival time)
                                                      -5.294    -2.990 r  ClockDivider/inst/mmcm_adv_inst/CLKOUT1
                          net (fo=1, routed)           1.297    -1.693    ClockDivider/inst/clk_out2_clk_wiz_0
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.076    -1.617 r  ClockDivider/inst/clkout2_buf/O
-                         net (fo=668, routed)         1.262    -0.355    myss/clock
+                         net (fo=669, routed)         1.262    -0.355    myss/clock
     SLICE_X10Y99         FDRE                                         r  myss/verticalShiftLeftFactor_reg[1]/C
   -------------------------------------------------------------------    -------------------
     SLICE_X10Y99         FDRE (Prop_fdre_C_Q)         0.361     0.006 r  myss/verticalShiftLeftFactor_reg[1]/Q
@@ -5287,7 +5287,7 @@ Slack (MET) :             2.434ns  (required time - arrival time)
                                                      -5.390     6.020 r  ClockDivider/inst/mmcm_adv_inst/CLKOUT1
                          net (fo=1, routed)           1.234     7.255    ClockDivider/inst/clk_out2_clk_wiz_0
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.072     7.327 r  ClockDivider/inst/clkout2_buf/O
-                         net (fo=668, routed)         1.136     8.463    mytls/clock
+                         net (fo=669, routed)         1.136     8.463    mytls/clock
     SLICE_X13Y100        FDRE                                         r  mytls/pixel_reg[1]/C
                          clock pessimism              0.287     8.750    
                          clock uncertainty           -0.073     8.677    
@@ -5330,7 +5330,7 @@ Slack (MET) :             2.434ns  (required time - arrival time)
                                                      -5.294    -2.990 r  ClockDivider/inst/mmcm_adv_inst/CLKOUT1
                          net (fo=1, routed)           1.297    -1.693    ClockDivider/inst/clk_out2_clk_wiz_0
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.076    -1.617 r  ClockDivider/inst/clkout2_buf/O
-                         net (fo=668, routed)         1.262    -0.355    myss/clock
+                         net (fo=669, routed)         1.262    -0.355    myss/clock
     SLICE_X10Y99         FDRE                                         r  myss/verticalShiftLeftFactor_reg[1]/C
   -------------------------------------------------------------------    -------------------
     SLICE_X10Y99         FDRE (Prop_fdre_C_Q)         0.361     0.006 r  myss/verticalShiftLeftFactor_reg[1]/Q
@@ -5374,7 +5374,7 @@ Slack (MET) :             2.434ns  (required time - arrival time)
                                                      -5.390     6.020 r  ClockDivider/inst/mmcm_adv_inst/CLKOUT1
                          net (fo=1, routed)           1.234     7.255    ClockDivider/inst/clk_out2_clk_wiz_0
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.072     7.327 r  ClockDivider/inst/clkout2_buf/O
-                         net (fo=668, routed)         1.136     8.463    mytls/clock
+                         net (fo=669, routed)         1.136     8.463    mytls/clock
     SLICE_X13Y100        FDSE                                         r  mytls/pixel_reg[9]/C
                          clock pessimism              0.287     8.750    
                          clock uncertainty           -0.073     8.677    
@@ -5417,7 +5417,7 @@ Slack (MET) :             3.353ns  (required time - arrival time)
                                                      -5.294    -2.990 r  ClockDivider/inst/mmcm_adv_inst/CLKOUT1
                          net (fo=1, routed)           1.297    -1.693    ClockDivider/inst/clk_out2_clk_wiz_0
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.076    -1.617 r  ClockDivider/inst/clkout2_buf/O
-                         net (fo=668, routed)         1.258    -0.359    Buffer2/clock
+                         net (fo=669, routed)         1.258    -0.359    Buffer2/clock
     SLICE_X9Y87          FDRE                                         r  Buffer2/dataOut_reg[0]/C
   -------------------------------------------------------------------    -------------------
     SLICE_X9Y87          FDRE (Prop_fdre_C_Q)         0.341    -0.018 f  Buffer2/dataOut_reg[0]/Q
@@ -5456,7 +5456,7 @@ Slack (MET) :             3.353ns  (required time - arrival time)
                                                      -5.390     6.020 r  ClockDivider/inst/mmcm_adv_inst/CLKOUT1
                          net (fo=1, routed)           1.234     7.255    ClockDivider/inst/clk_out2_clk_wiz_0
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.072     7.327 r  ClockDivider/inst/clkout2_buf/O
-                         net (fo=668, routed)         1.217     8.544    myCurve2/clock
+                         net (fo=669, routed)         1.217     8.544    myCurve2/clock
     SLICE_X7Y96          FDRE                                         r  myCurve2/pixelOn_reg/C
                          clock pessimism              0.348     8.891    
                          clock uncertainty           -0.073     8.818    
@@ -5499,7 +5499,7 @@ Slack (MET) :             3.417ns  (required time - arrival time)
                                                      -5.294    -2.990 r  ClockDivider/inst/mmcm_adv_inst/CLKOUT1
                          net (fo=1, routed)           1.297    -1.693    ClockDivider/inst/clk_out2_clk_wiz_0
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.076    -1.617 r  ClockDivider/inst/clkout2_buf/O
-                         net (fo=668, routed)         1.238    -0.379    myed/clock
+                         net (fo=669, routed)         1.238    -0.379    myed/clock
     SLICE_X14Y107        FDRE                                         r  myed/intermediates_reg[1][0]/C
   -------------------------------------------------------------------    -------------------
     SLICE_X14Y107        FDRE (Prop_fdre_C_Q)         0.361    -0.018 r  myed/intermediates_reg[1][0]/Q
@@ -5542,7 +5542,7 @@ Slack (MET) :             3.417ns  (required time - arrival time)
                                                      -5.390     6.020 r  ClockDivider/inst/mmcm_adv_inst/CLKOUT1
                          net (fo=1, routed)           1.234     7.255    ClockDivider/inst/clk_out2_clk_wiz_0
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.072     7.327 r  ClockDivider/inst/clkout2_buf/O
-                         net (fo=668, routed)         1.137     8.464    myed/clock
+                         net (fo=669, routed)         1.137     8.464    myed/clock
     SLICE_X10Y107        FDRE                                         r  myed/smoothedSample_reg[3]/C
                          clock pessimism              0.346     8.810    
                          clock uncertainty           -0.073     8.737    
@@ -5585,7 +5585,7 @@ Slack (MET) :             3.449ns  (required time - arrival time)
                                                      -5.294    -2.990 r  ClockDivider/inst/mmcm_adv_inst/CLKOUT1
                          net (fo=1, routed)           1.297    -1.693    ClockDivider/inst/clk_out2_clk_wiz_0
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.076    -1.617 r  ClockDivider/inst/clkout2_buf/O
-                         net (fo=668, routed)         1.238    -0.379    myed/clock
+                         net (fo=669, routed)         1.238    -0.379    myed/clock
     SLICE_X14Y107        FDRE                                         r  myed/intermediates_reg[1][0]/C
   -------------------------------------------------------------------    -------------------
     SLICE_X14Y107        FDRE (Prop_fdre_C_Q)         0.361    -0.018 r  myed/intermediates_reg[1][0]/Q
@@ -5628,7 +5628,7 @@ Slack (MET) :             3.449ns  (required time - arrival time)
                                                      -5.390     6.020 r  ClockDivider/inst/mmcm_adv_inst/CLKOUT1
                          net (fo=1, routed)           1.234     7.255    ClockDivider/inst/clk_out2_clk_wiz_0
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.072     7.327 r  ClockDivider/inst/clkout2_buf/O
-                         net (fo=668, routed)         1.137     8.464    myed/clock
+                         net (fo=669, routed)         1.137     8.464    myed/clock
     SLICE_X10Y107        FDRE                                         r  myed/smoothedSample_reg[6]/C
                          clock pessimism              0.346     8.810    
                          clock uncertainty           -0.073     8.737    
@@ -5677,7 +5677,7 @@ Slack (MET) :             0.057ns  (arrival time - required time)
                                                      -2.379    -1.689 r  ClockDivider/inst/mmcm_adv_inst/CLKOUT1
                          net (fo=1, routed)           0.499    -1.190    ClockDivider/inst/clk_out2_clk_wiz_0
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026    -1.164 r  ClockDivider/inst/clkout2_buf/O
-                         net (fo=668, routed)         0.571    -0.593    Buffer2/clock
+                         net (fo=669, routed)         0.571    -0.593    Buffer2/clock
     SLICE_X8Y86          FDRE                                         r  Buffer2/ram0_addrb_reg[1]/C
   -------------------------------------------------------------------    -------------------
     SLICE_X8Y86          FDRE (Prop_fdre_C_Q)         0.164    -0.429 r  Buffer2/ram0_addrb_reg[1]/Q
@@ -5695,7 +5695,7 @@ Slack (MET) :             0.057ns  (arrival time - required time)
                                                      -3.163    -2.245 r  ClockDivider/inst/mmcm_adv_inst/CLKOUT1
                          net (fo=1, routed)           0.544    -1.702    ClockDivider/inst/clk_out2_clk_wiz_0
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029    -1.673 r  ClockDivider/inst/clkout2_buf/O
-                         net (fo=668, routed)         0.877    -0.796    Buffer2/bram0/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_init.ram/clkb
+                         net (fo=669, routed)         0.877    -0.796    Buffer2/bram0/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_init.ram/clkb
     RAMB18_X0Y35         RAMB18E1                                     r  Buffer2/bram0/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM18.ram/CLKBWRCLK
                          clock pessimism              0.254    -0.542    
                          clock uncertainty            0.073    -0.469    
@@ -5739,7 +5739,7 @@ Slack (MET) :             0.077ns  (arrival time - required time)
                                                      -2.379    -1.689 r  ClockDivider/inst/mmcm_adv_inst/CLKOUT1
                          net (fo=1, routed)           0.499    -1.190    ClockDivider/inst/clk_out2_clk_wiz_0
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026    -1.164 r  ClockDivider/inst/clkout2_buf/O
-                         net (fo=668, routed)         0.568    -0.596    myed/clock
+                         net (fo=669, routed)         0.568    -0.596    myed/clock
     SLICE_X9Y109         FDRE                                         r  myed/previousSamples_reg[1][3]/C
   -------------------------------------------------------------------    -------------------
     SLICE_X9Y109         FDRE (Prop_fdre_C_Q)         0.141    -0.455 r  myed/previousSamples_reg[1][3]/Q
@@ -5757,7 +5757,7 @@ Slack (MET) :             0.077ns  (arrival time - required time)
                                                      -3.163    -2.245 r  ClockDivider/inst/mmcm_adv_inst/CLKOUT1
                          net (fo=1, routed)           0.544    -1.702    ClockDivider/inst/clk_out2_clk_wiz_0
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029    -1.673 r  ClockDivider/inst/clkout2_buf/O
-                         net (fo=668, routed)         0.839    -0.834    myed/clock
+                         net (fo=669, routed)         0.839    -0.834    myed/clock
     SLICE_X10Y109        FDRE                                         r  myed/previousSamples_reg[2][3]/C
                          clock pessimism              0.275    -0.559    
                          clock uncertainty            0.073    -0.486    
@@ -5800,7 +5800,7 @@ Slack (MET) :             0.080ns  (arrival time - required time)
                                                      -2.379    -1.689 r  ClockDivider/inst/mmcm_adv_inst/CLKOUT1
                          net (fo=1, routed)           0.499    -1.190    ClockDivider/inst/clk_out2_clk_wiz_0
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026    -1.164 r  ClockDivider/inst/clkout2_buf/O
-                         net (fo=668, routed)         0.569    -0.595    myed/clock
+                         net (fo=669, routed)         0.569    -0.595    myed/clock
     SLICE_X13Y106        FDRE                                         r  myed/previousSamples_reg[2][1]/C
   -------------------------------------------------------------------    -------------------
     SLICE_X13Y106        FDRE (Prop_fdre_C_Q)         0.141    -0.454 r  myed/previousSamples_reg[2][1]/Q
@@ -5818,7 +5818,7 @@ Slack (MET) :             0.080ns  (arrival time - required time)
                                                      -3.163    -2.245 r  ClockDivider/inst/mmcm_adv_inst/CLKOUT1
                          net (fo=1, routed)           0.544    -1.702    ClockDivider/inst/clk_out2_clk_wiz_0
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029    -1.673 r  ClockDivider/inst/clkout2_buf/O
-                         net (fo=668, routed)         0.840    -0.833    myed/clock
+                         net (fo=669, routed)         0.840    -0.833    myed/clock
     SLICE_X15Y106        FDRE                                         r  myed/previousSamples_reg[3][1]/C
                          clock pessimism              0.254    -0.579    
                          clock uncertainty            0.073    -0.506    
@@ -5861,7 +5861,7 @@ Slack (MET) :             0.084ns  (arrival time - required time)
                                                      -2.379    -1.689 r  ClockDivider/inst/mmcm_adv_inst/CLKOUT1
                          net (fo=1, routed)           0.499    -1.190    ClockDivider/inst/clk_out2_clk_wiz_0
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026    -1.164 r  ClockDivider/inst/clkout2_buf/O
-                         net (fo=668, routed)         0.568    -0.596    myed/clock
+                         net (fo=669, routed)         0.568    -0.596    myed/clock
     SLICE_X10Y107        FDRE                                         r  myed/smoothedSample_reg[3]/C
   -------------------------------------------------------------------    -------------------
     SLICE_X10Y107        FDRE (Prop_fdre_C_Q)         0.164    -0.432 r  myed/smoothedSample_reg[3]/Q
@@ -5879,7 +5879,7 @@ Slack (MET) :             0.084ns  (arrival time - required time)
                                                      -3.163    -2.245 r  ClockDivider/inst/mmcm_adv_inst/CLKOUT1
                          net (fo=1, routed)           0.544    -1.702    ClockDivider/inst/clk_out2_clk_wiz_0
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029    -1.673 r  ClockDivider/inst/clkout2_buf/O
-                         net (fo=668, routed)         0.840    -0.833    myed/clock
+                         net (fo=669, routed)         0.840    -0.833    myed/clock
     SLICE_X10Y106        SRL16E                                       r  myed/previousSmoothedSamples_reg[3][3]_srl4/CLK
                          clock pessimism              0.254    -0.579    
                          clock uncertainty            0.073    -0.506    
@@ -5923,7 +5923,7 @@ Slack (MET) :             0.087ns  (arrival time - required time)
                                                      -2.379    -1.689 r  ClockDivider/inst/mmcm_adv_inst/CLKOUT1
                          net (fo=1, routed)           0.499    -1.190    ClockDivider/inst/clk_out2_clk_wiz_0
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026    -1.164 r  ClockDivider/inst/clkout2_buf/O
-                         net (fo=668, routed)         0.573    -0.591    Buffer2/clock
+                         net (fo=669, routed)         0.573    -0.591    Buffer2/clock
     SLICE_X11Y88         FDRE                                         r  Buffer2/pointer0_reg[9]/C
   -------------------------------------------------------------------    -------------------
     SLICE_X11Y88         FDRE (Prop_fdre_C_Q)         0.141    -0.450 r  Buffer2/pointer0_reg[9]/Q
@@ -5941,7 +5941,7 @@ Slack (MET) :             0.087ns  (arrival time - required time)
                                                      -3.163    -2.245 r  ClockDivider/inst/mmcm_adv_inst/CLKOUT1
                          net (fo=1, routed)           0.544    -1.702    ClockDivider/inst/clk_out2_clk_wiz_0
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029    -1.673 r  ClockDivider/inst/clkout2_buf/O
-                         net (fo=668, routed)         0.844    -0.829    Buffer2/clock
+                         net (fo=669, routed)         0.844    -0.829    Buffer2/clock
     SLICE_X9Y88          FDRE                                         r  Buffer2/ram0_addra_reg[9]/C
                          clock pessimism              0.275    -0.554    
                          clock uncertainty            0.073    -0.481    
@@ -5984,7 +5984,7 @@ Slack (MET) :             0.088ns  (arrival time - required time)
                                                      -2.379    -1.689 r  ClockDivider/inst/mmcm_adv_inst/CLKOUT1
                          net (fo=1, routed)           0.499    -1.190    ClockDivider/inst/clk_out2_clk_wiz_0
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026    -1.164 r  ClockDivider/inst/clkout2_buf/O
-                         net (fo=668, routed)         0.569    -0.595    myed/clock
+                         net (fo=669, routed)         0.569    -0.595    myed/clock
     SLICE_X15Y105        FDRE                                         r  myed/state_reg[1]/C
   -------------------------------------------------------------------    -------------------
     SLICE_X15Y105        FDRE (Prop_fdre_C_Q)         0.141    -0.454 r  myed/state_reg[1]/Q
@@ -6004,7 +6004,7 @@ Slack (MET) :             0.088ns  (arrival time - required time)
                                                      -3.163    -2.245 r  ClockDivider/inst/mmcm_adv_inst/CLKOUT1
                          net (fo=1, routed)           0.544    -1.702    ClockDivider/inst/clk_out2_clk_wiz_0
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029    -1.673 r  ClockDivider/inst/clkout2_buf/O
-                         net (fo=668, routed)         0.840    -0.833    myed/clock
+                         net (fo=669, routed)         0.840    -0.833    myed/clock
     SLICE_X14Y105        FDRE                                         r  myed/state_reg[4]/C
                          clock pessimism              0.251    -0.582    
                          clock uncertainty            0.073    -0.509    
@@ -6047,7 +6047,7 @@ Slack (MET) :             0.088ns  (arrival time - required time)
                                                      -2.379    -1.689 r  ClockDivider/inst/mmcm_adv_inst/CLKOUT1
                          net (fo=1, routed)           0.499    -1.190    ClockDivider/inst/clk_out2_clk_wiz_0
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026    -1.164 r  ClockDivider/inst/clkout2_buf/O
-                         net (fo=668, routed)         0.575    -0.589    myGrid/clock
+                         net (fo=669, routed)         0.575    -0.589    myGrid/clock
     SLICE_X11Y94         FDRE                                         r  myGrid/gridDisplayY_reg[2]/C
   -------------------------------------------------------------------    -------------------
     SLICE_X11Y94         FDRE (Prop_fdre_C_Q)         0.141    -0.448 r  myGrid/gridDisplayY_reg[2]/Q
@@ -6065,7 +6065,7 @@ Slack (MET) :             0.088ns  (arrival time - required time)
                                                      -3.163    -2.245 r  ClockDivider/inst/mmcm_adv_inst/CLKOUT1
                          net (fo=1, routed)           0.544    -1.702    ClockDivider/inst/clk_out2_clk_wiz_0
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029    -1.673 r  ClockDivider/inst/clkout2_buf/O
-                         net (fo=668, routed)         0.846    -0.827    myCurve/clock
+                         net (fo=669, routed)         0.846    -0.827    myCurve/clock
     SLICE_X9Y94          FDRE                                         r  myCurve/curveDisplayY_reg[2]/C
                          clock pessimism              0.275    -0.552    
                          clock uncertainty            0.073    -0.479    
@@ -6108,7 +6108,7 @@ Slack (MET) :             0.089ns  (arrival time - required time)
                                                      -2.379    -1.689 r  ClockDivider/inst/mmcm_adv_inst/CLKOUT1
                          net (fo=1, routed)           0.499    -1.190    ClockDivider/inst/clk_out2_clk_wiz_0
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026    -1.164 r  ClockDivider/inst/clkout2_buf/O
-                         net (fo=668, routed)         0.569    -0.595    myed/clock
+                         net (fo=669, routed)         0.569    -0.595    myed/clock
     SLICE_X13Y105        FDRE                                         r  myed/previousSamples_reg[1][0]/C
   -------------------------------------------------------------------    -------------------
     SLICE_X13Y105        FDRE (Prop_fdre_C_Q)         0.141    -0.454 r  myed/previousSamples_reg[1][0]/Q
@@ -6126,7 +6126,7 @@ Slack (MET) :             0.089ns  (arrival time - required time)
                                                      -3.163    -2.245 r  ClockDivider/inst/mmcm_adv_inst/CLKOUT1
                          net (fo=1, routed)           0.544    -1.702    ClockDivider/inst/clk_out2_clk_wiz_0
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029    -1.673 r  ClockDivider/inst/clkout2_buf/O
-                         net (fo=668, routed)         0.840    -0.833    myed/clock
+                         net (fo=669, routed)         0.840    -0.833    myed/clock
     SLICE_X13Y106        FDRE                                         r  myed/previousSamples_reg[2][0]/C
                          clock pessimism              0.254    -0.579    
                          clock uncertainty            0.073    -0.506    
@@ -6169,7 +6169,7 @@ Slack (MET) :             0.091ns  (arrival time - required time)
                                                      -2.379    -1.689 r  ClockDivider/inst/mmcm_adv_inst/CLKOUT1
                          net (fo=1, routed)           0.499    -1.190    ClockDivider/inst/clk_out2_clk_wiz_0
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026    -1.164 r  ClockDivider/inst/clkout2_buf/O
-                         net (fo=668, routed)         0.570    -0.594    mytls/clock
+                         net (fo=669, routed)         0.570    -0.594    mytls/clock
     SLICE_X13Y100        FDSE                                         r  mytls/pixel_reg[9]/C
   -------------------------------------------------------------------    -------------------
     SLICE_X13Y100        FDSE (Prop_fdse_C_Q)         0.141    -0.453 r  mytls/pixel_reg[9]/Q
@@ -6187,7 +6187,7 @@ Slack (MET) :             0.091ns  (arrival time - required time)
                                                      -3.163    -2.245 r  ClockDivider/inst/mmcm_adv_inst/CLKOUT1
                          net (fo=1, routed)           0.544    -1.702    ClockDivider/inst/clk_out2_clk_wiz_0
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029    -1.673 r  ClockDivider/inst/clkout2_buf/O
-                         net (fo=668, routed)         0.841    -0.832    CLK108MHZ
+                         net (fo=669, routed)         0.841    -0.832    CLK108MHZ
     SLICE_X14Y100        FDRE                                         r  VGA_R_reg[1]/C
                          clock pessimism              0.254    -0.578    
                          clock uncertainty            0.073    -0.505    
@@ -6230,7 +6230,7 @@ Slack (MET) :             0.092ns  (arrival time - required time)
                                                      -2.379    -1.689 r  ClockDivider/inst/mmcm_adv_inst/CLKOUT1
                          net (fo=1, routed)           0.499    -1.190    ClockDivider/inst/clk_out2_clk_wiz_0
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026    -1.164 r  ClockDivider/inst/clkout2_buf/O
-                         net (fo=668, routed)         0.570    -0.594    Buffer/clock
+                         net (fo=669, routed)         0.570    -0.594    Buffer/clock
     SLICE_X10Y102        FDRE                                         r  Buffer/ram1_addra_reg[2]/C
   -------------------------------------------------------------------    -------------------
     SLICE_X10Y102        FDRE (Prop_fdre_C_Q)         0.164    -0.430 r  Buffer/ram1_addra_reg[2]/Q
@@ -6248,7 +6248,7 @@ Slack (MET) :             0.092ns  (arrival time - required time)
                                                      -3.163    -2.245 r  ClockDivider/inst/mmcm_adv_inst/CLKOUT1
                          net (fo=1, routed)           0.544    -1.702    ClockDivider/inst/clk_out2_clk_wiz_0
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029    -1.673 r  ClockDivider/inst/clkout2_buf/O
-                         net (fo=668, routed)         0.874    -0.798    Buffer/bram1/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_init.ram/clka
+                         net (fo=669, routed)         0.874    -0.798    Buffer/bram1/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_init.ram/clka
     RAMB18_X0Y42         RAMB18E1                                     r  Buffer/bram1/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM18.ram/CLKARDCLK
                          clock pessimism              0.275    -0.523    
                          clock uncertainty            0.073    -0.450    

@@ -4,11 +4,11 @@
   <TR ALIGN='CENTER' BGCOLOR='#A7BFDE'><TD COLSPAN='4'><B>software_version_and_target_device</B></TD></TR>
 <TR ALIGN='LEFT'>  <TD BGCOLOR='#DBE5F1'><B>beta</B></TD><TD>FALSE</TD>
   <TD BGCOLOR='#DBE5F1'><B>build_version</B></TD><TD>1577090</TD>
-</TR><TR ALIGN='LEFT'>  <TD BGCOLOR='#DBE5F1'><B>date_generated</B></TD><TD>Tue Nov 15 16:28:03 2016</TD>
+</TR><TR ALIGN='LEFT'>  <TD BGCOLOR='#DBE5F1'><B>date_generated</B></TD><TD>Tue Nov 15 17:17:17 2016</TD>
   <TD BGCOLOR='#DBE5F1'><B>os_platform</B></TD><TD>LIN64</TD>
 </TR><TR ALIGN='LEFT'>  <TD BGCOLOR='#DBE5F1'><B>product_version</B></TD><TD>Vivado v2016.2 (64-bit)</TD>
   <TD BGCOLOR='#DBE5F1'><B>project_id</B></TD><TD>1753b2fab64644e192506d835aa9194d</TD>
-</TR><TR ALIGN='LEFT'>  <TD BGCOLOR='#DBE5F1'><B>project_iteration</B></TD><TD>129</TD>
+</TR><TR ALIGN='LEFT'>  <TD BGCOLOR='#DBE5F1'><B>project_iteration</B></TD><TD>137</TD>
   <TD BGCOLOR='#DBE5F1'><B>random_id</B></TD><TD>d353b5516db0553c9333eeed9de59150</TD>
 </TR><TR ALIGN='LEFT'>  <TD BGCOLOR='#DBE5F1'><B>registration_id</B></TD><TD>211027694_1777504441_210637146_562</TD>
   <TD BGCOLOR='#DBE5F1'><B>route_design</B></TD><TD>TRUE</TD>
@@ -21,7 +21,7 @@
  <TABLE BORDER='1' CELLSPACING='0' WIDTH='100%'>
   <TR ALIGN='CENTER' BGCOLOR='#A7BFDE'><TD COLSPAN='4'><B>user_environment</B></TD></TR>
 <TR ALIGN='LEFT'>  <TD BGCOLOR='#DBE5F1'><B>cpu_name</B></TD><TD>Intel(R) Core(TM) i7-6700 CPU @ 3.40GHz</TD>
-  <TD BGCOLOR='#DBE5F1'><B>cpu_speed</B></TD><TD>3550.210 MHz</TD>
+  <TD BGCOLOR='#DBE5F1'><B>cpu_speed</B></TD><TD>3948.382 MHz</TD>
 </TR><TR ALIGN='LEFT'>  <TD BGCOLOR='#DBE5F1'><B>os_name</B></TD><TD>Ubuntu</TD>
   <TD BGCOLOR='#DBE5F1'><B>os_release</B></TD><TD>Ubuntu 14.04.5 LTS</TD>
 </TR><TR ALIGN='LEFT'>  <TD BGCOLOR='#DBE5F1'><B>system_ram</B></TD><TD>8.000 GB</TD>
@@ -41,13 +41,13 @@
    <TD>currentsynthesisrun=synth_1</TD>
 </TR><TR ALIGN='LEFT'>   <TD>default_library=xil_defaultlib</TD>
    <TD>designmode=RTL</TD>
-   <TD>export_simulation_activehdl=18</TD>
-   <TD>export_simulation_ies=18</TD>
-</TR><TR ALIGN='LEFT'>   <TD>export_simulation_modelsim=18</TD>
-   <TD>export_simulation_questa=18</TD>
-   <TD>export_simulation_riviera=18</TD>
-   <TD>export_simulation_vcs=18</TD>
-</TR><TR ALIGN='LEFT'>   <TD>export_simulation_xsim=18</TD>
+   <TD>export_simulation_activehdl=24</TD>
+   <TD>export_simulation_ies=24</TD>
+</TR><TR ALIGN='LEFT'>   <TD>export_simulation_modelsim=24</TD>
+   <TD>export_simulation_questa=24</TD>
+   <TD>export_simulation_riviera=24</TD>
+   <TD>export_simulation_vcs=24</TD>
+</TR><TR ALIGN='LEFT'>   <TD>export_simulation_xsim=24</TD>
    <TD>implstrategy=Vivado Implementation Defaults</TD>
    <TD>launch_simulation_activehdl=0</TD>
    <TD>launch_simulation_ies=0</TD>
@@ -272,7 +272,7 @@
 </TR><TR ALIGN='LEFT'>    <TD>enable_axi=false</TD>
     <TD>enable_axi4stream=false</TD>
     <TD>enable_busy=true</TD>
-    <TD>enable_convst=false</TD>
+    <TD>enable_convst=true</TD>
 </TR><TR ALIGN='LEFT'>    <TD>enable_convstclk=false</TD>
     <TD>enable_dclk=true</TD>
     <TD>enable_drp=true</TD>
@@ -286,9 +286,9 @@
     <TD>enable_vccpint_alaram=false</TD>
     <TD>iptotal=1</TD>
 </TR><TR ALIGN='LEFT'>    <TD>ot_alaram=false</TD>
-    <TD>sequencer_mode=on</TD>
-    <TD>startup_channel_selection=contineous_sequence</TD>
-    <TD>timing_mode=continuous</TD>
+    <TD>sequencer_mode=off</TD>
+    <TD>startup_channel_selection=single_channel</TD>
+    <TD>timing_mode=event_driven</TD>
 </TR><TR ALIGN='LEFT'>    <TD>user_temp_alaram=true</TD>
 </TR>   </TABLE>
    </TD></TR>
@@ -386,7 +386,7 @@
     <TD>output_load=5.000000</TD>
 </TR><TR ALIGN='LEFT'>    <TD>output_toggle=12.500000</TD>
     <TD>package=csg324</TD>
-    <TD>pct_clock_constrained=1.100000</TD>
+    <TD>pct_clock_constrained=1.280000</TD>
     <TD>pct_inputs_defined=12</TD>
 </TR><TR ALIGN='LEFT'>    <TD>platform=lin64</TD>
     <TD>process=typical</TD>
@@ -726,7 +726,7 @@
    <TR><TD>
    <TABLE BORDER='1' CELLSPACING='0' WIDTH='100%'>
     <TR ALIGN='CENTER' BGCOLOR='#DBE5F1'><TD COLSPAN='4'><B>usage</B></TD></TR>
-<TR ALIGN='LEFT'>    <TD>actual_expansions=2653695</TD>
+<TR ALIGN='LEFT'>    <TD>actual_expansions=2653989</TD>
     <TD>bogomips=6816</TD>
     <TD>bram18=4</TD>
     <TD>bram36=4</TD>
@@ -746,7 +746,7 @@
     <TD>nets=1924</TD>
     <TD>pins=9948</TD>
     <TD>pll=0</TD>
-</TR><TR ALIGN='LEFT'>    <TD>router_runtime=14.240000</TD>
+</TR><TR ALIGN='LEFT'>    <TD>router_runtime=15.630000</TD>
     <TD>router_timing_driven=1</TD>
     <TD>threads=8</TD>
     <TD>timing_constraints_exist=1</TD>
@@ -796,10 +796,10 @@
    <TR><TD>
    <TABLE BORDER='1' CELLSPACING='0' WIDTH='100%'>
     <TR ALIGN='CENTER' BGCOLOR='#DBE5F1'><TD COLSPAN='4'><B>usage</B></TD></TR>
-<TR ALIGN='LEFT'>    <TD>elapsed=00:00:16s</TD>
+<TR ALIGN='LEFT'>    <TD>elapsed=00:00:17s</TD>
     <TD>hls_ip=0</TD>
-    <TD>memory_gain=487.711MB</TD>
-    <TD>memory_peak=1468.461MB</TD>
+    <TD>memory_gain=487.719MB</TD>
+    <TD>memory_peak=1468.469MB</TD>
 </TR>   </TABLE>
    </TD></TR>
   </TABLE><BR>

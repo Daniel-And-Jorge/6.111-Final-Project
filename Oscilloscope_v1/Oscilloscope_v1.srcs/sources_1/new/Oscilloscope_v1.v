@@ -45,7 +45,6 @@ module Oscilloscope_v1
     assign reset = 0;
     //debounce rdb(.reset(reset), .clock(CLK100MHZ), .noisy(CPU_RESETN), .clean(reset));
     
-    wire CLK65MHZ;
     wire CLK108MHZ;
     //instantiate clock divider
     clk_wiz_0 ClockDivider
@@ -53,17 +52,18 @@ module Oscilloscope_v1
        // Clock in ports
         .clk_in1(CLK100MHZ),      // input clk_in1
         // Clock out ports
-        .clk_out1(CLK65MHZ),     // output clk_out1
-        .clk_out2(CLK108MHZ),    // output clk_out2
+        .clk_out1(CLK108MHZ),    // output clk_out1
         // Status and control signals
         .reset(reset), // input reset
         .locked(locked));
         
     // Scope settings
-    wire [11:0] triggerThreshold;
+    wire signed [11:0] triggerThreshold;
     wire signed [4:0] verticalShiftLeftFactor;
+    wire signed [5:0] samplePeriod;
     ScopeSettings myss(.clock(CLK108MHZ), .sw(SW[7:0]),
                         .triggerThreshold(triggerThreshold), .verticalShiftLeftFactor(verticalShiftLeftFactor),
+                        .samplePeriod(samplePeriod),
                         .btnu(btnu_1pulse), .btnd(btnd_1pulse), .btnc(btnc_1pulse));
     
     // Button input debouncers
@@ -110,7 +110,7 @@ module Oscilloscope_v1
                              .clock(CLK108MHZ),
                              .reset(reset),
                              .sampleEnabled(1),
-                             .requestConversion(requestConversion),
+                             .samplePeriod(samplePeriod),
                              .inputReady(eoc),
                              .dataIn(XADCdataOut[15:4]),
                              .ready(adcc_ready),

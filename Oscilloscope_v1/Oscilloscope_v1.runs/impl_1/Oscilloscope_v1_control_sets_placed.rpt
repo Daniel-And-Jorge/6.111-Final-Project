@@ -1,7 +1,7 @@
 Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 --------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2016.2 (lin64) Build 1577090 Thu Jun  2 16:32:35 MDT 2016
-| Date         : Tue Nov 15 17:16:53 2016
+| Date         : Wed Nov 16 18:24:09 2016
 | Host         : eecs-digital-03 running 64-bit Ubuntu 14.04.5 LTS
 | Command      : report_control_sets -verbose -file Oscilloscope_v1_control_sets_placed.rpt
 | Design       : Oscilloscope_v1
@@ -22,8 +22,8 @@ Table of Contents
 +----------------------------------------------------------+-------+
 |                          Status                          | Count |
 +----------------------------------------------------------+-------+
-| Number of unique control sets                            |    24 |
-| Unused register locations in slices containing registers |    92 |
+| Number of unique control sets                            |    26 |
+| Unused register locations in slices containing registers |    94 |
 +----------------------------------------------------------+-------+
 
 
@@ -33,12 +33,12 @@ Table of Contents
 +--------------+-----------------------+------------------------+-----------------+--------------+
 | Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
 +--------------+-----------------------+------------------------+-----------------+--------------+
-| No           | No                    | No                     |             164 |           55 |
+| No           | No                    | No                     |             164 |           59 |
 | No           | No                    | Yes                    |               0 |            0 |
-| No           | Yes                   | No                     |              23 |            9 |
-| Yes          | No                    | No                     |             372 |           98 |
+| No           | Yes                   | No                     |              23 |            8 |
+| Yes          | No                    | No                     |             372 |           93 |
 | Yes          | No                    | Yes                    |               0 |            0 |
-| Yes          | Yes                   | No                     |              85 |           24 |
+| Yes          | Yes                   | No                     |             107 |           29 |
 +--------------+-----------------------+------------------------+-----------------+--------------+
 
 
@@ -48,30 +48,32 @@ Table of Contents
 +-----------------------------+-----------------------------------------+---------------------------------+------------------+----------------+
 |         Clock Signal        |              Enable Signal              |         Set/Reset Signal        | Slice Load Count | Bel Load Count |
 +-----------------------------+-----------------------------------------+---------------------------------+------------------+----------------+
-|  ClockDivider/inst/clk_out2 | myed/state[4]_i_1_n_0                   | adcc/ready                      |                2 |              5 |
-|  ClockDivider/inst/clk_out2 | myss/verticalShiftLeftFactor[4]_i_1_n_0 | nolabel_line76/btn1pulse        |                2 |              5 |
-|  ClockDivider/inst/clk_out2 |                                         | myCurve/curveBlank              |                3 |              6 |
-|  ClockDivider/inst/clk_out2 |                                         | mytls/pixel[11]_i_1_n_0         |                2 |              6 |
-|  ClockDivider/inst/clk_out2 | myss/triggerThreshold[11]_i_1_n_0       | nolabel_line76/btn1pulse        |                2 |              7 |
-|  ClockDivider/inst/clk_out2 |                                         | myXVGA/hreset                   |                4 |             11 |
-|  ClockDivider/inst/clk_out2 | myXVGA/hreset                           | myXVGA/displayY0                |                3 |             11 |
-|  ClockDivider/inst/clk_out2 | Buffer2/trigger_address1                |                                 |                3 |             12 |
-|  ClockDivider/inst/clk_out2 | XLXI_7/eoc_out                          |                                 |                3 |             12 |
-|  ClockDivider/inst/clk_out2 | Buffer/trigger_address0[11]_i_1_n_0     |                                 |                2 |             12 |
-|  ClockDivider/inst/clk_out2 | Buffer/trigger_address1                 |                                 |                5 |             12 |
-|  ClockDivider/inst/clk_out2 | Buffer/pointer0[0]_i_1_n_0              |                                 |                3 |             12 |
-|  ClockDivider/inst/clk_out2 | Buffer/pointer1                         |                                 |                3 |             12 |
-|  ClockDivider/inst/clk_out2 | Buffer2/pointer1                        |                                 |                3 |             12 |
-|  ClockDivider/inst/clk_out2 | Buffer2/trigger_address0[11]_i_1_n_0    |                                 |                3 |             12 |
-|  ClockDivider/inst/clk_out2 | Buffer2/pointer0[0]_i_1_n_0             |                                 |                3 |             12 |
-|  ClockDivider/inst/clk_out2 | myCurve2/address[11]_i_1_n_0            |                                 |                4 |             12 |
-|  ClockDivider/inst/clk_out2 | myCurve/address[11]_i_1_n_0             |                                 |                5 |             12 |
-|  ClockDivider/inst/clk_out2 | nolabel_line70/count                    | nolabel_line70/count[0]_i_1_n_0 |                5 |             19 |
-|  ClockDivider/inst/clk_out2 | nolabel_line72/count                    | nolabel_line72/count[0]_i_1_n_0 |                5 |             19 |
-|  ClockDivider/inst/clk_out2 | nolabel_line71/count                    | nolabel_line71/count[0]_i_1_n_0 |                5 |             19 |
-|  ClockDivider/inst/clk_out2 | myed/intermediates[4][13]_i_1_n_0       |                                 |               13 |             69 |
-|  ClockDivider/inst/clk_out2 |                                         |                                 |               55 |            164 |
-|  ClockDivider/inst/clk_out2 | adcc/ready                              |                                 |               49 |            178 |
+|  ClockDivider/inst/clk_out1 | myed/state[4]_i_1_n_0                   | adcc/ready                      |                2 |              5 |
+|  ClockDivider/inst/clk_out1 | myss/verticalShiftLeftFactor[4]_i_1_n_0 | nolabel_line76/btn1pulse        |                1 |              5 |
+|  ClockDivider/inst/clk_out1 |                                         | myCurve/curveBlank              |                2 |              6 |
+|  ClockDivider/inst/clk_out1 |                                         | mytls/pixel[11]_i_1_n_0         |                2 |              6 |
+|  ClockDivider/inst/clk_out1 | myss/samplePeriod[5]_i_1_n_0            | nolabel_line76/btn1pulse        |                2 |              6 |
+|  ClockDivider/inst/clk_out1 | myss/triggerThreshold[11]_i_1_n_0       | nolabel_line76/btn1pulse        |                2 |              7 |
+|  ClockDivider/inst/clk_out1 |                                         | myXVGA/hreset                   |                4 |             11 |
+|  ClockDivider/inst/clk_out1 | myXVGA/hreset                           | myXVGA/displayY0                |                3 |             11 |
+|  ClockDivider/inst/clk_out1 | Buffer/pointer1                         |                                 |                3 |             12 |
+|  ClockDivider/inst/clk_out1 | Buffer/trigger_address0[11]_i_1_n_0     |                                 |                2 |             12 |
+|  ClockDivider/inst/clk_out1 | Buffer/trigger_address1                 |                                 |                2 |             12 |
+|  ClockDivider/inst/clk_out1 | Buffer2/trigger_address0[11]_i_1_n_0    |                                 |                3 |             12 |
+|  ClockDivider/inst/clk_out1 | Buffer2/trigger_address1                |                                 |                3 |             12 |
+|  ClockDivider/inst/clk_out1 | Buffer2/pointer0[0]_i_1_n_0             |                                 |                3 |             12 |
+|  ClockDivider/inst/clk_out1 | Buffer2/pointer1                        |                                 |                3 |             12 |
+|  ClockDivider/inst/clk_out1 | Buffer/pointer0[0]_i_1_n_0              |                                 |                3 |             12 |
+|  ClockDivider/inst/clk_out1 | myCurve2/address[11]_i_1_n_0            |                                 |                3 |             12 |
+|  ClockDivider/inst/clk_out1 | myCurve/address[11]_i_1_n_0             |                                 |                4 |             12 |
+|  ClockDivider/inst/clk_out1 | adcc/dataOut[11]_i_1_n_0                |                                 |                3 |             12 |
+|  ClockDivider/inst/clk_out1 | XLXI_7/eoc_out                          | adcc/dataOut[11]_i_1_n_0        |                4 |             16 |
+|  ClockDivider/inst/clk_out1 | nolabel_line72/count                    | nolabel_line72/count[0]_i_1_n_0 |                5 |             19 |
+|  ClockDivider/inst/clk_out1 | nolabel_line71/count                    | nolabel_line71/count[0]_i_1_n_0 |                5 |             19 |
+|  ClockDivider/inst/clk_out1 | nolabel_line70/count                    | nolabel_line70/count[0]_i_1_n_0 |                5 |             19 |
+|  ClockDivider/inst/clk_out1 | myed/intermediates[4][13]_i_1_n_0       |                                 |               16 |             69 |
+|  ClockDivider/inst/clk_out1 |                                         |                                 |               59 |            164 |
+|  ClockDivider/inst/clk_out1 | adcc/ready                              |                                 |               46 |            178 |
 +-----------------------------+-----------------------------------------+---------------------------------+------------------+----------------+
 
 

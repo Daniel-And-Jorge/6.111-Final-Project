@@ -21,13 +21,14 @@
 
 
 module ScopeSettings
-    #(parameter DATA_BITS = 12, SCALE_FACTOR_SIZE = 5,
+    #(parameter DATA_BITS = 12, SAMPLE_PERIOD_BITS = 6, SCALE_FACTOR_SIZE = 5,
       parameter TRIGGER_THRESHOLD_ADJUST = 3 << (DATA_BITS - 7))
     (input clock,
      input [7:0] sw,
      input btnu, input btnd, input btnc,
-    output reg signed [DATA_BITS-1:0]triggerThreshold = 0,
-    output reg signed [SCALE_FACTOR_SIZE-1:0]verticalShiftLeftFactor = 0 // negative means shift right
+     output reg signed [DATA_BITS-1:0]triggerThreshold = 0,
+     output reg signed [SCALE_FACTOR_SIZE-1:0]verticalShiftLeftFactor = 0, // negative means shift right
+     output reg [SAMPLE_PERIOD_BITS-1:0]samplePeriod = 0
     );
     
     always @(posedge clock) begin
@@ -40,11 +41,16 @@ module ScopeSettings
             // adjust vertical scaling
             if (btnu) verticalShiftLeftFactor <= verticalShiftLeftFactor + 1;
             else if (btnd) verticalShiftLeftFactor <= verticalShiftLeftFactor - 1;
+         2'b10:
+            // adjust sample rate
+            if (btnu) samplePeriod <= samplePeriod + 1;
+            else if (btnd) samplePeriod <= samplePeriod - 1;
        endcase
        
        if (btnc) begin
             triggerThreshold <= 0;
             verticalShiftLeftFactor <= 0;
+            samplePeriod <= 0;
        end
     end
 endmodule

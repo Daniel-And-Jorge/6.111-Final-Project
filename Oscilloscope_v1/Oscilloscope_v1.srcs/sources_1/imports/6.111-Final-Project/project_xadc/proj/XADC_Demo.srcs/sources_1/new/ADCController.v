@@ -20,18 +20,17 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-// dataOut = (dataIn - INPUT_OFFSET) << LOG_SCALE_FACTOR
+// dataOut = (dataIn - INPUT_OFFSET)
 
 module ADCController
-   #(parameter CONVERSION_PERIOD = 108333000 / 500,
-               IO_BITS = 12,
-               INPUT_OFFSET = 2048,
-               LOG_SCALE_FACTOR = 3)
+   #(parameter IO_BITS = 12,
+               INPUT_OFFSET = 2048)
    (
     input clock,
     input reset,
     input sampleEnabled,
     input inputReady,
+    input [5:0]samplePeriod,
     input [IO_BITS-1:0] dataIn,
     output reg requestConversion,
     output reg ready,
@@ -42,22 +41,17 @@ module ADCController
     
     always @(posedge clock) begin
         // check whether it's time to request another sample
-        if (sampleClock >= CONVERSION_PERIOD) begin
-            requestConversion <= 1;
-            sampleClock <= 0;
-        end else
-            sampleClock <= sampleClock + 1;
-        
-        if (requestConversion)
-            requestConversion <= 0;
+        if (!reset && sampleEnabled && inputReady) begin
+            if (sampleClock >= samplePeriod) begin
+                ready <= 1;
+                dataOut <= (dataIn - INPUT_OFFSET); 
+                sampleClock <= 0;
+            end else
+                sampleClock <= sampleClock + 1;
+        end
     
         if (ready)
             ready <= 0;
-        
-        if (!reset && sampleEnabled && inputReady) begin
-            ready <= 1;
-            dataOut <= (dataIn - INPUT_OFFSET); // << LOG_SCALE_FACTOR;
-        end
         
         if (reset) begin
             ready <= 0;

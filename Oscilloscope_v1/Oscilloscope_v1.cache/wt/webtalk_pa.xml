@@ -3,10 +3,10 @@
 <!--The data in this file is primarily intended for consumption by Xilinx tools.
 The structure and the elements are likely to change over the next few releases.
 This means code written to parse this file will need to be revisited each subsequent release.-->
-<application name="pa" timeStamp="Tue Nov 15 17:20:54 2016">
+<application name="pa" timeStamp="Wed Nov 16 18:23:21 2016">
 <section name="Project Information" visible="false">
 <property name="ProjectID" value="7dbb474a934f41f1a261a32857fce38d" type="ProjectID"/>
-<property name="ProjectIteration" value="173" type="ProjectIteration"/>
+<property name="ProjectIteration" value="190" type="ProjectIteration"/>
 </section>
 <section name="PlanAhead Usage" visible="true">
 <item name="Project Data">
@@ -19,60 +19,35 @@ This means code written to parse this file will need to be revisited each subseq
 <item name="Java Command Handlers">
 <property name="AddCfgMem" value="2" type="JavaHandler"/>
 <property name="AddSources" value="24" type="JavaHandler"/>
-<property name="AutoConnectTarget" value="11" type="JavaHandler"/>
+<property name="AutoConnectTarget" value="13" type="JavaHandler"/>
 <property name="CoreView" value="6" type="JavaHandler"/>
 <property name="CustomizeCore" value="4" type="JavaHandler"/>
-<property name="EditDelete" value="9" type="JavaHandler"/>
+<property name="EditDelete" value="10" type="JavaHandler"/>
 <property name="EditPaste" value="6" type="JavaHandler"/>
 <property name="EditProperties" value="3" type="JavaHandler"/>
 <property name="EditUndo" value="28" type="JavaHandler"/>
-<property name="LaunchProgramFpga" value="143" type="JavaHandler"/>
-<property name="OpenHardwareManager" value="162" type="JavaHandler"/>
+<property name="LaunchProgramFpga" value="155" type="JavaHandler"/>
+<property name="OpenHardwareManager" value="178" type="JavaHandler"/>
 <property name="OpenProject" value="4" type="JavaHandler"/>
-<property name="OpenRecentTarget" value="13" type="JavaHandler"/>
-<property name="ProgramDevice" value="155" type="JavaHandler"/>
+<property name="OpenRecentTarget" value="15" type="JavaHandler"/>
+<property name="ProgramDevice" value="169" type="JavaHandler"/>
 <property name="ProjectSettingsCmdHandler" value="10" type="JavaHandler"/>
-<property name="RecustomizeCore" value="52" type="JavaHandler"/>
+<property name="RecustomizeCore" value="67" type="JavaHandler"/>
 <property name="ReportClockNetworks" value="1" type="JavaHandler"/>
 <property name="ReportIPStatus" value="1" type="JavaHandler"/>
-<property name="RunBitgen" value="168" type="JavaHandler"/>
-<property name="RunImplementation" value="7" type="JavaHandler"/>
+<property name="RunBitgen" value="184" type="JavaHandler"/>
+<property name="RunImplementation" value="9" type="JavaHandler"/>
 <property name="RunSynthesis" value="9" type="JavaHandler"/>
 <property name="SaveAllFiles" value="1" type="JavaHandler"/>
 <property name="SaveFileProxyHandler" value="5" type="JavaHandler"/>
 <property name="ShowSource" value="1" type="JavaHandler"/>
-<property name="ShowView" value="20" type="JavaHandler"/>
+<property name="ShowView" value="23" type="JavaHandler"/>
 <property name="UpgradeIP" value="2" type="JavaHandler"/>
 <property name="ViewTaskImplementation" value="2" type="JavaHandler"/>
-<property name="ViewTaskProjectManager" value="51" type="JavaHandler"/>
+<property name="ViewTaskProjectManager" value="59" type="JavaHandler"/>
+<property name="ViewTaskRTLAnalysis" value="1" type="JavaHandler"/>
 <property name="ViewTaskSynthesis" value="3" type="JavaHandler"/>
 <property name="ui.views.b.aG" value="1" type="JavaHandler"/>
-</item>
-<item name="Gui Resources Info">
-<property name="ADCController.v, 145, 289" value="2" type="GuiResourceData"/>
-<property name="ADCController.v, 145, 289, false, false, false, false, true" value="1" type="GuiResourceData"/>
-<property name="ADCController.v, 210, 351" value="1" type="GuiResourceData"/>
-<property name="ADCController.v, 210, 351, false, false, false, false, true" value="1" type="GuiResourceData"/>
-<property name="ADCController.v, 311, 319" value="1" type="GuiResourceData"/>
-<property name="CLKOUT1 REQUESTED OUT FREQ, 50" value="1" type="GuiResourceData"/>
-<property name="Oscilloscope_v1.v, 914, 476" value="1" type="GuiResourceData"/>
-<property name="PAResourceAtoD.CoreTreeTablePanel_CORE_TREE_TABLE, Clocking Wizard ; AXI4 ; Production ; Included ; xilinx.com:ip:clk_wiz:5.3, 13" value="1" type="GuiResourceData"/>
-<property name="PAResourceAtoD.CoreTreeTablePanel_CORE_TREE_TABLE, Clocking Wizard ; AXI4 ; Production ; Included ; xilinx.com:ip:clk_wiz:5.3, 13, Clocking Wizard, 0, false" value="1" type="GuiResourceData"/>
-<property name="PAResourceAtoD.CoreTreeTablePanel_CORE_TREE_TABLE, Clocking Wizard ; AXI4 ; Production ; Included ; xilinx.com:ip:clk_wiz:5.3, 13, Clocking Wizard, 0, false, false, false, false, false, true" value="1" type="GuiResourceData"/>
-<property name="PAResourceAtoD.CoreTreeTablePanel_CORE_TREE_TABLE, Communication  Networking ;  ;  ;  ; , 6" value="2" type="GuiResourceData"/>
-<property name="PAResourceAtoD.CoreTreeTablePanel_CORE_TREE_TABLE, Communication  Networking ;  ;  ;  ; , 6, Communication  Networking, 0, true, false, false, false, false, true" value="1" type="GuiResourceData"/>
-<property name="PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, [root, Design Sources, Oscilloscope_v1 (Oscilloscope_v1.v" value="2" type="GuiResourceData"/>
-<property name="PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, [, Program and Debug, Hardware Manager, Program Device], 28, false" value="1" type="GuiResourceData"/>
-<property name="PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, [, Project Manager, IP Catalog], 4, false" value="1" type="GuiResourceData"/>
-<property name="PAResourceOtoP.ProgramFpgaDialog_PROGRAM, Program" value="1" type="GuiResourceData"/>
-<property name="PAResourceQtoS.SimpleOutputProductDialog_GENERATE_OUTPUT_PRODUCTS_IMMEDIATELY, Generate" value="1" type="GuiResourceData"/>
-<property name="RDIResource.BaseDialog_CANCEL, Cancel" value="1" type="GuiResourceData"/>
-<property name="RDIResource.BaseDialog_OK, OK" value="1" type="GuiResourceData"/>
-</item>
-<item name="Other">
-<property name="GuiMode" value="30" type="GuiMode"/>
-<property name="BatchMode" value="0" type="BatchMode"/>
-<property name="TclMode" value="21" type="TclMode"/>
 </item>
 </section>
 </application>

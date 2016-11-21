@@ -1,7 +1,7 @@
 Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2016.2 (lin64) Build 1577090 Thu Jun  2 16:32:35 MDT 2016
-| Date             : Sun Nov 20 21:46:49 2016
+| Date             : Mon Nov 21 15:06:31 2016
 | Host             : eecs-digital-02 running 64-bit Ubuntu 14.04.5 LTS
 | Command          : report_power -file Oscilloscope_v1_power_routed.rpt -pb Oscilloscope_v1_power_summary_routed.pb -rpx Oscilloscope_v1_power_routed.rpx
 | Design           : Oscilloscope_v1
@@ -30,8 +30,8 @@ Table of Contents
 ----------
 
 +--------------------------+-------+
-| Total On-Chip Power (W)  | 0.253 |
-| Dynamic (W)              | 0.155 |
+| Total On-Chip Power (W)  | 0.254 |
+| Dynamic (W)              | 0.156 |
 | Device Static (W)        | 0.098 |
 | Effective TJA (C/W)      | 4.6   |
 | Max Ambient (C)          | 98.8  |
@@ -50,19 +50,19 @@ Table of Contents
 | On-Chip                 | Power (W) | Used     | Available | Utilization (%) |
 +-------------------------+-----------+----------+-----------+-----------------+
 | Clocks                  |     0.005 |        8 |       --- |             --- |
-| Slice Logic             |     0.003 |     2306 |       --- |             --- |
-|   LUT as Logic          |     0.003 |      860 |     63400 |            1.36 |
-|   CARRY4                |    <0.001 |      231 |     15850 |            1.46 |
+| Slice Logic             |     0.005 |     2998 |       --- |             --- |
+|   LUT as Logic          |     0.004 |     1247 |     63400 |            1.97 |
+|   CARRY4                |    <0.001 |      351 |     15850 |            2.21 |
 |   Register              |    <0.001 |      786 |    126800 |            0.62 |
 |   LUT as Shift Register |    <0.001 |       23 |     19000 |            0.12 |
 |   Others                |     0.000 |       76 |       --- |             --- |
-| Signals                 |     0.004 |     1515 |       --- |             --- |
+| Signals                 |     0.005 |     1669 |       --- |             --- |
 | Block RAM               |     0.014 |      9.5 |       135 |            7.04 |
 | MMCM                    |     0.123 |        1 |         6 |           16.67 |
-| I/O                     |     0.003 |       41 |       210 |           19.52 |
+| I/O                     |     0.003 |       36 |       210 |           17.14 |
 | XADC                    |     0.002 |        1 |       --- |             --- |
 | Static Power            |     0.098 |          |           |                 |
-| Total                   |     0.253 |          |           |                 |
+| Total                   |     0.254 |          |           |                 |
 +-------------------------+-----------+----------+-----------+-----------------+
 
 
@@ -72,7 +72,7 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.042 |       0.027 |      0.016 |
+| Vccint    |       1.000 |     0.043 |       0.028 |      0.016 |
 | Vccaux    |       1.800 |     0.086 |       0.068 |      0.018 |
 | Vcco33    |       3.300 |     0.005 |       0.001 |      0.004 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
@@ -146,7 +146,7 @@ Table of Contents
 +------------------------------------------------+-----------+
 | Name                                           | Power (W) |
 +------------------------------------------------+-----------+
-| Oscilloscope_v1                                |     0.155 |
+| Oscilloscope_v1                                |     0.156 |
 |   Buffer                                       |     0.007 |
 |     bram0                                      |     0.003 |
 |       U0                                       |     0.003 |
@@ -193,19 +193,19 @@ Table of Contents
 |   myCurve                                      |     0.001 |
 |   myCurve2                                     |    <0.001 |
 |   myGrid                                       |    <0.001 |
-|   myText                                       |     0.005 |
-|     characterBRAM                              |     0.003 |
-|       U0                                       |     0.003 |
-|         inst_blk_mem_gen                       |     0.003 |
-|           gnbram.gnativebmg.native_blk_mem_gen |     0.003 |
-|             valid.cstr                         |     0.003 |
+|   myText                                       |     0.006 |
+|     characterBRAM                              |     0.002 |
+|       U0                                       |     0.002 |
+|         inst_blk_mem_gen                       |     0.002 |
+|           gnbram.gnativebmg.native_blk_mem_gen |     0.002 |
+|             valid.cstr                         |     0.002 |
 |               bindec_a.bindec_inst_a           |    <0.001 |
 |               bindec_b.bindec_inst_b           |     0.000 |
 |               has_mux_a.A                      |    <0.001 |
-|               ramloop[0].ram.r                 |     0.003 |
-|                 prim_init.ram                  |     0.003 |
-|               ramloop[1].ram.r                 |    <0.001 |
+|               ramloop[0].ram.r                 |    <0.001 |
 |                 prim_init.ram                  |    <0.001 |
+|               ramloop[1].ram.r                 |     0.002 |
+|                 prim_init.ram                  |     0.002 |
 |               ramloop[2].ram.r                 |    <0.001 |
 |                 prim_init.ram                  |    <0.001 |
 |   myXVGA                                       |    <0.001 |
@@ -213,12 +213,12 @@ Table of Contents
 |   myed                                         |     0.002 |
 |   myss                                         |    <0.001 |
 |   mytls                                        |    <0.001 |
-|   nolabel_line80                               |    <0.001 |
-|   nolabel_line81                               |    <0.001 |
-|   nolabel_line82                               |    <0.001 |
-|   nolabel_line84                               |    <0.001 |
-|   nolabel_line85                               |    <0.001 |
-|   nolabel_line86                               |    <0.001 |
+|   nolabel_line91                               |    <0.001 |
+|   nolabel_line92                               |    <0.001 |
+|   nolabel_line93                               |    <0.001 |
+|   nolabel_line95                               |    <0.001 |
+|   nolabel_line96                               |    <0.001 |
+|   nolabel_line97                               |    <0.001 |
 +------------------------------------------------+-----------+
 
 

@@ -1,7 +1,7 @@
 Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2016.2 (lin64) Build 1577090 Thu Jun  2 16:32:35 MDT 2016
-| Date         : Sun Nov 20 21:45:43 2016
+| Date         : Mon Nov 21 15:05:26 2016
 | Host         : eecs-digital-02 running 64-bit Ubuntu 14.04.5 LTS
 | Command      : report_utilization -file Oscilloscope_v1_utilization_synth.rpt -pb Oscilloscope_v1_utilization_synth.pb
 | Design       : Oscilloscope_v1
@@ -30,8 +30,8 @@ Table of Contents
 +----------------------------+------+-------+-----------+-------+
 |          Site Type         | Used | Fixed | Available | Util% |
 +----------------------------+------+-------+-----------+-------+
-| Slice LUTs*                |  893 |     0 |     63400 |  1.41 |
-|   LUT as Logic             |  857 |     0 |     63400 |  1.35 |
+| Slice LUTs*                | 1280 |     0 |     63400 |  2.02 |
+|   LUT as Logic             | 1244 |     0 |     63400 |  1.96 |
 |   LUT as Memory            |   36 |     0 |     19000 |  0.19 |
 |     LUT as Distributed RAM |    0 |     0 |           |       |
 |     LUT as Shift Register  |   36 |     0 |           |       |
@@ -92,7 +92,7 @@ Table of Contents
 +-----------------------------+------+-------+-----------+-------+
 |          Site Type          | Used | Fixed | Available | Util% |
 +-----------------------------+------+-------+-----------+-------+
-| Bonded IOB                  |   58 |     0 |       210 | 27.62 |
+| Bonded IOB                  |   53 |     0 |       210 | 25.24 |
 | Bonded IPADs                |    0 |     0 |         2 |  0.00 |
 | PHY_CONTROL                 |    0 |     0 |         6 |  0.00 |
 | PHASER_REF                  |    0 |     0 |         6 |  0.00 |
@@ -148,18 +148,18 @@ Table of Contents
 +----------+------+---------------------+
 | Ref Name | Used | Functional Category |
 +----------+------+---------------------+
+| LUT2     |  960 |                 LUT |
 | FDRE     |  775 |        Flop & Latch |
-| LUT2     |  522 |                 LUT |
-| CARRY4   |  231 |          CarryLogic |
-| LUT1     |  183 |                 LUT |
-| LUT4     |  175 |                 LUT |
-| LUT6     |  128 |                 LUT |
+| CARRY4   |  351 |          CarryLogic |
+| LUT1     |  273 |                 LUT |
+| LUT4     |  189 |                 LUT |
+| LUT6     |  151 |                 LUT |
 | LUT3     |  114 |                 LUT |
-| LUT5     |   51 |                 LUT |
+| LUT5     |   59 |                 LUT |
 | SRL16E   |   36 |  Distributed Memory |
 | OBUF     |   28 |                  IO |
 | OBUFT    |   18 |                  IO |
-| IBUF     |   12 |                  IO |
+| IBUF     |    7 |                  IO |
 | FDSE     |    4 |        Flop & Latch |
 +----------+------+---------------------+
 

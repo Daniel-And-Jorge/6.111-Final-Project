@@ -25,7 +25,17 @@ module Oscilloscope_v1
    #(parameter  DISPLAY_X_BITS = 11,
                 DISPLAY_Y_BITS = 11,
                 ADDRESS_BITS = 12,
-                RGB_BITS = 12) 
+                RGB_BITS = 12,
+                X_MIDDLE_VOLTAGE_CHARACTER_4 = 1_088,
+                Y_MIDDLE_VOLTAGE_CHARACTER_4 = 496,
+                X_MIDDLE_VOLTAGE_CHARACTER_3 = 1_108,
+                Y_MIDDLE_VOLTAGE_CHARACTER_3 = 496,
+                X_MIDDLE_VOLTAGE_CHARACTER_2 = 1_128,
+                Y_MIDDLE_VOLTAGE_CHARACTER_2 = 496,
+                X_MIDDLE_VOLTAGE_CHARACTER_1 = 1_148,
+                Y_MIDDLE_VOLTAGE_CHARACTER_1 = 496,
+                X_MIDDLE_VOLTAGE_CHARACTER_0 = 1_168,
+                Y_MIDDLE_VOLTAGE_CHARACTER_0 = 496) 
    (input CLK100MHZ,
    input vauxp11,
    input vauxn11,
@@ -259,6 +269,9 @@ module Oscilloscope_v1
                     );
      
      wire [RGB_BITS-1:0] tlsPixel;
+     wire [DISPLAY_X_BITS-1:0] tlsDisplayX;
+     wire [DISPLAY_Y_BITS-1:0] tlsDisplayY;
+     wire tlsHsync, tlsVsync, tlsBlank;
      HorizontalLineSprite mytls
                 (.clock(CLK108MHZ),
                 .level(`VERTICAL_SCALE(triggerThreshold, verticalShiftLeftFactor)),
@@ -269,14 +282,30 @@ module Oscilloscope_v1
                 .blank(curveBlank2),
                 .previousPixel(curvePixel2),
                 .pixel(tlsPixel),
+                .spriteDisplayX(tlsDisplayX),
+                .spriteDisplayY(tlsDisplayY),
                 .spriteHsync(tlsHsync),
                 .spriteVsync(tlsVsync),
                 .spriteBlank(tlsBlank)
-                );       
-     
+                );    
+                  
+    wire textHsync, textVsync, textBlank;
+    wire [RGB_BITS-1:0] textPixel;
+    wire [DISPLAY_X_BITS-1:0] textDisplayX;
+    wire [DISPLAY_Y_BITS-1:0] textDisplayY;
+    Text myText (.clock(CLK108MHZ), 
+                    .xMiddleVoltage4(X_MIDDLE_VOLTAGE_CHARACTER_4), .yMiddleVoltage4(Y_MIDDLE_VOLTAGE_CHARACTER_4), .middleVoltageCharacter4(SW[6:0]),
+                    .xMiddleVoltage3(X_MIDDLE_VOLTAGE_CHARACTER_3), .yMiddleVoltage3(Y_MIDDLE_VOLTAGE_CHARACTER_3), .middleVoltageCharacter3(SW[6:0]),
+                    .xMiddleVoltage2(X_MIDDLE_VOLTAGE_CHARACTER_2), .yMiddleVoltage2(Y_MIDDLE_VOLTAGE_CHARACTER_2), .middleVoltageCharacter2(SW[6:0]),
+                    .xMiddleVoltage1(X_MIDDLE_VOLTAGE_CHARACTER_1), .yMiddleVoltage1(Y_MIDDLE_VOLTAGE_CHARACTER_1), .middleVoltageCharacter1(SW[6:0]),
+                    .xMiddleVoltage0(X_MIDDLE_VOLTAGE_CHARACTER_0), .yMiddleVoltage0(Y_MIDDLE_VOLTAGE_CHARACTER_0), .middleVoltageCharacter0(SW[6:0]),
+                    .displayX(tlsDisplayX), .displayY(tlsDisplayY), 
+                    .hsync(tlsHsync), .vsync(tlsVsync), .blank(tlsBlank), .previousPixel(tlsPixel),
+                    .displayXOut(textDisplayX), .displayYOut(textDisplayY), 
+                    .hsyncOut(textHsync), .vsyncOut(textVsync), .blankOut(textBlank), .pixel(textPixel), .addressA(addressA));
      
      always @(posedge CLK108MHZ) begin
-        {VGA_R, VGA_G, VGA_B} <= !curveBlank ? tlsPixel : 12'b0;
+        {VGA_R, VGA_G, VGA_B} <= !textBlank ? textPixel : 12'b0;
         VGA_HS <= tlsHsync;
         VGA_VS <= tlsVsync;
      end

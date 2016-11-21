@@ -21,6 +21,8 @@ module HorizontalLineSprite
     input blank,
     input [RGB_BITS-1:0] previousPixel,
     output reg [RGB_BITS-1:0] pixel,
+    output reg [DISPLAY_X_BITS-1:0] spriteDisplayX,
+    output reg [DISPLAY_Y_BITS-1:0] spriteDisplayY,
     output reg spriteHsync,
     output reg spriteVsync,
     output reg spriteBlank
@@ -38,6 +40,8 @@ module HorizontalLineSprite
         else
             pixel <= previousPixel;
             
+        spriteDisplayX <= displayX;
+        spriteDisplayY <= displayY;
         spriteHsync <= hsync;
         spriteVsync <= vsync;
         spriteBlank <= blank;

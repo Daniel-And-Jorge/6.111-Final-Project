@@ -13,16 +13,16 @@ Command: synth_design -top Oscilloscope_v1 -part xc7a100tcsg324-3 -flatten_hiera
 Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
-WARNING: [filemgmt 56-147] Overwrite of existing file isn't enabled.  Please specify -force to overwrite file  [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/synth_1/.Xil/Vivado-19540-eecs-digital-02/xadc_wiz_0/xadc_wiz_0.dcp]
-WARNING: [filemgmt 56-147] Overwrite of existing file isn't enabled.  Please specify -force to overwrite file  [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/synth_1/.Xil/Vivado-19540-eecs-digital-02/CharactersROM/CharactersROM.dcp]
+WARNING: [filemgmt 56-147] Overwrite of existing file isn't enabled.  Please specify -force to overwrite file  [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/synth_1/.Xil/Vivado-31064-eecs-digital-02/xadc_wiz_0/xadc_wiz_0.dcp]
+WARNING: [filemgmt 56-147] Overwrite of existing file isn't enabled.  Please specify -force to overwrite file  [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/synth_1/.Xil/Vivado-31064-eecs-digital-02/CharactersROM/CharactersROM.dcp]
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 19560 
+INFO: Helper process launched with PID 31082 
 WARNING: [Synth 8-992] isTriggered is already implicitly declared earlier [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Oscilloscope_v1.v:185]
 WARNING: [Synth 8-992] drawStarting is already implicitly declared earlier [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Oscilloscope_v1.v:219]
 WARNING: [Synth 8-992] curveAddressOut is already implicitly declared earlier [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Oscilloscope_v1.v:220]
 WARNING: [Synth 8-992] curveAddressOut2 is already implicitly declared earlier [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Oscilloscope_v1.v:251]
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 1067.516 ; gain = 172.324 ; free physical = 2122 ; free virtual = 11359
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 1067.512 ; gain = 172.324 ; free physical = 1726 ; free virtual = 11004
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-638] synthesizing module 'Oscilloscope_v1' [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Oscilloscope_v1.v:24]
 	Parameter DISPLAY_X_BITS bound to: 11 - type: integer 
@@ -50,8 +50,8 @@ INFO: [Synth 8-638] synthesizing module 'Oscilloscope_v1' [/afs/athena.mit.edu/u
 	Parameter X_TIME_PER_DIVISION_CHARACTER_0 bound to: 780 - type: integer 
 	Parameter Y_TIME_PER_DIVISION_CHARACTER_0 bound to: 980 - type: integer 
 	Parameter SELECT_CHARACTER_BITS bound to: 7 - type: integer 
-INFO: [Synth 8-638] synthesizing module 'clk_wiz_0' [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/synth_1/.Xil/Vivado-19540-eecs-digital-02/realtime/clk_wiz_0_stub.v:5]
-INFO: [Synth 8-256] done synthesizing module 'clk_wiz_0' (1#1) [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/synth_1/.Xil/Vivado-19540-eecs-digital-02/realtime/clk_wiz_0_stub.v:5]
+INFO: [Synth 8-638] synthesizing module 'clk_wiz_0' [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/synth_1/.Xil/Vivado-31064-eecs-digital-02/realtime/clk_wiz_0_stub.v:5]
+INFO: [Synth 8-256] done synthesizing module 'clk_wiz_0' (1#1) [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/synth_1/.Xil/Vivado-31064-eecs-digital-02/realtime/clk_wiz_0_stub.v:5]
 INFO: [Synth 8-638] synthesizing module 'ScopeSettings' [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/ScopeSettings.v:23]
 	Parameter DATA_BITS bound to: 12 - type: integer 
 	Parameter SAMPLE_PERIOD_BITS bound to: 6 - type: integer 
@@ -70,8 +70,8 @@ INFO: [Synth 8-638] synthesizing module 'ButtonSinglePulse' [/afs/athena.mit.edu
 INFO: [Synth 8-256] done synthesizing module 'ButtonSinglePulse' (4#1) [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/ButtonSinglePulse.v:8]
 WARNING: [Synth 8-387] label required on module instance [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Oscilloscope_v1.v:96]
 WARNING: [Synth 8-387] label required on module instance [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Oscilloscope_v1.v:97]
-INFO: [Synth 8-638] synthesizing module 'xadc_wiz_0' [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/synth_1/.Xil/Vivado-19540-eecs-digital-02/realtime/xadc_wiz_0_stub.v:5]
-INFO: [Synth 8-256] done synthesizing module 'xadc_wiz_0' (5#1) [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/synth_1/.Xil/Vivado-19540-eecs-digital-02/realtime/xadc_wiz_0_stub.v:5]
+INFO: [Synth 8-638] synthesizing module 'xadc_wiz_0' [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/synth_1/.Xil/Vivado-31064-eecs-digital-02/realtime/xadc_wiz_0_stub.v:5]
+INFO: [Synth 8-256] done synthesizing module 'xadc_wiz_0' (5#1) [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/synth_1/.Xil/Vivado-31064-eecs-digital-02/realtime/xadc_wiz_0_stub.v:5]
 WARNING: [Synth 8-350] instance 'XLXI_7' of module 'xadc_wiz_0' requires 21 connections, but only 17 given [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Oscilloscope_v1.v:109]
 INFO: [Synth 8-638] synthesizing module 'ADCController' [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/imports/6.111-Final-Project/project_xadc/proj/XADC_Demo.srcs/sources_1/new/ADCController.v:25]
 	Parameter IO_BITS bound to: 12 - type: integer 
@@ -88,8 +88,8 @@ INFO: [Synth 8-256] done synthesizing module 'BufferSelector' (8#1) [/afs/athena
 INFO: [Synth 8-638] synthesizing module 'buffer' [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/imports/6.111-Final-Project/project_xadc/src/hdl/buffer.v:31]
 	Parameter LOG_SAMPLES bound to: 12 - type: integer 
 	Parameter SAMPLE_SIZE bound to: 12 - type: integer 
-INFO: [Synth 8-638] synthesizing module 'blk_mem_gen_0' [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/synth_1/.Xil/Vivado-19540-eecs-digital-02/realtime/blk_mem_gen_0_stub.v:6]
-INFO: [Synth 8-256] done synthesizing module 'blk_mem_gen_0' (9#1) [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/synth_1/.Xil/Vivado-19540-eecs-digital-02/realtime/blk_mem_gen_0_stub.v:6]
+INFO: [Synth 8-638] synthesizing module 'blk_mem_gen_0' [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/synth_1/.Xil/Vivado-31064-eecs-digital-02/realtime/blk_mem_gen_0_stub.v:6]
+INFO: [Synth 8-256] done synthesizing module 'blk_mem_gen_0' (9#1) [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/synth_1/.Xil/Vivado-31064-eecs-digital-02/realtime/blk_mem_gen_0_stub.v:6]
 INFO: [Synth 8-256] done synthesizing module 'buffer' (10#1) [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/imports/6.111-Final-Project/project_xadc/src/hdl/buffer.v:31]
 WARNING: [Synth 8-689] width (14) of port connection 'dataIn' does not match port width (12) of module 'buffer' [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Oscilloscope_v1.v:174]
 INFO: [Synth 8-638] synthesizing module 'TriggerRisingEdgeSteady' [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/imports/6.111-Final-Project/jorge/oscilloscope/oscilloscope.srcs/sources_1/new/TriggerRisingEdge.v:42]
@@ -172,8 +172,8 @@ INFO: [Synth 8-638] synthesizing module 'Text' [/afs/athena.mit.edu/user/j/a/jat
 	Parameter BRAM_ADDRESS_BITS bound to: 17 - type: integer 
 	Parameter CHARACTER_COLOR bound to: 12'b000011110000 
 	Parameter COLOR_BITS bound to: 12 - type: integer 
-INFO: [Synth 8-638] synthesizing module 'CharactersROM' [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/synth_1/.Xil/Vivado-19540-eecs-digital-02/realtime/CharactersROM_stub.v:6]
-INFO: [Synth 8-256] done synthesizing module 'CharactersROM' (16#1) [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/synth_1/.Xil/Vivado-19540-eecs-digital-02/realtime/CharactersROM_stub.v:6]
+INFO: [Synth 8-638] synthesizing module 'CharactersROM' [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/synth_1/.Xil/Vivado-31064-eecs-digital-02/realtime/CharactersROM_stub.v:6]
+INFO: [Synth 8-256] done synthesizing module 'CharactersROM' (16#1) [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/synth_1/.Xil/Vivado-31064-eecs-digital-02/realtime/CharactersROM_stub.v:6]
 INFO: [Synth 8-256] done synthesizing module 'Text' (17#1) [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Text.v:23]
 WARNING: [Synth 8-689] width (11) of port connection 'displayX' does not match port width (12) of module 'Text' [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Oscilloscope_v1.v:338]
 WARNING: [Synth 8-689] width (11) of port connection 'displayY' does not match port width (12) of module 'Text' [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Oscilloscope_v1.v:338]
@@ -212,7 +212,7 @@ WARNING: [Synth 8-3331] design Oscilloscope_v1 has unconnected port seg[0]
 WARNING: [Synth 8-3331] design Oscilloscope_v1 has unconnected port SW[9]
 WARNING: [Synth 8-3331] design Oscilloscope_v1 has unconnected port SW[8]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 1100.773 ; gain = 205.582 ; free physical = 2087 ; free virtual = 11325
+Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 1100.770 ; gain = 205.582 ; free physical = 1690 ; free virtual = 10969
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -222,10 +222,10 @@ Report Check Netlist:
 |1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
 +------+------------------+-------+---------+-------+------------------+
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:07 . Memory (MB): peak = 1100.773 ; gain = 205.582 ; free physical = 2084 ; free virtual = 11322
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 1100.770 ; gain = 205.582 ; free physical = 1690 ; free virtual = 10969
 ---------------------------------------------------------------------------------
-WARNING: [filemgmt 56-147] Overwrite of existing file isn't enabled.  Please specify -force to overwrite file  [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/synth_1/.Xil/Vivado-19540-eecs-digital-02/xadc_wiz_0/xadc_wiz_0.dcp]
-WARNING: [filemgmt 56-147] Overwrite of existing file isn't enabled.  Please specify -force to overwrite file  [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/synth_1/.Xil/Vivado-19540-eecs-digital-02/CharactersROM/CharactersROM.dcp]
+WARNING: [filemgmt 56-147] Overwrite of existing file isn't enabled.  Please specify -force to overwrite file  [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/synth_1/.Xil/Vivado-31064-eecs-digital-02/xadc_wiz_0/xadc_wiz_0.dcp]
+WARNING: [filemgmt 56-147] Overwrite of existing file isn't enabled.  Please specify -force to overwrite file  [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/synth_1/.Xil/Vivado-31064-eecs-digital-02/CharactersROM/CharactersROM.dcp]
 WARNING: [Project 1-486] Could not resolve non-primitive black box cell 'CharactersROM' instantiated as 'myText/characterBRAM' [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Text.v:278]
 WARNING: [Project 1-560] Could not resolve non-primitive black box cell 'blk_mem_gen_0' instantiated as 'Buffer/bram0'. 4 instances of this cell are unresolved black boxes. [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/imports/6.111-Final-Project/project_xadc/src/hdl/buffer.v:54]
 WARNING: [Project 1-486] Could not resolve non-primitive black box cell 'clk_wiz_0' instantiated as 'ClockDivider' [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Oscilloscope_v1.v:71]
@@ -235,20 +235,20 @@ INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
 Initializing timing engine
-Parsing XDC File [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/synth_1/.Xil/Vivado-19540-eecs-digital-02/dcp/blk_mem_gen_0_in_context.xdc] for cell 'Buffer/bram0'
-Finished Parsing XDC File [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/synth_1/.Xil/Vivado-19540-eecs-digital-02/dcp/blk_mem_gen_0_in_context.xdc] for cell 'Buffer/bram0'
-Parsing XDC File [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/synth_1/.Xil/Vivado-19540-eecs-digital-02/dcp/blk_mem_gen_0_in_context.xdc] for cell 'Buffer/bram1'
-Finished Parsing XDC File [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/synth_1/.Xil/Vivado-19540-eecs-digital-02/dcp/blk_mem_gen_0_in_context.xdc] for cell 'Buffer/bram1'
-Parsing XDC File [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/synth_1/.Xil/Vivado-19540-eecs-digital-02/dcp/blk_mem_gen_0_in_context.xdc] for cell 'Buffer2/bram0'
-Finished Parsing XDC File [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/synth_1/.Xil/Vivado-19540-eecs-digital-02/dcp/blk_mem_gen_0_in_context.xdc] for cell 'Buffer2/bram0'
-Parsing XDC File [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/synth_1/.Xil/Vivado-19540-eecs-digital-02/dcp/blk_mem_gen_0_in_context.xdc] for cell 'Buffer2/bram1'
-Finished Parsing XDC File [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/synth_1/.Xil/Vivado-19540-eecs-digital-02/dcp/blk_mem_gen_0_in_context.xdc] for cell 'Buffer2/bram1'
-Parsing XDC File [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/synth_1/.Xil/Vivado-19540-eecs-digital-02/dcp_2/clk_wiz_0_in_context.xdc] for cell 'ClockDivider'
-Finished Parsing XDC File [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/synth_1/.Xil/Vivado-19540-eecs-digital-02/dcp_2/clk_wiz_0_in_context.xdc] for cell 'ClockDivider'
-Parsing XDC File [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/synth_1/.Xil/Vivado-19540-eecs-digital-02/dcp_3/xadc_wiz_0_in_context.xdc] for cell 'XLXI_7'
-Finished Parsing XDC File [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/synth_1/.Xil/Vivado-19540-eecs-digital-02/dcp_3/xadc_wiz_0_in_context.xdc] for cell 'XLXI_7'
-Parsing XDC File [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/synth_1/.Xil/Vivado-19540-eecs-digital-02/dcp_4/CharactersROM_in_context.xdc] for cell 'myText/characterBRAM'
-Finished Parsing XDC File [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/synth_1/.Xil/Vivado-19540-eecs-digital-02/dcp_4/CharactersROM_in_context.xdc] for cell 'myText/characterBRAM'
+Parsing XDC File [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/synth_1/.Xil/Vivado-31064-eecs-digital-02/dcp/blk_mem_gen_0_in_context.xdc] for cell 'Buffer/bram0'
+Finished Parsing XDC File [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/synth_1/.Xil/Vivado-31064-eecs-digital-02/dcp/blk_mem_gen_0_in_context.xdc] for cell 'Buffer/bram0'
+Parsing XDC File [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/synth_1/.Xil/Vivado-31064-eecs-digital-02/dcp/blk_mem_gen_0_in_context.xdc] for cell 'Buffer/bram1'
+Finished Parsing XDC File [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/synth_1/.Xil/Vivado-31064-eecs-digital-02/dcp/blk_mem_gen_0_in_context.xdc] for cell 'Buffer/bram1'
+Parsing XDC File [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/synth_1/.Xil/Vivado-31064-eecs-digital-02/dcp/blk_mem_gen_0_in_context.xdc] for cell 'Buffer2/bram0'
+Finished Parsing XDC File [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/synth_1/.Xil/Vivado-31064-eecs-digital-02/dcp/blk_mem_gen_0_in_context.xdc] for cell 'Buffer2/bram0'
+Parsing XDC File [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/synth_1/.Xil/Vivado-31064-eecs-digital-02/dcp/blk_mem_gen_0_in_context.xdc] for cell 'Buffer2/bram1'
+Finished Parsing XDC File [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/synth_1/.Xil/Vivado-31064-eecs-digital-02/dcp/blk_mem_gen_0_in_context.xdc] for cell 'Buffer2/bram1'
+Parsing XDC File [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/synth_1/.Xil/Vivado-31064-eecs-digital-02/dcp_2/clk_wiz_0_in_context.xdc] for cell 'ClockDivider'
+Finished Parsing XDC File [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/synth_1/.Xil/Vivado-31064-eecs-digital-02/dcp_2/clk_wiz_0_in_context.xdc] for cell 'ClockDivider'
+Parsing XDC File [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/synth_1/.Xil/Vivado-31064-eecs-digital-02/dcp_3/xadc_wiz_0_in_context.xdc] for cell 'XLXI_7'
+Finished Parsing XDC File [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/synth_1/.Xil/Vivado-31064-eecs-digital-02/dcp_3/xadc_wiz_0_in_context.xdc] for cell 'XLXI_7'
+Parsing XDC File [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/synth_1/.Xil/Vivado-31064-eecs-digital-02/dcp_4/CharactersROM_in_context.xdc] for cell 'myText/characterBRAM'
+Finished Parsing XDC File [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/synth_1/.Xil/Vivado-31064-eecs-digital-02/dcp_4/CharactersROM_in_context.xdc] for cell 'myText/characterBRAM'
 Parsing XDC File [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/constrs_1/imports/constraints/Nexys4DDR_Master.xdc]
 WARNING: [Vivado 12-584] No ports matched 'CPU_RESETN'. [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/constrs_1/imports/constraints/Nexys4DDR_Master.xdc:82]
 WARNING: [Vivado 12-584] No ports matched 'vauxn3'. [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/constrs_1/imports/constraints/Nexys4DDR_Master.xdc:144]
@@ -266,31 +266,31 @@ Completed Processing XDC Constraints
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 1471.449 ; gain = 0.004 ; free physical = 1897 ; free virtual = 11135
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 1471.445 ; gain = 0.004 ; free physical = 1413 ; free virtual = 10692
 WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'Buffer/bram0' at clock pin 'clka' is different from the actual clock period '9.259', this can result in different synthesis results.
 WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'Buffer/bram1' at clock pin 'clka' is different from the actual clock period '9.259', this can result in different synthesis results.
 WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'Buffer2/bram0' at clock pin 'clka' is different from the actual clock period '9.259', this can result in different synthesis results.
 WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'Buffer2/bram1' at clock pin 'clka' is different from the actual clock period '9.259', this can result in different synthesis results.
 WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'myText/characterBRAM' at clock pin 'clka' is different from the actual clock period '9.259', this can result in different synthesis results.
-WARNING: [filemgmt 56-147] Overwrite of existing file isn't enabled.  Please specify -force to overwrite file  [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/synth_1/.Xil/Vivado-19540-eecs-digital-02/xadc_wiz_0/xadc_wiz_0.dcp]
-WARNING: [filemgmt 56-147] Overwrite of existing file isn't enabled.  Please specify -force to overwrite file  [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/synth_1/.Xil/Vivado-19540-eecs-digital-02/CharactersROM/CharactersROM.dcp]
+WARNING: [filemgmt 56-147] Overwrite of existing file isn't enabled.  Please specify -force to overwrite file  [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/synth_1/.Xil/Vivado-31064-eecs-digital-02/xadc_wiz_0/xadc_wiz_0.dcp]
+WARNING: [filemgmt 56-147] Overwrite of existing file isn't enabled.  Please specify -force to overwrite file  [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/synth_1/.Xil/Vivado-31064-eecs-digital-02/CharactersROM/CharactersROM.dcp]
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:11 ; elapsed = 00:00:14 . Memory (MB): peak = 1471.449 ; gain = 576.258 ; free physical = 1894 ; free virtual = 11133
+Finished Constraint Validation : Time (s): cpu = 00:00:11 ; elapsed = 00:00:14 . Memory (MB): peak = 1471.445 ; gain = 576.258 ; free physical = 1410 ; free virtual = 10689
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a100tcsg324-3
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:11 ; elapsed = 00:00:14 . Memory (MB): peak = 1471.449 ; gain = 576.258 ; free physical = 1894 ; free virtual = 11133
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:11 ; elapsed = 00:00:14 . Memory (MB): peak = 1471.445 ; gain = 576.258 ; free physical = 1410 ; free virtual = 10689
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
-Applied set_property IO_BUFFER_TYPE = NONE for CLK100MHZ. (constraint file  /afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/synth_1/.Xil/Vivado-19540-eecs-digital-02/dcp_2/clk_wiz_0_in_context.xdc, line 3).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for CLK100MHZ. (constraint file  /afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/synth_1/.Xil/Vivado-19540-eecs-digital-02/dcp_2/clk_wiz_0_in_context.xdc, line 4).
+Applied set_property IO_BUFFER_TYPE = NONE for CLK100MHZ. (constraint file  /afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/synth_1/.Xil/Vivado-31064-eecs-digital-02/dcp_2/clk_wiz_0_in_context.xdc, line 3).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for CLK100MHZ. (constraint file  /afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/synth_1/.Xil/Vivado-31064-eecs-digital-02/dcp_2/clk_wiz_0_in_context.xdc, line 4).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:11 ; elapsed = 00:00:14 . Memory (MB): peak = 1471.449 ; gain = 576.258 ; free physical = 1894 ; free virtual = 11133
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:11 ; elapsed = 00:00:14 . Memory (MB): peak = 1471.445 ; gain = 576.258 ; free physical = 1410 ; free virtual = 10689
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/ScopeSettings.v:46]
 INFO: [Synth 8-5546] ROM "count" won't be mapped to RAM because it is too sparse
@@ -317,7 +317,7 @@ INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To p
 INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Text.v:120]
 INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Text.v:116]
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:12 ; elapsed = 00:00:15 . Memory (MB): peak = 1471.449 ; gain = 576.258 ; free physical = 1879 ; free virtual = 11118
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:12 ; elapsed = 00:00:14 . Memory (MB): peak = 1471.445 ; gain = 576.258 ; free physical = 1411 ; free virtual = 10690
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -510,14 +510,14 @@ BRAMs: 270 (col length: RAMB18 80 RAMB36 40)
 ---------------------------------------------------------------------------------
 Finished Part Resource Summary
 ---------------------------------------------------------------------------------
-Start Parallel Synthesis Optimization  : Time (s): cpu = 00:00:12 ; elapsed = 00:00:15 . Memory (MB): peak = 1471.449 ; gain = 576.258 ; free physical = 1879 ; free virtual = 11117
+Start Parallel Synthesis Optimization  : Time (s): cpu = 00:00:12 ; elapsed = 00:00:15 . Memory (MB): peak = 1471.445 ; gain = 576.258 ; free physical = 1411 ; free virtual = 10690
 ---------------------------------------------------------------------------------
 Start Cross Boundary Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Cross Boundary Optimization : Time (s): cpu = 00:00:12 ; elapsed = 00:00:15 . Memory (MB): peak = 1471.449 ; gain = 576.258 ; free physical = 1879 ; free virtual = 11117
+Finished Cross Boundary Optimization : Time (s): cpu = 00:00:12 ; elapsed = 00:00:15 . Memory (MB): peak = 1471.445 ; gain = 576.258 ; free physical = 1411 ; free virtual = 10690
 ---------------------------------------------------------------------------------
-Finished Parallel Reinference  : Time (s): cpu = 00:00:12 ; elapsed = 00:00:15 . Memory (MB): peak = 1471.449 ; gain = 576.258 ; free physical = 1879 ; free virtual = 11117
+Finished Parallel Reinference  : Time (s): cpu = 00:00:12 ; elapsed = 00:00:15 . Memory (MB): peak = 1471.445 ; gain = 576.258 ; free physical = 1411 ; free virtual = 10690
 
 Report RTL Partitions: 
 +-+--------------+------------+----------+
@@ -738,9 +738,9 @@ WARNING: [Synth 8-3332] Sequential element (pixel_reg[66]) is unused and will be
 INFO: [Common 17-14] Message 'Synth 8-3332' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (Buffer2/\ram0_din_reg[4] )
 ---------------------------------------------------------------------------------
-Finished Area Optimization : Time (s): cpu = 00:00:14 ; elapsed = 00:00:17 . Memory (MB): peak = 1471.449 ; gain = 576.258 ; free physical = 1862 ; free virtual = 11100
+Finished Area Optimization : Time (s): cpu = 00:00:14 ; elapsed = 00:00:17 . Memory (MB): peak = 1471.445 ; gain = 576.258 ; free physical = 1409 ; free virtual = 10688
 ---------------------------------------------------------------------------------
-Finished Parallel Area Optimization  : Time (s): cpu = 00:00:14 ; elapsed = 00:00:17 . Memory (MB): peak = 1471.449 ; gain = 576.258 ; free physical = 1862 ; free virtual = 11100
+Finished Parallel Area Optimization  : Time (s): cpu = 00:00:14 ; elapsed = 00:00:17 . Memory (MB): peak = 1471.445 ; gain = 576.258 ; free physical = 1409 ; free virtual = 10688
 
 Report RTL Partitions: 
 +-+--------------+------------+----------+
@@ -753,7 +753,7 @@ Start Applying XDC Timing Constraints
 INFO: [Synth 8-5578] Moved timing constraint from pin 'ClockDivider/clk_out1' to pin 'ClockDivider/bbstub_clk_out1/O'
 INFO: [Synth 8-5820] Moved 1 constraints on hierarchical pins to their respective driving/loading pins
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:19 ; elapsed = 00:00:22 . Memory (MB): peak = 1471.449 ; gain = 576.258 ; free physical = 1823 ; free virtual = 11061
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:19 ; elapsed = 00:00:22 . Memory (MB): peak = 1471.445 ; gain = 576.258 ; free physical = 1404 ; free virtual = 10682
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -765,16 +765,16 @@ Report RTL Partitions:
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:20 ; elapsed = 00:00:23 . Memory (MB): peak = 1471.449 ; gain = 576.258 ; free physical = 1802 ; free virtual = 11040
+Finished Technology Mapping : Time (s): cpu = 00:00:20 ; elapsed = 00:00:23 . Memory (MB): peak = 1471.445 ; gain = 576.258 ; free physical = 1405 ; free virtual = 10683
 ---------------------------------------------------------------------------------
-Finished Parallel Technology Mapping Optimization  : Time (s): cpu = 00:00:20 ; elapsed = 00:00:23 . Memory (MB): peak = 1471.449 ; gain = 576.258 ; free physical = 1802 ; free virtual = 11040
+Finished Parallel Technology Mapping Optimization  : Time (s): cpu = 00:00:20 ; elapsed = 00:00:23 . Memory (MB): peak = 1471.445 ; gain = 576.258 ; free physical = 1405 ; free virtual = 10683
 
 Report RTL Partitions: 
 +-+--------------+------------+----------+
 | |RTL Partition |Replication |Instances |
 +-+--------------+------------+----------+
 +-+--------------+------------+----------+
-Finished Parallel Synthesis Optimization  : Time (s): cpu = 00:00:20 ; elapsed = 00:00:23 . Memory (MB): peak = 1471.449 ; gain = 576.258 ; free physical = 1802 ; free virtual = 11040
+Finished Parallel Synthesis Optimization  : Time (s): cpu = 00:00:20 ; elapsed = 00:00:23 . Memory (MB): peak = 1471.445 ; gain = 576.258 ; free physical = 1405 ; free virtual = 10683
 ---------------------------------------------------------------------------------
 Start IO Insertion
 ---------------------------------------------------------------------------------
@@ -853,7 +853,7 @@ CRITICAL WARNING: [Synth 8-4442] BlackBox module bram1 has unconnected pin dinb[
 CRITICAL WARNING: [Synth 8-4442] BlackBox module bram1 has unconnected pin dinb[0]
 CRITICAL WARNING: [Synth 8-4442] BlackBox module characterBRAM has unconnected pin clkb
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:20 ; elapsed = 00:00:23 . Memory (MB): peak = 1471.449 ; gain = 576.258 ; free physical = 1802 ; free virtual = 11040
+Finished IO Insertion : Time (s): cpu = 00:00:20 ; elapsed = 00:00:23 . Memory (MB): peak = 1471.445 ; gain = 576.258 ; free physical = 1405 ; free virtual = 10684
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -866,7 +866,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:20 ; elapsed = 00:00:23 . Memory (MB): peak = 1471.449 ; gain = 576.258 ; free physical = 1802 ; free virtual = 11040
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:20 ; elapsed = 00:00:23 . Memory (MB): peak = 1471.445 ; gain = 576.258 ; free physical = 1405 ; free virtual = 10684
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -878,7 +878,7 @@ Report RTL Partitions:
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:20 ; elapsed = 00:00:23 . Memory (MB): peak = 1471.449 ; gain = 576.258 ; free physical = 1802 ; free virtual = 11040
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:20 ; elapsed = 00:00:23 . Memory (MB): peak = 1471.445 ; gain = 576.258 ; free physical = 1405 ; free virtual = 10684
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
@@ -924,25 +924,26 @@ Report Cell Usage:
 |6     |clk_wiz_0        |     1|
 |7     |xadc_wiz_0       |     1|
 |8     |CARRY4           |   351|
-|9     |LUT1             |   516|
+|9     |LUT1             |   518|
 |10    |LUT2             |   960|
 |11    |LUT3             |   114|
-|12    |LUT4             |   189|
-|13    |LUT5             |    59|
+|12    |LUT4             |   191|
+|13    |LUT5             |    56|
 |14    |LUT6             |   151|
 |15    |SRL16E           |    36|
-|16    |FDRE             |   775|
-|17    |FDSE             |     4|
-|18    |IBUF             |     7|
-|19    |OBUF             |    28|
-|20    |OBUFT            |    18|
+|16    |XORCY            |     2|
+|17    |FDRE             |   775|
+|18    |FDSE             |     4|
+|19    |IBUF             |     7|
+|20    |OBUF             |    28|
+|21    |OBUFT            |    18|
 +------+-----------------+------+
 
 Report Instance Areas: 
 +------+-----------------+------------------------+------+
 |      |Instance         |Module                  |Cells |
 +------+-----------------+------------------------+------+
-|1     |top              |                        |  3337|
+|1     |top              |                        |  3340|
 |2     |  myss           |ScopeSettings           |    42|
 |3     |  nolabel_line91 |debounce__1             |    53|
 |4     |  nolabel_line92 |debounce__2             |    53|
@@ -958,28 +959,29 @@ Report Instance Areas:
 |14    |  Trigger        |TriggerRisingEdgeSteady |    49|
 |15    |  myXVGA         |xvga1280_1024           |    73|
 |16    |  myGrid         |Grid                    |    49|
-|17    |  myCurve        |Curve                   |   259|
-|18    |  myCurve2       |Curve__parameterized0   |   171|
+|17    |  myCurve        |Curve                   |   260|
+|18    |  myCurve2       |Curve__parameterized0   |   173|
 |19    |  mytls          |HorizontalLineSprite    |   114|
 |20    |  myText         |Text                    |  1434|
 +------+-----------------+------------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:20 ; elapsed = 00:00:23 . Memory (MB): peak = 1471.449 ; gain = 576.258 ; free physical = 1802 ; free virtual = 11040
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:20 ; elapsed = 00:00:23 . Memory (MB): peak = 1471.445 ; gain = 576.258 ; free physical = 1405 ; free virtual = 10684
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 68 critical warnings and 261 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 1471.449 ; gain = 108.438 ; free physical = 1802 ; free virtual = 11040
-Synthesis Optimization Complete : Time (s): cpu = 00:00:20 ; elapsed = 00:00:24 . Memory (MB): peak = 1471.449 ; gain = 576.258 ; free physical = 1802 ; free virtual = 11040
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 1471.445 ; gain = 108.438 ; free physical = 1405 ; free virtual = 10684
+Synthesis Optimization Complete : Time (s): cpu = 00:00:20 ; elapsed = 00:00:23 . Memory (MB): peak = 1471.445 ; gain = 576.258 ; free physical = 1405 ; free virtual = 10684
 INFO: [Project 1-571] Translating synthesized netlist
-INFO: [Netlist 29-17] Analyzing 358 Unisim elements for replacement
+INFO: [Netlist 29-17] Analyzing 360 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
 INFO: [Project 1-111] Unisim Transformation Summary:
-No Unisim elements were transformed.
+  A total of 2 instances were transformed.
+  (MUXCY,XORCY) => CARRY4: 2 instances
 
 INFO: [Common 17-83] Releasing license: Synthesis
 187 Infos, 190 Warnings, 68 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:20 ; elapsed = 00:00:23 . Memory (MB): peak = 1471.449 ; gain = 491.695 ; free physical = 1802 ; free virtual = 11040
-report_utilization: Time (s): cpu = 00:00:00.07 ; elapsed = 00:00:00.11 . Memory (MB): peak = 1503.465 ; gain = 0.000 ; free physical = 1804 ; free virtual = 11043
-INFO: [Common 17-206] Exiting Vivado at Mon Nov 21 15:05:26 2016...
+synth_design: Time (s): cpu = 00:00:20 ; elapsed = 00:00:22 . Memory (MB): peak = 1471.445 ; gain = 491.695 ; free physical = 1407 ; free virtual = 10685
+report_utilization: Time (s): cpu = 00:00:00.07 ; elapsed = 00:00:00.11 . Memory (MB): peak = 1503.461 ; gain = 0.000 ; free physical = 1405 ; free virtual = 10684
+INFO: [Common 17-206] Exiting Vivado at Mon Nov 21 16:06:24 2016...

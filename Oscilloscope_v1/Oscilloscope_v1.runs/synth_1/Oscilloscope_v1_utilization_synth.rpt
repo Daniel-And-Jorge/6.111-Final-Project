@@ -1,7 +1,7 @@
 Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2016.2 (lin64) Build 1577090 Thu Jun  2 16:32:35 MDT 2016
-| Date         : Mon Nov 21 15:05:26 2016
+| Date         : Mon Nov 21 16:06:23 2016
 | Host         : eecs-digital-02 running 64-bit Ubuntu 14.04.5 LTS
 | Command      : report_utilization -file Oscilloscope_v1_utilization_synth.rpt -pb Oscilloscope_v1_utilization_synth.pb
 | Design       : Oscilloscope_v1
@@ -30,8 +30,8 @@ Table of Contents
 +----------------------------+------+-------+-----------+-------+
 |          Site Type         | Used | Fixed | Available | Util% |
 +----------------------------+------+-------+-----------+-------+
-| Slice LUTs*                | 1280 |     0 |     63400 |  2.02 |
-|   LUT as Logic             | 1244 |     0 |     63400 |  1.96 |
+| Slice LUTs*                | 1281 |     0 |     63400 |  2.02 |
+|   LUT as Logic             | 1245 |     0 |     63400 |  1.96 |
 |   LUT as Memory            |   36 |     0 |     19000 |  0.19 |
 |     LUT as Distributed RAM |    0 |     0 |           |       |
 |     LUT as Shift Register  |   36 |     0 |           |       |
@@ -150,12 +150,12 @@ Table of Contents
 +----------+------+---------------------+
 | LUT2     |  960 |                 LUT |
 | FDRE     |  775 |        Flop & Latch |
-| CARRY4   |  351 |          CarryLogic |
-| LUT1     |  273 |                 LUT |
-| LUT4     |  189 |                 LUT |
+| CARRY4   |  353 |          CarryLogic |
+| LUT1     |  275 |                 LUT |
+| LUT4     |  191 |                 LUT |
 | LUT6     |  151 |                 LUT |
 | LUT3     |  114 |                 LUT |
-| LUT5     |   59 |                 LUT |
+| LUT5     |   56 |                 LUT |
 | SRL16E   |   36 |  Distributed Memory |
 | OBUF     |   28 |                  IO |
 | OBUFT    |   18 |                  IO |

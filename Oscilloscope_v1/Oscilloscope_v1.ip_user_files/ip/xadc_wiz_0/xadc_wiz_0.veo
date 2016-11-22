@@ -63,7 +63,6 @@ xadc_wiz_0 your_instance_name (
   .do_out(do_out),                            // output wire [15 : 0] do_out
   .dclk_in(dclk_in),                          // input wire dclk_in
   .reset_in(reset_in),                        // input wire reset_in
-  .convst_in(convst_in),                      // input wire convst_in
   .vp_in(vp_in),                              // input wire vp_in
   .vn_in(vn_in),                              // input wire vn_in
   .vauxp11(vauxp11),                          // input wire vauxp11

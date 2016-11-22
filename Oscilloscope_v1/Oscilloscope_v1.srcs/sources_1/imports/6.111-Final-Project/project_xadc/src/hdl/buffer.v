@@ -112,13 +112,14 @@ module buffer #(parameter LOG_SAMPLES=12, SAMPLE_SIZE=12)
           ram1_we <= 1;
           pointer1 <= pointer1 + 1;
         end
-
-        if (isTrigger) begin
-          if (activeBramSelect == 0) begin
-            trigger_address0 <= pointer0;
-          end else begin
-            trigger_address1 <= pointer1;
-          end
+      end
+      
+      // trigger can fire at any time, even when data isn't ready
+      if (isTrigger && !disableCollection) begin
+        if (activeBramSelect == 0) begin
+          trigger_address0 <= pointer0;
+        end else begin
+          trigger_address1 <= pointer1;
         end
       end
 

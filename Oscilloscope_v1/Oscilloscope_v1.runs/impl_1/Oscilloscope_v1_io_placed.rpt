@@ -1,7 +1,7 @@
 Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2016.2 (lin64) Build 1577090 Thu Jun  2 16:32:35 MDT 2016
-| Date         : Wed Nov 16 18:24:09 2016
+| Date         : Mon Nov 21 21:42:50 2016
 | Host         : eecs-digital-03 running 64-bit Ubuntu 14.04.5 LTS
 | Command      : report_io -file Oscilloscope_v1_io_placed.rpt
 | Design       : Oscilloscope_v1
@@ -23,7 +23,7 @@ Table of Contents
 +---------------+
 | Total User IO |
 +---------------+
-|            62 |
+|            67 |
 +---------------+
 
 
@@ -164,7 +164,7 @@ Table of Contents
 | H3         |             |            | GND                          | GND         |             |         |            |      |                     |                      |     0.0 |            |           |          |      |                  |
 | H4         |             | High Range | IO_L21N_T3_DQS_35            | User IO     |             |      35 |            |      |                     |                      |         |            |           |          |      |                  |
 | H5         |             | High Range | IO_L24N_T3_35                | User IO     |             |      35 |            |      |                     |                      |         |            |           |          |      |                  |
-| H6         |             | High Range | IO_L24P_T3_35                | User IO     |             |      35 |            |      |                     |                      |         |            |           |          |      |                  |
+| H6         | SW[12]      | High Range | IO_L24P_T3_35                | INPUT       | LVCMOS33    |      35 |            |      |                     |                 NONE |         | FIXED      |           |          |      | NONE             |
 | H7         |             |            | GND                          | GND         |             |         |            |      |                     |                      |     0.0 |            |           |          |      |                  |
 | H8         |             |            | VCCINT                       | VCCINT      |             |         |            |      |                     |                      |         |            |           |          |      |                  |
 | H9         |             | Dedicated  | GNDADC_0                     | XADC        |             |       0 |            |      |                     |                      |         |            |           |          |      |                  |
@@ -283,7 +283,7 @@ Table of Contents
 | P14        | an[4]       | High Range | IO_L8N_T1_D12_14             | OUTPUT      | LVCMOS33    |      14 |         12 | SLOW |                     |            FP_VTT_50 |         | FIXED      |           |          |      | NONE             |
 | P15        | seg[4]      | High Range | IO_L13P_T2_MRCC_14           | OUTPUT      | LVCMOS33    |      14 |         12 | SLOW |                     |            FP_VTT_50 |         | FIXED      |           |          |      | NONE             |
 | P16        |             | High Range | VCCO_14                      | VCCO        |             |      14 |            |      |                     |                      |    3.30 |            |           |          |      |                  |
-| P17        |             | High Range | IO_L12P_T1_MRCC_14           | User IO     |             |      14 |            |      |                     |                      |         |            |           |          |      |                  |
+| P17        | BTNL        | High Range | IO_L12P_T1_MRCC_14           | INPUT       | LVCMOS33    |      14 |            |      |                     |                 NONE |         | FIXED      |           |          |      | NONE             |
 | P18        | BTND        | High Range | IO_L9N_T1_DQS_D13_14         | INPUT       | LVCMOS33    |      14 |            |      |                     |                 NONE |         | FIXED      |           |          |      | NONE             |
 | R1         |             | High Range | IO_L17P_T2_34                | User IO     |             |      34 |            |      |                     |                      |         |            |           |          |      |                  |
 | R2         |             | High Range | IO_L15N_T2_DQS_34            | User IO     |             |      34 |            |      |                     |                      |         |            |           |          |      |                  |
@@ -300,7 +300,7 @@ Table of Contents
 | R13        | SW[7]       | High Range | IO_L5N_T0_D07_14             | INPUT       | LVCMOS33    |      14 |            |      |                     |                 NONE |         | FIXED      |           |          |      | NONE             |
 | R14        |             |            | GND                          | GND         |             |         |            |      |                     |                      |     0.0 |            |           |          |      |                  |
 | R15        | SW[3]       | High Range | IO_L13N_T2_MRCC_14           | INPUT       | LVCMOS33    |      14 |            |      |                     |                 NONE |         | FIXED      |           |          |      | NONE             |
-| R16        |             | High Range | IO_L15P_T2_DQS_RDWR_B_14     | User IO     |             |      14 |            |      |                     |                      |         |            |           |          |      |                  |
+| R16        | SW[10]      | High Range | IO_L15P_T2_DQS_RDWR_B_14     | INPUT       | LVCMOS33    |      14 |            |      |                     |                 NONE |         | FIXED      |           |          |      | NONE             |
 | R17        | SW[4]       | High Range | IO_L12N_T1_MRCC_14           | INPUT       | LVCMOS33    |      14 |            |      |                     |                 NONE |         | FIXED      |           |          |      | NONE             |
 | R18        | LED[4]      | High Range | IO_L7P_T1_D09_14             | OUTPUT      | LVCMOS33    |      14 |         12 | SLOW |                     |            FP_VTT_50 |         | FIXED      |           |          |      | NONE             |
 | T1         |             | High Range | IO_L17N_T2_34                | User IO     |             |      34 |            |      |                     |                      |         |            |           |          |      |                  |
@@ -315,7 +315,7 @@ Table of Contents
 | T10        | seg[0]      | High Range | IO_L24N_T3_A00_D16_14        | OUTPUT      | LVCMOS33    |      14 |         12 | SLOW |                     |            FP_VTT_50 |         | FIXED      |           |          |      | NONE             |
 | T11        | seg[5]      | High Range | IO_L19P_T3_A10_D26_14        | OUTPUT      | LVCMOS33    |      14 |         12 | SLOW |                     |            FP_VTT_50 |         | FIXED      |           |          |      | NONE             |
 | T12        |             | High Range | VCCO_14                      | VCCO        |             |      14 |            |      |                     |                      |    3.30 |            |           |          |      |                  |
-| T13        |             | High Range | IO_L23P_T3_A03_D19_14        | User IO     |             |      14 |            |      |                     |                      |         |            |           |          |      |                  |
+| T13        | SW[11]      | High Range | IO_L23P_T3_A03_D19_14        | INPUT       | LVCMOS33    |      14 |            |      |                     |                 NONE |         | FIXED      |           |          |      | NONE             |
 | T14        | an[5]       | High Range | IO_L14P_T2_SRCC_14           | OUTPUT      | LVCMOS33    |      14 |         12 | SLOW |                     |            FP_VTT_50 |         | FIXED      |           |          |      | NONE             |
 | T15        | LED[9]      | High Range | IO_L14N_T2_SRCC_14           | OUTPUT      | LVCMOS33    |      14 |         12 | SLOW |                     |            FP_VTT_50 |         | FIXED      |           |          |      | NONE             |
 | T16        | LED[11]     | High Range | IO_L15N_T2_DQS_DOUT_CSO_B_14 | OUTPUT      | LVCMOS33    |      14 |         12 | SLOW |                     |            FP_VTT_50 |         | FIXED      |           |          |      | NONE             |
@@ -332,7 +332,7 @@ Table of Contents
 | U9         |             | High Range | IO_L21P_T3_DQS_34            | User IO     |             |      34 |            |      |                     |                      |         |            |           |          |      |                  |
 | U10        |             |            | GND                          | GND         |             |         |            |      |                     |                      |     0.0 |            |           |          |      |                  |
 | U11        |             | High Range | IO_L19N_T3_A09_D25_VREF_14   | User IO     |             |      14 |            |      |                     |                      |         |            |           |          |      |                  |
-| U12        |             | High Range | IO_L20P_T3_A08_D24_14        | User IO     |             |      14 |            |      |                     |                      |         |            |           |          |      |                  |
+| U12        | SW[13]      | High Range | IO_L20P_T3_A08_D24_14        | INPUT       | LVCMOS33    |      14 |            |      |                     |                 NONE |         | FIXED      |           |          |      | NONE             |
 | U13        | an[7]       | High Range | IO_L23N_T3_A02_D18_14        | OUTPUT      | LVCMOS33    |      14 |         12 | SLOW |                     |            FP_VTT_50 |         | FIXED      |           |          |      | NONE             |
 | U14        | LED[10]     | High Range | IO_L22P_T3_A05_D21_14        | OUTPUT      | LVCMOS33    |      14 |         12 | SLOW |                     |            FP_VTT_50 |         | FIXED      |           |          |      | NONE             |
 | U15        |             | High Range | VCCO_14                      | VCCO        |             |      14 |            |      |                     |                      |    3.30 |            |           |          |      |                  |

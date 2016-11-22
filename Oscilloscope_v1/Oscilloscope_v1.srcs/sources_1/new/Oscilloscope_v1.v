@@ -29,8 +29,8 @@ module Oscilloscope_v1
    (input CLK100MHZ,
    input vauxp11,
    input vauxn11,
-   input [9:0] SW,
-   input BTNU, input BTND, input BTNC,
+   input [13:0] SW,
+   input BTNU, input BTND, input BTNC, input BTNL,
    //input reset,
    output wire [15:0] LED,
    output [7:0] an,
@@ -59,25 +59,34 @@ module Oscilloscope_v1
         
     // Scope settings
     wire signed [11:0] triggerThreshold;
-    wire signed [4:0] verticalShiftLeftFactor;
-    wire signed [5:0] samplePeriod;
-    ScopeSettings myss(.clock(CLK108MHZ), .sw(SW[7:0]),
-                        .triggerThreshold(triggerThreshold), .verticalShiftLeftFactor(verticalShiftLeftFactor),
+    wire [9:0] verticalScaleFactorTimes8;
+    wire [5:0] samplePeriod;
+    
+    
+    // these come from MeasureSignal
+    wire signed [11:0] signalMin;
+    wire signed [11:0] signalMax;
+    wire [11:0] signalPeriod;
+    wire signed [11:0] signalAverage;
+    
+    ScopeSettings myss(.clock(CLK108MHZ), .sw(SW[13:6]),
+                        .triggerThreshold(triggerThreshold), .verticalScaleFactorTimes8(verticalScaleFactorTimes8),
                         .samplePeriod(samplePeriod),
-                        .btnu(btnu_1pulse), .btnd(btnd_1pulse), .btnc(btnc_1pulse));
+                        .signalMin(signalMin), .signalMax(signalMax), .signalPeriod(signalPeriod),                        
+                        .btnu(btnu_1pulse), .btnd(btnd_1pulse), .btnc(btnc_1pulse), .btnl(btnl_1pulse));
     
     // Button input debouncers
     debounce (.reset(reset), .clock(CLK108MHZ), .noisy(BTNU), .clean(btnu_clean));
     debounce (.reset(reset), .clock(CLK108MHZ), .noisy(BTND), .clean(btnd_clean));
     debounce (.reset(reset), .clock(CLK108MHZ), .noisy(BTNC), .clean(btnc_clean));
+    debounce (.reset(reset), .clock(CLK108MHZ), .noisy(BTNL), .clean(btnl_clean));
     
     ButtonSinglePulse(.clock(CLK108MHZ), .btn(btnu_clean), .btn1pulse(btnu_1pulse));
     ButtonSinglePulse(.clock(CLK108MHZ), .btn(btnd_clean), .btn1pulse(btnd_1pulse));
     ButtonSinglePulse(.clock(CLK108MHZ), .btn(btnc_clean), .btn1pulse(btnc_1pulse));
+    ButtonSinglePulse(.clock(CLK108MHZ), .btn(btnl_clean), .btn1pulse(btnl_1pulse));
     
-    assign LED[0] = btnu_clean;
-    assign LED[1] = btnd_clean;
-    assign LED[13:2] = triggerThreshold;
+    assign LED[9:0] = verticalScaleFactorTimes8;
     
     // XADC IP module
     wire eoc;
@@ -88,7 +97,7 @@ module Oscilloscope_v1
     xadc_wiz_0  XLXI_7 (.daddr_in(Address_in), //addresses can be found in the artix 7 XADC user guide DRP register space
                          .dclk_in(CLK108MHZ), 
                          .den_in(eoc),
-                         .convst_in(CLK108MHZ), 
+//                         .convst_in(CLK108MHZ), 
                          .di_in(), 
                          .dwe_in(), 
                          .busy_out(),
@@ -105,7 +114,10 @@ module Oscilloscope_v1
       
       // ADC controller
       wire adcc_ready;
-      wire [11:0] ADCCdataOut;
+      wire adccRawReady;
+      wire signed [11:0] ADCCdataOut;
+      wire signed [11:0] adccRawDataOut;
+
       ADCController adcc(
                              .clock(CLK108MHZ),
                              .reset(reset),
@@ -114,7 +126,9 @@ module Oscilloscope_v1
                              .inputReady(eoc),
                              .dataIn(XADCdataOut[15:4]),
                              .ready(adcc_ready),
-                             .dataOut(ADCCdataOut)
+                             .dataOut(ADCCdataOut),
+                             .rawReady(adccRawReady), // not affected by samplePeriod
+                             .rawDataOut(adccRawDataOut)
                              );
 
 //    wire adcc_ready;
@@ -127,8 +141,8 @@ module Oscilloscope_v1
    wire signed [13:0] slope;
     EdgeTypeDetector myed
      (.clock(CLK108MHZ),
-      .dataReady(adcc_ready),
-      .dataIn(ADCCdataOut),
+      .dataReady(adccRawReady),
+      .dataIn(adccRawDataOut),
       .risingEdgeReady(risingEdgeReady),
       .estimatedSlope(slope),
       .estimatedSlopeIsPositive(positiveSlope));
@@ -162,15 +176,27 @@ module Oscilloscope_v1
 //    ConstantFakeBuffer buffer(.address(), .dataOut(bufferDataOut));
         
     wire isTriggered;
-    TriggerRisingEdgeSteady #(.DATA_BITS(12))
+    TriggerRisingEdgeSteady2 #(.DATA_BITS(12))
             Trigger
             (.clock(CLK108MHZ),
             .threshold(triggerThreshold),
-            .dataReady(adcc_ready),
-            .dataIn(ADCCdataOut),
+            .dataReady(adccRawReady),
+            .dataIn(adccRawDataOut),
             .triggerDisable(~positiveSlope),
             .isTriggered(isTriggered)
             );
+     
+     MeasureSignal mymeas
+                (
+                .clock(CLK108MHZ),
+                .dataReady(adccRawReady),
+                .dataIn(adccRawDataOut),
+                .isTrigger(isTriggered),
+                .signalMax(signalMax),
+                .signalMin(signalMin),
+                .signalPeriod(signalPeriod),
+                .signalAverage(signalAverage)
+                );
      
      
      // Create display system and sprites    
@@ -210,7 +236,8 @@ module Oscilloscope_v1
             myCurve
             (.clock(CLK108MHZ),
             .dataIn(dataIn),
-            .verticalShiftLeftFactor(verticalShiftLeftFactor),
+            .verticalScaleFactorTimes8(verticalScaleFactorTimes8),
+            //.verticalScaleFactorTimes8(SW[13:6]),
             .displayX(gridDisplayX),
             .displayY(gridDisplayY),
             .hsync(gridHsync),
@@ -241,7 +268,7 @@ module Oscilloscope_v1
                     myCurve2
                     (.clock(CLK108MHZ),
                     .dataIn(dataIn2),
-                    .verticalShiftLeftFactor(0),
+                    .verticalScaleFactorTimes8(0),
                     .displayX(curveDisplayX),
                     .displayY(curveDisplayY),
                     .hsync(curveHsync),
@@ -261,7 +288,8 @@ module Oscilloscope_v1
      wire [RGB_BITS-1:0] tlsPixel;
      HorizontalLineSprite mytls
                 (.clock(CLK108MHZ),
-                .level(`VERTICAL_SCALE(triggerThreshold, verticalShiftLeftFactor)),
+                //.level(`VERTICAL_SCALE(triggerThreshold, verticalShiftLeftFactor)),
+                .level(triggerThreshold * $signed(verticalScaleFactorTimes8) / 'sd8),
                 .displayX(curveDisplayX2),
                 .displayY(curveDisplayY2),
                 .hsync(curveHsync2),

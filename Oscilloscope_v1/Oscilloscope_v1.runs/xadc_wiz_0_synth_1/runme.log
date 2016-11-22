@@ -14,15 +14,15 @@ Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 15445 
+INFO: Helper process launched with PID 31766 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1072.332 ; gain = 177.141 ; free physical = 3001 ; free virtual = 13231
+Starting RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1072.336 ; gain = 177.145 ; free physical = 2097 ; free virtual = 13070
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-638] synthesizing module 'xadc_wiz_0' [/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/ip/xadc_wiz_0/xadc_wiz_0.v:53]
+INFO: [Synth 8-638] synthesizing module 'xadc_wiz_0' [/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/ip/xadc_wiz_0/xadc_wiz_0.v:52]
 INFO: [Synth 8-638] synthesizing module 'XADC' [/var/local/xilinx-local/Vivado/2016.2/scripts/rt/data/unisim_comp.v:44683]
-	Parameter INIT_40 bound to: 16'b1000001000011011 
+	Parameter INIT_40 bound to: 16'b1000000000011011 
 	Parameter INIT_41 bound to: 16'b0011000110100001 
-	Parameter INIT_42 bound to: 16'b0000010100000000 
+	Parameter INIT_42 bound to: 16'b0000010000000000 
 	Parameter INIT_43 bound to: 16'b0000000000000000 
 	Parameter INIT_44 bound to: 16'b0000000000000000 
 	Parameter INIT_45 bound to: 16'b0000000000000000 
@@ -57,9 +57,9 @@ INFO: [Synth 8-638] synthesizing module 'XADC' [/var/local/xilinx-local/Vivado/2
 	Parameter SIM_DEVICE bound to: 7SERIES - type: string 
 	Parameter SIM_MONITOR_FILE bound to: design.txt - type: string 
 INFO: [Synth 8-256] done synthesizing module 'XADC' (1#1) [/var/local/xilinx-local/Vivado/2016.2/scripts/rt/data/unisim_comp.v:44683]
-INFO: [Synth 8-256] done synthesizing module 'xadc_wiz_0' (2#1) [/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/ip/xadc_wiz_0/xadc_wiz_0.v:53]
+INFO: [Synth 8-256] done synthesizing module 'xadc_wiz_0' (2#1) [/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/ip/xadc_wiz_0/xadc_wiz_0.v:52]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 1112.773 ; gain = 217.582 ; free physical = 2916 ; free virtual = 13147
+Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 1112.773 ; gain = 217.582 ; free physical = 2055 ; free virtual = 13028
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -69,7 +69,7 @@ Report Check Netlist:
 |1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
 +------+------------------+-------+---------+-------+------------------+
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 1112.773 ; gain = 217.582 ; free physical = 2916 ; free virtual = 13147
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 1112.773 ; gain = 217.582 ; free physical = 2055 ; free virtual = 13028
 ---------------------------------------------------------------------------------
 INFO: [Netlist 29-17] Analyzing 1 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
@@ -89,26 +89,26 @@ Completed Processing XDC Constraints
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 1380.000 ; gain = 0.000 ; free physical = 2564 ; free virtual = 12796
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.02 . Memory (MB): peak = 1380.016 ; gain = 0.000 ; free physical = 1881 ; free virtual = 12855
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 1380.000 ; gain = 484.809 ; free physical = 2564 ; free virtual = 12795
+Finished Constraint Validation : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 1380.016 ; gain = 484.824 ; free physical = 1890 ; free virtual = 12852
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a100tcsg324-3
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 1380.000 ; gain = 484.809 ; free physical = 2564 ; free virtual = 12795
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 1380.016 ; gain = 484.824 ; free physical = 1890 ; free virtual = 12852
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 Applied set_property DONT_TOUCH = true for inst. (constraint file  auto generated constraint, line ).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 1380.000 ; gain = 484.809 ; free physical = 2564 ; free virtual = 12795
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 1380.016 ; gain = 484.824 ; free physical = 1890 ; free virtual = 12852
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 1380.000 ; gain = 484.809 ; free physical = 2563 ; free virtual = 12795
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 1380.016 ; gain = 484.824 ; free physical = 1890 ; free virtual = 12852
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -139,14 +139,14 @@ BRAMs: 270 (col length: RAMB18 80 RAMB36 40)
 ---------------------------------------------------------------------------------
 Finished Part Resource Summary
 ---------------------------------------------------------------------------------
-Start Parallel Synthesis Optimization  : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 1380.000 ; gain = 484.809 ; free physical = 2563 ; free virtual = 12795
+Start Parallel Synthesis Optimization  : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 1380.016 ; gain = 484.824 ; free physical = 1890 ; free virtual = 12852
 ---------------------------------------------------------------------------------
 Start Cross Boundary Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Cross Boundary Optimization : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 1380.000 ; gain = 484.809 ; free physical = 2563 ; free virtual = 12795
+Finished Cross Boundary Optimization : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 1380.016 ; gain = 484.824 ; free physical = 1890 ; free virtual = 12852
 ---------------------------------------------------------------------------------
-Finished Parallel Reinference  : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 1380.000 ; gain = 484.809 ; free physical = 2563 ; free virtual = 12795
+Finished Parallel Reinference  : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 1380.016 ; gain = 484.824 ; free physical = 1890 ; free virtual = 12852
 
 Report RTL Partitions: 
 +-+--------------+------------+----------+
@@ -157,9 +157,9 @@ Report RTL Partitions:
 Start Area Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Area Optimization : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 1380.000 ; gain = 484.809 ; free physical = 2563 ; free virtual = 12795
+Finished Area Optimization : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 1380.016 ; gain = 484.824 ; free physical = 1890 ; free virtual = 12852
 ---------------------------------------------------------------------------------
-Finished Parallel Area Optimization  : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 1380.000 ; gain = 484.809 ; free physical = 2563 ; free virtual = 12795
+Finished Parallel Area Optimization  : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 1380.016 ; gain = 484.824 ; free physical = 1890 ; free virtual = 12852
 
 Report RTL Partitions: 
 +-+--------------+------------+----------+
@@ -173,10 +173,10 @@ Start Timing Optimization
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:16 ; elapsed = 00:00:18 . Memory (MB): peak = 1382.980 ; gain = 487.789 ; free physical = 2201 ; free virtual = 12498
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 1382.996 ; gain = 487.805 ; free physical = 1852 ; free virtual = 12814
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:16 ; elapsed = 00:00:18 . Memory (MB): peak = 1382.980 ; gain = 487.789 ; free physical = 2201 ; free virtual = 12498
+Finished Timing Optimization : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 1382.996 ; gain = 487.805 ; free physical = 1852 ; free virtual = 12814
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -188,16 +188,16 @@ Report RTL Partitions:
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:16 ; elapsed = 00:00:18 . Memory (MB): peak = 1392.992 ; gain = 497.801 ; free physical = 2193 ; free virtual = 12490
+Finished Technology Mapping : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 1393.008 ; gain = 497.816 ; free physical = 1843 ; free virtual = 12805
 ---------------------------------------------------------------------------------
-Finished Parallel Technology Mapping Optimization  : Time (s): cpu = 00:00:16 ; elapsed = 00:00:18 . Memory (MB): peak = 1392.992 ; gain = 497.801 ; free physical = 2192 ; free virtual = 12490
+Finished Parallel Technology Mapping Optimization  : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 1393.008 ; gain = 497.816 ; free physical = 1843 ; free virtual = 12805
 
 Report RTL Partitions: 
 +-+--------------+------------+----------+
 | |RTL Partition |Replication |Instances |
 +-+--------------+------------+----------+
 +-+--------------+------------+----------+
-Finished Parallel Synthesis Optimization  : Time (s): cpu = 00:00:16 ; elapsed = 00:00:18 . Memory (MB): peak = 1392.992 ; gain = 497.801 ; free physical = 2192 ; free virtual = 12490
+Finished Parallel Synthesis Optimization  : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 1393.008 ; gain = 497.816 ; free physical = 1843 ; free virtual = 12805
 ---------------------------------------------------------------------------------
 Start IO Insertion
 ---------------------------------------------------------------------------------
@@ -214,7 +214,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:17 ; elapsed = 00:00:18 . Memory (MB): peak = 1392.992 ; gain = 497.801 ; free physical = 2100 ; free virtual = 12403
+Finished IO Insertion : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 1393.008 ; gain = 497.816 ; free physical = 1843 ; free virtual = 12805
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -227,7 +227,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:17 ; elapsed = 00:00:18 . Memory (MB): peak = 1392.992 ; gain = 497.801 ; free physical = 2091 ; free virtual = 12394
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 1393.008 ; gain = 497.816 ; free physical = 1843 ; free virtual = 12805
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -239,25 +239,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:17 ; elapsed = 00:00:18 . Memory (MB): peak = 1392.992 ; gain = 497.801 ; free physical = 2096 ; free virtual = 12399
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 1393.008 ; gain = 497.816 ; free physical = 1843 ; free virtual = 12805
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:17 ; elapsed = 00:00:18 . Memory (MB): peak = 1392.992 ; gain = 497.801 ; free physical = 2096 ; free virtual = 12399
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 1393.008 ; gain = 497.816 ; free physical = 1843 ; free virtual = 12805
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:17 ; elapsed = 00:00:18 . Memory (MB): peak = 1392.992 ; gain = 497.801 ; free physical = 2099 ; free virtual = 12402
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 1393.008 ; gain = 497.816 ; free physical = 1843 ; free virtual = 12805
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:17 ; elapsed = 00:00:18 . Memory (MB): peak = 1392.992 ; gain = 497.801 ; free physical = 2100 ; free virtual = 12403
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 1393.008 ; gain = 497.816 ; free physical = 1843 ; free virtual = 12805
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -283,11 +283,11 @@ Report Instance Areas:
 |1     |top      |       |     1|
 +------+---------+-------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:17 ; elapsed = 00:00:18 . Memory (MB): peak = 1392.992 ; gain = 497.801 ; free physical = 2100 ; free virtual = 12403
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 1393.008 ; gain = 497.816 ; free physical = 1843 ; free virtual = 12805
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 1392.992 ; gain = 122.434 ; free physical = 2120 ; free virtual = 12423
-Synthesis Optimization Complete : Time (s): cpu = 00:00:17 ; elapsed = 00:00:18 . Memory (MB): peak = 1393.000 ; gain = 497.809 ; free physical = 2120 ; free virtual = 12423
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 1393.008 ; gain = 122.434 ; free physical = 1843 ; free virtual = 12805
+Synthesis Optimization Complete : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 1393.016 ; gain = 497.824 ; free physical = 1843 ; free virtual = 12805
 INFO: [Project 1-571] Translating synthesized netlist
 INFO: [Netlist 29-17] Analyzing 1 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
@@ -303,6 +303,6 @@ No Unisim elements were transformed.
 INFO: [Common 17-83] Releasing license: Synthesis
 17 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 1411.094 ; gain = 420.344 ; free physical = 2106 ; free virtual = 12422
-report_utilization: Time (s): cpu = 00:00:00.07 ; elapsed = 00:00:00.12 . Memory (MB): peak = 1419.094 ; gain = 0.000 ; free physical = 2090 ; free virtual = 12406
-INFO: [Common 17-206] Exiting Vivado at Wed Nov 16 14:45:03 2016...
+synth_design: Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 1411.109 ; gain = 420.359 ; free physical = 1826 ; free virtual = 12788
+report_utilization: Time (s): cpu = 00:00:00.06 ; elapsed = 00:00:00.10 . Memory (MB): peak = 1419.109 ; gain = 0.000 ; free physical = 1823 ; free virtual = 12785
+INFO: [Common 17-206] Exiting Vivado at Thu Nov 17 13:34:37 2016...

@@ -1,7 +1,7 @@
 -- Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2016.2 (lin64) Build 1577090 Thu Jun  2 16:32:35 MDT 2016
--- Date        : Wed Nov 16 14:45:03 2016
+-- Date        : Thu Nov 17 13:34:37 2016
 -- Host        : eecs-digital-03 running 64-bit Ubuntu 14.04.5 LTS
 -- Command     : write_vhdl -force -mode funcsim
 --               /afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/xadc_wiz_0_synth_1/xadc_wiz_0_sim_netlist.vhdl
@@ -16,7 +16,6 @@ library UNISIM;
 use UNISIM.VCOMPONENTS.ALL;
 entity xadc_wiz_0 is
   port (
-    convst_in : in STD_LOGIC;
     daddr_in : in STD_LOGIC_VECTOR ( 6 downto 0 );
     dclk_in : in STD_LOGIC;
     den_in : in STD_LOGIC;
@@ -54,9 +53,9 @@ architecture STRUCTURE of xadc_wiz_0 is
 begin
 inst: unisim.vcomponents.XADC
     generic map(
-      INIT_40 => X"821B",
+      INIT_40 => X"801B",
       INIT_41 => X"31A1",
-      INIT_42 => X"0500",
+      INIT_42 => X"0400",
       INIT_43 => X"0000",
       INIT_44 => X"0000",
       INIT_45 => X"0000",
@@ -99,7 +98,7 @@ inst: unisim.vcomponents.XADC
       ALM(0) => user_temp_alarm_out,
       BUSY => busy_out,
       CHANNEL(4 downto 0) => channel_out(4 downto 0),
-      CONVST => convst_in,
+      CONVST => '0',
       CONVSTCLK => '0',
       DADDR(6 downto 0) => daddr_in(6 downto 0),
       DCLK => dclk_in,

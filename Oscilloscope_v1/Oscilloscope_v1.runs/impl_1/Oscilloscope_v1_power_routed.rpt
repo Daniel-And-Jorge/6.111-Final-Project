@@ -1,7 +1,7 @@
 Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2016.2 (lin64) Build 1577090 Thu Jun  2 16:32:35 MDT 2016
-| Date             : Wed Nov 16 18:24:26 2016
+| Date             : Mon Nov 21 21:43:14 2016
 | Host             : eecs-digital-03 running 64-bit Ubuntu 14.04.5 LTS
 | Command          : report_power -file Oscilloscope_v1_power_routed.rpt -pb Oscilloscope_v1_power_summary_routed.pb -rpx Oscilloscope_v1_power_routed.rpx
 | Design           : Oscilloscope_v1
@@ -30,12 +30,12 @@ Table of Contents
 ----------
 
 +--------------------------+-------+
-| Total On-Chip Power (W)  | 0.246 |
-| Dynamic (W)              | 0.149 |
+| Total On-Chip Power (W)  | 0.276 |
+| Dynamic (W)              | 0.178 |
 | Device Static (W)        | 0.098 |
 | Effective TJA (C/W)      | 4.6   |
-| Max Ambient (C)          | 98.9  |
-| Junction Temperature (C) | 26.1  |
+| Max Ambient (C)          | 98.7  |
+| Junction Temperature (C) | 26.3  |
 | Confidence Level         | Low   |
 | Setting File             | ---   |
 | Simulation Activity File | ---   |
@@ -49,20 +49,21 @@ Table of Contents
 +-------------------------+-----------+----------+-----------+-----------------+
 | On-Chip                 | Power (W) | Used     | Available | Utilization (%) |
 +-------------------------+-----------+----------+-----------+-----------------+
-| Clocks                  |     0.004 |        8 |       --- |             --- |
-| Slice Logic             |     0.002 |     1534 |       --- |             --- |
-|   LUT as Logic          |     0.002 |      515 |     63400 |            0.81 |
-|   CARRY4                |    <0.001 |      126 |     15850 |            0.79 |
-|   Register              |    <0.001 |      666 |    126800 |            0.53 |
+| Clocks                  |     0.005 |        8 |       --- |             --- |
+| Slice Logic             |     0.011 |     3143 |       --- |             --- |
+|   LUT as Logic          |     0.009 |     1577 |     63400 |            2.49 |
+|   CARRY4                |     0.002 |      441 |     15850 |            2.78 |
+|   Register              |    <0.001 |      802 |    126800 |            0.63 |
 |   LUT as Shift Register |    <0.001 |        4 |     19000 |            0.02 |
-|   Others                |     0.000 |       62 |       --- |             --- |
-| Signals                 |     0.003 |     1252 |       --- |             --- |
-| Block RAM               |     0.012 |        6 |       135 |            4.44 |
-| MMCM                    |     0.123 |        1 |         6 |           16.67 |
-| I/O                     |     0.003 |       36 |       210 |           17.14 |
+|   Others                |     0.000 |       84 |       --- |             --- |
+| Signals                 |     0.018 |     2645 |       --- |             --- |
+| Block RAM               |     0.011 |        6 |       135 |            4.44 |
+| MMCM                    |     0.121 |        1 |         6 |           16.67 |
+| DSPs                    |     0.004 |        5 |       240 |            2.08 |
+| I/O                     |     0.006 |       33 |       210 |           15.71 |
 | XADC                    |     0.002 |        1 |       --- |             --- |
 | Static Power            |     0.098 |          |           |                 |
-| Total                   |     0.246 |          |           |                 |
+| Total                   |     0.276 |          |           |                 |
 +-------------------------+-----------+----------+-----------+-----------------+
 
 
@@ -72,9 +73,9 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.036 |       0.021 |      0.015 |
-| Vccaux    |       1.800 |     0.086 |       0.068 |      0.018 |
-| Vcco33    |       3.300 |     0.005 |       0.001 |      0.004 |
+| Vccint    |       1.000 |     0.065 |       0.050 |      0.016 |
+| Vccaux    |       1.800 |     0.085 |       0.067 |      0.018 |
+| Vcco33    |       3.300 |     0.006 |       0.002 |      0.004 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
 | Vcco18    |       1.800 |     0.000 |       0.000 |      0.000 |
 | Vcco15    |       1.500 |     0.000 |       0.000 |      0.000 |
@@ -129,8 +130,8 @@ Table of Contents
 | Clock                | Domain                               | Constraint (ns) |
 +----------------------+--------------------------------------+-----------------+
 | CLK100MHZ            | CLK100MHZ                            |            10.0 |
-| clk_out1_clk_wiz_0   | ClockDivider/inst/clk_out1_clk_wiz_0 |             9.3 |
-| clk_out1_clk_wiz_0_1 | ClockDivider/inst/clk_out1_clk_wiz_0 |             9.3 |
+| clk_out1_clk_wiz_0   | ClockDivider/inst/clk_out1_clk_wiz_0 |             9.6 |
+| clk_out1_clk_wiz_0_1 | ClockDivider/inst/clk_out1_clk_wiz_0 |             9.6 |
 | clkfbout_clk_wiz_0   | ClockDivider/inst/clkfbout_clk_wiz_0 |            10.0 |
 | clkfbout_clk_wiz_0_1 | ClockDivider/inst/clkfbout_clk_wiz_0 |            10.0 |
 | sys_clk_pin          | CLK100MHZ                            |            10.0 |
@@ -146,7 +147,7 @@ Table of Contents
 +------------------------------------------------+-----------+
 | Name                                           | Power (W) |
 +------------------------------------------------+-----------+
-| Oscilloscope_v1                                |     0.149 |
+| Oscilloscope_v1                                |     0.178 |
 |   Buffer                                       |     0.007 |
 |     bram0                                      |     0.003 |
 |       U0                                       |     0.003 |
@@ -185,25 +186,28 @@ Table of Contents
 |                 prim_init.ram                  |    <0.001 |
 |               ramloop[1].ram.r                 |     0.002 |
 |                 prim_init.ram                  |     0.002 |
-|   ClockDivider                                 |     0.124 |
-|     inst                                       |     0.124 |
+|   ClockDivider                                 |     0.121 |
+|     inst                                       |     0.121 |
 |   Trigger                                      |    <0.001 |
 |   XLXI_7                                       |     0.002 |
 |   adcc                                         |    <0.001 |
-|   myCurve                                      |     0.001 |
+|   myCurve                                      |     0.002 |
 |   myCurve2                                     |    <0.001 |
 |   myGrid                                       |    <0.001 |
 |   myXVGA                                       |    <0.001 |
 |   mybs                                         |    <0.001 |
 |   myed                                         |     0.002 |
-|   myss                                         |    <0.001 |
+|   mymeas                                       |     0.001 |
+|   myss                                         |     0.023 |
 |   mytls                                        |    <0.001 |
-|   nolabel_line70                               |    <0.001 |
-|   nolabel_line71                               |    <0.001 |
-|   nolabel_line72                               |    <0.001 |
-|   nolabel_line74                               |    <0.001 |
-|   nolabel_line75                               |    <0.001 |
-|   nolabel_line76                               |    <0.001 |
+|   nolabel_line79                               |    <0.001 |
+|   nolabel_line80                               |    <0.001 |
+|   nolabel_line81                               |    <0.001 |
+|   nolabel_line82                               |    <0.001 |
+|   nolabel_line84                               |    <0.001 |
+|   nolabel_line85                               |    <0.001 |
+|   nolabel_line86                               |    <0.001 |
+|   nolabel_line87                               |    <0.001 |
 +------------------------------------------------+-----------+
 
 

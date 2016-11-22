@@ -62,7 +62,6 @@ COMPONENT xadc_wiz_0
     do_out : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
     dclk_in : IN STD_LOGIC;
     reset_in : IN STD_LOGIC;
-    convst_in : IN STD_LOGIC;
     vp_in : IN STD_LOGIC;
     vn_in : IN STD_LOGIC;
     vauxp11 : IN STD_LOGIC;
@@ -93,7 +92,6 @@ your_instance_name : xadc_wiz_0
     do_out => do_out,
     dclk_in => dclk_in,
     reset_in => reset_in,
-    convst_in => convst_in,
     vp_in => vp_in,
     vn_in => vn_in,
     vauxp11 => vauxp11,

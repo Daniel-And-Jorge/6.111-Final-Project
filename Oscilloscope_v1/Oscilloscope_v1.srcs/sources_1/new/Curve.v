@@ -23,6 +23,7 @@
 
 module Curve
     #(parameter DATA_IN_BITS = 12,
+                SCALE_FACTOR_BITS = 10,
                 DISPLAY_X_BITS = 12,
                 DISPLAY_Y_BITS = 12,
                 RGB_COLOR = 12'hFF0,  //yellow
@@ -37,7 +38,7 @@ module Curve
                 )
     (input clock,
     input signed [DATA_IN_BITS-1:0] dataIn,
-    input signed [4:0] verticalShiftLeftFactor, // to allow for shrinking and growing the signal
+    input [SCALE_FACTOR_BITS-1:0] verticalScaleFactorTimes8, // to allow for shrinking and growing the signal
     input [DISPLAY_X_BITS-1:0] displayX,
     input [DISPLAY_Y_BITS-1:0] displayY,
     input hsync,
@@ -55,8 +56,11 @@ module Curve
     );    
     
     //scale dataIn
+    wire signed [20:0] bigMult;
     wire signed [DATA_IN_BITS-1:0] scaledDataIn;
-    assign scaledDataIn = `VERTICAL_SCALE(dataIn, verticalShiftLeftFactor);
+    //assign scaledDataIn = dataIn * verticalScaleFactorTimes8 / 'sd8; //`VERTICAL_SCALE(dataIn, verticalShiftLeftFactor);
+    assign bigMult = dataIn * $signed(verticalScaleFactorTimes8);
+    assign scaledDataIn = {bigMult[20], bigMult[13:3]};
     
     // figure out horiz location on screen
     // this has to be unsigned!

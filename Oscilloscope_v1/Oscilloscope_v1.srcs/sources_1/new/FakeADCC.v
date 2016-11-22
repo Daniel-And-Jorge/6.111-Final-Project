@@ -24,8 +24,11 @@ module FakeADCC
     #(parameter DATA_BITS = 12,
                 MAX_COUNT = 300)
     (input clock,
+    output ready,
     output reg signed [DATA_BITS-1:0] dataOut = 0
     );
+    
+    assign ready = 1;
     
     always @(posedge clock) begin
         if (dataOut >= MAX_COUNT) begin

@@ -197,7 +197,7 @@ module Oscilloscope_v1
 //    ConstantFakeBuffer buffer(.address(), .dataOut(bufferDataOut));
         
     wire isTriggered;
-    TriggerRisingEdgeSteady2 #(.DATA_BITS(12))
+    TriggerRisingEdgeSteady #(.DATA_BITS(12))
             Trigger
             (.clock(CLK108MHZ),
             .threshold(triggerThreshold),

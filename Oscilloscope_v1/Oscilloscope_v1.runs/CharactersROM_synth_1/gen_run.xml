@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenRun Id="CharactersROM_synth_1" LaunchPart="xc7a100tcsg324-3" LaunchTime="1479693744">
+  <File Type="RDS-UTIL" Name="CharactersROM_utilization_synth.rpt"/>
+  <File Type="RDS-PROPCONSTRS" Name="CharactersROM_drc_synth.rpt"/>
+  <File Type="RDS-UTIL-PB" Name="CharactersROM_utilization_synth.pb"/>
+  <File Type="RDS-DCP" Name="CharactersROM.dcp"/>
+  <File Type="VDS-TIMINGSUMMARY" Name="CharactersROM_timing_summary_synth.rpt"/>
+  <File Type="VDS-TIMING-PB" Name="CharactersROM_timing_summary_synth.pb"/>
+  <File Type="RDS-RDS" Name="CharactersROM.vds"/>
+  <File Type="PA-TCL" Name="CharactersROM.tcl"/>
+  <FileSet Name="sources" Type="BlockSrcs" RelSrcDir="$PSRCDIR/CharactersROM">
+    <File Path="$PSRCDIR/sources_1/ip/CharactersROM/CharactersROM.xci">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/ip/CharactersROM.xcix">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="TopModule" Val="CharactersROM"/>
+      <Option Name="UseBlackboxStub" Val="1"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="constrs_in" Type="BlockSrcs" RelSrcDir="$PSRCDIR/CharactersROM">
+    <File Path="$PSRCDIR/sources_1/ip/CharactersROM/CharactersROM.xci">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/ip/CharactersROM.xcix">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="TopModule" Val="CharactersROM"/>
+      <Option Name="UseBlackboxStub" Val="1"/>
+    </Config>
+  </FileSet>
+  <Strategy Version="1" Minor="2">
+    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2016"/>
+    <Step Id="synth_design"/>
+  </Strategy>
+</GenRun>

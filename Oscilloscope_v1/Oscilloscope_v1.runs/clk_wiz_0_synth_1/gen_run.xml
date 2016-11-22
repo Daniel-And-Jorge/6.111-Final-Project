@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<<<<<<< HEAD
 <GenRun Id="clk_wiz_0_synth_1" LaunchPart="xc7a100tcsg324-3" LaunchTime="1479405828">
+=======
+<GenRun Id="clk_wiz_0_synth_1" LaunchPart="xc7a100tcsg324-3" LaunchTime="1479693455">
+>>>>>>> origin/master
   <File Type="RDS-PROPCONSTRS" Name="clk_wiz_0_drc_synth.rpt"/>
   <File Type="RDS-UTIL" Name="clk_wiz_0_utilization_synth.rpt"/>
   <File Type="RDS-RDS" Name="clk_wiz_0.vds"/>

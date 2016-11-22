@@ -1,8 +1,13 @@
 Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2016.2 (lin64) Build 1577090 Thu Jun  2 16:32:35 MDT 2016
+<<<<<<< HEAD
 | Date             : Mon Nov 21 21:43:14 2016
 | Host             : eecs-digital-03 running 64-bit Ubuntu 14.04.5 LTS
+=======
+| Date             : Mon Nov 21 16:07:28 2016
+| Host             : eecs-digital-02 running 64-bit Ubuntu 14.04.5 LTS
+>>>>>>> origin/master
 | Command          : report_power -file Oscilloscope_v1_power_routed.rpt -pb Oscilloscope_v1_power_summary_routed.pb -rpx Oscilloscope_v1_power_routed.rpx
 | Design           : Oscilloscope_v1
 | Device           : xc7a100tcsg324-3
@@ -30,12 +35,21 @@ Table of Contents
 ----------
 
 +--------------------------+-------+
+<<<<<<< HEAD
 | Total On-Chip Power (W)  | 0.276 |
 | Dynamic (W)              | 0.178 |
 | Device Static (W)        | 0.098 |
 | Effective TJA (C/W)      | 4.6   |
 | Max Ambient (C)          | 98.7  |
 | Junction Temperature (C) | 26.3  |
+=======
+| Total On-Chip Power (W)  | 0.254 |
+| Dynamic (W)              | 0.156 |
+| Device Static (W)        | 0.098 |
+| Effective TJA (C/W)      | 4.6   |
+| Max Ambient (C)          | 98.8  |
+| Junction Temperature (C) | 26.2  |
+>>>>>>> origin/master
 | Confidence Level         | Low   |
 | Setting File             | ---   |
 | Simulation Activity File | ---   |
@@ -50,6 +64,7 @@ Table of Contents
 | On-Chip                 | Power (W) | Used     | Available | Utilization (%) |
 +-------------------------+-----------+----------+-----------+-----------------+
 | Clocks                  |     0.005 |        8 |       --- |             --- |
+<<<<<<< HEAD
 | Slice Logic             |     0.011 |     3143 |       --- |             --- |
 |   LUT as Logic          |     0.009 |     1577 |     63400 |            2.49 |
 |   CARRY4                |     0.002 |      441 |     15850 |            2.78 |
@@ -64,6 +79,21 @@ Table of Contents
 | XADC                    |     0.002 |        1 |       --- |             --- |
 | Static Power            |     0.098 |          |           |                 |
 | Total                   |     0.276 |          |           |                 |
+=======
+| Slice Logic             |     0.005 |     3003 |       --- |             --- |
+|   LUT as Logic          |     0.004 |     1247 |     63400 |            1.97 |
+|   CARRY4                |    <0.001 |      353 |     15850 |            2.23 |
+|   Register              |    <0.001 |      786 |    126800 |            0.62 |
+|   LUT as Shift Register |    <0.001 |       23 |     19000 |            0.12 |
+|   Others                |     0.000 |       78 |       --- |             --- |
+| Signals                 |     0.005 |     1672 |       --- |             --- |
+| Block RAM               |     0.014 |      9.5 |       135 |            7.04 |
+| MMCM                    |     0.123 |        1 |         6 |           16.67 |
+| I/O                     |     0.002 |       36 |       210 |           17.14 |
+| XADC                    |     0.002 |        1 |       --- |             --- |
+| Static Power            |     0.098 |          |           |                 |
+| Total                   |     0.254 |          |           |                 |
+>>>>>>> origin/master
 +-------------------------+-----------+----------+-----------+-----------------+
 
 
@@ -73,16 +103,22 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
+<<<<<<< HEAD
 | Vccint    |       1.000 |     0.065 |       0.050 |      0.016 |
 | Vccaux    |       1.800 |     0.085 |       0.067 |      0.018 |
 | Vcco33    |       3.300 |     0.006 |       0.002 |      0.004 |
+=======
+| Vccint    |       1.000 |     0.044 |       0.028 |      0.016 |
+| Vccaux    |       1.800 |     0.086 |       0.068 |      0.018 |
+| Vcco33    |       3.300 |     0.005 |       0.001 |      0.004 |
+>>>>>>> origin/master
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
 | Vcco18    |       1.800 |     0.000 |       0.000 |      0.000 |
 | Vcco15    |       1.500 |     0.000 |       0.000 |      0.000 |
 | Vcco135   |       1.350 |     0.000 |       0.000 |      0.000 |
 | Vcco12    |       1.200 |     0.000 |       0.000 |      0.000 |
 | Vccaux_io |       1.800 |     0.000 |       0.000 |      0.000 |
-| Vccbram   |       1.000 |     0.001 |       0.001 |      0.000 |
+| Vccbram   |       1.000 |     0.002 |       0.001 |      0.000 |
 | MGTAVcc   |       1.000 |     0.000 |       0.000 |      0.000 |
 | MGTAVtt   |       1.200 |     0.000 |       0.000 |      0.000 |
 | Vccadc    |       1.800 |     0.021 |       0.001 |      0.020 |
@@ -147,7 +183,11 @@ Table of Contents
 +------------------------------------------------+-----------+
 | Name                                           | Power (W) |
 +------------------------------------------------+-----------+
+<<<<<<< HEAD
 | Oscilloscope_v1                                |     0.178 |
+=======
+| Oscilloscope_v1                                |     0.156 |
+>>>>>>> origin/master
 |   Buffer                                       |     0.007 |
 |     bram0                                      |     0.003 |
 |       U0                                       |     0.003 |
@@ -194,12 +234,28 @@ Table of Contents
 |   myCurve                                      |     0.002 |
 |   myCurve2                                     |    <0.001 |
 |   myGrid                                       |    <0.001 |
+|   myText                                       |     0.006 |
+|     characterBRAM                              |     0.002 |
+|       U0                                       |     0.002 |
+|         inst_blk_mem_gen                       |     0.002 |
+|           gnbram.gnativebmg.native_blk_mem_gen |     0.002 |
+|             valid.cstr                         |     0.002 |
+|               bindec_a.bindec_inst_a           |    <0.001 |
+|               bindec_b.bindec_inst_b           |     0.000 |
+|               has_mux_a.A                      |    <0.001 |
+|               ramloop[0].ram.r                 |    <0.001 |
+|                 prim_init.ram                  |    <0.001 |
+|               ramloop[1].ram.r                 |     0.002 |
+|                 prim_init.ram                  |     0.002 |
+|               ramloop[2].ram.r                 |    <0.001 |
+|                 prim_init.ram                  |    <0.001 |
 |   myXVGA                                       |    <0.001 |
 |   mybs                                         |    <0.001 |
 |   myed                                         |     0.002 |
 |   mymeas                                       |     0.001 |
 |   myss                                         |     0.023 |
 |   mytls                                        |    <0.001 |
+<<<<<<< HEAD
 |   nolabel_line79                               |    <0.001 |
 |   nolabel_line80                               |    <0.001 |
 |   nolabel_line81                               |    <0.001 |
@@ -208,6 +264,14 @@ Table of Contents
 |   nolabel_line85                               |    <0.001 |
 |   nolabel_line86                               |    <0.001 |
 |   nolabel_line87                               |    <0.001 |
+=======
+|   nolabel_line91                               |    <0.001 |
+|   nolabel_line92                               |    <0.001 |
+|   nolabel_line93                               |    <0.001 |
+|   nolabel_line95                               |    <0.001 |
+|   nolabel_line96                               |    <0.001 |
+|   nolabel_line97                               |    <0.001 |
+>>>>>>> origin/master
 +------------------------------------------------+-----------+
 
 

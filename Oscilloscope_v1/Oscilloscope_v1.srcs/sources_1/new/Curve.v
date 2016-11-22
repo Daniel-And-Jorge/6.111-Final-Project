@@ -95,10 +95,10 @@ module Curve
         end
         
         //control address
-        if (0<=displayX && displayX<=(DISPLAY_WIDTH-4)) begin
-            address <= displayX - (DISPLAY_WIDTH-4);
-        end else if ((REAL_DISPLAY_WIDTH-3)<=displayX && displayX<=(REAL_DISPLAY_WIDTH-1) ) begin
-            address <= displayX - (REAL_DISPLAY_WIDTH + DISPLAY_WIDTH - 4);
+        if (0<=displayX && displayX<=(DISPLAY_WIDTH-5)) begin
+            address <= displayX - (DISPLAY_WIDTH-5);
+        end else if ((REAL_DISPLAY_WIDTH-4)<=displayX && displayX<=(REAL_DISPLAY_WIDTH-1) ) begin
+            address <= displayX - (REAL_DISPLAY_WIDTH + DISPLAY_WIDTH - 5);
         end else begin
             //output address is irrelevant in this case
             address <= address;

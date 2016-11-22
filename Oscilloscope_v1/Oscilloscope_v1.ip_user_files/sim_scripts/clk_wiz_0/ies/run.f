@@ -12,8 +12,8 @@
   "/var/local/xilinx-local/Vivado/2016.2/data/ip/xpm/xpm_VCOMP.vhd" \
 -endlib
 -makelib ies/xil_defaultlib \
-  "../../../../Oscilloscope_v1.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0_clk_wiz.v" \
-  "../../../../Oscilloscope_v1.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.v" \
+  "../../../ip/clk_wiz_0/clk_wiz_0_clk_wiz.v" \
+  "../../../ip/clk_wiz_0/clk_wiz_0.v" \
 -endlib
 -makelib ies/xil_defaultlib \
   glbl.v

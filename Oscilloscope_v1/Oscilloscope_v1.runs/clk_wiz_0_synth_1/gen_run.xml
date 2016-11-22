@@ -1,19 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<<<<<<< HEAD
-<GenRun Id="clk_wiz_0_synth_1" LaunchPart="xc7a100tcsg324-3" LaunchTime="1479405828">
-=======
-<GenRun Id="clk_wiz_0_synth_1" LaunchPart="xc7a100tcsg324-3" LaunchTime="1479693455">
->>>>>>> origin/master
-  <File Type="RDS-PROPCONSTRS" Name="clk_wiz_0_drc_synth.rpt"/>
-  <File Type="RDS-UTIL" Name="clk_wiz_0_utilization_synth.rpt"/>
-  <File Type="RDS-RDS" Name="clk_wiz_0.vds"/>
-  <File Type="VDS-TIMING-PB" Name="clk_wiz_0_timing_summary_synth.pb"/>
-  <File Type="PA-TCL" Name="clk_wiz_0.tcl"/>
-  <File Type="VDS-TIMINGSUMMARY" Name="clk_wiz_0_timing_summary_synth.rpt"/>
+<GenRun Id="clk_wiz_0_synth_1" LaunchPart="xc7a100tcsg324-3" LaunchTime="1479784119">
   <File Type="RDS-DCP" Name="clk_wiz_0.dcp"/>
   <File Type="RDS-UTIL-PB" Name="clk_wiz_0_utilization_synth.pb"/>
+  <File Type="VDS-TIMINGSUMMARY" Name="clk_wiz_0_timing_summary_synth.rpt"/>
+  <File Type="VDS-TIMING-PB" Name="clk_wiz_0_timing_summary_synth.pb"/>
+  <File Type="RDS-RDS" Name="clk_wiz_0.vds"/>
+  <File Type="PA-TCL" Name="clk_wiz_0.tcl"/>
+  <File Type="RDS-PROPCONSTRS" Name="clk_wiz_0_drc_synth.rpt"/>
+  <File Type="RDS-UTIL" Name="clk_wiz_0_utilization_synth.rpt"/>
   <FileSet Name="sources" Type="BlockSrcs" RelSrcDir="$PSRCDIR/clk_wiz_0">
     <File Path="$PSRCDIR/sources_1/ip/clk_wiz_0/clk_wiz_0.xci">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/ip/clk_wiz_0.xcix">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -27,6 +30,13 @@
   </FileSet>
   <FileSet Name="constrs_in" Type="BlockSrcs" RelSrcDir="$PSRCDIR/clk_wiz_0">
     <File Path="$PSRCDIR/sources_1/ip/clk_wiz_0/clk_wiz_0.xci">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/ip/clk_wiz_0.xcix">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>

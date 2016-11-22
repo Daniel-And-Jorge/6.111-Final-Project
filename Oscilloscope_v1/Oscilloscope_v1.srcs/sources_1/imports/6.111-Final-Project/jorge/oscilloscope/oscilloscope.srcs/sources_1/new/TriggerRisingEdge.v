@@ -82,7 +82,7 @@ endmodule
 
 module TriggerRisingEdgeSteady2
     #(parameter DATA_BITS = 12,
-      parameter TRIGGER_HOLDOFF = 0)
+      parameter TRIGGER_HOLDOFF = 20)
     (input clock,
     input signed [DATA_BITS-1:0] threshold,
     input dataReady,

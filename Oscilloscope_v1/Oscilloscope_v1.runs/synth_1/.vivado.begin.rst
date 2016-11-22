@@ -1,9 +1,0 @@
-<?xml version="1.0"?>
-<ProcessHandle Version="1" Minor="0">
-<<<<<<< HEAD
-    <Process Command="vivado" Owner="ddr" Host="eecs-digital-03" Pid="22221">
-=======
-    <Process Command="vivado" Owner="jatron" Host="" Pid="31034">
->>>>>>> origin/master
-    </Process>
-</ProcessHandle>

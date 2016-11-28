@@ -1,7 +1,7 @@
 Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 --------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2016.2 (lin64) Build 1577090 Thu Jun  2 16:32:35 MDT 2016
-| Date         : Sun Nov 27 22:17:57 2016
+| Date         : Sun Nov 27 22:39:30 2016
 | Host         : eecs-digital-02 running 64-bit Ubuntu 14.04.5 LTS
 | Command      : report_control_sets -verbose -file Oscilloscope_v1_control_sets_placed.rpt
 | Design       : Oscilloscope_v1
@@ -74,16 +74,16 @@ Table of Contents
 |  ClockDivider/inst/clk_out1 | mymeas/signalMax[11]_i_1_n_0                      |                                  |                6 |             12 |
 |  ClockDivider/inst/clk_out1 | mymeas/signalPeriod[11]_i_1_n_0                   |                                  |                4 |             12 |
 |  ClockDivider/inst/clk_out1 | mymeas/signalMin[11]_i_1_n_0                      |                                  |                5 |             12 |
-|  ClockDivider/inst/clk_out1 | adcc/dataOut[11]_i_1_n_0                          |                                  |                5 |             12 |
 |  ClockDivider/inst/clk_out1 | adcc/rawReady                                     | mymeas/signalPeriod[11]_i_1_n_0  |                3 |             12 |
-|  ClockDivider/inst/clk_out1 | myToggleChannels/channelDataReady                 | adcc/dataOut[11]_i_1_n_0         |                4 |             16 |
+|  ClockDivider/inst/clk_out1 | adcc/sampleClock                                  |                                  |                5 |             12 |
+|  ClockDivider/inst/clk_out1 | myToggleChannels/channelDataReady                 | adcc/sampleClock                 |                4 |             16 |
 |  ClockDivider/inst/clk_out1 | myText/addressA[16]_i_1_n_0                       |                                  |                8 |             17 |
 |  ClockDivider/inst/clk_out1 | nolabel_line114/count                             | nolabel_line114/count[0]_i_1_n_0 |                5 |             19 |
 |  ClockDivider/inst/clk_out1 | nolabel_line112/count                             | nolabel_line112/count[0]_i_1_n_0 |                5 |             19 |
 |  ClockDivider/inst/clk_out1 | nolabel_line111/count                             | nolabel_line111/count[0]_i_1_n_0 |                5 |             19 |
 |  ClockDivider/inst/clk_out1 | nolabel_line113/count                             | nolabel_line113/count[0]_i_1_n_0 |                5 |             19 |
-|  ClockDivider/inst/clk_out1 | adcc/rawReady                                     | mymeas/timeSinceMin              |                7 |             26 |
 |  ClockDivider/inst/clk_out1 | adcc/rawReady                                     | mymeas/timeSinceMax              |                7 |             26 |
+|  ClockDivider/inst/clk_out1 | adcc/rawReady                                     | mymeas/timeSinceMin              |                7 |             26 |
 |  ClockDivider/inst/clk_out1 | adcc/ready                                        |                                  |               13 |             37 |
 |  ClockDivider/inst/clk_out1 | myed/intermediates[4][13]_i_1_n_0                 |                                  |               20 |             69 |
 |  ClockDivider/inst/clk_out1 | adcc/rawReady                                     |                                  |               39 |            150 |

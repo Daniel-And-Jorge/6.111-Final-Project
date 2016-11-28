@@ -159,7 +159,7 @@ XADC #(
         .INIT_4A(16'h0000), // Sequencer Average selection
         .INIT_4B(16'h0000), // Sequencer Average selection
         .INIT_4C(16'h0000), // Sequencer Bipolar selection
-        .INIT_4D(16'hFFFF), // Sequencer Bipolar selection
+        .INIT_4D(16'hFFFF), // Sequencer Bipolar selection, set all auxiliary analog inputs to bipolar mode
         .INIT_4E(16'h0000), // Sequencer Acq time selection
         .INIT_4F(16'h0000), // Sequencer Acq time selection
         .INIT_50(16'hB5ED), // Temp alarm trigger

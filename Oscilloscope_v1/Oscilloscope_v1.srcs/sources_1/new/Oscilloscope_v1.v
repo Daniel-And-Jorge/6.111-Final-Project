@@ -167,59 +167,30 @@ module Oscilloscope_v1
         .state(state),
         .previousState(previousState)
         );
-        
-//    wire [DRP_ADDRESS_BITS-1:0] DRPAddress;
-//    wire DRPEnable;
-//    wire DRPWriteEnable;
-//    wire DRPReady;
-//    wire [DRP_SAMPLE_BITS-1:0] DRPDataOut;
-//    wire endOfConversion;
-//    xadc_wiz_2 simultaneousSamplingXADC (
-//        .di_in(),              // input wire [15 : 0] di_in
-//        .daddr_in(7'h13),        // input wire [6 : 0] daddr_in
-//        .den_in(endOfConversion),            // input wire den_in
-//        .dwe_in(1'b0),            // input wire dwe_in
-//        .drdy_out(DRPReady),        // output wire drdy_out
-//        .do_out(DRPDataOut),            // output wire [15 : 0] do_out
-//        .dclk_in(CLK108MHZ),          // input wire dclk_in
-//        .reset_in(reset),        // input wire reset_in
-//        .vp_in(),              // input wire vp_in
-//        .vn_in(),              // input wire vn_in
-//        .vauxp3(vauxp3),            // input wire vauxp3
-//        .vauxn3(vauxn3),            // input wire vauxn3
-//        .vauxp11(vauxp11),          // input wire vauxp11
-//        .vauxn11(vauxn11),          // input wire vauxn11
-//        .channel_out(),  // output wire [4 : 0] channel_out
-//        .eoc_out(endOfConversion),          // output wire eoc_out
-//        .alarm_out(),      // output wire alarm_out
-//        .eos_out(),          // output wire eos_out
-//        .busy_out()        // output wire busy_out
-//        );
-        
               
-      // ADC controller
+      // ADC controller channel1
       wire adcc_ready;
       wire adccRawReady;
-      wire signed [11:0] ADCCdataOut;
-      wire signed [11:0] adccRawDataOut;
+      wire signed [11:0] ADCCdataOutChannel1;
+      wire signed [11:0] adccRawDataOutChannel1;
+      wire signed [11:0] ADCCdataOutChannel2;
+      wire signed [11:0] adccRawDataOutChannel2;
 
       ADCController adcc(
                              .clock(CLK108MHZ),
                              .reset(reset),
                              .sampleEnabled(1),
-                             .samplePeriod(samplePeriod),
                              .inputReady(channelDataReady),
-                             .dataIn(channel1),
+                             .samplePeriod(samplePeriod),
                              .ready(adcc_ready),
-                             .dataOut(ADCCdataOut),
                              .rawReady(adccRawReady), // not affected by samplePeriod
-                             .rawDataOut(adccRawDataOut)
+                             .dataInChannel1(channel1),
+                             .dataOutChannel1(ADCCdataOutChannel1),
+                             .rawDataOutChannel1(adccRawDataOutChannel1),
+                             .dataInChannel2(channel2),
+                             .dataOutChannel2(ADCCdataOutChannel2),
+                             .rawDataOutChannel2(adccRawDataOutChannel2)
                              );
-
-//    wire adcc_ready;
-//    wire [11:0] ADCCdataOut;
-//    assign adcc_ready = 1;
-//    FakeADCC adcc(.clock(CLK65MHZ), .dataOut(ADCCdataOut));
 
    // edge type detector
    wire risingEdgeReady;
@@ -227,7 +198,7 @@ module Oscilloscope_v1
     EdgeTypeDetector myed
      (.clock(CLK108MHZ),
       .dataReady(adccRawReady),
-      .dataIn(adccRawDataOut),
+      .dataIn(adccRawDataOutChannel1),
       .risingEdgeReady(risingEdgeReady),
       .estimatedSlope(slope),
       .estimatedSlopeIsPositive(positiveSlope));
@@ -240,7 +211,7 @@ module Oscilloscope_v1
         .activeBramSelect(activeBramSelect)
         );
     
-    buffer Buffer (.clock(CLK108MHZ), .ready(adcc_ready), .dataIn(ADCCdataOut),
+    buffer Buffer (.clock(CLK108MHZ), .ready(adcc_ready), .dataIn(ADCCdataOutChannel1),
         .isTrigger(isTriggered), .disableCollection(0), .activeBramSelect(activeBramSelect),
         //.isTrigger(isTriggered), .disableCollection(0), .activeBramSelect(sw[0]),
         .reset(reset),
@@ -266,7 +237,7 @@ module Oscilloscope_v1
             (.clock(CLK108MHZ),
             .threshold(triggerThreshold),
             .dataReady(adccRawReady),
-            .dataIn(adccRawDataOut),
+            .dataIn(adccRawDataOutChannel1),
             .triggerDisable(~positiveSlope),
             .isTriggered(isTriggered)
             );
@@ -275,7 +246,7 @@ module Oscilloscope_v1
                 (
                 .clock(CLK108MHZ),
                 .dataReady(adccRawReady),
-                .dataIn(adccRawDataOut),
+                .dataIn(adccRawDataOutChannel1),
                 .isTrigger(isTriggered),
                 .signalMax(signalMaxChannel1),
                 .signalMin(signalMinChannel1),

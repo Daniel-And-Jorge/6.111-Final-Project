@@ -31,11 +31,14 @@ module ADCController
     input sampleEnabled,
     input inputReady,
     input [5:0]samplePeriod,
-    input signed [IO_BITS-1:0] dataIn,
     output reg ready,
-    output reg signed[IO_BITS-1:0] dataOut,
     output reg rawReady, // not affected by samplePeriod
-    output reg signed[IO_BITS-1:0] rawDataOut
+    input signed [IO_BITS-1:0] dataInChannel1,
+    output reg signed[IO_BITS-1:0] dataOutChannel1,
+    output reg signed[IO_BITS-1:0] rawDataOutChannel1,
+    input signed [IO_BITS-1:0] dataInChannel2,
+    output reg signed[IO_BITS-1:0] dataOutChannel2,
+    output reg signed[IO_BITS-1:0] rawDataOutChannel2
     );
     
     reg [15:0]sampleClock = 0;
@@ -45,13 +48,15 @@ module ADCController
         if (!reset && sampleEnabled && inputReady) begin
             if (sampleClock >= samplePeriod) begin
                 ready <= 1;
-                dataOut <= dataIn; 
+                dataOutChannel1 <= dataInChannel1;
+                dataOutChannel2 <= dataInChannel2; 
                 sampleClock <= 0;
             end else
                 sampleClock <= sampleClock + 1;
                 
             rawReady <= 1;
-            rawDataOut <= dataIn;
+            rawDataOutChannel1 <= dataInChannel1;
+            rawDataOutChannel2 <= dataInChannel2;
         end
     
         if (ready)
@@ -63,7 +68,8 @@ module ADCController
         if (reset) begin
             ready <= 0;
             rawReady <= 0;
-            dataOut <= 0;
+            dataOutChannel1 <= 0;
+            dataOutChannel2 <= 0;
         end
     end
 endmodule

@@ -1,7 +1,7 @@
 Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2016.2 (lin64) Build 1577090 Thu Jun  2 16:32:35 MDT 2016
-| Date         : Sun Nov 27 22:19:16 2016
+| Date         : Sun Nov 27 22:40:47 2016
 | Host         : eecs-digital-02 running 64-bit Ubuntu 14.04.5 LTS
 | Command      : report_timing_summary -warn_on_violation -max_paths 10 -file Oscilloscope_v1_timing_summary_routed.rpt -rpx Oscilloscope_v1_timing_summary_routed.rpx
 | Design       : Oscilloscope_v1
@@ -5077,7 +5077,7 @@ Slack (MET) :             0.155ns  (arrival time - required time)
                          slack                                  0.155    
 
 Slack (MET) :             0.164ns  (arrival time - required time)
-  Source:                 adcc/rawDataOut_reg[10]/C
+  Source:                 adcc/rawDataOutChannel1_reg[10]/C
                             (rising edge-triggered cell FDRE clocked by clk_out1_clk_wiz_0  {rise@0.000ns fall@4.630ns period=9.259ns})
   Destination:            Trigger/genblk1[3].previousData_reg[4][10]_srl5/D
                             (rising edge-triggered cell SRL16E clocked by clk_out1_clk_wiz_0  {rise@0.000ns fall@4.630ns period=9.259ns})
@@ -5104,9 +5104,9 @@ Slack (MET) :             0.164ns  (arrival time - required time)
                          net (fo=1, routed)           0.499    -1.190    ClockDivider/inst/clk_out1_clk_wiz_0
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026    -1.164 r  ClockDivider/inst/clkout1_buf/O
                          net (fo=1024, routed)        0.565    -0.599    adcc/clock
-    SLICE_X13Y78         FDRE                                         r  adcc/rawDataOut_reg[10]/C
+    SLICE_X13Y78         FDRE                                         r  adcc/rawDataOutChannel1_reg[10]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X13Y78         FDRE (Prop_fdre_C_Q)         0.141    -0.458 r  adcc/rawDataOut_reg[10]/Q
+    SLICE_X13Y78         FDRE (Prop_fdre_C_Q)         0.141    -0.458 r  adcc/rawDataOutChannel1_reg[10]/Q
                          net (fo=10, routed)          0.130    -0.328    Trigger/dataIn[10]
     SLICE_X12Y78         SRL16E                                       r  Trigger/genblk1[3].previousData_reg[4][10]_srl5/D
   -------------------------------------------------------------------    -------------------
@@ -5189,7 +5189,7 @@ Slack (MET) :             0.168ns  (arrival time - required time)
                          slack                                  0.168    
 
 Slack (MET) :             0.169ns  (arrival time - required time)
-  Source:                 adcc/dataOut_reg[3]/C
+  Source:                 adcc/dataOutChannel1_reg[3]/C
                             (rising edge-triggered cell FDRE clocked by clk_out1_clk_wiz_0  {rise@0.000ns fall@4.630ns period=9.259ns})
   Destination:            Buffer/ram0_din_reg[3]/D
                             (rising edge-triggered cell FDRE clocked by clk_out1_clk_wiz_0  {rise@0.000ns fall@4.630ns period=9.259ns})
@@ -5216,9 +5216,9 @@ Slack (MET) :             0.169ns  (arrival time - required time)
                          net (fo=1, routed)           0.499    -1.190    ClockDivider/inst/clk_out1_clk_wiz_0
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026    -1.164 r  ClockDivider/inst/clkout1_buf/O
                          net (fo=1024, routed)        0.571    -0.593    adcc/clock
-    SLICE_X9Y86          FDRE                                         r  adcc/dataOut_reg[3]/C
+    SLICE_X9Y86          FDRE                                         r  adcc/dataOutChannel1_reg[3]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X9Y86          FDRE (Prop_fdre_C_Q)         0.141    -0.452 r  adcc/dataOut_reg[3]/Q
+    SLICE_X9Y86          FDRE (Prop_fdre_C_Q)         0.141    -0.452 r  adcc/dataOutChannel1_reg[3]/Q
                          net (fo=1, routed)           0.109    -0.343    Buffer/dataIn[3]
     SLICE_X9Y85          FDRE                                         r  Buffer/ram0_din_reg[3]/D
   -------------------------------------------------------------------    -------------------
@@ -10314,7 +10314,7 @@ Slack (MET) :             0.155ns  (arrival time - required time)
                          slack                                  0.155    
 
 Slack (MET) :             0.164ns  (arrival time - required time)
-  Source:                 adcc/rawDataOut_reg[10]/C
+  Source:                 adcc/rawDataOutChannel1_reg[10]/C
                             (rising edge-triggered cell FDRE clocked by clk_out1_clk_wiz_0_1  {rise@0.000ns fall@4.630ns period=9.259ns})
   Destination:            Trigger/genblk1[3].previousData_reg[4][10]_srl5/D
                             (rising edge-triggered cell SRL16E clocked by clk_out1_clk_wiz_0_1  {rise@0.000ns fall@4.630ns period=9.259ns})
@@ -10341,9 +10341,9 @@ Slack (MET) :             0.164ns  (arrival time - required time)
                          net (fo=1, routed)           0.499    -1.190    ClockDivider/inst/clk_out1_clk_wiz_0
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026    -1.164 r  ClockDivider/inst/clkout1_buf/O
                          net (fo=1024, routed)        0.565    -0.599    adcc/clock
-    SLICE_X13Y78         FDRE                                         r  adcc/rawDataOut_reg[10]/C
+    SLICE_X13Y78         FDRE                                         r  adcc/rawDataOutChannel1_reg[10]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X13Y78         FDRE (Prop_fdre_C_Q)         0.141    -0.458 r  adcc/rawDataOut_reg[10]/Q
+    SLICE_X13Y78         FDRE (Prop_fdre_C_Q)         0.141    -0.458 r  adcc/rawDataOutChannel1_reg[10]/Q
                          net (fo=10, routed)          0.130    -0.328    Trigger/dataIn[10]
     SLICE_X12Y78         SRL16E                                       r  Trigger/genblk1[3].previousData_reg[4][10]_srl5/D
   -------------------------------------------------------------------    -------------------
@@ -10426,7 +10426,7 @@ Slack (MET) :             0.168ns  (arrival time - required time)
                          slack                                  0.168    
 
 Slack (MET) :             0.169ns  (arrival time - required time)
-  Source:                 adcc/dataOut_reg[3]/C
+  Source:                 adcc/dataOutChannel1_reg[3]/C
                             (rising edge-triggered cell FDRE clocked by clk_out1_clk_wiz_0_1  {rise@0.000ns fall@4.630ns period=9.259ns})
   Destination:            Buffer/ram0_din_reg[3]/D
                             (rising edge-triggered cell FDRE clocked by clk_out1_clk_wiz_0_1  {rise@0.000ns fall@4.630ns period=9.259ns})
@@ -10453,9 +10453,9 @@ Slack (MET) :             0.169ns  (arrival time - required time)
                          net (fo=1, routed)           0.499    -1.190    ClockDivider/inst/clk_out1_clk_wiz_0
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026    -1.164 r  ClockDivider/inst/clkout1_buf/O
                          net (fo=1024, routed)        0.571    -0.593    adcc/clock
-    SLICE_X9Y86          FDRE                                         r  adcc/dataOut_reg[3]/C
+    SLICE_X9Y86          FDRE                                         r  adcc/dataOutChannel1_reg[3]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X9Y86          FDRE (Prop_fdre_C_Q)         0.141    -0.452 r  adcc/dataOut_reg[3]/Q
+    SLICE_X9Y86          FDRE (Prop_fdre_C_Q)         0.141    -0.452 r  adcc/dataOutChannel1_reg[3]/Q
                          net (fo=1, routed)           0.109    -0.343    Buffer/dataIn[3]
     SLICE_X9Y85          FDRE                                         r  Buffer/ram0_din_reg[3]/D
   -------------------------------------------------------------------    -------------------
@@ -15563,7 +15563,7 @@ Slack (MET) :             0.082ns  (arrival time - required time)
                          slack                                  0.082    
 
 Slack (MET) :             0.091ns  (arrival time - required time)
-  Source:                 adcc/rawDataOut_reg[10]/C
+  Source:                 adcc/rawDataOutChannel1_reg[10]/C
                             (rising edge-triggered cell FDRE clocked by clk_out1_clk_wiz_0_1  {rise@0.000ns fall@4.630ns period=9.259ns})
   Destination:            Trigger/genblk1[3].previousData_reg[4][10]_srl5/D
                             (rising edge-triggered cell SRL16E clocked by clk_out1_clk_wiz_0  {rise@0.000ns fall@4.630ns period=9.259ns})
@@ -15595,9 +15595,9 @@ Slack (MET) :             0.091ns  (arrival time - required time)
                          net (fo=1, routed)           0.499    -1.190    ClockDivider/inst/clk_out1_clk_wiz_0
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026    -1.164 r  ClockDivider/inst/clkout1_buf/O
                          net (fo=1024, routed)        0.565    -0.599    adcc/clock
-    SLICE_X13Y78         FDRE                                         r  adcc/rawDataOut_reg[10]/C
+    SLICE_X13Y78         FDRE                                         r  adcc/rawDataOutChannel1_reg[10]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X13Y78         FDRE (Prop_fdre_C_Q)         0.141    -0.458 r  adcc/rawDataOut_reg[10]/Q
+    SLICE_X13Y78         FDRE (Prop_fdre_C_Q)         0.141    -0.458 r  adcc/rawDataOutChannel1_reg[10]/Q
                          net (fo=10, routed)          0.130    -0.328    Trigger/dataIn[10]
     SLICE_X12Y78         SRL16E                                       r  Trigger/genblk1[3].previousData_reg[4][10]_srl5/D
   -------------------------------------------------------------------    -------------------
@@ -15687,7 +15687,7 @@ Slack (MET) :             0.095ns  (arrival time - required time)
                          slack                                  0.095    
 
 Slack (MET) :             0.096ns  (arrival time - required time)
-  Source:                 adcc/dataOut_reg[3]/C
+  Source:                 adcc/dataOutChannel1_reg[3]/C
                             (rising edge-triggered cell FDRE clocked by clk_out1_clk_wiz_0_1  {rise@0.000ns fall@4.630ns period=9.259ns})
   Destination:            Buffer/ram0_din_reg[3]/D
                             (rising edge-triggered cell FDRE clocked by clk_out1_clk_wiz_0  {rise@0.000ns fall@4.630ns period=9.259ns})
@@ -15719,9 +15719,9 @@ Slack (MET) :             0.096ns  (arrival time - required time)
                          net (fo=1, routed)           0.499    -1.190    ClockDivider/inst/clk_out1_clk_wiz_0
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026    -1.164 r  ClockDivider/inst/clkout1_buf/O
                          net (fo=1024, routed)        0.571    -0.593    adcc/clock
-    SLICE_X9Y86          FDRE                                         r  adcc/dataOut_reg[3]/C
+    SLICE_X9Y86          FDRE                                         r  adcc/dataOutChannel1_reg[3]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X9Y86          FDRE (Prop_fdre_C_Q)         0.141    -0.452 r  adcc/dataOut_reg[3]/Q
+    SLICE_X9Y86          FDRE (Prop_fdre_C_Q)         0.141    -0.452 r  adcc/dataOutChannel1_reg[3]/Q
                          net (fo=1, routed)           0.109    -0.343    Buffer/dataIn[3]
     SLICE_X9Y85          FDRE                                         r  Buffer/ram0_din_reg[3]/D
   -------------------------------------------------------------------    -------------------
@@ -20774,7 +20774,7 @@ Slack (MET) :             0.082ns  (arrival time - required time)
                          slack                                  0.082    
 
 Slack (MET) :             0.091ns  (arrival time - required time)
-  Source:                 adcc/rawDataOut_reg[10]/C
+  Source:                 adcc/rawDataOutChannel1_reg[10]/C
                             (rising edge-triggered cell FDRE clocked by clk_out1_clk_wiz_0  {rise@0.000ns fall@4.630ns period=9.259ns})
   Destination:            Trigger/genblk1[3].previousData_reg[4][10]_srl5/D
                             (rising edge-triggered cell SRL16E clocked by clk_out1_clk_wiz_0_1  {rise@0.000ns fall@4.630ns period=9.259ns})
@@ -20806,9 +20806,9 @@ Slack (MET) :             0.091ns  (arrival time - required time)
                          net (fo=1, routed)           0.499    -1.190    ClockDivider/inst/clk_out1_clk_wiz_0
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026    -1.164 r  ClockDivider/inst/clkout1_buf/O
                          net (fo=1024, routed)        0.565    -0.599    adcc/clock
-    SLICE_X13Y78         FDRE                                         r  adcc/rawDataOut_reg[10]/C
+    SLICE_X13Y78         FDRE                                         r  adcc/rawDataOutChannel1_reg[10]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X13Y78         FDRE (Prop_fdre_C_Q)         0.141    -0.458 r  adcc/rawDataOut_reg[10]/Q
+    SLICE_X13Y78         FDRE (Prop_fdre_C_Q)         0.141    -0.458 r  adcc/rawDataOutChannel1_reg[10]/Q
                          net (fo=10, routed)          0.130    -0.328    Trigger/dataIn[10]
     SLICE_X12Y78         SRL16E                                       r  Trigger/genblk1[3].previousData_reg[4][10]_srl5/D
   -------------------------------------------------------------------    -------------------
@@ -20898,7 +20898,7 @@ Slack (MET) :             0.095ns  (arrival time - required time)
                          slack                                  0.095    
 
 Slack (MET) :             0.096ns  (arrival time - required time)
-  Source:                 adcc/dataOut_reg[3]/C
+  Source:                 adcc/dataOutChannel1_reg[3]/C
                             (rising edge-triggered cell FDRE clocked by clk_out1_clk_wiz_0  {rise@0.000ns fall@4.630ns period=9.259ns})
   Destination:            Buffer/ram0_din_reg[3]/D
                             (rising edge-triggered cell FDRE clocked by clk_out1_clk_wiz_0_1  {rise@0.000ns fall@4.630ns period=9.259ns})
@@ -20930,9 +20930,9 @@ Slack (MET) :             0.096ns  (arrival time - required time)
                          net (fo=1, routed)           0.499    -1.190    ClockDivider/inst/clk_out1_clk_wiz_0
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026    -1.164 r  ClockDivider/inst/clkout1_buf/O
                          net (fo=1024, routed)        0.571    -0.593    adcc/clock
-    SLICE_X9Y86          FDRE                                         r  adcc/dataOut_reg[3]/C
+    SLICE_X9Y86          FDRE                                         r  adcc/dataOutChannel1_reg[3]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X9Y86          FDRE (Prop_fdre_C_Q)         0.141    -0.452 r  adcc/dataOut_reg[3]/Q
+    SLICE_X9Y86          FDRE (Prop_fdre_C_Q)         0.141    -0.452 r  adcc/dataOutChannel1_reg[3]/Q
                          net (fo=1, routed)           0.109    -0.343    Buffer/dataIn[3]
     SLICE_X9Y85          FDRE                                         r  Buffer/ram0_din_reg[3]/D
   -------------------------------------------------------------------    -------------------

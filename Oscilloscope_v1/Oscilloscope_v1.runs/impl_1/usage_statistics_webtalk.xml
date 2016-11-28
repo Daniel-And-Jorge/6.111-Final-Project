@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<webTalkData  fileName='usage_statistics_webtalk.xml'  majorVersion='1' minorVersion='0' timeStamp='Sun Nov 27 22:19:25 2016'>
+<webTalkData  fileName='usage_statistics_webtalk.xml'  majorVersion='1' minorVersion='0' timeStamp='Sun Nov 27 22:40:56 2016'>
 <section name="__ROOT__" level="0" order="1" description="">
  <section name="software_version_and_target_device" level="1" order="1" description="">
   <keyValuePair key="beta" value="FALSE" description="" />
   <keyValuePair key="build_version" value="1577090" description="" />
-  <keyValuePair key="date_generated" value="Sun Nov 27 22:19:25 2016" description="" />
+  <keyValuePair key="date_generated" value="Sun Nov 27 22:40:56 2016" description="" />
   <keyValuePair key="os_platform" value="LIN64" description="" />
   <keyValuePair key="product_version" value="Vivado v2016.2 (64-bit)" description="" />
   <keyValuePair key="project_id" value="1753b2fab64644e192506d835aa9194d" description="" />
-  <keyValuePair key="project_iteration" value="225" description="" />
+  <keyValuePair key="project_iteration" value="226" description="" />
   <keyValuePair key="random_id" value="2a3ea5a731735130b898e7824513a2a5" description="" />
   <keyValuePair key="registration_id" value="211027694_1777504441_210637146_562" description="" />
   <keyValuePair key="route_design" value="TRUE" description="" />
@@ -20,7 +20,7 @@
  </section>
  <section name="user_environment" level="1" order="2" description="">
   <keyValuePair key="cpu_name" value="Intel(R) Core(TM) i7-6700 CPU @ 3.40GHz" description="" />
-  <keyValuePair key="cpu_speed" value="3771.875 MHz" description="" />
+  <keyValuePair key="cpu_speed" value="3760.585 MHz" description="" />
   <keyValuePair key="os_name" value="Ubuntu" description="" />
   <keyValuePair key="os_release" value="Ubuntu 14.04.5 LTS" description="" />
   <keyValuePair key="system_ram" value="8.000 GB" description="" />
@@ -354,7 +354,7 @@
    <keyValuePair key="output_load" value="5.000000" description="" />
    <keyValuePair key="output_toggle" value="12.500000" description="" />
    <keyValuePair key="package" value="csg324" description="" />
-   <keyValuePair key="pct_clock_constrained" value="2.080000" description="" />
+   <keyValuePair key="pct_clock_constrained" value="1.780000" description="" />
    <keyValuePair key="pct_inputs_defined" value="7" description="" />
    <keyValuePair key="platform" value="lin64" description="" />
    <keyValuePair key="process" value="typical" description="" />
@@ -693,7 +693,7 @@
    <keyValuePair key="nets" value="6174" description="" />
    <keyValuePair key="pins" value="34055" description="" />
    <keyValuePair key="pll" value="0" description="" />
-   <keyValuePair key="router_runtime" value="76.030000" description="" />
+   <keyValuePair key="router_runtime" value="74.880000" description="" />
    <keyValuePair key="router_timing_driven" value="1" description="" />
    <keyValuePair key="threads" value="8" description="" />
    <keyValuePair key="timing_constraints_exist" value="1" description="" />
@@ -738,8 +738,8 @@
   <section name="usage" level="2" order="2" description="">
    <keyValuePair key="elapsed" value="00:00:23s" description="" />
    <keyValuePair key="hls_ip" value="0" description="" />
-   <keyValuePair key="memory_gain" value="505.723MB" description="" />
-   <keyValuePair key="memory_peak" value="1485.473MB" description="" />
+   <keyValuePair key="memory_gain" value="503.723MB" description="" />
+   <keyValuePair key="memory_peak" value="1483.473MB" description="" />
   </section>
  </section>
  <section name="unisim_transformation" level="1" order="10" description="">

@@ -50,7 +50,8 @@ module Oscilloscope_v1
                 DRP_ADDRESS_BITS = 7,
                 DRP_SAMPLE_BITS = 16,
                 SAMPLE_BITS = 12,
-                TOGGLE_CHANNELS_STATE_BITS = 2) 
+                TOGGLE_CHANNELS_STATE_BITS = 2,
+                SCALE_FACTOR_BITS = 10) 
    (input CLK100MHZ,
    input vauxp11,
    input vauxn11,
@@ -268,15 +269,19 @@ module Oscilloscope_v1
     
     wire [SAMPLE_BITS-1:0] channelSelectedData;
     wire positiveSlopeChannelSelected;
+    wire [SCALE_FACTOR_BITS-1:0] verticalScaleFactorTimes8ChannelSelected;
     SelectChannelData mySelectChannelData
             (.clock(CLK108MHZ),
             .channel1(adccRawDataOutChannel1),
             .channel2(adccRawDataOutChannel2),
             .positiveSlopeChannel1(positiveSlopeChannel1),
             .positiveSlopeChannel2(positiveSlopeChannel2),
+            .verticalScaleFactorTimes8Channel1(verticalScaleFactorTimes8Channel1),
+            .verticalScaleFactorTimes8Channel2(verticalScaleFactorTimes8Channel2),
             .channelSelected(channelSelected),
             .channelSelectedData(channelSelectedData),
-            .positiveSlopeChannelSelected(positiveSlopeChannelSelected)
+            .positiveSlopeChannelSelected(positiveSlopeChannelSelected),
+            .verticalScaleFactorTimes8ChannelSelected(verticalScaleFactorTimes8ChannelSelected)
             );
         
     TriggerRisingEdgeSteady #(.DATA_BITS(12))
@@ -402,7 +407,7 @@ module Oscilloscope_v1
      wire tlsHsync, tlsVsync, tlsBlank;
      HorizontalLineSprite mytls
                 (.clock(CLK108MHZ),
-                .level(triggerThreshold * $signed(verticalScaleFactorTimes8Channel1) / 'sd8),
+                .level(triggerThreshold * $signed(verticalScaleFactorTimes8ChannelSelected) / 'sd8),
                 .displayX(curveChannel2DisplayX),
                 .displayY(curveChannel2DisplayY),
                 .hsync(curveChannel2Hsync),

@@ -96,6 +96,7 @@ module ScopeSettings
        if (btnc) begin
             triggerThreshold <= 0;
             verticalScaleFactorTimes8Channel1 <= 8;
+            verticalScaleFactorTimes8Channel2 <= 8;
             samplePeriod <= 0;
        end
     end

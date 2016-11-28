@@ -28,7 +28,10 @@ module ScopeSettings
      input btnu, input btnd, input btnc, input btnl,
      input signed [DATA_BITS-1:0] signalMinChannel1,
      input signed [DATA_BITS-1:0] signalMaxChannel1,
-     input [DATA_BITS-1:0] signalPeriod,
+     input [DATA_BITS-1:0] signalPeriodChannel1,
+     input signed [DATA_BITS-1:0] signalMinChannel2,
+     input signed [DATA_BITS-1:0] signalMaxChannel2,
+     input [DATA_BITS-1:0] signalPeriodChannel2,
      output reg signed [DATA_BITS-1:0]triggerThreshold = 0,
      output reg [SCALE_FACTOR_SIZE-1:0]verticalScaleFactorTimes8Channel1 = 8,
      output reg [SCALE_FACTOR_SIZE-1:0]verticalScaleFactorTimes8Channel2 = 8,
@@ -36,12 +39,18 @@ module ScopeSettings
      output reg channelSelected
     );
     
-    wire [SCALE_FACTOR_SIZE-1:0] optimalScale;
+    wire [SCALE_FACTOR_SIZE-1:0] optimalScaleChannel1;
     wire [SCALE_FACTOR_SIZE-1:0] biggestScaleToSeeMaxChannel1 = (512 * 8 / `ABS(signalMaxChannel1));
     wire [SCALE_FACTOR_SIZE-1:0] biggestScaleToSeeMinChannel1 = (512 * 8 / `ABS(signalMinChannel1));
     
-    assign optimalScale = (biggestScaleToSeeMaxChannel1 > biggestScaleToSeeMinChannel1) ? 
+    wire [SCALE_FACTOR_SIZE-1:0] optimalScaleChannel2;
+    wire [SCALE_FACTOR_SIZE-1:0] biggestScaleToSeeMaxChannel2 = (512 * 8 / `ABS(signalMaxChannel2));
+    wire [SCALE_FACTOR_SIZE-1:0] biggestScaleToSeeMinChannel2 = (512 * 8 / `ABS(signalMinChannel2));
+    
+    assign optimalScaleChannel1 = (biggestScaleToSeeMaxChannel1 > biggestScaleToSeeMinChannel1) ? 
                             biggestScaleToSeeMinChannel1 : biggestScaleToSeeMaxChannel1;
+    assign optimalScaleChannel2 = (biggestScaleToSeeMaxChannel2 > biggestScaleToSeeMinChannel2) ? 
+                            biggestScaleToSeeMinChannel2 : biggestScaleToSeeMaxChannel2;
     
     always @(posedge clock) begin
         // manual adjust
@@ -70,10 +79,17 @@ module ScopeSettings
        
        // autoset
        if (btnl) begin
-            triggerThreshold <= (signalMaxChannel1 + signalMinChannel1) / 2;
-            // / 64 = / 512 * 8
-            verticalScaleFactorTimes8Channel1 <= optimalScale;
-            samplePeriod <= (3 * signalPeriod / 1280);
+            if (channelSelected) begin //channel 2 selected
+                triggerThreshold <= (signalMaxChannel2 + signalMinChannel2) / 2;
+                // / 64 = / 512 * 8
+                verticalScaleFactorTimes8Channel2 <= optimalScaleChannel2;
+                samplePeriod <= (3 * signalPeriodChannel2 / 1280);
+            end else begin
+                triggerThreshold <= (signalMaxChannel1 + signalMinChannel1) / 2;
+                // / 64 = / 512 * 8
+                verticalScaleFactorTimes8Channel1 <= optimalScaleChannel1;
+                samplePeriod <= (3 * signalPeriodChannel1 / 1280);
+            end
        end
             
        // reset to default settings

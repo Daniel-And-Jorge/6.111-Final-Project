@@ -104,7 +104,8 @@ module Oscilloscope_v1
     
     ScopeSettings myss(.clock(CLK108MHZ), .sw(SW[15:0]),
                         .btnu(btnu_1pulse), .btnd(btnd_1pulse), .btnc(btnc_1pulse), .btnl(btnl_1pulse),
-                        .signalMinChannel1(signalMinChannel1), .signalMaxChannel1(signalMaxChannel1), .signalPeriod(signalPeriod),
+                        .signalMinChannel1(signalMinChannel1), .signalMaxChannel1(signalMaxChannel1), .signalPeriodChannel1(signalPeriodChannel1),
+                        .signalMinChannel2(signalMinChannel2), .signalMaxChannel2(signalMaxChannel2), .signalPeriodChannel2(signalPeriodChannel2),
                         .triggerThreshold(triggerThreshold), 
                         .verticalScaleFactorTimes8Channel1(verticalScaleFactorTimes8Channel1), 
                         .verticalScaleFactorTimes8Channel2(verticalScaleFactorTimes8Channel2),
@@ -373,7 +374,8 @@ module Oscilloscope_v1
             
         wire [11:0] dataInChannel2;
         assign dataInChannel2 = bufferDataOutChannel2;
-        Curve #(.ADDRESS_BITS(ADDRESS_BITS))
+        Curve #(.ADDRESS_BITS(ADDRESS_BITS),
+                .RGB_COLOR(12'h0FF)) //blue
                 curveChannel2
                 (.clock(CLK108MHZ),
                 .dataIn(dataInChannel2),

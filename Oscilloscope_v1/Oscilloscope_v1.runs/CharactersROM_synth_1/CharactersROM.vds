@@ -2,12 +2,12 @@
 # Vivado v2016.2 (64-bit)
 # SW Build 1577090 on Thu Jun  2 16:32:35 MDT 2016
 # IP Build 1577682 on Fri Jun  3 12:00:54 MDT 2016
-# Start of session at: Mon Nov 21 22:25:34 2016
-# Process ID: 29798
-# Current directory: /afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/CharactersROM_synth_1
+# Start of session at: Tue Nov 22 13:00:17 2016
+# Process ID: 19971
+# Current directory: /afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/CharactersROM_synth_1
 # Command line: vivado -log CharactersROM.vds -mode batch -messageDb vivado.pb -notrace -source CharactersROM.tcl
-# Log file: /afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/CharactersROM_synth_1/CharactersROM.vds
-# Journal file: /afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/CharactersROM_synth_1/vivado.jou
+# Log file: /afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/CharactersROM_synth_1/CharactersROM.vds
+# Journal file: /afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/CharactersROM_synth_1/vivado.jou
 #-----------------------------------------------------------
 source CharactersROM.tcl -notrace
 Command: synth_design -top CharactersROM -part xc7a100tcsg324-3 -mode out_of_context
@@ -15,11 +15,11 @@ Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 29811 
+INFO: Helper process launched with PID 20078 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 1085.484 ; gain = 190.293 ; free physical = 1830 ; free virtual = 13558
+Starting RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1084.480 ; gain = 189.293 ; free physical = 1196 ; free virtual = 10764
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-638] synthesizing module 'CharactersROM' [/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/ip/CharactersROM/synth/CharactersROM.vhd:72]
+INFO: [Synth 8-638] synthesizing module 'CharactersROM' [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/ip/CharactersROM/synth/CharactersROM.vhd:72]
 	Parameter C_FAMILY bound to: artix7 - type: string 
 	Parameter C_XDEVICEFAMILY bound to: artix7 - type: string 
 	Parameter C_ELABORATION_DIR bound to: ./ - type: string 
@@ -93,7 +93,7 @@ INFO: [Synth 8-638] synthesizing module 'CharactersROM' [/afs/athena.mit.edu/use
 	Parameter C_COUNT_36K_BRAM bound to: 3 - type: string 
 	Parameter C_COUNT_18K_BRAM bound to: 1 - type: string 
 	Parameter C_EST_POWER_SUMMARY bound to: Estimated Power for IP     :     4.321777 mW - type: string 
-INFO: [Synth 8-3491] module 'blk_mem_gen_v8_3_3' declared at '/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/ip/CharactersROM/blk_mem_gen_v8_3_3/hdl/blk_mem_gen_v8_3.vhd:71' bound to instance 'U0' of component 'blk_mem_gen_v8_3_3' [/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/ip/CharactersROM/synth/CharactersROM.vhd:236]
+INFO: [Synth 8-3491] module 'blk_mem_gen_v8_3_3' declared at '/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/ip/CharactersROM/blk_mem_gen_v8_3_3/hdl/blk_mem_gen_v8_3.vhd:71' bound to instance 'U0' of component 'blk_mem_gen_v8_3_3' [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/ip/CharactersROM/synth/CharactersROM.vhd:236]
 	Parameter C_FAMILY bound to: artix7 - type: string 
 	Parameter C_XDEVICEFAMILY bound to: artix7 - type: string 
 	Parameter C_ELABORATION_DIR bound to: ./ - type: string 
@@ -1430,7 +1430,7 @@ INFO: [Synth 8-3491] module 'blk_mem_gen_v8_3_3' declared at '/afs/athena.mit.ed
 	Parameter C_HAS_SOFTECC_OUTPUT_REGS_B bound to: 0 - type: integer 
 	Parameter C_USE_SOFTECC bound to: 0 - type: integer 
 	Parameter C_USE_ECC bound to: 0 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'CharactersROM' (11#1) [/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/ip/CharactersROM/synth/CharactersROM.vhd:72]
+INFO: [Synth 8-256] done synthesizing module 'CharactersROM' (11#1) [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/ip/CharactersROM/synth/CharactersROM.vhd:72]
 WARNING: [Synth 8-3331] design blk_mem_gen_mux__parameterized0 has unconnected port MUX_RST[0]
 WARNING: [Synth 8-3331] design blk_mem_gen_mux__parameterized0 has unconnected port MEM_LAT_RST
 WARNING: [Synth 8-3331] design blk_mem_gen_mux__parameterized0 has unconnected port MUX_REGCE[0]
@@ -1533,7 +1533,7 @@ WARNING: [Synth 8-3331] design blk_mem_output_block has unconnected port CLKB
 WARNING: [Synth 8-3331] design blk_mem_output_block has unconnected port SBITERR_I
 INFO: [Common 17-14] Message 'Synth 8-3331' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:43 ; elapsed = 00:00:44 . Memory (MB): peak = 1270.742 ; gain = 375.551 ; free physical = 1629 ; free virtual = 13359
+Finished RTL Elaboration : Time (s): cpu = 00:00:44 ; elapsed = 00:00:46 . Memory (MB): peak = 1269.738 ; gain = 374.551 ; free physical = 982 ; free virtual = 10548
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -1543,7 +1543,7 @@ Report Check Netlist:
 |1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
 +------+------------------+-------+---------+-------+------------------+
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:43 ; elapsed = 00:00:44 . Memory (MB): peak = 1270.742 ; gain = 375.551 ; free physical = 1628 ; free virtual = 13358
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:44 ; elapsed = 00:00:47 . Memory (MB): peak = 1269.738 ; gain = 374.551 ; free physical = 981 ; free virtual = 10547
 ---------------------------------------------------------------------------------
 INFO: [Netlist 29-17] Analyzing 4 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
@@ -1552,35 +1552,35 @@ INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
 Initializing timing engine
-Parsing XDC File [/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/ip/CharactersROM/CharactersROM_ooc.xdc] for cell 'U0'
-Finished Parsing XDC File [/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/ip/CharactersROM/CharactersROM_ooc.xdc] for cell 'U0'
-Parsing XDC File [/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/CharactersROM_synth_1/dont_touch.xdc]
-Finished Parsing XDC File [/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/CharactersROM_synth_1/dont_touch.xdc]
+Parsing XDC File [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/ip/CharactersROM/CharactersROM_ooc.xdc] for cell 'U0'
+Finished Parsing XDC File [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/ip/CharactersROM/CharactersROM_ooc.xdc] for cell 'U0'
+Parsing XDC File [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/CharactersROM_synth_1/dont_touch.xdc]
+Finished Parsing XDC File [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/CharactersROM_synth_1/dont_touch.xdc]
 Completed Processing XDC Constraints
 
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.02 . Memory (MB): peak = 1421.535 ; gain = 0.004 ; free physical = 1555 ; free virtual = 13285
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.02 . Memory (MB): peak = 1419.531 ; gain = 0.004 ; free physical = 958 ; free virtual = 10520
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:49 ; elapsed = 00:00:51 . Memory (MB): peak = 1421.535 ; gain = 526.344 ; free physical = 1557 ; free virtual = 13287
+Finished Constraint Validation : Time (s): cpu = 00:00:50 ; elapsed = 00:00:53 . Memory (MB): peak = 1419.531 ; gain = 524.344 ; free physical = 961 ; free virtual = 10524
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a100tcsg324-3
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:49 ; elapsed = 00:00:51 . Memory (MB): peak = 1421.535 ; gain = 526.344 ; free physical = 1557 ; free virtual = 13287
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:50 ; elapsed = 00:00:53 . Memory (MB): peak = 1419.531 ; gain = 524.344 ; free physical = 961 ; free virtual = 10524
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 Applied set_property DONT_TOUCH = true for U0. (constraint file  auto generated constraint, line ).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:49 ; elapsed = 00:00:51 . Memory (MB): peak = 1421.535 ; gain = 526.344 ; free physical = 1557 ; free virtual = 13287
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:50 ; elapsed = 00:00:53 . Memory (MB): peak = 1419.531 ; gain = 524.344 ; free physical = 961 ; free virtual = 10523
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:49 ; elapsed = 00:00:51 . Memory (MB): peak = 1421.535 ; gain = 526.344 ; free physical = 1553 ; free virtual = 13284
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:51 ; elapsed = 00:00:53 . Memory (MB): peak = 1419.531 ; gain = 524.344 ; free physical = 946 ; free virtual = 10508
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -1634,14 +1634,14 @@ BRAMs: 270 (col length: RAMB18 80 RAMB36 40)
 ---------------------------------------------------------------------------------
 Finished Part Resource Summary
 ---------------------------------------------------------------------------------
-Start Parallel Synthesis Optimization  : Time (s): cpu = 00:00:49 ; elapsed = 00:00:51 . Memory (MB): peak = 1421.535 ; gain = 526.344 ; free physical = 1553 ; free virtual = 13284
+Start Parallel Synthesis Optimization  : Time (s): cpu = 00:00:51 ; elapsed = 00:00:54 . Memory (MB): peak = 1419.531 ; gain = 524.344 ; free physical = 945 ; free virtual = 10508
 ---------------------------------------------------------------------------------
 Start Cross Boundary Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Cross Boundary Optimization : Time (s): cpu = 00:00:49 ; elapsed = 00:00:51 . Memory (MB): peak = 1421.535 ; gain = 526.344 ; free physical = 1553 ; free virtual = 13284
+Finished Cross Boundary Optimization : Time (s): cpu = 00:00:51 ; elapsed = 00:00:54 . Memory (MB): peak = 1419.531 ; gain = 524.344 ; free physical = 945 ; free virtual = 10508
 ---------------------------------------------------------------------------------
-Finished Parallel Reinference  : Time (s): cpu = 00:00:49 ; elapsed = 00:00:51 . Memory (MB): peak = 1421.535 ; gain = 526.344 ; free physical = 1553 ; free virtual = 13284
+Finished Parallel Reinference  : Time (s): cpu = 00:00:51 ; elapsed = 00:00:54 . Memory (MB): peak = 1419.531 ; gain = 524.344 ; free physical = 945 ; free virtual = 10508
 
 Report RTL Partitions: 
 +-+--------------+------------+----------+
@@ -1652,9 +1652,9 @@ Report RTL Partitions:
 Start Area Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Area Optimization : Time (s): cpu = 00:00:49 ; elapsed = 00:00:51 . Memory (MB): peak = 1421.535 ; gain = 526.344 ; free physical = 1577 ; free virtual = 13308
+Finished Area Optimization : Time (s): cpu = 00:00:51 ; elapsed = 00:00:54 . Memory (MB): peak = 1419.531 ; gain = 524.344 ; free physical = 937 ; free virtual = 10500
 ---------------------------------------------------------------------------------
-Finished Parallel Area Optimization  : Time (s): cpu = 00:00:49 ; elapsed = 00:00:51 . Memory (MB): peak = 1421.535 ; gain = 526.344 ; free physical = 1577 ; free virtual = 13308
+Finished Parallel Area Optimization  : Time (s): cpu = 00:00:51 ; elapsed = 00:00:54 . Memory (MB): peak = 1419.531 ; gain = 524.344 ; free physical = 937 ; free virtual = 10500
 
 Report RTL Partitions: 
 +-+--------------+------------+----------+
@@ -1668,10 +1668,10 @@ Start Timing Optimization
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:54 ; elapsed = 00:00:56 . Memory (MB): peak = 1421.535 ; gain = 526.344 ; free physical = 1547 ; free virtual = 13278
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:56 ; elapsed = 00:00:59 . Memory (MB): peak = 1419.531 ; gain = 524.344 ; free physical = 898 ; free virtual = 10461
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:54 ; elapsed = 00:00:56 . Memory (MB): peak = 1421.535 ; gain = 526.344 ; free physical = 1547 ; free virtual = 13277
+Finished Timing Optimization : Time (s): cpu = 00:00:56 ; elapsed = 00:00:59 . Memory (MB): peak = 1419.531 ; gain = 524.344 ; free physical = 898 ; free virtual = 10461
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -1683,16 +1683,16 @@ Report RTL Partitions:
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:54 ; elapsed = 00:00:56 . Memory (MB): peak = 1423.531 ; gain = 528.340 ; free physical = 1537 ; free virtual = 13268
+Finished Technology Mapping : Time (s): cpu = 00:00:56 ; elapsed = 00:00:59 . Memory (MB): peak = 1421.527 ; gain = 526.340 ; free physical = 889 ; free virtual = 10451
 ---------------------------------------------------------------------------------
-Finished Parallel Technology Mapping Optimization  : Time (s): cpu = 00:00:54 ; elapsed = 00:00:56 . Memory (MB): peak = 1423.531 ; gain = 528.340 ; free physical = 1537 ; free virtual = 13268
+Finished Parallel Technology Mapping Optimization  : Time (s): cpu = 00:00:56 ; elapsed = 00:00:59 . Memory (MB): peak = 1421.527 ; gain = 526.340 ; free physical = 889 ; free virtual = 10451
 
 Report RTL Partitions: 
 +-+--------------+------------+----------+
 | |RTL Partition |Replication |Instances |
 +-+--------------+------------+----------+
 +-+--------------+------------+----------+
-Finished Parallel Synthesis Optimization  : Time (s): cpu = 00:00:54 ; elapsed = 00:00:56 . Memory (MB): peak = 1423.531 ; gain = 528.340 ; free physical = 1537 ; free virtual = 13268
+Finished Parallel Synthesis Optimization  : Time (s): cpu = 00:00:56 ; elapsed = 00:00:59 . Memory (MB): peak = 1421.527 ; gain = 526.340 ; free physical = 889 ; free virtual = 10451
 ---------------------------------------------------------------------------------
 Start IO Insertion
 ---------------------------------------------------------------------------------
@@ -1709,7 +1709,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:55 ; elapsed = 00:00:57 . Memory (MB): peak = 1423.531 ; gain = 528.340 ; free physical = 1537 ; free virtual = 13268
+Finished IO Insertion : Time (s): cpu = 00:00:56 ; elapsed = 00:00:59 . Memory (MB): peak = 1421.527 ; gain = 526.340 ; free physical = 889 ; free virtual = 10451
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -1722,7 +1722,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:55 ; elapsed = 00:00:57 . Memory (MB): peak = 1423.531 ; gain = 528.340 ; free physical = 1537 ; free virtual = 13268
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:56 ; elapsed = 00:00:59 . Memory (MB): peak = 1421.527 ; gain = 526.340 ; free physical = 889 ; free virtual = 10451
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -1734,25 +1734,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:55 ; elapsed = 00:00:57 . Memory (MB): peak = 1423.531 ; gain = 528.340 ; free physical = 1537 ; free virtual = 13268
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:56 ; elapsed = 00:00:59 . Memory (MB): peak = 1421.527 ; gain = 526.340 ; free physical = 889 ; free virtual = 10451
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:55 ; elapsed = 00:00:57 . Memory (MB): peak = 1423.531 ; gain = 528.340 ; free physical = 1537 ; free virtual = 13268
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:56 ; elapsed = 00:00:59 . Memory (MB): peak = 1421.527 ; gain = 526.340 ; free physical = 889 ; free virtual = 10451
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:55 ; elapsed = 00:00:57 . Memory (MB): peak = 1423.531 ; gain = 528.340 ; free physical = 1537 ; free virtual = 13268
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:56 ; elapsed = 00:00:59 . Memory (MB): peak = 1421.527 ; gain = 526.340 ; free physical = 888 ; free virtual = 10451
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:55 ; elapsed = 00:00:57 . Memory (MB): peak = 1423.531 ; gain = 528.340 ; free physical = 1537 ; free virtual = 13268
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:56 ; elapsed = 00:00:59 . Memory (MB): peak = 1421.527 ; gain = 526.340 ; free physical = 888 ; free virtual = 10451
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -1800,19 +1800,19 @@ Report Instance Areas:
 |15    |            \prim_init.ram                   |blk_mem_gen_prim_wrapper_init__parameterized1 |     1|
 +------+---------------------------------------------+----------------------------------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:55 ; elapsed = 00:00:57 . Memory (MB): peak = 1423.531 ; gain = 528.340 ; free physical = 1537 ; free virtual = 13268
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:56 ; elapsed = 00:00:59 . Memory (MB): peak = 1421.527 ; gain = 526.340 ; free physical = 888 ; free virtual = 10451
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 123 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:49 ; elapsed = 00:00:51 . Memory (MB): peak = 1423.531 ; gain = 269.406 ; free physical = 1537 ; free virtual = 13267
-Synthesis Optimization Complete : Time (s): cpu = 00:00:55 ; elapsed = 00:00:57 . Memory (MB): peak = 1423.539 ; gain = 528.348 ; free physical = 1537 ; free virtual = 13267
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:51 ; elapsed = 00:00:52 . Memory (MB): peak = 1421.527 ; gain = 269.406 ; free physical = 888 ; free virtual = 10450
+Synthesis Optimization Complete : Time (s): cpu = 00:00:56 ; elapsed = 00:00:59 . Memory (MB): peak = 1421.535 ; gain = 526.348 ; free physical = 888 ; free virtual = 10450
 INFO: [Project 1-571] Translating synthesized netlist
 INFO: [Netlist 29-17] Analyzing 4 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
-Parsing XDC File [/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/ip/CharactersROM/CharactersROM_ooc.xdc] for cell 'U0'
-INFO: [Vivado 12-4761] HD.CLK_SRC property is set on port clka. The net connecting to the port drives either clock PIN or hierarchical black box. Use the create_clock constraint to create a clock on this port prior to setting HD.CLK_SRC.  [/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/ip/CharactersROM/CharactersROM_ooc.xdc:54]
-INFO: [Vivado 12-4761] HD.CLK_SRC property is set on port clkb. The net connecting to the port drives either clock PIN or hierarchical black box. Use the create_clock constraint to create a clock on this port prior to setting HD.CLK_SRC.  [/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/ip/CharactersROM/CharactersROM_ooc.xdc:57]
-Finished Parsing XDC File [/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/ip/CharactersROM/CharactersROM_ooc.xdc] for cell 'U0'
+Parsing XDC File [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/ip/CharactersROM/CharactersROM_ooc.xdc] for cell 'U0'
+INFO: [Vivado 12-4761] HD.CLK_SRC property is set on port clka. The net connecting to the port drives either clock PIN or hierarchical black box. Use the create_clock constraint to create a clock on this port prior to setting HD.CLK_SRC.  [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/ip/CharactersROM/CharactersROM_ooc.xdc:54]
+INFO: [Vivado 12-4761] HD.CLK_SRC property is set on port clkb. The net connecting to the port drives either clock PIN or hierarchical black box. Use the create_clock constraint to create a clock on this port prior to setting HD.CLK_SRC.  [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/ip/CharactersROM/CharactersROM_ooc.xdc:57]
+Finished Parsing XDC File [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/ip/CharactersROM/CharactersROM_ooc.xdc] for cell 'U0'
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
@@ -1820,7 +1820,7 @@ No Unisim elements were transformed.
 INFO: [Common 17-83] Releasing license: Synthesis
 19 Infos, 100 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:53 ; elapsed = 00:00:55 . Memory (MB): peak = 1437.984 ; gain = 447.234 ; free physical = 1523 ; free virtual = 13255
+synth_design: Time (s): cpu = 00:00:55 ; elapsed = 00:00:57 . Memory (MB): peak = 1436.980 ; gain = 447.234 ; free physical = 873 ; free virtual = 10436
 INFO: [Coretcl 2-1174] Renamed 14 cell refs.
-report_utilization: Time (s): cpu = 00:00:00.07 ; elapsed = 00:00:00.10 . Memory (MB): peak = 1445.992 ; gain = 0.000 ; free physical = 1519 ; free virtual = 13251
-INFO: [Common 17-206] Exiting Vivado at Mon Nov 21 22:26:37 2016...
+report_utilization: Time (s): cpu = 00:00:00.07 ; elapsed = 00:00:00.09 . Memory (MB): peak = 1444.988 ; gain = 0.000 ; free physical = 873 ; free virtual = 10435
+INFO: [Common 17-206] Exiting Vivado at Tue Nov 22 13:01:23 2016...

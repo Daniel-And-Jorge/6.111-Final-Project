@@ -3,7 +3,7 @@
 <!--                                                         -->
 <!-- Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.   -->
 
-<Project Version="7" Minor="14" Path="/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.xpr">
+<Project Version="7" Minor="14" Path="/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.xpr">
   <DefaultLaunch Dir="$PRUNDIR"/>
   <Configuration>
     <Option Name="Id" Val="1753b2fab64644e192506d835aa9194d"/>
@@ -17,7 +17,6 @@
     <Option Name="CompiledLibDirRiviera" Val="$PCACHEDIR/compile_simlib/riviera"/>
     <Option Name="CompiledLibDirActivehdl" Val="$PCACHEDIR/compile_simlib/activehdl"/>
     <Option Name="BoardPart" Val=""/>
-    <Option Name="SourceMgmtMode" Val="DisplayOnly"/>
     <Option Name="ActiveSimSet" Val="sim_1"/>
     <Option Name="DefaultLib" Val="xil_defaultlib"/>
     <Option Name="EnableCoreContainer" Val="TRUE"/>
@@ -27,35 +26,33 @@
     <Option Name="IPUserFilesDir" Val="$PPRDIR/Oscilloscope_v1.ip_user_files"/>
     <Option Name="IPStaticSourceDir" Val="$PPRDIR/Oscilloscope_v1.ip_user_files/ipstatic"/>
     <Option Name="EnableBDX" Val="FALSE"/>
-    <Option Name="WTXSimLaunchSim" Val="0"/>
+    <Option Name="WTXSimLaunchSim" Val="11"/>
     <Option Name="WTModelSimLaunchSim" Val="0"/>
     <Option Name="WTQuestaLaunchSim" Val="0"/>
     <Option Name="WTIesLaunchSim" Val="0"/>
     <Option Name="WTVcsLaunchSim" Val="0"/>
     <Option Name="WTRivieraLaunchSim" Val="0"/>
     <Option Name="WTActivehdlLaunchSim" Val="0"/>
-    <Option Name="WTXSimExportSim" Val="34"/>
-    <Option Name="WTModelSimExportSim" Val="34"/>
-    <Option Name="WTQuestaExportSim" Val="34"/>
-    <Option Name="WTIesExportSim" Val="34"/>
-    <Option Name="WTVcsExportSim" Val="34"/>
-    <Option Name="WTRivieraExportSim" Val="34"/>
-    <Option Name="WTActivehdlExportSim" Val="34"/>
+    <Option Name="WTXSimExportSim" Val="39"/>
+    <Option Name="WTModelSimExportSim" Val="39"/>
+    <Option Name="WTQuestaExportSim" Val="39"/>
+    <Option Name="WTIesExportSim" Val="39"/>
+    <Option Name="WTVcsExportSim" Val="39"/>
+    <Option Name="WTRivieraExportSim" Val="39"/>
+    <Option Name="WTActivehdlExportSim" Val="39"/>
   </Configuration>
   <FileSets Version="1" Minor="31">
     <FileSet Name="sources_1" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
       <Filter Type="Srcs"/>
-      <File Path="$PSRCDIR/sources_1/new/VerticalScaler.vh">
+      <File Path="$PSRCDIR/sources_1/new/ToggleChannels.v">
         <FileInfo>
-          <Attr Name="IsGlobalInclude" Val="1"/>
           <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PSRCDIR/sources_1/imports/6.111-Final-Project/project_xadc/src/hdl/DigitToSeg.v">
+      <File Path="$PSRCDIR/sources_1/new/SimultaneousSamplingXADC.v">
         <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/../project_xadc/src/hdl/DigitToSeg.v"/>
-          <Attr Name="ImportTime" Val="1478194716"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -79,15 +76,6 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PSRCDIR/sources_1/imports/6.111-Final-Project/project_xadc/src/hdl/XADCdemo.v">
-        <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/../project_xadc/src/hdl/XADCdemo.v"/>
-          <Attr Name="ImportTime" Val="1478194716"/>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="implementation"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
       <File Path="$PSRCDIR/sources_1/imports/6.111-Final-Project/jorge/oscilloscope/oscilloscope.srcs/sources_1/new/TriggerRisingEdge.v">
         <FileInfo>
           <Attr Name="ImportPath" Val="$PPRDIR/../jorge/oscilloscope/oscilloscope.srcs/sources_1/new/TriggerRisingEdge.v"/>
@@ -101,27 +89,6 @@
         <FileInfo>
           <Attr Name="ImportPath" Val="$PPRDIR/../project_xadc/src/hdl/buffer.v"/>
           <Attr Name="ImportTime" Val="1478194716"/>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="implementation"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
-      <File Path="$PSRCDIR/sources_1/new/Oscilloscope_v1.v">
-        <FileInfo>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="implementation"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
-      <File Path="$PSRCDIR/sources_1/new/FakeBuffer.v">
-        <FileInfo>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="implementation"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
-      <File Path="$PSRCDIR/sources_1/new/FakeADCC.v">
-        <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -180,6 +147,13 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
+      <File Path="$PSRCDIR/sources_1/new/VerticalScaler.vh">
+        <FileInfo>
+          <Attr Name="IsGlobalInclude" Val="1"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
       <File Path="$PSRCDIR/sources_1/new/Curve.v">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
@@ -194,13 +168,6 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PSRCDIR/sources_1/new/XYCurve.v">
-        <FileInfo>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="implementation"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
       <File Path="$PSRCDIR/sources_1/new/Text.v">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
@@ -208,7 +175,64 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
+      <File Path="$PSRCDIR/sources_1/new/Oscilloscope_v1.v">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/6.111-Final-Project/project_xadc/src/hdl/DigitToSeg.v">
+        <FileInfo>
+          <Attr Name="AutoDisabled" Val="1"/>
+          <Attr Name="ImportPath" Val="$PPRDIR/../project_xadc/src/hdl/DigitToSeg.v"/>
+          <Attr Name="ImportTime" Val="1478194716"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/6.111-Final-Project/project_xadc/src/hdl/XADCdemo.v">
+        <FileInfo>
+          <Attr Name="AutoDisabled" Val="1"/>
+          <Attr Name="ImportPath" Val="$PPRDIR/../project_xadc/src/hdl/XADCdemo.v"/>
+          <Attr Name="ImportTime" Val="1478194716"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/new/FakeBuffer.v">
+        <FileInfo>
+          <Attr Name="AutoDisabled" Val="1"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/new/FakeADCC.v">
+        <FileInfo>
+          <Attr Name="AutoDisabled" Val="1"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/new/XYCurve.v">
+        <FileInfo>
+          <Attr Name="AutoDisabled" Val="1"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
       <File Path="$PPRDIR/character32x32.coe">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/ip/character32x32.coe">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -230,6 +254,7 @@
         </FileInfo>
       </File>
       <Config>
+        <Option Name="TargetConstrsFile" Val="$PSRCDIR/constrs_1/imports/constraints/Nexys4DDR_Master.xdc"/>
         <Option Name="ConstrsType" Val="XDC"/>
       </Config>
     </FileSet>
@@ -237,12 +262,13 @@
       <Filter Type="Srcs"/>
       <Config>
         <Option Name="DesignMode" Val="RTL"/>
-        <Option Name="TopModule" Val="XADCdemo"/>
+        <Option Name="TopModule" Val="Oscilloscope_v1"/>
         <Option Name="TopLib" Val="xil_defaultlib"/>
         <Option Name="TopAutoSet" Val="TRUE"/>
         <Option Name="TransportPathDelay" Val="0"/>
         <Option Name="TransportIntDelay" Val="0"/>
         <Option Name="SrcSet" Val="sources_1"/>
+        <Option Name="NLNetlistMode" Val="funcsim"/>
       </Config>
     </FileSet>
     <FileSet Name="blk_mem_gen_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/blk_mem_gen_0">
@@ -268,6 +294,7 @@
       </File>
       <File Path="$PSRCDIR/sources_1/ip/xadc_wiz_0/xadc_wiz_0.xci">
         <FileInfo>
+          <Attr Name="AutoDisabled" Val="1"/>
           <Attr Name="ImportPath" Val="$PPRDIR/../project_xadc/src/ip/xadc_wiz_0/xadc_wiz_0.xci"/>
           <Attr Name="ImportTime" Val="1478194716"/>
           <Attr Name="UsedIn" Val="synthesis"/>
@@ -277,6 +304,26 @@
       </File>
       <Config>
         <Option Name="TopModule" Val="xadc_wiz_0"/>
+        <Option Name="UseBlackboxStub" Val="1"/>
+      </Config>
+    </FileSet>
+    <FileSet Name="CharactersROM" Type="BlockSrcs" RelSrcDir="$PSRCDIR/CharactersROM">
+      <File Path="$PSRCDIR/sources_1/ip/CharactersROM.xcix">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/ip/CharactersROM/CharactersROM.xci">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <Config>
+        <Option Name="TopModule" Val="CharactersROM"/>
         <Option Name="UseBlackboxStub" Val="1"/>
       </Config>
     </FileSet>
@@ -300,41 +347,58 @@
         <Option Name="UseBlackboxStub" Val="1"/>
       </Config>
     </FileSet>
-    <FileSet Name="CharactersROM" Type="BlockSrcs" RelSrcDir="$PSRCDIR/CharactersROM">
-      <File Path="$PSRCDIR/sources_1/ip/CharactersROM.xcix">
+    <FileSet Name="xadc_wiz_1" Type="BlockSrcs" RelSrcDir="$PSRCDIR/xadc_wiz_1">
+      <File Path="$PSRCDIR/sources_1/ip/xadc_wiz_1.xcix">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PSRCDIR/sources_1/ip/CharactersROM/CharactersROM.xci">
+      <File Path="$PSRCDIR/sources_1/ip/xadc_wiz_1/xadc_wiz_1.xci">
         <FileInfo>
+          <Attr Name="AutoDisabled" Val="1"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
-        <CompFileExtendedInfo CompFileName="CharactersROM.xci" FileRelPathName="CharactersROM.xml"/>
-        <CompFileExtendedInfo CompFileName="CharactersROM.xci" FileRelPathName="CharactersROM_stub.vhdl"/>
-        <CompFileExtendedInfo CompFileName="CharactersROM.xci" FileRelPathName="CharactersROM_sim_netlist.v"/>
-        <CompFileExtendedInfo CompFileName="CharactersROM.xci" FileRelPathName="CharactersROM_stub.v"/>
-        <CompFileExtendedInfo CompFileName="CharactersROM.xci" FileRelPathName="CharactersROM_sim_netlist.vhdl"/>
-        <CompFileExtendedInfo CompFileName="CharactersROM.xci" FileRelPathName="/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/Oscilloscope_v1/character32x32.coe"/>
-        <CompFileExtendedInfo CompFileName="CharactersROM.xci" FileRelPathName="CharactersROM_ooc.xdc"/>
-        <CompFileExtendedInfo CompFileName="CharactersROM.xci" FileRelPathName="synth/CharactersROM.vhd"/>
-        <CompFileExtendedInfo CompFileName="CharactersROM.xci" FileRelPathName="blk_mem_gen_v8_3_3/hdl/blk_mem_gen_v8_3_vhsyn_rfs.vhd"/>
-        <CompFileExtendedInfo CompFileName="CharactersROM.xci" FileRelPathName="sim/CharactersROM.v"/>
-        <CompFileExtendedInfo CompFileName="CharactersROM.xci" FileRelPathName="blk_mem_gen_v8_3_3/simulation/blk_mem_gen_v8_3.v"/>
-        <CompFileExtendedInfo CompFileName="CharactersROM.xci" FileRelPathName="CharactersROM.mif"/>
-        <CompFileExtendedInfo CompFileName="CharactersROM.xci" FileRelPathName="misc/blk_mem_gen_v8_3.vhd"/>
-        <CompFileExtendedInfo CompFileName="CharactersROM.xci" FileRelPathName="doc/blk_mem_gen_v8_3_changelog.txt"/>
-        <CompFileExtendedInfo CompFileName="CharactersROM.xci" FileRelPathName="summary.log"/>
-        <CompFileExtendedInfo CompFileName="CharactersROM.xci" FileRelPathName="CharactersROM.veo"/>
-        <CompFileExtendedInfo CompFileName="CharactersROM.xci" FileRelPathName="blk_mem_gen_v8_3_3/hdl/blk_mem_gen_v8_3.vhd"/>
-        <CompFileExtendedInfo CompFileName="CharactersROM.xci" FileRelPathName="CharactersROM.vho"/>
       </File>
       <Config>
-        <Option Name="TopModule" Val="CharactersROM"/>
+        <Option Name="TopModule" Val="xadc_wiz_1"/>
+        <Option Name="UseBlackboxStub" Val="1"/>
+      </Config>
+    </FileSet>
+    <FileSet Name="xadc_wiz_2" Type="BlockSrcs" RelSrcDir="$PSRCDIR/xadc_wiz_2">
+      <File Path="$PSRCDIR/sources_1/ip/xadc_wiz_2.xcix">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/ip/xadc_wiz_2/xadc_wiz_2.xci">
+        <FileInfo>
+          <Attr Name="AutoDisabled" Val="1"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+        <CompFileExtendedInfo CompFileName="xadc_wiz_2.xci" FileRelPathName="xadc_wiz_2.xdc"/>
+        <CompFileExtendedInfo CompFileName="xadc_wiz_2.xci" FileRelPathName="xadc_wiz_2_ooc.xdc"/>
+        <CompFileExtendedInfo CompFileName="xadc_wiz_2.xci" FileRelPathName="xadc_wiz_2_sim_netlist.vhdl"/>
+        <CompFileExtendedInfo CompFileName="xadc_wiz_2.xci" FileRelPathName="xadc_wiz_2_sim_netlist.v"/>
+        <CompFileExtendedInfo CompFileName="xadc_wiz_2.xci" FileRelPathName="xadc_wiz_2_stub.vhdl"/>
+        <CompFileExtendedInfo CompFileName="xadc_wiz_2.xci" FileRelPathName="xadc_wiz_2_stub.v"/>
+        <CompFileExtendedInfo CompFileName="xadc_wiz_2.xci" FileRelPathName="xadc_wiz_2.v"/>
+        <CompFileExtendedInfo CompFileName="xadc_wiz_2.xci" FileRelPathName="xadc_wiz_2/simulation/timing/design.txt"/>
+        <CompFileExtendedInfo CompFileName="xadc_wiz_2.xci" FileRelPathName="doc/xadc_wiz_v3_3_changelog.txt"/>
+        <CompFileExtendedInfo CompFileName="xadc_wiz_2.xci" FileRelPathName="design.txt"/>
+        <CompFileExtendedInfo CompFileName="xadc_wiz_2.xci" FileRelPathName="xadc_wiz_2.vho"/>
+        <CompFileExtendedInfo CompFileName="xadc_wiz_2.xci" FileRelPathName="xadc_wiz_2.veo"/>
+        <CompFileExtendedInfo CompFileName="xadc_wiz_2.xci" FileRelPathName="xadc_wiz_2.xml"/>
+      </File>
+      <Config>
+        <Option Name="TopModule" Val="xadc_wiz_2"/>
         <Option Name="UseBlackboxStub" Val="1"/>
       </Config>
     </FileSet>
@@ -361,15 +425,16 @@
     </Simulator>
   </Simulators>
   <Runs Version="1" Minor="10">
-    <Run Id="synth_1" Type="Ft3:Synth" SrcSet="sources_1" Part="xc7a100tcsg324-3" ConstrsSet="constrs_1" Description="Trades off Performance and Area for better Runtime." State="current" IncludeInArchive="true">
+    <Run Id="synth_1" Type="Ft3:Synth" SrcSet="sources_1" Part="xc7a100tcsg324-3" ConstrsSet="constrs_1" Description="Trades off Performance and Area for better Runtime." State="current" Dir="$PRUNDIR/synth_1" IncludeInArchive="true">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Flow_RuntimeOptimized" Flow="Vivado Synthesis 2016"/>
         <Step Id="synth_design">
+          <Option Id="FlattenHierarchy">1</Option>
           <Option Id="Directive">0</Option>
           <Option Id="FsmExtraction">0</Option>
-          <Option Id="FlattenHierarchy">1</Option>
         </Step>
       </Strategy>
+      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
     </Run>
     <Run Id="blk_mem_gen_0_synth_1" Type="Ft3:Synth" SrcSet="blk_mem_gen_0" Part="xc7a100tcsg324-3" ConstrsSet="blk_mem_gen_0" Description="Vivado Synthesis Defaults" Dir="$PRUNDIR/blk_mem_gen_0_synth_1" IncludeInArchive="true">
       <Strategy Version="1" Minor="2">
@@ -385,6 +450,13 @@
       </Strategy>
       <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
     </Run>
+    <Run Id="CharactersROM_synth_1" Type="Ft3:Synth" SrcSet="CharactersROM" Part="xc7a100tcsg324-3" ConstrsSet="CharactersROM" Description="Vivado Synthesis Defaults" Dir="$PRUNDIR/CharactersROM_synth_1" IncludeInArchive="true">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2016"/>
+        <Step Id="synth_design"/>
+      </Strategy>
+      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
+    </Run>
     <Run Id="clk_wiz_0_synth_1" Type="Ft3:Synth" SrcSet="clk_wiz_0" Part="xc7a100tcsg324-3" ConstrsSet="clk_wiz_0" Description="Vivado Synthesis Defaults" Dir="$PRUNDIR/clk_wiz_0_synth_1" IncludeInArchive="true">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2016"/>
@@ -392,16 +464,21 @@
       </Strategy>
       <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
     </Run>
-    <Run Id="CharactersROM_synth_1" Type="Ft3:Synth" SrcSet="CharactersROM" Part="xc7a100tcsg324-3" ConstrsSet="CharactersROM" Description="Vivado Synthesis Defaults" Dir="$PRUNDIR/CharactersROM_synth_1" IncludeInArchive="true">
+    <Run Id="xadc_wiz_1_synth_1" Type="Ft3:Synth" SrcSet="xadc_wiz_1" Part="xc7a100tcsg324-3" ConstrsSet="xadc_wiz_1" Description="Vivado Synthesis Defaults" Dir="$PRUNDIR/xadc_wiz_1_synth_1" IncludeInArchive="true">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2016">
-          <Desc>Vivado Synthesis Defaults</Desc>
-        </StratHandle>
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2016"/>
         <Step Id="synth_design"/>
       </Strategy>
       <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
     </Run>
-    <Run Id="impl_1" Type="Ft2:EntireDesign" Part="xc7a100tcsg324-3" ConstrsSet="constrs_1" Description="Default settings for Implementation." State="current" SynthRun="synth_1" IncludeInArchive="true">
+    <Run Id="xadc_wiz_2_synth_1" Type="Ft3:Synth" SrcSet="xadc_wiz_2" Part="xc7a100tcsg324-3" ConstrsSet="xadc_wiz_2" Description="Vivado Synthesis Defaults" Dir="$PRUNDIR/xadc_wiz_2_synth_1" IncludeInArchive="true">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2016"/>
+        <Step Id="synth_design"/>
+      </Strategy>
+      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
+    </Run>
+    <Run Id="impl_1" Type="Ft2:EntireDesign" Part="xc7a100tcsg324-3" ConstrsSet="constrs_1" Description="Default settings for Implementation." State="current" Dir="$PRUNDIR/impl_1" SynthRun="synth_1" IncludeInArchive="true">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2016"/>
         <Step Id="init_design"/>
@@ -414,6 +491,7 @@
         <Step Id="post_route_phys_opt_design"/>
         <Step Id="write_bitstream"/>
       </Strategy>
+      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
     </Run>
     <Run Id="blk_mem_gen_0_impl_1" Type="Ft2:EntireDesign" Part="xc7a100tcsg324-3" ConstrsSet="blk_mem_gen_0" Description="Default settings for Implementation." SynthRun="blk_mem_gen_0_synth_1" IncludeInArchive="false">
       <Strategy Version="1" Minor="2">
@@ -443,6 +521,20 @@
         <Step Id="write_bitstream"/>
       </Strategy>
     </Run>
+    <Run Id="CharactersROM_impl_1" Type="Ft2:EntireDesign" Part="xc7a100tcsg324-3" ConstrsSet="CharactersROM" Description="Default settings for Implementation." SynthRun="CharactersROM_synth_1" IncludeInArchive="false">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2016"/>
+        <Step Id="init_design"/>
+        <Step Id="opt_design"/>
+        <Step Id="power_opt_design"/>
+        <Step Id="place_design"/>
+        <Step Id="post_place_power_opt_design"/>
+        <Step Id="phys_opt_design"/>
+        <Step Id="route_design"/>
+        <Step Id="post_route_phys_opt_design"/>
+        <Step Id="write_bitstream"/>
+      </Strategy>
+    </Run>
     <Run Id="clk_wiz_0_impl_1" Type="Ft2:EntireDesign" Part="xc7a100tcsg324-3" ConstrsSet="clk_wiz_0" Description="Default settings for Implementation." SynthRun="clk_wiz_0_synth_1" IncludeInArchive="false">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2016"/>
@@ -457,11 +549,23 @@
         <Step Id="write_bitstream"/>
       </Strategy>
     </Run>
-    <Run Id="CharactersROM_impl_1" Type="Ft2:EntireDesign" Part="xc7a100tcsg324-3" ConstrsSet="CharactersROM" Description="Default settings for Implementation." SynthRun="CharactersROM_synth_1" IncludeInArchive="false">
+    <Run Id="xadc_wiz_1_impl_1" Type="Ft2:EntireDesign" Part="xc7a100tcsg324-3" ConstrsSet="xadc_wiz_1" Description="Default settings for Implementation." SynthRun="xadc_wiz_1_synth_1" IncludeInArchive="false">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2016">
-          <Desc>Default settings for Implementation.</Desc>
-        </StratHandle>
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2016"/>
+        <Step Id="init_design"/>
+        <Step Id="opt_design"/>
+        <Step Id="power_opt_design"/>
+        <Step Id="place_design"/>
+        <Step Id="post_place_power_opt_design"/>
+        <Step Id="phys_opt_design"/>
+        <Step Id="route_design"/>
+        <Step Id="post_route_phys_opt_design"/>
+        <Step Id="write_bitstream"/>
+      </Strategy>
+    </Run>
+    <Run Id="xadc_wiz_2_impl_1" Type="Ft2:EntireDesign" Part="xc7a100tcsg324-3" ConstrsSet="xadc_wiz_2" Description="Default settings for Implementation." SynthRun="xadc_wiz_2_synth_1" IncludeInArchive="false">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2016"/>
         <Step Id="init_design"/>
         <Step Id="opt_design"/>
         <Step Id="power_opt_design"/>

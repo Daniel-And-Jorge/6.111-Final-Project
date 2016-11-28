@@ -1,10 +1,10 @@
 // Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2016.2 (lin64) Build 1577090 Thu Jun  2 16:32:35 MDT 2016
-// Date        : Mon Nov 21 22:26:36 2016
-// Host        : eecs-digital-03 running 64-bit Ubuntu 14.04.5 LTS
+// Date        : Tue Nov 22 13:01:22 2016
+// Host        : eecs-digital-02 running 64-bit Ubuntu 14.04.5 LTS
 // Command     : write_verilog -force -mode synth_stub
-//               /afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/CharactersROM_synth_1/CharactersROM_stub.v
+//               /afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/CharactersROM_synth_1/CharactersROM_stub.v
 // Design      : CharactersROM
 // Purpose     : Stub declaration of top-level module interface
 // Device      : xc7a100tcsg324-3

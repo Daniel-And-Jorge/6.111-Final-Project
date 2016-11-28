@@ -1,0 +1,6 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  "ToggleChannels_func_synth.v" --include "../../../../Oscilloscope_v1.ip_user_files/ipstatic/clk_wiz_v5_3_1" --include "../../../../Oscilloscope_v1.srcs/sources_1/new"
+verilog xil_defaultlib "/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/VerticalScaler.vh" "../../../../Oscilloscope_v1.srcs/sim_1/new/ToggleChannels_tb.v" --include "../../../../Oscilloscope_v1.ip_user_files/ipstatic/clk_wiz_v5_3_1" --include "../../../../Oscilloscope_v1.srcs/sources_1/new"
+
+# Do not sort compile order
+nosort

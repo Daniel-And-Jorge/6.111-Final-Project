@@ -46,11 +46,17 @@ module Oscilloscope_v1
                 Y_TIME_PER_DIVISION_CHARACTER_1 = 980,
                 X_TIME_PER_DIVISION_CHARACTER_0 = 780,
                 Y_TIME_PER_DIVISION_CHARACTER_0 = 980,
-                SELECT_CHARACTER_BITS = 7) 
+                SELECT_CHARACTER_BITS = 7,
+                DRP_ADDRESS_BITS = 7,
+                DRP_SAMPLE_BITS = 16,
+                SAMPLE_BITS = 12,
+                TOGGLE_CHANNELS_STATE_BITS = 2) 
    (input CLK100MHZ,
    input vauxp11,
    input vauxn11,
-   input [13:0] SW,
+   input vauxp3,
+   input vauxn3,
+   input [15:0] SW,
    input BTNU, input BTND, input BTNC, input BTNL,
    //input reset,
    output wire [15:0] LED,
@@ -80,21 +86,26 @@ module Oscilloscope_v1
         
     // Scope settings
     wire signed [11:0] triggerThreshold;
-    wire [9:0] verticalScaleFactorTimes8;
+    wire [9:0] verticalScaleFactorTimes8Channel1;
+    wire [9:0] verticalScaleFactorTimes8Channel2;
     wire [5:0] samplePeriod;
-    
+    wire channelSelected;
+    assign LED[15] = channelSelected;
     
     // these come from MeasureSignal
-    wire signed [11:0] signalMin;
-    wire signed [11:0] signalMax;
+    wire signed [11:0] signalMinChannel1;
+    wire signed [11:0] signalMaxChannel1;
     wire [11:0] signalPeriod;
     wire signed [11:0] signalAverage;
     
-    ScopeSettings myss(.clock(CLK108MHZ), .sw(SW[13:6]),
-                        .triggerThreshold(triggerThreshold), .verticalScaleFactorTimes8(verticalScaleFactorTimes8),
-                        .samplePeriod(samplePeriod),
-                        .signalMin(signalMin), .signalMax(signalMax), .signalPeriod(signalPeriod),                        
-                        .btnu(btnu_1pulse), .btnd(btnd_1pulse), .btnc(btnc_1pulse), .btnl(btnl_1pulse));
+    ScopeSettings myss(.clock(CLK108MHZ), .sw(SW[15:0]),
+                        .btnu(btnu_1pulse), .btnd(btnd_1pulse), .btnc(btnc_1pulse), .btnl(btnl_1pulse),
+                        .signalMinChannel1(signalMinChannel1), .signalMaxChannel1(signalMaxChannel1), .signalPeriod(signalPeriod),
+                        .triggerThreshold(triggerThreshold), 
+                        .verticalScaleFactorTimes8Channel1(verticalScaleFactorTimes8Channel1), 
+                        .verticalScaleFactorTimes8Channel2(verticalScaleFactorTimes8Channel2),
+                        .samplePeriod(samplePeriod), .channelSelected(channelSelected)                
+                        );
     
     // Button input debouncers
     debounce (.reset(reset), .clock(CLK108MHZ), .noisy(BTNU), .clean(btnu_clean));
@@ -107,32 +118,85 @@ module Oscilloscope_v1
     ButtonSinglePulse(.clock(CLK108MHZ), .btn(btnc_clean), .btn1pulse(btnc_1pulse));
     ButtonSinglePulse(.clock(CLK108MHZ), .btn(btnl_clean), .btn1pulse(btnl_1pulse));
     
-    assign LED[9:0] = verticalScaleFactorTimes8;
-    
-    // XADC IP module
-    wire eoc;
-    wire ready;
-    wire [15:0] XADCdataOut;   
-    reg [6:0] Address_in = 7'h1b; // select VAUXP/N11 as input [see Artix 7 XADC]
-    //xadc instantiation connect the eoc_out .den_in to get continuous conversion
-    xadc_wiz_0  XLXI_7 (.daddr_in(Address_in), //addresses can be found in the artix 7 XADC user guide DRP register space
-                         .dclk_in(CLK108MHZ), 
-                         .den_in(eoc),
-//                         .convst_in(CLK108MHZ), 
-                         .di_in(), 
-                         .dwe_in(), 
-                         .busy_out(),
-                         .vauxp11(vauxp11),
-                         .vauxn11(vauxn11),
-                         .vn_in(),
-                         .vp_in(),
-                         .alarm_out(),
-                         .do_out(XADCdataOut),
-                         .reset_in(reset), // ddr
-                         .eoc_out(eoc), // ddr high for one cycle on end of conversion
-                         .channel_out(),
-                         .drdy_out(ready));
-      
+    assign LED[9:0] = verticalScaleFactorTimes8Channel1;
+
+    wire [DRP_ADDRESS_BITS-1:0] DRPAddress;
+    wire DRPEnable;
+    wire DRPWriteEnable;
+    wire DRPReady;
+    wire signed [DRP_SAMPLE_BITS-1:0] DRPDataOut;
+    wire endOfConversion;
+    SimultaneousSamplingXADC simultaneousSamplingXADC (
+        .di_in(),                       // input wire [15 : 0] di_in
+        .daddr_in(DRPAddress),          // input wire [6 : 0] daddr_in
+        .den_in(DRPEnable),             // input wire den_in
+        .dwe_in(DRPWriteEnable),        // input wire dwe_in
+        .drdy_out(DRPReady),            // output wire drdy_out
+        .do_out(DRPDataOut),            // output wire [15 : 0] do_out
+        .dclk_in(CLK108MHZ),            // input wire dclk_in
+        .reset_in(reset),               // input wire reset_in
+        .vp_in(),                       // input wire vp_in
+        .vn_in(),                       // input wire vn_in
+        .vauxp3(vauxp3),                // input wire vauxp3
+        .vauxn3(vauxn3),                // input wire vauxn3
+        .vauxp11(vauxp11),              // input wire vauxp11
+        .vauxn11(vauxn11),              // input wire vauxn11
+        .channel_out(),                 // output wire [4 : 0] channel_out
+        .eoc_out(endOfConversion),      // output wire eoc_out
+        .alarm_out(),                   // output wire alarm_out
+        .eos_out(),                     // output wire eos_out
+        .busy_out()                     // output wire busy_out
+        );
+        
+    wire signed [SAMPLE_BITS-1:0] channel1;
+    wire signed [SAMPLE_BITS-1:0] channel2;
+    wire channelDataReady;
+    wire [TOGGLE_CHANNELS_STATE_BITS-1:0] state;
+    wire [TOGGLE_CHANNELS_STATE_BITS-1:0] previousState;
+    ToggleChannels myToggleChannels(
+        .clock(CLK108MHZ),
+        .endOfConversion(endOfConversion),
+        .DRPReady(DRPReady),
+        .DRPDataOut(DRPDataOut[15:4]),
+        .DRPEnable(DRPEnable),
+        .DRPWriteEnable(DRPWriteEnable),
+        .channel1(channel1),
+        .channel2(channel2),
+        .DRPAddress(DRPAddress),
+        .channelDataReady(channelDataReady),
+        .state(state),
+        .previousState(previousState)
+        );
+        
+//    wire [DRP_ADDRESS_BITS-1:0] DRPAddress;
+//    wire DRPEnable;
+//    wire DRPWriteEnable;
+//    wire DRPReady;
+//    wire [DRP_SAMPLE_BITS-1:0] DRPDataOut;
+//    wire endOfConversion;
+//    xadc_wiz_2 simultaneousSamplingXADC (
+//        .di_in(),              // input wire [15 : 0] di_in
+//        .daddr_in(7'h13),        // input wire [6 : 0] daddr_in
+//        .den_in(endOfConversion),            // input wire den_in
+//        .dwe_in(1'b0),            // input wire dwe_in
+//        .drdy_out(DRPReady),        // output wire drdy_out
+//        .do_out(DRPDataOut),            // output wire [15 : 0] do_out
+//        .dclk_in(CLK108MHZ),          // input wire dclk_in
+//        .reset_in(reset),        // input wire reset_in
+//        .vp_in(),              // input wire vp_in
+//        .vn_in(),              // input wire vn_in
+//        .vauxp3(vauxp3),            // input wire vauxp3
+//        .vauxn3(vauxn3),            // input wire vauxn3
+//        .vauxp11(vauxp11),          // input wire vauxp11
+//        .vauxn11(vauxn11),          // input wire vauxn11
+//        .channel_out(),  // output wire [4 : 0] channel_out
+//        .eoc_out(endOfConversion),          // output wire eoc_out
+//        .alarm_out(),      // output wire alarm_out
+//        .eos_out(),          // output wire eos_out
+//        .busy_out()        // output wire busy_out
+//        );
+        
+              
       // ADC controller
       wire adcc_ready;
       wire adccRawReady;
@@ -144,8 +208,8 @@ module Oscilloscope_v1
                              .reset(reset),
                              .sampleEnabled(1),
                              .samplePeriod(samplePeriod),
-                             .inputReady(eoc),
-                             .dataIn(XADCdataOut[15:4]),
+                             .inputReady(channelDataReady),
+                             .dataIn(channel1),
                              .ready(adcc_ready),
                              .dataOut(ADCCdataOut),
                              .rawReady(adccRawReady), // not affected by samplePeriod
@@ -213,8 +277,8 @@ module Oscilloscope_v1
                 .dataReady(adccRawReady),
                 .dataIn(adccRawDataOut),
                 .isTrigger(isTriggered),
-                .signalMax(signalMax),
-                .signalMin(signalMin),
+                .signalMax(signalMaxChannel1),
+                .signalMin(signalMinChannel1),
                 .signalPeriod(signalPeriod),
                 .signalAverage(signalAverage)
                 );
@@ -257,7 +321,7 @@ module Oscilloscope_v1
             myCurve
             (.clock(CLK108MHZ),
             .dataIn(dataIn),
-            .verticalScaleFactorTimes8(verticalScaleFactorTimes8),
+            .verticalScaleFactorTimes8(verticalScaleFactorTimes8Channel1),
             //.verticalScaleFactorTimes8(SW[13:6]),
             .displayX(gridDisplayX),
             .displayY(gridDisplayY),
@@ -313,7 +377,7 @@ module Oscilloscope_v1
      HorizontalLineSprite mytls
                 (.clock(CLK108MHZ),
                 //.level(`VERTICAL_SCALE(triggerThreshold, verticalShiftLeftFactor)),
-                .level(triggerThreshold * $signed(verticalScaleFactorTimes8) / 'sd8),
+                .level(triggerThreshold * $signed(verticalScaleFactorTimes8Channel1) / 'sd8),
                 .displayX(curveDisplayX2),
                 .displayY(curveDisplayY2),
                 .hsync(curveHsync2),

@@ -216,7 +216,7 @@ module Oscilloscope_v1
          .estimatedSlope(slopeChannel2),
          .estimatedSlopeIsPositive(positiveSlopeChannel2));
     
-    wire [11:0] bufferDataOut;
+    wire drawStarting;
     wire activeBramSelect;
     BufferSelector mybs(
         .clock(CLK108MHZ),
@@ -224,27 +224,43 @@ module Oscilloscope_v1
         .activeBramSelect(activeBramSelect)
         );
     
-    buffer Buffer (.clock(CLK108MHZ), .ready(adcc_ready), .dataIn(ADCCdataOutChannel1),
+    wire isTriggered;
+    wire [11:0] bufferDataOutChannel1;
+    wire [ADDRESS_BITS-1:0] curveAddressOutChannel1;
+    buffer BufferChannel1 (.clock(CLK108MHZ), .ready(adcc_ready), .dataIn(ADCCdataOutChannel1),
         .isTrigger(isTriggered), .disableCollection(0), .activeBramSelect(activeBramSelect),
-        //.isTrigger(isTriggered), .disableCollection(0), .activeBramSelect(sw[0]),
         .reset(reset),
         .readTriggerRelative(1),
-        .readAddress(curveAddressOut),
-        .dataOut(bufferDataOut));
+        .readAddress(curveAddressOutChannel1),
+        .dataOut(bufferDataOutChannel1));
     
-    wire [11:0] buffer2DataOut;  
-    buffer Buffer2 (.clock(CLK108MHZ), .ready(risingEdgeReadyChannel1), .dataIn(slopeChannel1),
+    wire [11:0] buffer2DataOutChannel1;
+    wire [ADDRESS_BITS-1:0] curveAddressOut2Channel1; 
+    buffer Buffer2Channel1 (.clock(CLK108MHZ), .ready(risingEdgeReadyChannel1), .dataIn(slopeChannel1),
                 .isTrigger(isTriggered), .disableCollection(0), .activeBramSelect(activeBramSelect),
-                //.isTrigger(isTriggered), .disableCollection(0), .activeBramSelect(sw[0]),
                 .reset(reset),
                 .readTriggerRelative(1),
-                .readAddress(curveAddressOut2),
-                .dataOut(buffer2DataOut));
-
-//    wire [11:0] bufferDataOut;
-//    ConstantFakeBuffer buffer(.address(), .dataOut(bufferDataOut));
+                .readAddress(curveAddressOut2Channel1),
+                .dataOut(buffer2DataOutChannel1));
+    
+    wire [11:0] bufferDataOutChannel2;    
+    wire [ADDRESS_BITS-1:0] curveAddressOutChannel2;        
+    buffer BufferChannel2 (.clock(CLK108MHZ), .ready(adcc_ready), .dataIn(ADCCdataOutChannel2),
+                        .isTrigger(isTriggered), .disableCollection(0), .activeBramSelect(activeBramSelect),
+                        .reset(reset),
+                        .readTriggerRelative(1),
+                        .readAddress(curveAddressOutChannel2),
+                        .dataOut(bufferDataOutChannel2));
+                        
+    wire [11:0] buffer2DataOutChannel2;
+    wire [ADDRESS_BITS-1:0] curveAddressOut2Channel2; 
+    buffer Buffer2Channel2 (.clock(CLK108MHZ), .ready(risingEdgeReadyChannel2), .dataIn(slopeChannel2),
+                .isTrigger(isTriggered), .disableCollection(0), .activeBramSelect(activeBramSelect),
+                .reset(reset),
+                .readTriggerRelative(1),
+                .readAddress(curveAddressOut2Channel2),
+                .dataOut(buffer2DataOutChannel2));
         
-    wire isTriggered;
     TriggerRisingEdgeSteady #(.DATA_BITS(12))
             Trigger
             (.clock(CLK108MHZ),
@@ -290,8 +306,6 @@ module Oscilloscope_v1
                 .gridDisplayX(gridDisplayX), .gridDisplayY(gridDisplayY), .gridHsync(gridHsync), 
                 .gridVsync(gridVsync), .gridBlank(gridBlank), .pixel(gridPixel));
         
-    wire drawStarting;
-    wire [ADDRESS_BITS-1:0] curveAddressOut;
     wire [DISPLAY_X_BITS-1:0] curveDisplayX;
     wire [DISPLAY_Y_BITS-1:0] curveDisplayY;
     wire curveHsync;
@@ -300,7 +314,7 @@ module Oscilloscope_v1
     wire [RGB_BITS-1:0] curvePixel;
     
     wire [11:0] dataIn;
-    assign dataIn = bufferDataOut;
+    assign dataIn = bufferDataOutChannel1;
     Curve #(.ADDRESS_BITS(ADDRESS_BITS))
             myCurve
             (.clock(CLK108MHZ),
@@ -315,7 +329,7 @@ module Oscilloscope_v1
             .previousPixel(gridPixel),
             .pixel(curvePixel),
             .drawStarting(drawStarting),
-            .address(curveAddressOut),
+            .address(curveAddressOutChannel1),
             .curveDisplayX(curveDisplayX),
             .curveDisplayY(curveDisplayY),
             .curveHsync(curveHsync),
@@ -323,7 +337,6 @@ module Oscilloscope_v1
             .curveBlank(curveBlank)
             );
             
-    wire [ADDRESS_BITS-1:0] curveAddressOut2;
     wire [DISPLAY_X_BITS-1:0] curveDisplayX2;
     wire [DISPLAY_Y_BITS-1:0] curveDisplayY2;
     wire curveHsync2;
@@ -332,7 +345,7 @@ module Oscilloscope_v1
     wire [RGB_BITS-1:0] curvePixel2;
             
             wire [11:0] dataIn2;
-            assign dataIn2 = buffer2DataOut;
+            assign dataIn2 = buffer2DataOutChannel1;
             Curve #(.ADDRESS_BITS(ADDRESS_BITS), .RGB_COLOR(12'h0FF))
                     myCurve2
                     (.clock(CLK108MHZ),
@@ -346,7 +359,7 @@ module Oscilloscope_v1
                     .previousPixel(curvePixel),
                     .pixel(curvePixel2),
                     .drawStarting(),
-                    .address(curveAddressOut2),
+                    .address(curveAddressOut2Channel1),
                     .curveDisplayX(curveDisplayX2),
                     .curveDisplayY(curveDisplayY2),
                     .curveHsync(curveHsync2),

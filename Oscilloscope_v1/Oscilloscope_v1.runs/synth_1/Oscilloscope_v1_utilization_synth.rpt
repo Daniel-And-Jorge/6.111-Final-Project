@@ -1,7 +1,7 @@
 Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2016.2 (lin64) Build 1577090 Thu Jun  2 16:32:35 MDT 2016
-| Date         : Sun Nov 27 23:32:57 2016
+| Date         : Mon Nov 28 14:31:24 2016
 | Host         : eecs-digital-02 running 64-bit Ubuntu 14.04.5 LTS
 | Command      : report_utilization -file Oscilloscope_v1_utilization_synth.rpt -pb Oscilloscope_v1_utilization_synth.pb
 | Design       : Oscilloscope_v1
@@ -30,13 +30,13 @@ Table of Contents
 +----------------------------+------+-------+-----------+-------+
 |          Site Type         | Used | Fixed | Available | Util% |
 +----------------------------+------+-------+-----------+-------+
-| Slice LUTs*                | 2366 |     0 |     63400 |  3.73 |
-|   LUT as Logic             | 2318 |     0 |     63400 |  3.66 |
-|   LUT as Memory            |   48 |     0 |     19000 |  0.25 |
+| Slice LUTs*                | 2501 |     0 |     63400 |  3.94 |
+|   LUT as Logic             | 2446 |     0 |     63400 |  3.86 |
+|   LUT as Memory            |   55 |     0 |     19000 |  0.29 |
 |     LUT as Distributed RAM |    0 |     0 |           |       |
-|     LUT as Shift Register  |   48 |     0 |           |       |
-| Slice Registers            |  948 |     0 |    126800 |  0.75 |
-|   Register as Flip Flop    |  948 |     0 |    126800 |  0.75 |
+|     LUT as Shift Register  |   55 |     0 |           |       |
+| Slice Registers            | 1364 |     0 |    126800 |  1.08 |
+|   Register as Flip Flop    | 1364 |     0 |    126800 |  1.08 |
 |   Register as Latch        |    0 |     0 |    126800 |  0.00 |
 | F7 Muxes                   |    0 |     0 |     31700 |  0.00 |
 | F8 Muxes                   |    0 |     0 |     15850 |  0.00 |
@@ -59,7 +59,7 @@ Table of Contents
 | 0     |          Yes |           - |          Set |
 | 0     |          Yes |           - |        Reset |
 | 5     |          Yes |         Set |            - |
-| 943   |          Yes |       Reset |            - |
+| 1359  |          Yes |       Reset |            - |
 +-------+--------------+-------------+--------------+
 
 
@@ -149,15 +149,15 @@ Table of Contents
 +----------+------+---------------------+
 | Ref Name | Used | Functional Category |
 +----------+------+---------------------+
-| LUT2     | 1095 |                 LUT |
-| FDRE     |  943 |        Flop & Latch |
-| CARRY4   |  668 |          CarryLogic |
-| LUT6     |  664 |                 LUT |
-| LUT3     |  443 |                 LUT |
-| LUT1     |  322 |                 LUT |
-| LUT4     |  287 |                 LUT |
-| LUT5     |   80 |                 LUT |
-| SRL16E   |   48 |  Distributed Memory |
+| FDRE     | 1359 |        Flop & Latch |
+| LUT2     | 1119 |                 LUT |
+| CARRY4   |  709 |          CarryLogic |
+| LUT6     |  665 |                 LUT |
+| LUT3     |  485 |                 LUT |
+| LUT4     |  361 |                 LUT |
+| LUT1     |  332 |                 LUT |
+| LUT5     |   86 |                 LUT |
+| SRL16E   |   55 |  Distributed Memory |
 | OBUF     |   25 |                  IO |
 | OBUFT    |   21 |                  IO |
 | IBUF     |   12 |                  IO |
@@ -173,7 +173,7 @@ Table of Contents
 +---------------+------+
 |    Ref Name   | Used |
 +---------------+------+
-| blk_mem_gen_0 |    4 |
+| blk_mem_gen_0 |    8 |
 | clk_wiz_0     |    1 |
 | CharactersROM |    1 |
 +---------------+------+

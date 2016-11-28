@@ -1,7 +1,7 @@
 Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2016.2 (lin64) Build 1577090 Thu Jun  2 16:32:35 MDT 2016
-| Date             : Sun Nov 27 23:35:59 2016
+| Date             : Mon Nov 28 14:33:59 2016
 | Host             : eecs-digital-02 running 64-bit Ubuntu 14.04.5 LTS
 | Command          : report_power -file Oscilloscope_v1_power_routed.rpt -pb Oscilloscope_v1_power_summary_routed.pb -rpx Oscilloscope_v1_power_routed.rpx
 | Design           : Oscilloscope_v1
@@ -30,8 +30,8 @@ Table of Contents
 ----------
 
 +--------------------------+-------+
-| Total On-Chip Power (W)  | 0.280 |
-| Dynamic (W)              | 0.182 |
+| Total On-Chip Power (W)  | 0.281 |
+| Dynamic (W)              | 0.183 |
 | Device Static (W)        | 0.098 |
 | Effective TJA (C/W)      | 4.6   |
 | Max Ambient (C)          | 98.7  |
@@ -51,19 +51,19 @@ Table of Contents
 +-------------------------+-----------+----------+-----------+-----------------+
 | Clocks                  |     0.006 |        8 |       --- |             --- |
 | Slice Logic             |     0.012 |     4666 |       --- |             --- |
-|   LUT as Logic          |     0.010 |     2319 |     63400 |            3.66 |
+|   LUT as Logic          |     0.010 |     2323 |     63400 |            3.66 |
 |   CARRY4                |     0.002 |      668 |     15850 |            4.21 |
 |   Register              |    <0.001 |      955 |    126800 |            0.75 |
 |   LUT as Shift Register |    <0.001 |       31 |     19000 |            0.16 |
 |   Others                |     0.000 |      101 |       --- |             --- |
-| Signals                 |     0.016 |     3114 |       --- |             --- |
+| Signals                 |     0.017 |     3099 |       --- |             --- |
 | Block RAM               |     0.013 |      9.5 |       135 |            7.04 |
 | MMCM                    |     0.123 |        1 |         6 |           16.67 |
 | DSPs                    |     0.004 |        5 |       240 |            2.08 |
 | I/O                     |     0.005 |       38 |       210 |           18.10 |
 | XADC                    |     0.002 |        1 |       --- |             --- |
 | Static Power            |     0.098 |          |           |                 |
-| Total                   |     0.280 |          |           |                 |
+| Total                   |     0.281 |          |           |                 |
 +-------------------------+-----------+----------+-----------+-----------------+
 
 
@@ -73,7 +73,7 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.068 |       0.052 |      0.016 |
+| Vccint    |       1.000 |     0.068 |       0.053 |      0.016 |
 | Vccaux    |       1.800 |     0.087 |       0.068 |      0.018 |
 | Vcco33    |       3.300 |     0.005 |       0.001 |      0.004 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
@@ -147,8 +147,8 @@ Table of Contents
 +------------------------------------------------+-----------+
 | Name                                           | Power (W) |
 +------------------------------------------------+-----------+
-| Oscilloscope_v1                                |     0.182 |
-|   Buffer                                       |     0.007 |
+| Oscilloscope_v1                                |     0.183 |
+|   Buffer2Channel1                              |     0.007 |
 |     bram0                                      |     0.003 |
 |       U0                                       |     0.003 |
 |         inst_blk_mem_gen                       |     0.003 |
@@ -167,7 +167,7 @@ Table of Contents
 |                 prim_init.ram                  |    <0.001 |
 |               ramloop[1].ram.r                 |     0.002 |
 |                 prim_init.ram                  |     0.002 |
-|   Buffer2                                      |     0.007 |
+|   BufferChannel1                               |     0.007 |
 |     bram0                                      |     0.003 |
 |       U0                                       |     0.003 |
 |         inst_blk_mem_gen                       |     0.003 |
@@ -213,7 +213,7 @@ Table of Contents
 |   myXVGA                                       |    <0.001 |
 |   mybs                                         |    <0.001 |
 |   mymeas                                       |    <0.001 |
-|   myss                                         |     0.019 |
+|   myss                                         |     0.020 |
 |   mytls                                        |     0.001 |
 |   nolabel_line111                              |    <0.001 |
 |   nolabel_line112                              |    <0.001 |

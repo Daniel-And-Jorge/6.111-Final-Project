@@ -95,8 +95,12 @@ module Oscilloscope_v1
     // these come from MeasureSignal
     wire signed [11:0] signalMinChannel1;
     wire signed [11:0] signalMaxChannel1;
-    wire [11:0] signalPeriod;
-    wire signed [11:0] signalAverage;
+    wire [11:0] signalPeriodChannel1;
+    wire signed [11:0] signalAverageChannel1;
+    wire signed [11:0] signalMinChannel2;
+    wire signed [11:0] signalMaxChannel2;
+    wire [11:0] signalPeriodChannel2;
+    wire signed [11:0] signalAverageChannel2;
     
     ScopeSettings myss(.clock(CLK108MHZ), .sw(SW[15:0]),
                         .btnu(btnu_1pulse), .btnd(btnd_1pulse), .btnc(btnc_1pulse), .btnl(btnl_1pulse),
@@ -284,7 +288,7 @@ module Oscilloscope_v1
             .isTriggered(isTriggered)
             );
      
-     MeasureSignal mymeas
+     MeasureSignal myMeasureSignalChannel1
                 (
                 .clock(CLK108MHZ),
                 .dataReady(adccRawReady),
@@ -292,10 +296,21 @@ module Oscilloscope_v1
                 .isTrigger(isTriggered),
                 .signalMax(signalMaxChannel1),
                 .signalMin(signalMinChannel1),
-                .signalPeriod(signalPeriod),
-                .signalAverage(signalAverage)
+                .signalPeriod(signalPeriodChannel1),
+                .signalAverage(signalAverageChannel1)
                 );
      
+     MeasureSignal myMeasureSignalChannel2
+                (
+                .clock(CLK108MHZ),
+                .dataReady(adccRawReady),
+                .dataIn(adccRawDataOutChannel2),
+                .isTrigger(isTriggered),
+                .signalMax(signalMaxChannel2),
+                .signalMin(signalMinChannel2),
+                .signalPeriod(signalPeriodChannel2),
+                .signalAverage(signalAverageChannel2)
+                );
      
      // Create display system and sprites    
      wire [DISPLAY_X_BITS-1:0] displayX;

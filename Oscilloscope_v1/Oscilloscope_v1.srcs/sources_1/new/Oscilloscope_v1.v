@@ -341,12 +341,12 @@ module Oscilloscope_v1
     wire curveChannel1Blank;
     wire [RGB_BITS-1:0] curveChannel1Pixel;
     
-    wire [11:0] dataIn;
-    assign dataIn = bufferDataOutChannel1;
+    wire [11:0] dataInChannel1;
+    assign dataInChannel1 = bufferDataOutChannel1;
     Curve #(.ADDRESS_BITS(ADDRESS_BITS))
-            myCurve
+            curveChannel1
             (.clock(CLK108MHZ),
-            .dataIn(dataIn),
+            .dataIn(dataInChannel1),
             .verticalScaleFactorTimes8(verticalScaleFactorTimes8Channel1),
             .displayX(gridDisplayX),
             .displayY(gridDisplayY),
@@ -355,7 +355,7 @@ module Oscilloscope_v1
             .blank(gridBlank),
             .previousPixel(gridPixel),
             .pixel(curveChannel1Pixel),
-            .drawStarting(drawStarting),
+            .drawStarting(),
             .address(curveAddressOutChannel1),
             .curveDisplayX(curveChannel1DisplayX),
             .curveDisplayY(curveChannel1DisplayY),
@@ -364,35 +364,35 @@ module Oscilloscope_v1
             .curveBlank(curveChannel1Blank)
             );
             
-    wire [DISPLAY_X_BITS-1:0] curveDisplayX2;
-    wire [DISPLAY_Y_BITS-1:0] curveDisplayY2;
-    wire curveHsync2;
-    wire curveVsync2;
-    wire curveBlank2;
-    wire [RGB_BITS-1:0] curvePixel2;
+        wire [DISPLAY_X_BITS-1:0] curveChannel2DisplayX;
+        wire [DISPLAY_Y_BITS-1:0] curveChannel2DisplayY;
+        wire curveChannel2Hsync;
+        wire curveChannel2Vsync;
+        wire curveChannel2Blank;
+        wire [RGB_BITS-1:0] curveChannel2Pixel;
             
-            wire [11:0] dataIn2;
-            assign dataIn2 = buffer2DataOutChannel1;
-            Curve #(.ADDRESS_BITS(ADDRESS_BITS), .RGB_COLOR(12'h0FF))
-                    myCurve2
-                    (.clock(CLK108MHZ),
-                    .dataIn(dataIn2),
-                    .verticalScaleFactorTimes8(0),
-                    .displayX(curveChannel1DisplayX),
-                    .displayY(curveChannel1DisplayY),
-                    .hsync(curveChannel1Hsync),
-                    .vsync(curveChannel1Vsync),
-                    .blank(curveChannel1Blank),
-                    .previousPixel(curveChannel1Pixel),
-                    .pixel(curvePixel2),
-                    .drawStarting(),
-                    .address(curveAddressOut2Channel1),
-                    .curveDisplayX(curveDisplayX2),
-                    .curveDisplayY(curveDisplayY2),
-                    .curveHsync(curveHsync2),
-                    .curveVsync(curveVsync2),
-                    .curveBlank(curveBlank2)
-                    );
+        wire [11:0] dataInChannel2;
+        assign dataInChannel2 = bufferDataOutChannel2;
+        Curve #(.ADDRESS_BITS(ADDRESS_BITS))
+                curveChannel2
+                (.clock(CLK108MHZ),
+                .dataIn(dataInChannel2),
+                .verticalScaleFactorTimes8(verticalScaleFactorTimes8Channel2),
+                .displayX(curveChannel1DisplayX),
+                .displayY(curveChannel1DisplayY),
+                .hsync(curveChannel1Hsync),
+                .vsync(curveChannel1Vsync),
+                .blank(curveChannel1Blank),
+                .previousPixel(curveChannel1Pixel),
+                .pixel(curveChannel2Pixel),
+                .drawStarting(drawStarting),
+                .address(curveAddressOutChannel2),
+                .curveDisplayX(curveChannel2DisplayX),
+                .curveDisplayY(curveChannel2DisplayY),
+                .curveHsync(curveChannel2Hsync),
+                .curveVsync(curveChannel2Vsync),
+                .curveBlank(curveChannel2Blank)
+                );
      
      wire [RGB_BITS-1:0] tlsPixel;
      wire [DISPLAY_X_BITS-1:0] tlsDisplayX;
@@ -400,14 +400,13 @@ module Oscilloscope_v1
      wire tlsHsync, tlsVsync, tlsBlank;
      HorizontalLineSprite mytls
                 (.clock(CLK108MHZ),
-                //.level(`VERTICAL_SCALE(triggerThreshold, verticalShiftLeftFactor)),
                 .level(triggerThreshold * $signed(verticalScaleFactorTimes8Channel1) / 'sd8),
-                .displayX(curveDisplayX2),
-                .displayY(curveDisplayY2),
-                .hsync(curveHsync2),
-                .vsync(curveVsync2),
-                .blank(curveBlank2),
-                .previousPixel(curvePixel2),
+                .displayX(curveChannel2DisplayX),
+                .displayY(curveChannel2DisplayY),
+                .hsync(curveChannel2Hsync),
+                .vsync(curveChannel2Vsync),
+                .blank(curveChannel2Blank),
+                .previousPixel(curveChannel2Pixel),
                 .pixel(tlsPixel),
                 .spriteDisplayX(tlsDisplayX),
                 .spriteDisplayY(tlsDisplayY),

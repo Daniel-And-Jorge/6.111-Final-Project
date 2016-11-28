@@ -1,7 +1,7 @@
 Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2016.2 (lin64) Build 1577090 Thu Jun  2 16:32:35 MDT 2016
-| Date             : Sun Nov 27 22:40:48 2016
+| Date             : Sun Nov 27 23:35:59 2016
 | Host             : eecs-digital-02 running 64-bit Ubuntu 14.04.5 LTS
 | Command          : report_power -file Oscilloscope_v1_power_routed.rpt -pb Oscilloscope_v1_power_summary_routed.pb -rpx Oscilloscope_v1_power_routed.rpx
 | Design           : Oscilloscope_v1
@@ -51,12 +51,12 @@ Table of Contents
 +-------------------------+-----------+----------+-----------+-----------------+
 | Clocks                  |     0.006 |        8 |       --- |             --- |
 | Slice Logic             |     0.012 |     4666 |       --- |             --- |
-|   LUT as Logic          |     0.010 |     2321 |     63400 |            3.66 |
+|   LUT as Logic          |     0.010 |     2319 |     63400 |            3.66 |
 |   CARRY4                |     0.002 |      668 |     15850 |            4.21 |
 |   Register              |    <0.001 |      955 |    126800 |            0.75 |
 |   LUT as Shift Register |    <0.001 |       31 |     19000 |            0.16 |
 |   Others                |     0.000 |      101 |       --- |             --- |
-| Signals                 |     0.016 |     3110 |       --- |             --- |
+| Signals                 |     0.016 |     3114 |       --- |             --- |
 | Block RAM               |     0.013 |      9.5 |       135 |            7.04 |
 | MMCM                    |     0.123 |        1 |         6 |           16.67 |
 | DSPs                    |     0.004 |        5 |       240 |            2.08 |
@@ -192,8 +192,9 @@ Table of Contents
 |   adcc                                         |    <0.001 |
 |   myCurve                                      |     0.002 |
 |   myCurve2                                     |    <0.001 |
+|   myEdgeTypeDetectorChannel1                   |     0.001 |
 |   myGrid                                       |    <0.001 |
-|   myText                                       |     0.006 |
+|   myText                                       |     0.007 |
 |     characterBRAM                              |     0.002 |
 |       U0                                       |     0.002 |
 |         inst_blk_mem_gen                       |     0.002 |
@@ -211,7 +212,6 @@ Table of Contents
 |   myToggleChannels                             |    <0.001 |
 |   myXVGA                                       |    <0.001 |
 |   mybs                                         |    <0.001 |
-|   myed                                         |     0.001 |
 |   mymeas                                       |    <0.001 |
 |   myss                                         |     0.019 |
 |   mytls                                        |     0.001 |

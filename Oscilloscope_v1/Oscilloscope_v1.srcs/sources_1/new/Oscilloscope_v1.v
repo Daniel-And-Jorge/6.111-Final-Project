@@ -192,16 +192,29 @@ module Oscilloscope_v1
                              .rawDataOutChannel2(adccRawDataOutChannel2)
                              );
 
-   // edge type detector
-   wire risingEdgeReady;
-   wire signed [13:0] slope;
-    EdgeTypeDetector myed
+   // edge type detector channel 1
+   wire risingEdgeReadyChannel1;
+   wire signed [13:0] slopeChannel1;
+   wire positiveSlopeChannel1;
+    EdgeTypeDetector myEdgeTypeDetectorChannel1
      (.clock(CLK108MHZ),
       .dataReady(adccRawReady),
       .dataIn(adccRawDataOutChannel1),
-      .risingEdgeReady(risingEdgeReady),
-      .estimatedSlope(slope),
-      .estimatedSlopeIsPositive(positiveSlope));
+      .risingEdgeReady(risingEdgeReadyChannel1),
+      .estimatedSlope(slopeChannel1),
+      .estimatedSlopeIsPositive(positiveSlopeChannel1));
+      
+    // edge type detector channel 2
+    wire risingEdgeReadyChannel2;
+    wire signed [13:0] slopeChannel2;
+    wire positiveSlopeChannel2;
+    EdgeTypeDetector myEdgeTypeDetectorChannel2
+        (.clock(CLK108MHZ),
+         .dataReady(adccRawReady),
+         .dataIn(adccRawDataOutChannel2),
+         .risingEdgeReady(risingEdgeReadyChannel2),
+         .estimatedSlope(slopeChannel2),
+         .estimatedSlopeIsPositive(positiveSlopeChannel2));
     
     wire [11:0] bufferDataOut;
     wire activeBramSelect;
@@ -220,7 +233,7 @@ module Oscilloscope_v1
         .dataOut(bufferDataOut));
     
     wire [11:0] buffer2DataOut;  
-    buffer Buffer2 (.clock(CLK108MHZ), .ready(risingEdgeReady), .dataIn(slope),
+    buffer Buffer2 (.clock(CLK108MHZ), .ready(risingEdgeReadyChannel1), .dataIn(slopeChannel1),
                 .isTrigger(isTriggered), .disableCollection(0), .activeBramSelect(activeBramSelect),
                 //.isTrigger(isTriggered), .disableCollection(0), .activeBramSelect(sw[0]),
                 .reset(reset),
@@ -238,7 +251,7 @@ module Oscilloscope_v1
             .threshold(triggerThreshold),
             .dataReady(adccRawReady),
             .dataIn(adccRawDataOutChannel1),
-            .triggerDisable(~positiveSlope),
+            .triggerDisable(~positiveSlopeChannel1),
             .isTriggered(isTriggered)
             );
      

@@ -49,7 +49,7 @@ module ADCController
             if (sampleClock >= samplePeriod) begin
                 ready <= 1;
                 dataOutChannel1 <= dataInChannel1;
-                dataOutChannel2 <= dataInChannel2; 
+                dataOutChannel2 <= dataInChannel2;
                 sampleClock <= 0;
             end else
                 sampleClock <= sampleClock + 1;

@@ -46,6 +46,11 @@ module Oscilloscope_v1
                 Y_TIME_PER_DIVISION_CHARACTER_1 = 980,
                 X_TIME_PER_DIVISION_CHARACTER_0 = 780,
                 Y_TIME_PER_DIVISION_CHARACTER_0 = 980,
+                
+                Y_CURSOR_1 = 80,
+                X_CURSOR_1_CHARACTER_15 = 1000,
+                X_CURSOR_1_CHARACTER_14 = 1020,
+                
                 SELECT_CHARACTER_BITS = 7,
                 DRP_ADDRESS_BITS = 7,
                 DRP_SAMPLE_BITS = 16,
@@ -446,6 +451,11 @@ module Oscilloscope_v1
     assign timePerDivisionCharacter1 = 7'd77;
     wire [SELECT_CHARACTER_BITS-1:0] timePerDivisionCharacter0;
     assign timePerDivisionCharacter0 = 7'd83;
+    
+    wire [SELECT_CHARACTER_BITS-1:0] cursor1Character15;
+    assign cursor1Character15 = 7'd35;  //C
+    wire [SELECT_CHARACTER_BITS-1:0] cursor1Character14;
+    assign cursor1Character14 = 7'd85;  //u
     Text myText (.clock(CLK108MHZ), 
         .xMiddleVoltage4(X_MIDDLE_VOLTAGE_CHARACTER_4), .yMiddleVoltage4(Y_MIDDLE_VOLTAGE_CHARACTER_4), .middleVoltageCharacter4(middleVoltageCharacter4),
         .xMiddleVoltage3(X_MIDDLE_VOLTAGE_CHARACTER_3), .yMiddleVoltage3(Y_MIDDLE_VOLTAGE_CHARACTER_3), .middleVoltageCharacter3(middleVoltageCharacter3),
@@ -457,6 +467,10 @@ module Oscilloscope_v1
         .xTimePerDivision2(X_TIME_PER_DIVISION_CHARACTER_2), .yTimePerDivision2(Y_TIME_PER_DIVISION_CHARACTER_2), .timePerDivisionCharacter2(timePerDivisionCharacter2),
         .xTimePerDivision1(X_TIME_PER_DIVISION_CHARACTER_1), .yTimePerDivision1(Y_TIME_PER_DIVISION_CHARACTER_1), .timePerDivisionCharacter1(timePerDivisionCharacter1),
         .xTimePerDivision0(X_TIME_PER_DIVISION_CHARACTER_0), .yTimePerDivision0(Y_TIME_PER_DIVISION_CHARACTER_0), .timePerDivisionCharacter0(timePerDivisionCharacter0),
+        
+        .xCursor1_15(X_CURSOR_1_CHARACTER_15), .yCursor1_15(Y_CURSOR_1), .cursor1Character15(cursor1Character15),
+        .xCursor1_14(X_CURSOR_1_CHARACTER_14), .yCursor1_14(Y_CURSOR_1), .cursor1Character14(cursor1Character14),
+        
         .displayX(tlsDisplayX), .displayY(tlsDisplayY), 
         .hsync(tlsHsync), .vsync(tlsVsync), .blank(tlsBlank), .previousPixel(tlsPixel),
         .displayXOut(textDisplayX), .displayYOut(textDisplayY), 

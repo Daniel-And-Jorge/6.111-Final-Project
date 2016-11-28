@@ -2,8 +2,8 @@
 # Vivado v2016.2 (64-bit)
 # SW Build 1577090 on Thu Jun  2 16:32:35 MDT 2016
 # IP Build 1577682 on Fri Jun  3 12:00:54 MDT 2016
-# Start of session at: Mon Nov 28 16:03:57 2016
-# Process ID: 2263
+# Start of session at: Mon Nov 28 16:53:34 2016
+# Process ID: 20093
 # Current directory: /afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/synth_1
 # Command line: vivado -log Oscilloscope_v1.vds -mode batch -messageDb vivado.pb -notrace -source Oscilloscope_v1.tcl
 # Log file: /afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/synth_1/Oscilloscope_v1.vds
@@ -14,12 +14,12 @@ Command: synth_design -top Oscilloscope_v1 -part xc7a100tcsg324-3 -flatten_hiera
 Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
-WARNING: [filemgmt 56-147] Overwrite of existing file isn't enabled.  Please specify -force to overwrite file  [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/synth_1/.Xil/Vivado-2263-eecs-digital-02/CharactersROM/CharactersROM.dcp]
-WARNING: [filemgmt 56-147] Overwrite of existing file isn't enabled.  Please specify -force to overwrite file  [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/synth_1/.Xil/Vivado-2263-eecs-digital-02/clk_wiz_0/clk_wiz_0.dcp]
+WARNING: [filemgmt 56-147] Overwrite of existing file isn't enabled.  Please specify -force to overwrite file  [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/synth_1/.Xil/Vivado-20093-eecs-digital-02/CharactersROM/CharactersROM.dcp]
+WARNING: [filemgmt 56-147] Overwrite of existing file isn't enabled.  Please specify -force to overwrite file  [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/synth_1/.Xil/Vivado-20093-eecs-digital-02/clk_wiz_0/clk_wiz_0.dcp]
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 2280 
+INFO: Helper process launched with PID 20123 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 1059.324 ; gain = 164.137 ; free physical = 1868 ; free virtual = 10826
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 1059.320 ; gain = 164.137 ; free physical = 1790 ; free virtual = 10758
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-638] synthesizing module 'Oscilloscope_v1' [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Oscilloscope_v1.v:24]
 	Parameter DISPLAY_X_BITS bound to: 11 - type: integer 
@@ -46,14 +46,17 @@ INFO: [Synth 8-638] synthesizing module 'Oscilloscope_v1' [/afs/athena.mit.edu/u
 	Parameter Y_TIME_PER_DIVISION_CHARACTER_1 bound to: 980 - type: integer 
 	Parameter X_TIME_PER_DIVISION_CHARACTER_0 bound to: 780 - type: integer 
 	Parameter Y_TIME_PER_DIVISION_CHARACTER_0 bound to: 980 - type: integer 
+	Parameter Y_CURSOR_1 bound to: 944 - type: integer 
+	Parameter X_CURSOR_1_CHARACTER_15 bound to: 1000 - type: integer 
+	Parameter X_CURSOR_1_CHARACTER_14 bound to: 1020 - type: integer 
 	Parameter SELECT_CHARACTER_BITS bound to: 7 - type: integer 
 	Parameter DRP_ADDRESS_BITS bound to: 7 - type: integer 
 	Parameter DRP_SAMPLE_BITS bound to: 16 - type: integer 
 	Parameter SAMPLE_BITS bound to: 12 - type: integer 
 	Parameter TOGGLE_CHANNELS_STATE_BITS bound to: 2 - type: integer 
 	Parameter SCALE_FACTOR_BITS bound to: 10 - type: integer 
-INFO: [Synth 8-638] synthesizing module 'clk_wiz_0' [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/synth_1/.Xil/Vivado-2263-eecs-digital-02/realtime/clk_wiz_0_stub.v:5]
-INFO: [Synth 8-256] done synthesizing module 'clk_wiz_0' (1#1) [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/synth_1/.Xil/Vivado-2263-eecs-digital-02/realtime/clk_wiz_0_stub.v:5]
+INFO: [Synth 8-638] synthesizing module 'clk_wiz_0' [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/synth_1/.Xil/Vivado-20093-eecs-digital-02/realtime/clk_wiz_0_stub.v:5]
+INFO: [Synth 8-256] done synthesizing module 'clk_wiz_0' (1#1) [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/synth_1/.Xil/Vivado-20093-eecs-digital-02/realtime/clk_wiz_0_stub.v:5]
 INFO: [Synth 8-638] synthesizing module 'ScopeSettings' [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/ScopeSettings.v:23]
 	Parameter DATA_BITS bound to: 12 - type: integer 
 	Parameter SAMPLE_PERIOD_BITS bound to: 6 - type: integer 
@@ -61,19 +64,19 @@ INFO: [Synth 8-638] synthesizing module 'ScopeSettings' [/afs/athena.mit.edu/use
 	Parameter TRIGGER_THRESHOLD_ADJUST bound to: 96 - type: integer 
 INFO: [Synth 8-155] case statement is not full and has no default [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/ScopeSettings.v:57]
 INFO: [Synth 8-256] done synthesizing module 'ScopeSettings' (2#1) [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/ScopeSettings.v:23]
-WARNING: [Synth 8-387] label required on module instance [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Oscilloscope_v1.v:117]
+WARNING: [Synth 8-387] label required on module instance [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Oscilloscope_v1.v:122]
 INFO: [Synth 8-638] synthesizing module 'debounce' [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/imports/Downloads/debounce.v:4]
 	Parameter DELAY bound to: 270000 - type: integer 
 INFO: [Synth 8-256] done synthesizing module 'debounce' (3#1) [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/imports/Downloads/debounce.v:4]
-WARNING: [Synth 8-387] label required on module instance [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Oscilloscope_v1.v:118]
-WARNING: [Synth 8-387] label required on module instance [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Oscilloscope_v1.v:119]
-WARNING: [Synth 8-387] label required on module instance [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Oscilloscope_v1.v:120]
-WARNING: [Synth 8-387] label required on module instance [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Oscilloscope_v1.v:122]
-INFO: [Synth 8-638] synthesizing module 'ButtonSinglePulse' [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/ButtonSinglePulse.v:8]
-INFO: [Synth 8-256] done synthesizing module 'ButtonSinglePulse' (4#1) [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/ButtonSinglePulse.v:8]
 WARNING: [Synth 8-387] label required on module instance [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Oscilloscope_v1.v:123]
 WARNING: [Synth 8-387] label required on module instance [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Oscilloscope_v1.v:124]
 WARNING: [Synth 8-387] label required on module instance [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Oscilloscope_v1.v:125]
+WARNING: [Synth 8-387] label required on module instance [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Oscilloscope_v1.v:127]
+INFO: [Synth 8-638] synthesizing module 'ButtonSinglePulse' [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/ButtonSinglePulse.v:8]
+INFO: [Synth 8-256] done synthesizing module 'ButtonSinglePulse' (4#1) [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/ButtonSinglePulse.v:8]
+WARNING: [Synth 8-387] label required on module instance [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Oscilloscope_v1.v:128]
+WARNING: [Synth 8-387] label required on module instance [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Oscilloscope_v1.v:129]
+WARNING: [Synth 8-387] label required on module instance [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Oscilloscope_v1.v:130]
 INFO: [Synth 8-638] synthesizing module 'SimultaneousSamplingXADC' [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/SimultaneousSamplingXADC.v:52]
 INFO: [Synth 8-638] synthesizing module 'XADC' [/var/local/xilinx-local/Vivado/2016.2/scripts/rt/data/unisim_comp.v:44683]
 	Parameter INIT_40 bound to: 16'b1000000000000000 
@@ -132,18 +135,18 @@ INFO: [Synth 8-256] done synthesizing module 'ADCController' (8#1) [/afs/athena.
 INFO: [Synth 8-638] synthesizing module 'EdgeTypeDetector' [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/imports/tmp/EdgeTypeDetector.v:6]
 	Parameter DATA_BITS bound to: 12 - type: integer 
 INFO: [Synth 8-256] done synthesizing module 'EdgeTypeDetector' (9#1) [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/imports/tmp/EdgeTypeDetector.v:6]
-WARNING: [Synth 8-689] width (14) of port connection 'estimatedSlope' does not match port width (12) of module 'EdgeTypeDetector' [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Oscilloscope_v1.v:210]
-WARNING: [Synth 8-689] width (14) of port connection 'estimatedSlope' does not match port width (12) of module 'EdgeTypeDetector' [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Oscilloscope_v1.v:222]
+WARNING: [Synth 8-689] width (14) of port connection 'estimatedSlope' does not match port width (12) of module 'EdgeTypeDetector' [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Oscilloscope_v1.v:215]
+WARNING: [Synth 8-689] width (14) of port connection 'estimatedSlope' does not match port width (12) of module 'EdgeTypeDetector' [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Oscilloscope_v1.v:227]
 INFO: [Synth 8-638] synthesizing module 'BufferSelector' [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/BufferSelector.v:9]
 INFO: [Synth 8-256] done synthesizing module 'BufferSelector' (10#1) [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/BufferSelector.v:9]
 INFO: [Synth 8-638] synthesizing module 'buffer' [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/imports/6.111-Final-Project/project_xadc/src/hdl/buffer.v:31]
 	Parameter LOG_SAMPLES bound to: 12 - type: integer 
 	Parameter SAMPLE_SIZE bound to: 12 - type: integer 
-INFO: [Synth 8-638] synthesizing module 'blk_mem_gen_0' [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/synth_1/.Xil/Vivado-2263-eecs-digital-02/realtime/blk_mem_gen_0_stub.v:6]
-INFO: [Synth 8-256] done synthesizing module 'blk_mem_gen_0' (11#1) [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/synth_1/.Xil/Vivado-2263-eecs-digital-02/realtime/blk_mem_gen_0_stub.v:6]
+INFO: [Synth 8-638] synthesizing module 'blk_mem_gen_0' [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/synth_1/.Xil/Vivado-20093-eecs-digital-02/realtime/blk_mem_gen_0_stub.v:6]
+INFO: [Synth 8-256] done synthesizing module 'blk_mem_gen_0' (11#1) [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/synth_1/.Xil/Vivado-20093-eecs-digital-02/realtime/blk_mem_gen_0_stub.v:6]
 INFO: [Synth 8-256] done synthesizing module 'buffer' (12#1) [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/imports/6.111-Final-Project/project_xadc/src/hdl/buffer.v:31]
-WARNING: [Synth 8-689] width (14) of port connection 'dataIn' does not match port width (12) of module 'buffer' [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Oscilloscope_v1.v:245]
-WARNING: [Synth 8-689] width (14) of port connection 'dataIn' does not match port width (12) of module 'buffer' [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Oscilloscope_v1.v:263]
+WARNING: [Synth 8-689] width (14) of port connection 'dataIn' does not match port width (12) of module 'buffer' [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Oscilloscope_v1.v:250]
+WARNING: [Synth 8-689] width (14) of port connection 'dataIn' does not match port width (12) of module 'buffer' [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Oscilloscope_v1.v:268]
 INFO: [Synth 8-638] synthesizing module 'SelectChannelData' [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/SelectChannelData.v:23]
 	Parameter SAMPLE_BITS bound to: 12 - type: integer 
 	Parameter SCALE_FACTOR_BITS bound to: 10 - type: integer 
@@ -166,11 +169,11 @@ INFO: [Synth 8-638] synthesizing module 'Grid' [/afs/athena.mit.edu/user/j/a/jat
 	Parameter ADDITIONAL_LINE_PIXELS bound to: 0 - type: integer 
 	Parameter ADDITIONAL_ZERO_LINE_PIXELS bound to: 1 - type: integer 
 INFO: [Synth 8-256] done synthesizing module 'Grid' (17#1) [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Grid.v:24]
-WARNING: [Synth 8-689] width (11) of port connection 'displayX' does not match port width (12) of module 'Grid' [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Oscilloscope_v1.v:339]
-WARNING: [Synth 8-689] width (11) of port connection 'displayY' does not match port width (12) of module 'Grid' [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Oscilloscope_v1.v:339]
-WARNING: [Synth 8-689] width (11) of port connection 'gridDisplayX' does not match port width (12) of module 'Grid' [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Oscilloscope_v1.v:340]
-WARNING: [Synth 8-689] width (11) of port connection 'gridDisplayY' does not match port width (12) of module 'Grid' [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Oscilloscope_v1.v:340]
-WARNING: [Synth 8-689] width (12) of port connection 'pixel' does not match port width (100) of module 'Grid' [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Oscilloscope_v1.v:341]
+WARNING: [Synth 8-689] width (11) of port connection 'displayX' does not match port width (12) of module 'Grid' [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Oscilloscope_v1.v:344]
+WARNING: [Synth 8-689] width (11) of port connection 'displayY' does not match port width (12) of module 'Grid' [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Oscilloscope_v1.v:344]
+WARNING: [Synth 8-689] width (11) of port connection 'gridDisplayX' does not match port width (12) of module 'Grid' [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Oscilloscope_v1.v:345]
+WARNING: [Synth 8-689] width (11) of port connection 'gridDisplayY' does not match port width (12) of module 'Grid' [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Oscilloscope_v1.v:345]
+WARNING: [Synth 8-689] width (12) of port connection 'pixel' does not match port width (100) of module 'Grid' [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Oscilloscope_v1.v:346]
 INFO: [Synth 8-638] synthesizing module 'Curve' [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Curve.v:24]
 	Parameter DATA_IN_BITS bound to: 12 - type: integer 
 	Parameter SCALE_FACTOR_BITS bound to: 10 - type: integer 
@@ -186,10 +189,10 @@ INFO: [Synth 8-638] synthesizing module 'Curve' [/afs/athena.mit.edu/user/j/a/ja
 	Parameter ADDITIONAL_WAVE_PIXELS bound to: 1 - type: integer 
 	Parameter ADDRESS_BITS bound to: 12 - type: integer 
 INFO: [Synth 8-256] done synthesizing module 'Curve' (18#1) [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Curve.v:24]
-WARNING: [Synth 8-689] width (11) of port connection 'displayX' does not match port width (12) of module 'Curve' [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Oscilloscope_v1.v:357]
-WARNING: [Synth 8-689] width (11) of port connection 'displayY' does not match port width (12) of module 'Curve' [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Oscilloscope_v1.v:358]
-WARNING: [Synth 8-689] width (11) of port connection 'curveDisplayX' does not match port width (12) of module 'Curve' [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Oscilloscope_v1.v:366]
-WARNING: [Synth 8-689] width (11) of port connection 'curveDisplayY' does not match port width (12) of module 'Curve' [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Oscilloscope_v1.v:367]
+WARNING: [Synth 8-689] width (11) of port connection 'displayX' does not match port width (12) of module 'Curve' [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Oscilloscope_v1.v:362]
+WARNING: [Synth 8-689] width (11) of port connection 'displayY' does not match port width (12) of module 'Curve' [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Oscilloscope_v1.v:363]
+WARNING: [Synth 8-689] width (11) of port connection 'curveDisplayX' does not match port width (12) of module 'Curve' [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Oscilloscope_v1.v:371]
+WARNING: [Synth 8-689] width (11) of port connection 'curveDisplayY' does not match port width (12) of module 'Curve' [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Oscilloscope_v1.v:372]
 INFO: [Synth 8-638] synthesizing module 'Curve__parameterized0' [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Curve.v:24]
 	Parameter DATA_IN_BITS bound to: 12 - type: integer 
 	Parameter SCALE_FACTOR_BITS bound to: 10 - type: integer 
@@ -205,10 +208,10 @@ INFO: [Synth 8-638] synthesizing module 'Curve__parameterized0' [/afs/athena.mit
 	Parameter ADDITIONAL_WAVE_PIXELS bound to: 1 - type: integer 
 	Parameter ADDRESS_BITS bound to: 12 - type: integer 
 INFO: [Synth 8-256] done synthesizing module 'Curve__parameterized0' (18#1) [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Curve.v:24]
-WARNING: [Synth 8-689] width (11) of port connection 'displayX' does not match port width (12) of module 'Curve__parameterized0' [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Oscilloscope_v1.v:388]
-WARNING: [Synth 8-689] width (11) of port connection 'displayY' does not match port width (12) of module 'Curve__parameterized0' [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Oscilloscope_v1.v:389]
-WARNING: [Synth 8-689] width (11) of port connection 'curveDisplayX' does not match port width (12) of module 'Curve__parameterized0' [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Oscilloscope_v1.v:397]
-WARNING: [Synth 8-689] width (11) of port connection 'curveDisplayY' does not match port width (12) of module 'Curve__parameterized0' [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Oscilloscope_v1.v:398]
+WARNING: [Synth 8-689] width (11) of port connection 'displayX' does not match port width (12) of module 'Curve__parameterized0' [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Oscilloscope_v1.v:393]
+WARNING: [Synth 8-689] width (11) of port connection 'displayY' does not match port width (12) of module 'Curve__parameterized0' [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Oscilloscope_v1.v:394]
+WARNING: [Synth 8-689] width (11) of port connection 'curveDisplayX' does not match port width (12) of module 'Curve__parameterized0' [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Oscilloscope_v1.v:402]
+WARNING: [Synth 8-689] width (11) of port connection 'curveDisplayY' does not match port width (12) of module 'Curve__parameterized0' [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Oscilloscope_v1.v:403]
 INFO: [Synth 8-638] synthesizing module 'HorizontalLineSprite' [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/TriggerLevelSprite.v:4]
 	Parameter DATA_IN_BITS bound to: 12 - type: integer 
 	Parameter DISPLAY_X_BITS bound to: 12 - type: integer 
@@ -220,11 +223,11 @@ INFO: [Synth 8-638] synthesizing module 'HorizontalLineSprite' [/afs/athena.mit.
 	Parameter HEIGHT_ZERO_PIXEL bound to: 512 - type: integer 
 	Parameter ADDITIONAL_LINE_PIXELS bound to: 1 - type: integer 
 INFO: [Synth 8-256] done synthesizing module 'HorizontalLineSprite' (19#1) [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/TriggerLevelSprite.v:4]
-WARNING: [Synth 8-689] width (32) of port connection 'level' does not match port width (12) of module 'HorizontalLineSprite' [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Oscilloscope_v1.v:410]
-WARNING: [Synth 8-689] width (11) of port connection 'displayX' does not match port width (12) of module 'HorizontalLineSprite' [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Oscilloscope_v1.v:411]
-WARNING: [Synth 8-689] width (11) of port connection 'displayY' does not match port width (12) of module 'HorizontalLineSprite' [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Oscilloscope_v1.v:412]
-WARNING: [Synth 8-689] width (11) of port connection 'spriteDisplayX' does not match port width (12) of module 'HorizontalLineSprite' [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Oscilloscope_v1.v:418]
-WARNING: [Synth 8-689] width (11) of port connection 'spriteDisplayY' does not match port width (12) of module 'HorizontalLineSprite' [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Oscilloscope_v1.v:419]
+WARNING: [Synth 8-689] width (32) of port connection 'level' does not match port width (12) of module 'HorizontalLineSprite' [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Oscilloscope_v1.v:415]
+WARNING: [Synth 8-689] width (11) of port connection 'displayX' does not match port width (12) of module 'HorizontalLineSprite' [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Oscilloscope_v1.v:416]
+WARNING: [Synth 8-689] width (11) of port connection 'displayY' does not match port width (12) of module 'HorizontalLineSprite' [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Oscilloscope_v1.v:417]
+WARNING: [Synth 8-689] width (11) of port connection 'spriteDisplayX' does not match port width (12) of module 'HorizontalLineSprite' [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Oscilloscope_v1.v:423]
+WARNING: [Synth 8-689] width (11) of port connection 'spriteDisplayY' does not match port width (12) of module 'HorizontalLineSprite' [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Oscilloscope_v1.v:424]
 INFO: [Synth 8-638] synthesizing module 'Text' [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Text.v:23]
 	Parameter DISPLAY_X_BITS bound to: 12 - type: integer 
 	Parameter DISPLAY_Y_BITS bound to: 12 - type: integer 
@@ -236,19 +239,19 @@ INFO: [Synth 8-638] synthesizing module 'Text' [/afs/athena.mit.edu/user/j/a/jat
 	Parameter BRAM_ADDRESS_BITS bound to: 17 - type: integer 
 	Parameter CHARACTER_COLOR bound to: 12'b000011110000 
 	Parameter COLOR_BITS bound to: 12 - type: integer 
-INFO: [Synth 8-638] synthesizing module 'CharactersROM' [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/synth_1/.Xil/Vivado-2263-eecs-digital-02/realtime/CharactersROM_stub.v:6]
-INFO: [Synth 8-256] done synthesizing module 'CharactersROM' (20#1) [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/synth_1/.Xil/Vivado-2263-eecs-digital-02/realtime/CharactersROM_stub.v:6]
+INFO: [Synth 8-638] synthesizing module 'CharactersROM' [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/synth_1/.Xil/Vivado-20093-eecs-digital-02/realtime/CharactersROM_stub.v:6]
+INFO: [Synth 8-256] done synthesizing module 'CharactersROM' (20#1) [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/synth_1/.Xil/Vivado-20093-eecs-digital-02/realtime/CharactersROM_stub.v:6]
 INFO: [Synth 8-256] done synthesizing module 'Text' (21#1) [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Text.v:23]
-WARNING: [Synth 8-689] width (11) of port connection 'displayX' does not match port width (12) of module 'Text' [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Oscilloscope_v1.v:460]
-WARNING: [Synth 8-689] width (11) of port connection 'displayY' does not match port width (12) of module 'Text' [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Oscilloscope_v1.v:460]
-WARNING: [Synth 8-689] width (11) of port connection 'displayXOut' does not match port width (12) of module 'Text' [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Oscilloscope_v1.v:462]
-WARNING: [Synth 8-689] width (11) of port connection 'displayYOut' does not match port width (12) of module 'Text' [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Oscilloscope_v1.v:462]
-WARNING: [Synth 8-689] width (1) of port connection 'addressA' does not match port width (17) of module 'Text' [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Oscilloscope_v1.v:463]
-WARNING: [Synth 8-3848] Net an in module/entity Oscilloscope_v1 does not have driver. [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Oscilloscope_v1.v:64]
-WARNING: [Synth 8-3848] Net dp in module/entity Oscilloscope_v1 does not have driver. [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Oscilloscope_v1.v:65]
-WARNING: [Synth 8-3848] Net seg in module/entity Oscilloscope_v1 does not have driver. [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Oscilloscope_v1.v:66]
-WARNING: [Synth 8-3848] Net curveAddressOut2Channel1 in module/entity Oscilloscope_v1 does not have driver. [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Oscilloscope_v1.v:244]
-WARNING: [Synth 8-3848] Net curveAddressOut2Channel2 in module/entity Oscilloscope_v1 does not have driver. [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Oscilloscope_v1.v:262]
+WARNING: [Synth 8-689] width (11) of port connection 'displayX' does not match port width (12) of module 'Text' [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Oscilloscope_v1.v:474]
+WARNING: [Synth 8-689] width (11) of port connection 'displayY' does not match port width (12) of module 'Text' [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Oscilloscope_v1.v:474]
+WARNING: [Synth 8-689] width (11) of port connection 'displayXOut' does not match port width (12) of module 'Text' [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Oscilloscope_v1.v:476]
+WARNING: [Synth 8-689] width (11) of port connection 'displayYOut' does not match port width (12) of module 'Text' [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Oscilloscope_v1.v:476]
+WARNING: [Synth 8-689] width (1) of port connection 'addressA' does not match port width (17) of module 'Text' [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Oscilloscope_v1.v:477]
+WARNING: [Synth 8-3848] Net an in module/entity Oscilloscope_v1 does not have driver. [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Oscilloscope_v1.v:69]
+WARNING: [Synth 8-3848] Net dp in module/entity Oscilloscope_v1 does not have driver. [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Oscilloscope_v1.v:70]
+WARNING: [Synth 8-3848] Net seg in module/entity Oscilloscope_v1 does not have driver. [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Oscilloscope_v1.v:71]
+WARNING: [Synth 8-3848] Net curveAddressOut2Channel1 in module/entity Oscilloscope_v1 does not have driver. [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Oscilloscope_v1.v:249]
+WARNING: [Synth 8-3848] Net curveAddressOut2Channel2 in module/entity Oscilloscope_v1 does not have driver. [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Oscilloscope_v1.v:267]
 INFO: [Synth 8-256] done synthesizing module 'Oscilloscope_v1' (22#1) [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Oscilloscope_v1.v:24]
 WARNING: [Synth 8-3331] design ScopeSettings has unconnected port sw[15]
 WARNING: [Synth 8-3331] design ScopeSettings has unconnected port sw[14]
@@ -284,7 +287,7 @@ WARNING: [Synth 8-3331] design Oscilloscope_v1 has unconnected port seg[2]
 WARNING: [Synth 8-3331] design Oscilloscope_v1 has unconnected port seg[1]
 WARNING: [Synth 8-3331] design Oscilloscope_v1 has unconnected port seg[0]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 1103.770 ; gain = 208.582 ; free physical = 1822 ; free virtual = 10781
+Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 1103.766 ; gain = 208.582 ; free physical = 1742 ; free virtual = 10711
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -293,56 +296,56 @@ Report Check Netlist:
 +------+------------------+-------+---------+-------+------------------+
 |1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
 +------+------------------+-------+---------+-------+------------------+
-WARNING: [Synth 8-3295] tying undriven pin simultaneousSamplingXADC:di_in[15] to constant 0 [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Oscilloscope_v1.v:135]
-WARNING: [Synth 8-3295] tying undriven pin simultaneousSamplingXADC:di_in[14] to constant 0 [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Oscilloscope_v1.v:135]
-WARNING: [Synth 8-3295] tying undriven pin simultaneousSamplingXADC:di_in[13] to constant 0 [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Oscilloscope_v1.v:135]
-WARNING: [Synth 8-3295] tying undriven pin simultaneousSamplingXADC:di_in[12] to constant 0 [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Oscilloscope_v1.v:135]
-WARNING: [Synth 8-3295] tying undriven pin simultaneousSamplingXADC:di_in[11] to constant 0 [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Oscilloscope_v1.v:135]
-WARNING: [Synth 8-3295] tying undriven pin simultaneousSamplingXADC:di_in[10] to constant 0 [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Oscilloscope_v1.v:135]
-WARNING: [Synth 8-3295] tying undriven pin simultaneousSamplingXADC:di_in[9] to constant 0 [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Oscilloscope_v1.v:135]
-WARNING: [Synth 8-3295] tying undriven pin simultaneousSamplingXADC:di_in[8] to constant 0 [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Oscilloscope_v1.v:135]
-WARNING: [Synth 8-3295] tying undriven pin simultaneousSamplingXADC:di_in[7] to constant 0 [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Oscilloscope_v1.v:135]
-WARNING: [Synth 8-3295] tying undriven pin simultaneousSamplingXADC:di_in[6] to constant 0 [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Oscilloscope_v1.v:135]
-WARNING: [Synth 8-3295] tying undriven pin simultaneousSamplingXADC:di_in[5] to constant 0 [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Oscilloscope_v1.v:135]
-WARNING: [Synth 8-3295] tying undriven pin simultaneousSamplingXADC:di_in[4] to constant 0 [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Oscilloscope_v1.v:135]
-WARNING: [Synth 8-3295] tying undriven pin simultaneousSamplingXADC:di_in[3] to constant 0 [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Oscilloscope_v1.v:135]
-WARNING: [Synth 8-3295] tying undriven pin simultaneousSamplingXADC:di_in[2] to constant 0 [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Oscilloscope_v1.v:135]
-WARNING: [Synth 8-3295] tying undriven pin simultaneousSamplingXADC:di_in[1] to constant 0 [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Oscilloscope_v1.v:135]
-WARNING: [Synth 8-3295] tying undriven pin simultaneousSamplingXADC:di_in[0] to constant 0 [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Oscilloscope_v1.v:135]
-WARNING: [Synth 8-3295] tying undriven pin simultaneousSamplingXADC:vp_in to constant 0 [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Oscilloscope_v1.v:135]
-WARNING: [Synth 8-3295] tying undriven pin simultaneousSamplingXADC:vn_in to constant 0 [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Oscilloscope_v1.v:135]
-WARNING: [Synth 8-3295] tying undriven pin Buffer2Channel1:readAddress[11] to constant 0 [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Oscilloscope_v1.v:245]
-WARNING: [Synth 8-3295] tying undriven pin Buffer2Channel1:readAddress[10] to constant 0 [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Oscilloscope_v1.v:245]
-WARNING: [Synth 8-3295] tying undriven pin Buffer2Channel1:readAddress[9] to constant 0 [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Oscilloscope_v1.v:245]
-WARNING: [Synth 8-3295] tying undriven pin Buffer2Channel1:readAddress[8] to constant 0 [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Oscilloscope_v1.v:245]
-WARNING: [Synth 8-3295] tying undriven pin Buffer2Channel1:readAddress[7] to constant 0 [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Oscilloscope_v1.v:245]
-WARNING: [Synth 8-3295] tying undriven pin Buffer2Channel1:readAddress[6] to constant 0 [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Oscilloscope_v1.v:245]
-WARNING: [Synth 8-3295] tying undriven pin Buffer2Channel1:readAddress[5] to constant 0 [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Oscilloscope_v1.v:245]
-WARNING: [Synth 8-3295] tying undriven pin Buffer2Channel1:readAddress[4] to constant 0 [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Oscilloscope_v1.v:245]
-WARNING: [Synth 8-3295] tying undriven pin Buffer2Channel1:readAddress[3] to constant 0 [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Oscilloscope_v1.v:245]
-WARNING: [Synth 8-3295] tying undriven pin Buffer2Channel1:readAddress[2] to constant 0 [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Oscilloscope_v1.v:245]
-WARNING: [Synth 8-3295] tying undriven pin Buffer2Channel1:readAddress[1] to constant 0 [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Oscilloscope_v1.v:245]
-WARNING: [Synth 8-3295] tying undriven pin Buffer2Channel1:readAddress[0] to constant 0 [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Oscilloscope_v1.v:245]
-WARNING: [Synth 8-3295] tying undriven pin Buffer2Channel2:readAddress[11] to constant 0 [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Oscilloscope_v1.v:263]
-WARNING: [Synth 8-3295] tying undriven pin Buffer2Channel2:readAddress[10] to constant 0 [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Oscilloscope_v1.v:263]
-WARNING: [Synth 8-3295] tying undriven pin Buffer2Channel2:readAddress[9] to constant 0 [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Oscilloscope_v1.v:263]
-WARNING: [Synth 8-3295] tying undriven pin Buffer2Channel2:readAddress[8] to constant 0 [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Oscilloscope_v1.v:263]
-WARNING: [Synth 8-3295] tying undriven pin Buffer2Channel2:readAddress[7] to constant 0 [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Oscilloscope_v1.v:263]
-WARNING: [Synth 8-3295] tying undriven pin Buffer2Channel2:readAddress[6] to constant 0 [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Oscilloscope_v1.v:263]
-WARNING: [Synth 8-3295] tying undriven pin Buffer2Channel2:readAddress[5] to constant 0 [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Oscilloscope_v1.v:263]
-WARNING: [Synth 8-3295] tying undriven pin Buffer2Channel2:readAddress[4] to constant 0 [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Oscilloscope_v1.v:263]
-WARNING: [Synth 8-3295] tying undriven pin Buffer2Channel2:readAddress[3] to constant 0 [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Oscilloscope_v1.v:263]
-WARNING: [Synth 8-3295] tying undriven pin Buffer2Channel2:readAddress[2] to constant 0 [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Oscilloscope_v1.v:263]
-WARNING: [Synth 8-3295] tying undriven pin Buffer2Channel2:readAddress[1] to constant 0 [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Oscilloscope_v1.v:263]
-WARNING: [Synth 8-3295] tying undriven pin Buffer2Channel2:readAddress[0] to constant 0 [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Oscilloscope_v1.v:263]
+WARNING: [Synth 8-3295] tying undriven pin simultaneousSamplingXADC:di_in[15] to constant 0 [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Oscilloscope_v1.v:140]
+WARNING: [Synth 8-3295] tying undriven pin simultaneousSamplingXADC:di_in[14] to constant 0 [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Oscilloscope_v1.v:140]
+WARNING: [Synth 8-3295] tying undriven pin simultaneousSamplingXADC:di_in[13] to constant 0 [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Oscilloscope_v1.v:140]
+WARNING: [Synth 8-3295] tying undriven pin simultaneousSamplingXADC:di_in[12] to constant 0 [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Oscilloscope_v1.v:140]
+WARNING: [Synth 8-3295] tying undriven pin simultaneousSamplingXADC:di_in[11] to constant 0 [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Oscilloscope_v1.v:140]
+WARNING: [Synth 8-3295] tying undriven pin simultaneousSamplingXADC:di_in[10] to constant 0 [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Oscilloscope_v1.v:140]
+WARNING: [Synth 8-3295] tying undriven pin simultaneousSamplingXADC:di_in[9] to constant 0 [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Oscilloscope_v1.v:140]
+WARNING: [Synth 8-3295] tying undriven pin simultaneousSamplingXADC:di_in[8] to constant 0 [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Oscilloscope_v1.v:140]
+WARNING: [Synth 8-3295] tying undriven pin simultaneousSamplingXADC:di_in[7] to constant 0 [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Oscilloscope_v1.v:140]
+WARNING: [Synth 8-3295] tying undriven pin simultaneousSamplingXADC:di_in[6] to constant 0 [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Oscilloscope_v1.v:140]
+WARNING: [Synth 8-3295] tying undriven pin simultaneousSamplingXADC:di_in[5] to constant 0 [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Oscilloscope_v1.v:140]
+WARNING: [Synth 8-3295] tying undriven pin simultaneousSamplingXADC:di_in[4] to constant 0 [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Oscilloscope_v1.v:140]
+WARNING: [Synth 8-3295] tying undriven pin simultaneousSamplingXADC:di_in[3] to constant 0 [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Oscilloscope_v1.v:140]
+WARNING: [Synth 8-3295] tying undriven pin simultaneousSamplingXADC:di_in[2] to constant 0 [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Oscilloscope_v1.v:140]
+WARNING: [Synth 8-3295] tying undriven pin simultaneousSamplingXADC:di_in[1] to constant 0 [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Oscilloscope_v1.v:140]
+WARNING: [Synth 8-3295] tying undriven pin simultaneousSamplingXADC:di_in[0] to constant 0 [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Oscilloscope_v1.v:140]
+WARNING: [Synth 8-3295] tying undriven pin simultaneousSamplingXADC:vp_in to constant 0 [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Oscilloscope_v1.v:140]
+WARNING: [Synth 8-3295] tying undriven pin simultaneousSamplingXADC:vn_in to constant 0 [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Oscilloscope_v1.v:140]
+WARNING: [Synth 8-3295] tying undriven pin Buffer2Channel1:readAddress[11] to constant 0 [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Oscilloscope_v1.v:250]
+WARNING: [Synth 8-3295] tying undriven pin Buffer2Channel1:readAddress[10] to constant 0 [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Oscilloscope_v1.v:250]
+WARNING: [Synth 8-3295] tying undriven pin Buffer2Channel1:readAddress[9] to constant 0 [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Oscilloscope_v1.v:250]
+WARNING: [Synth 8-3295] tying undriven pin Buffer2Channel1:readAddress[8] to constant 0 [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Oscilloscope_v1.v:250]
+WARNING: [Synth 8-3295] tying undriven pin Buffer2Channel1:readAddress[7] to constant 0 [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Oscilloscope_v1.v:250]
+WARNING: [Synth 8-3295] tying undriven pin Buffer2Channel1:readAddress[6] to constant 0 [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Oscilloscope_v1.v:250]
+WARNING: [Synth 8-3295] tying undriven pin Buffer2Channel1:readAddress[5] to constant 0 [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Oscilloscope_v1.v:250]
+WARNING: [Synth 8-3295] tying undriven pin Buffer2Channel1:readAddress[4] to constant 0 [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Oscilloscope_v1.v:250]
+WARNING: [Synth 8-3295] tying undriven pin Buffer2Channel1:readAddress[3] to constant 0 [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Oscilloscope_v1.v:250]
+WARNING: [Synth 8-3295] tying undriven pin Buffer2Channel1:readAddress[2] to constant 0 [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Oscilloscope_v1.v:250]
+WARNING: [Synth 8-3295] tying undriven pin Buffer2Channel1:readAddress[1] to constant 0 [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Oscilloscope_v1.v:250]
+WARNING: [Synth 8-3295] tying undriven pin Buffer2Channel1:readAddress[0] to constant 0 [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Oscilloscope_v1.v:250]
+WARNING: [Synth 8-3295] tying undriven pin Buffer2Channel2:readAddress[11] to constant 0 [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Oscilloscope_v1.v:268]
+WARNING: [Synth 8-3295] tying undriven pin Buffer2Channel2:readAddress[10] to constant 0 [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Oscilloscope_v1.v:268]
+WARNING: [Synth 8-3295] tying undriven pin Buffer2Channel2:readAddress[9] to constant 0 [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Oscilloscope_v1.v:268]
+WARNING: [Synth 8-3295] tying undriven pin Buffer2Channel2:readAddress[8] to constant 0 [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Oscilloscope_v1.v:268]
+WARNING: [Synth 8-3295] tying undriven pin Buffer2Channel2:readAddress[7] to constant 0 [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Oscilloscope_v1.v:268]
+WARNING: [Synth 8-3295] tying undriven pin Buffer2Channel2:readAddress[6] to constant 0 [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Oscilloscope_v1.v:268]
+WARNING: [Synth 8-3295] tying undriven pin Buffer2Channel2:readAddress[5] to constant 0 [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Oscilloscope_v1.v:268]
+WARNING: [Synth 8-3295] tying undriven pin Buffer2Channel2:readAddress[4] to constant 0 [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Oscilloscope_v1.v:268]
+WARNING: [Synth 8-3295] tying undriven pin Buffer2Channel2:readAddress[3] to constant 0 [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Oscilloscope_v1.v:268]
+WARNING: [Synth 8-3295] tying undriven pin Buffer2Channel2:readAddress[2] to constant 0 [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Oscilloscope_v1.v:268]
+WARNING: [Synth 8-3295] tying undriven pin Buffer2Channel2:readAddress[1] to constant 0 [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Oscilloscope_v1.v:268]
+WARNING: [Synth 8-3295] tying undriven pin Buffer2Channel2:readAddress[0] to constant 0 [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Oscilloscope_v1.v:268]
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:07 . Memory (MB): peak = 1103.770 ; gain = 208.582 ; free physical = 1822 ; free virtual = 10781
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 1103.766 ; gain = 208.582 ; free physical = 1741 ; free virtual = 10710
 ---------------------------------------------------------------------------------
-WARNING: [filemgmt 56-147] Overwrite of existing file isn't enabled.  Please specify -force to overwrite file  [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/synth_1/.Xil/Vivado-2263-eecs-digital-02/CharactersROM/CharactersROM.dcp]
-WARNING: [filemgmt 56-147] Overwrite of existing file isn't enabled.  Please specify -force to overwrite file  [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/synth_1/.Xil/Vivado-2263-eecs-digital-02/clk_wiz_0/clk_wiz_0.dcp]
-WARNING: [Project 1-486] Could not resolve non-primitive black box cell 'CharactersROM' instantiated as 'myText/characterBRAM' [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Text.v:278]
+WARNING: [filemgmt 56-147] Overwrite of existing file isn't enabled.  Please specify -force to overwrite file  [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/synth_1/.Xil/Vivado-20093-eecs-digital-02/CharactersROM/CharactersROM.dcp]
+WARNING: [filemgmt 56-147] Overwrite of existing file isn't enabled.  Please specify -force to overwrite file  [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/synth_1/.Xil/Vivado-20093-eecs-digital-02/clk_wiz_0/clk_wiz_0.dcp]
+WARNING: [Project 1-486] Could not resolve non-primitive black box cell 'CharactersROM' instantiated as 'myText/characterBRAM' [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Text.v:316]
 WARNING: [Project 1-560] Could not resolve non-primitive black box cell 'blk_mem_gen_0' instantiated as 'BufferChannel1/bram0'. 8 instances of this cell are unresolved black boxes. [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/imports/6.111-Final-Project/project_xadc/src/hdl/buffer.v:54]
-WARNING: [Project 1-486] Could not resolve non-primitive black box cell 'clk_wiz_0' instantiated as 'ClockDivider' [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Oscilloscope_v1.v:78]
+WARNING: [Project 1-486] Could not resolve non-primitive black box cell 'clk_wiz_0' instantiated as 'ClockDivider' [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Oscilloscope_v1.v:83]
 INFO: [Netlist 29-17] Analyzing 1 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Device 21-403] Loading part xc7a100tcsg324-3
@@ -350,26 +353,26 @@ INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
 Initializing timing engine
-Parsing XDC File [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/synth_1/.Xil/Vivado-2263-eecs-digital-02/dcp/blk_mem_gen_0_in_context.xdc] for cell 'BufferChannel1/bram0'
-Finished Parsing XDC File [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/synth_1/.Xil/Vivado-2263-eecs-digital-02/dcp/blk_mem_gen_0_in_context.xdc] for cell 'BufferChannel1/bram0'
-Parsing XDC File [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/synth_1/.Xil/Vivado-2263-eecs-digital-02/dcp/blk_mem_gen_0_in_context.xdc] for cell 'BufferChannel1/bram1'
-Finished Parsing XDC File [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/synth_1/.Xil/Vivado-2263-eecs-digital-02/dcp/blk_mem_gen_0_in_context.xdc] for cell 'BufferChannel1/bram1'
-Parsing XDC File [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/synth_1/.Xil/Vivado-2263-eecs-digital-02/dcp/blk_mem_gen_0_in_context.xdc] for cell 'Buffer2Channel1/bram0'
-Finished Parsing XDC File [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/synth_1/.Xil/Vivado-2263-eecs-digital-02/dcp/blk_mem_gen_0_in_context.xdc] for cell 'Buffer2Channel1/bram0'
-Parsing XDC File [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/synth_1/.Xil/Vivado-2263-eecs-digital-02/dcp/blk_mem_gen_0_in_context.xdc] for cell 'Buffer2Channel1/bram1'
-Finished Parsing XDC File [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/synth_1/.Xil/Vivado-2263-eecs-digital-02/dcp/blk_mem_gen_0_in_context.xdc] for cell 'Buffer2Channel1/bram1'
-Parsing XDC File [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/synth_1/.Xil/Vivado-2263-eecs-digital-02/dcp/blk_mem_gen_0_in_context.xdc] for cell 'BufferChannel2/bram0'
-Finished Parsing XDC File [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/synth_1/.Xil/Vivado-2263-eecs-digital-02/dcp/blk_mem_gen_0_in_context.xdc] for cell 'BufferChannel2/bram0'
-Parsing XDC File [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/synth_1/.Xil/Vivado-2263-eecs-digital-02/dcp/blk_mem_gen_0_in_context.xdc] for cell 'BufferChannel2/bram1'
-Finished Parsing XDC File [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/synth_1/.Xil/Vivado-2263-eecs-digital-02/dcp/blk_mem_gen_0_in_context.xdc] for cell 'BufferChannel2/bram1'
-Parsing XDC File [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/synth_1/.Xil/Vivado-2263-eecs-digital-02/dcp/blk_mem_gen_0_in_context.xdc] for cell 'Buffer2Channel2/bram0'
-Finished Parsing XDC File [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/synth_1/.Xil/Vivado-2263-eecs-digital-02/dcp/blk_mem_gen_0_in_context.xdc] for cell 'Buffer2Channel2/bram0'
-Parsing XDC File [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/synth_1/.Xil/Vivado-2263-eecs-digital-02/dcp/blk_mem_gen_0_in_context.xdc] for cell 'Buffer2Channel2/bram1'
-Finished Parsing XDC File [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/synth_1/.Xil/Vivado-2263-eecs-digital-02/dcp/blk_mem_gen_0_in_context.xdc] for cell 'Buffer2Channel2/bram1'
-Parsing XDC File [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/synth_1/.Xil/Vivado-2263-eecs-digital-02/dcp_2/CharactersROM_in_context.xdc] for cell 'myText/characterBRAM'
-Finished Parsing XDC File [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/synth_1/.Xil/Vivado-2263-eecs-digital-02/dcp_2/CharactersROM_in_context.xdc] for cell 'myText/characterBRAM'
-Parsing XDC File [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/synth_1/.Xil/Vivado-2263-eecs-digital-02/dcp_3/clk_wiz_0_in_context.xdc] for cell 'ClockDivider'
-Finished Parsing XDC File [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/synth_1/.Xil/Vivado-2263-eecs-digital-02/dcp_3/clk_wiz_0_in_context.xdc] for cell 'ClockDivider'
+Parsing XDC File [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/synth_1/.Xil/Vivado-20093-eecs-digital-02/dcp/blk_mem_gen_0_in_context.xdc] for cell 'BufferChannel1/bram0'
+Finished Parsing XDC File [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/synth_1/.Xil/Vivado-20093-eecs-digital-02/dcp/blk_mem_gen_0_in_context.xdc] for cell 'BufferChannel1/bram0'
+Parsing XDC File [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/synth_1/.Xil/Vivado-20093-eecs-digital-02/dcp/blk_mem_gen_0_in_context.xdc] for cell 'BufferChannel1/bram1'
+Finished Parsing XDC File [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/synth_1/.Xil/Vivado-20093-eecs-digital-02/dcp/blk_mem_gen_0_in_context.xdc] for cell 'BufferChannel1/bram1'
+Parsing XDC File [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/synth_1/.Xil/Vivado-20093-eecs-digital-02/dcp/blk_mem_gen_0_in_context.xdc] for cell 'Buffer2Channel1/bram0'
+Finished Parsing XDC File [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/synth_1/.Xil/Vivado-20093-eecs-digital-02/dcp/blk_mem_gen_0_in_context.xdc] for cell 'Buffer2Channel1/bram0'
+Parsing XDC File [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/synth_1/.Xil/Vivado-20093-eecs-digital-02/dcp/blk_mem_gen_0_in_context.xdc] for cell 'Buffer2Channel1/bram1'
+Finished Parsing XDC File [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/synth_1/.Xil/Vivado-20093-eecs-digital-02/dcp/blk_mem_gen_0_in_context.xdc] for cell 'Buffer2Channel1/bram1'
+Parsing XDC File [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/synth_1/.Xil/Vivado-20093-eecs-digital-02/dcp/blk_mem_gen_0_in_context.xdc] for cell 'BufferChannel2/bram0'
+Finished Parsing XDC File [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/synth_1/.Xil/Vivado-20093-eecs-digital-02/dcp/blk_mem_gen_0_in_context.xdc] for cell 'BufferChannel2/bram0'
+Parsing XDC File [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/synth_1/.Xil/Vivado-20093-eecs-digital-02/dcp/blk_mem_gen_0_in_context.xdc] for cell 'BufferChannel2/bram1'
+Finished Parsing XDC File [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/synth_1/.Xil/Vivado-20093-eecs-digital-02/dcp/blk_mem_gen_0_in_context.xdc] for cell 'BufferChannel2/bram1'
+Parsing XDC File [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/synth_1/.Xil/Vivado-20093-eecs-digital-02/dcp/blk_mem_gen_0_in_context.xdc] for cell 'Buffer2Channel2/bram0'
+Finished Parsing XDC File [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/synth_1/.Xil/Vivado-20093-eecs-digital-02/dcp/blk_mem_gen_0_in_context.xdc] for cell 'Buffer2Channel2/bram0'
+Parsing XDC File [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/synth_1/.Xil/Vivado-20093-eecs-digital-02/dcp/blk_mem_gen_0_in_context.xdc] for cell 'Buffer2Channel2/bram1'
+Finished Parsing XDC File [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/synth_1/.Xil/Vivado-20093-eecs-digital-02/dcp/blk_mem_gen_0_in_context.xdc] for cell 'Buffer2Channel2/bram1'
+Parsing XDC File [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/synth_1/.Xil/Vivado-20093-eecs-digital-02/dcp_2/CharactersROM_in_context.xdc] for cell 'myText/characterBRAM'
+Finished Parsing XDC File [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/synth_1/.Xil/Vivado-20093-eecs-digital-02/dcp_2/CharactersROM_in_context.xdc] for cell 'myText/characterBRAM'
+Parsing XDC File [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/synth_1/.Xil/Vivado-20093-eecs-digital-02/dcp_3/clk_wiz_0_in_context.xdc] for cell 'ClockDivider'
+Finished Parsing XDC File [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/synth_1/.Xil/Vivado-20093-eecs-digital-02/dcp_3/clk_wiz_0_in_context.xdc] for cell 'ClockDivider'
 Parsing XDC File [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/constrs_1/imports/constraints/Nexys4DDR_Master.xdc]
 WARNING: [Vivado 12-584] No ports matched 'CPU_RESETN'. [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/constrs_1/imports/constraints/Nexys4DDR_Master.xdc:82]
 WARNING: [Vivado 12-584] No ports matched 'vauxn10'. [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/constrs_1/imports/constraints/Nexys4DDR_Master.xdc:146]
@@ -385,7 +388,7 @@ Completed Processing XDC Constraints
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 1474.445 ; gain = 0.004 ; free physical = 1549 ; free virtual = 10511
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 1475.441 ; gain = 0.004 ; free physical = 1559 ; free virtual = 10528
 WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'Buffer2Channel1/bram0' at clock pin 'clka' is different from the actual clock period '9.259', this can result in different synthesis results.
 WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'Buffer2Channel1/bram1' at clock pin 'clka' is different from the actual clock period '9.259', this can result in different synthesis results.
 WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'Buffer2Channel2/bram0' at clock pin 'clka' is different from the actual clock period '9.259', this can result in different synthesis results.
@@ -395,25 +398,25 @@ WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context s
 WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'BufferChannel2/bram0' at clock pin 'clka' is different from the actual clock period '9.259', this can result in different synthesis results.
 WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'BufferChannel2/bram1' at clock pin 'clka' is different from the actual clock period '9.259', this can result in different synthesis results.
 WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'myText/characterBRAM' at clock pin 'clka' is different from the actual clock period '9.259', this can result in different synthesis results.
-WARNING: [filemgmt 56-147] Overwrite of existing file isn't enabled.  Please specify -force to overwrite file  [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/synth_1/.Xil/Vivado-2263-eecs-digital-02/CharactersROM/CharactersROM.dcp]
-WARNING: [filemgmt 56-147] Overwrite of existing file isn't enabled.  Please specify -force to overwrite file  [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/synth_1/.Xil/Vivado-2263-eecs-digital-02/clk_wiz_0/clk_wiz_0.dcp]
+WARNING: [filemgmt 56-147] Overwrite of existing file isn't enabled.  Please specify -force to overwrite file  [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/synth_1/.Xil/Vivado-20093-eecs-digital-02/CharactersROM/CharactersROM.dcp]
+WARNING: [filemgmt 56-147] Overwrite of existing file isn't enabled.  Please specify -force to overwrite file  [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/synth_1/.Xil/Vivado-20093-eecs-digital-02/clk_wiz_0/clk_wiz_0.dcp]
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:12 ; elapsed = 00:00:14 . Memory (MB): peak = 1474.445 ; gain = 579.258 ; free physical = 1546 ; free virtual = 10507
+Finished Constraint Validation : Time (s): cpu = 00:00:11 ; elapsed = 00:00:14 . Memory (MB): peak = 1475.441 ; gain = 580.258 ; free physical = 1554 ; free virtual = 10523
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a100tcsg324-3
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:12 ; elapsed = 00:00:14 . Memory (MB): peak = 1474.445 ; gain = 579.258 ; free physical = 1546 ; free virtual = 10507
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:11 ; elapsed = 00:00:14 . Memory (MB): peak = 1475.441 ; gain = 580.258 ; free physical = 1554 ; free virtual = 10523
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
-Applied set_property IO_BUFFER_TYPE = NONE for CLK100MHZ. (constraint file  /afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/synth_1/.Xil/Vivado-2263-eecs-digital-02/dcp_3/clk_wiz_0_in_context.xdc, line 3).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for CLK100MHZ. (constraint file  /afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/synth_1/.Xil/Vivado-2263-eecs-digital-02/dcp_3/clk_wiz_0_in_context.xdc, line 4).
+Applied set_property IO_BUFFER_TYPE = NONE for CLK100MHZ. (constraint file  /afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/synth_1/.Xil/Vivado-20093-eecs-digital-02/dcp_3/clk_wiz_0_in_context.xdc, line 3).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for CLK100MHZ. (constraint file  /afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/synth_1/.Xil/Vivado-20093-eecs-digital-02/dcp_3/clk_wiz_0_in_context.xdc, line 4).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:12 ; elapsed = 00:00:14 . Memory (MB): peak = 1474.445 ; gain = 579.258 ; free physical = 1546 ; free virtual = 10507
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:11 ; elapsed = 00:00:14 . Memory (MB): peak = 1475.441 ; gain = 580.258 ; free physical = 1554 ; free virtual = 10523
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/ScopeSettings.v:72]
 INFO: [Synth 8-5546] ROM "count" won't be mapped to RAM because it is too sparse
@@ -423,6 +426,10 @@ INFO: [Synth 8-5544] ROM "DRPEnable" won't be mapped to Block RAM because addres
 INFO: [Synth 8-4471] merging register 'ram1_din_reg[11:0]' into 'ram0_din_reg[11:0]' [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/imports/6.111-Final-Project/project_xadc/src/hdl/buffer.v:79]
 INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/imports/6.111-Final-Project/project_xadc/src/hdl/buffer.v:64]
 INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/imports/6.111-Final-Project/project_xadc/src/hdl/buffer.v:84]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Text.v:165]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Text.v:160]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Text.v:156]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Text.v:152]
 INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Text.v:148]
 INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Text.v:144]
 INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Text.v:140]
@@ -430,8 +437,10 @@ INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To p
 INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Text.v:132]
 INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Text.v:128]
 INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Text.v:124]
-INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Text.v:120]
-INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Text.v:116]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Text.v:165]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Text.v:160]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Text.v:156]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Text.v:152]
 INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Text.v:148]
 INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Text.v:144]
 INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Text.v:140]
@@ -439,10 +448,8 @@ INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To p
 INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Text.v:132]
 INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Text.v:128]
 INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Text.v:124]
-INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Text.v:120]
-INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Text.v:116]
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:12 ; elapsed = 00:00:15 . Memory (MB): peak = 1474.445 ; gain = 579.258 ; free physical = 1547 ; free virtual = 10508
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:12 ; elapsed = 00:00:15 . Memory (MB): peak = 1475.441 ; gain = 580.258 ; free physical = 1540 ; free virtual = 10509
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -457,7 +464,7 @@ Detailed RTL Component Info :
 +---Adders : 
 	   2 Input     32 Bit       Adders := 21    
 	   5 Input     32 Bit       Adders := 2     
-	   2 Input     13 Bit       Adders := 23    
+	   2 Input     13 Bit       Adders := 27    
 	   3 Input     12 Bit       Adders := 2     
 	   2 Input     12 Bit       Adders := 15    
 	   2 Input     11 Bit       Adders := 2     
@@ -495,7 +502,7 @@ Detailed RTL Component Info :
 	   2 Input      1 Bit        Muxes := 50    
 	   6 Input      1 Bit        Muxes := 5     
 	   4 Input      1 Bit        Muxes := 6     
-	  10 Input      1 Bit        Muxes := 2     
+	  12 Input      1 Bit        Muxes := 2     
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
 ---------------------------------------------------------------------------------
@@ -671,7 +678,7 @@ Detailed RTL Component Info :
 Module Text 
 Detailed RTL Component Info : 
 +---Adders : 
-	   2 Input     13 Bit       Adders := 20    
+	   2 Input     13 Bit       Adders := 24    
 	   3 Input      5 Bit       Adders := 2     
 +---Registers : 
 	               17 Bit    Registers := 1     
@@ -679,7 +686,7 @@ Detailed RTL Component Info :
 	                5 Bit    Registers := 2     
 	                1 Bit    Registers := 15    
 +---Muxes : 
-	  10 Input      1 Bit        Muxes := 2     
+	  12 Input      1 Bit        Muxes := 2     
 ---------------------------------------------------------------------------------
 Finished RTL Hierarchical Component Statistics
 ---------------------------------------------------------------------------------
@@ -692,14 +699,14 @@ BRAMs: 270 (col length: RAMB18 80 RAMB36 40)
 ---------------------------------------------------------------------------------
 Finished Part Resource Summary
 ---------------------------------------------------------------------------------
-Start Parallel Synthesis Optimization  : Time (s): cpu = 00:00:13 ; elapsed = 00:00:15 . Memory (MB): peak = 1474.445 ; gain = 579.258 ; free physical = 1547 ; free virtual = 10508
+Start Parallel Synthesis Optimization  : Time (s): cpu = 00:00:12 ; elapsed = 00:00:15 . Memory (MB): peak = 1475.441 ; gain = 580.258 ; free physical = 1540 ; free virtual = 10509
 ---------------------------------------------------------------------------------
 Start Cross Boundary Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Cross Boundary Optimization : Time (s): cpu = 00:00:13 ; elapsed = 00:00:15 . Memory (MB): peak = 1474.445 ; gain = 579.258 ; free physical = 1547 ; free virtual = 10508
+Finished Cross Boundary Optimization : Time (s): cpu = 00:00:12 ; elapsed = 00:00:15 . Memory (MB): peak = 1475.441 ; gain = 580.258 ; free physical = 1540 ; free virtual = 10509
 ---------------------------------------------------------------------------------
-Finished Parallel Reinference  : Time (s): cpu = 00:00:13 ; elapsed = 00:00:15 . Memory (MB): peak = 1474.445 ; gain = 579.258 ; free physical = 1547 ; free virtual = 10508
+Finished Parallel Reinference  : Time (s): cpu = 00:00:12 ; elapsed = 00:00:15 . Memory (MB): peak = 1475.441 ; gain = 580.258 ; free physical = 1540 ; free virtual = 10509
 
 Report RTL Partitions: 
 +-+--------------+------------+----------+
@@ -921,9 +928,9 @@ WARNING: [Synth 8-3332] Sequential element (pixel_reg[90]) is unused and will be
 WARNING: [Synth 8-3332] Sequential element (pixel_reg[89]) is unused and will be removed from module Grid.
 INFO: [Common 17-14] Message 'Synth 8-3332' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished Area Optimization : Time (s): cpu = 00:00:17 ; elapsed = 00:00:19 . Memory (MB): peak = 1474.445 ; gain = 579.258 ; free physical = 1539 ; free virtual = 10501
+Finished Area Optimization : Time (s): cpu = 00:00:17 ; elapsed = 00:00:19 . Memory (MB): peak = 1475.441 ; gain = 580.258 ; free physical = 1489 ; free virtual = 10465
 ---------------------------------------------------------------------------------
-Finished Parallel Area Optimization  : Time (s): cpu = 00:00:17 ; elapsed = 00:00:19 . Memory (MB): peak = 1474.445 ; gain = 579.258 ; free physical = 1539 ; free virtual = 10501
+Finished Parallel Area Optimization  : Time (s): cpu = 00:00:17 ; elapsed = 00:00:19 . Memory (MB): peak = 1475.441 ; gain = 580.258 ; free physical = 1489 ; free virtual = 10465
 
 Report RTL Partitions: 
 +-+--------------+------------+----------+
@@ -936,7 +943,7 @@ Start Applying XDC Timing Constraints
 INFO: [Synth 8-5578] Moved timing constraint from pin 'ClockDivider/clk_out1' to pin 'ClockDivider/bbstub_clk_out1/O'
 INFO: [Synth 8-5820] Moved 1 constraints on hierarchical pins to their respective driving/loading pins
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:24 ; elapsed = 00:00:27 . Memory (MB): peak = 1474.445 ; gain = 579.258 ; free physical = 1514 ; free virtual = 10477
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:24 ; elapsed = 00:00:26 . Memory (MB): peak = 1475.441 ; gain = 580.258 ; free physical = 1419 ; free virtual = 10388
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -948,16 +955,16 @@ Report RTL Partitions:
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:26 ; elapsed = 00:00:29 . Memory (MB): peak = 1495.465 ; gain = 600.277 ; free physical = 1481 ; free virtual = 10443
+Finished Technology Mapping : Time (s): cpu = 00:00:26 ; elapsed = 00:00:29 . Memory (MB): peak = 1497.461 ; gain = 602.277 ; free physical = 1389 ; free virtual = 10359
 ---------------------------------------------------------------------------------
-Finished Parallel Technology Mapping Optimization  : Time (s): cpu = 00:00:26 ; elapsed = 00:00:29 . Memory (MB): peak = 1495.465 ; gain = 600.277 ; free physical = 1481 ; free virtual = 10443
+Finished Parallel Technology Mapping Optimization  : Time (s): cpu = 00:00:26 ; elapsed = 00:00:29 . Memory (MB): peak = 1497.461 ; gain = 602.277 ; free physical = 1389 ; free virtual = 10359
 
 Report RTL Partitions: 
 +-+--------------+------------+----------+
 | |RTL Partition |Replication |Instances |
 +-+--------------+------------+----------+
 +-+--------------+------------+----------+
-Finished Parallel Synthesis Optimization  : Time (s): cpu = 00:00:26 ; elapsed = 00:00:29 . Memory (MB): peak = 1495.465 ; gain = 600.277 ; free physical = 1481 ; free virtual = 10443
+Finished Parallel Synthesis Optimization  : Time (s): cpu = 00:00:26 ; elapsed = 00:00:29 . Memory (MB): peak = 1497.461 ; gain = 602.277 ; free physical = 1389 ; free virtual = 10359
 ---------------------------------------------------------------------------------
 Start IO Insertion
 ---------------------------------------------------------------------------------
@@ -1089,7 +1096,7 @@ WARNING: [Synth 8-3295] tying undriven pin Buffer2Channel2:readAddress[1] to con
 WARNING: [Synth 8-3295] tying undriven pin Buffer2Channel2:readAddress[0] to constant 0
 CRITICAL WARNING: [Synth 8-4442] BlackBox module characterBRAM has unconnected pin clkb
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:27 ; elapsed = 00:00:29 . Memory (MB): peak = 1495.465 ; gain = 600.277 ; free physical = 1481 ; free virtual = 10443
+Finished IO Insertion : Time (s): cpu = 00:00:27 ; elapsed = 00:00:29 . Memory (MB): peak = 1497.461 ; gain = 602.277 ; free physical = 1392 ; free virtual = 10361
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -1102,7 +1109,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:27 ; elapsed = 00:00:30 . Memory (MB): peak = 1495.465 ; gain = 600.277 ; free physical = 1481 ; free virtual = 10443
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:27 ; elapsed = 00:00:29 . Memory (MB): peak = 1497.461 ; gain = 602.277 ; free physical = 1392 ; free virtual = 10361
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -1114,7 +1121,7 @@ Report RTL Partitions:
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:27 ; elapsed = 00:00:30 . Memory (MB): peak = 1495.465 ; gain = 600.277 ; free physical = 1481 ; free virtual = 10443
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:27 ; elapsed = 00:00:29 . Memory (MB): peak = 1497.461 ; gain = 602.277 ; free physical = 1392 ; free virtual = 10361
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
@@ -1162,15 +1169,15 @@ Report Cell Usage:
 |8     |blk_mem_gen_0__8  |     1|
 |9     |blk_mem_gen_0__9  |     1|
 |10    |clk_wiz_0         |     1|
-|11    |CARRY4            |   998|
+|11    |CARRY4            |  1040|
 |12    |DSP48E1           |     4|
 |13    |DSP48E1_1         |     1|
-|14    |LUT1              |   837|
-|15    |LUT2              |  1272|
-|16    |LUT3              |   868|
-|17    |LUT4              |   470|
-|18    |LUT5              |   103|
-|19    |LUT6              |  1250|
+|14    |LUT1              |   873|
+|15    |LUT2              |  1440|
+|16    |LUT3              |   870|
+|17    |LUT4              |   471|
+|18    |LUT5              |   107|
+|19    |LUT6              |  1252|
 |20    |SRL16E            |    55|
 |21    |XADC              |     1|
 |22    |XORCY             |    17|
@@ -1185,16 +1192,16 @@ Report Instance Areas:
 +------+-----------------------------+-------------------------+------+
 |      |Instance                     |Module                   |Cells |
 +------+-----------------------------+-------------------------+------+
-|1     |top                          |                         |  7632|
+|1     |top                          |                         |  7887|
 |2     |  myss                       |ScopeSettings            |  3067|
-|3     |  nolabel_line117            |debounce__1              |    53|
-|4     |  nolabel_line118            |debounce__2              |    53|
-|5     |  nolabel_line119            |debounce__3              |    53|
-|6     |  nolabel_line120            |debounce                 |    53|
-|7     |  nolabel_line122            |ButtonSinglePulse__1     |     3|
-|8     |  nolabel_line123            |ButtonSinglePulse__2     |     3|
-|9     |  nolabel_line124            |ButtonSinglePulse__3     |     3|
-|10    |  nolabel_line125            |ButtonSinglePulse        |     3|
+|3     |  nolabel_line122            |debounce__1              |    53|
+|4     |  nolabel_line123            |debounce__2              |    53|
+|5     |  nolabel_line124            |debounce__3              |    53|
+|6     |  nolabel_line125            |debounce                 |    53|
+|7     |  nolabel_line127            |ButtonSinglePulse__1     |     3|
+|8     |  nolabel_line128            |ButtonSinglePulse__2     |     3|
+|9     |  nolabel_line129            |ButtonSinglePulse__3     |     3|
+|10    |  nolabel_line130            |ButtonSinglePulse        |     3|
 |11    |  simultaneousSamplingXADC   |SimultaneousSamplingXADC |     1|
 |12    |  myToggleChannels           |ToggleChannels           |    39|
 |13    |  adcc                       |ADCController            |   107|
@@ -1214,16 +1221,16 @@ Report Instance Areas:
 |27    |  curveChannel1              |Curve                    |   171|
 |28    |  curveChannel2              |Curve__parameterized0    |   180|
 |29    |  mytls                      |HorizontalLineSprite     |   114|
-|30    |  myText                     |Text                     |  1434|
+|30    |  myText                     |Text                     |  1689|
 +------+-----------------------------+-------------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:27 ; elapsed = 00:00:30 . Memory (MB): peak = 1495.465 ; gain = 600.277 ; free physical = 1481 ; free virtual = 10443
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:27 ; elapsed = 00:00:29 . Memory (MB): peak = 1497.461 ; gain = 602.277 ; free physical = 1392 ; free virtual = 10361
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 97 critical warnings and 327 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:22 ; elapsed = 00:00:22 . Memory (MB): peak = 1495.465 ; gain = 132.457 ; free physical = 1481 ; free virtual = 10443
-Synthesis Optimization Complete : Time (s): cpu = 00:00:27 ; elapsed = 00:00:30 . Memory (MB): peak = 1495.473 ; gain = 600.285 ; free physical = 1481 ; free virtual = 10443
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:22 ; elapsed = 00:00:22 . Memory (MB): peak = 1497.461 ; gain = 133.457 ; free physical = 1392 ; free virtual = 10361
+Synthesis Optimization Complete : Time (s): cpu = 00:00:27 ; elapsed = 00:00:29 . Memory (MB): peak = 1497.469 ; gain = 602.285 ; free physical = 1392 ; free virtual = 10361
 INFO: [Project 1-571] Translating synthesized netlist
-INFO: [Netlist 29-17] Analyzing 1033 Unisim elements for replacement
+INFO: [Netlist 29-17] Analyzing 1075 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
@@ -1232,8 +1239,8 @@ INFO: [Project 1-111] Unisim Transformation Summary:
   (MUXCY,XORCY) => CARRY4: 17 instances
 
 INFO: [Common 17-83] Releasing license: Synthesis
-200 Infos, 263 Warnings, 97 Critical Warnings and 0 Errors encountered.
+204 Infos, 263 Warnings, 97 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:27 ; elapsed = 00:00:29 . Memory (MB): peak = 1527.484 ; gain = 547.734 ; free physical = 1482 ; free virtual = 10445
-report_utilization: Time (s): cpu = 00:00:00.09 ; elapsed = 00:00:00.12 . Memory (MB): peak = 1559.500 ; gain = 0.000 ; free physical = 1481 ; free virtual = 10443
-INFO: [Common 17-206] Exiting Vivado at Mon Nov 28 16:04:33 2016...
+synth_design: Time (s): cpu = 00:00:27 ; elapsed = 00:00:29 . Memory (MB): peak = 1529.480 ; gain = 549.734 ; free physical = 1392 ; free virtual = 10361
+report_utilization: Time (s): cpu = 00:00:00.09 ; elapsed = 00:00:00.12 . Memory (MB): peak = 1561.496 ; gain = 0.000 ; free physical = 1391 ; free virtual = 10362
+INFO: [Common 17-206] Exiting Vivado at Mon Nov 28 16:54:10 2016...

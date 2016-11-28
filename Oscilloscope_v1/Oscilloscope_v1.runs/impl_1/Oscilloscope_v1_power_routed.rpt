@@ -1,7 +1,7 @@
 Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2016.2 (lin64) Build 1577090 Thu Jun  2 16:32:35 MDT 2016
-| Date             : Mon Nov 28 16:07:31 2016
+| Date             : Mon Nov 28 16:57:49 2016
 | Host             : eecs-digital-02 running 64-bit Ubuntu 14.04.5 LTS
 | Command          : report_power -file Oscilloscope_v1_power_routed.rpt -pb Oscilloscope_v1_power_summary_routed.pb -rpx Oscilloscope_v1_power_routed.rpx
 | Design           : Oscilloscope_v1
@@ -30,8 +30,8 @@ Table of Contents
 ----------
 
 +--------------------------+-------+
-| Total On-Chip Power (W)  | 0.297 |
-| Dynamic (W)              | 0.199 |
+| Total On-Chip Power (W)  | 0.298 |
+| Dynamic (W)              | 0.200 |
 | Device Static (W)        | 0.098 |
 | Effective TJA (C/W)      | 4.6   |
 | Max Ambient (C)          | 98.6  |
@@ -49,21 +49,21 @@ Table of Contents
 +-------------------------+-----------+----------+-----------+-----------------+
 | On-Chip                 | Power (W) | Used     | Available | Utilization (%) |
 +-------------------------+-----------+----------+-----------+-----------------+
-| Clocks                  |     0.006 |        8 |       --- |             --- |
-| Slice Logic             |     0.021 |     6712 |       --- |             --- |
-|   LUT as Logic          |     0.017 |     3539 |     63400 |            5.58 |
-|   CARRY4                |     0.004 |      991 |     15850 |            6.25 |
+| Clocks                  |     0.007 |        8 |       --- |             --- |
+| Slice Logic             |     0.021 |     6964 |       --- |             --- |
+|   LUT as Logic          |     0.017 |     3682 |     63400 |            5.81 |
+|   CARRY4                |     0.004 |     1033 |     15850 |            6.52 |
 |   Register              |    <0.001 |     1289 |    126800 |            1.02 |
 |   LUT as Shift Register |    <0.001 |       35 |     19000 |            0.18 |
 |   Others                |     0.000 |      112 |       --- |             --- |
-| Signals                 |     0.025 |     4832 |       --- |             --- |
+| Signals                 |     0.025 |     4879 |       --- |             --- |
 | Block RAM               |     0.013 |      9.5 |       135 |            7.04 |
 | MMCM                    |     0.123 |        1 |         6 |           16.67 |
 | DSPs                    |     0.005 |        5 |       240 |            2.08 |
 | I/O                     |     0.003 |       38 |       210 |           18.10 |
 | XADC                    |     0.002 |        1 |       --- |             --- |
 | Static Power            |     0.098 |          |           |                 |
-| Total                   |     0.297 |          |           |                 |
+| Total                   |     0.298 |          |           |                 |
 +-------------------------+-----------+----------+-----------+-----------------+
 
 
@@ -73,7 +73,7 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.087 |       0.071 |      0.016 |
+| Vccint    |       1.000 |     0.088 |       0.072 |      0.016 |
 | Vccaux    |       1.800 |     0.086 |       0.068 |      0.018 |
 | Vcco33    |       3.300 |     0.005 |       0.001 |      0.004 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
@@ -147,7 +147,7 @@ Table of Contents
 +------------------------------------------------+-----------+
 | Name                                           | Power (W) |
 +------------------------------------------------+-----------+
-| Oscilloscope_v1                                |     0.199 |
+| Oscilloscope_v1                                |     0.200 |
 |   BufferChannel1                               |     0.007 |
 |     bram0                                      |     0.003 |
 |       U0                                       |     0.003 |
@@ -198,7 +198,7 @@ Table of Contents
 |   myMeasureSignalChannel1                      |    <0.001 |
 |   myMeasureSignalChannel2                      |    <0.001 |
 |   mySelectChannelData                          |    <0.001 |
-|   myText                                       |     0.006 |
+|   myText                                       |     0.007 |
 |     characterBRAM                              |     0.002 |
 |       U0                                       |     0.002 |
 |         inst_blk_mem_gen                       |     0.002 |
@@ -216,16 +216,16 @@ Table of Contents
 |   myToggleChannels                             |    <0.001 |
 |   myXVGA                                       |    <0.001 |
 |   mybs                                         |    <0.001 |
-|   myss                                         |     0.035 |
+|   myss                                         |     0.034 |
 |   mytls                                        |     0.001 |
-|   nolabel_line117                              |    <0.001 |
-|   nolabel_line118                              |    <0.001 |
-|   nolabel_line119                              |    <0.001 |
-|   nolabel_line120                              |    <0.001 |
 |   nolabel_line122                              |    <0.001 |
 |   nolabel_line123                              |    <0.001 |
 |   nolabel_line124                              |    <0.001 |
 |   nolabel_line125                              |    <0.001 |
+|   nolabel_line127                              |    <0.001 |
+|   nolabel_line128                              |    <0.001 |
+|   nolabel_line129                              |    <0.001 |
+|   nolabel_line130                              |    <0.001 |
 |   simultaneousSamplingXADC                     |     0.002 |
 +------------------------------------------------+-----------+
 

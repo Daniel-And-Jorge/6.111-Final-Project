@@ -1,7 +1,7 @@
 Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 --------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2016.2 (lin64) Build 1577090 Thu Jun  2 16:32:35 MDT 2016
-| Date         : Mon Nov 28 16:05:25 2016
+| Date         : Mon Nov 28 16:55:08 2016
 | Host         : eecs-digital-02 running 64-bit Ubuntu 14.04.5 LTS
 | Command      : report_control_sets -verbose -file Oscilloscope_v1_control_sets_placed.rpt
 | Design       : Oscilloscope_v1
@@ -33,12 +33,12 @@ Table of Contents
 +--------------+-----------------------+------------------------+-----------------+--------------+
 | Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
 +--------------+-----------------------+------------------------+-----------------+--------------+
-| No           | No                    | No                     |             290 |          101 |
+| No           | No                    | No                     |             290 |          100 |
 | No           | No                    | Yes                    |               0 |            0 |
 | No           | Yes                   | No                     |              39 |           15 |
-| Yes          | No                    | No                     |             678 |          212 |
+| Yes          | No                    | No                     |             678 |          219 |
 | Yes          | No                    | Yes                    |               0 |            0 |
-| Yes          | Yes                   | No                     |             282 |           90 |
+| Yes          | Yes                   | No                     |             282 |           89 |
 +--------------+-----------------------+------------------------+-----------------+--------------+
 
 
@@ -48,56 +48,56 @@ Table of Contents
 +-----------------------------+---------------------------------------------------------+--------------------------------------------------+------------------+----------------+
 |         Clock Signal        |                      Enable Signal                      |                 Set/Reset Signal                 | Slice Load Count | Bel Load Count |
 +-----------------------------+---------------------------------------------------------+--------------------------------------------------+------------------+----------------+
-|  ClockDivider/inst/clk_out1 | myss/samplePeriod[3]_i_1_n_0                            | nolabel_line124/btn1pulse                        |                4 |              4 |
-|  ClockDivider/inst/clk_out1 | adcc/rawReady                                           | Trigger/samplesSinceTrigger                      |                1 |              5 |
-|  ClockDivider/inst/clk_out1 | myEdgeTypeDetectorChannel2/state[4]_i_1_n_0             | adcc/rawReady                                    |                2 |              5 |
+|  ClockDivider/inst/clk_out1 | myss/samplePeriod[3]_i_1_n_0                            | nolabel_line129/btn1pulse                        |                2 |              4 |
+|  ClockDivider/inst/clk_out1 | adcc/rawReady                                           | Trigger/samplesSinceTrigger                      |                2 |              5 |
 |  ClockDivider/inst/clk_out1 | myEdgeTypeDetectorChannel1/state[4]_i_1_n_0             | adcc/rawReady                                    |                2 |              5 |
-|  ClockDivider/inst/clk_out1 |                                                         | mytls/pixel[11]_i_1_n_0                          |                2 |              6 |
-|  ClockDivider/inst/clk_out1 |                                                         | myText/blankOut                                  |                2 |              6 |
+|  ClockDivider/inst/clk_out1 | myEdgeTypeDetectorChannel2/state[4]_i_1_n_0             | adcc/rawReady                                    |                2 |              5 |
+|  ClockDivider/inst/clk_out1 |                                                         | mytls/pixel[11]_i_1_n_0                          |                3 |              6 |
+|  ClockDivider/inst/clk_out1 |                                                         | myText/blankOut                                  |                1 |              6 |
 |  ClockDivider/inst/clk_out1 |                                                         | myText/pixel[11]_i_1_n_0                         |                1 |              6 |
 |  ClockDivider/inst/clk_out1 |                                                         | myText/column[4]_i_1_n_0                         |                6 |             10 |
-|  ClockDivider/inst/clk_out1 | myss/verticalScaleFactorTimes8Channel2[9]_i_1_n_0       | nolabel_line124/btn1pulse                        |                6 |             10 |
-|  ClockDivider/inst/clk_out1 | myss/verticalScaleFactorTimes8Channel1[9]_i_1_n_0       | nolabel_line124/btn1pulse                        |                6 |             10 |
+|  ClockDivider/inst/clk_out1 | myss/verticalScaleFactorTimes8Channel1[9]_i_1_n_0       | nolabel_line129/btn1pulse                        |                6 |             10 |
+|  ClockDivider/inst/clk_out1 | myss/verticalScaleFactorTimes8Channel2[9]_i_1_n_0       | nolabel_line129/btn1pulse                        |                6 |             10 |
 |  ClockDivider/inst/clk_out1 |                                                         | myXVGA/hreset                                    |                4 |             11 |
 |  ClockDivider/inst/clk_out1 | myXVGA/hreset                                           | myXVGA/displayY0                                 |                4 |             11 |
-|  ClockDivider/inst/clk_out1 | adcc/rawReady                                           | myMeasureSignalChannel1/signalPeriod[11]_i_1_n_0 |                3 |             12 |
-|  ClockDivider/inst/clk_out1 | BufferChannel2/pointer1                                 |                                                  |                3 |             12 |
-|  ClockDivider/inst/clk_out1 | BufferChannel1/trigger_address0[11]_i_1_n_0             |                                                  |                3 |             12 |
-|  ClockDivider/inst/clk_out1 | BufferChannel1/trigger_address1                         |                                                  |                3 |             12 |
-|  ClockDivider/inst/clk_out1 | curveChannel2/address[11]_i_1_n_0                       |                                                  |                3 |             12 |
-|  ClockDivider/inst/clk_out1 | myss/triggerThreshold[11]_i_1_n_0                       | nolabel_line124/btn1pulse                        |                7 |             12 |
-|  ClockDivider/inst/clk_out1 | BufferChannel1/pointer0[0]_i_1_n_0                      |                                                  |                3 |             12 |
-|  ClockDivider/inst/clk_out1 | myToggleChannels/channel2[11]_i_1_n_0                   |                                                  |                3 |             12 |
-|  ClockDivider/inst/clk_out1 | myToggleChannels/channel1[11]_i_1_n_0                   |                                                  |                7 |             12 |
+|  ClockDivider/inst/clk_out1 | BufferChannel1/trigger_address1                         |                                                  |                2 |             12 |
+|  ClockDivider/inst/clk_out1 | myss/triggerThreshold[11]_i_1_n_0                       | nolabel_line129/btn1pulse                        |                7 |             12 |
+|  ClockDivider/inst/clk_out1 | myToggleChannels/channel2[11]_i_1_n_0                   |                                                  |                6 |             12 |
+|  ClockDivider/inst/clk_out1 | myToggleChannels/channel1[11]_i_1_n_0                   |                                                  |                4 |             12 |
 |  ClockDivider/inst/clk_out1 | BufferChannel1/pointer1                                 |                                                  |                3 |             12 |
-|  ClockDivider/inst/clk_out1 | BufferChannel2/trigger_address1                         |                                                  |                3 |             12 |
+|  ClockDivider/inst/clk_out1 | BufferChannel1/pointer0[0]_i_1_n_0                      |                                                  |                3 |             12 |
+|  ClockDivider/inst/clk_out1 | adcc/rawReady                                           | myMeasureSignalChannel1/signalPeriod[11]_i_1_n_0 |                3 |             12 |
+|  ClockDivider/inst/clk_out1 | BufferChannel1/trigger_address0[11]_i_1_n_0             |                                                  |                7 |             12 |
+|  ClockDivider/inst/clk_out1 | BufferChannel2/trigger_address1                         |                                                  |                2 |             12 |
 |  ClockDivider/inst/clk_out1 | BufferChannel2/trigger_address0[11]_i_1_n_0             |                                                  |                5 |             12 |
-|  ClockDivider/inst/clk_out1 | adcc/rawReady                                           | myMeasureSignalChannel2/signalPeriod[11]_i_1_n_0 |                3 |             12 |
+|  ClockDivider/inst/clk_out1 | BufferChannel2/pointer1                                 |                                                  |                3 |             12 |
 |  ClockDivider/inst/clk_out1 | BufferChannel2/pointer0[0]_i_1_n_0                      |                                                  |                3 |             12 |
-|  ClockDivider/inst/clk_out1 | myMeasureSignalChannel1/signalMax[11]_i_1_n_0           |                                                  |                8 |             12 |
-|  ClockDivider/inst/clk_out1 | myMeasureSignalChannel1/signalMin[11]_i_1_n_0           |                                                  |                5 |             12 |
-|  ClockDivider/inst/clk_out1 | myMeasureSignalChannel1/signalPeriod[11]_i_1_n_0        |                                                  |                4 |             12 |
+|  ClockDivider/inst/clk_out1 | curveChannel2/address[11]_i_1_n_0                       |                                                  |                4 |             12 |
+|  ClockDivider/inst/clk_out1 | adcc/rawReady                                           | myMeasureSignalChannel2/signalPeriod[11]_i_1_n_0 |                3 |             12 |
 |  ClockDivider/inst/clk_out1 | curveChannel1/address[11]_i_1_n_0                       |                                                  |                3 |             12 |
-|  ClockDivider/inst/clk_out1 | myMeasureSignalChannel2/signalMax[11]_i_1_n_0           |                                                  |                6 |             12 |
-|  ClockDivider/inst/clk_out1 | myMeasureSignalChannel2/signalMin[11]_i_1_n_0           |                                                  |                6 |             12 |
+|  ClockDivider/inst/clk_out1 | myMeasureSignalChannel2/signalMax[11]_i_1_n_0           |                                                  |                5 |             12 |
+|  ClockDivider/inst/clk_out1 | myMeasureSignalChannel1/signalPeriod[11]_i_1_n_0        |                                                  |                5 |             12 |
 |  ClockDivider/inst/clk_out1 | myMeasureSignalChannel2/signalPeriod[11]_i_1_n_0        |                                                  |                3 |             12 |
+|  ClockDivider/inst/clk_out1 | myMeasureSignalChannel2/signalMin[11]_i_1_n_0           |                                                  |                6 |             12 |
+|  ClockDivider/inst/clk_out1 | myMeasureSignalChannel1/signalMax[11]_i_1_n_0           |                                                  |                7 |             12 |
+|  ClockDivider/inst/clk_out1 | myMeasureSignalChannel1/signalMin[11]_i_1_n_0           |                                                  |                4 |             12 |
 |  ClockDivider/inst/clk_out1 | myToggleChannels/channelDataReady                       | adcc/sampleClock                                 |                4 |             16 |
-|  ClockDivider/inst/clk_out1 | myText/addressA[16]_i_1_n_0                             |                                                  |                9 |             17 |
-|  ClockDivider/inst/clk_out1 | nolabel_line117/count                                   | nolabel_line117/count[0]_i_1_n_0                 |                5 |             19 |
-|  ClockDivider/inst/clk_out1 | nolabel_line120/count                                   | nolabel_line120/count[0]_i_1_n_0                 |                5 |             19 |
-|  ClockDivider/inst/clk_out1 | nolabel_line118/count                                   | nolabel_line118/count[0]_i_1_n_0                 |                5 |             19 |
-|  ClockDivider/inst/clk_out1 | nolabel_line119/count                                   | nolabel_line119/count[0]_i_1_n_0                 |                5 |             19 |
-|  ClockDivider/inst/clk_out1 | myToggleChannels/channelDataReady                       |                                                  |               11 |             24 |
-|  ClockDivider/inst/clk_out1 | adcc/sampleClock                                        |                                                  |               13 |             24 |
+|  ClockDivider/inst/clk_out1 | myText/addressA[16]_i_1_n_0                             |                                                  |               10 |             17 |
+|  ClockDivider/inst/clk_out1 | nolabel_line124/count                                   | nolabel_line124/count[0]_i_1_n_0                 |                5 |             19 |
+|  ClockDivider/inst/clk_out1 | nolabel_line122/count                                   | nolabel_line122/count[0]_i_1_n_0                 |                5 |             19 |
+|  ClockDivider/inst/clk_out1 | nolabel_line123/count                                   | nolabel_line123/count[0]_i_1_n_0                 |                5 |             19 |
+|  ClockDivider/inst/clk_out1 | nolabel_line125/count                                   | nolabel_line125/count[0]_i_1_n_0                 |                5 |             19 |
+|  ClockDivider/inst/clk_out1 | myToggleChannels/channelDataReady                       |                                                  |               10 |             24 |
+|  ClockDivider/inst/clk_out1 | adcc/sampleClock                                        |                                                  |               11 |             24 |
 |  ClockDivider/inst/clk_out1 | adcc/rawReady                                           | myMeasureSignalChannel1/timeSinceMax             |                7 |             26 |
-|  ClockDivider/inst/clk_out1 | adcc/rawReady                                           | myMeasureSignalChannel1/timeSinceMin             |                7 |             26 |
-|  ClockDivider/inst/clk_out1 | adcc/rawReady                                           | myMeasureSignalChannel2/timeSinceMax             |                7 |             26 |
 |  ClockDivider/inst/clk_out1 | adcc/rawReady                                           | myMeasureSignalChannel2/timeSinceMin             |                7 |             26 |
-|  ClockDivider/inst/clk_out1 | myEdgeTypeDetectorChannel1/intermediates[4][13]_i_1_n_0 |                                                  |               17 |             69 |
-|  ClockDivider/inst/clk_out1 | myEdgeTypeDetectorChannel2/intermediates[4][13]_i_1_n_0 |                                                  |               14 |             69 |
-|  ClockDivider/inst/clk_out1 | adcc/ready                                              |                                                  |               23 |             74 |
-|  ClockDivider/inst/clk_out1 | adcc/rawReady                                           |                                                  |               55 |            211 |
-|  ClockDivider/inst/clk_out1 |                                                         |                                                  |              107 |            319 |
+|  ClockDivider/inst/clk_out1 | adcc/rawReady                                           | myMeasureSignalChannel2/timeSinceMax             |                7 |             26 |
+|  ClockDivider/inst/clk_out1 | adcc/rawReady                                           | myMeasureSignalChannel1/timeSinceMin             |                7 |             26 |
+|  ClockDivider/inst/clk_out1 | myEdgeTypeDetectorChannel2/intermediates[4][13]_i_1_n_0 |                                                  |               17 |             69 |
+|  ClockDivider/inst/clk_out1 | myEdgeTypeDetectorChannel1/intermediates[4][13]_i_1_n_0 |                                                  |               15 |             69 |
+|  ClockDivider/inst/clk_out1 | adcc/ready                                              |                                                  |               29 |             74 |
+|  ClockDivider/inst/clk_out1 | adcc/rawReady                                           |                                                  |               56 |            211 |
+|  ClockDivider/inst/clk_out1 |                                                         |                                                  |              106 |            319 |
 +-----------------------------+---------------------------------------------------------+--------------------------------------------------+------------------+----------------+
 
 

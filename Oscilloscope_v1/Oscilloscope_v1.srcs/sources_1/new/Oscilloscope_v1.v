@@ -334,12 +334,12 @@ module Oscilloscope_v1
                 .gridDisplayX(gridDisplayX), .gridDisplayY(gridDisplayY), .gridHsync(gridHsync), 
                 .gridVsync(gridVsync), .gridBlank(gridBlank), .pixel(gridPixel));
         
-    wire [DISPLAY_X_BITS-1:0] curveDisplayX;
-    wire [DISPLAY_Y_BITS-1:0] curveDisplayY;
-    wire curveHsync;
-    wire curveVsync;
-    wire curveBlank;
-    wire [RGB_BITS-1:0] curvePixel;
+    wire [DISPLAY_X_BITS-1:0] curveChannel1DisplayX;
+    wire [DISPLAY_Y_BITS-1:0] curveChannel1DisplayY;
+    wire curveChannel1Hsync;
+    wire curveChannel1Vsync;
+    wire curveChannel1Blank;
+    wire [RGB_BITS-1:0] curveChannel1Pixel;
     
     wire [11:0] dataIn;
     assign dataIn = bufferDataOutChannel1;
@@ -348,21 +348,20 @@ module Oscilloscope_v1
             (.clock(CLK108MHZ),
             .dataIn(dataIn),
             .verticalScaleFactorTimes8(verticalScaleFactorTimes8Channel1),
-            //.verticalScaleFactorTimes8(SW[13:6]),
             .displayX(gridDisplayX),
             .displayY(gridDisplayY),
             .hsync(gridHsync),
             .vsync(gridVsync),
             .blank(gridBlank),
             .previousPixel(gridPixel),
-            .pixel(curvePixel),
+            .pixel(curveChannel1Pixel),
             .drawStarting(drawStarting),
             .address(curveAddressOutChannel1),
-            .curveDisplayX(curveDisplayX),
-            .curveDisplayY(curveDisplayY),
-            .curveHsync(curveHsync),
-            .curveVsync(curveVsync),
-            .curveBlank(curveBlank)
+            .curveDisplayX(curveChannel1DisplayX),
+            .curveDisplayY(curveChannel1DisplayY),
+            .curveHsync(curveChannel1Hsync),
+            .curveVsync(curveChannel1Vsync),
+            .curveBlank(curveChannel1Blank)
             );
             
     wire [DISPLAY_X_BITS-1:0] curveDisplayX2;
@@ -379,12 +378,12 @@ module Oscilloscope_v1
                     (.clock(CLK108MHZ),
                     .dataIn(dataIn2),
                     .verticalScaleFactorTimes8(0),
-                    .displayX(curveDisplayX),
-                    .displayY(curveDisplayY),
-                    .hsync(curveHsync),
-                    .vsync(curveVsync),
-                    .blank(curveBlank),
-                    .previousPixel(curvePixel),
+                    .displayX(curveChannel1DisplayX),
+                    .displayY(curveChannel1DisplayY),
+                    .hsync(curveChannel1Hsync),
+                    .vsync(curveChannel1Vsync),
+                    .blank(curveChannel1Blank),
+                    .previousPixel(curveChannel1Pixel),
                     .pixel(curvePixel2),
                     .drawStarting(),
                     .address(curveAddressOut2Channel1),

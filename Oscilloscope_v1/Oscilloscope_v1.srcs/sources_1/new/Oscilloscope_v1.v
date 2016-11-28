@@ -260,14 +260,27 @@ module Oscilloscope_v1
                 .readTriggerRelative(1),
                 .readAddress(curveAddressOut2Channel2),
                 .dataOut(buffer2DataOutChannel2));
+    
+    wire [SAMPLE_BITS-1:0] channelSelectedData;
+    wire positiveSlopeChannelSelected;
+    SelectChannelData mySelectChannelData
+            (.clock(CLK108MHZ),
+            .channel1(adccRawDataOutChannel1),
+            .channel2(adccRawDataOutChannel2),
+            .positiveSlopeChannel1(positiveSlopeChannel1),
+            .positiveSlopeChannel2(positiveSlopeChannel2),
+            .channelSelected(channelSelected),
+            .channelSelectedData(channelSelectedData),
+            .positiveSlopeChannelSelected(positiveSlopeChannelSelected)
+            );
         
     TriggerRisingEdgeSteady #(.DATA_BITS(12))
             Trigger
             (.clock(CLK108MHZ),
             .threshold(triggerThreshold),
             .dataReady(adccRawReady),
-            .dataIn(adccRawDataOutChannel1),
-            .triggerDisable(~positiveSlopeChannel1),
+            .dataIn(channelSelectedData),
+            .triggerDisable(~positiveSlopeChannelSelected),
             .isTriggered(isTriggered)
             );
      

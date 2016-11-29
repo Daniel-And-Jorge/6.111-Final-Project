@@ -54,6 +54,10 @@ module Oscilloscope_v1
                 X_CURSOR_1_CHARACTER_12 = 1060,
                 X_CURSOR_1_CHARACTER_11 = 1080,
                 X_CURSOR_1_CHARACTER_10 = 1100,
+                X_CURSOR_1_CHARACTER_9 = 1120,
+                X_CURSOR_1_CHARACTER_8 = 1140,
+                X_CURSOR_1_CHARACTER_7 = 1160,
+                X_CURSOR_1_CHARACTER_6 = 1180,
                 
                 SELECT_CHARACTER_BITS = 7,
                 DRP_ADDRESS_BITS = 7,
@@ -468,6 +472,14 @@ module Oscilloscope_v1
     assign cursor1Character11 = 7'd79;  //o
     wire [SELECT_CHARACTER_BITS-1:0] cursor1Character10;
     assign cursor1Character10 = 7'd82;  //r
+    wire [SELECT_CHARACTER_BITS-1:0] cursor1Character9;
+    assign cursor1Character9 = 7'd0;  //Space
+    wire [SELECT_CHARACTER_BITS-1:0] cursor1Character8;
+    assign cursor1Character8 = 7'd17;  //1
+    wire [SELECT_CHARACTER_BITS-1:0] cursor1Character7;
+    assign cursor1Character7 = 7'd26;  //:
+    wire [SELECT_CHARACTER_BITS-1:0] cursor1Character6;
+    assign cursor1Character6 = 7'd0;  //Space
     Text myText (.clock(CLK108MHZ), 
         .xMiddleVoltage4(X_MIDDLE_VOLTAGE_CHARACTER_4), .yMiddleVoltage4(Y_MIDDLE_VOLTAGE_CHARACTER_4), .middleVoltageCharacter4(middleVoltageCharacter4),
         .xMiddleVoltage3(X_MIDDLE_VOLTAGE_CHARACTER_3), .yMiddleVoltage3(Y_MIDDLE_VOLTAGE_CHARACTER_3), .middleVoltageCharacter3(middleVoltageCharacter3),
@@ -486,6 +498,10 @@ module Oscilloscope_v1
         .xCursor1_12(X_CURSOR_1_CHARACTER_12), .yCursor1_12(Y_CURSOR_1), .cursor1Character12(cursor1Character12),
         .xCursor1_11(X_CURSOR_1_CHARACTER_11), .yCursor1_11(Y_CURSOR_1), .cursor1Character11(cursor1Character11),
         .xCursor1_10(X_CURSOR_1_CHARACTER_10), .yCursor1_10(Y_CURSOR_1), .cursor1Character10(cursor1Character10),
+        .xCursor1_9(X_CURSOR_1_CHARACTER_9), .yCursor1_9(Y_CURSOR_1), .cursor1Character9(cursor1Character9),
+        .xCursor1_8(X_CURSOR_1_CHARACTER_8), .yCursor1_8(Y_CURSOR_1), .cursor1Character8(cursor1Character8),
+        .xCursor1_7(X_CURSOR_1_CHARACTER_7), .yCursor1_7(Y_CURSOR_1), .cursor1Character7(cursor1Character7),
+        .xCursor1_6(X_CURSOR_1_CHARACTER_6), .yCursor1_6(Y_CURSOR_1), .cursor1Character6(cursor1Character6),
         
         .displayX(tlsDisplayX), .displayY(tlsDisplayY), 
         .hsync(tlsHsync), .vsync(tlsVsync), .blank(tlsBlank), .previousPixel(tlsPixel),

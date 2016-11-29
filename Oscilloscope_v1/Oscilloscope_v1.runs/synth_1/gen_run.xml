@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7a100tcsg324-3" LaunchTime="1480394340">
+<GenRun Id="synth_1" LaunchPart="xc7a100tcsg324-3" LaunchTime="1480444534">
   <File Type="VDS-TIMING-PB" Name="Oscilloscope_v1_timing_summary_synth.pb"/>
   <File Type="VDS-TIMINGSUMMARY" Name="Oscilloscope_v1_timing_summary_synth.rpt"/>
   <File Type="RDS-DCP" Name="Oscilloscope_v1.dcp"/>
@@ -10,6 +10,20 @@
   <File Type="PA-TCL" Name="Oscilloscope_v1.tcl"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
     <Filter Type="Srcs"/>
+    <File Path="$PSRCDIR/sources_1/new/Text.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/DecimalToROMLocation.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
     <File Path="$PSRCDIR/sources_1/new/SelectChannelData.v">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
@@ -141,13 +155,6 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/new/Text.v">
-      <FileInfo>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
     <File Path="$PSRCDIR/sources_1/new/Oscilloscope_v1.v">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
@@ -198,9 +205,9 @@
   <Strategy Version="1" Minor="2">
     <StratHandle Name="Flow_RuntimeOptimized" Flow="Vivado Synthesis 2016"/>
     <Step Id="synth_design">
-      <Option Id="FsmExtraction">0</Option>
       <Option Id="FlattenHierarchy">1</Option>
       <Option Id="Directive">0</Option>
+      <Option Id="FsmExtraction">0</Option>
     </Step>
   </Strategy>
   <BlockFileSet Type="BlockSrcs" Name="clk_wiz_0"/>

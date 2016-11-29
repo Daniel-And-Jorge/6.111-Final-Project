@@ -70,7 +70,8 @@ module Oscilloscope_v1
                 DRP_SAMPLE_BITS = 16,
                 SAMPLE_BITS = 12,
                 TOGGLE_CHANNELS_STATE_BITS = 2,
-                SCALE_FACTOR_BITS = 10) 
+                SCALE_FACTOR_BITS = 10,
+                DIGIT_BITS = 4) 
    (input CLK100MHZ,
    input vauxp11,
    input vauxn11,
@@ -439,8 +440,27 @@ module Oscilloscope_v1
                 .spriteHsync(tlsHsync),
                 .spriteVsync(tlsVsync),
                 .spriteBlank(tlsBlank)
-                );    
-                  
+                );
+    
+    wire [DIGIT_BITS-1:0] cursor1Number2;
+    assign cursor1Number2 = 4'd1;
+    wire [DIGIT_BITS-1:0] cursor1Number1;
+    assign cursor1Number1 = 4'd2;
+    wire [DIGIT_BITS-1:0] cursor1Number0;
+    assign cursor1Number0 = 4'd3;    
+    wire [SELECT_CHARACTER_BITS-1:0] cursor1VoltageCharacter2;
+    wire [SELECT_CHARACTER_BITS-1:0] cursor1VoltageCharacter1;
+    wire [SELECT_CHARACTER_BITS-1:0] cursor1VoltageCharacter0;
+    DecimalToROMLocation cursor1VoltageDecimalToROMLocation(
+            .clock(CLK108MHZ),
+            .number2(cursor1Number2),
+            .number1(cursor1Number1),
+            .number0(cursor1Number0),
+            .character2(cursor1VoltageCharacter2),
+            .character1(cursor1VoltageCharacter1),
+            .character0(cursor1VoltageCharacter0)
+            );
+            
     wire textHsync, textVsync, textBlank;
     wire [RGB_BITS-1:0] textPixel;
     wire [DISPLAY_X_BITS-1:0] textDisplayX;
@@ -489,11 +509,11 @@ module Oscilloscope_v1
     wire [SELECT_CHARACTER_BITS-1:0] cursor1Character5;
     assign cursor1Character5 = 7'd11;  //+
     wire [SELECT_CHARACTER_BITS-1:0] cursor1Character4;
-    assign cursor1Character4 = 7'd16;  //0
+    assign cursor1Character4 = cursor1VoltageCharacter2;  //1
     wire [SELECT_CHARACTER_BITS-1:0] cursor1Character3;
-    assign cursor1Character3 = 7'd16;  //0
+    assign cursor1Character3 = cursor1VoltageCharacter1;  //2
     wire [SELECT_CHARACTER_BITS-1:0] cursor1Character2;
-    assign cursor1Character2 = 7'd16;  //0
+    assign cursor1Character2 = cursor1VoltageCharacter0;  //3
     wire [SELECT_CHARACTER_BITS-1:0] cursor1Character1;
     assign cursor1Character1 = 7'd77;  //m
     wire [SELECT_CHARACTER_BITS-1:0] cursor1Character0;

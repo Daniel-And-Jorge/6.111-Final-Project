@@ -270,45 +270,10 @@ connect_debug_port u_ila_0/probe0 [get_nets [list {state[0]} {state[1]}]]
 connect_debug_port u_ila_0/probe1 [get_nets [list {previousState[0]} {previousState[1]}]]
 
 
-create_debug_core u_ila_0 ila
-set_property ALL_PROBE_SAME_MU true [get_debug_cores u_ila_0]
-set_property ALL_PROBE_SAME_MU_CNT 2 [get_debug_cores u_ila_0]
-set_property C_ADV_TRIGGER false [get_debug_cores u_ila_0]
-set_property C_DATA_DEPTH 1024 [get_debug_cores u_ila_0]
-set_property C_EN_STRG_QUAL true [get_debug_cores u_ila_0]
-set_property C_INPUT_PIPE_STAGES 0 [get_debug_cores u_ila_0]
-set_property C_TRIGIN_EN false [get_debug_cores u_ila_0]
-set_property C_TRIGOUT_EN false [get_debug_cores u_ila_0]
-set_property port_width 1 [get_debug_ports u_ila_0/clk]
-connect_debug_port u_ila_0/clk [get_nets [list ClockDivider/inst/clk_out1]]
-set_property PROBE_TYPE DATA_AND_TRIGGER [get_debug_ports u_ila_0/probe0]
-set_property port_width 7 [get_debug_ports u_ila_0/probe0]
-connect_debug_port u_ila_0/probe0 [get_nets [list {cursor1VoltageCharacter2[0]} {cursor1VoltageCharacter2[1]} {cursor1VoltageCharacter2[2]} {cursor1VoltageCharacter2[3]} {cursor1VoltageCharacter2[4]} {cursor1VoltageCharacter2[5]} {cursor1VoltageCharacter2[6]}]]
-create_debug_port u_ila_0 probe
-set_property PROBE_TYPE DATA_AND_TRIGGER [get_debug_ports u_ila_0/probe1]
-set_property port_width 7 [get_debug_ports u_ila_0/probe1]
 connect_debug_port u_ila_0/probe1 [get_nets [list {cursor1VoltageCharacter1[0]} {cursor1VoltageCharacter1[1]} {cursor1VoltageCharacter1[2]} {cursor1VoltageCharacter1[3]} {cursor1VoltageCharacter1[4]} {cursor1VoltageCharacter1[5]} {cursor1VoltageCharacter1[6]}]]
-create_debug_port u_ila_0 probe
-set_property PROBE_TYPE DATA_AND_TRIGGER [get_debug_ports u_ila_0/probe2]
-set_property port_width 7 [get_debug_ports u_ila_0/probe2]
 connect_debug_port u_ila_0/probe2 [get_nets [list {cursor1VoltageCharacter0[0]} {cursor1VoltageCharacter0[1]} {cursor1VoltageCharacter0[2]} {cursor1VoltageCharacter0[3]} {cursor1VoltageCharacter0[4]} {cursor1VoltageCharacter0[5]} {cursor1VoltageCharacter0[6]}]]
-create_debug_port u_ila_0 probe
-set_property PROBE_TYPE DATA_AND_TRIGGER [get_debug_ports u_ila_0/probe3]
-set_property port_width 10 [get_debug_ports u_ila_0/probe3]
 connect_debug_port u_ila_0/probe3 [get_nets [list {cursor1Voltage[0]} {cursor1Voltage[1]} {cursor1Voltage[2]} {cursor1Voltage[3]} {cursor1Voltage[4]} {cursor1Voltage[5]} {cursor1Voltage[6]} {cursor1Voltage[7]} {cursor1Voltage[8]} {cursor1Voltage[9]}]]
-create_debug_port u_ila_0 probe
-set_property PROBE_TYPE DATA_AND_TRIGGER [get_debug_ports u_ila_0/probe4]
-set_property port_width 4 [get_debug_ports u_ila_0/probe4]
 connect_debug_port u_ila_0/probe4 [get_nets [list {cursor1Number2[0]} {cursor1Number2[1]} {cursor1Number2[2]} {cursor1Number2[3]}]]
-create_debug_port u_ila_0 probe
-set_property PROBE_TYPE DATA_AND_TRIGGER [get_debug_ports u_ila_0/probe5]
-set_property port_width 4 [get_debug_ports u_ila_0/probe5]
 connect_debug_port u_ila_0/probe5 [get_nets [list {cursor1Number1[0]} {cursor1Number1[1]} {cursor1Number1[2]} {cursor1Number1[3]}]]
-create_debug_port u_ila_0 probe
-set_property PROBE_TYPE DATA_AND_TRIGGER [get_debug_ports u_ila_0/probe6]
-set_property port_width 4 [get_debug_ports u_ila_0/probe6]
 connect_debug_port u_ila_0/probe6 [get_nets [list {cursor1Number0[0]} {cursor1Number0[1]} {cursor1Number0[2]} {cursor1Number0[3]}]]
-set_property C_CLK_INPUT_FREQ_HZ 300000000 [get_debug_cores dbg_hub]
-set_property C_ENABLE_CLK_DIVIDER false [get_debug_cores dbg_hub]
-set_property C_USER_SCAN_CHAIN 1 [get_debug_cores dbg_hub]
-connect_debug_port dbg_hub/clk [get_nets CLK108MHZ]
+

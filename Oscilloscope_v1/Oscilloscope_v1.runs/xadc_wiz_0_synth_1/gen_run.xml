@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <GenRun Id="xadc_wiz_0_synth_1" LaunchPart="xc7a100tcsg324-3" LaunchTime="1479784150">
-  <File Type="VDS-TIMING-PB" Name="xadc_wiz_0_timing_summary_synth.pb"/>
+  <File Type="RDS-DCP" Name="xadc_wiz_0.dcp"/>
+  <File Type="RDS-UTIL-PB" Name="xadc_wiz_0_utilization_synth.pb"/>
   <File Type="VDS-TIMINGSUMMARY" Name="xadc_wiz_0_timing_summary_synth.rpt"/>
+  <File Type="VDS-TIMING-PB" Name="xadc_wiz_0_timing_summary_synth.pb"/>
   <File Type="RDS-RDS" Name="xadc_wiz_0.vds"/>
   <File Type="PA-TCL" Name="xadc_wiz_0.tcl"/>
   <File Type="RDS-PROPCONSTRS" Name="xadc_wiz_0_drc_synth.rpt"/>
   <File Type="RDS-UTIL" Name="xadc_wiz_0_utilization_synth.rpt"/>
-  <File Type="RDS-UTIL-PB" Name="xadc_wiz_0_utilization_synth.pb"/>
-  <File Type="RDS-DCP" Name="xadc_wiz_0.dcp"/>
   <FileSet Name="sources" Type="BlockSrcs" RelSrcDir="$PSRCDIR/xadc_wiz_0">
     <File Path="$PSRCDIR/sources_1/ip/xadc_wiz_0.xcix">
       <FileInfo>

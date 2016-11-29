@@ -72,7 +72,8 @@ module Oscilloscope_v1
                 TOGGLE_CHANNELS_STATE_BITS = 2,
                 SCALE_FACTOR_BITS = 10,
                 DIGIT_BITS = 4,
-                CURSOR_VOLTAGE_BITS = 10) 
+                CURSOR_VOLTAGE_BITS = 10,
+                SCALE_EXPONENT_BITS = 4) 
    (input CLK100MHZ,
    input vauxp11,
    input vauxn11,
@@ -110,6 +111,8 @@ module Oscilloscope_v1
     wire signed [11:0] triggerThreshold;
     wire [9:0] verticalScaleFactorTimes8Channel1;
     wire [9:0] verticalScaleFactorTimes8Channel2;
+    wire [3:0] verticalScaleExponentChannel1;
+    wire [3:0] verticalScaleExponentChannel2;
     wire [5:0] samplePeriod;
     wire channelSelected;
     assign LED[15] = channelSelected;
@@ -131,6 +134,8 @@ module Oscilloscope_v1
                         .triggerThreshold(triggerThreshold), 
                         .verticalScaleFactorTimes8Channel1(verticalScaleFactorTimes8Channel1), 
                         .verticalScaleFactorTimes8Channel2(verticalScaleFactorTimes8Channel2),
+                        .verticalScaleExponentChannel1(verticalScaleExponentChannel1),
+                        .verticalScaleExponentChannel2(verticalScaleExponentChannel2),
                         .samplePeriod(samplePeriod), .channelSelected(channelSelected)                
                         );
     
@@ -445,13 +450,15 @@ module Oscilloscope_v1
     
     wire [DISPLAY_Y_BITS-1:0] yCursor1;
     assign yCursor1 = 12'd412;
+    wire [SCALE_EXPONENT_BITS-1:0] verticalScaleExponentChannelSelected;
+    assign verticalScaleExponentChannelSelected =4'd3;
     wire signed [CURSOR_VOLTAGE_BITS-1:0] cursor1Voltage;
     wire [CURSOR_VOLTAGE_BITS-1:0] cursor1VoltageAbsoluteValue;
     wire isNegative;
     YPixelToVoltage yCursor1ToVoltage
             (.clock(CLK108MHZ),
             .y(yCursor1),
-            .scale(verticalScaleFactorTimes8ChannelSelected),
+            .scaleExponent(verticalScaleExponentChannelSelected),
             .voltage(cursor1Voltage),
             .voltageAbsoluteValue(cursor1VoltageAbsoluteValue),
             .isNegative(isNegative)

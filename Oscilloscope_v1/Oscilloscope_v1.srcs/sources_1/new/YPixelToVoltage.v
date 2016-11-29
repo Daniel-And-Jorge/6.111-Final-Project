@@ -23,7 +23,7 @@
 module YPixelToVoltage
     #(parameter VOLTAGE_BITS = 10,
                 DISPLAY_Y_BITS = 12,
-                SCALE_FACTOR_SIZE = 10,
+                SCALE_EXPONENT_BITS = 4,
                 Y_ZERO_VOLTS = 512,
                 PIXELS_RELATIVE_TO_ZERO_VOLTS_TIMES_250_BITS = 18,
                 PIXELS_RELATIVE_TO_ZERO_VOLTS_TIMES_250_BITS_TIMES_DEFAULT_SCALE = 21,
@@ -33,7 +33,7 @@ module YPixelToVoltage
     (
     input clock,
     input [DISPLAY_Y_BITS-1:0] y,
-    input [SCALE_FACTOR_SIZE-1:0] scale,
+    input [SCALE_EXPONENT_BITS-1:0] scaleExponent,  //scale=8 -> scaleExponent=3
     output reg signed [VOLTAGE_BITS-1:0] voltage,
     output reg [VOLTAGE_BITS-1:0] voltageAbsoluteValue,
     output reg isNegative  //0 if positive 1 if negative
@@ -44,13 +44,7 @@ module YPixelToVoltage
     
     reg signed [PIXELS_RELATIVE_TO_ZERO_VOLTS_TIMES_250_BITS-1:0] pixelsRelativeToZeroVoltsTimesVoltageRange;
     reg signed [PIXELS_RELATIVE_TO_ZERO_VOLTS_TIMES_250_BITS_TIMES_DEFAULT_SCALE-1:0] pixelsRelativeToZeroVoltsTimesVoltageRangeTimesDefaultScale;
-    
-    reg [SCALE_TIMES_DISPLAY_HEIGHT_BITS-1:0] scaleTimesDisplayHeight;
-    reg [SCALE_TIMES_DISPLAY_HEIGHT_BITS-1:0] scaleTimesDisplayHeightCycle1;
-    
-    reg a;
-    reg b;
-    reg c;
+	 reg signed [PIXELS_RELATIVE_TO_ZERO_VOLTS_TIMES_250_BITS_TIMES_DEFAULT_SCALE-1:0] pixelsRelativeToZeroVoltsTimesVoltageRangeTimesDefaultScaleDividedByScaleExponent;
     
     always @(posedge clock) begin
         //voltage = y*DEFAULT_VOLTAGE_RANGE*DEFAULT_SCALE/(DISPLAY_HEIGHT*scale)
@@ -58,16 +52,18 @@ module YPixelToVoltage
     
         //cycle 0
         pixelsRelativeToZeroVoltsTimesVoltageRange <= pixelsRelativeToZeroVolts * DEFAULT_SCALE_VOLTAGE_RANGE;
-        scaleTimesDisplayHeight <= scale * DISPLAY_HEIGHT;
         
         //cycle 1
         pixelsRelativeToZeroVoltsTimesVoltageRangeTimesDefaultScale <= pixelsRelativeToZeroVoltsTimesVoltageRange << 3;  //multiply by 8 (DEFAULT_SCALE = 8)
-        scaleTimesDisplayHeightCycle1 <= scaleTimesDisplayHeight;
         
         //cycle 2
-        voltage <= pixelsRelativeToZeroVoltsTimesVoltageRangeTimesDefaultScale / scaleTimesDisplayHeightCycle1;
+        pixelsRelativeToZeroVoltsTimesVoltageRangeTimesDefaultScaleDividedByScaleExponent <= 
+										pixelsRelativeToZeroVoltsTimesVoltageRangeTimesDefaultScale >> scaleExponent;  //divide by 2^scaleExponent
+										
+		  //cycle 3
+		  voltage <= pixelsRelativeToZeroVoltsTimesVoltageRangeTimesDefaultScaleDividedByScaleExponent / DISPLAY_HEIGHT;
         
-        //cycle 3
+        //cycle 4
         isNegative <= (voltage < 0) ? 1'b1 : 1'b0;
         voltageAbsoluteValue <= (voltage > 0) ? voltage : ((~voltage) + 1);
     end

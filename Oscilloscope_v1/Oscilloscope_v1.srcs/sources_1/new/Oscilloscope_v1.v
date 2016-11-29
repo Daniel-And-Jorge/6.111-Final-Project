@@ -495,7 +495,7 @@ module Oscilloscope_v1
     wire [SELECT_CHARACTER_BITS-1:0] cursor1Character2;
     assign cursor1Character2 = 7'd16;  //0
     wire [SELECT_CHARACTER_BITS-1:0] cursor1Character1;
-    assign cursor1Character1 = 7'd37;  //m
+    assign cursor1Character1 = 7'd77;  //m
     wire [SELECT_CHARACTER_BITS-1:0] cursor1Character0;
     assign cursor1Character0 = 7'd54;  //V
     Text myText (.clock(CLK108MHZ), 

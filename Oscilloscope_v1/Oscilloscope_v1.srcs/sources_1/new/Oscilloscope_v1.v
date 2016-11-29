@@ -48,16 +48,22 @@ module Oscilloscope_v1
                 Y_TIME_PER_DIVISION_CHARACTER_0 = 980,
                 
                 Y_CURSOR_1 = 80,
-                X_CURSOR_1_CHARACTER_15 = 1000,
-                X_CURSOR_1_CHARACTER_14 = 1020,
-                X_CURSOR_1_CHARACTER_13 = 1040,
-                X_CURSOR_1_CHARACTER_12 = 1060,
-                X_CURSOR_1_CHARACTER_11 = 1080,
-                X_CURSOR_1_CHARACTER_10 = 1100,
-                X_CURSOR_1_CHARACTER_9 = 1120,
-                X_CURSOR_1_CHARACTER_8 = 1140,
-                X_CURSOR_1_CHARACTER_7 = 1160,
-                X_CURSOR_1_CHARACTER_6 = 1180,
+                X_CURSOR_1_CHARACTER_15 = 940,
+                X_CURSOR_1_CHARACTER_14 = 960,
+                X_CURSOR_1_CHARACTER_13 = 980,
+                X_CURSOR_1_CHARACTER_12 = 1000,
+                X_CURSOR_1_CHARACTER_11 = 1020,
+                X_CURSOR_1_CHARACTER_10 = 1040,
+                X_CURSOR_1_CHARACTER_9 = 1060,
+                X_CURSOR_1_CHARACTER_8 = 1080,
+                X_CURSOR_1_CHARACTER_7 = 1100,
+                X_CURSOR_1_CHARACTER_6 = 1120,
+                X_CURSOR_1_CHARACTER_5 = 1140,
+                X_CURSOR_1_CHARACTER_4 = 1160,
+                X_CURSOR_1_CHARACTER_3 = 1180,
+                X_CURSOR_1_CHARACTER_2 = 1200,
+                X_CURSOR_1_CHARACTER_1 = 1220,
+                X_CURSOR_1_CHARACTER_0 = 1240,
                 
                 SELECT_CHARACTER_BITS = 7,
                 DRP_ADDRESS_BITS = 7,
@@ -480,6 +486,18 @@ module Oscilloscope_v1
     assign cursor1Character7 = 7'd26;  //:
     wire [SELECT_CHARACTER_BITS-1:0] cursor1Character6;
     assign cursor1Character6 = 7'd0;  //Space
+    wire [SELECT_CHARACTER_BITS-1:0] cursor1Character5;
+    assign cursor1Character5 = 7'd11;  //+
+    wire [SELECT_CHARACTER_BITS-1:0] cursor1Character4;
+    assign cursor1Character4 = 7'd16;  //0
+    wire [SELECT_CHARACTER_BITS-1:0] cursor1Character3;
+    assign cursor1Character3 = 7'd16;  //0
+    wire [SELECT_CHARACTER_BITS-1:0] cursor1Character2;
+    assign cursor1Character2 = 7'd16;  //0
+    wire [SELECT_CHARACTER_BITS-1:0] cursor1Character1;
+    assign cursor1Character1 = 7'd37;  //m
+    wire [SELECT_CHARACTER_BITS-1:0] cursor1Character0;
+    assign cursor1Character0 = 7'd54;  //V
     Text myText (.clock(CLK108MHZ), 
         .xMiddleVoltage4(X_MIDDLE_VOLTAGE_CHARACTER_4), .yMiddleVoltage4(Y_MIDDLE_VOLTAGE_CHARACTER_4), .middleVoltageCharacter4(middleVoltageCharacter4),
         .xMiddleVoltage3(X_MIDDLE_VOLTAGE_CHARACTER_3), .yMiddleVoltage3(Y_MIDDLE_VOLTAGE_CHARACTER_3), .middleVoltageCharacter3(middleVoltageCharacter3),
@@ -502,6 +520,12 @@ module Oscilloscope_v1
         .xCursor1_8(X_CURSOR_1_CHARACTER_8), .yCursor1_8(Y_CURSOR_1), .cursor1Character8(cursor1Character8),
         .xCursor1_7(X_CURSOR_1_CHARACTER_7), .yCursor1_7(Y_CURSOR_1), .cursor1Character7(cursor1Character7),
         .xCursor1_6(X_CURSOR_1_CHARACTER_6), .yCursor1_6(Y_CURSOR_1), .cursor1Character6(cursor1Character6),
+        .xCursor1_5(X_CURSOR_1_CHARACTER_5), .yCursor1_5(Y_CURSOR_1), .cursor1Character5(cursor1Character5),
+        .xCursor1_4(X_CURSOR_1_CHARACTER_4), .yCursor1_4(Y_CURSOR_1), .cursor1Character4(cursor1Character4),
+        .xCursor1_3(X_CURSOR_1_CHARACTER_3), .yCursor1_3(Y_CURSOR_1), .cursor1Character3(cursor1Character3),
+        .xCursor1_2(X_CURSOR_1_CHARACTER_2), .yCursor1_2(Y_CURSOR_1), .cursor1Character2(cursor1Character2),
+        .xCursor1_1(X_CURSOR_1_CHARACTER_1), .yCursor1_1(Y_CURSOR_1), .cursor1Character1(cursor1Character1),
+        .xCursor1_0(X_CURSOR_1_CHARACTER_0), .yCursor1_0(Y_CURSOR_1), .cursor1Character0(cursor1Character0),
         
         .displayX(tlsDisplayX), .displayY(tlsDisplayY), 
         .hsync(tlsHsync), .vsync(tlsVsync), .blank(tlsBlank), .previousPixel(tlsPixel),

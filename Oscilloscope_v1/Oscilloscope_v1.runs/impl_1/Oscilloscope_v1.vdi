@@ -2,44 +2,123 @@
 # Vivado v2016.2 (64-bit)
 # SW Build 1577090 on Thu Jun  2 16:32:35 MDT 2016
 # IP Build 1577682 on Fri Jun  3 12:00:54 MDT 2016
-# Start of session at: Tue Nov 29 14:51:11 2016
-# Process ID: 21277
+# Start of session at: Tue Nov 29 16:24:12 2016
+# Process ID: 24861
 # Current directory: /afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/impl_1
 # Command line: vivado -log Oscilloscope_v1.vdi -applog -messageDb vivado.pb -mode batch -source Oscilloscope_v1.tcl -notrace
 # Log file: /afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/impl_1/Oscilloscope_v1.vdi
 # Journal file: /afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/impl_1/vivado.jou
 #-----------------------------------------------------------
 source Oscilloscope_v1.tcl -notrace
-Command: open_checkpoint /afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/impl_1/Oscilloscope_v1.dcp
-
-Starting open_checkpoint Task
-
-Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.02 . Memory (MB): peak = 967.730 ; gain = 0.000 ; free physical = 1757 ; free virtual = 9867
-INFO: [Netlist 29-17] Analyzing 1369 Unisim elements for replacement
+Design is defaulting to srcset: sources_1
+Design is defaulting to constrset: constrs_1
+WARNING: [filemgmt 56-147] Overwrite of existing file isn't enabled.  Please specify -force to overwrite file  [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/impl_1/.Xil/Vivado-24861-eecs-digital-02/CharactersROM/CharactersROM.dcp]
+WARNING: [filemgmt 56-147] Overwrite of existing file isn't enabled.  Please specify -force to overwrite file  [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/impl_1/.Xil/Vivado-24861-eecs-digital-02/clk_wiz_0/clk_wiz_0.dcp]
+INFO: [Project 1-454] Reading design checkpoint '/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/impl_1/.Xil/Vivado-24861-eecs-digital-02/clk_wiz_0/clk_wiz_0.dcp' for cell 'ClockDivider'
+INFO: [Project 1-454] Reading design checkpoint '/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/ip/blk_mem_gen_0/blk_mem_gen_0.dcp' for cell 'Buffer2Channel1/bram0'
+INFO: [Project 1-454] Reading design checkpoint '/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/impl_1/.Xil/Vivado-24861-eecs-digital-02/CharactersROM/CharactersROM.dcp' for cell 'myText/characterBRAM'
+INFO: [Netlist 29-17] Analyzing 1527 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-479] Netlist was created with Vivado 2016.2
 INFO: [Device 21-403] Loading part xc7a100tcsg324-3
 INFO: [Project 1-570] Preparing netlist for logic optimization
-Parsing XDC File [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/impl_1/.Xil/Vivado-21277-eecs-digital-02/dcp/Oscilloscope_v1_board.xdc]
-Finished Parsing XDC File [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/impl_1/.Xil/Vivado-21277-eecs-digital-02/dcp/Oscilloscope_v1_board.xdc]
-Parsing XDC File [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/impl_1/.Xil/Vivado-21277-eecs-digital-02/dcp/Oscilloscope_v1_early.xdc]
+Parsing XDC File [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0_board.xdc] for cell 'ClockDivider/inst'
+Finished Parsing XDC File [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0_board.xdc] for cell 'ClockDivider/inst'
+Parsing XDC File [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xdc] for cell 'ClockDivider/inst'
 INFO: [Timing 38-35] Done setting XDC timing constraints. [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xdc:57]
 INFO: [Timing 38-2] Deriving generated clocks [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xdc:57]
-get_clocks: Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1718.984 ; gain = 457.461 ; free physical = 1122 ; free virtual = 9234
-Finished Parsing XDC File [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/impl_1/.Xil/Vivado-21277-eecs-digital-02/dcp/Oscilloscope_v1_early.xdc]
-Parsing XDC File [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/impl_1/.Xil/Vivado-21277-eecs-digital-02/dcp/Oscilloscope_v1.xdc]
-Finished Parsing XDC File [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/impl_1/.Xil/Vivado-21277-eecs-digital-02/dcp/Oscilloscope_v1.xdc]
-Reading XDEF placement.
-Reading placer database...
-Reading XDEF routing.
-Read XDEF File: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 1718.984 ; gain = 0.000 ; free physical = 1122 ; free virtual = 9234
-Restored from archive | CPU: 0.000000 secs | Memory: 0.013092 MB |
-Finished XDEF File Restore: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 1718.984 ; gain = 0.000 ; free physical = 1122 ; free virtual = 9234
+get_clocks: Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1784.102 ; gain = 452.453 ; free physical = 1437 ; free virtual = 9312
+Finished Parsing XDC File [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xdc] for cell 'ClockDivider/inst'
+Parsing XDC File [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/constrs_1/imports/constraints/Nexys4DDR_Master.xdc]
+WARNING: [Vivado 12-584] No ports matched 'CPU_RESETN'. [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/constrs_1/imports/constraints/Nexys4DDR_Master.xdc:82]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/constrs_1/imports/constraints/Nexys4DDR_Master.xdc:82]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'vauxn10'. [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/constrs_1/imports/constraints/Nexys4DDR_Master.xdc:146]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/constrs_1/imports/constraints/Nexys4DDR_Master.xdc:146]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'vauxp10'. [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/constrs_1/imports/constraints/Nexys4DDR_Master.xdc:147]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/constrs_1/imports/constraints/Nexys4DDR_Master.xdc:147]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'vauxn2'. [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/constrs_1/imports/constraints/Nexys4DDR_Master.xdc:148]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/constrs_1/imports/constraints/Nexys4DDR_Master.xdc:148]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'vauxp2'. [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/constrs_1/imports/constraints/Nexys4DDR_Master.xdc:149]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/constrs_1/imports/constraints/Nexys4DDR_Master.xdc:149]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-507] No nets matched 'state[0]'. [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/constrs_1/imports/constraints/Nexys4DDR_Master.xdc:269]
+WARNING: [Vivado 12-507] No nets matched 'state[1]'. [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/constrs_1/imports/constraints/Nexys4DDR_Master.xdc:269]
+CRITICAL WARNING: [Vivado 12-1419] Debug core 'u_ila_0' was not found. [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/constrs_1/imports/constraints/Nexys4DDR_Master.xdc:269]
+WARNING: [Vivado 12-507] No nets matched 'previousState[0]'. [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/constrs_1/imports/constraints/Nexys4DDR_Master.xdc:270]
+WARNING: [Vivado 12-507] No nets matched 'previousState[1]'. [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/constrs_1/imports/constraints/Nexys4DDR_Master.xdc:270]
+CRITICAL WARNING: [Vivado 12-1419] Debug core 'u_ila_0' was not found. [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/constrs_1/imports/constraints/Nexys4DDR_Master.xdc:270]
+WARNING: [Vivado 12-507] No nets matched 'cursor1VoltageCharacter1[4]'. [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/constrs_1/imports/constraints/Nexys4DDR_Master.xdc:273]
+WARNING: [Vivado 12-507] No nets matched 'cursor1VoltageCharacter1[5]'. [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/constrs_1/imports/constraints/Nexys4DDR_Master.xdc:273]
+WARNING: [Vivado 12-507] No nets matched 'cursor1VoltageCharacter1[6]'. [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/constrs_1/imports/constraints/Nexys4DDR_Master.xdc:273]
+CRITICAL WARNING: [Vivado 12-1419] Debug core 'u_ila_0' was not found. [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/constrs_1/imports/constraints/Nexys4DDR_Master.xdc:273]
+WARNING: [Vivado 12-507] No nets matched 'cursor1VoltageCharacter0[4]'. [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/constrs_1/imports/constraints/Nexys4DDR_Master.xdc:274]
+WARNING: [Vivado 12-507] No nets matched 'cursor1VoltageCharacter0[5]'. [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/constrs_1/imports/constraints/Nexys4DDR_Master.xdc:274]
+WARNING: [Vivado 12-507] No nets matched 'cursor1VoltageCharacter0[6]'. [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/constrs_1/imports/constraints/Nexys4DDR_Master.xdc:274]
+CRITICAL WARNING: [Vivado 12-1419] Debug core 'u_ila_0' was not found. [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/constrs_1/imports/constraints/Nexys4DDR_Master.xdc:274]
+WARNING: [Vivado 12-507] No nets matched 'cursor1Voltage[0]'. [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/constrs_1/imports/constraints/Nexys4DDR_Master.xdc:275]
+WARNING: [Vivado 12-507] No nets matched 'cursor1Voltage[1]'. [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/constrs_1/imports/constraints/Nexys4DDR_Master.xdc:275]
+WARNING: [Vivado 12-507] No nets matched 'cursor1Voltage[2]'. [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/constrs_1/imports/constraints/Nexys4DDR_Master.xdc:275]
+WARNING: [Vivado 12-507] No nets matched 'cursor1Voltage[3]'. [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/constrs_1/imports/constraints/Nexys4DDR_Master.xdc:275]
+WARNING: [Vivado 12-507] No nets matched 'cursor1Voltage[4]'. [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/constrs_1/imports/constraints/Nexys4DDR_Master.xdc:275]
+WARNING: [Vivado 12-507] No nets matched 'cursor1Voltage[5]'. [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/constrs_1/imports/constraints/Nexys4DDR_Master.xdc:275]
+WARNING: [Vivado 12-507] No nets matched 'cursor1Voltage[6]'. [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/constrs_1/imports/constraints/Nexys4DDR_Master.xdc:275]
+WARNING: [Vivado 12-507] No nets matched 'cursor1Voltage[7]'. [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/constrs_1/imports/constraints/Nexys4DDR_Master.xdc:275]
+WARNING: [Vivado 12-507] No nets matched 'cursor1Voltage[8]'. [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/constrs_1/imports/constraints/Nexys4DDR_Master.xdc:275]
+WARNING: [Vivado 12-507] No nets matched 'cursor1Voltage[9]'. [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/constrs_1/imports/constraints/Nexys4DDR_Master.xdc:275]
+CRITICAL WARNING: [Vivado 12-1419] Debug core 'u_ila_0' was not found. [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/constrs_1/imports/constraints/Nexys4DDR_Master.xdc:275]
+CRITICAL WARNING: [Vivado 12-1419] Debug core 'u_ila_0' was not found. [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/constrs_1/imports/constraints/Nexys4DDR_Master.xdc:276]
+CRITICAL WARNING: [Vivado 12-1419] Debug core 'u_ila_0' was not found. [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/constrs_1/imports/constraints/Nexys4DDR_Master.xdc:277]
+CRITICAL WARNING: [Vivado 12-1419] Debug core 'u_ila_0' was not found. [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/constrs_1/imports/constraints/Nexys4DDR_Master.xdc:278]
+WARNING: [Vivado 12-507] No nets matched 'cursor1Voltage[9]'. [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/constrs_1/imports/constraints/Nexys4DDR_Master.xdc:281]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/constrs_1/imports/constraints/Nexys4DDR_Master.xdc:281]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-507] No nets matched 'cursor1Voltage[8]'. [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/constrs_1/imports/constraints/Nexys4DDR_Master.xdc:282]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/constrs_1/imports/constraints/Nexys4DDR_Master.xdc:282]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-507] No nets matched 'cursor1Voltage[7]'. [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/constrs_1/imports/constraints/Nexys4DDR_Master.xdc:283]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/constrs_1/imports/constraints/Nexys4DDR_Master.xdc:283]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-507] No nets matched 'cursor1Voltage[2]'. [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/constrs_1/imports/constraints/Nexys4DDR_Master.xdc:284]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/constrs_1/imports/constraints/Nexys4DDR_Master.xdc:284]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-507] No nets matched 'cursor1Voltage[6]'. [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/constrs_1/imports/constraints/Nexys4DDR_Master.xdc:285]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/constrs_1/imports/constraints/Nexys4DDR_Master.xdc:285]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-507] No nets matched 'cursor1Voltage[5]'. [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/constrs_1/imports/constraints/Nexys4DDR_Master.xdc:286]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/constrs_1/imports/constraints/Nexys4DDR_Master.xdc:286]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-507] No nets matched 'cursor1Voltage[4]'. [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/constrs_1/imports/constraints/Nexys4DDR_Master.xdc:287]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/constrs_1/imports/constraints/Nexys4DDR_Master.xdc:287]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-507] No nets matched 'cursor1Voltage[3]'. [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/constrs_1/imports/constraints/Nexys4DDR_Master.xdc:288]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/constrs_1/imports/constraints/Nexys4DDR_Master.xdc:288]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-507] No nets matched 'cursor1Voltage[1]'. [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/constrs_1/imports/constraints/Nexys4DDR_Master.xdc:289]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/constrs_1/imports/constraints/Nexys4DDR_Master.xdc:289]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-507] No nets matched 'cursor1Voltage[0]'. [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/constrs_1/imports/constraints/Nexys4DDR_Master.xdc:290]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/constrs_1/imports/constraints/Nexys4DDR_Master.xdc:290]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+Finished Parsing XDC File [/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/constrs_1/imports/constraints/Nexys4DDR_Master.xdc]
+INFO: [Project 1-538] Using original IP XDC constraints instead of the XDC constraints in dcp '/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/ip/blk_mem_gen_0/blk_mem_gen_0.dcp'
+INFO: [Project 1-538] Using original IP XDC constraints instead of the XDC constraints in dcp '/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/ip/blk_mem_gen_0/blk_mem_gen_0.dcp'
+INFO: [Project 1-538] Using original IP XDC constraints instead of the XDC constraints in dcp '/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/ip/blk_mem_gen_0/blk_mem_gen_0.dcp'
+INFO: [Project 1-538] Using original IP XDC constraints instead of the XDC constraints in dcp '/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/ip/blk_mem_gen_0/blk_mem_gen_0.dcp'
+INFO: [Project 1-538] Using original IP XDC constraints instead of the XDC constraints in dcp '/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/ip/blk_mem_gen_0/blk_mem_gen_0.dcp'
+INFO: [Project 1-538] Using original IP XDC constraints instead of the XDC constraints in dcp '/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/ip/blk_mem_gen_0/blk_mem_gen_0.dcp'
+INFO: [Project 1-538] Using original IP XDC constraints instead of the XDC constraints in dcp '/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/ip/blk_mem_gen_0/blk_mem_gen_0.dcp'
+INFO: [Project 1-538] Using original IP XDC constraints instead of the XDC constraints in dcp '/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/ip/blk_mem_gen_0/blk_mem_gen_0.dcp'
+INFO: [Project 1-538] Using original IP XDC constraints instead of the XDC constraints in dcp '/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/impl_1/.Xil/Vivado-24861-eecs-digital-02/CharactersROM/CharactersROM.dcp'
+INFO: [Project 1-538] Using original IP XDC constraints instead of the XDC constraints in dcp '/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/impl_1/.Xil/Vivado-24861-eecs-digital-02/clk_wiz_0/clk_wiz_0.dcp'
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-INFO: [Project 1-604] Checkpoint was created with Vivado v2016.2 (64-bit) build 1577090
-open_checkpoint: Time (s): cpu = 00:00:10 ; elapsed = 00:00:10 . Memory (MB): peak = 1718.984 ; gain = 751.254 ; free physical = 1126 ; free virtual = 9232
+link_design: Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 1784.102 ; gain = 804.352 ; free physical = 1454 ; free virtual = 9309
 INFO: [Vivado_Tcl 4-424] Cannot write hardware definition file as there are no IPI block design hardware handoff files present
 Command: opt_design
 Attempting to get a license for feature 'Implementation' and/or device 'xc7a100t'
@@ -51,25 +130,26 @@ INFO: [DRC 23-27] Running DRC with 8 threads
 INFO: [Project 1-461] DRC finished with 0 Errors
 INFO: [Project 1-462] Please refer to the DRC report (report_drc) for more information.
 
-Time (s): cpu = 00:00:00.09 ; elapsed = 00:00:00.09 . Memory (MB): peak = 1787.016 ; gain = 68.031 ; free physical = 1122 ; free virtual = 9228
+Time (s): cpu = 00:00:00.12 ; elapsed = 00:00:00.10 . Memory (MB): peak = 1848.133 ; gain = 64.031 ; free physical = 1452 ; free virtual = 9307
+INFO: [Timing 38-35] Done setting XDC timing constraints.
 INFO: [Timing 38-2] Deriving generated clocks
 
 Starting Logic Optimization Task
-Implement Debug Cores | Checksum: 1bb74bb65
+Implement Debug Cores | Checksum: 2271c9929
 
 Phase 1 Retarget
 INFO: [Opt 31-138] Pushed 1 inverter(s) to 2 load pin(s).
 INFO: [Opt 31-49] Retargeted 0 cell(s).
-Phase 1 Retarget | Checksum: 1491e5f70
+Phase 1 Retarget | Checksum: 100939d19
 
-Time (s): cpu = 00:00:00.81 ; elapsed = 00:00:00.61 . Memory (MB): peak = 1787.016 ; gain = 0.000 ; free physical = 1123 ; free virtual = 9229
+Time (s): cpu = 00:00:00.89 ; elapsed = 00:00:00.74 . Memory (MB): peak = 1848.133 ; gain = 0.000 ; free physical = 1444 ; free virtual = 9299
 
 Phase 2 Constant Propagation
 INFO: [Opt 31-138] Pushed 1 inverter(s) to 2 load pin(s).
 INFO: [Opt 31-10] Eliminated 106 cells.
-Phase 2 Constant Propagation | Checksum: ee275c75
+Phase 2 Constant Propagation | Checksum: 188d4af05
 
-Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.89 . Memory (MB): peak = 1787.016 ; gain = 0.000 ; free physical = 1122 ; free virtual = 9228
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:01 . Memory (MB): peak = 1848.133 ; gain = 0.000 ; free physical = 1444 ; free virtual = 9299
 
 Phase 3 Sweep
 WARNING: [Opt 31-6] Deleting driverless net: BufferChannel1/bram0/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_init.ram/dinb[0].
@@ -173,18 +253,18 @@ WARNING: [Opt 31-6] Deleting driverless net: BufferChannel1/bram1/U0/inst_blk_me
 WARNING: [Opt 31-6] Deleting driverless net: BufferChannel1/bram1/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[1].ram.r/prim_init.ram/dinb[6].
 WARNING: [Opt 31-6] Deleting driverless net: BufferChannel1/bram1/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[1].ram.r/prim_init.ram/dinb[7].
 INFO: [Common 17-14] Message 'Opt 31-6' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
-INFO: [Opt 31-12] Eliminated 3792 unconnected nets.
-INFO: [Opt 31-11] Eliminated 345 unconnected cells.
-Phase 3 Sweep | Checksum: 2025c70f0
+INFO: [Opt 31-12] Eliminated 3962 unconnected nets.
+INFO: [Opt 31-11] Eliminated 348 unconnected cells.
+Phase 3 Sweep | Checksum: 211b63d15
 
-Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 1787.016 ; gain = 0.000 ; free physical = 1122 ; free virtual = 9228
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 1848.133 ; gain = 0.000 ; free physical = 1445 ; free virtual = 9300
 
 Starting Connectivity Check Task
 
-Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 1787.016 ; gain = 0.000 ; free physical = 1122 ; free virtual = 9228
-Ending Logic Optimization Task | Checksum: 2025c70f0
+Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 1848.133 ; gain = 0.000 ; free physical = 1445 ; free virtual = 9300
+Ending Logic Optimization Task | Checksum: 211b63d15
 
-Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 1787.016 ; gain = 0.000 ; free physical = 1122 ; free virtual = 9228
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 1848.133 ; gain = 0.000 ; free physical = 1446 ; free virtual = 9301
 
 Starting Power Optimization Task
 INFO: [Pwropt 34-132] Skipping clock gating for clocks with a period < 2.00 ns.
@@ -202,20 +282,20 @@ INFO: [Pwropt 34-201] Structural ODC has moved 8 WE to EN ports
 Number of BRAM Ports augmented: 1 newly gated: 27 Total Ports: 24
 Number of Flops added for Enable Generation: 1
 
-Ending PowerOpt Patch Enables Task | Checksum: ead2b27b
+Ending PowerOpt Patch Enables Task | Checksum: 20c7b8c4a
 
-Time (s): cpu = 00:00:00.04 ; elapsed = 00:00:00.04 . Memory (MB): peak = 2122.207 ; gain = 0.000 ; free physical = 954 ; free virtual = 9060
-Ending Power Optimization Task | Checksum: ead2b27b
+Time (s): cpu = 00:00:00.03 ; elapsed = 00:00:00.03 . Memory (MB): peak = 2148.301 ; gain = 0.000 ; free physical = 1296 ; free virtual = 9151
+Ending Power Optimization Task | Checksum: 20c7b8c4a
 
-Time (s): cpu = 00:00:03 ; elapsed = 00:00:01 . Memory (MB): peak = 2122.207 ; gain = 335.191 ; free physical = 954 ; free virtual = 9060
+Time (s): cpu = 00:00:03 ; elapsed = 00:00:01 . Memory (MB): peak = 2148.301 ; gain = 300.168 ; free physical = 1296 ; free virtual = 9151
 INFO: [Common 17-83] Releasing license: Implementation
-29 Infos, 100 Warnings, 0 Critical Warnings and 0 Errors encountered.
+43 Infos, 137 Warnings, 23 Critical Warnings and 0 Errors encountered.
 opt_design completed successfully
 Writing placer database...
 Writing XDEF routing.
 Writing XDEF routing logical nets.
 Writing XDEF routing special nets.
-Write XDEF Complete: Time (s): cpu = 00:00:00.19 ; elapsed = 00:00:00.08 . Memory (MB): peak = 2122.207 ; gain = 0.000 ; free physical = 946 ; free virtual = 9056
+Write XDEF Complete: Time (s): cpu = 00:00:00.18 ; elapsed = 00:00:00.08 . Memory (MB): peak = 2148.301 ; gain = 0.000 ; free physical = 1292 ; free virtual = 9151
 INFO: [DRC 23-27] Running DRC with 8 threads
 INFO: [Coretcl 2-168] The results of DRC are in file /afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/impl_1/Oscilloscope_v1_drc_opted.rpt.
 INFO: [Chipscope 16-241] No debug cores found in the current design.
@@ -236,10 +316,10 @@ Starting Placer Task
 INFO: [Place 30-611] Multithreading enabled for place_design using a maximum of 8 CPUs
 
 Phase 1 Placer Initialization
-Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.02 . Memory (MB): peak = 2122.207 ; gain = 0.000 ; free physical = 945 ; free virtual = 9055
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2148.301 ; gain = 0.000 ; free physical = 1290 ; free virtual = 9148
 INFO: [Timing 38-35] Done setting XDC timing constraints.
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2122.207 ; gain = 0.000 ; free physical = 944 ; free virtual = 9054
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2148.301 ; gain = 0.000 ; free physical = 1288 ; free virtual = 9146
 
 Phase 1.1 IO Placement/ Clock Placement/ Build Placer Device
 
@@ -248,87 +328,87 @@ Phase 1.1.1 ParallelPlaceIOClockAndInitTop
 Phase 1.1.1.1 Pre-Place Cells
 Phase 1.1.1.1 Pre-Place Cells | Checksum: ac849eb1
 
-Time (s): cpu = 00:00:00.58 ; elapsed = 00:00:00.38 . Memory (MB): peak = 2122.207 ; gain = 0.000 ; free physical = 944 ; free virtual = 9054
+Time (s): cpu = 00:00:00.63 ; elapsed = 00:00:00.39 . Memory (MB): peak = 2148.301 ; gain = 0.000 ; free physical = 1288 ; free virtual = 9146
 
 Phase 1.1.1.2 Constructing HAPIClkRuleMgr
 Phase 1.1.1.2 Constructing HAPIClkRuleMgr | Checksum: ac849eb1
 
-Time (s): cpu = 00:00:00.65 ; elapsed = 00:00:00.46 . Memory (MB): peak = 2122.207 ; gain = 0.000 ; free physical = 944 ; free virtual = 9054
+Time (s): cpu = 00:00:00.70 ; elapsed = 00:00:00.47 . Memory (MB): peak = 2148.301 ; gain = 0.000 ; free physical = 1288 ; free virtual = 9145
+
+Phase 1.1.1.4 IOBufferPlacementChecker
+
+Phase 1.1.1.5 ClockRegionPlacementChecker
 
 Phase 1.1.1.3 IOLockPlacementChecker
 
-Phase 1.1.1.5 IOBufferPlacementChecker
+Phase 1.1.1.6 DSPChecker
+Phase 1.1.1.6 DSPChecker | Checksum: ac849eb1
 
-Phase 1.1.1.4 ClockRegionPlacementChecker
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:00.87 . Memory (MB): peak = 2148.301 ; gain = 0.000 ; free physical = 1285 ; free virtual = 9142
+
+Phase 1.1.1.7 V7IOVoltageChecker
+Phase 1.1.1.7 V7IOVoltageChecker | Checksum: ac849eb1
+
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:00.87 . Memory (MB): peak = 2148.301 ; gain = 0.000 ; free physical = 1285 ; free virtual = 9142
+
+Phase 1.1.1.8 OverlappingPBlocksChecker
+Phase 1.1.1.8 OverlappingPBlocksChecker | Checksum: ac849eb1
+
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:00.87 . Memory (MB): peak = 2148.301 ; gain = 0.000 ; free physical = 1285 ; free virtual = 9142
 Phase 1.1.1.3 IOLockPlacementChecker | Checksum: ac849eb1
 
-Time (s): cpu = 00:00:02 ; elapsed = 00:00:00.84 . Memory (MB): peak = 2122.207 ; gain = 0.000 ; free physical = 944 ; free virtual = 9054
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:00.87 . Memory (MB): peak = 2148.301 ; gain = 0.000 ; free physical = 1285 ; free virtual = 9142
 
-Phase 1.1.1.6 CheckerForMandatoryPrePlacedCells
-Phase 1.1.1.6 CheckerForMandatoryPrePlacedCells | Checksum: ac849eb1
+Phase 1.1.1.9 CheckerForMandatoryPrePlacedCells
+Phase 1.1.1.4 IOBufferPlacementChecker | Checksum: ac849eb1
 
-Time (s): cpu = 00:00:02 ; elapsed = 00:00:00.84 . Memory (MB): peak = 2122.207 ; gain = 0.000 ; free physical = 944 ; free virtual = 9054
-
-Phase 1.1.1.7 CascadeElementConstraintsChecker
-Phase 1.1.1.7 CascadeElementConstraintsChecker | Checksum: ac849eb1
-
-Time (s): cpu = 00:00:02 ; elapsed = 00:00:00.85 . Memory (MB): peak = 2122.207 ; gain = 0.000 ; free physical = 944 ; free virtual = 9054
-
-Phase 1.1.1.8 HdioRelatedChecker
-
-Phase 1.1.1.9 DSPChecker
-Phase 1.1.1.5 IOBufferPlacementChecker | Checksum: ac849eb1
-
-Time (s): cpu = 00:00:02 ; elapsed = 00:00:00.85 . Memory (MB): peak = 2122.207 ; gain = 0.000 ; free physical = 944 ; free virtual = 9054
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:00.87 . Memory (MB): peak = 2148.301 ; gain = 0.000 ; free physical = 1285 ; free virtual = 9142
 
 Phase 1.1.1.10 DisallowedInsts
-Phase 1.1.1.9 DSPChecker | Checksum: ac849eb1
-
-Time (s): cpu = 00:00:02 ; elapsed = 00:00:00.85 . Memory (MB): peak = 2122.207 ; gain = 0.000 ; free physical = 944 ; free virtual = 9054
-
-Phase 1.1.1.11 V7IOVoltageChecker
 Phase 1.1.1.10 DisallowedInsts | Checksum: ac849eb1
 
-Time (s): cpu = 00:00:02 ; elapsed = 00:00:00.85 . Memory (MB): peak = 2122.207 ; gain = 0.000 ; free physical = 944 ; free virtual = 9054
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:00.88 . Memory (MB): peak = 2148.301 ; gain = 0.000 ; free physical = 1285 ; free virtual = 9142
 
-Phase 1.1.1.12 Laguna PBlock Checker
-Phase 1.1.1.8 HdioRelatedChecker | Checksum: ac849eb1
+Phase 1.1.1.11 Laguna PBlock Checker
+Phase 1.1.1.9 CheckerForMandatoryPrePlacedCells | Checksum: ac849eb1
 
-Time (s): cpu = 00:00:02 ; elapsed = 00:00:00.85 . Memory (MB): peak = 2122.207 ; gain = 0.000 ; free physical = 944 ; free virtual = 9054
-Phase 1.1.1.11 V7IOVoltageChecker | Checksum: ac849eb1
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:00.88 . Memory (MB): peak = 2148.301 ; gain = 0.000 ; free physical = 1285 ; free virtual = 9142
 
-Time (s): cpu = 00:00:02 ; elapsed = 00:00:00.85 . Memory (MB): peak = 2122.207 ; gain = 0.000 ; free physical = 944 ; free virtual = 9054
+Phase 1.1.1.12 CascadeElementConstraintsChecker
+Phase 1.1.1.11 Laguna PBlock Checker | Checksum: ac849eb1
 
-Phase 1.1.1.13 OverlappingPBlocksChecker
-Phase 1.1.1.12 Laguna PBlock Checker | Checksum: ac849eb1
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:00.88 . Memory (MB): peak = 2148.301 ; gain = 0.000 ; free physical = 1285 ; free virtual = 9142
 
-Time (s): cpu = 00:00:02 ; elapsed = 00:00:00.85 . Memory (MB): peak = 2122.207 ; gain = 0.000 ; free physical = 944 ; free virtual = 9054
+Phase 1.1.1.13 ShapePlacementValidityChecker
+Phase 1.1.1.12 CascadeElementConstraintsChecker | Checksum: ac849eb1
 
-Phase 1.1.1.14 ShapePlacementValidityChecker
-Phase 1.1.1.13 OverlappingPBlocksChecker | Checksum: ac849eb1
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:00.88 . Memory (MB): peak = 2148.301 ; gain = 0.000 ; free physical = 1285 ; free virtual = 9142
 
-Time (s): cpu = 00:00:02 ; elapsed = 00:00:00.85 . Memory (MB): peak = 2122.207 ; gain = 0.000 ; free physical = 944 ; free virtual = 9054
-Phase 1.1.1.4 ClockRegionPlacementChecker | Checksum: ac849eb1
+Phase 1.1.1.14 HdioRelatedChecker
+Phase 1.1.1.14 HdioRelatedChecker | Checksum: ac849eb1
 
-Time (s): cpu = 00:00:02 ; elapsed = 00:00:00.85 . Memory (MB): peak = 2122.207 ; gain = 0.000 ; free physical = 944 ; free virtual = 9054
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:00.88 . Memory (MB): peak = 2148.301 ; gain = 0.000 ; free physical = 1285 ; free virtual = 9142
+Phase 1.1.1.5 ClockRegionPlacementChecker | Checksum: ac849eb1
+
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:00.88 . Memory (MB): peak = 2148.301 ; gain = 0.000 ; free physical = 1285 ; free virtual = 9142
 
 Phase 1.1.1.15 CheckerForUnsupportedConstraints
 Phase 1.1.1.15 CheckerForUnsupportedConstraints | Checksum: ac849eb1
 
-Time (s): cpu = 00:00:02 ; elapsed = 00:00:00.86 . Memory (MB): peak = 2122.207 ; gain = 0.000 ; free physical = 944 ; free virtual = 9054
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:00.89 . Memory (MB): peak = 2148.301 ; gain = 0.000 ; free physical = 1285 ; free virtual = 9142
 
 Phase 1.1.1.16 ShapesExcludeCompatibilityChecker
 Phase 1.1.1.16 ShapesExcludeCompatibilityChecker | Checksum: ac849eb1
 
-Time (s): cpu = 00:00:02 ; elapsed = 00:00:00.86 . Memory (MB): peak = 2122.207 ; gain = 0.000 ; free physical = 944 ; free virtual = 9054
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:00.89 . Memory (MB): peak = 2148.301 ; gain = 0.000 ; free physical = 1285 ; free virtual = 9142
 
 Phase 1.1.1.17 IOStdCompatabilityChecker
 Phase 1.1.1.17 IOStdCompatabilityChecker | Checksum: ac849eb1
 
-Time (s): cpu = 00:00:02 ; elapsed = 00:00:00.86 . Memory (MB): peak = 2122.207 ; gain = 0.000 ; free physical = 944 ; free virtual = 9054
-Phase 1.1.1.14 ShapePlacementValidityChecker | Checksum: ac849eb1
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:00.89 . Memory (MB): peak = 2148.301 ; gain = 0.000 ; free physical = 1285 ; free virtual = 9142
+Phase 1.1.1.13 ShapePlacementValidityChecker | Checksum: ac849eb1
 
-Time (s): cpu = 00:00:02 ; elapsed = 00:00:01 . Memory (MB): peak = 2122.207 ; gain = 0.000 ; free physical = 944 ; free virtual = 9054
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:01 . Memory (MB): peak = 2148.301 ; gain = 0.000 ; free physical = 1284 ; free virtual = 9141
 WARNING: [Place 30-87] Partially locked IO Bus is found. Following components of the IO Bus SW are not locked:  'SW[15]'  'SW[14]' 
 WARNING: [Place 30-879] Found overlapping PBlocks. The use of overlapping PBlocks is not recommended as it may lead to legalization errors or unplaced instances.
 WARNING: [Place 30-12] An IO Bus SW with more than one IO standard is found. Components associated with this bus are: 
@@ -355,53 +435,436 @@ Phase 1.1.1.18 IO and Clk Clean Up
 Phase 1.1.1.18.1 Constructing HAPIClkRuleMgr
 Phase 1.1.1.18.1 Constructing HAPIClkRuleMgr | Checksum: ac849eb1
 
-Time (s): cpu = 00:00:03 ; elapsed = 00:00:01 . Memory (MB): peak = 2122.207 ; gain = 0.000 ; free physical = 943 ; free virtual = 9053
+Time (s): cpu = 00:00:03 ; elapsed = 00:00:01 . Memory (MB): peak = 2148.301 ; gain = 0.000 ; free physical = 1284 ; free virtual = 9142
 Phase 1.1.1.18 IO and Clk Clean Up | Checksum: ac849eb1
 
-Time (s): cpu = 00:00:03 ; elapsed = 00:00:01 . Memory (MB): peak = 2122.207 ; gain = 0.000 ; free physical = 943 ; free virtual = 9053
+Time (s): cpu = 00:00:03 ; elapsed = 00:00:01 . Memory (MB): peak = 2148.301 ; gain = 0.000 ; free physical = 1284 ; free virtual = 9142
 
 Phase 1.1.1.19 Implementation Feasibility check On IDelay
 Phase 1.1.1.19 Implementation Feasibility check On IDelay | Checksum: ac849eb1
 
-Time (s): cpu = 00:00:03 ; elapsed = 00:00:01 . Memory (MB): peak = 2122.207 ; gain = 0.000 ; free physical = 943 ; free virtual = 9053
+Time (s): cpu = 00:00:03 ; elapsed = 00:00:01 . Memory (MB): peak = 2148.301 ; gain = 0.000 ; free physical = 1284 ; free virtual = 9142
 
 Phase 1.1.1.20 Commit IO Placement
 Phase 1.1.1.20 Commit IO Placement | Checksum: 2ba4b61b
 
-Time (s): cpu = 00:00:03 ; elapsed = 00:00:01 . Memory (MB): peak = 2122.207 ; gain = 0.000 ; free physical = 943 ; free virtual = 9053
+Time (s): cpu = 00:00:03 ; elapsed = 00:00:01 . Memory (MB): peak = 2148.301 ; gain = 0.000 ; free physical = 1284 ; free virtual = 9142
 Phase 1.1.1 ParallelPlaceIOClockAndInitTop | Checksum: 2ba4b61b
 
-Time (s): cpu = 00:00:03 ; elapsed = 00:00:01 . Memory (MB): peak = 2122.207 ; gain = 0.000 ; free physical = 943 ; free virtual = 9053
-Phase 1.1 IO Placement/ Clock Placement/ Build Placer Device | Checksum: 9b9f8606
+Time (s): cpu = 00:00:03 ; elapsed = 00:00:01 . Memory (MB): peak = 2148.301 ; gain = 0.000 ; free physical = 1284 ; free virtual = 9142
+Phase 1.1 IO Placement/ Clock Placement/ Build Placer Device | Checksum: 995c4fdf
 
-Time (s): cpu = 00:00:03 ; elapsed = 00:00:01 . Memory (MB): peak = 2122.207 ; gain = 0.000 ; free physical = 943 ; free virtual = 9053
+Time (s): cpu = 00:00:03 ; elapsed = 00:00:01 . Memory (MB): peak = 2148.301 ; gain = 0.000 ; free physical = 1284 ; free virtual = 9142
 
 Phase 1.2 Build Placer Netlist Model
 
 Phase 1.2.1 Place Init Design
 
 Phase 1.2.1.1 Make Others
-Phase 1.2.1.1 Make Others | Checksum: 1957ca30c
+Phase 1.2.1.1 Make Others | Checksum: b33090ba
 
-Time (s): cpu = 00:00:03 ; elapsed = 00:00:02 . Memory (MB): peak = 2122.207 ; gain = 0.000 ; free physical = 943 ; free virtual = 9053
+Time (s): cpu = 00:00:03 ; elapsed = 00:00:02 . Memory (MB): peak = 2148.301 ; gain = 0.000 ; free physical = 1284 ; free virtual = 9142
 
 Phase 1.2.1.2 Init Lut Pin Assignment
-Phase 1.2.1.2 Init Lut Pin Assignment | Checksum: 1957ca30c
+Phase 1.2.1.2 Init Lut Pin Assignment | Checksum: b33090ba
 
-Time (s): cpu = 00:00:03 ; elapsed = 00:00:02 . Memory (MB): peak = 2122.207 ; gain = 0.000 ; free physical = 941 ; free virtual = 9051
-Phase 1.2.1 Place Init Design | Checksum: 14fb41980
+Time (s): cpu = 00:00:03 ; elapsed = 00:00:02 . Memory (MB): peak = 2148.301 ; gain = 0.000 ; free physical = 1284 ; free virtual = 9141
+Phase 1.2.1 Place Init Design | Checksum: d9e07426
 
-Time (s): cpu = 00:00:06 ; elapsed = 00:00:03 . Memory (MB): peak = 2122.207 ; gain = 0.000 ; free physical = 942 ; free virtual = 9050
-Phase 1.2 Build Placer Netlist Model | Checksum: 14fb41980
+Time (s): cpu = 00:00:06 ; elapsed = 00:00:03 . Memory (MB): peak = 2148.301 ; gain = 0.000 ; free physical = 1275 ; free virtual = 9132
+Phase 1.2 Build Placer Netlist Model | Checksum: d9e07426
 
-Time (s): cpu = 00:00:06 ; elapsed = 00:00:03 . Memory (MB): peak = 2122.207 ; gain = 0.000 ; free physical = 942 ; free virtual = 9050
+Time (s): cpu = 00:00:06 ; elapsed = 00:00:03 . Memory (MB): peak = 2148.301 ; gain = 0.000 ; free physical = 1275 ; free virtual = 9132
 
 Phase 1.3 Constrain Clocks/Macros
-Phase 1.3 Constrain Clocks/Macros | Checksum: 14fb41980
+Phase 1.3 Constrain Clocks/Macros | Checksum: d9e07426
 
-Time (s): cpu = 00:00:06 ; elapsed = 00:00:03 . Memory (MB): peak = 2122.207 ; gain = 0.000 ; free physical = 942 ; free virtual = 9050
-Phase 1 Placer Initialization | Checksum: 14fb41980
+Time (s): cpu = 00:00:06 ; elapsed = 00:00:03 . Memory (MB): peak = 2148.301 ; gain = 0.000 ; free physical = 1275 ; free virtual = 9132
+Phase 1 Placer Initialization | Checksum: d9e07426
 
-Time (s): cpu = 00:00:06 ; elapsed = 00:00:03 . Memory (MB): peak = 2122.207 ; gain = 0.000 ; free physical = 942 ; free virtual = 9050
+Time (s): cpu = 00:00:06 ; elapsed = 00:00:03 . Memory (MB): peak = 2148.301 ; gain = 0.000 ; free physical = 1275 ; free virtual = 9132
 
 Phase 2 Global Placement
+Phase 2 Global Placement | Checksum: b441b24d
+
+Time (s): cpu = 00:01:55 ; elapsed = 00:00:22 . Memory (MB): peak = 2148.301 ; gain = 0.000 ; free physical = 1263 ; free virtual = 9120
+
+Phase 3 Detail Placement
+
+Phase 3.1 Commit Multi Column Macros
+Phase 3.1 Commit Multi Column Macros | Checksum: b441b24d
+
+Time (s): cpu = 00:01:56 ; elapsed = 00:00:22 . Memory (MB): peak = 2148.301 ; gain = 0.000 ; free physical = 1263 ; free virtual = 9120
+
+Phase 3.2 Commit Most Macros & LUTRAMs
+Phase 3.2 Commit Most Macros & LUTRAMs | Checksum: 1c07df225
+
+Time (s): cpu = 00:01:59 ; elapsed = 00:00:24 . Memory (MB): peak = 2148.301 ; gain = 0.000 ; free physical = 1260 ; free virtual = 9118
+
+Phase 3.3 Area Swap Optimization
+Phase 3.3 Area Swap Optimization | Checksum: 1d74b1bda
+
+Time (s): cpu = 00:02:01 ; elapsed = 00:00:24 . Memory (MB): peak = 2148.301 ; gain = 0.000 ; free physical = 1260 ; free virtual = 9118
+
+Phase 3.4 updateClock Trees: DP
+Phase 3.4 updateClock Trees: DP | Checksum: 1d74b1bda
+
+Time (s): cpu = 00:02:01 ; elapsed = 00:00:24 . Memory (MB): peak = 2148.301 ; gain = 0.000 ; free physical = 1260 ; free virtual = 9118
+
+Phase 3.5 Timing Path Optimizer
+Phase 3.5 Timing Path Optimizer | Checksum: 1163aa02e
+
+Time (s): cpu = 00:02:01 ; elapsed = 00:00:24 . Memory (MB): peak = 2148.301 ; gain = 0.000 ; free physical = 1260 ; free virtual = 9118
+
+Phase 3.6 Fast Optimization
+Phase 3.6 Fast Optimization | Checksum: 18fba7d00
+
+Time (s): cpu = 00:02:02 ; elapsed = 00:00:25 . Memory (MB): peak = 2148.301 ; gain = 0.000 ; free physical = 1260 ; free virtual = 9118
+
+Phase 3.7 Small Shape Detail Placement
+Phase 3.7 Small Shape Detail Placement | Checksum: fb90983d
+
+Time (s): cpu = 00:02:03 ; elapsed = 00:00:25 . Memory (MB): peak = 2148.301 ; gain = 0.000 ; free physical = 1260 ; free virtual = 9117
+
+Phase 3.8 Re-assign LUT pins
+Phase 3.8 Re-assign LUT pins | Checksum: cf9f2859
+
+Time (s): cpu = 00:02:04 ; elapsed = 00:00:26 . Memory (MB): peak = 2148.301 ; gain = 0.000 ; free physical = 1259 ; free virtual = 9117
+
+Phase 3.9 Pipeline Register Optimization
+Phase 3.9 Pipeline Register Optimization | Checksum: cf9f2859
+
+Time (s): cpu = 00:02:04 ; elapsed = 00:00:26 . Memory (MB): peak = 2148.301 ; gain = 0.000 ; free physical = 1259 ; free virtual = 9117
+
+Phase 3.10 Fast Optimization
+Phase 3.10 Fast Optimization | Checksum: 1846e7fd7
+
+Time (s): cpu = 00:02:06 ; elapsed = 00:00:27 . Memory (MB): peak = 2148.301 ; gain = 0.000 ; free physical = 1258 ; free virtual = 9116
+Phase 3 Detail Placement | Checksum: 1846e7fd7
+
+Time (s): cpu = 00:02:06 ; elapsed = 00:00:27 . Memory (MB): peak = 2148.301 ; gain = 0.000 ; free physical = 1258 ; free virtual = 9116
+
+Phase 4 Post Placement Optimization and Clean-Up
+
+Phase 4.1 Post Commit Optimization
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+
+Phase 4.1.1 updateClock Trees: PCOPT
+Phase 4.1.1 updateClock Trees: PCOPT | Checksum: 10d4da845
+
+Time (s): cpu = 00:02:08 ; elapsed = 00:00:28 . Memory (MB): peak = 2148.301 ; gain = 0.000 ; free physical = 1253 ; free virtual = 9111
+
+Phase 4.1.2 Post Placement Optimization
+INFO: [Place 30-746] Post Placement Timing Summary WNS=-24.582. For the most accurate timing information please run report_timing.
+Phase 4.1.2 Post Placement Optimization | Checksum: 1303f9ee9
+
+Time (s): cpu = 00:02:14 ; elapsed = 00:00:32 . Memory (MB): peak = 2148.301 ; gain = 0.000 ; free physical = 1252 ; free virtual = 9109
+Phase 4.1 Post Commit Optimization | Checksum: 1303f9ee9
+
+Time (s): cpu = 00:02:14 ; elapsed = 00:00:32 . Memory (MB): peak = 2148.301 ; gain = 0.000 ; free physical = 1252 ; free virtual = 9110
+
+Phase 4.2 Sweep Clock Roots: Post-Placement
+Phase 4.2 Sweep Clock Roots: Post-Placement | Checksum: 1303f9ee9
+
+Time (s): cpu = 00:02:14 ; elapsed = 00:00:33 . Memory (MB): peak = 2148.301 ; gain = 0.000 ; free physical = 1252 ; free virtual = 9110
+
+Phase 4.3 Uram Pipeline Register Optimization
+Phase 4.3 Uram Pipeline Register Optimization | Checksum: 1303f9ee9
+
+Time (s): cpu = 00:02:14 ; elapsed = 00:00:33 . Memory (MB): peak = 2148.301 ; gain = 0.000 ; free physical = 1252 ; free virtual = 9110
+
+Phase 4.4 Post Placement Cleanup
+Phase 4.4 Post Placement Cleanup | Checksum: 1303f9ee9
+
+Time (s): cpu = 00:02:14 ; elapsed = 00:00:33 . Memory (MB): peak = 2148.301 ; gain = 0.000 ; free physical = 1252 ; free virtual = 9110
+
+Phase 4.5 Placer Reporting
+Phase 4.5 Placer Reporting | Checksum: 1303f9ee9
+
+Time (s): cpu = 00:02:14 ; elapsed = 00:00:33 . Memory (MB): peak = 2148.301 ; gain = 0.000 ; free physical = 1252 ; free virtual = 9110
+
+Phase 4.6 Final Placement Cleanup
+Phase 4.6 Final Placement Cleanup | Checksum: 12ab21656
+
+Time (s): cpu = 00:02:14 ; elapsed = 00:00:33 . Memory (MB): peak = 2148.301 ; gain = 0.000 ; free physical = 1252 ; free virtual = 9110
+Phase 4 Post Placement Optimization and Clean-Up | Checksum: 12ab21656
+
+Time (s): cpu = 00:02:14 ; elapsed = 00:00:33 . Memory (MB): peak = 2148.301 ; gain = 0.000 ; free physical = 1252 ; free virtual = 9110
+Ending Placer Task | Checksum: 11a2f55af
+
+Time (s): cpu = 00:02:14 ; elapsed = 00:00:33 . Memory (MB): peak = 2148.301 ; gain = 0.000 ; free physical = 1252 ; free virtual = 9109
+INFO: [Common 17-83] Releasing license: Implementation
+60 Infos, 140 Warnings, 23 Critical Warnings and 0 Errors encountered.
+place_design completed successfully
+place_design: Time (s): cpu = 00:02:15 ; elapsed = 00:00:33 . Memory (MB): peak = 2148.301 ; gain = 0.000 ; free physical = 1252 ; free virtual = 9109
+Writing placer database...
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Write XDEF Complete: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.72 . Memory (MB): peak = 2148.301 ; gain = 0.000 ; free physical = 1232 ; free virtual = 9110
+report_io: Time (s): cpu = 00:00:00.11 ; elapsed = 00:00:00.14 . Memory (MB): peak = 2148.301 ; gain = 0.000 ; free physical = 1248 ; free virtual = 9110
+report_utilization: Time (s): cpu = 00:00:00.09 ; elapsed = 00:00:00.14 . Memory (MB): peak = 2148.301 ; gain = 0.000 ; free physical = 1249 ; free virtual = 9111
+report_control_sets: Time (s): cpu = 00:00:00.07 ; elapsed = 00:00:00.10 . Memory (MB): peak = 2148.301 ; gain = 0.000 ; free physical = 1248 ; free virtual = 9110
+Command: route_design
+Attempting to get a license for feature 'Implementation' and/or device 'xc7a100t'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7a100t'
+Running DRC as a precondition to command route_design
+INFO: [DRC 23-27] Running DRC with 8 threads
+WARNING: [DRC 23-20] Rule violation (PLIO-3) Placement Constraints Check for IO constraints - Partially locked IO Bus is found. Following components of the IO Bus SW[15:0] are not locked:  SW[15] SW[14]
+WARNING: [DRC 23-20] Rule violation (PLIO-7) Placement Constraints Check for IO constraints - An IO Bus SW[15:0] with more than one IO standard is found. Components associated with this bus are: LVCMOS18 (SW[15], SW[14], SW[9], SW[8]); LVCMOS33 (SW[13], SW[12], SW[11], SW[10], SW[7], SW[6], SW[5], SW[4], SW[3], SW[2], SW[1], SW[0]); 
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors, 2 Warnings
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+
+
+Starting Routing Task
+INFO: [Route 35-254] Multithreading enabled for route_design using a maximum of 8 CPUs
+Checksum: PlaceDB: ac0b915e ConstDB: 0 ShapeSum: 6e23c451 RouteDB: 0
+
+Phase 1 Build RT Design
+Phase 1 Build RT Design | Checksum: 95c9ecac
+
+Time (s): cpu = 00:00:18 ; elapsed = 00:00:14 . Memory (MB): peak = 2148.301 ; gain = 0.000 ; free physical = 1198 ; free virtual = 9060
+
+Phase 2 Router Initialization
+
+Phase 2.1 Create Timer
+Phase 2.1 Create Timer | Checksum: 95c9ecac
+
+Time (s): cpu = 00:00:18 ; elapsed = 00:00:14 . Memory (MB): peak = 2148.301 ; gain = 0.000 ; free physical = 1197 ; free virtual = 9059
+
+Phase 2.2 Fix Topology Constraints
+Phase 2.2 Fix Topology Constraints | Checksum: 95c9ecac
+
+Time (s): cpu = 00:00:18 ; elapsed = 00:00:14 . Memory (MB): peak = 2148.301 ; gain = 0.000 ; free physical = 1185 ; free virtual = 9047
+
+Phase 2.3 Pre Route Cleanup
+Phase 2.3 Pre Route Cleanup | Checksum: 95c9ecac
+
+Time (s): cpu = 00:00:18 ; elapsed = 00:00:14 . Memory (MB): peak = 2148.301 ; gain = 0.000 ; free physical = 1185 ; free virtual = 9047
+ Number of Nodes with overlaps = 0
+
+Phase 2.4 Update Timing
+Phase 2.4 Update Timing | Checksum: 18fa652aa
+
+Time (s): cpu = 00:00:23 ; elapsed = 00:00:15 . Memory (MB): peak = 2148.301 ; gain = 0.000 ; free physical = 1161 ; free virtual = 9022
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-23.416| TNS=-588.206| WHS=-0.439 | THS=-202.985|
+
+Phase 2 Router Initialization | Checksum: 1ab8551f9
+
+Time (s): cpu = 00:00:24 ; elapsed = 00:00:16 . Memory (MB): peak = 2148.301 ; gain = 0.000 ; free physical = 1160 ; free virtual = 9021
+
+Phase 3 Initial Routing
+Phase 3 Initial Routing | Checksum: 5e463dd3
+
+Time (s): cpu = 00:00:37 ; elapsed = 00:00:18 . Memory (MB): peak = 2148.301 ; gain = 0.000 ; free physical = 1158 ; free virtual = 9019
+
+Phase 4 Rip-up And Reroute
+
+Phase 4.1 Global Iteration 0
+ Number of Nodes with overlaps = 912
+ Number of Nodes with overlaps = 117
+ Number of Nodes with overlaps = 12
+ Number of Nodes with overlaps = 0
+
+Phase 4.1.1 Update Timing
+Phase 4.1.1 Update Timing | Checksum: 1969c468d
+
+Time (s): cpu = 00:08:04 ; elapsed = 00:01:23 . Memory (MB): peak = 2148.301 ; gain = 0.000 ; free physical = 1150 ; free virtual = 9012
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-25.051| TNS=-697.305| WHS=N/A    | THS=N/A    |
+
+
+Phase 4.1.2 GlobIterForTiming
+
+Phase 4.1.2.1 Update Timing
+Phase 4.1.2.1 Update Timing | Checksum: 1031d8c98
+
+Time (s): cpu = 00:08:05 ; elapsed = 00:01:24 . Memory (MB): peak = 2148.301 ; gain = 0.000 ; free physical = 1150 ; free virtual = 9012
+
+Phase 4.1.2.2 Fast Budgeting
+Phase 4.1.2.2 Fast Budgeting | Checksum: 135c885d5
+
+Time (s): cpu = 00:08:06 ; elapsed = 00:01:24 . Memory (MB): peak = 2148.301 ; gain = 0.000 ; free physical = 1149 ; free virtual = 9011
+Phase 4.1.2 GlobIterForTiming | Checksum: 10f9f7a54
+
+Time (s): cpu = 00:08:06 ; elapsed = 00:01:24 . Memory (MB): peak = 2148.301 ; gain = 0.000 ; free physical = 1149 ; free virtual = 9011
+Phase 4.1 Global Iteration 0 | Checksum: 10f9f7a54
+
+Time (s): cpu = 00:08:06 ; elapsed = 00:01:24 . Memory (MB): peak = 2148.301 ; gain = 0.000 ; free physical = 1149 ; free virtual = 9011
+
+Phase 4.2 Global Iteration 1
+ Number of Nodes with overlaps = 90
+ Number of Nodes with overlaps = 51
+ Number of Nodes with overlaps = 3
+ Number of Nodes with overlaps = 1
+ Number of Nodes with overlaps = 1
+ Number of Nodes with overlaps = 1
+ Number of Nodes with overlaps = 1
+ Number of Nodes with overlaps = 0
+
+Phase 4.2.1 Update Timing
+Phase 4.2.1 Update Timing | Checksum: 194378780
+
+Time (s): cpu = 00:14:21 ; elapsed = 00:02:19 . Memory (MB): peak = 2148.301 ; gain = 0.000 ; free physical = 1150 ; free virtual = 9012
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-24.975| TNS=-692.200| WHS=N/A    | THS=N/A    |
+
+Phase 4.2 Global Iteration 1 | Checksum: 1eeb8c500
+
+Time (s): cpu = 00:14:21 ; elapsed = 00:02:20 . Memory (MB): peak = 2148.301 ; gain = 0.000 ; free physical = 1150 ; free virtual = 9012
+Phase 4 Rip-up And Reroute | Checksum: 1eeb8c500
+
+Time (s): cpu = 00:14:21 ; elapsed = 00:02:20 . Memory (MB): peak = 2148.301 ; gain = 0.000 ; free physical = 1150 ; free virtual = 9012
+
+Phase 5 Delay and Skew Optimization
+
+Phase 5.1 Delay CleanUp
+
+Phase 5.1.1 Update Timing
+Phase 5.1.1 Update Timing | Checksum: 1fbde2228
+
+Time (s): cpu = 00:14:22 ; elapsed = 00:02:20 . Memory (MB): peak = 2148.301 ; gain = 0.000 ; free physical = 1153 ; free virtual = 9011
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-24.975| TNS=-690.379| WHS=N/A    | THS=N/A    |
+
+ Number of Nodes with overlaps = 0
+Phase 5.1 Delay CleanUp | Checksum: 15fabf016
+
+Time (s): cpu = 00:14:26 ; elapsed = 00:02:21 . Memory (MB): peak = 2148.301 ; gain = 0.000 ; free physical = 1101 ; free virtual = 8963
+
+Phase 5.2 Clock Skew Optimization
+Phase 5.2 Clock Skew Optimization | Checksum: 15fabf016
+
+Time (s): cpu = 00:14:26 ; elapsed = 00:02:21 . Memory (MB): peak = 2148.301 ; gain = 0.000 ; free physical = 1101 ; free virtual = 8963
+Phase 5 Delay and Skew Optimization | Checksum: 15fabf016
+
+Time (s): cpu = 00:14:26 ; elapsed = 00:02:21 . Memory (MB): peak = 2148.301 ; gain = 0.000 ; free physical = 1101 ; free virtual = 8963
+
+Phase 6 Post Hold Fix
+
+Phase 6.1 Hold Fix Iter
+
+Phase 6.1.1 Update Timing
+Phase 6.1.1 Update Timing | Checksum: ecb314ad
+
+Time (s): cpu = 00:14:27 ; elapsed = 00:02:21 . Memory (MB): peak = 2148.301 ; gain = 0.000 ; free physical = 1101 ; free virtual = 8963
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-24.763| TNS=-672.579| WHS=0.056  | THS=0.000  |
+
+Phase 6.1 Hold Fix Iter | Checksum: ecb314ad
+
+Time (s): cpu = 00:14:27 ; elapsed = 00:02:21 . Memory (MB): peak = 2148.301 ; gain = 0.000 ; free physical = 1101 ; free virtual = 8963
+Phase 6 Post Hold Fix | Checksum: ecb314ad
+
+Time (s): cpu = 00:14:27 ; elapsed = 00:02:21 . Memory (MB): peak = 2148.301 ; gain = 0.000 ; free physical = 1101 ; free virtual = 8963
+
+Phase 7 Route finalize
+
+Router Utilization Summary
+  Global Vertical Routing Utilization    = 1.39635 %
+  Global Horizontal Routing Utilization  = 1.40345 %
+  Routable Net Status*
+  *Does not include unroutable nets such as driverless and loadless.
+  Run report_route_status for detailed report.
+  Number of Failed Nets               = 0
+  Number of Unrouted Nets             = 0
+  Number of Partially Routed Nets     = 0
+  Number of Node Overlaps             = 0
+
+Congestion Report
+North Dir 1x1 Area, Max Cong = 46.8468%, No Congested Regions.
+South Dir 1x1 Area, Max Cong = 65.7658%, No Congested Regions.
+East Dir 1x1 Area, Max Cong = 61.7647%, No Congested Regions.
+West Dir 1x1 Area, Max Cong = 47.0588%, No Congested Regions.
+Phase 7 Route finalize | Checksum: 12ed1b0ad
+
+Time (s): cpu = 00:14:28 ; elapsed = 00:02:21 . Memory (MB): peak = 2148.301 ; gain = 0.000 ; free physical = 1101 ; free virtual = 8963
+
+Phase 8 Verifying routed nets
+
+ Verification completed successfully
+Phase 8 Verifying routed nets | Checksum: 12ed1b0ad
+
+Time (s): cpu = 00:14:28 ; elapsed = 00:02:21 . Memory (MB): peak = 2148.301 ; gain = 0.000 ; free physical = 1100 ; free virtual = 8962
+
+Phase 9 Depositing Routes
+Phase 9 Depositing Routes | Checksum: 183dfb37b
+
+Time (s): cpu = 00:14:28 ; elapsed = 00:02:21 . Memory (MB): peak = 2148.301 ; gain = 0.000 ; free physical = 1100 ; free virtual = 8962
+
+Phase 10 Post Router Timing
+INFO: [Route 35-57] Estimated Timing Summary | WNS=-24.763| TNS=-672.579| WHS=0.056  | THS=0.000  |
+
+WARNING: [Route 35-328] Router estimated timing not met.
+Resolution: For a complete and accurate timing signoff, report_timing_summary must be run after route_design. Alternatively, route_design can be run with the -timing_summary option to enable a complete timing signoff at the end of route_design.
+Phase 10 Post Router Timing | Checksum: 183dfb37b
+
+Time (s): cpu = 00:14:28 ; elapsed = 00:02:21 . Memory (MB): peak = 2148.301 ; gain = 0.000 ; free physical = 1100 ; free virtual = 8962
+INFO: [Route 35-16] Router Completed Successfully
+
+Time (s): cpu = 00:14:29 ; elapsed = 00:02:21 . Memory (MB): peak = 2148.301 ; gain = 0.000 ; free physical = 1100 ; free virtual = 8962
+
+Routing Is Done.
+INFO: [Common 17-83] Releasing license: Implementation
+73 Infos, 143 Warnings, 23 Critical Warnings and 0 Errors encountered.
+route_design completed successfully
+route_design: Time (s): cpu = 00:14:29 ; elapsed = 00:02:22 . Memory (MB): peak = 2148.301 ; gain = 0.000 ; free physical = 1100 ; free virtual = 8962
+Writing placer database...
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Write XDEF Complete: Time (s): cpu = 00:00:02 ; elapsed = 00:00:00.96 . Memory (MB): peak = 2148.301 ; gain = 0.000 ; free physical = 1076 ; free virtual = 8962
+INFO: [DRC 23-27] Running DRC with 8 threads
+INFO: [Coretcl 2-168] The results of DRC are in file /afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/impl_1/Oscilloscope_v1_drc_routed.rpt.
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -3, Delay Type: min_max.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 8 CPUs
+CRITICAL WARNING: [Timing 38-282] The design failed to meet the timing requirements. Please see the timing summary report for details on the timing violations.
+Running Vector-less Activity Propagation...
+
+Finished Running Vector-less Activity Propagation
+Attempting to get a license for feature 'Implementation' and/or device 'xc7a100t'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7a100t'
+Running DRC as a precondition to command write_bitstream
+INFO: [DRC 23-27] Running DRC with 8 threads
+WARNING: [DRC 23-20] Rule violation (CFGBVS-1) Missing CFGBVS and CONFIG_VOLTAGE Design Properties - Neither the CFGBVS nor CONFIG_VOLTAGE voltage property is set in the current_design.  Configuration bank voltage select (CFGBVS) must be set to VCCO or GND, and CONFIG_VOLTAGE must be set to the correct configuration voltage, in order to determine the I/O voltage support for the pins in bank 0.  It is suggested to specify these either using the 'Edit Device Properties' function in the GUI or directly in the XDC file using the following syntax:
+
+ set_property CFGBVS value1 [current_design]
+ #where value1 is either VCCO or GND
+
+ set_property CONFIG_VOLTAGE value2 [current_design]
+ #where value2 is the voltage provided to configuration bank 0
+
+Refer to the device configuration user guide for more information.
+WARNING: [DRC 23-20] Rule violation (DPIP-1) Input pipelining - DSP curveChannel1/bigMult input curveChannel1/bigMult/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [DRC 23-20] Rule violation (DPIP-1) Input pipelining - DSP curveChannel1/bigMult input curveChannel1/bigMult/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [DRC 23-20] Rule violation (DPIP-1) Input pipelining - DSP curveChannel2/bigMult input curveChannel2/bigMult/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [DRC 23-20] Rule violation (DPIP-1) Input pipelining - DSP curveChannel2/bigMult input curveChannel2/bigMult/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [DRC 23-20] Rule violation (DPIP-1) Input pipelining - DSP level2 input level2/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [DRC 23-20] Rule violation (DPIP-1) Input pipelining - DSP level2 input level2/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [DRC 23-20] Rule violation (DPIP-1) Input pipelining - DSP level4 input level4/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [DRC 23-20] Rule violation (DPIP-1) Input pipelining - DSP level4 input level4/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [DRC 23-20] Rule violation (DPIP-1) Input pipelining - DSP unamedDSP input unamedDSP/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [DRC 23-20] Rule violation (DPIP-1) Input pipelining - DSP unamedDSP input unamedDSP/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [DRC 23-20] Rule violation (DPOP-1) PREG Output pipelining - DSP curveChannel1/bigMult output curveChannel1/bigMult/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+WARNING: [DRC 23-20] Rule violation (DPOP-1) PREG Output pipelining - DSP curveChannel2/bigMult output curveChannel2/bigMult/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+WARNING: [DRC 23-20] Rule violation (DPOP-1) PREG Output pipelining - DSP level2 output level2/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+WARNING: [DRC 23-20] Rule violation (DPOP-1) PREG Output pipelining - DSP level4 output level4/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+WARNING: [DRC 23-20] Rule violation (DPOP-1) PREG Output pipelining - DSP unamedDSP output unamedDSP/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+WARNING: [DRC 23-20] Rule violation (DPOP-2) MREG Output pipelining - DSP curveChannel1/bigMult multiplier stage curveChannel1/bigMult/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+WARNING: [DRC 23-20] Rule violation (DPOP-2) MREG Output pipelining - DSP curveChannel2/bigMult multiplier stage curveChannel2/bigMult/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+WARNING: [DRC 23-20] Rule violation (DPOP-2) MREG Output pipelining - DSP level2 multiplier stage level2/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+WARNING: [DRC 23-20] Rule violation (DPOP-2) MREG Output pipelining - DSP level4 multiplier stage level4/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+WARNING: [DRC 23-20] Rule violation (DPOP-2) MREG Output pipelining - DSP unamedDSP multiplier stage unamedDSP/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+INFO: [Vivado 12-3199] DRC finished with 0 Errors, 21 Warnings
+INFO: [Vivado 12-3200] Please refer to the DRC report (report_drc) for more information.
+INFO: [Designutils 20-2272] Running write_bitstream with 8 threads.
+Loading data files...
+Loading site data...
+Loading route data...
+Processing options...
+Creating bitmap...
+Creating bitstream...
+Writing bitstream ./Oscilloscope_v1.bit...
+INFO: [Vivado 12-1842] Bitgen Completed Successfully.
+INFO: [Project 1-118] WebTalk data collection is enabled (User setting is ON. Install Setting is ON.).
+INFO: [Common 17-186] '/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/impl_1/usage_statistics_webtalk.xml' has been successfully sent to Xilinx on Tue Nov 29 16:27:45 2016. For additional details about this file, please refer to the WebTalk help file at /var/local/xilinx-local/Vivado/2016.2/doc/webtalk_introduction.html.
+INFO: [Common 17-83] Releasing license: Implementation
+write_bitstream: Time (s): cpu = 00:00:14 ; elapsed = 00:00:09 . Memory (MB): peak = 2389.145 ; gain = 186.797 ; free physical = 781 ; free virtual = 8669
+INFO: [Vivado_Tcl 4-395] Unable to parse hwdef file Oscilloscope_v1.hwdef
+INFO: [Common 17-206] Exiting Vivado at Tue Nov 29 16:27:45 2016...

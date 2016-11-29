@@ -277,3 +277,14 @@ connect_debug_port u_ila_0/probe4 [get_nets [list {cursor1Number2[0]} {cursor1Nu
 connect_debug_port u_ila_0/probe5 [get_nets [list {cursor1Number1[0]} {cursor1Number1[1]} {cursor1Number1[2]} {cursor1Number1[3]}]]
 connect_debug_port u_ila_0/probe6 [get_nets [list {cursor1Number0[0]} {cursor1Number0[1]} {cursor1Number0[2]} {cursor1Number0[3]}]]
 
+
+set_property MARK_DEBUG false [get_nets {cursor1Voltage[9]}]
+set_property MARK_DEBUG false [get_nets {cursor1Voltage[8]}]
+set_property MARK_DEBUG false [get_nets {cursor1Voltage[7]}]
+set_property MARK_DEBUG false [get_nets {cursor1Voltage[2]}]
+set_property MARK_DEBUG false [get_nets {cursor1Voltage[6]}]
+set_property MARK_DEBUG false [get_nets {cursor1Voltage[5]}]
+set_property MARK_DEBUG false [get_nets {cursor1Voltage[4]}]
+set_property MARK_DEBUG false [get_nets {cursor1Voltage[3]}]
+set_property MARK_DEBUG false [get_nets {cursor1Voltage[1]}]
+set_property MARK_DEBUG false [get_nets {cursor1Voltage[0]}]

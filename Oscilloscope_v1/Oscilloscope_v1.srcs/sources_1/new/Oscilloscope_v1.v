@@ -22,8 +22,8 @@
 
 
 module Oscilloscope_v1
-   #(parameter  DISPLAY_X_BITS = 11,
-                DISPLAY_Y_BITS = 11,
+   #(parameter  DISPLAY_X_BITS = 12,
+                DISPLAY_Y_BITS = 12,
                 ADDRESS_BITS = 12,
                 RGB_BITS = 12,
                 X_MIDDLE_VOLTAGE_CHARACTER_4 = 1_088,
@@ -443,14 +443,27 @@ module Oscilloscope_v1
                 .spriteBlank(tlsBlank)
                 );
     
-    wire [CURSOR_VOLTAGE_BITS-1:0] cursor1Voltage;
-    assign cursor1Voltage = 10'd987;
+    wire [DISPLAY_Y_BITS-1:0] yCursor1;
+    assign yCursor1 = 12'd412;
+    wire signed [CURSOR_VOLTAGE_BITS-1:0] cursor1Voltage;
+    wire [CURSOR_VOLTAGE_BITS-1:0] cursor1VoltageAbsoluteValue;
+    wire isNegative;
+    YPixelToVoltage yCursor1ToVoltage
+            (.clock(CLK108MHZ),
+            .y(yCursor1),
+            .scale(verticalScaleFactorTimes8ChannelSelected),
+            .voltage(cursor1Voltage),
+            .voltageAbsoluteValue(cursor1VoltageAbsoluteValue),
+            .isNegative(isNegative)
+            );
+            
+    
     wire [DIGIT_BITS-1:0] cursor1Number2;
     wire [DIGIT_BITS-1:0] cursor1Number1;
     wire [DIGIT_BITS-1:0] cursor1Number0;
     ConvertBCD cursor1ConvertBCD(
             .clock(CLK108MHZ),
-            .data(cursor1Voltage),
+            .data(cursor1VoltageAbsoluteValue),
             .d(cursor1Number0),
             .d10(cursor1Number1),
             .d100(cursor1Number2)

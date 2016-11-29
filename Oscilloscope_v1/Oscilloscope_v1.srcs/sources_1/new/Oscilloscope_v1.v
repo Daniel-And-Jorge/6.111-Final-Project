@@ -71,7 +71,8 @@ module Oscilloscope_v1
                 SAMPLE_BITS = 12,
                 TOGGLE_CHANNELS_STATE_BITS = 2,
                 SCALE_FACTOR_BITS = 10,
-                DIGIT_BITS = 4) 
+                DIGIT_BITS = 4,
+                CURSOR_VOLTAGE_BITS = 10) 
    (input CLK100MHZ,
    input vauxp11,
    input vauxn11,
@@ -442,12 +443,19 @@ module Oscilloscope_v1
                 .spriteBlank(tlsBlank)
                 );
     
+    wire [CURSOR_VOLTAGE_BITS-1:0] cursorVoltage;
+    assign cursorVoltage = 10'd987;
     wire [DIGIT_BITS-1:0] cursor1Number2;
-    assign cursor1Number2 = 4'd1;
     wire [DIGIT_BITS-1:0] cursor1Number1;
-    assign cursor1Number1 = 4'd2;
     wire [DIGIT_BITS-1:0] cursor1Number0;
-    assign cursor1Number0 = 4'd3;    
+    ConvertBCD cursor1ConvertBCD(
+            .clock(CLK108MHZ),
+            .data(cursor1Voltage),
+            .d(cursor1Number0),
+            .d10(cursor1Number1),
+            .d100(cursor1Number2)
+            );
+     
     wire [SELECT_CHARACTER_BITS-1:0] cursor1VoltageCharacter2;
     wire [SELECT_CHARACTER_BITS-1:0] cursor1VoltageCharacter1;
     wire [SELECT_CHARACTER_BITS-1:0] cursor1VoltageCharacter0;

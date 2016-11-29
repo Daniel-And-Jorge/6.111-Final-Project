@@ -443,8 +443,8 @@ module Oscilloscope_v1
                 .spriteBlank(tlsBlank)
                 );
     
-    wire [CURSOR_VOLTAGE_BITS-1:0] cursorVoltage;
-    assign cursorVoltage = 10'd987;
+    wire [CURSOR_VOLTAGE_BITS-1:0] cursor1Voltage;
+    assign cursor1Voltage = 10'd987;
     wire [DIGIT_BITS-1:0] cursor1Number2;
     wire [DIGIT_BITS-1:0] cursor1Number1;
     wire [DIGIT_BITS-1:0] cursor1Number0;

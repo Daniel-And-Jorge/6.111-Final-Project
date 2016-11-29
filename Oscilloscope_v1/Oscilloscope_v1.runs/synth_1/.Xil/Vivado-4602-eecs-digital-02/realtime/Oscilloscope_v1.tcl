@@ -9,14 +9,12 @@ set rt::rc [catch {
   uplevel #0 {
     set ::env(BUILTIN_SYNTH) true
     source $::env(HRT_TCL_PATH)/rtSynthPrep.tcl
-    rt::HARTNDb_resetJobStats
     rt::HARTNDb_startJobStats
     set rt::cmdEcho 0
     rt::set_parameter writeXmsg true
     rt::set_parameter enableParallelHelperSpawn true
-    set ::env(RT_TMP) "./.Xil/Vivado-30905-eecs-digital-02/realtime/tmp"
+    set ::env(RT_TMP) "./.Xil/Vivado-4602-eecs-digital-02/realtime/tmp"
     if { [ info exists ::env(RT_TMP) ] } {
-      file delete -force $::env(RT_TMP)
       file mkdir $::env(RT_TMP)
     }
 
@@ -24,13 +22,13 @@ set rt::rc [catch {
 
     set rt::runtime_optimized 1
     set rt::partid xc7a100tcsg324-3
-    source $::env(HRT_TCL_PATH)/rtSynthParallelPrep.tcl
 
     set rt::multiChipSynthesisFlow false
     source $::env(SYNTH_COMMON)/common_vhdl.tcl
     set rt::defaultWorkLibName xil_defaultlib
 
-    set rt::useElabCache false
+    # Skipping read_* RTL commands because this is post-elab optimize flow
+    set rt::useElabCache true
     if {$rt::useElabCache == false} {
       rt::read_verilog -sv -include /afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new {
       /var/local/xilinx-local/Vivado/2016.2/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv
@@ -43,9 +41,9 @@ set rt::rc [catch {
       /var/local/xilinx-local/Vivado/2016.2/data/ip/xpm/xpm_memory/hdl/xpm_memory_tdpram.sv
     }
       rt::read_verilog -include /afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new {
-      ./.Xil/Vivado-30905-eecs-digital-02/realtime/blk_mem_gen_0_stub.v
-      ./.Xil/Vivado-30905-eecs-digital-02/realtime/CharactersROM_stub.v
-      ./.Xil/Vivado-30905-eecs-digital-02/realtime/clk_wiz_0_stub.v
+      ./.Xil/Vivado-4602-eecs-digital-02/realtime/blk_mem_gen_0_stub.v
+      ./.Xil/Vivado-4602-eecs-digital-02/realtime/CharactersROM_stub.v
+      ./.Xil/Vivado-4602-eecs-digital-02/realtime/clk_wiz_0_stub.v
       /afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/VerticalScaler.vh
       /afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/ConvertBCD.v
       /afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/Text.v
@@ -71,29 +69,33 @@ set rt::rc [catch {
       rt::read_vhdl -lib xpm /var/local/xilinx-local/Vivado/2016.2/data/ip/xpm/xpm_VCOMP.vhd
       rt::filesetChecksum
     }
-    rt::set_parameter usePostFindUniquification false
+    rt::set_parameter usePostFindUniquification true
+    set rt::SDCFileList ./.Xil/Vivado-4602-eecs-digital-02/realtime/Oscilloscope_v1_synth.xdc
+    rt::sdcChecksum
     set rt::top Oscilloscope_v1
+    set rt::flattenHierarchy 3
     set rt::reportTiming false
-    rt::set_parameter elaborateOnly true
-    rt::set_parameter elaborateRtl true
-    rt::set_parameter eliminateRedundantBitOperator false
+    rt::set_parameter elaborateOnly false
+    rt::set_parameter elaborateRtl false
+    rt::set_parameter eliminateRedundantBitOperator true
     rt::set_parameter writeBlackboxInterface true
+    rt::set_parameter inferFsm false
+    rt::set_parameter ramStyle auto
     rt::set_parameter merge_flipflops true
-    rt::set_parameter srlDepthThreshold 3
-    rt::set_parameter rstSrlDepthThreshold 4
 # MODE: 
-    rt::set_parameter webTalkPath {}
-    rt::set_parameter enableSplitFlowPath "./.Xil/Vivado-30905-eecs-digital-02/"
+    rt::set_parameter webTalkPath {/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.cache/wt}
+    rt::set_parameter enableSplitFlowPath "./.Xil/Vivado-4602-eecs-digital-02/"
     set ok_to_delete_rt_tmp true 
     if { [rt::get_parameter parallelDebug] } { 
        set ok_to_delete_rt_tmp false 
     } 
     if {$rt::useElabCache == false} {
-      rt::run_rtlelab -module $rt::top
+      rt::run_synthesis -module $rt::top
     }
 
     set rt::flowresult [ source $::env(SYNTH_COMMON)/flow.tcl ]
     rt::HARTNDb_stopJobStats
+    rt::HARTNDb_reportJobStats "Synthesis Optimization Runtime"
     if { $rt::flowresult == 1 } { return -code error }
 
     if { [ info exists ::env(RT_TMP) ] } {
@@ -103,6 +105,11 @@ set rt::rc [catch {
     }
 
 
+  set hsKey [rt::get_parameter helper_shm_key] 
+  if { $hsKey != "" && [info exists ::env(BUILTIN_SYNTH)] && [rt::get_parameter enableParallelHelperSpawn] && [info exists rt::doParallel] && $rt::doParallel} { 
+     $rt::db killSynthHelper $hsKey
+  } 
+  rt::set_parameter helper_shm_key "" 
     source $::env(HRT_TCL_PATH)/rtSynthCleanup.tcl
   } ; #end uplevel
 } rt::result]

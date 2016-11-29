@@ -52,6 +52,8 @@ module Oscilloscope_v1
                 X_CURSOR_1_CHARACTER_14 = 1020,
                 X_CURSOR_1_CHARACTER_13 = 1040,
                 X_CURSOR_1_CHARACTER_12 = 1060,
+                X_CURSOR_1_CHARACTER_11 = 1080,
+                X_CURSOR_1_CHARACTER_10 = 1100,
                 
                 SELECT_CHARACTER_BITS = 7,
                 DRP_ADDRESS_BITS = 7,
@@ -462,6 +464,10 @@ module Oscilloscope_v1
     assign cursor1Character13 = 7'd82;  //r
     wire [SELECT_CHARACTER_BITS-1:0] cursor1Character12;
     assign cursor1Character12 = 7'd83;  //s
+    wire [SELECT_CHARACTER_BITS-1:0] cursor1Character11;
+    assign cursor1Character11 = 7'd79;  //o
+    wire [SELECT_CHARACTER_BITS-1:0] cursor1Character10;
+    assign cursor1Character10 = 7'd82;  //r
     Text myText (.clock(CLK108MHZ), 
         .xMiddleVoltage4(X_MIDDLE_VOLTAGE_CHARACTER_4), .yMiddleVoltage4(Y_MIDDLE_VOLTAGE_CHARACTER_4), .middleVoltageCharacter4(middleVoltageCharacter4),
         .xMiddleVoltage3(X_MIDDLE_VOLTAGE_CHARACTER_3), .yMiddleVoltage3(Y_MIDDLE_VOLTAGE_CHARACTER_3), .middleVoltageCharacter3(middleVoltageCharacter3),
@@ -478,6 +484,8 @@ module Oscilloscope_v1
         .xCursor1_14(X_CURSOR_1_CHARACTER_14), .yCursor1_14(Y_CURSOR_1), .cursor1Character14(cursor1Character14),
         .xCursor1_13(X_CURSOR_1_CHARACTER_13), .yCursor1_13(Y_CURSOR_1), .cursor1Character13(cursor1Character13),
         .xCursor1_12(X_CURSOR_1_CHARACTER_12), .yCursor1_12(Y_CURSOR_1), .cursor1Character12(cursor1Character12),
+        .xCursor1_11(X_CURSOR_1_CHARACTER_11), .yCursor1_11(Y_CURSOR_1), .cursor1Character11(cursor1Character11),
+        .xCursor1_10(X_CURSOR_1_CHARACTER_10), .yCursor1_10(Y_CURSOR_1), .cursor1Character10(cursor1Character10),
         
         .displayX(tlsDisplayX), .displayY(tlsDisplayY), 
         .hsync(tlsHsync), .vsync(tlsVsync), .blank(tlsBlank), .previousPixel(tlsPixel),

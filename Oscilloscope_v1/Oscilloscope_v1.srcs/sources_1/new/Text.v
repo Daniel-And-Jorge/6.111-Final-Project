@@ -76,6 +76,12 @@ module Text
     input [DISPLAY_X_BITS-1:0] xCursor1_12,
     input [DISPLAY_Y_BITS-1:0] yCursor1_12,
     input [SELECT_CHARACTER_BITS-1:0] cursor1Character12,
+    input [DISPLAY_X_BITS-1:0] xCursor1_11,
+    input [DISPLAY_Y_BITS-1:0] yCursor1_11,
+    input [SELECT_CHARACTER_BITS-1:0] cursor1Character11,
+    input [DISPLAY_X_BITS-1:0] xCursor1_10,
+    input [DISPLAY_Y_BITS-1:0] yCursor1_10,
+    input [SELECT_CHARACTER_BITS-1:0] cursor1Character10,
         
     input [DISPLAY_X_BITS-1:0] displayX,
     input [DISPLAY_Y_BITS-1:0] displayY,
@@ -184,9 +190,17 @@ module Text
           yCursor1_12 <= displayY && displayY < (yCursor1_12 + CHARACTER_HEIGHT)) begin   
           row <= displayY - yCursor1_12;
           column <= displayX - xCursor1_12;
+        end else if (xCursor1_11 <= displayX && displayX < (xCursor1_11 + CHARACTER_WIDTH) &&
+          yCursor1_11 <= displayY && displayY < (yCursor1_11 + CHARACTER_HEIGHT)) begin   
+          row <= displayY - yCursor1_11;
+          column <= displayX - xCursor1_11;
+        end else if (xCursor1_10 <= displayX && displayX < (xCursor1_10 + CHARACTER_WIDTH) &&
+          yCursor1_10 <= displayY && displayY < (yCursor1_10 + CHARACTER_HEIGHT)) begin   
+          row <= displayY - yCursor1_10;
+          column <= displayX - xCursor1_10;
         end else begin
-            row <= 0;
-            column <= 0;
+          row <= 0;
+          column <= 0;
         end
         displayX1 <= displayX;
         displayY1 <= displayY;
@@ -240,6 +254,12 @@ module Text
         end else if (xCursor1_12 <= displayX1 && displayX1 < (xCursor1_12 + CHARACTER_WIDTH) &&
             yCursor1_12 <= displayY1 && displayY1 < (yCursor1_12 + CHARACTER_HEIGHT)) begin   
             addressA <= {cursor1Character12, row, column};
+        end else if (xCursor1_11 <= displayX1 && displayX1 < (xCursor1_11 + CHARACTER_WIDTH) &&
+            yCursor1_11 <= displayY1 && displayY1 < (yCursor1_11 + CHARACTER_HEIGHT)) begin   
+            addressA <= {cursor1Character11, row, column};
+        end else if (xCursor1_10 <= displayX1 && displayX1 < (xCursor1_10 + CHARACTER_WIDTH) &&
+            yCursor1_10 <= displayY1 && displayY1 < (yCursor1_10 + CHARACTER_HEIGHT)) begin   
+            addressA <= {cursor1Character10, row, column};
         end
         displayX2 <= displayX1;
         displayY2 <= displayY1;
@@ -327,6 +347,14 @@ module Text
             pixel <= CHARACTER_COLOR;
         end else if (xCursor1_12 <= displayX4 && displayX4 < (xCursor1_12 + CHARACTER_WIDTH) &&
                 yCursor1_12 <= displayY4 && displayY4 < (yCursor1_12 + CHARACTER_HEIGHT) &&
+                dataOutA == 1) begin
+            pixel <= CHARACTER_COLOR;
+        end else if (xCursor1_11 <= displayX4 && displayX4 < (xCursor1_11 + CHARACTER_WIDTH) &&
+                yCursor1_11 <= displayY4 && displayY4 < (yCursor1_11 + CHARACTER_HEIGHT) &&
+                dataOutA == 1) begin
+            pixel <= CHARACTER_COLOR;
+        end else if (xCursor1_10 <= displayX4 && displayX4 < (xCursor1_10 + CHARACTER_WIDTH) &&
+                yCursor1_10 <= displayY4 && displayY4 < (yCursor1_10 + CHARACTER_HEIGHT) &&
                 dataOutA == 1) begin
             pixel <= CHARACTER_COLOR;
         end else begin

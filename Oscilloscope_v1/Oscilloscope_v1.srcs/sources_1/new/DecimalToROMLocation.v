@@ -28,9 +28,9 @@ module DecimalToROMLocation
     input [DIGIT_BITS-1:0] number2,
     input [DIGIT_BITS-1:0] number1,
     input [DIGIT_BITS-1:0] number0,
-    output reg [SELECT_CHARACTER_BITS-1:0] character2,
-    output reg [SELECT_CHARACTER_BITS-1:0] character1,
-    output reg [SELECT_CHARACTER_BITS-1:0] character0
+    output reg [SELECT_CHARACTER_BITS-1:0] character2 = 0,
+    output reg [SELECT_CHARACTER_BITS-1:0] character1 = 0,
+    output reg [SELECT_CHARACTER_BITS-1:0] character0 = 0
     );
     
     always @(posedge clock) begin

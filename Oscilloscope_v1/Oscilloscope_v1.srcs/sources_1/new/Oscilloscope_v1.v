@@ -138,7 +138,7 @@ module Oscilloscope_v1
     wire [3:0] verticalScaleExponentChannel1;
     wire [3:0] verticalScaleExponentChannel2;
     GetVerticalScaleExponents myGetVericalScaleExponents
-                                    (.clock(clock),
+                                    (.clock(CLK108MHZ),
                                     .verticalScaleFactorTimes8Channel1(verticalScaleFactorTimes8Channel1),
                                     .verticalScaleFactorTimes8Channel2(verticalScaleFactorTimes8Channel1),
                                     .verticalScaleExponentChannel1(verticalScaleExponentChannel1),
@@ -462,14 +462,14 @@ module Oscilloscope_v1
     assign yCursor1 = 12'd412;
     wire signed [CURSOR_VOLTAGE_BITS-1:0] cursor1Voltage;
     wire [CURSOR_VOLTAGE_BITS-1:0] cursor1VoltageAbsoluteValue;
-    wire isNegative;
+    wire cursor1IsNegative;
     YPixelToVoltage yCursor1ToVoltage
             (.clock(CLK108MHZ),
             .y(yCursor1),
             .scaleExponent(verticalScaleExponentChannelSelected),
             .voltage(cursor1Voltage),
             .voltageAbsoluteValue(cursor1VoltageAbsoluteValue),
-            .isNegative(isNegative)
+            .isNegative(cursor1IsNegative)
             );
             
     
@@ -543,7 +543,7 @@ module Oscilloscope_v1
     wire [SELECT_CHARACTER_BITS-1:0] cursor1Character6;
     assign cursor1Character6 = 7'd0;  //Space
     wire [SELECT_CHARACTER_BITS-1:0] cursor1Character5;
-    assign cursor1Character5 = 7'd11;  //+
+    assign cursor1Character5 = cursor1IsNegative ? 7'd13 : 7'd11;  //+ or -
     wire [SELECT_CHARACTER_BITS-1:0] cursor1Character4;
     assign cursor1Character4 = cursor1VoltageCharacter2;  //1
     wire [SELECT_CHARACTER_BITS-1:0] cursor1Character3;

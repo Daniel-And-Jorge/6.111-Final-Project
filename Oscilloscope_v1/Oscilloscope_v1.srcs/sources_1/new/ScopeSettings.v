@@ -36,8 +36,6 @@ module ScopeSettings
      output reg signed [DATA_BITS-1:0]triggerThreshold = 0,
      output reg [SCALE_FACTOR_SIZE-1:0]verticalScaleFactorTimes8Channel1 = 8,
      output reg [SCALE_FACTOR_SIZE-1:0]verticalScaleFactorTimes8Channel2 = 8,
-     output reg [SCALE_EXPONENT_BITS-1:0] verticalScaleExponentChannel1 = 3,
-     output reg [SCALE_EXPONENT_BITS-1:0] verticalScaleExponentChannel2 = 3,
      output reg [SAMPLE_PERIOD_BITS-1:0]samplePeriod = 0,
      output reg channelSelected
     );
@@ -66,19 +64,15 @@ module ScopeSettings
             // adjust vertical scaling channel1
             if (btnu) begin
                 verticalScaleFactorTimes8Channel1 <= verticalScaleFactorTimes8Channel1 * 2;
-                verticalScaleExponentChannel1 = verticalScaleExponentChannel1 + 1;
             end else if (btnd) begin
                 verticalScaleFactorTimes8Channel1 <= verticalScaleFactorTimes8Channel1 / 2;
-                verticalScaleExponentChannel1 = verticalScaleExponentChannel1 - 1;
             end
          4'b0010:
             // adjust vertical scaling channel2
              if (btnu) begin
                 verticalScaleFactorTimes8Channel2 <= verticalScaleFactorTimes8Channel2 * 2;
-                verticalScaleExponentChannel2 <= verticalScaleExponentChannel2 + 1;
              end else if (btnd) begin
                 verticalScaleFactorTimes8Channel2 <= verticalScaleFactorTimes8Channel2 / 2;
-                verticalScaleExponentChannel2 <= verticalScaleExponentChannel2 - 1;
              end
          4'b0100:
             // adjust sample rate
@@ -110,9 +104,8 @@ module ScopeSettings
             triggerThreshold <= 0;
             verticalScaleFactorTimes8Channel1 <= 8;
             verticalScaleFactorTimes8Channel2 <= 8;
-            verticalScaleExponentChannel1 <= 3;
-            verticalScaleExponentChannel2 <= 3;
             samplePeriod <= 0;
        end
     end
+    
 endmodule

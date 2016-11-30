@@ -111,8 +111,6 @@ module Oscilloscope_v1
     wire signed [11:0] triggerThreshold;
     wire [9:0] verticalScaleFactorTimes8Channel1;
     wire [9:0] verticalScaleFactorTimes8Channel2;
-    wire [3:0] verticalScaleExponentChannel1;
-    wire [3:0] verticalScaleExponentChannel2;
     wire [5:0] samplePeriod;
     wire channelSelected;
     assign LED[15] = channelSelected;
@@ -134,10 +132,18 @@ module Oscilloscope_v1
                         .triggerThreshold(triggerThreshold), 
                         .verticalScaleFactorTimes8Channel1(verticalScaleFactorTimes8Channel1), 
                         .verticalScaleFactorTimes8Channel2(verticalScaleFactorTimes8Channel2),
-                        .verticalScaleExponentChannel1(verticalScaleExponentChannel1),
-                        .verticalScaleExponentChannel2(verticalScaleExponentChannel2),
                         .samplePeriod(samplePeriod), .channelSelected(channelSelected)                
                         );
+    
+    wire [3:0] verticalScaleExponentChannel1;
+    wire [3:0] verticalScaleExponentChannel2;
+    GetVerticalScaleExponents myGetVericalScaleExponents
+                                    (.clock(clock),
+                                    .verticalScaleFactorTimes8Channel1(verticalScaleFactorTimes8Channel1),
+                                    .verticalScaleFactorTimes8Channel2(verticalScaleFactorTimes8Channel1),
+                                    .verticalScaleExponentChannel1(verticalScaleExponentChannel1),
+                                    .verticalScaleExponentChannel2(verticalScaleExponentChannel2)
+                                    );
     
     // Button input debouncers
     debounce (.reset(reset), .clock(CLK108MHZ), .noisy(BTNU), .clean(btnu_clean));

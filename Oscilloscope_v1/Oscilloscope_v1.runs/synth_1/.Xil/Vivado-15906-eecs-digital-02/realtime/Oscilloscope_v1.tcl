@@ -14,7 +14,7 @@ set rt::rc [catch {
     set rt::cmdEcho 0
     rt::set_parameter writeXmsg true
     rt::set_parameter enableParallelHelperSpawn true
-    set ::env(RT_TMP) "./.Xil/Vivado-31737-eecs-digital-02/realtime/tmp"
+    set ::env(RT_TMP) "./.Xil/Vivado-15906-eecs-digital-02/realtime/tmp"
     if { [ info exists ::env(RT_TMP) ] } {
       file delete -force $::env(RT_TMP)
       file mkdir $::env(RT_TMP)
@@ -43,9 +43,9 @@ set rt::rc [catch {
       /var/local/xilinx-local/Vivado/2016.2/data/ip/xpm/xpm_memory/hdl/xpm_memory_tdpram.sv
     }
       rt::read_verilog -include /afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new {
-      ./.Xil/Vivado-31737-eecs-digital-02/realtime/blk_mem_gen_0_stub.v
-      ./.Xil/Vivado-31737-eecs-digital-02/realtime/CharactersROM_stub.v
-      ./.Xil/Vivado-31737-eecs-digital-02/realtime/clk_wiz_0_stub.v
+      ./.Xil/Vivado-15906-eecs-digital-02/realtime/blk_mem_gen_0_stub.v
+      ./.Xil/Vivado-15906-eecs-digital-02/realtime/CharactersROM_stub.v
+      ./.Xil/Vivado-15906-eecs-digital-02/realtime/clk_wiz_0_stub.v
       /afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/VerticalScaler.vh
       /afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/GetVerticalScaleExponents.v
       /afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.srcs/sources_1/new/YPixelToVoltage.v
@@ -85,7 +85,7 @@ set rt::rc [catch {
     rt::set_parameter rstSrlDepthThreshold 4
 # MODE: 
     rt::set_parameter webTalkPath {}
-    rt::set_parameter enableSplitFlowPath "./.Xil/Vivado-31737-eecs-digital-02/"
+    rt::set_parameter enableSplitFlowPath "./.Xil/Vivado-15906-eecs-digital-02/"
     set ok_to_delete_rt_tmp true 
     if { [rt::get_parameter parallelDebug] } { 
        set ok_to_delete_rt_tmp false 

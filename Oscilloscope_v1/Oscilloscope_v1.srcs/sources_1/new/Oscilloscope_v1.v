@@ -135,12 +135,12 @@ module Oscilloscope_v1
                         .samplePeriod(samplePeriod), .channelSelected(channelSelected)                
                         );
     
-    wire [3:0] verticalScaleExponentChannel1;
-    wire [3:0] verticalScaleExponentChannel2;
+    (* mark_debug = "true" *) wire [3:0] verticalScaleExponentChannel1;
+    (* mark_debug = "true" *) wire [3:0] verticalScaleExponentChannel2;
     GetVerticalScaleExponents myGetVericalScaleExponents
                                     (.clock(CLK108MHZ),
                                     .verticalScaleFactorTimes8Channel1(verticalScaleFactorTimes8Channel1),
-                                    .verticalScaleFactorTimes8Channel2(verticalScaleFactorTimes8Channel1),
+                                    .verticalScaleFactorTimes8Channel2(verticalScaleFactorTimes8Channel2),
                                     .verticalScaleExponentChannel1(verticalScaleExponentChannel1),
                                     .verticalScaleExponentChannel2(verticalScaleExponentChannel2)
                                     );
@@ -302,7 +302,7 @@ module Oscilloscope_v1
     wire [SAMPLE_BITS-1:0] channelSelectedData;
     wire positiveSlopeChannelSelected;
     wire [SCALE_FACTOR_BITS-1:0] verticalScaleFactorTimes8ChannelSelected;
-    wire [SCALE_EXPONENT_BITS-1:0] verticalScaleExponentChannelSelected;
+    (* mark_debug = "true" *) wire [SCALE_EXPONENT_BITS-1:0] verticalScaleExponentChannelSelected;
     SelectChannelData mySelectChannelData
             (.clock(CLK108MHZ),
             .channel1(adccRawDataOutChannel1),
@@ -496,6 +496,27 @@ module Oscilloscope_v1
             .character1(cursor1VoltageCharacter1),
             .character0(cursor1VoltageCharacter0)
             );
+           
+//    wire [RGB_BITS-1:0] cursor1Pixel;
+//    wire [DISPLAY_X_BITS-1:0] cursor1DisplayX;
+//    wire [DISPLAY_Y_BITS-1:0] cursor1DisplayY;
+//    wire tlsHsync, tlsVsync, cursor1Blank;
+//    HorizontalLineSprite mytls
+//            (.clock(CLK108MHZ),
+//            .level(triggerThreshold * $signed(verticalScaleFactorTimes8ChannelSelected) / 'sd8),
+//            .displayX(curveChannel2DisplayX),
+//            .displayY(curveChannel2DisplayY),
+//            .hsync(curveChannel2Hsync),
+//            .vsync(curveChannel2Vsync),
+//            .blank(curveChannel2Blank),
+//            .previousPixel(curveChannel2Pixel),
+//            .pixel(tlsPixel),
+//            .spriteDisplayX(tlsDisplayX),
+//            .spriteDisplayY(tlsDisplayY),
+//            .spriteHsync(tlsHsync),
+//            .spriteVsync(tlsVsync),
+//            .spriteBlank(tlsBlank)
+//            );
             
     wire textHsync, textVsync, textBlank;
     wire [RGB_BITS-1:0] textPixel;

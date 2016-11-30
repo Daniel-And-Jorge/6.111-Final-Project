@@ -114,6 +114,7 @@ module Oscilloscope_v1
     wire [5:0] samplePeriod;
     wire channelSelected;
     assign LED[15] = channelSelected;
+    wire [DISPLAY_Y_BITS-1:0] yCursor1;
     
     // these come from MeasureSignal
     wire signed [11:0] signalMinChannel1;
@@ -132,11 +133,12 @@ module Oscilloscope_v1
                         .triggerThreshold(triggerThreshold), 
                         .verticalScaleFactorTimes8Channel1(verticalScaleFactorTimes8Channel1), 
                         .verticalScaleFactorTimes8Channel2(verticalScaleFactorTimes8Channel2),
-                        .samplePeriod(samplePeriod), .channelSelected(channelSelected)                
+                        .samplePeriod(samplePeriod), .channelSelected(channelSelected),
+                        .yCursor1(yCursor1)              
                         );
     
-    (* mark_debug = "true" *) wire [3:0] verticalScaleExponentChannel1;
-    (* mark_debug = "true" *) wire [3:0] verticalScaleExponentChannel2;
+    wire [3:0] verticalScaleExponentChannel1;
+    wire [3:0] verticalScaleExponentChannel2;
     GetVerticalScaleExponents myGetVericalScaleExponents
                                     (.clock(CLK108MHZ),
                                     .verticalScaleFactorTimes8Channel1(verticalScaleFactorTimes8Channel1),
@@ -302,7 +304,7 @@ module Oscilloscope_v1
     wire [SAMPLE_BITS-1:0] channelSelectedData;
     wire positiveSlopeChannelSelected;
     wire [SCALE_FACTOR_BITS-1:0] verticalScaleFactorTimes8ChannelSelected;
-    (* mark_debug = "true" *) wire [SCALE_EXPONENT_BITS-1:0] verticalScaleExponentChannelSelected;
+    wire [SCALE_EXPONENT_BITS-1:0] verticalScaleExponentChannelSelected;
     SelectChannelData mySelectChannelData
             (.clock(CLK108MHZ),
             .channel1(adccRawDataOutChannel1),
@@ -458,7 +460,6 @@ module Oscilloscope_v1
                 .spriteBlank(tlsBlank)
                 );
     
-    wire [DISPLAY_Y_BITS-1:0] yCursor1;
     assign yCursor1 = 12'd100;
     wire signed [CURSOR_VOLTAGE_BITS-1:0] cursor1Voltage;
     wire [CURSOR_VOLTAGE_BITS-1:0] cursor1VoltageAbsoluteValue;

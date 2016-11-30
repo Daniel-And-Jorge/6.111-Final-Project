@@ -23,7 +23,10 @@
 module ScopeSettings
     #(parameter DATA_BITS = 12, SAMPLE_PERIOD_BITS = 6, SCALE_FACTOR_SIZE = 10,
       parameter TRIGGER_THRESHOLD_ADJUST = 3 << (DATA_BITS - 7),
-                SCALE_EXPONENT_BITS = 4)
+                SCALE_EXPONENT_BITS = 4,
+                DISPLAY_Y_BITS = 12,
+                INCREASE_PIXEL_COUNT = 1000,
+                COUNT_BITS = 10)
     (input clock,
      input [15:0] sw,
      input btnu, input btnd, input btnc, input btnl,
@@ -37,7 +40,8 @@ module ScopeSettings
      output reg [SCALE_FACTOR_SIZE-1:0]verticalScaleFactorTimes8Channel1 = 8,
      output reg [SCALE_FACTOR_SIZE-1:0]verticalScaleFactorTimes8Channel2 = 8,
      output reg [SAMPLE_PERIOD_BITS-1:0]samplePeriod = 0,
-     output reg channelSelected
+     output reg channelSelected,
+     output reg [DISPLAY_Y_BITS-1:0] yCursor1 = 12'd512
     );
     
     wire [SCALE_FACTOR_SIZE-1:0] optimalScaleChannel1;
@@ -52,36 +56,57 @@ module ScopeSettings
                             biggestScaleToSeeMinChannel1 : biggestScaleToSeeMaxChannel1;
     assign optimalScaleChannel2 = (biggestScaleToSeeMaxChannel2 > biggestScaleToSeeMinChannel2) ? 
                             biggestScaleToSeeMinChannel2 : biggestScaleToSeeMaxChannel2;
+                            
+    reg [COUNT_BITS-1:0] count;
     
     always @(posedge clock) begin
         // manual adjust
-        case (sw[3:0])
-          4'b0000: 
+        case (sw[4:0])
+          5'b00000: 
              // adjust trigger threshold
              if (btnu) triggerThreshold <= triggerThreshold + TRIGGER_THRESHOLD_ADJUST;
              else if (btnd) triggerThreshold <= triggerThreshold - TRIGGER_THRESHOLD_ADJUST;
-         4'b0001:
+         5'b00001:
             // adjust vertical scaling channel1
             if (btnu) begin
                 verticalScaleFactorTimes8Channel1 <= verticalScaleFactorTimes8Channel1 * 2;
             end else if (btnd) begin
                 verticalScaleFactorTimes8Channel1 <= verticalScaleFactorTimes8Channel1 / 2;
             end
-         4'b0010:
+         5'b00010:
             // adjust vertical scaling channel2
              if (btnu) begin
                 verticalScaleFactorTimes8Channel2 <= verticalScaleFactorTimes8Channel2 * 2;
              end else if (btnd) begin
                 verticalScaleFactorTimes8Channel2 <= verticalScaleFactorTimes8Channel2 / 2;
              end
-         4'b0100:
+         5'b00100:
             // adjust sample rate
             if (btnu) samplePeriod <= samplePeriod + 1;
             else if (btnd) samplePeriod <= samplePeriod - 1;
-         4'b1000:
+         5'b01000:
             // select channel to trigger on
             if (btnu) channelSelected = ~channelSelected;
             else if (btnd) channelSelected = ~channelSelected;
+         5'b10000:
+            //adjust cursor 1
+            if (btnu) begin
+                if (count > INCREASE_PIXEL_COUNT) begin
+                    count <= 0;
+                    yCursor1 <= yCursor1 - 1;
+                end else begin
+                    count <= count + 1;
+                end
+            end else if (btnd) begin
+                if (count > INCREASE_PIXEL_COUNT) begin
+                    count <= 0;
+                    yCursor1 <= yCursor1 + 1;
+                end else begin
+                    count <= count + 1;
+                end
+            end else begin
+                count <= 0;
+            end
        endcase
        
        // autoset

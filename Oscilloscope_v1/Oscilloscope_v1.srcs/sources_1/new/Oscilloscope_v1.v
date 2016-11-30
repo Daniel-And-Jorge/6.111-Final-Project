@@ -296,6 +296,7 @@ module Oscilloscope_v1
     wire [SAMPLE_BITS-1:0] channelSelectedData;
     wire positiveSlopeChannelSelected;
     wire [SCALE_FACTOR_BITS-1:0] verticalScaleFactorTimes8ChannelSelected;
+    wire [SCALE_EXPONENT_BITS-1:0] verticalScaleExponentChannelSelected;
     SelectChannelData mySelectChannelData
             (.clock(CLK108MHZ),
             .channel1(adccRawDataOutChannel1),
@@ -304,10 +305,13 @@ module Oscilloscope_v1
             .positiveSlopeChannel2(positiveSlopeChannel2),
             .verticalScaleFactorTimes8Channel1(verticalScaleFactorTimes8Channel1),
             .verticalScaleFactorTimes8Channel2(verticalScaleFactorTimes8Channel2),
+            .verticalScaleExponentChannel1(verticalScaleExponentChannel1),
+            .verticalScaleExponentChannel2(verticalScaleExponentChannel2),
             .channelSelected(channelSelected),
             .channelSelectedData(channelSelectedData),
             .positiveSlopeChannelSelected(positiveSlopeChannelSelected),
-            .verticalScaleFactorTimes8ChannelSelected(verticalScaleFactorTimes8ChannelSelected)
+            .verticalScaleFactorTimes8ChannelSelected(verticalScaleFactorTimes8ChannelSelected),
+            .verticalScaleExponentChannelSelected(verticalScaleExponentChannelSelected)
             );
         
     TriggerRisingEdgeSteady #(.DATA_BITS(12))
@@ -450,8 +454,6 @@ module Oscilloscope_v1
     
     wire [DISPLAY_Y_BITS-1:0] yCursor1;
     assign yCursor1 = 12'd412;
-    wire [SCALE_EXPONENT_BITS-1:0] verticalScaleExponentChannelSelected;
-    assign verticalScaleExponentChannelSelected =4'd3;
     wire signed [CURSOR_VOLTAGE_BITS-1:0] cursor1Voltage;
     wire [CURSOR_VOLTAGE_BITS-1:0] cursor1VoltageAbsoluteValue;
     wire isNegative;

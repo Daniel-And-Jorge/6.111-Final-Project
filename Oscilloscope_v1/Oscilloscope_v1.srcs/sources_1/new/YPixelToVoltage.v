@@ -37,9 +37,9 @@ module YPixelToVoltage
     input [DISPLAY_Y_BITS-1:0] y,
     input [SCALE_EXPONENT_BITS-1:0] scaleExponent,  //scale=8 -> scaleExponent=3
     input [SCALE_FACTOR_SIZE-1:0] scale,
-    output signed [VOLTAGE_BITS-1:0] voltage,
-    output [VOLTAGE_BITS-1:0] voltageAbsoluteValue,
-    output isNegative  //0 if positive 1 if negative
+    output reg signed [VOLTAGE_BITS-1:0] voltage,
+    output reg [VOLTAGE_BITS-1:0] voltageAbsoluteValue,
+    output reg isNegative  //0 if positive 1 if negative
     );
     
     wire signed [DISPLAY_Y_BITS-1:0] pixelsRelativeToZeroVolts;
@@ -62,10 +62,13 @@ module YPixelToVoltage
         //cycle 2
         pixelsRelativeToZeroVoltsTimesVoltageRangeTimesDefaultScaleDividedByDisplayHeight <= 
                                         pixelsRelativeToZeroVoltsTimesVoltageRangeTimesDefaultScale >> DISPLAY_HEIGHT_EXPONENT;
+                                        
+        //cycle 3
+        voltage <= pixelsRelativeToZeroVoltsTimesVoltageRangeTimesDefaultScaleDividedByDisplayHeight >> scaleExponent;
+        
+        //cycle 4
+        isNegative <= (voltage < 0) ? 1'b1 : 1'b0;
+        voltageAbsoluteValue <= (voltage > 0) ? voltage : ((~voltage) + 1);
     end
-    
-    assign voltage = pixelsRelativeToZeroVoltsTimesVoltageRangeTimesDefaultScaleDividedByDisplayHeight / scale;
-    assign isNegative = (voltage < 0) ? 1'b1 : 1'b0;
-    assign voltageAbsoluteValue = (voltage > 0) ? voltage : ((~voltage) + 1);
     
 endmodule

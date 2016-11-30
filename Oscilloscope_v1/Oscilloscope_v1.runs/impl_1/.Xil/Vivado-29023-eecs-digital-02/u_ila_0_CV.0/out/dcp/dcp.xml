@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<Checkpoint Version="5" Minor="0">
+	<BUILD_NUMBER Name="1577090"/>
+	<FULL_BUILD Name="SW Build 1577090 on Thu Jun  2 16:32:35 MDT 2016"/>
+	<PRODUCT Name="Vivado v2016.2 (64-bit)"/>
+	<Part Name="xc7a100tcsg324-3"/>
+	<Top Name="u_ila_0_CV"/>
+	<DisableAutoIOBuffers Name="1"/>
+	<OutOfContext Name="1"/>
+	<File Type="XDC_IN_CONTEXT" Name="u_ila_0_CV_in_context.xdc" ModTime="1480538821"/>
+	<File Type="SHAPE" Name="u_ila_0_CV.shape" ModTime="1480538821"/>
+	<File Type="EDIF" Name="u_ila_0_CV.edf" ModTime="1480538821"/>
+	<File Type="VERILOG_STUB" Name="u_ila_0_CV_stub.v" ModTime="1480538821"/>
+	<File Type="VHDL_STUB" Name="u_ila_0_CV_stub.vhdl" ModTime="1480538821"/>
+	<File Type="XN" Name="u_ila_0_CV.xn" ModTime="1480538821"/>
+	<File Type="INCR" Name="u_ila_0_CV.incr" ModTime="1480538821"/>
+	<File Type="RDA" Name="u_ila_0_CV.rda" ModTime="1480538821"/>
+	<File Type="REPLAY" Name="u_ila_0_CV_iPhysOpt.tcl" ModTime="1480538821"/>
+	<File Type="WDF" Name="u_ila_0_CV.wdf" ModTime="1480538821"/>
+</Checkpoint>
+

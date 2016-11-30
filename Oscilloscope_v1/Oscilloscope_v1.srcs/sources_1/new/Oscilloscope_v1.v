@@ -460,7 +460,6 @@ module Oscilloscope_v1
                 .spriteBlank(tlsBlank)
                 );
     
-    assign yCursor1 = 12'd100;
     wire signed [CURSOR_VOLTAGE_BITS-1:0] cursor1Voltage;
     wire [CURSOR_VOLTAGE_BITS-1:0] cursor1VoltageAbsoluteValue;
     wire cursor1IsNegative;

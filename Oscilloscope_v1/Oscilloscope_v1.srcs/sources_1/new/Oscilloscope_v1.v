@@ -459,7 +459,7 @@ module Oscilloscope_v1
                 );
     
     wire [DISPLAY_Y_BITS-1:0] yCursor1;
-    assign yCursor1 = 12'd412;
+    assign yCursor1 = 12'd100;
     wire signed [CURSOR_VOLTAGE_BITS-1:0] cursor1Voltage;
     wire [CURSOR_VOLTAGE_BITS-1:0] cursor1VoltageAbsoluteValue;
     wire cursor1IsNegative;
@@ -467,6 +467,7 @@ module Oscilloscope_v1
             (.clock(CLK108MHZ),
             .y(yCursor1),
             .scaleExponent(verticalScaleExponentChannelSelected),
+            .scale(verticalScaleFactorTimes8ChannelSelected),
             .voltage(cursor1Voltage),
             .voltageAbsoluteValue(cursor1VoltageAbsoluteValue),
             .isNegative(cursor1IsNegative)
@@ -497,26 +498,26 @@ module Oscilloscope_v1
             .character0(cursor1VoltageCharacter0)
             );
            
-//    wire [RGB_BITS-1:0] cursor1Pixel;
-//    wire [DISPLAY_X_BITS-1:0] cursor1DisplayX;
-//    wire [DISPLAY_Y_BITS-1:0] cursor1DisplayY;
-//    wire tlsHsync, tlsVsync, cursor1Blank;
-//    HorizontalLineSprite mytls
-//            (.clock(CLK108MHZ),
-//            .level(triggerThreshold * $signed(verticalScaleFactorTimes8ChannelSelected) / 'sd8),
-//            .displayX(curveChannel2DisplayX),
-//            .displayY(curveChannel2DisplayY),
-//            .hsync(curveChannel2Hsync),
-//            .vsync(curveChannel2Vsync),
-//            .blank(curveChannel2Blank),
-//            .previousPixel(curveChannel2Pixel),
-//            .pixel(tlsPixel),
-//            .spriteDisplayX(tlsDisplayX),
-//            .spriteDisplayY(tlsDisplayY),
-//            .spriteHsync(tlsHsync),
-//            .spriteVsync(tlsVsync),
-//            .spriteBlank(tlsBlank)
-//            );
+    wire [RGB_BITS-1:0] cursor1Pixel;
+    wire [DISPLAY_X_BITS-1:0] cursor1DisplayX;
+    wire [DISPLAY_Y_BITS-1:0] cursor1DisplayY;
+    wire cursor1Hsync, cursor1Vsync, cursor1Blank;
+    HorizontalLineSprite #(.RGB_COLOR(12'hF0F), .ADDITIONAL_LINE_PIXELS(1'b0)) cursor1Line
+            (.clock(CLK108MHZ),
+            .level(yCursor1),
+            .displayX(tlsDisplayX),
+            .displayY(tlsDisplayY),
+            .hsync(tlsHsync),
+            .vsync(tlsVsync),
+            .blank(tlsBlank),
+            .previousPixel(tlsPixel),
+            .pixel(cursor1Pixel),
+            .spriteDisplayX(cursor1DisplayX),
+            .spriteDisplayY(cursor1DisplayY),
+            .spriteHsync(cursor1Hsync),
+            .spriteVsync(cursor1Vsync),
+            .spriteBlank(cursor1Blank)
+            );
             
     wire textHsync, textVsync, textBlank;
     wire [RGB_BITS-1:0] textPixel;
@@ -604,8 +605,8 @@ module Oscilloscope_v1
         .xCursor1_1(X_CURSOR_1_CHARACTER_1), .yCursor1_1(Y_CURSOR_1), .cursor1Character1(cursor1Character1),
         .xCursor1_0(X_CURSOR_1_CHARACTER_0), .yCursor1_0(Y_CURSOR_1), .cursor1Character0(cursor1Character0),
         
-        .displayX(tlsDisplayX), .displayY(tlsDisplayY), 
-        .hsync(tlsHsync), .vsync(tlsVsync), .blank(tlsBlank), .previousPixel(tlsPixel),
+        .displayX(cursor1DisplayX), .displayY(cursor1DisplayY), 
+        .hsync(cursor1Hsync), .vsync(cursor1Vsync), .blank(cursor1Blank), .previousPixel(cursor1Pixel),
         .displayXOut(textDisplayX), .displayYOut(textDisplayY), 
         .hsyncOut(textHsync), .vsyncOut(textVsync), .blankOut(textBlank), .pixel(textPixel), .addressA(addressA));
      

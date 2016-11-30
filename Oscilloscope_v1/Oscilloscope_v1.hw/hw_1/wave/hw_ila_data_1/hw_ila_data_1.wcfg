@@ -10,51 +10,30 @@
    </db_ref_list>
    <zoom_setting>
       <ZoomStartTime time="0fs"></ZoomStartTime>
-      <ZoomEndTime time="26801fs"></ZoomEndTime>
+      <ZoomEndTime time="1010800fs"></ZoomEndTime>
       <Cursor1Time time="0fs"></Cursor1Time>
    </zoom_setting>
-   <WVObjectSize size="6" />
+   <WVObjectSize size="3" />
    <wave_markers>
    </wave_markers>
-   <wvobject type="logic" fp_name="endOfConversion">
+   <wvobject type="array" fp_name="verticalScaleExponentChannel1">
       <obj_property name="DisplayName">FullPathName</obj_property>
-      <obj_property name="Radix">HEXRADIX</obj_property>
-      <obj_property name="ElementShortName">endOfConversion</obj_property>
-      <obj_property name="ObjectShortName">endOfConversion</obj_property>
-      <obj_property name="LABELRADIX">true</obj_property>
-   </wvobject>
-   <wvobject type="logic" fp_name="DRPEnable">
-      <obj_property name="DisplayName">FullPathName</obj_property>
-      <obj_property name="Radix">HEXRADIX</obj_property>
-      <obj_property name="ElementShortName">DRPEnable</obj_property>
-      <obj_property name="ObjectShortName">DRPEnable</obj_property>
-      <obj_property name="LABELRADIX">true</obj_property>
-   </wvobject>
-   <wvobject type="logic" fp_name="DRPReady">
-      <obj_property name="DisplayName">FullPathName</obj_property>
-      <obj_property name="Radix">HEXRADIX</obj_property>
-      <obj_property name="ElementShortName">DRPReady</obj_property>
-      <obj_property name="ObjectShortName">DRPReady</obj_property>
-      <obj_property name="LABELRADIX">true</obj_property>
-   </wvobject>
-   <wvobject type="logic" fp_name="channelDataReady">
-      <obj_property name="DisplayName">FullPathName</obj_property>
-      <obj_property name="Radix">HEXRADIX</obj_property>
-      <obj_property name="ElementShortName">channelDataReady</obj_property>
-      <obj_property name="ObjectShortName">channelDataReady</obj_property>
-      <obj_property name="LABELRADIX">true</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="previousState">
-      <obj_property name="DisplayName">FullPathName</obj_property>
-      <obj_property name="ElementShortName">previousState[1:0]</obj_property>
-      <obj_property name="ObjectShortName">previousState[1:0]</obj_property>
+      <obj_property name="ElementShortName">verticalScaleExponentChannel1[3:0]</obj_property>
+      <obj_property name="ObjectShortName">verticalScaleExponentChannel1[3:0]</obj_property>
       <obj_property name="Radix">HEXRADIX</obj_property>
       <obj_property name="LABELRADIX">true</obj_property>
    </wvobject>
-   <wvobject type="array" fp_name="state">
+   <wvobject type="array" fp_name="verticalScaleExponentChannel2">
       <obj_property name="DisplayName">FullPathName</obj_property>
-      <obj_property name="ElementShortName">state[1:0]</obj_property>
-      <obj_property name="ObjectShortName">state[1:0]</obj_property>
+      <obj_property name="ElementShortName">verticalScaleExponentChannel2[3:0]</obj_property>
+      <obj_property name="ObjectShortName">verticalScaleExponentChannel2[3:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="verticalScaleExponentChannelSelected">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">verticalScaleExponentChannelSelected[3:0]</obj_property>
+      <obj_property name="ObjectShortName">verticalScaleExponentChannelSelected[3:0]</obj_property>
       <obj_property name="Radix">HEXRADIX</obj_property>
       <obj_property name="LABELRADIX">true</obj_property>
    </wvobject>

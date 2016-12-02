@@ -25,11 +25,12 @@ module ScopeSettings
       parameter TRIGGER_THRESHOLD_ADJUST = 3 << (DATA_BITS - 7),
                 SCALE_EXPONENT_BITS = 4,
                 DISPLAY_Y_BITS = 12,
-                INCREASE_PIXEL_COUNT = 1000,
-                COUNT_BITS = 10)
+                INCREASE_PIXEL_COUNT = 1000000, //1,000,000
+                COUNT_BITS = 20)
     (input clock,
      input [15:0] sw,
      input btnu, input btnd, input btnc, input btnl,
+     input buttonUpClean, input buttonDownClean,
      input signed [DATA_BITS-1:0] signalMinChannel1,
      input signed [DATA_BITS-1:0] signalMaxChannel1,
      input [DATA_BITS-1:0] signalPeriodChannel1,
@@ -41,7 +42,7 @@ module ScopeSettings
      output reg [SCALE_FACTOR_SIZE-1:0]verticalScaleFactorTimes8Channel2 = 8,
      output reg [SAMPLE_PERIOD_BITS-1:0]samplePeriod = 0,
      output reg channelSelected,
-     output reg [DISPLAY_Y_BITS-1:0] yCursor1 = 12'd512
+     output reg [DISPLAY_Y_BITS-1:0] yCursor1 = 12'd0
     );
     
     wire [SCALE_FACTOR_SIZE-1:0] optimalScaleChannel1;
@@ -90,14 +91,14 @@ module ScopeSettings
             else if (btnd) channelSelected = ~channelSelected;
          5'b10000:
             //adjust cursor 1
-            if (btnu) begin
+            if (buttonUpClean) begin
                 if (count > INCREASE_PIXEL_COUNT) begin
                     count <= 0;
                     yCursor1 <= yCursor1 - 1;
                 end else begin
                     count <= count + 1;
                 end
-            end else if (btnd) begin
+            end else if (buttonDownClean) begin
                 if (count > INCREASE_PIXEL_COUNT) begin
                     count <= 0;
                     yCursor1 <= yCursor1 + 1;
@@ -107,6 +108,8 @@ module ScopeSettings
             end else begin
                 count <= 0;
             end
+         default:
+            ;//do nothing
        endcase
        
        // autoset

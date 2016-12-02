@@ -114,7 +114,7 @@ module Oscilloscope_v1
     wire [5:0] samplePeriod;
     wire channelSelected;
     assign LED[15] = channelSelected;
-    wire [DISPLAY_Y_BITS-1:0] yCursor1;
+    (* mark_debug = "true" *) wire [DISPLAY_Y_BITS-1:0] yCursor1;
     
     // these come from MeasureSignal
     wire signed [11:0] signalMinChannel1;
@@ -127,7 +127,7 @@ module Oscilloscope_v1
     wire signed [11:0] signalAverageChannel2;
     
     ScopeSettings myss(.clock(CLK108MHZ), .sw(SW[15:0]),
-                        .btnu(btnu_1pulse), .btnd(btnd_1pulse), .btnc(btnc_1pulse), .btnl(btnl_1pulse),
+                        .btnu(btnu_1pulse), .btnd(btnd_1pulse), .btnc(btnc_1pulse), .btnl(btnl_1pulse),.buttonUpClean(btnu_clean), .buttonDownClean(btnd_clean),
                         .signalMinChannel1(signalMinChannel1), .signalMaxChannel1(signalMaxChannel1), .signalPeriodChannel1(signalPeriodChannel1),
                         .signalMinChannel2(signalMinChannel2), .signalMaxChannel2(signalMaxChannel2), .signalPeriodChannel2(signalPeriodChannel2),
                         .triggerThreshold(triggerThreshold), 
@@ -148,6 +148,7 @@ module Oscilloscope_v1
                                     );
     
     // Button input debouncers
+    wire btnu_clean, btnd_clean, btnc_clean, btnl_clean;
     debounce (.reset(reset), .clock(CLK108MHZ), .noisy(BTNU), .clean(btnu_clean));
     debounce (.reset(reset), .clock(CLK108MHZ), .noisy(BTND), .clean(btnd_clean));
     debounce (.reset(reset), .clock(CLK108MHZ), .noisy(BTNC), .clean(btnc_clean));

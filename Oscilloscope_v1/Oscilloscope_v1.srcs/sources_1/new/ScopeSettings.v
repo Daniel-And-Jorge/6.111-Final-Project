@@ -94,14 +94,14 @@ module ScopeSettings
             if (buttonUpClean) begin
                 if (count > INCREASE_PIXEL_COUNT) begin
                     count <= 0;
-                    yCursor1 <= yCursor1 - 1;
+                    yCursor1 <= yCursor1 + 1;
                 end else begin
                     count <= count + 1;
                 end
             end else if (buttonDownClean) begin
                 if (count > INCREASE_PIXEL_COUNT) begin
                     count <= 0;
-                    yCursor1 <= yCursor1 + 1;
+                    yCursor1 <= yCursor1 - 1;
                 end else begin
                     count <= count + 1;
                 end

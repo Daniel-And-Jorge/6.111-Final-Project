@@ -42,7 +42,7 @@ module ScopeSettings
      output reg [SCALE_FACTOR_SIZE-1:0]verticalScaleFactorTimes8Channel2 = 8,
      output reg [SAMPLE_PERIOD_BITS-1:0]samplePeriod = 0,
      output reg channelSelected,
-     output reg [DISPLAY_Y_BITS-1:0] yCursor1 = 12'd0
+     output reg signed [DISPLAY_Y_BITS-1:0] yCursor1 = 12'd0
     );
     
     wire [SCALE_FACTOR_SIZE-1:0] optimalScaleChannel1;

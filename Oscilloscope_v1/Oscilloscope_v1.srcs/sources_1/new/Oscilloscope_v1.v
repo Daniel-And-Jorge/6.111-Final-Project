@@ -114,7 +114,7 @@ module Oscilloscope_v1
     wire [5:0] samplePeriod;
     wire channelSelected;
     assign LED[15] = channelSelected;
-    (* mark_debug = "true" *) wire [DISPLAY_Y_BITS-1:0] yCursor1;
+    wire signed [DISPLAY_Y_BITS-1:0] yCursor1;
     
     // these come from MeasureSignal
     wire signed [11:0] signalMinChannel1;
@@ -461,9 +461,9 @@ module Oscilloscope_v1
                 .spriteBlank(tlsBlank)
                 );
     
-    wire signed [CURSOR_VOLTAGE_BITS-1:0] cursor1Voltage;
-    wire [CURSOR_VOLTAGE_BITS-1:0] cursor1VoltageAbsoluteValue;
-    wire cursor1IsNegative;
+    (* mark_debug = "true" *) wire signed [CURSOR_VOLTAGE_BITS-1:0] cursor1Voltage;
+    (* mark_debug = "true" *) wire [CURSOR_VOLTAGE_BITS-1:0] cursor1VoltageAbsoluteValue;
+    (* mark_debug = "true" *) wire cursor1IsNegative;
     YPixelToVoltage yCursor1ToVoltage
             (.clock(CLK108MHZ),
             .y(yCursor1),

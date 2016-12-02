@@ -26,16 +26,17 @@ module Oscilloscope_v1
                 DISPLAY_Y_BITS = 12,
                 ADDRESS_BITS = 12,
                 RGB_BITS = 12,
-                X_MIDDLE_VOLTAGE_CHARACTER_4 = 1_088,
+                X_MIDDLE_VOLTAGE_CHARACTER_4 = 1_100,
                 Y_MIDDLE_VOLTAGE_CHARACTER_4 = 496,
-                X_MIDDLE_VOLTAGE_CHARACTER_3 = 1_108,
+                X_MIDDLE_VOLTAGE_CHARACTER_3 = 1_120,
                 Y_MIDDLE_VOLTAGE_CHARACTER_3 = 496,
-                X_MIDDLE_VOLTAGE_CHARACTER_2 = 1_128,
+                X_MIDDLE_VOLTAGE_CHARACTER_2 = 1_140,
                 Y_MIDDLE_VOLTAGE_CHARACTER_2 = 496,
-                X_MIDDLE_VOLTAGE_CHARACTER_1 = 1_148,
+                X_MIDDLE_VOLTAGE_CHARACTER_1 = 1_160,
                 Y_MIDDLE_VOLTAGE_CHARACTER_1 = 496,
-                X_MIDDLE_VOLTAGE_CHARACTER_0 = 1_168,
+                X_MIDDLE_VOLTAGE_CHARACTER_0 = 1_180,
                 Y_MIDDLE_VOLTAGE_CHARACTER_0 = 496,
+                
                 X_TIME_PER_DIVISION_CHARACTER_4 = 700,
                 Y_TIME_PER_DIVISION_CHARACTER_4 = 980,
                 X_TIME_PER_DIVISION_CHARACTER_3 = 720,
@@ -73,7 +74,8 @@ module Oscilloscope_v1
                 SCALE_FACTOR_BITS = 10,
                 DIGIT_BITS = 4,
                 CURSOR_VOLTAGE_BITS = 10,
-                SCALE_EXPONENT_BITS = 4) 
+                SCALE_EXPONENT_BITS = 4,
+                TIME_PER_DIVISION_BITS = 10) 
    (input CLK100MHZ,
    input vauxp11,
    input vauxn11,
@@ -108,6 +110,7 @@ module Oscilloscope_v1
         .locked(locked));
         
     // Scope settings
+    wire btnu_clean, btnd_clean, btnc_clean, btnl_clean;
     wire signed [11:0] triggerThreshold;
     wire [9:0] verticalScaleFactorTimes8Channel1;
     wire [9:0] verticalScaleFactorTimes8Channel2;
@@ -148,7 +151,6 @@ module Oscilloscope_v1
                                     );
     
     // Button input debouncers
-    wire btnu_clean, btnd_clean, btnc_clean, btnl_clean;
     debounce (.reset(reset), .clock(CLK108MHZ), .noisy(BTNU), .clean(btnu_clean));
     debounce (.reset(reset), .clock(CLK108MHZ), .noisy(BTND), .clean(btnd_clean));
     debounce (.reset(reset), .clock(CLK108MHZ), .noisy(BTNC), .clean(btnc_clean));
@@ -519,31 +521,57 @@ module Oscilloscope_v1
             .spriteVsync(cursor1Vsync),
             .spriteBlank(cursor1Blank)
             );
-            
+    
+    wire [TIME_PER_DIVISION_BITS-1:0] timePerDivision;  
+    SamplePeriodToTimePerDivision mySamplePeriodToTimePerDivision
+            (.clock(CLK108MHZ),
+            .samplePeriod(samplePeriod),
+            .timePerDivision(timePerDivision)
+            );
+    
+    wire [DIGIT_BITS-1:0] timePerDivisionNumber0;     
+    wire [DIGIT_BITS-1:0] timePerDivisionNumber1;
+    wire [DIGIT_BITS-1:0] timePerDivisionNumber2;     
+    ConvertBCD timePerDivisionBCD
+            (.clock(CLK108MHZ),
+            .data(timePerDivision),
+            .d(timePerDivisionNumber0),
+            .d10(timePerDivisionNumber1),
+            .d100(timePerDivisionNumber2)
+            );
+    
+    wire [SELECT_CHARACTER_BITS-1:0] timePerDivisionCharacter4;
+    wire [SELECT_CHARACTER_BITS-1:0] timePerDivisionCharacter3;
+    wire [SELECT_CHARACTER_BITS-1:0] timePerDivisionCharacter2;        
+    DecimalToROMLocation timePerDivisionDecimalToROMLocation(
+                        .clock(CLK108MHZ),
+                        .number2(timePerDivisionNumber2),
+                        .number1(timePerDivisionNumber1),
+                        .number0(timePerDivisionNumber0),
+                        .character2(timePerDivisionCharacter4),
+                        .character1(timePerDivisionCharacter3),
+                        .character0(timePerDivisionCharacter2)
+                        );
+              
     wire textHsync, textVsync, textBlank;
     wire [RGB_BITS-1:0] textPixel;
     wire [DISPLAY_X_BITS-1:0] textDisplayX;
     wire [DISPLAY_Y_BITS-1:0] textDisplayY;
     wire [SELECT_CHARACTER_BITS-1:0] middleVoltageCharacter4;
-    assign middleVoltageCharacter4 = 7'd21;
+    assign middleVoltageCharacter4 = 7'd0;   //space
     wire [SELECT_CHARACTER_BITS-1:0] middleVoltageCharacter3;
-    assign middleVoltageCharacter3 = 7'd16;
+    assign middleVoltageCharacter3 = 7'd0;   //space
     wire [SELECT_CHARACTER_BITS-1:0] middleVoltageCharacter2;
-    assign middleVoltageCharacter2 = 7'd16;
+    assign middleVoltageCharacter2 = 7'd16;  //0
     wire [SELECT_CHARACTER_BITS-1:0] middleVoltageCharacter1;
-    assign middleVoltageCharacter1 = 7'd77;
+    assign middleVoltageCharacter1 = 7'd77;  //m
     wire [SELECT_CHARACTER_BITS-1:0] middleVoltageCharacter0;
-    assign middleVoltageCharacter0 = 7'd54;
-    wire [SELECT_CHARACTER_BITS-1:0] timePerDivisionCharacter4;
-    assign timePerDivisionCharacter4 = 7'd0;
-    wire [SELECT_CHARACTER_BITS-1:0] timePerDivisionCharacter3;
-    assign timePerDivisionCharacter3 = 7'd17;
-    wire [SELECT_CHARACTER_BITS-1:0] timePerDivisionCharacter2;
-    assign timePerDivisionCharacter2 = 7'd16;
+    assign middleVoltageCharacter0 = 7'd54;  //V
+    
     wire [SELECT_CHARACTER_BITS-1:0] timePerDivisionCharacter1;
-    assign timePerDivisionCharacter1 = 7'd77;
+    assign timePerDivisionCharacter1 = 7'd77;  //m
     wire [SELECT_CHARACTER_BITS-1:0] timePerDivisionCharacter0;
-    assign timePerDivisionCharacter0 = 7'd83;
+    assign timePerDivisionCharacter0 = 7'd83;  //s
     
     wire [SELECT_CHARACTER_BITS-1:0] cursor1Character15;
     assign cursor1Character15 = 7'd35;  //C

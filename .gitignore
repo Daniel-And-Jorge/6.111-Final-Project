@@ -56,7 +56,7 @@
 #Do NOT ignore *.xpr files
 !*.xpr
 #Include *.xml files for 2013.4 or earlier version
-!*.xml
+#!*.xml
 #########
 #Constraint files
 #########
@@ -84,3 +84,9 @@
 !*.elf
 !*.bmm
 !*.xmp
+
+### Ignore jobs
+Oscilloscope_v1/Oscilloscope_v1.cache/*
+Oscilloscope_v1/Oscilloscope_v1.runs/*
+*.jou
+*.log

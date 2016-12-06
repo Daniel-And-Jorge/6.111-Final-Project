@@ -4,48 +4,48 @@
 ## - rename the used ports (in each line, after get_ports) according to the top level signal names in the project
 
 # Clock signal
-set_property -dict { PACKAGE_PIN E3    IOSTANDARD LVCMOS33 } [get_ports { CLK100MHZ }]; #IO_L12P_T1_MRCC_35 Sch=clk100mhz
-create_clock -add -name sys_clk_pin -period 10.00 -waveform {0 5} [get_ports {CLK100MHZ}];
+set_property -dict {PACKAGE_PIN E3 IOSTANDARD LVCMOS33} [get_ports CLK100MHZ]
+create_clock -period 10.000 -name sys_clk_pin -waveform {0.000 5.000} -add [get_ports CLK100MHZ]
 
 
 ##Switches
 
-set_property -dict { PACKAGE_PIN J15   IOSTANDARD LVCMOS33 } [get_ports { SW[0] }]; #IO_L24N_T3_RS0_15 Sch=sw[0]
-set_property -dict { PACKAGE_PIN L16   IOSTANDARD LVCMOS33 } [get_ports { SW[1] }]; #IO_L3N_T0_DQS_EMCCLK_14 Sch=sw[1]
-set_property -dict { PACKAGE_PIN M13   IOSTANDARD LVCMOS33 } [get_ports { SW[2] }]; #IO_L6N_T0_D08_VREF_14 Sch=sw[2]
-set_property -dict { PACKAGE_PIN R15   IOSTANDARD LVCMOS33 } [get_ports { SW[3] }]; #IO_L13N_T2_MRCC_14 Sch=sw[3]
-set_property -dict { PACKAGE_PIN R17   IOSTANDARD LVCMOS33 } [get_ports { SW[4] }]; #IO_L12N_T1_MRCC_14 Sch=sw[4]
-set_property -dict { PACKAGE_PIN T18   IOSTANDARD LVCMOS33 } [get_ports { SW[5] }]; #IO_L7N_T1_D10_14 Sch=sw[5]
-set_property -dict { PACKAGE_PIN U18   IOSTANDARD LVCMOS33 } [get_ports { SW[6] }]; #IO_L17N_T2_A13_D29_14 Sch=sw[6]
-set_property -dict { PACKAGE_PIN R13   IOSTANDARD LVCMOS33 } [get_ports { SW[7] }]; #IO_L5N_T0_D07_14 Sch=sw[7]
-set_property -dict { PACKAGE_PIN T8    IOSTANDARD LVCMOS18 } [get_ports { SW[8] }]; #IO_L24N_T3_34 Sch=sw[8]
-set_property -dict { PACKAGE_PIN U8    IOSTANDARD LVCMOS18 } [get_ports { SW[9] }]; #IO_25_34 Sch=sw[9]
-set_property -dict { PACKAGE_PIN R16   IOSTANDARD LVCMOS33 } [get_ports { SW[10] }]; #IO_L15P_T2_DQS_RDWR_B_14 Sch=sw[10]
-set_property -dict { PACKAGE_PIN T13   IOSTANDARD LVCMOS33 } [get_ports { SW[11] }]; #IO_L23P_T3_A03_D19_14 Sch=sw[11]
-set_property -dict { PACKAGE_PIN H6    IOSTANDARD LVCMOS33 } [get_ports { SW[12] }]; #IO_L24P_T3_35 Sch=sw[12]
-set_property -dict { PACKAGE_PIN U12   IOSTANDARD LVCMOS33 } [get_ports { SW[13] }]; #IO_L20P_T3_A08_D24_14 Sch=sw[13]
+set_property -dict {PACKAGE_PIN J15 IOSTANDARD LVCMOS33} [get_ports {SW[0]}]
+set_property -dict {PACKAGE_PIN L16 IOSTANDARD LVCMOS33} [get_ports {SW[1]}]
+set_property -dict {PACKAGE_PIN M13 IOSTANDARD LVCMOS33} [get_ports {SW[2]}]
+set_property -dict {PACKAGE_PIN R15 IOSTANDARD LVCMOS33} [get_ports {SW[3]}]
+set_property -dict {PACKAGE_PIN R17 IOSTANDARD LVCMOS33} [get_ports {SW[4]}]
+set_property -dict {PACKAGE_PIN T18 IOSTANDARD LVCMOS33} [get_ports {SW[5]}]
+set_property -dict {PACKAGE_PIN U18 IOSTANDARD LVCMOS33} [get_ports {SW[6]}]
+set_property -dict {PACKAGE_PIN R13 IOSTANDARD LVCMOS33} [get_ports {SW[7]}]
+set_property -dict {PACKAGE_PIN T8 IOSTANDARD LVCMOS18} [get_ports {SW[8]}]
+set_property -dict {PACKAGE_PIN U8 IOSTANDARD LVCMOS18} [get_ports {SW[9]}]
+set_property -dict {PACKAGE_PIN R16 IOSTANDARD LVCMOS33} [get_ports {SW[10]}]
+set_property -dict {PACKAGE_PIN T13 IOSTANDARD LVCMOS33} [get_ports {SW[11]}]
+set_property -dict {PACKAGE_PIN H6 IOSTANDARD LVCMOS33} [get_ports {SW[12]}]
+set_property -dict {PACKAGE_PIN U12 IOSTANDARD LVCMOS33} [get_ports {SW[13]}]
 #set_property -dict { PACKAGE_PIN U11   IOSTANDARD LVCMOS33 } [get_ports { SW[14] }]; #IO_L19N_T3_A09_D25_VREF_14 Sch=sw[14]
 #set_property -dict { PACKAGE_PIN V10   IOSTANDARD LVCMOS33 } [get_ports { SW[15] }]; #IO_L21P_T3_DQS_14 Sch=sw[15]
 
 
 ## LEDs
 
-set_property -dict { PACKAGE_PIN H17   IOSTANDARD LVCMOS33 } [get_ports { LED[0] }]; #IO_L18P_T2_A24_15 Sch=led[0]
-set_property -dict { PACKAGE_PIN K15   IOSTANDARD LVCMOS33 } [get_ports { LED[1] }]; #IO_L24P_T3_RS1_15 Sch=led[1]
-set_property -dict { PACKAGE_PIN J13   IOSTANDARD LVCMOS33 } [get_ports { LED[2] }]; #IO_L17N_T2_A25_15 Sch=led[2]
-set_property -dict { PACKAGE_PIN N14   IOSTANDARD LVCMOS33 } [get_ports { LED[3] }]; #IO_L8P_T1_D11_14 Sch=led[3]
-set_property -dict { PACKAGE_PIN R18   IOSTANDARD LVCMOS33 } [get_ports { LED[4] }]; #IO_L7P_T1_D09_14 Sch=led[4]
-set_property -dict { PACKAGE_PIN V17   IOSTANDARD LVCMOS33 } [get_ports { LED[5] }]; #IO_L18N_T2_A11_D27_14 Sch=led[5]
-set_property -dict { PACKAGE_PIN U17   IOSTANDARD LVCMOS33 } [get_ports { LED[6] }]; #IO_L17P_T2_A14_D30_14 Sch=led[6]
-set_property -dict { PACKAGE_PIN U16   IOSTANDARD LVCMOS33 } [get_ports { LED[7] }]; #IO_L18P_T2_A12_D28_14 Sch=led[7]
-set_property -dict { PACKAGE_PIN V16   IOSTANDARD LVCMOS33 } [get_ports { LED[8] }]; #IO_L16N_T2_A15_D31_14 Sch=led[8]
-set_property -dict { PACKAGE_PIN T15   IOSTANDARD LVCMOS33 } [get_ports { LED[9] }]; #IO_L14N_T2_SRCC_14 Sch=led[9]
-set_property -dict { PACKAGE_PIN U14   IOSTANDARD LVCMOS33 } [get_ports { LED[10] }]; #IO_L22P_T3_A05_D21_14 Sch=led[10]
-set_property -dict { PACKAGE_PIN T16   IOSTANDARD LVCMOS33 } [get_ports { LED[11] }]; #IO_L15N_T2_DQS_DOUT_CSO_B_14 Sch=led[11]
-set_property -dict { PACKAGE_PIN V15   IOSTANDARD LVCMOS33 } [get_ports { LED[12] }]; #IO_L16P_T2_CSI_B_14 Sch=led[12]
-set_property -dict { PACKAGE_PIN V14   IOSTANDARD LVCMOS33 } [get_ports { LED[13] }]; #IO_L22N_T3_A04_D20_14 Sch=led[13]
-set_property -dict { PACKAGE_PIN V12   IOSTANDARD LVCMOS33 } [get_ports { LED[14] }]; #IO_L20N_T3_A07_D23_14 Sch=led[14]
-set_property -dict { PACKAGE_PIN V11   IOSTANDARD LVCMOS33 } [get_ports { LED[15] }]; #IO_L21N_T3_DQS_A06_D22_14 Sch=led[15]
+set_property -dict {PACKAGE_PIN H17 IOSTANDARD LVCMOS33} [get_ports {LED[0]}]
+set_property -dict {PACKAGE_PIN K15 IOSTANDARD LVCMOS33} [get_ports {LED[1]}]
+set_property -dict {PACKAGE_PIN J13 IOSTANDARD LVCMOS33} [get_ports {LED[2]}]
+set_property -dict {PACKAGE_PIN N14 IOSTANDARD LVCMOS33} [get_ports {LED[3]}]
+set_property -dict {PACKAGE_PIN R18 IOSTANDARD LVCMOS33} [get_ports {LED[4]}]
+set_property -dict {PACKAGE_PIN V17 IOSTANDARD LVCMOS33} [get_ports {LED[5]}]
+set_property -dict {PACKAGE_PIN U17 IOSTANDARD LVCMOS33} [get_ports {LED[6]}]
+set_property -dict {PACKAGE_PIN U16 IOSTANDARD LVCMOS33} [get_ports {LED[7]}]
+set_property -dict {PACKAGE_PIN V16 IOSTANDARD LVCMOS33} [get_ports {LED[8]}]
+set_property -dict {PACKAGE_PIN T15 IOSTANDARD LVCMOS33} [get_ports {LED[9]}]
+set_property -dict {PACKAGE_PIN U14 IOSTANDARD LVCMOS33} [get_ports {LED[10]}]
+set_property -dict {PACKAGE_PIN T16 IOSTANDARD LVCMOS33} [get_ports {LED[11]}]
+set_property -dict {PACKAGE_PIN V15 IOSTANDARD LVCMOS33} [get_ports {LED[12]}]
+set_property -dict {PACKAGE_PIN V14 IOSTANDARD LVCMOS33} [get_ports {LED[13]}]
+set_property -dict {PACKAGE_PIN V12 IOSTANDARD LVCMOS33} [get_ports {LED[14]}]
+set_property -dict {PACKAGE_PIN V11 IOSTANDARD LVCMOS33} [get_ports {LED[15]}]
 
 #set_property -dict { PACKAGE_PIN R12   IOSTANDARD LVCMOS33 } [get_ports { LED16_B }]; #IO_L5P_T0_D06_14 Sch=led16_b
 #set_property -dict { PACKAGE_PIN M16   IOSTANDARD LVCMOS33 } [get_ports { LED16_G }]; #IO_L10P_T1_D14_14 Sch=led16_g
@@ -57,35 +57,35 @@ set_property -dict { PACKAGE_PIN V11   IOSTANDARD LVCMOS33 } [get_ports { LED[15
 
 #7 segment display
 
-set_property -dict { PACKAGE_PIN T10   IOSTANDARD LVCMOS33 } [get_ports {  seg[0] }]; #IO_L24N_T3_A00_D16_14 Sch=ca
-set_property -dict { PACKAGE_PIN R10   IOSTANDARD LVCMOS33 } [get_ports {  seg[1] }]; #IO_25_14 Sch=cb
-set_property -dict { PACKAGE_PIN K16   IOSTANDARD LVCMOS33 } [get_ports {  seg[2] }]; #IO_25_15 Sch=cc
-set_property -dict { PACKAGE_PIN K13   IOSTANDARD LVCMOS33 } [get_ports {  seg[3] }]; #IO_L17P_T2_A26_15 Sch=cd
-set_property -dict { PACKAGE_PIN P15   IOSTANDARD LVCMOS33 } [get_ports {  seg[4] }]; #IO_L13P_T2_MRCC_14 Sch=ce
-set_property -dict { PACKAGE_PIN T11   IOSTANDARD LVCMOS33 } [get_ports {  seg[5] }]; #IO_L19P_T3_A10_D26_14 Sch=cf
-set_property -dict { PACKAGE_PIN L18   IOSTANDARD LVCMOS33 } [get_ports {  seg[6] }]; #IO_L4P_T0_D04_14 Sch=cg
+set_property -dict {PACKAGE_PIN T10 IOSTANDARD LVCMOS33} [get_ports {seg[0]}]
+set_property -dict {PACKAGE_PIN R10 IOSTANDARD LVCMOS33} [get_ports {seg[1]}]
+set_property -dict {PACKAGE_PIN K16 IOSTANDARD LVCMOS33} [get_ports {seg[2]}]
+set_property -dict {PACKAGE_PIN K13 IOSTANDARD LVCMOS33} [get_ports {seg[3]}]
+set_property -dict {PACKAGE_PIN P15 IOSTANDARD LVCMOS33} [get_ports {seg[4]}]
+set_property -dict {PACKAGE_PIN T11 IOSTANDARD LVCMOS33} [get_ports {seg[5]}]
+set_property -dict {PACKAGE_PIN L18 IOSTANDARD LVCMOS33} [get_ports {seg[6]}]
 
-set_property -dict { PACKAGE_PIN H15   IOSTANDARD LVCMOS33 } [get_ports { dp }]; #IO_L19N_T3_A21_VREF_15 Sch=dp
+set_property -dict {PACKAGE_PIN H15 IOSTANDARD LVCMOS33} [get_ports dp]
 
-set_property -dict { PACKAGE_PIN J17   IOSTANDARD LVCMOS33 } [get_ports { an[0] }]; #IO_L23P_T3_FOE_B_15 Sch=an[0]
-set_property -dict { PACKAGE_PIN J18   IOSTANDARD LVCMOS33 } [get_ports { an[1] }]; #IO_L23N_T3_FWE_B_15 Sch=an[1]
-set_property -dict { PACKAGE_PIN T9    IOSTANDARD LVCMOS33 } [get_ports { an[2] }]; #IO_L24P_T3_A01_D17_14 Sch=an[2]
-set_property -dict { PACKAGE_PIN J14   IOSTANDARD LVCMOS33 } [get_ports { an[3] }]; #IO_L19P_T3_A22_15 Sch=an[3]
-set_property -dict { PACKAGE_PIN P14   IOSTANDARD LVCMOS33 } [get_ports { an[4] }]; #IO_L8N_T1_D12_14 Sch=an[4]
-set_property -dict { PACKAGE_PIN T14   IOSTANDARD LVCMOS33 } [get_ports { an[5] }]; #IO_L14P_T2_SRCC_14 Sch=an[5]
-set_property -dict { PACKAGE_PIN K2    IOSTANDARD LVCMOS33 } [get_ports { an[6] }]; #IO_L23P_T3_35 Sch=an[6]
-set_property -dict { PACKAGE_PIN U13   IOSTANDARD LVCMOS33 } [get_ports { an[7] }]; #IO_L23N_T3_A02_D18_14 Sch=an[7]
+set_property -dict {PACKAGE_PIN J17 IOSTANDARD LVCMOS33} [get_ports {an[0]}]
+set_property -dict {PACKAGE_PIN J18 IOSTANDARD LVCMOS33} [get_ports {an[1]}]
+set_property -dict {PACKAGE_PIN T9 IOSTANDARD LVCMOS33} [get_ports {an[2]}]
+set_property -dict {PACKAGE_PIN J14 IOSTANDARD LVCMOS33} [get_ports {an[3]}]
+set_property -dict {PACKAGE_PIN P14 IOSTANDARD LVCMOS33} [get_ports {an[4]}]
+set_property -dict {PACKAGE_PIN T14 IOSTANDARD LVCMOS33} [get_ports {an[5]}]
+set_property -dict {PACKAGE_PIN K2 IOSTANDARD LVCMOS33} [get_ports {an[6]}]
+set_property -dict {PACKAGE_PIN U13 IOSTANDARD LVCMOS33} [get_ports {an[7]}]
 
 
 ##Buttons
 
 set_property -dict { PACKAGE_PIN C12   IOSTANDARD LVCMOS33 } [get_ports { CPU_RESETN }]; #IO_L3P_T0_DQS_AD1P_15 Sch=cpu_resetn
 
-set_property -dict { PACKAGE_PIN N17   IOSTANDARD LVCMOS33 } [get_ports { BTNC }]; #IO_L9P_T1_DQS_14 Sch=btnc
-set_property -dict { PACKAGE_PIN M18   IOSTANDARD LVCMOS33 } [get_ports { BTNU }]; #IO_L4N_T0_D05_14 Sch=btnu
-set_property -dict { PACKAGE_PIN P17   IOSTANDARD LVCMOS33 } [get_ports { BTNL }]; #IO_L12P_T1_MRCC_14 Sch=btnl
+set_property -dict {PACKAGE_PIN N17 IOSTANDARD LVCMOS33} [get_ports BTNC]
+set_property -dict {PACKAGE_PIN M18 IOSTANDARD LVCMOS33} [get_ports BTNU]
+set_property -dict {PACKAGE_PIN P17 IOSTANDARD LVCMOS33} [get_ports BTNL]
 #set_property -dict { PACKAGE_PIN M17   IOSTANDARD LVCMOS33 } [get_ports { BTNR }]; #IO_L10N_T1_D15_14 Sch=btnr
-set_property -dict { PACKAGE_PIN P18   IOSTANDARD LVCMOS33 } [get_ports { BTND }]; #IO_L9N_T1_DQS_D13_14 Sch=btnd
+set_property -dict {PACKAGE_PIN P18 IOSTANDARD LVCMOS33} [get_ports BTND]
 
 
 ##Pmod Headers
@@ -141,35 +141,35 @@ set_property -dict { PACKAGE_PIN P18   IOSTANDARD LVCMOS33 } [get_ports { BTND }
 
 #Pmod Header JXADC
 
-set_property -dict { PACKAGE_PIN A14   IOSTANDARD LVCMOS33     } [get_ports { vauxn3 }]; #IO_L9N_T1_DQS_AD3N_15 Sch=xa_n[1]
-set_property -dict { PACKAGE_PIN A13   IOSTANDARD LVCMOS33     } [get_ports { vauxp3 }]; #IO_L9P_T1_DQS_AD3P_15 Sch=xa_p[1]
+set_property -dict {PACKAGE_PIN A14 IOSTANDARD LVCMOS33} [get_ports vauxn3]
+set_property -dict {PACKAGE_PIN A13 IOSTANDARD LVCMOS33} [get_ports vauxp3]
 set_property -dict { PACKAGE_PIN A16   IOSTANDARD LVCMOS33     } [get_ports { vauxn10}]; #IO_L8N_T1_AD10N_15 Sch=xa_n[2]
 set_property -dict { PACKAGE_PIN A15   IOSTANDARD LVCMOS33     } [get_ports { vauxp10 }]; #IO_L8P_T1_AD10P_15 Sch=xa_p[2]
 set_property -dict { PACKAGE_PIN B17   IOSTANDARD LVCMOS33     } [get_ports { vauxn2 }]; #IO_L7N_T1_AD2N_15 Sch=xa_n[3]
 set_property -dict { PACKAGE_PIN B16   IOSTANDARD LVCMOS33     } [get_ports { vauxp2 }]; #IO_L7P_T1_AD2P_15 Sch=xa_p[3]
-set_property -dict { PACKAGE_PIN A18   IOSTANDARD LVCMOS33     } [get_ports { vauxn11 }]; #IO_L10N_T1_AD11N_15 Sch=xa_n[4]
-set_property -dict { PACKAGE_PIN B18   IOSTANDARD LVCMOS33     } [get_ports { vauxp11 }]; #IO_L10P_T1_AD11P_15 Sch=xa_p[4]
+set_property -dict {PACKAGE_PIN A18 IOSTANDARD LVCMOS33} [get_ports vauxn11]
+set_property -dict {PACKAGE_PIN B18 IOSTANDARD LVCMOS33} [get_ports vauxp11]
 
 
 ##VGA Connector
 
-set_property -dict { PACKAGE_PIN A3    IOSTANDARD LVCMOS33 } [get_ports { VGA_R[0] }]; #IO_L8N_T1_AD14N_35 Sch=vga_r[0]
-set_property -dict { PACKAGE_PIN B4    IOSTANDARD LVCMOS33 } [get_ports { VGA_R[1] }]; #IO_L7N_T1_AD6N_35 Sch=vga_r[1]
-set_property -dict { PACKAGE_PIN C5    IOSTANDARD LVCMOS33 } [get_ports { VGA_R[2] }]; #IO_L1N_T0_AD4N_35 Sch=vga_r[2]
-set_property -dict { PACKAGE_PIN A4    IOSTANDARD LVCMOS33 } [get_ports { VGA_R[3] }]; #IO_L8P_T1_AD14P_35 Sch=vga_r[3]
+set_property -dict {PACKAGE_PIN A3 IOSTANDARD LVCMOS33} [get_ports {VGA_R[0]}]
+set_property -dict {PACKAGE_PIN B4 IOSTANDARD LVCMOS33} [get_ports {VGA_R[1]}]
+set_property -dict {PACKAGE_PIN C5 IOSTANDARD LVCMOS33} [get_ports {VGA_R[2]}]
+set_property -dict {PACKAGE_PIN A4 IOSTANDARD LVCMOS33} [get_ports {VGA_R[3]}]
 
-set_property -dict { PACKAGE_PIN C6    IOSTANDARD LVCMOS33 } [get_ports { VGA_G[0] }]; #IO_L1P_T0_AD4P_35 Sch=vga_g[0]
-set_property -dict { PACKAGE_PIN A5    IOSTANDARD LVCMOS33 } [get_ports { VGA_G[1] }]; #IO_L3N_T0_DQS_AD5N_35 Sch=vga_g[1]
-set_property -dict { PACKAGE_PIN B6    IOSTANDARD LVCMOS33 } [get_ports { VGA_G[2] }]; #IO_L2N_T0_AD12N_35 Sch=vga_g[2]
-set_property -dict { PACKAGE_PIN A6    IOSTANDARD LVCMOS33 } [get_ports { VGA_G[3] }]; #IO_L3P_T0_DQS_AD5P_35 Sch=vga_g[3]
+set_property -dict {PACKAGE_PIN C6 IOSTANDARD LVCMOS33} [get_ports {VGA_G[0]}]
+set_property -dict {PACKAGE_PIN A5 IOSTANDARD LVCMOS33} [get_ports {VGA_G[1]}]
+set_property -dict {PACKAGE_PIN B6 IOSTANDARD LVCMOS33} [get_ports {VGA_G[2]}]
+set_property -dict {PACKAGE_PIN A6 IOSTANDARD LVCMOS33} [get_ports {VGA_G[3]}]
 
-set_property -dict { PACKAGE_PIN B7    IOSTANDARD LVCMOS33 } [get_ports { VGA_B[0] }]; #IO_L2P_T0_AD12P_35 Sch=vga_b[0]
-set_property -dict { PACKAGE_PIN C7    IOSTANDARD LVCMOS33 } [get_ports { VGA_B[1] }]; #IO_L4N_T0_35 Sch=vga_b[1]
-set_property -dict { PACKAGE_PIN D7    IOSTANDARD LVCMOS33 } [get_ports { VGA_B[2] }]; #IO_L6N_T0_VREF_35 Sch=vga_b[2]
-set_property -dict { PACKAGE_PIN D8    IOSTANDARD LVCMOS33 } [get_ports { VGA_B[3] }]; #IO_L4P_T0_35 Sch=vga_b[3]
+set_property -dict {PACKAGE_PIN B7 IOSTANDARD LVCMOS33} [get_ports {VGA_B[0]}]
+set_property -dict {PACKAGE_PIN C7 IOSTANDARD LVCMOS33} [get_ports {VGA_B[1]}]
+set_property -dict {PACKAGE_PIN D7 IOSTANDARD LVCMOS33} [get_ports {VGA_B[2]}]
+set_property -dict {PACKAGE_PIN D8 IOSTANDARD LVCMOS33} [get_ports {VGA_B[3]}]
 
-set_property -dict { PACKAGE_PIN B11   IOSTANDARD LVCMOS33 } [get_ports { VGA_HS }]; #IO_L4P_T0_15 Sch=vga_hs
-set_property -dict { PACKAGE_PIN B12   IOSTANDARD LVCMOS33 } [get_ports { VGA_VS }]; #IO_L3N_T0_DQS_AD1N_15 Sch=vga_vs
+set_property -dict {PACKAGE_PIN B11 IOSTANDARD LVCMOS33} [get_ports VGA_HS]
+set_property -dict {PACKAGE_PIN B12 IOSTANDARD LVCMOS33} [get_ports VGA_VS]
 
 
 ##Micro SD Connector
@@ -263,3 +263,110 @@ set_property -dict { PACKAGE_PIN B12   IOSTANDARD LVCMOS33 } [get_ports { VGA_VS
 
 
 
+
+
+
+connect_debug_port u_ila_0/probe0 [get_nets [list {state[0]} {state[1]}]]
+connect_debug_port u_ila_0/probe1 [get_nets [list {previousState[0]} {previousState[1]}]]
+
+
+connect_debug_port u_ila_0/probe1 [get_nets [list {cursor1VoltageCharacter1[0]} {cursor1VoltageCharacter1[1]} {cursor1VoltageCharacter1[2]} {cursor1VoltageCharacter1[3]} {cursor1VoltageCharacter1[4]} {cursor1VoltageCharacter1[5]} {cursor1VoltageCharacter1[6]}]]
+connect_debug_port u_ila_0/probe2 [get_nets [list {cursor1VoltageCharacter0[0]} {cursor1VoltageCharacter0[1]} {cursor1VoltageCharacter0[2]} {cursor1VoltageCharacter0[3]} {cursor1VoltageCharacter0[4]} {cursor1VoltageCharacter0[5]} {cursor1VoltageCharacter0[6]}]]
+connect_debug_port u_ila_0/probe3 [get_nets [list {cursor1Voltage[0]} {cursor1Voltage[1]} {cursor1Voltage[2]} {cursor1Voltage[3]} {cursor1Voltage[4]} {cursor1Voltage[5]} {cursor1Voltage[6]} {cursor1Voltage[7]} {cursor1Voltage[8]} {cursor1Voltage[9]}]]
+connect_debug_port u_ila_0/probe4 [get_nets [list {cursor1Number2[0]} {cursor1Number2[1]} {cursor1Number2[2]} {cursor1Number2[3]}]]
+connect_debug_port u_ila_0/probe5 [get_nets [list {cursor1Number1[0]} {cursor1Number1[1]} {cursor1Number1[2]} {cursor1Number1[3]}]]
+connect_debug_port u_ila_0/probe6 [get_nets [list {cursor1Number0[0]} {cursor1Number0[1]} {cursor1Number0[2]} {cursor1Number0[3]}]]
+
+
+
+
+
+
+set_property MARK_DEBUG true [get_nets {cursor1Voltage[9]}]
+set_property MARK_DEBUG true [get_nets {cursor1Voltage[8]}]
+set_property MARK_DEBUG true [get_nets {cursor1Voltage[7]}]
+set_property MARK_DEBUG true [get_nets {cursor1Voltage[6]}]
+set_property MARK_DEBUG true [get_nets {cursor1Voltage[5]}]
+set_property MARK_DEBUG true [get_nets {cursor1Voltage[4]}]
+set_property MARK_DEBUG true [get_nets {cursor1Voltage[3]}]
+set_property MARK_DEBUG true [get_nets {cursor1Voltage[2]}]
+set_property MARK_DEBUG true [get_nets {cursor1Voltage[1]}]
+set_property MARK_DEBUG true [get_nets {cursor1Voltage[0]}]
+set_property MARK_DEBUG true [get_nets {yCursor1[1]}]
+set_property MARK_DEBUG true [get_nets {yCursor1[9]}]
+set_property MARK_DEBUG true [get_nets {yCursor1[7]}]
+set_property MARK_DEBUG true [get_nets {yCursor1[10]}]
+set_property MARK_DEBUG true [get_nets {yCursor1[5]}]
+set_property MARK_DEBUG true [get_nets {yCursor1[3]}]
+set_property MARK_DEBUG true [get_nets {yCursor1[8]}]
+set_property MARK_DEBUG true [get_nets {yCursor1[11]}]
+set_property MARK_DEBUG true [get_nets {yCursor1[2]}]
+set_property MARK_DEBUG true [get_nets {yCursor1[4]}]
+set_property MARK_DEBUG true [get_nets {yCursor1[6]}]
+set_property MARK_DEBUG true [get_nets {yCursor1[0]}]
+set_property MARK_DEBUG false [get_nets {yCursor1ToVoltage/voltage[9]}]
+set_property MARK_DEBUG false [get_nets {yCursor1ToVoltage/voltage[8]}]
+set_property MARK_DEBUG false [get_nets {yCursor1ToVoltage/voltage[2]}]
+set_property MARK_DEBUG false [get_nets {yCursor1ToVoltage/voltage[0]}]
+set_property MARK_DEBUG false [get_nets {yCursor1ToVoltage/voltage[7]}]
+set_property MARK_DEBUG false [get_nets {yCursor1ToVoltage/voltage[5]}]
+set_property MARK_DEBUG false [get_nets {yCursor1ToVoltage/voltage[1]}]
+set_property MARK_DEBUG false [get_nets {yCursor1ToVoltage/voltage[6]}]
+set_property MARK_DEBUG false [get_nets {yCursor1ToVoltage/voltage[3]}]
+set_property MARK_DEBUG false [get_nets {yCursor1ToVoltage/voltage[4]}]
+set_property MARK_DEBUG false [get_nets {yCursor1ToVoltage/voltageAbsoluteValue[9]}]
+set_property MARK_DEBUG false [get_nets {yCursor1ToVoltage/voltageAbsoluteValue[7]}]
+set_property MARK_DEBUG false [get_nets {yCursor1ToVoltage/voltageAbsoluteValue[5]}]
+set_property MARK_DEBUG false [get_nets {yCursor1ToVoltage/voltageAbsoluteValue[3]}]
+set_property MARK_DEBUG false [get_nets {yCursor1ToVoltage/voltageAbsoluteValue[1]}]
+set_property MARK_DEBUG false [get_nets {yCursor1ToVoltage/voltageAbsoluteValue[6]}]
+set_property MARK_DEBUG false [get_nets {yCursor1ToVoltage/voltageAbsoluteValue[4]}]
+set_property MARK_DEBUG false [get_nets {yCursor1ToVoltage/voltageAbsoluteValue[2]}]
+set_property MARK_DEBUG false [get_nets {yCursor1ToVoltage/voltageAbsoluteValue[8]}]
+set_property MARK_DEBUG false [get_nets {yCursor1ToVoltage/voltageAbsoluteValue[0]}]
+create_debug_core u_ila_0 ila
+set_property ALL_PROBE_SAME_MU true [get_debug_cores u_ila_0]
+set_property ALL_PROBE_SAME_MU_CNT 2 [get_debug_cores u_ila_0]
+set_property C_ADV_TRIGGER false [get_debug_cores u_ila_0]
+set_property C_DATA_DEPTH 1024 [get_debug_cores u_ila_0]
+set_property C_EN_STRG_QUAL true [get_debug_cores u_ila_0]
+set_property C_INPUT_PIPE_STAGES 0 [get_debug_cores u_ila_0]
+set_property C_TRIGIN_EN false [get_debug_cores u_ila_0]
+set_property C_TRIGOUT_EN false [get_debug_cores u_ila_0]
+set_property port_width 1 [get_debug_ports u_ila_0/clk]
+connect_debug_port u_ila_0/clk [get_nets [list ClockDivider/inst/clk_out1]]
+set_property PROBE_TYPE DATA_AND_TRIGGER [get_debug_ports u_ila_0/probe0]
+set_property port_width 21 [get_debug_ports u_ila_0/probe0]
+connect_debug_port u_ila_0/probe0 [get_nets [list {yCursor1ToVoltage/pixelsRelativeToZeroVoltsTimesVoltageRangeTimesDefaultScale[0]} {yCursor1ToVoltage/pixelsRelativeToZeroVoltsTimesVoltageRangeTimesDefaultScale[1]} {yCursor1ToVoltage/pixelsRelativeToZeroVoltsTimesVoltageRangeTimesDefaultScale[2]} {yCursor1ToVoltage/pixelsRelativeToZeroVoltsTimesVoltageRangeTimesDefaultScale[3]} {yCursor1ToVoltage/pixelsRelativeToZeroVoltsTimesVoltageRangeTimesDefaultScale[4]} {yCursor1ToVoltage/pixelsRelativeToZeroVoltsTimesVoltageRangeTimesDefaultScale[5]} {yCursor1ToVoltage/pixelsRelativeToZeroVoltsTimesVoltageRangeTimesDefaultScale[6]} {yCursor1ToVoltage/pixelsRelativeToZeroVoltsTimesVoltageRangeTimesDefaultScale[7]} {yCursor1ToVoltage/pixelsRelativeToZeroVoltsTimesVoltageRangeTimesDefaultScale[8]} {yCursor1ToVoltage/pixelsRelativeToZeroVoltsTimesVoltageRangeTimesDefaultScale[9]} {yCursor1ToVoltage/pixelsRelativeToZeroVoltsTimesVoltageRangeTimesDefaultScale[10]} {yCursor1ToVoltage/pixelsRelativeToZeroVoltsTimesVoltageRangeTimesDefaultScale[11]} {yCursor1ToVoltage/pixelsRelativeToZeroVoltsTimesVoltageRangeTimesDefaultScale[12]} {yCursor1ToVoltage/pixelsRelativeToZeroVoltsTimesVoltageRangeTimesDefaultScale[13]} {yCursor1ToVoltage/pixelsRelativeToZeroVoltsTimesVoltageRangeTimesDefaultScale[14]} {yCursor1ToVoltage/pixelsRelativeToZeroVoltsTimesVoltageRangeTimesDefaultScale[15]} {yCursor1ToVoltage/pixelsRelativeToZeroVoltsTimesVoltageRangeTimesDefaultScale[16]} {yCursor1ToVoltage/pixelsRelativeToZeroVoltsTimesVoltageRangeTimesDefaultScale[17]} {yCursor1ToVoltage/pixelsRelativeToZeroVoltsTimesVoltageRangeTimesDefaultScale[18]} {yCursor1ToVoltage/pixelsRelativeToZeroVoltsTimesVoltageRangeTimesDefaultScale[19]} {yCursor1ToVoltage/pixelsRelativeToZeroVoltsTimesVoltageRangeTimesDefaultScale[20]}]]
+create_debug_port u_ila_0 probe
+set_property PROBE_TYPE DATA_AND_TRIGGER [get_debug_ports u_ila_0/probe1]
+set_property port_width 10 [get_debug_ports u_ila_0/probe1]
+connect_debug_port u_ila_0/probe1 [get_nets [list {yCursor1ToVoltage/voltageAbsoluteValue[0]} {yCursor1ToVoltage/voltageAbsoluteValue[1]} {yCursor1ToVoltage/voltageAbsoluteValue[2]} {yCursor1ToVoltage/voltageAbsoluteValue[3]} {yCursor1ToVoltage/voltageAbsoluteValue[4]} {yCursor1ToVoltage/voltageAbsoluteValue[5]} {yCursor1ToVoltage/voltageAbsoluteValue[6]} {yCursor1ToVoltage/voltageAbsoluteValue[7]} {yCursor1ToVoltage/voltageAbsoluteValue[8]} {yCursor1ToVoltage/voltageAbsoluteValue[9]}]]
+create_debug_port u_ila_0 probe
+set_property PROBE_TYPE DATA_AND_TRIGGER [get_debug_ports u_ila_0/probe2]
+set_property port_width 21 [get_debug_ports u_ila_0/probe2]
+connect_debug_port u_ila_0/probe2 [get_nets [list {yCursor1ToVoltage/pixelsRelativeToZeroVoltsTimesVoltageRangeTimesDefaultScaleDividedByDisplayHeight[0]} {yCursor1ToVoltage/pixelsRelativeToZeroVoltsTimesVoltageRangeTimesDefaultScaleDividedByDisplayHeight[1]} {yCursor1ToVoltage/pixelsRelativeToZeroVoltsTimesVoltageRangeTimesDefaultScaleDividedByDisplayHeight[2]} {yCursor1ToVoltage/pixelsRelativeToZeroVoltsTimesVoltageRangeTimesDefaultScaleDividedByDisplayHeight[3]} {yCursor1ToVoltage/pixelsRelativeToZeroVoltsTimesVoltageRangeTimesDefaultScaleDividedByDisplayHeight[4]} {yCursor1ToVoltage/pixelsRelativeToZeroVoltsTimesVoltageRangeTimesDefaultScaleDividedByDisplayHeight[5]} {yCursor1ToVoltage/pixelsRelativeToZeroVoltsTimesVoltageRangeTimesDefaultScaleDividedByDisplayHeight[6]} {yCursor1ToVoltage/pixelsRelativeToZeroVoltsTimesVoltageRangeTimesDefaultScaleDividedByDisplayHeight[7]} {yCursor1ToVoltage/pixelsRelativeToZeroVoltsTimesVoltageRangeTimesDefaultScaleDividedByDisplayHeight[8]} {yCursor1ToVoltage/pixelsRelativeToZeroVoltsTimesVoltageRangeTimesDefaultScaleDividedByDisplayHeight[9]} {yCursor1ToVoltage/pixelsRelativeToZeroVoltsTimesVoltageRangeTimesDefaultScaleDividedByDisplayHeight[10]} {yCursor1ToVoltage/pixelsRelativeToZeroVoltsTimesVoltageRangeTimesDefaultScaleDividedByDisplayHeight[11]} {yCursor1ToVoltage/pixelsRelativeToZeroVoltsTimesVoltageRangeTimesDefaultScaleDividedByDisplayHeight[12]} {yCursor1ToVoltage/pixelsRelativeToZeroVoltsTimesVoltageRangeTimesDefaultScaleDividedByDisplayHeight[13]} {yCursor1ToVoltage/pixelsRelativeToZeroVoltsTimesVoltageRangeTimesDefaultScaleDividedByDisplayHeight[14]} {yCursor1ToVoltage/pixelsRelativeToZeroVoltsTimesVoltageRangeTimesDefaultScaleDividedByDisplayHeight[15]} {yCursor1ToVoltage/pixelsRelativeToZeroVoltsTimesVoltageRangeTimesDefaultScaleDividedByDisplayHeight[16]} {yCursor1ToVoltage/pixelsRelativeToZeroVoltsTimesVoltageRangeTimesDefaultScaleDividedByDisplayHeight[17]} {yCursor1ToVoltage/pixelsRelativeToZeroVoltsTimesVoltageRangeTimesDefaultScaleDividedByDisplayHeight[18]} {yCursor1ToVoltage/pixelsRelativeToZeroVoltsTimesVoltageRangeTimesDefaultScaleDividedByDisplayHeight[19]} {yCursor1ToVoltage/pixelsRelativeToZeroVoltsTimesVoltageRangeTimesDefaultScaleDividedByDisplayHeight[20]}]]
+create_debug_port u_ila_0 probe
+set_property PROBE_TYPE DATA_AND_TRIGGER [get_debug_ports u_ila_0/probe3]
+set_property port_width 12 [get_debug_ports u_ila_0/probe3]
+connect_debug_port u_ila_0/probe3 [get_nets [list {yCursor1[0]} {yCursor1[1]} {yCursor1[2]} {yCursor1[3]} {yCursor1[4]} {yCursor1[5]} {yCursor1[6]} {yCursor1[7]} {yCursor1[8]} {yCursor1[9]} {yCursor1[10]} {yCursor1[11]}]]
+create_debug_port u_ila_0 probe
+set_property PROBE_TYPE DATA_AND_TRIGGER [get_debug_ports u_ila_0/probe4]
+set_property port_width 10 [get_debug_ports u_ila_0/probe4]
+connect_debug_port u_ila_0/probe4 [get_nets [list {cursor1VoltageAbsoluteValue[0]} {cursor1VoltageAbsoluteValue[1]} {cursor1VoltageAbsoluteValue[2]} {cursor1VoltageAbsoluteValue[3]} {cursor1VoltageAbsoluteValue[4]} {cursor1VoltageAbsoluteValue[5]} {cursor1VoltageAbsoluteValue[6]} {cursor1VoltageAbsoluteValue[7]} {cursor1VoltageAbsoluteValue[8]} {cursor1VoltageAbsoluteValue[9]}]]
+create_debug_port u_ila_0 probe
+set_property PROBE_TYPE DATA_AND_TRIGGER [get_debug_ports u_ila_0/probe5]
+set_property port_width 10 [get_debug_ports u_ila_0/probe5]
+connect_debug_port u_ila_0/probe5 [get_nets [list {cursor1Voltage[0]} {cursor1Voltage[1]} {cursor1Voltage[2]} {cursor1Voltage[3]} {cursor1Voltage[4]} {cursor1Voltage[5]} {cursor1Voltage[6]} {cursor1Voltage[7]} {cursor1Voltage[8]} {cursor1Voltage[9]}]]
+create_debug_port u_ila_0 probe
+set_property PROBE_TYPE DATA_AND_TRIGGER [get_debug_ports u_ila_0/probe6]
+set_property port_width 18 [get_debug_ports u_ila_0/probe6]
+connect_debug_port u_ila_0/probe6 [get_nets [list {yCursor1ToVoltage/pixelsRelativeToZeroVoltsTimesVoltageRange[0]} {yCursor1ToVoltage/pixelsRelativeToZeroVoltsTimesVoltageRange[1]} {yCursor1ToVoltage/pixelsRelativeToZeroVoltsTimesVoltageRange[2]} {yCursor1ToVoltage/pixelsRelativeToZeroVoltsTimesVoltageRange[3]} {yCursor1ToVoltage/pixelsRelativeToZeroVoltsTimesVoltageRange[4]} {yCursor1ToVoltage/pixelsRelativeToZeroVoltsTimesVoltageRange[5]} {yCursor1ToVoltage/pixelsRelativeToZeroVoltsTimesVoltageRange[6]} {yCursor1ToVoltage/pixelsRelativeToZeroVoltsTimesVoltageRange[7]} {yCursor1ToVoltage/pixelsRelativeToZeroVoltsTimesVoltageRange[8]} {yCursor1ToVoltage/pixelsRelativeToZeroVoltsTimesVoltageRange[9]} {yCursor1ToVoltage/pixelsRelativeToZeroVoltsTimesVoltageRange[10]} {yCursor1ToVoltage/pixelsRelativeToZeroVoltsTimesVoltageRange[11]} {yCursor1ToVoltage/pixelsRelativeToZeroVoltsTimesVoltageRange[12]} {yCursor1ToVoltage/pixelsRelativeToZeroVoltsTimesVoltageRange[13]} {yCursor1ToVoltage/pixelsRelativeToZeroVoltsTimesVoltageRange[14]} {yCursor1ToVoltage/pixelsRelativeToZeroVoltsTimesVoltageRange[15]} {yCursor1ToVoltage/pixelsRelativeToZeroVoltsTimesVoltageRange[16]} {yCursor1ToVoltage/pixelsRelativeToZeroVoltsTimesVoltageRange[17]}]]
+create_debug_port u_ila_0 probe
+set_property PROBE_TYPE DATA_AND_TRIGGER [get_debug_ports u_ila_0/probe7]
+set_property port_width 1 [get_debug_ports u_ila_0/probe7]
+connect_debug_port u_ila_0/probe7 [get_nets [list cursor1IsNegative]]
+set_property C_CLK_INPUT_FREQ_HZ 300000000 [get_debug_cores dbg_hub]
+set_property C_ENABLE_CLK_DIVIDER false [get_debug_cores dbg_hub]
+set_property C_USER_SCAN_CHAIN 1 [get_debug_cores dbg_hub]
+connect_debug_port dbg_hub/clk [get_nets CLK108MHZ]

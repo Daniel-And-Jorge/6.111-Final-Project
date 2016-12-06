@@ -4,12 +4,543 @@
 <!-- Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.        -->
 
 <hwsession version="1" minor="1">
-  <device name="xc7a100t_0" gui_info=""/>
+  <device name="xc7a100t_0" gui_info="dashboard1=hw_ila_1[xc7a100t_0/hw_ila_1/Settings=ILA_SETTINGS_1;xc7a100t_0/hw_ila_1/Trigger Setup=ILA_TRIGGER_1;xc7a100t_0/hw_ila_1/Capture Setup=ILA_CAPTURE_1;xc7a100t_0/hw_ila_1/Status=ILA_STATUS_1;xc7a100t_0/hw_ila_1/Waveform=ILA_WAVE_1;]"/>
   <ObjectList object_type="hw_device" gui_info="">
     <Object name="xc7a100t_0" gui_info="">
-      <Properties Property="PROBES.FILE" value=""/>
+      <Properties Property="PROBES.FILE" value="$_project_name_.runs/impl_1/debug_nets.ltx"/>
       <Properties Property="PROGRAM.HW_BITSTREAM" value="$_project_name_.runs/impl_1/$_project_name_.bit"/>
     </Object>
   </ObjectList>
-  <probeset name="hw project" active="false"/>
+  <ObjectList object_type="hw_ila" gui_info="">
+    <Object name="u_ila_0" gui_info="">
+      <Properties Property="CONTROL.TRIGGER_CONDITION" value="AND"/>
+      <Properties Property="CORE_REFRESH_RATE_MS" value="500"/>
+    </Object>
+  </ObjectList>
+  <probeset name="hw project" active="false">
+    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq1&apos;bX"/>
+        <Option Id="COMPARE_VALUE.0" value="eq1&apos;bX"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_1"/>
+        <Option Id="MAP" value="probe3[0]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="netlist"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq1&apos;bX"/>
+      </probeOptions>
+      <nets>
+        <net name="DRPEnable"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq1&apos;bX"/>
+        <Option Id="COMPARE_VALUE.0" value="eq1&apos;bX"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_1"/>
+        <Option Id="MAP" value="probe4[0]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="netlist"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq1&apos;bX"/>
+      </probeOptions>
+      <nets>
+        <net name="DRPReady"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq1&apos;bX"/>
+        <Option Id="COMPARE_VALUE.0" value="eq1&apos;bX"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_1"/>
+        <Option Id="MAP" value="probe2[0]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="netlist"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq1&apos;bX"/>
+      </probeOptions>
+      <nets>
+        <net name="channelDataReady"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq1&apos;bX"/>
+        <Option Id="COMPARE_VALUE.0" value="eq1&apos;bX"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_1"/>
+        <Option Id="MAP" value="probe7[0]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="netlist"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq1&apos;bX"/>
+      </probeOptions>
+      <nets>
+        <net name="cursor1IsNegative"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq4&apos;hX"/>
+        <Option Id="COMPARE_VALUE.0" value="eq4&apos;hX"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_1"/>
+        <Option Id="MAP" value="probe6[3:0]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="netlist"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq4&apos;hX"/>
+      </probeOptions>
+      <nets>
+        <net name="cursor1Number0[3]"/>
+        <net name="cursor1Number0[2]"/>
+        <net name="cursor1Number0[1]"/>
+        <net name="cursor1Number0[0]"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq4&apos;hX"/>
+        <Option Id="COMPARE_VALUE.0" value="eq4&apos;hX"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_1"/>
+        <Option Id="MAP" value="probe5[3:0]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="netlist"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq4&apos;hX"/>
+      </probeOptions>
+      <nets>
+        <net name="cursor1Number1[3]"/>
+        <net name="cursor1Number1[2]"/>
+        <net name="cursor1Number1[1]"/>
+        <net name="cursor1Number1[0]"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq4&apos;hX"/>
+        <Option Id="COMPARE_VALUE.0" value="eq4&apos;hX"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_1"/>
+        <Option Id="MAP" value="probe4[3:0]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="netlist"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq4&apos;hX"/>
+      </probeOptions>
+      <nets>
+        <net name="cursor1Number2[3]"/>
+        <net name="cursor1Number2[2]"/>
+        <net name="cursor1Number2[1]"/>
+        <net name="cursor1Number2[0]"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="bus" source="netlist" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq10&apos;hXXX"/>
+        <Option Id="COMPARE_VALUE.0" value="eq10&apos;hXXX"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_1"/>
+        <Option Id="MAP" value="probe4[9:0]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="netlist"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq10&apos;hXXX"/>
+      </probeOptions>
+      <nets>
+        <net name="cursor1VoltageAbsoluteValue[9]"/>
+        <net name="cursor1VoltageAbsoluteValue[8]"/>
+        <net name="cursor1VoltageAbsoluteValue[7]"/>
+        <net name="cursor1VoltageAbsoluteValue[6]"/>
+        <net name="cursor1VoltageAbsoluteValue[5]"/>
+        <net name="cursor1VoltageAbsoluteValue[4]"/>
+        <net name="cursor1VoltageAbsoluteValue[3]"/>
+        <net name="cursor1VoltageAbsoluteValue[2]"/>
+        <net name="cursor1VoltageAbsoluteValue[1]"/>
+        <net name="cursor1VoltageAbsoluteValue[0]"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq7&apos;hXX"/>
+        <Option Id="COMPARE_VALUE.0" value="eq7&apos;hXX"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_1"/>
+        <Option Id="MAP" value="probe2[6:0]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="netlist"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq7&apos;hXX"/>
+      </probeOptions>
+      <nets>
+        <net name="cursor1VoltageCharacter0[6]"/>
+        <net name="cursor1VoltageCharacter0[5]"/>
+        <net name="cursor1VoltageCharacter0[4]"/>
+        <net name="cursor1VoltageCharacter0[3]"/>
+        <net name="cursor1VoltageCharacter0[2]"/>
+        <net name="cursor1VoltageCharacter0[1]"/>
+        <net name="cursor1VoltageCharacter0[0]"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq7&apos;hXX"/>
+        <Option Id="COMPARE_VALUE.0" value="eq7&apos;hXX"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_1"/>
+        <Option Id="MAP" value="probe1[6:0]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="netlist"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq7&apos;hXX"/>
+      </probeOptions>
+      <nets>
+        <net name="cursor1VoltageCharacter1[6]"/>
+        <net name="cursor1VoltageCharacter1[5]"/>
+        <net name="cursor1VoltageCharacter1[4]"/>
+        <net name="cursor1VoltageCharacter1[3]"/>
+        <net name="cursor1VoltageCharacter1[2]"/>
+        <net name="cursor1VoltageCharacter1[1]"/>
+        <net name="cursor1VoltageCharacter1[0]"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq7&apos;hXX"/>
+        <Option Id="COMPARE_VALUE.0" value="eq7&apos;hXX"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_1"/>
+        <Option Id="MAP" value="probe0[6:0]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="netlist"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq7&apos;hXX"/>
+      </probeOptions>
+      <nets>
+        <net name="cursor1VoltageCharacter2[6]"/>
+        <net name="cursor1VoltageCharacter2[5]"/>
+        <net name="cursor1VoltageCharacter2[4]"/>
+        <net name="cursor1VoltageCharacter2[3]"/>
+        <net name="cursor1VoltageCharacter2[2]"/>
+        <net name="cursor1VoltageCharacter2[1]"/>
+        <net name="cursor1VoltageCharacter2[0]"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="bus" source="netlist" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq10&apos;hXXX"/>
+        <Option Id="COMPARE_VALUE.0" value="eq10&apos;hXXX"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_1"/>
+        <Option Id="MAP" value="probe5[9:0]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="netlist"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq10&apos;hXXX"/>
+      </probeOptions>
+      <nets>
+        <net name="cursor1Voltage[9]"/>
+        <net name="cursor1Voltage[8]"/>
+        <net name="cursor1Voltage[7]"/>
+        <net name="cursor1Voltage[6]"/>
+        <net name="cursor1Voltage[5]"/>
+        <net name="cursor1Voltage[4]"/>
+        <net name="cursor1Voltage[3]"/>
+        <net name="cursor1Voltage[2]"/>
+        <net name="cursor1Voltage[1]"/>
+        <net name="cursor1Voltage[0]"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq1&apos;bX"/>
+        <Option Id="COMPARE_VALUE.0" value="eq1&apos;bX"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_1"/>
+        <Option Id="MAP" value="probe5[0]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="netlist"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq1&apos;bX"/>
+      </probeOptions>
+      <nets>
+        <net name="endOfConversion"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq2&apos;hX"/>
+        <Option Id="COMPARE_VALUE.0" value="eq2&apos;hX"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_1"/>
+        <Option Id="MAP" value="probe1[1:0]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="netlist"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq2&apos;hX"/>
+      </probeOptions>
+      <nets>
+        <net name="previousState[1]"/>
+        <net name="previousState[0]"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq2&apos;hX"/>
+        <Option Id="COMPARE_VALUE.0" value="eq2&apos;hX"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_1"/>
+        <Option Id="MAP" value="probe0[1:0]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="netlist"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq2&apos;hX"/>
+      </probeOptions>
+      <nets>
+        <net name="state[1]"/>
+        <net name="state[0]"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="bus" source="netlist" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq4&apos;hX"/>
+        <Option Id="COMPARE_VALUE.0" value="eq4&apos;hX"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_1"/>
+        <Option Id="MAP" value="probe2[3:0]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="netlist"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq4&apos;hX"/>
+      </probeOptions>
+      <nets>
+        <net name="verticalScaleExponentChannel1[3]"/>
+        <net name="verticalScaleExponentChannel1[2]"/>
+        <net name="verticalScaleExponentChannel1[1]"/>
+        <net name="verticalScaleExponentChannel1[0]"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="bus" source="netlist" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq4&apos;hX"/>
+        <Option Id="COMPARE_VALUE.0" value="eq4&apos;hX"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_1"/>
+        <Option Id="MAP" value="probe1[3:0]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="netlist"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq4&apos;hX"/>
+      </probeOptions>
+      <nets>
+        <net name="verticalScaleExponentChannel2[3]"/>
+        <net name="verticalScaleExponentChannel2[2]"/>
+        <net name="verticalScaleExponentChannel2[1]"/>
+        <net name="verticalScaleExponentChannel2[0]"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="bus" source="netlist" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq4&apos;hX"/>
+        <Option Id="COMPARE_VALUE.0" value="eq4&apos;hX"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_1"/>
+        <Option Id="MAP" value="probe0[3:0]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="netlist"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq4&apos;hX"/>
+      </probeOptions>
+      <nets>
+        <net name="verticalScaleExponentChannelSelected[3]"/>
+        <net name="verticalScaleExponentChannelSelected[2]"/>
+        <net name="verticalScaleExponentChannelSelected[1]"/>
+        <net name="verticalScaleExponentChannelSelected[0]"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="bus" source="netlist" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq21&apos;hXX_XXXX"/>
+        <Option Id="COMPARE_VALUE.0" value="eq21&apos;hXX_XXXX"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_1"/>
+        <Option Id="MAP" value="probe2[20:0]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="netlist"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq21&apos;hXX_XXXX"/>
+      </probeOptions>
+      <nets>
+        <net name="yCursor1ToVoltage/pixelsRelativeToZeroVoltsTimesVoltageRangeTimesDefaultScaleDividedByDisplayHeight[20]"/>
+        <net name="yCursor1ToVoltage/pixelsRelativeToZeroVoltsTimesVoltageRangeTimesDefaultScaleDividedByDisplayHeight[19]"/>
+        <net name="yCursor1ToVoltage/pixelsRelativeToZeroVoltsTimesVoltageRangeTimesDefaultScaleDividedByDisplayHeight[18]"/>
+        <net name="yCursor1ToVoltage/pixelsRelativeToZeroVoltsTimesVoltageRangeTimesDefaultScaleDividedByDisplayHeight[17]"/>
+        <net name="yCursor1ToVoltage/pixelsRelativeToZeroVoltsTimesVoltageRangeTimesDefaultScaleDividedByDisplayHeight[16]"/>
+        <net name="yCursor1ToVoltage/pixelsRelativeToZeroVoltsTimesVoltageRangeTimesDefaultScaleDividedByDisplayHeight[15]"/>
+        <net name="yCursor1ToVoltage/pixelsRelativeToZeroVoltsTimesVoltageRangeTimesDefaultScaleDividedByDisplayHeight[14]"/>
+        <net name="yCursor1ToVoltage/pixelsRelativeToZeroVoltsTimesVoltageRangeTimesDefaultScaleDividedByDisplayHeight[13]"/>
+        <net name="yCursor1ToVoltage/pixelsRelativeToZeroVoltsTimesVoltageRangeTimesDefaultScaleDividedByDisplayHeight[12]"/>
+        <net name="yCursor1ToVoltage/pixelsRelativeToZeroVoltsTimesVoltageRangeTimesDefaultScaleDividedByDisplayHeight[11]"/>
+        <net name="yCursor1ToVoltage/pixelsRelativeToZeroVoltsTimesVoltageRangeTimesDefaultScaleDividedByDisplayHeight[10]"/>
+        <net name="yCursor1ToVoltage/pixelsRelativeToZeroVoltsTimesVoltageRangeTimesDefaultScaleDividedByDisplayHeight[9]"/>
+        <net name="yCursor1ToVoltage/pixelsRelativeToZeroVoltsTimesVoltageRangeTimesDefaultScaleDividedByDisplayHeight[8]"/>
+        <net name="yCursor1ToVoltage/pixelsRelativeToZeroVoltsTimesVoltageRangeTimesDefaultScaleDividedByDisplayHeight[7]"/>
+        <net name="yCursor1ToVoltage/pixelsRelativeToZeroVoltsTimesVoltageRangeTimesDefaultScaleDividedByDisplayHeight[6]"/>
+        <net name="yCursor1ToVoltage/pixelsRelativeToZeroVoltsTimesVoltageRangeTimesDefaultScaleDividedByDisplayHeight[5]"/>
+        <net name="yCursor1ToVoltage/pixelsRelativeToZeroVoltsTimesVoltageRangeTimesDefaultScaleDividedByDisplayHeight[4]"/>
+        <net name="yCursor1ToVoltage/pixelsRelativeToZeroVoltsTimesVoltageRangeTimesDefaultScaleDividedByDisplayHeight[3]"/>
+        <net name="yCursor1ToVoltage/pixelsRelativeToZeroVoltsTimesVoltageRangeTimesDefaultScaleDividedByDisplayHeight[2]"/>
+        <net name="yCursor1ToVoltage/pixelsRelativeToZeroVoltsTimesVoltageRangeTimesDefaultScaleDividedByDisplayHeight[1]"/>
+        <net name="yCursor1ToVoltage/pixelsRelativeToZeroVoltsTimesVoltageRangeTimesDefaultScaleDividedByDisplayHeight[0]"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="bus" source="netlist" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq21&apos;hXX_XXXX"/>
+        <Option Id="COMPARE_VALUE.0" value="eq21&apos;hXX_XXXX"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_1"/>
+        <Option Id="MAP" value="probe0[20:0]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="netlist"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq21&apos;hXX_XXXX"/>
+      </probeOptions>
+      <nets>
+        <net name="yCursor1ToVoltage/pixelsRelativeToZeroVoltsTimesVoltageRangeTimesDefaultScale[20]"/>
+        <net name="yCursor1ToVoltage/pixelsRelativeToZeroVoltsTimesVoltageRangeTimesDefaultScale[19]"/>
+        <net name="yCursor1ToVoltage/pixelsRelativeToZeroVoltsTimesVoltageRangeTimesDefaultScale[18]"/>
+        <net name="yCursor1ToVoltage/pixelsRelativeToZeroVoltsTimesVoltageRangeTimesDefaultScale[17]"/>
+        <net name="yCursor1ToVoltage/pixelsRelativeToZeroVoltsTimesVoltageRangeTimesDefaultScale[16]"/>
+        <net name="yCursor1ToVoltage/pixelsRelativeToZeroVoltsTimesVoltageRangeTimesDefaultScale[15]"/>
+        <net name="yCursor1ToVoltage/pixelsRelativeToZeroVoltsTimesVoltageRangeTimesDefaultScale[14]"/>
+        <net name="yCursor1ToVoltage/pixelsRelativeToZeroVoltsTimesVoltageRangeTimesDefaultScale[13]"/>
+        <net name="yCursor1ToVoltage/pixelsRelativeToZeroVoltsTimesVoltageRangeTimesDefaultScale[12]"/>
+        <net name="yCursor1ToVoltage/pixelsRelativeToZeroVoltsTimesVoltageRangeTimesDefaultScale[11]"/>
+        <net name="yCursor1ToVoltage/pixelsRelativeToZeroVoltsTimesVoltageRangeTimesDefaultScale[10]"/>
+        <net name="yCursor1ToVoltage/pixelsRelativeToZeroVoltsTimesVoltageRangeTimesDefaultScale[9]"/>
+        <net name="yCursor1ToVoltage/pixelsRelativeToZeroVoltsTimesVoltageRangeTimesDefaultScale[8]"/>
+        <net name="yCursor1ToVoltage/pixelsRelativeToZeroVoltsTimesVoltageRangeTimesDefaultScale[7]"/>
+        <net name="yCursor1ToVoltage/pixelsRelativeToZeroVoltsTimesVoltageRangeTimesDefaultScale[6]"/>
+        <net name="yCursor1ToVoltage/pixelsRelativeToZeroVoltsTimesVoltageRangeTimesDefaultScale[5]"/>
+        <net name="yCursor1ToVoltage/pixelsRelativeToZeroVoltsTimesVoltageRangeTimesDefaultScale[4]"/>
+        <net name="yCursor1ToVoltage/pixelsRelativeToZeroVoltsTimesVoltageRangeTimesDefaultScale[3]"/>
+        <net name="yCursor1ToVoltage/pixelsRelativeToZeroVoltsTimesVoltageRangeTimesDefaultScale[2]"/>
+        <net name="yCursor1ToVoltage/pixelsRelativeToZeroVoltsTimesVoltageRangeTimesDefaultScale[1]"/>
+        <net name="yCursor1ToVoltage/pixelsRelativeToZeroVoltsTimesVoltageRangeTimesDefaultScale[0]"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="bus" source="netlist" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq18&apos;hX_XXXX"/>
+        <Option Id="COMPARE_VALUE.0" value="eq18&apos;hX_XXXX"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_1"/>
+        <Option Id="MAP" value="probe6[17:0]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="netlist"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq18&apos;hX_XXXX"/>
+      </probeOptions>
+      <nets>
+        <net name="yCursor1ToVoltage/pixelsRelativeToZeroVoltsTimesVoltageRange[17]"/>
+        <net name="yCursor1ToVoltage/pixelsRelativeToZeroVoltsTimesVoltageRange[16]"/>
+        <net name="yCursor1ToVoltage/pixelsRelativeToZeroVoltsTimesVoltageRange[15]"/>
+        <net name="yCursor1ToVoltage/pixelsRelativeToZeroVoltsTimesVoltageRange[14]"/>
+        <net name="yCursor1ToVoltage/pixelsRelativeToZeroVoltsTimesVoltageRange[13]"/>
+        <net name="yCursor1ToVoltage/pixelsRelativeToZeroVoltsTimesVoltageRange[12]"/>
+        <net name="yCursor1ToVoltage/pixelsRelativeToZeroVoltsTimesVoltageRange[11]"/>
+        <net name="yCursor1ToVoltage/pixelsRelativeToZeroVoltsTimesVoltageRange[10]"/>
+        <net name="yCursor1ToVoltage/pixelsRelativeToZeroVoltsTimesVoltageRange[9]"/>
+        <net name="yCursor1ToVoltage/pixelsRelativeToZeroVoltsTimesVoltageRange[8]"/>
+        <net name="yCursor1ToVoltage/pixelsRelativeToZeroVoltsTimesVoltageRange[7]"/>
+        <net name="yCursor1ToVoltage/pixelsRelativeToZeroVoltsTimesVoltageRange[6]"/>
+        <net name="yCursor1ToVoltage/pixelsRelativeToZeroVoltsTimesVoltageRange[5]"/>
+        <net name="yCursor1ToVoltage/pixelsRelativeToZeroVoltsTimesVoltageRange[4]"/>
+        <net name="yCursor1ToVoltage/pixelsRelativeToZeroVoltsTimesVoltageRange[3]"/>
+        <net name="yCursor1ToVoltage/pixelsRelativeToZeroVoltsTimesVoltageRange[2]"/>
+        <net name="yCursor1ToVoltage/pixelsRelativeToZeroVoltsTimesVoltageRange[1]"/>
+        <net name="yCursor1ToVoltage/pixelsRelativeToZeroVoltsTimesVoltageRange[0]"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="bus" source="netlist" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq10&apos;hXXX"/>
+        <Option Id="COMPARE_VALUE.0" value="eq10&apos;hXXX"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_1"/>
+        <Option Id="MAP" value="probe1[9:0]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="netlist"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq10&apos;hXXX"/>
+      </probeOptions>
+      <nets>
+        <net name="yCursor1ToVoltage/voltageAbsoluteValue[9]"/>
+        <net name="yCursor1ToVoltage/voltageAbsoluteValue[8]"/>
+        <net name="yCursor1ToVoltage/voltageAbsoluteValue[7]"/>
+        <net name="yCursor1ToVoltage/voltageAbsoluteValue[6]"/>
+        <net name="yCursor1ToVoltage/voltageAbsoluteValue[5]"/>
+        <net name="yCursor1ToVoltage/voltageAbsoluteValue[4]"/>
+        <net name="yCursor1ToVoltage/voltageAbsoluteValue[3]"/>
+        <net name="yCursor1ToVoltage/voltageAbsoluteValue[2]"/>
+        <net name="yCursor1ToVoltage/voltageAbsoluteValue[1]"/>
+        <net name="yCursor1ToVoltage/voltageAbsoluteValue[0]"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="bus" source="netlist" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq12&apos;hXXX"/>
+        <Option Id="COMPARE_VALUE.0" value="eq12&apos;hXXX"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_1"/>
+        <Option Id="MAP" value="probe3[11:0]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="netlist"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq12&apos;hXXX"/>
+      </probeOptions>
+      <nets>
+        <net name="yCursor1[11]"/>
+        <net name="yCursor1[10]"/>
+        <net name="yCursor1[9]"/>
+        <net name="yCursor1[8]"/>
+        <net name="yCursor1[7]"/>
+        <net name="yCursor1[6]"/>
+        <net name="yCursor1[5]"/>
+        <net name="yCursor1[4]"/>
+        <net name="yCursor1[3]"/>
+        <net name="yCursor1[2]"/>
+        <net name="yCursor1[1]"/>
+        <net name="yCursor1[0]"/>
+      </nets>
+    </probe>
+  </probeset>
 </hwsession>

@@ -1,0 +1,11 @@
+xpm_cdc.sv,systemverilog,xil_defaultlib,../../../../../../../../../../../../../../var/local/xilinx-local/Vivado/2016.2/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv,
+xpm_memory_base.sv,systemverilog,xil_defaultlib,../../../../../../../../../../../../../../var/local/xilinx-local/Vivado/2016.2/data/ip/xpm/xpm_memory/hdl/xpm_memory_base.sv,
+xpm_memory_dpdistram.sv,systemverilog,xil_defaultlib,../../../../../../../../../../../../../../var/local/xilinx-local/Vivado/2016.2/data/ip/xpm/xpm_memory/hdl/xpm_memory_dpdistram.sv,
+xpm_memory_dprom.sv,systemverilog,xil_defaultlib,../../../../../../../../../../../../../../var/local/xilinx-local/Vivado/2016.2/data/ip/xpm/xpm_memory/hdl/xpm_memory_dprom.sv,
+xpm_memory_sdpram.sv,systemverilog,xil_defaultlib,../../../../../../../../../../../../../../var/local/xilinx-local/Vivado/2016.2/data/ip/xpm/xpm_memory/hdl/xpm_memory_sdpram.sv,
+xpm_memory_spram.sv,systemverilog,xil_defaultlib,../../../../../../../../../../../../../../var/local/xilinx-local/Vivado/2016.2/data/ip/xpm/xpm_memory/hdl/xpm_memory_spram.sv,
+xpm_memory_sprom.sv,systemverilog,xil_defaultlib,../../../../../../../../../../../../../../var/local/xilinx-local/Vivado/2016.2/data/ip/xpm/xpm_memory/hdl/xpm_memory_sprom.sv,
+xpm_memory_tdpram.sv,systemverilog,xil_defaultlib,../../../../../../../../../../../../../../var/local/xilinx-local/Vivado/2016.2/data/ip/xpm/xpm_memory/hdl/xpm_memory_tdpram.sv,
+xpm_VCOMP.vhd,vhdl,xpm,../../../../../../../../../../../../../../var/local/xilinx-local/Vivado/2016.2/data/ip/xpm/xpm_VCOMP.vhd,
+xadc_wiz_1.v,verilog,xil_defaultlib,../../../ip/xadc_wiz_1/xadc_wiz_1.v,
+glbl.v,Verilog,xil_defaultlib,glbl.v

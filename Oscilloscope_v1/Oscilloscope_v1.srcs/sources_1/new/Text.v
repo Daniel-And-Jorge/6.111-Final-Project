@@ -29,7 +29,8 @@ module Text
                 CHARACTER_HEIGHT_BITS = 5,
                 SELECT_CHARACTER_BITS = 7,
                 BRAM_ADDRESS_BITS = 17,
-                CHARACTER_COLOR = 12'h0F0,    //green
+                CHARACTER_COLOR = 12'h0F0,  //green
+                CURSOR_1_COLOR = 12'hF0F,  //purple
                 COLOR_BITS = 12)
     (input clock,
     input [DISPLAY_X_BITS-1:0] xMiddleVoltage4,
@@ -45,8 +46,9 @@ module Text
     input [DISPLAY_Y_BITS-1:0] yMiddleVoltage1,
     input [SELECT_CHARACTER_BITS-1:0] middleVoltageCharacter1,
     input [DISPLAY_X_BITS-1:0] xMiddleVoltage0,
-    input [DISPLAY_Y_BITS-1:0] yMiddleVoltage0,
+    input [DISPLAY_Y_BITS-1:0] yMiddleVoltage0,  
     input [SELECT_CHARACTER_BITS-1:0] middleVoltageCharacter0,
+    
     input [DISPLAY_X_BITS-1:0] xTimePerDivision4,
     input [DISPLAY_Y_BITS-1:0] yTimePerDivision4,
     input [SELECT_CHARACTER_BITS-1:0] timePerDivisionCharacter4,
@@ -62,6 +64,55 @@ module Text
     input [DISPLAY_X_BITS-1:0] xTimePerDivision0,
     input [DISPLAY_Y_BITS-1:0] yTimePerDivision0,
     input [SELECT_CHARACTER_BITS-1:0] timePerDivisionCharacter0,
+    
+    input [DISPLAY_X_BITS-1:0] xCursor1_15,
+    input [DISPLAY_Y_BITS-1:0] yCursor1_15,
+    input [SELECT_CHARACTER_BITS-1:0] cursor1Character15,
+    input [DISPLAY_X_BITS-1:0] xCursor1_14,
+    input [DISPLAY_Y_BITS-1:0] yCursor1_14,
+    input [SELECT_CHARACTER_BITS-1:0] cursor1Character14,
+    input [DISPLAY_X_BITS-1:0] xCursor1_13,
+    input [DISPLAY_Y_BITS-1:0] yCursor1_13,
+    input [SELECT_CHARACTER_BITS-1:0] cursor1Character13,
+    input [DISPLAY_X_BITS-1:0] xCursor1_12,
+    input [DISPLAY_Y_BITS-1:0] yCursor1_12,
+    input [SELECT_CHARACTER_BITS-1:0] cursor1Character12,
+    input [DISPLAY_X_BITS-1:0] xCursor1_11,
+    input [DISPLAY_Y_BITS-1:0] yCursor1_11,
+    input [SELECT_CHARACTER_BITS-1:0] cursor1Character11,
+    input [DISPLAY_X_BITS-1:0] xCursor1_10,
+    input [DISPLAY_Y_BITS-1:0] yCursor1_10,
+    input [SELECT_CHARACTER_BITS-1:0] cursor1Character10,
+    input [DISPLAY_X_BITS-1:0] xCursor1_9,
+    input [DISPLAY_Y_BITS-1:0] yCursor1_9,
+    input [SELECT_CHARACTER_BITS-1:0] cursor1Character9,
+    input [DISPLAY_X_BITS-1:0] xCursor1_8,
+    input [DISPLAY_Y_BITS-1:0] yCursor1_8,
+    input [SELECT_CHARACTER_BITS-1:0] cursor1Character8,
+    input [DISPLAY_X_BITS-1:0] xCursor1_7,
+    input [DISPLAY_Y_BITS-1:0] yCursor1_7,
+    input [SELECT_CHARACTER_BITS-1:0] cursor1Character7,
+    input [DISPLAY_X_BITS-1:0] xCursor1_6,
+    input [DISPLAY_Y_BITS-1:0] yCursor1_6,
+    input [SELECT_CHARACTER_BITS-1:0] cursor1Character6,
+    input [DISPLAY_X_BITS-1:0] xCursor1_5,
+    input [DISPLAY_Y_BITS-1:0] yCursor1_5,
+    input [SELECT_CHARACTER_BITS-1:0] cursor1Character5,
+    input [DISPLAY_X_BITS-1:0] xCursor1_4,
+    input [DISPLAY_Y_BITS-1:0] yCursor1_4,
+    input [SELECT_CHARACTER_BITS-1:0] cursor1Character4,
+    input [DISPLAY_X_BITS-1:0] xCursor1_3,
+    input [DISPLAY_Y_BITS-1:0] yCursor1_3,
+    input [SELECT_CHARACTER_BITS-1:0] cursor1Character3,
+    input [DISPLAY_X_BITS-1:0] xCursor1_2,
+    input [DISPLAY_Y_BITS-1:0] yCursor1_2,
+    input [SELECT_CHARACTER_BITS-1:0] cursor1Character2,
+    input [DISPLAY_X_BITS-1:0] xCursor1_1,
+    input [DISPLAY_Y_BITS-1:0] yCursor1_1,
+    input [SELECT_CHARACTER_BITS-1:0] cursor1Character1,
+    input [DISPLAY_X_BITS-1:0] xCursor1_0,
+    input [DISPLAY_Y_BITS-1:0] yCursor1_0,
+    input [SELECT_CHARACTER_BITS-1:0] cursor1Character0,
         
     input [DISPLAY_X_BITS-1:0] displayX,
     input [DISPLAY_Y_BITS-1:0] displayY,
@@ -79,7 +130,6 @@ module Text
     
     //reg [BRAM_ADDRESS_BITS-1:0] addressA = 0;
     wire dataOutA;
-
     
     //delay registers for hsync, vsync, blank, displayX, displayY
     reg [DISPLAY_X_BITS-1:0] displayX1 = 0;
@@ -153,9 +203,74 @@ module Text
           yTimePerDivision0 <= displayY && displayY < (yTimePerDivision0 + CHARACTER_HEIGHT)) begin   
           row <= displayY - yTimePerDivision0;
           column <= displayX - xTimePerDivision0;
+          
+        end else if (xCursor1_15 <= displayX && displayX < (xCursor1_15 + CHARACTER_WIDTH) &&
+          yCursor1_15 <= displayY && displayY < (yCursor1_15 + CHARACTER_HEIGHT)) begin   
+          row <= displayY - yCursor1_15;
+          column <= displayX - xCursor1_15;
+        end else if (xCursor1_14 <= displayX && displayX < (xCursor1_14 + CHARACTER_WIDTH) &&
+          yCursor1_14 <= displayY && displayY < (yCursor1_14 + CHARACTER_HEIGHT)) begin   
+          row <= displayY - yCursor1_14;
+          column <= displayX - xCursor1_14;
+        end else if (xCursor1_13 <= displayX && displayX < (xCursor1_13 + CHARACTER_WIDTH) &&
+          yCursor1_13 <= displayY && displayY < (yCursor1_13 + CHARACTER_HEIGHT)) begin   
+          row <= displayY - yCursor1_13;
+          column <= displayX - xCursor1_13;
+        end else if (xCursor1_12 <= displayX && displayX < (xCursor1_12 + CHARACTER_WIDTH) &&
+          yCursor1_12 <= displayY && displayY < (yCursor1_12 + CHARACTER_HEIGHT)) begin   
+          row <= displayY - yCursor1_12;
+          column <= displayX - xCursor1_12;
+        end else if (xCursor1_11 <= displayX && displayX < (xCursor1_11 + CHARACTER_WIDTH) &&
+          yCursor1_11 <= displayY && displayY < (yCursor1_11 + CHARACTER_HEIGHT)) begin   
+          row <= displayY - yCursor1_11;
+          column <= displayX - xCursor1_11;
+        end else if (xCursor1_10 <= displayX && displayX < (xCursor1_10 + CHARACTER_WIDTH) &&
+          yCursor1_10 <= displayY && displayY < (yCursor1_10 + CHARACTER_HEIGHT)) begin   
+          row <= displayY - yCursor1_10;
+          column <= displayX - xCursor1_10;
+        end else if (xCursor1_9 <= displayX && displayX < (xCursor1_9 + CHARACTER_WIDTH) &&
+          yCursor1_9 <= displayY && displayY < (yCursor1_9 + CHARACTER_HEIGHT)) begin   
+          row <= displayY - yCursor1_9;
+          column <= displayX - xCursor1_9;
+        end else if (xCursor1_8 <= displayX && displayX < (xCursor1_8 + CHARACTER_WIDTH) &&
+          yCursor1_8 <= displayY && displayY < (yCursor1_8 + CHARACTER_HEIGHT)) begin   
+          row <= displayY - yCursor1_8;
+          column <= displayX - xCursor1_8;
+        end else if (xCursor1_7 <= displayX && displayX < (xCursor1_7 + CHARACTER_WIDTH) &&
+          yCursor1_7 <= displayY && displayY < (yCursor1_7 + CHARACTER_HEIGHT)) begin   
+          row <= displayY - yCursor1_7;
+          column <= displayX - xCursor1_7;
+        end else if (xCursor1_6 <= displayX && displayX < (xCursor1_6 + CHARACTER_WIDTH) &&
+          yCursor1_6 <= displayY && displayY < (yCursor1_6 + CHARACTER_HEIGHT)) begin   
+          row <= displayY - yCursor1_6;
+          column <= displayX - xCursor1_6;
+        end else if (xCursor1_5 <= displayX && displayX < (xCursor1_5 + CHARACTER_WIDTH) &&
+          yCursor1_5 <= displayY && displayY < (yCursor1_5 + CHARACTER_HEIGHT)) begin   
+          row <= displayY - yCursor1_5;
+          column <= displayX - xCursor1_5;
+        end else if (xCursor1_4 <= displayX && displayX < (xCursor1_4 + CHARACTER_WIDTH) &&
+          yCursor1_4 <= displayY && displayY < (yCursor1_4 + CHARACTER_HEIGHT)) begin   
+          row <= displayY - yCursor1_4;
+          column <= displayX - xCursor1_4;
+        end else if (xCursor1_3 <= displayX && displayX < (xCursor1_3 + CHARACTER_WIDTH) &&
+          yCursor1_3 <= displayY && displayY < (yCursor1_3 + CHARACTER_HEIGHT)) begin   
+          row <= displayY - yCursor1_3;
+          column <= displayX - xCursor1_3;
+        end else if (xCursor1_2 <= displayX && displayX < (xCursor1_2 + CHARACTER_WIDTH) &&
+          yCursor1_2 <= displayY && displayY < (yCursor1_2 + CHARACTER_HEIGHT)) begin   
+          row <= displayY - yCursor1_2;
+          column <= displayX - xCursor1_2;
+        end else if (xCursor1_1 <= displayX && displayX < (xCursor1_1 + CHARACTER_WIDTH) &&
+          yCursor1_1 <= displayY && displayY < (yCursor1_1 + CHARACTER_HEIGHT)) begin   
+          row <= displayY - yCursor1_1;
+          column <= displayX - xCursor1_1;
+        end else if (xCursor1_0 <= displayX && displayX < (xCursor1_0 + CHARACTER_WIDTH) &&
+          yCursor1_0 <= displayY && displayY < (yCursor1_0 + CHARACTER_HEIGHT)) begin   
+          row <= displayY - yCursor1_0;
+          column <= displayX - xCursor1_0;
         end else begin
-            row <= 0;
-            column <= 0;
+          row <= 0;
+          column <= 0;
         end
         displayX1 <= displayX;
         displayY1 <= displayY;
@@ -163,6 +278,7 @@ module Text
         vsync1 <= vsync;
         blank1 <= blank;
         previousPixel1 <= previousPixel;
+        
         
         //edge 1
         if (xMiddleVoltage4 <= displayX1 && displayX1 < (xMiddleVoltage4 + CHARACTER_WIDTH) &&
@@ -195,6 +311,55 @@ module Text
         end else if (xTimePerDivision0 <= displayX1 && displayX1 < (xTimePerDivision0 + CHARACTER_WIDTH) &&
             yTimePerDivision0 <= displayY1 && displayY1 < (yTimePerDivision0 + CHARACTER_HEIGHT)) begin   
             addressA <= {timePerDivisionCharacter0, row, column};
+            
+        end else if (xCursor1_15 <= displayX1 && displayX1 < (xCursor1_15 + CHARACTER_WIDTH) &&
+            yCursor1_15 <= displayY1 && displayY1 < (yCursor1_15 + CHARACTER_HEIGHT)) begin   
+            addressA <= {cursor1Character15, row, column};
+        end else if (xCursor1_14 <= displayX1 && displayX1 < (xCursor1_14 + CHARACTER_WIDTH) &&
+            yCursor1_14 <= displayY1 && displayY1 < (yCursor1_14 + CHARACTER_HEIGHT)) begin   
+            addressA <= {cursor1Character14, row, column};
+        end else if (xCursor1_13 <= displayX1 && displayX1 < (xCursor1_13 + CHARACTER_WIDTH) &&
+            yCursor1_13 <= displayY1 && displayY1 < (yCursor1_13 + CHARACTER_HEIGHT)) begin   
+            addressA <= {cursor1Character13, row, column};
+        end else if (xCursor1_12 <= displayX1 && displayX1 < (xCursor1_12 + CHARACTER_WIDTH) &&
+            yCursor1_12 <= displayY1 && displayY1 < (yCursor1_12 + CHARACTER_HEIGHT)) begin   
+            addressA <= {cursor1Character12, row, column};
+        end else if (xCursor1_11 <= displayX1 && displayX1 < (xCursor1_11 + CHARACTER_WIDTH) &&
+            yCursor1_11 <= displayY1 && displayY1 < (yCursor1_11 + CHARACTER_HEIGHT)) begin   
+            addressA <= {cursor1Character11, row, column};
+        end else if (xCursor1_10 <= displayX1 && displayX1 < (xCursor1_10 + CHARACTER_WIDTH) &&
+            yCursor1_10 <= displayY1 && displayY1 < (yCursor1_10 + CHARACTER_HEIGHT)) begin   
+            addressA <= {cursor1Character10, row, column};
+        end else if (xCursor1_9 <= displayX1 && displayX1 < (xCursor1_9 + CHARACTER_WIDTH) &&
+            yCursor1_9 <= displayY1 && displayY1 < (yCursor1_9 + CHARACTER_HEIGHT)) begin   
+            addressA <= {cursor1Character9, row, column};
+        end else if (xCursor1_8 <= displayX1 && displayX1 < (xCursor1_8 + CHARACTER_WIDTH) &&
+            yCursor1_8 <= displayY1 && displayY1 < (yCursor1_8 + CHARACTER_HEIGHT)) begin   
+            addressA <= {cursor1Character8, row, column};
+        end else if (xCursor1_7 <= displayX1 && displayX1 < (xCursor1_7 + CHARACTER_WIDTH) &&
+            yCursor1_7 <= displayY1 && displayY1 < (yCursor1_7 + CHARACTER_HEIGHT)) begin   
+            addressA <= {cursor1Character7, row, column};
+        end else if (xCursor1_6 <= displayX1 && displayX1 < (xCursor1_6 + CHARACTER_WIDTH) &&
+            yCursor1_6 <= displayY1 && displayY1 < (yCursor1_6 + CHARACTER_HEIGHT)) begin   
+            addressA <= {cursor1Character6, row, column};
+        end else if (xCursor1_5 <= displayX1 && displayX1 < (xCursor1_5 + CHARACTER_WIDTH) &&
+            yCursor1_5 <= displayY1 && displayY1 < (yCursor1_5 + CHARACTER_HEIGHT)) begin   
+            addressA <= {cursor1Character5, row, column};
+        end else if (xCursor1_4 <= displayX1 && displayX1 < (xCursor1_4 + CHARACTER_WIDTH) &&
+            yCursor1_4 <= displayY1 && displayY1 < (yCursor1_4 + CHARACTER_HEIGHT)) begin   
+            addressA <= {cursor1Character4, row, column};
+        end else if (xCursor1_3 <= displayX1 && displayX1 < (xCursor1_3 + CHARACTER_WIDTH) &&
+            yCursor1_3 <= displayY1 && displayY1 < (yCursor1_3 + CHARACTER_HEIGHT)) begin   
+            addressA <= {cursor1Character3, row, column};
+        end else if (xCursor1_2 <= displayX1 && displayX1 < (xCursor1_2 + CHARACTER_WIDTH) &&
+            yCursor1_2 <= displayY1 && displayY1 < (yCursor1_2 + CHARACTER_HEIGHT)) begin   
+            addressA <= {cursor1Character2, row, column};
+        end else if (xCursor1_1 <= displayX1 && displayX1 < (xCursor1_1 + CHARACTER_WIDTH) &&
+            yCursor1_1 <= displayY1 && displayY1 < (yCursor1_1 + CHARACTER_HEIGHT)) begin   
+            addressA <= {cursor1Character1, row, column};
+        end else if (xCursor1_0 <= displayX1 && displayX1 < (xCursor1_0 + CHARACTER_WIDTH) &&
+            yCursor1_0 <= displayY1 && displayY1 < (yCursor1_0 + CHARACTER_HEIGHT)) begin   
+            addressA <= {cursor1Character0, row, column};
         end
         displayX2 <= displayX1;
         displayY2 <= displayY1;
@@ -202,6 +367,7 @@ module Text
         vsync2 <= vsync1;
         blank2 <= blank1;
         previousPixel2 <= previousPixel1;
+        
         
         //edge 2
         //addressA will be available to BRAM on edge 2
@@ -212,6 +378,7 @@ module Text
         blank3 <= blank2;
         previousPixel3 <= previousPixel2;
         
+        
         //edge 3
         //BRAM takes 1 extra clock cycle before producing output
         displayX4 <= displayX3;
@@ -220,6 +387,7 @@ module Text
         vsync4 <= vsync3;
         blank4 <= blank3;
         previousPixel4 <= previousPixel3;
+        
         
         //edge 3
         //dataOutA is available on edge 3
@@ -263,6 +431,71 @@ module Text
                 yTimePerDivision0 <= displayY4 && displayY4 < (yTimePerDivision0 + CHARACTER_HEIGHT) &&
                 dataOutA == 1) begin
             pixel <= CHARACTER_COLOR;
+        
+        end else if (xCursor1_15 <= displayX4 && displayX4 < (xCursor1_15 + CHARACTER_WIDTH) &&
+                yCursor1_15 <= displayY4 && displayY4 < (yCursor1_15 + CHARACTER_HEIGHT) &&
+                dataOutA == 1) begin
+            pixel <= CURSOR_1_COLOR;
+        end else if (xCursor1_14 <= displayX4 && displayX4 < (xCursor1_14 + CHARACTER_WIDTH) &&
+                yCursor1_14 <= displayY4 && displayY4 < (yCursor1_14 + CHARACTER_HEIGHT) &&
+                dataOutA == 1) begin
+            pixel <= CURSOR_1_COLOR;
+        end else if (xCursor1_13 <= displayX4 && displayX4 < (xCursor1_13 + CHARACTER_WIDTH) &&
+                yCursor1_13 <= displayY4 && displayY4 < (yCursor1_13 + CHARACTER_HEIGHT) &&
+                dataOutA == 1) begin
+            pixel <= CURSOR_1_COLOR;
+        end else if (xCursor1_12 <= displayX4 && displayX4 < (xCursor1_12 + CHARACTER_WIDTH) &&
+                yCursor1_12 <= displayY4 && displayY4 < (yCursor1_12 + CHARACTER_HEIGHT) &&
+                dataOutA == 1) begin
+            pixel <= CURSOR_1_COLOR;
+        end else if (xCursor1_11 <= displayX4 && displayX4 < (xCursor1_11 + CHARACTER_WIDTH) &&
+                yCursor1_11 <= displayY4 && displayY4 < (yCursor1_11 + CHARACTER_HEIGHT) &&
+                dataOutA == 1) begin
+            pixel <= CURSOR_1_COLOR;
+        end else if (xCursor1_10 <= displayX4 && displayX4 < (xCursor1_10 + CHARACTER_WIDTH) &&
+                yCursor1_10 <= displayY4 && displayY4 < (yCursor1_10 + CHARACTER_HEIGHT) &&
+                dataOutA == 1) begin
+            pixel <= CURSOR_1_COLOR;
+        end else if (xCursor1_9 <= displayX4 && displayX4 < (xCursor1_9 + CHARACTER_WIDTH) &&
+                yCursor1_9 <= displayY4 && displayY4 < (yCursor1_9 + CHARACTER_HEIGHT) &&
+                dataOutA == 1) begin
+            pixel <= CURSOR_1_COLOR;
+        end else if (xCursor1_8 <= displayX4 && displayX4 < (xCursor1_8 + CHARACTER_WIDTH) &&
+                yCursor1_8 <= displayY4 && displayY4 < (yCursor1_8 + CHARACTER_HEIGHT) &&
+                dataOutA == 1) begin
+            pixel <= CURSOR_1_COLOR;
+        end else if (xCursor1_7 <= displayX4 && displayX4 < (xCursor1_7 + CHARACTER_WIDTH) &&
+                yCursor1_7 <= displayY4 && displayY4 < (yCursor1_7 + CHARACTER_HEIGHT) &&
+                dataOutA == 1) begin
+            pixel <= CURSOR_1_COLOR;
+        end else if (xCursor1_6 <= displayX4 && displayX4 < (xCursor1_6 + CHARACTER_WIDTH) &&
+                yCursor1_6 <= displayY4 && displayY4 < (yCursor1_6 + CHARACTER_HEIGHT) &&
+                dataOutA == 1) begin
+            pixel <= CURSOR_1_COLOR;
+        end else if (xCursor1_5 <= displayX4 && displayX4 < (xCursor1_5 + CHARACTER_WIDTH) &&
+                yCursor1_5 <= displayY4 && displayY4 < (yCursor1_5 + CHARACTER_HEIGHT) &&
+                dataOutA == 1) begin
+            pixel <= CURSOR_1_COLOR;
+        end else if (xCursor1_4 <= displayX4 && displayX4 < (xCursor1_4 + CHARACTER_WIDTH) &&
+                yCursor1_4 <= displayY4 && displayY4 < (yCursor1_4 + CHARACTER_HEIGHT) &&
+                dataOutA == 1) begin
+            pixel <= CURSOR_1_COLOR;
+        end else if (xCursor1_3 <= displayX4 && displayX4 < (xCursor1_3 + CHARACTER_WIDTH) &&
+                yCursor1_3 <= displayY4 && displayY4 < (yCursor1_3 + CHARACTER_HEIGHT) &&
+                dataOutA == 1) begin
+            pixel <= CURSOR_1_COLOR;
+        end else if (xCursor1_2 <= displayX4 && displayX4 < (xCursor1_2 + CHARACTER_WIDTH) &&
+                yCursor1_2 <= displayY4 && displayY4 < (yCursor1_2 + CHARACTER_HEIGHT) &&
+                dataOutA == 1) begin
+            pixel <= CURSOR_1_COLOR;
+        end else if (xCursor1_1 <= displayX4 && displayX4 < (xCursor1_1 + CHARACTER_WIDTH) &&
+                yCursor1_1 <= displayY4 && displayY4 < (yCursor1_1 + CHARACTER_HEIGHT) &&
+                dataOutA == 1) begin
+            pixel <= CURSOR_1_COLOR;
+        end else if (xCursor1_0 <= displayX4 && displayX4 < (xCursor1_0 + CHARACTER_WIDTH) &&
+                yCursor1_0 <= displayY4 && displayY4 < (yCursor1_0 + CHARACTER_HEIGHT) &&
+                dataOutA == 1) begin
+            pixel <= CURSOR_1_COLOR;
         end else begin
             pixel <= previousPixel4;
         end

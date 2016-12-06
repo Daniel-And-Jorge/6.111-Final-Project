@@ -1,33 +1,19 @@
 `timescale 1ns / 1ps
 //////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
-// 
-// Create Date: 11/03/2016 01:19:40 PM
-// Design Name: 
-// Module Name: Curve
-// Project Name: 
-// Target Devices: 
-// Tool Versions: 
-// Description: 
-// 
-// Dependencies: 
-// 
-// Revision:
-// Revision 0.01 - File Created
-// Additional Comments:
-// 
+// X-Y Display Mode for Oscilloscope
+// Daniel D. Richman
+// December 2016
+//
+// Known issue: only REAL_DISPLAY_WIDTH samples are read to display each row,
+// so low-frequency signals might flicker or not show completely, depending on triggering. 
 //////////////////////////////////////////////////////////////////////////////////
-
-`include "VerticalScaler.vh"
-
 
 module XYCurve
     #(parameter DATA_IN_BITS = 12,
                 SCALE_FACTOR_BITS = 10,
                 DISPLAY_X_BITS = 12,
                 DISPLAY_Y_BITS = 12,
-                RGB_COLOR = 12'hFF0,  //yellow
+                RGB_COLOR = 12'hF80,  // orange
                 RGB_BITS = 12,
                 DISPLAY_WIDTH = 1280,
                 DISPLAY_HEIGHT = 1024,
@@ -41,7 +27,6 @@ module XYCurve
     (input clock,
     input signed [DATA_IN_BITS-1:0] dataIn1,
     input signed [DATA_IN_BITS-1:0] dataIn2,
-    input [SCALE_FACTOR_BITS-1:0] verticalScaleFactorTimes8, // to allow for shrinking and growing the signal
     input [DISPLAY_X_BITS-1:0] displayX,
     input [DISPLAY_Y_BITS-1:0] displayY,
     input hsync,
@@ -66,8 +51,8 @@ module XYCurve
     assign address1 = currentSample;
     assign address2 = currentSample;
     
-    assign shiftedPixel1 = WIDTH_ZERO_PIXEL + dataIn1; // x location
-    assign shiftedPixel2 = HEIGHT_ZERO_PIXEL - dataIn2; // y location, - since screen values increase downward
+    assign shiftedPixel1 = $signed(WIDTH_ZERO_PIXEL) + dataIn1; // x location
+    assign shiftedPixel2 = $signed(HEIGHT_ZERO_PIXEL) - dataIn2; // y location, - since screen values increase downward
     
     reg displayedRow = 0;
     reg [DISPLAY_WIDTH-1:0]pixelRows[1:0];
@@ -93,8 +78,8 @@ module XYCurve
         
         // output pixel value from the buffer
         pixelOn <= pixelRows[displayedRow][displayX];
-        pixelRows[displayedRow][displayX] <= 0; // clean up afterward so the row is all 0s for next time
-
+        
+        
         // 2. Figure out what pixels will go in the next row
         // plan: we compute what to display row by row, since each row contains n samples
         // n clock cycles before we need to start displaying the pixels for a given row, we start requesting
@@ -103,21 +88,32 @@ module XYCurve
         // to the monitor. At the end of the row, the two swap.
        
         if (displayX < DISPLAY_WIDTH && displayY < DISPLAY_HEIGHT) begin
+            pixelRows[displayedRow][displayX] <= 0; // clean up afterward so the row is all 0s for next time
+
             if (currentSample < DISPLAY_WIDTH) begin
                 currentSample <= currentSample + 1;
             end
         end
         
-        if (displayX == (DISPLAY_WIDTH-1)) begin
-            currentSample <= 0;
-            displayedRow <= ~displayedRow;
+        // During the time of drawing one row, we are reading samples to populate the next row. 
+        // We can only read as many samples as there are clock cycles (= pixels) in the previous row. 
+        if (displayY < DISPLAY_HEIGHT) begin
+            if (displayX == (REAL_DISPLAY_WIDTH-1)) begin
+                currentSample <= 0;
+                displayedRow <= ~displayedRow;
+            end
+        
+            if ( shiftedPixel2 == (displayY + 1) )
+                // stop the system from setting pixels "offscreen" and
+                // wrapping around the buffer address
+                
+                if (shiftedPixel1 < DISPLAY_WIDTH)
+                    pixelRows[~displayedRow][shiftedPixel1] <= 1;
         end
-       
-        if ( shiftedPixel2 == (displayY + 1) )
-            if (shiftedPixel1 < DISPLAY_WIDTH) // stop the system from setting pixels in weird places just because we saw a noise spike
-                pixelRows[~displayedRow][shiftedPixel1] <= 1;
         
         /*
+        // debugging patterns
+        
         if (displayX < DISPLAY_WIDTH && displayY < DISPLAY_HEIGHT) begin
             if (currentSample < DISPLAY_WIDTH) begin
                 currentSample <= currentSample + 1;

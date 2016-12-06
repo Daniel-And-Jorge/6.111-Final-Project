@@ -42,6 +42,7 @@ module ScopeSettings
      output reg [SCALE_FACTOR_SIZE-1:0]verticalScaleFactorTimes8Channel2 = 8,
      output reg [SAMPLE_PERIOD_BITS-1:0]samplePeriod = 0,
      output reg channelSelected,
+     output wire xyDisplayMode,
      output reg signed [DISPLAY_Y_BITS-1:0] yCursor1 = 12'd0
     );
     
@@ -59,6 +60,8 @@ module ScopeSettings
                             biggestScaleToSeeMinChannel2 : biggestScaleToSeeMaxChannel2;
                             
     reg [COUNT_BITS-1:0] count;
+    
+    assign xyDisplayMode = sw[8];
     
     always @(posedge clock) begin
         // manual adjust

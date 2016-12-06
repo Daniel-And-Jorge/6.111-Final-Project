@@ -75,7 +75,9 @@ module Oscilloscope_v1
                 DIGIT_BITS = 4,
                 CURSOR_VOLTAGE_BITS = 10,
                 SCALE_EXPONENT_BITS = 4,
-                TIME_PER_DIVISION_BITS = 10) 
+                TIME_PER_DIVISION_BITS = 10,
+                REAL_DISPLAY_WIDTH = 1688,
+                REAL_DISPLAY_HEIGHT = 1066) 
    (input CLK100MHZ,
    input vauxp11,
    input vauxn11,
@@ -117,6 +119,7 @@ module Oscilloscope_v1
     wire [5:0] samplePeriod;
     wire channelSelected;
     assign LED[15] = channelSelected;
+    wire xyDisplayMode;
     wire signed [DISPLAY_Y_BITS-1:0] yCursor1;
     
     // these come from MeasureSignal
@@ -137,6 +140,7 @@ module Oscilloscope_v1
                         .verticalScaleFactorTimes8Channel1(verticalScaleFactorTimes8Channel1), 
                         .verticalScaleFactorTimes8Channel2(verticalScaleFactorTimes8Channel2),
                         .samplePeriod(samplePeriod), .channelSelected(channelSelected),
+                        .xyDisplayMode(xyDisplayMode),
                         .yCursor1(yCursor1)              
                         );
     
@@ -267,14 +271,23 @@ module Oscilloscope_v1
         .activeBramSelect(activeBramSelect)
         );
     
+    
+    // Then set address inputs to two other buffers to be whichever address is selected by xyDisplayMode
+    // and select pixel/drawing data to the output of whichever curve is chosen by xyDisplayMode
+    
+    wire [ADDRESS_BITS-1:0] curveAddressOutChannel1;
+    wire [ADDRESS_BITS-1:0] curveAddressOutChannel2;
+    wire [ADDRESS_BITS-1:0] xyChannel1Address;
+    wire [ADDRESS_BITS-1:0] xyChannel2Address; 
+    
     wire isTriggered;
     wire [11:0] bufferDataOutChannel1;
-    wire [ADDRESS_BITS-1:0] curveAddressOutChannel1;
+    
     buffer BufferChannel1 (.clock(CLK108MHZ), .ready(adcc_ready), .dataIn(ADCCdataOutChannel1),
         .isTrigger(isTriggered), .disableCollection(0), .activeBramSelect(activeBramSelect),
         .reset(reset),
         .readTriggerRelative(1),
-        .readAddress(curveAddressOutChannel1),
+        .readAddress(xyDisplayMode ? xyChannel1Address : curveAddressOutChannel1),
         .dataOut(bufferDataOutChannel1));
     
     wire [11:0] buffer2DataOutChannel1;
@@ -287,12 +300,12 @@ module Oscilloscope_v1
                 .dataOut(buffer2DataOutChannel1));
     
     wire [11:0] bufferDataOutChannel2;    
-    wire [ADDRESS_BITS-1:0] curveAddressOutChannel2;        
+    wire [ADDRESS_BITS-1:0] curveAddressOutChannel2;    
     buffer BufferChannel2 (.clock(CLK108MHZ), .ready(adcc_ready), .dataIn(ADCCdataOutChannel2),
                         .isTrigger(isTriggered), .disableCollection(0), .activeBramSelect(activeBramSelect),
                         .reset(reset),
                         .readTriggerRelative(1),
-                        .readAddress(curveAddressOutChannel2),
+                        .readAddress(xyDisplayMode ? xyChannel2Address : curveAddressOutChannel2),
                         .dataOut(bufferDataOutChannel2));
                         
     wire [11:0] buffer2DataOutChannel2;
@@ -380,13 +393,19 @@ module Oscilloscope_v1
     Grid myGrid(.clock(CLK108MHZ), .displayX(displayX), .displayY(displayY), .hsync(hsync), .vsync(vsync), .blank(blank),
                 .gridDisplayX(gridDisplayX), .gridDisplayY(gridDisplayY), .gridHsync(gridHsync), 
                 .gridVsync(gridVsync), .gridBlank(gridBlank), .pixel(gridPixel));
-        
+    
+    // figure out the drawStarting signal
+    // there is not enough sprite delay for the exact placement of this to matter
+    assign drawStarting = (gridDisplayX == REAL_DISPLAY_WIDTH - 1) && (gridDisplayY == (REAL_DISPLAY_HEIGHT - 1));
+    
+    // draw curves
     wire [DISPLAY_X_BITS-1:0] curveChannel1DisplayX;
     wire [DISPLAY_Y_BITS-1:0] curveChannel1DisplayY;
     wire curveChannel1Hsync;
     wire curveChannel1Vsync;
     wire curveChannel1Blank;
     wire [RGB_BITS-1:0] curveChannel1Pixel;
+    
     
     wire [11:0] dataInChannel1;
     assign dataInChannel1 = bufferDataOutChannel1;
@@ -417,9 +436,10 @@ module Oscilloscope_v1
         wire curveChannel2Vsync;
         wire curveChannel2Blank;
         wire [RGB_BITS-1:0] curveChannel2Pixel;
-            
+        
         wire [11:0] dataInChannel2;
         assign dataInChannel2 = bufferDataOutChannel2;
+        
         Curve #(.ADDRESS_BITS(ADDRESS_BITS),
                 .RGB_COLOR(12'h0FF)) //blue
                 curveChannel2
@@ -433,7 +453,7 @@ module Oscilloscope_v1
                 .blank(curveChannel1Blank),
                 .previousPixel(curveChannel1Pixel),
                 .pixel(curveChannel2Pixel),
-                .drawStarting(drawStarting),
+                .drawStarting(),
                 .address(curveAddressOutChannel2),
                 .curveDisplayX(curveChannel2DisplayX),
                 .curveDisplayY(curveChannel2DisplayY),
@@ -441,6 +461,35 @@ module Oscilloscope_v1
                 .curveVsync(curveChannel2Vsync),
                 .curveBlank(curveChannel2Blank)
                 );
+                
+          
+     wire [DISPLAY_X_BITS-1:0] xyCurveDisplayX;
+     wire [DISPLAY_Y_BITS-1:0] xyCurveDisplayY;
+     wire xyCurveHsync;
+     wire xyCurveVsync;
+     wire xyCurveBlank;
+     wire [RGB_BITS-1:0] xyCurvePixel;
+      
+     XYCurve xyc
+                    (.clock(CLK108MHZ),
+                    .dataIn1(dataInChannel1),
+                    .dataIn2(dataInChannel2),
+                    .displayX(gridDisplayX),
+                    .displayY(gridDisplayY),
+                    .hsync(gridHsync),
+                    .vsync(gridVsync),
+                    .blank(gridBlank),
+                    .previousPixel(gridPixel),
+                    .pixel(xyCurvePixel),
+                    .drawStarting(),
+                    .address1(xyChannel1Address),
+                    .address2(xyChannel2Address),
+                    .curveDisplayX(xyCurveDisplayX),
+                    .curveDisplayY(xyCurveDisplayY),
+                    .curveHsync(xyCurveHsync),
+                    .curveVsync(xyCurveVsync),
+                    .curveBlank(xyCurveBlank)
+                    );
      
      wire [RGB_BITS-1:0] tlsPixel;
      wire [DISPLAY_X_BITS-1:0] tlsDisplayX;
@@ -449,12 +498,27 @@ module Oscilloscope_v1
      HorizontalLineSprite mytls
                 (.clock(CLK108MHZ),
                 .level(triggerThreshold * $signed(verticalScaleFactorTimes8ChannelSelected) / 'sd8),
-                .displayX(curveChannel2DisplayX),
-                .displayY(curveChannel2DisplayY),
-                .hsync(curveChannel2Hsync),
-                .vsync(curveChannel2Vsync),
-                .blank(curveChannel2Blank),
-                .previousPixel(curveChannel2Pixel),
+                .displayX(xyDisplayMode ? xyCurveDisplayX : curveChannel2DisplayX),
+                .displayY(xyDisplayMode ? xyCurveDisplayY : curveChannel2DisplayY),
+                .hsync(xyDisplayMode ? xyCurveHsync : curveChannel2Hsync),
+                .vsync(xyDisplayMode ? xyCurveVsync : curveChannel2Vsync),
+                .blank(xyDisplayMode ? xyCurveBlank : curveChannel2Blank),
+                .previousPixel(xyDisplayMode ? xyCurvePixel : curveChannel2Pixel),
+                
+                /*.displayX(curveChannel2DisplayX),
+                                .displayY(curveChannel2DisplayY),
+                                .hsync(curveChannel2Hsync),
+                                .vsync(curveChannel2Vsync),
+                                .blank(curveChannel2Blank),
+                                .previousPixel(curveChannel2Pixel),
+                
+                .displayX(xyCurveDisplayX),
+                .displayY(xyCurveDisplayY),
+                .hsync(xyCurveHsync),
+                .vsync(xyCurveVsync),
+                .blank(xyCurveBlank),
+                .previousPixel(xyCurvePixel),
+                */
                 .pixel(tlsPixel),
                 .spriteDisplayX(tlsDisplayX),
                 .spriteDisplayY(tlsDisplayY),
@@ -463,9 +527,9 @@ module Oscilloscope_v1
                 .spriteBlank(tlsBlank)
                 );
     
-    (* mark_debug = "true" *) wire signed [CURSOR_VOLTAGE_BITS-1:0] cursor1Voltage;
-    (* mark_debug = "true" *) wire [CURSOR_VOLTAGE_BITS-1:0] cursor1VoltageAbsoluteValue;
-    (* mark_debug = "true" *) wire cursor1IsNegative;
+    wire signed [CURSOR_VOLTAGE_BITS-1:0] cursor1Voltage;
+    wire [CURSOR_VOLTAGE_BITS-1:0] cursor1VoltageAbsoluteValue;
+    wire cursor1IsNegative;
     YPixelToVoltage yCursor1ToVoltage
             (.clock(CLK108MHZ),
             .y(yCursor1),

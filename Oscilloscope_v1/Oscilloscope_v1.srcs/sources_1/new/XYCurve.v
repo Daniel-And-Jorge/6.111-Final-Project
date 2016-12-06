@@ -70,7 +70,7 @@ module XYCurve
     assign shiftedPixel2 = HEIGHT_ZERO_PIXEL - dataIn2; // y location, - since screen values increase downward
     
     reg displayedRow = 0;
-    reg [DISPLAY_X_BITS-1:0]pixelRows[1:0];
+    reg [DISPLAY_WIDTH-1:0]pixelRows[1:0];
     
     reg pixelOn;
     
@@ -92,7 +92,8 @@ module XYCurve
         end
         
         // output pixel value from the buffer
-        pixelOn <= pixelRows[displayedRow][displayY];
+        pixelOn <= pixelRows[displayedRow][displayX];
+        pixelRows[displayedRow][displayX] <= 0; // clean up afterward so the row is all 0s for next time
 
         // 2. Figure out what pixels will go in the next row
         // plan: we compute what to display row by row, since each row contains n samples
@@ -101,10 +102,42 @@ module XYCurve
         // whatever location it should appear in in the next row. Meanwhile we're sending the current row
         // to the monitor. At the end of the row, the two swap.
        
-       if ( shiftedPixel2 == (displayY + 1) )
-            pixelRows[~displayedRow][shiftedPixel1] <= 1;
+        if (displayX < DISPLAY_WIDTH && displayY < DISPLAY_HEIGHT) begin
+            if (currentSample < DISPLAY_WIDTH) begin
+                currentSample <= currentSample + 1;
+            end
+        end
         
-        currentSample <= currentSample + 1;
+        if (displayX == (DISPLAY_WIDTH-1)) begin
+            currentSample <= 0;
+            displayedRow <= ~displayedRow;
+        end
+       
+        if ( shiftedPixel2 == (displayY + 1) )
+            if (shiftedPixel1 < DISPLAY_WIDTH) // stop the system from setting pixels in weird places just because we saw a noise spike
+                pixelRows[~displayedRow][shiftedPixel1] <= 1;
+        
+        /*
+        if (displayX < DISPLAY_WIDTH && displayY < DISPLAY_HEIGHT) begin
+            if (currentSample < DISPLAY_WIDTH) begin
+                currentSample <= currentSample + 1;
+                pixelRows[~displayedRow][currentSample] <= displayX < 100; //currentSample > 100; // currentSample & 1'b1;
+            end
+        end
+        
+        if (currentSample < 10) begin
+            pixelRows[~displayedRow][currentSample] <= 1;
+        end
+        
+        if (currentSample < 100 && currentSample > 10) begin
+            pixelRows[~displayedRow][currentSample] <= displayedRow;
+        end
+        
+        if (displayX == (DISPLAY_WIDTH-1)) begin
+            currentSample <= 0;
+            displayedRow <= ~displayedRow;
+        end
+        */
     end
     
     assign pixel = pixelOn ? RGB_COLOR : previousPixel;

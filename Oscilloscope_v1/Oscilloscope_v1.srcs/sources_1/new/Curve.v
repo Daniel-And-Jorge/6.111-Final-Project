@@ -55,6 +55,7 @@ module Curve
     output reg curveBlank
     );    
     
+    // todo get rid of bigMult; we shouldn't need it
     //scale dataIn
     wire signed [20:0] bigMult;
     wire signed [DATA_IN_BITS-1:0] scaledDataIn;

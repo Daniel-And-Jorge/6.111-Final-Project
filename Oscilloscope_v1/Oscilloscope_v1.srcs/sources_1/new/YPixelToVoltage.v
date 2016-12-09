@@ -27,7 +27,7 @@ module YPixelToVoltage
                 Y_ZERO_VOLTS = 512,
                 PIXELS_RELATIVE_TO_ZERO_VOLTS_TIMES_250_BITS = 18,
                 PIXELS_RELATIVE_TO_ZERO_VOLTS_TIMES_250_BITS_TIMES_DEFAULT_SCALE = 21,
-                DEFAULT_SCALE_VOLTAGE_RANGE = 10'sd250,
+                DEFAULT_SCALE_VOLTAGE_RANGE = 10'sd256,
                 DISPLAY_HEIGHT = 1024,
                 DISPLAY_HEIGHT_EXPONENT = 10,
                 SCALE_TIMES_DISPLAY_HEIGHT_BITS = 20,

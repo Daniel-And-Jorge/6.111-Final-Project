@@ -48,6 +48,13 @@ module Oscilloscope_v1
                 X_TIME_PER_DIVISION_CHARACTER_0 = 780,
                 Y_TIME_PER_DIVISION_CHARACTER_0 = 980,
                 
+                Y_VOLTAGE_PER_DIVISION_CHARACTER = 644,
+                X_VOLTAGE_PER_DIVISION_CHARACTER_4 = 1180,
+                X_VOLTAGE_PER_DIVISION_CHARACTER_3 = 1200,
+                X_VOLTAGE_PER_DIVISION_CHARACTER_2 = 1220,
+                X_VOLTAGE_PER_DIVISION_CHARACTER_1 = 1240,
+                X_VOLTAGE_PER_DIVISION_CHARACTER_0 = 1260,
+                
                 Y_CURSOR_1 = 80,
                 X_CURSOR_1_CHARACTER_15 = 940,
                 X_CURSOR_1_CHARACTER_14 = 960,
@@ -637,6 +644,17 @@ module Oscilloscope_v1
     wire [SELECT_CHARACTER_BITS-1:0] timePerDivisionCharacter0;
     assign timePerDivisionCharacter0 = 7'd83;  //s
     
+    wire [SELECT_CHARACTER_BITS-1:0] volatgePerDivisionCharacter4;
+    assign voltagePerDivisionCharacter4 = 7'd16;  //0
+    wire [SELECT_CHARACTER_BITS-1:0] voltagePerDivisionCharacter3;
+    assign volatagePerDivisionCharacter3 = 7'd16;  //0
+    wire [SELECT_CHARACTER_BITS-1:0] voltagePerDivisionCharacter2;
+    assign volatagePerDivisionCharacter2 = 7'd16;  //0
+    wire [SELECT_CHARACTER_BITS-1:0] volatgePerDivisionCharacter1;
+    assign voltagePerDivisionCharacter1 = 7'd77;  //m
+    wire [SELECT_CHARACTER_BITS-1:0] voltagePerDivisionCharacter0;
+    assign volatagePerDivisionCharacter0 = 7'd54;  //V
+    
     wire [SELECT_CHARACTER_BITS-1:0] cursor1Character15;
     assign cursor1Character15 = 7'd35;  //C
     wire [SELECT_CHARACTER_BITS-1:0] cursor1Character14;
@@ -669,17 +687,26 @@ module Oscilloscope_v1
     assign cursor1Character1 = 7'd77;  //m
     wire [SELECT_CHARACTER_BITS-1:0] cursor1Character0;
     assign cursor1Character0 = 7'd54;  //V
+    
+    
     Text myText (.clock(CLK108MHZ), 
         .xMiddleVoltage4(X_MIDDLE_VOLTAGE_CHARACTER_4), .yMiddleVoltage4(Y_MIDDLE_VOLTAGE_CHARACTER_4), .middleVoltageCharacter4(middleVoltageCharacter4),
         .xMiddleVoltage3(X_MIDDLE_VOLTAGE_CHARACTER_3), .yMiddleVoltage3(Y_MIDDLE_VOLTAGE_CHARACTER_3), .middleVoltageCharacter3(middleVoltageCharacter3),
         .xMiddleVoltage2(X_MIDDLE_VOLTAGE_CHARACTER_2), .yMiddleVoltage2(Y_MIDDLE_VOLTAGE_CHARACTER_2), .middleVoltageCharacter2(middleVoltageCharacter2),
         .xMiddleVoltage1(X_MIDDLE_VOLTAGE_CHARACTER_1), .yMiddleVoltage1(Y_MIDDLE_VOLTAGE_CHARACTER_1), .middleVoltageCharacter1(middleVoltageCharacter1),
         .xMiddleVoltage0(X_MIDDLE_VOLTAGE_CHARACTER_0), .yMiddleVoltage0(Y_MIDDLE_VOLTAGE_CHARACTER_0), .middleVoltageCharacter0(middleVoltageCharacter0),
+        
         .xTimePerDivision4(X_TIME_PER_DIVISION_CHARACTER_4), .yTimePerDivision4(Y_TIME_PER_DIVISION_CHARACTER_4), .timePerDivisionCharacter4(timePerDivisionCharacter4),
         .xTimePerDivision3(X_TIME_PER_DIVISION_CHARACTER_3), .yTimePerDivision3(Y_TIME_PER_DIVISION_CHARACTER_3), .timePerDivisionCharacter3(timePerDivisionCharacter3),
         .xTimePerDivision2(X_TIME_PER_DIVISION_CHARACTER_2), .yTimePerDivision2(Y_TIME_PER_DIVISION_CHARACTER_2), .timePerDivisionCharacter2(timePerDivisionCharacter2),
         .xTimePerDivision1(X_TIME_PER_DIVISION_CHARACTER_1), .yTimePerDivision1(Y_TIME_PER_DIVISION_CHARACTER_1), .timePerDivisionCharacter1(timePerDivisionCharacter1),
         .xTimePerDivision0(X_TIME_PER_DIVISION_CHARACTER_0), .yTimePerDivision0(Y_TIME_PER_DIVISION_CHARACTER_0), .timePerDivisionCharacter0(timePerDivisionCharacter0),
+        
+        .xVoltagePerDivision4(X_VOLTAGE_PER_DIVISION_CHARACTER_4), .yVoltagePerDivision4(Y_VOLTAGE_PER_DIVISION_CHARACTER), .voltagePerDivisionCharacter4(voltagePerDivisionCharacter4),
+        .xVoltagePerDivision3(X_VOLTAGE_PER_DIVISION_CHARACTER_3), .yVoltagePerDivision3(Y_VOLTAGE_PER_DIVISION_CHARACTER), .voltagePerDivisionCharacter3(voltagePerDivisionCharacter3),
+        .xVoltagePerDivision2(X_VOLTAGE_PER_DIVISION_CHARACTER_2), .yVoltagePerDivision2(Y_VOLTAGE_PER_DIVISION_CHARACTER), .voltagePerDivisionCharacter2(voltagePerDivisionCharacter2),
+        //.xVoltagePerDivision1(X_VOLTAGE_PER_DIVISION_CHARACTER_1), .yVoltagePerDivision1(Y_VOLTAGE_PER_DIVISION_CHARACTER), .voltagePerDivisionCharacter1(voltagePerDivisionCharacter1),
+        //.xVoltagePerDivision0(X_VOLTAGE_PER_DIVISION_CHARACTER_0), .yVoltagePerDivision0(Y_VOLTAGE_PER_DIVISION_CHARACTER), .voltagePerDivisionCharacter0(voltagePerDivisionCharacter0),
         
         .xCursor1_15(X_CURSOR_1_CHARACTER_15), .yCursor1_15(Y_CURSOR_1), .cursor1Character15(cursor1Character15),
         .xCursor1_14(X_CURSOR_1_CHARACTER_14), .yCursor1_14(Y_CURSOR_1), .cursor1Character14(cursor1Character14),

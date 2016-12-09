@@ -65,6 +65,16 @@ module Text
     input [DISPLAY_Y_BITS-1:0] yTimePerDivision0,
     input [SELECT_CHARACTER_BITS-1:0] timePerDivisionCharacter0,
     
+    input [DISPLAY_X_BITS-1:0] xVoltagePerDivision4,
+    input [DISPLAY_Y_BITS-1:0] yVoltagePerDivision4,
+    input [SELECT_CHARACTER_BITS-1:0] voltagePerDivisionCharacter4,
+    input [DISPLAY_X_BITS-1:0] xVoltagePerDivision3,
+    input [DISPLAY_Y_BITS-1:0] yVoltagePerDivision3,
+    input [SELECT_CHARACTER_BITS-1:0] voltagePerDivisionCharacter3,
+    input [DISPLAY_X_BITS-1:0] xVoltagePerDivision2,
+    input [DISPLAY_Y_BITS-1:0] yVoltagePerDivision2,
+    input [SELECT_CHARACTER_BITS-1:0] voltagePerDivisionCharacter2,
+    
     input [DISPLAY_X_BITS-1:0] xCursor1_15,
     input [DISPLAY_Y_BITS-1:0] yCursor1_15,
     input [SELECT_CHARACTER_BITS-1:0] cursor1Character15,
@@ -183,6 +193,7 @@ module Text
             yMiddleVoltage0 <= displayY && displayY < (yMiddleVoltage0 + CHARACTER_HEIGHT)) begin   
             row <= displayY - yMiddleVoltage0;
             column <= displayX - xMiddleVoltage0;
+            
         end else if (xTimePerDivision4 <= displayX && displayX < (xTimePerDivision4 + CHARACTER_WIDTH) &&
             yTimePerDivision4 <= displayY && displayY < (yTimePerDivision4 + CHARACTER_HEIGHT)) begin   
             row <= displayY - yTimePerDivision4;
@@ -203,6 +214,19 @@ module Text
           yTimePerDivision0 <= displayY && displayY < (yTimePerDivision0 + CHARACTER_HEIGHT)) begin   
           row <= displayY - yTimePerDivision0;
           column <= displayX - xTimePerDivision0;
+          
+        end else if (xVoltagePerDivision4 <= displayX && displayX < (xVoltagePerDivision4 + CHARACTER_WIDTH) &&
+          yVoltagePerDivision4 <= displayY && displayY < (yVoltagePerDivision4 + CHARACTER_HEIGHT)) begin   
+          row <= displayY - yVoltagePerDivision4;
+          column <= displayX - xVoltagePerDivision4;
+        end else if (xVoltagePerDivision3 <= displayX && displayX < (xVoltagePerDivision3 + CHARACTER_WIDTH) &&
+          yVoltagePerDivision3 <= displayY && displayY < (yVoltagePerDivision3 + CHARACTER_HEIGHT)) begin   
+          row <= displayY - yVoltagePerDivision3;
+          column <= displayX - xVoltagePerDivision3;
+        end else if (xVoltagePerDivision2 <= displayX && displayX < (xVoltagePerDivision2 + CHARACTER_WIDTH) &&
+          yVoltagePerDivision2 <= displayY && displayY < (yVoltagePerDivision2 + CHARACTER_HEIGHT)) begin   
+          row <= displayY - yVoltagePerDivision2;
+          column <= displayX - xVoltagePerDivision2;
           
         end else if (xCursor1_15 <= displayX && displayX < (xCursor1_15 + CHARACTER_WIDTH) &&
           yCursor1_15 <= displayY && displayY < (yCursor1_15 + CHARACTER_HEIGHT)) begin   
@@ -296,6 +320,7 @@ module Text
         end else if (xMiddleVoltage0 <= displayX1 && displayX1 < (xMiddleVoltage0 + CHARACTER_WIDTH) &&
             yMiddleVoltage0 <= displayY1 && displayY1 < (yMiddleVoltage0 + CHARACTER_HEIGHT)) begin   
             addressA <= {middleVoltageCharacter0, row, column};
+            
         end else if (xTimePerDivision4 <= displayX1 && displayX1 < (xTimePerDivision4 + CHARACTER_WIDTH) &&
             yTimePerDivision4 <= displayY1 && displayY1 < (yTimePerDivision4 + CHARACTER_HEIGHT)) begin   
             addressA <= {timePerDivisionCharacter4, row, column};
@@ -311,6 +336,16 @@ module Text
         end else if (xTimePerDivision0 <= displayX1 && displayX1 < (xTimePerDivision0 + CHARACTER_WIDTH) &&
             yTimePerDivision0 <= displayY1 && displayY1 < (yTimePerDivision0 + CHARACTER_HEIGHT)) begin   
             addressA <= {timePerDivisionCharacter0, row, column};
+            
+        end else if (xVoltagePerDivision4 <= displayX1 && displayX1 < (xVoltagePerDivision4 + CHARACTER_WIDTH) &&
+            yVoltagePerDivision4 <= displayY1 && displayY1 < (yVoltagePerDivision4 + CHARACTER_HEIGHT)) begin   
+            addressA <= {voltagePerDivisionCharacter4, row, column};
+        end else if (xVoltagePerDivision3 <= displayX1 && displayX1 < (xVoltagePerDivision3 + CHARACTER_WIDTH) &&
+            yVoltagePerDivision3 <= displayY1 && displayY1 < (yVoltagePerDivision3 + CHARACTER_HEIGHT)) begin   
+            addressA <= {voltagePerDivisionCharacter3, row, column};
+        end else if (xVoltagePerDivision2 <= displayX1 && displayX1 < (xVoltagePerDivision2 + CHARACTER_WIDTH) &&
+            yVoltagePerDivision2 <= displayY1 && displayY1 < (yVoltagePerDivision2 + CHARACTER_HEIGHT)) begin   
+            addressA <= {voltagePerDivisionCharacter2, row, column};
             
         end else if (xCursor1_15 <= displayX1 && displayX1 < (xCursor1_15 + CHARACTER_WIDTH) &&
             yCursor1_15 <= displayY1 && displayY1 < (yCursor1_15 + CHARACTER_HEIGHT)) begin   
@@ -411,6 +446,7 @@ module Text
                 yMiddleVoltage0 <= displayY4 && displayY4 < (yMiddleVoltage0 + CHARACTER_HEIGHT) &&
                 dataOutA == 1) begin
             pixel <= CHARACTER_COLOR;
+            
         end else if (xTimePerDivision4 <= displayX4 && displayX4 < (xTimePerDivision4 + CHARACTER_WIDTH) &&
                 yTimePerDivision4 <= displayY4 && displayY4 < (yTimePerDivision4 + CHARACTER_HEIGHT) &&
                 dataOutA == 1) begin
@@ -429,6 +465,11 @@ module Text
             pixel <= CHARACTER_COLOR;
         end else if (xTimePerDivision0 <= displayX4 && displayX4 < (xTimePerDivision0 + CHARACTER_WIDTH) &&
                 yTimePerDivision0 <= displayY4 && displayY4 < (yTimePerDivision0 + CHARACTER_HEIGHT) &&
+                dataOutA == 1) begin
+            pixel <= CHARACTER_COLOR;
+            
+        end else if (xVoltagePerDivision4 <= displayX4 && displayX4 < (xVoltagePerDivision4 + CHARACTER_WIDTH) &&
+                yVoltagePerDivision4 <= displayY4 && displayY4 < (yVoltagePerDivision4 + CHARACTER_HEIGHT) &&
                 dataOutA == 1) begin
             pixel <= CHARACTER_COLOR;
         

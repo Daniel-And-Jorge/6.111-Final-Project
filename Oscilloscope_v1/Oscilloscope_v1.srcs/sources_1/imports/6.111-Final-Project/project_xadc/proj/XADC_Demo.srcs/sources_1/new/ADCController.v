@@ -24,7 +24,11 @@
 
 module ADCController
    #(parameter IO_BITS = 12,
-               INPUT_OFFSET = 2048)
+               INPUT_OFFSET = 2048,
+               NUMERATOR_SCALE_FACTOR = 11'sd1000,
+               DENOMINATOR_SCALE_FACTOR = 1024,
+               DENOMINATOR_RIGHT_SHIFT = 10,
+               NUMERATOR_SCALED_DATA_BITS = 22)
    (
     input clock,
     input reset,
@@ -43,13 +47,18 @@ module ADCController
     
     reg [15:0]sampleClock = 0;
     
+    wire [NUMERATOR_SCALED_DATA_BITS-1:0] dataInChannel1NumeratorScaled;
+    assign dataInChannel1NumeratorScaled = dataInChannel1 * NUMERATOR_SCALE_FACTOR;
+    wire [NUMERATOR_SCALED_DATA_BITS-1:0] dataInChannel2NumeratorScaled;
+    assign dataInChannel2NumeratorScaled = dataInChannel2 * NUMERATOR_SCALE_FACTOR;
+    
     always @(posedge clock) begin
         // check whether it's time to request another sample
         if (!reset && sampleEnabled && inputReady) begin
             if (sampleClock >= samplePeriod) begin
                 ready <= 1;
-                dataOutChannel1 <= dataInChannel1;
-                dataOutChannel2 <= dataInChannel2;
+                dataOutChannel1 <= dataInChannel1NumeratorScaled >>> DENOMINATOR_RIGHT_SHIFT; //scale by 1000/1024
+                dataOutChannel2 <= dataInChannel2NumeratorScaled >>> DENOMINATOR_RIGHT_SHIFT; //scale by 1000/1024
                 sampleClock <= 0;
             end else
                 sampleClock <= sampleClock + 1;

@@ -2,8 +2,8 @@
 # Vivado v2016.2 (64-bit)
 # SW Build 1577090 on Thu Jun  2 16:32:35 MDT 2016
 # IP Build 1577682 on Fri Jun  3 12:00:54 MDT 2016
-# Start of session at: Tue Nov 29 22:39:06 2016
-# Process ID: 31340
+# Start of session at: Fri Dec  9 14:44:33 2016
+# Process ID: 32765
 # Current directory: /afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project
 # Command line: vivado
 # Log file: /afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/vivado.log
@@ -12,31 +12,62 @@
 start_gui
 open_project /afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.xpr
 update_compile_order -fileset sources_1
+reset_run impl_1 -prev_step 
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+open_run synth_1 -name synth_1
+open_run synth_1 -name synth_1
 reset_run synth_1
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
+open_run synth_1 -name synth_1
+set_property mark_debug false [get_nets [list {yCursor1[0]} {yCursor1[2]} {yCursor1[4]} {yCursor1[6]} {yCursor1[8]} {yCursor1[9]} {yCursor1[1]} {yCursor1[3]} {yCursor1[5]} {yCursor1[7]} {yCursor1[10]} {yCursor1[11]}]]
+save_constraints
+launch_runs impl_1 -jobs 4
+wait_on_run impl_1
 launch_runs impl_1 -to_step write_bitstream -jobs 4
 wait_on_run impl_1
 open_hw
 connect_hw_server
 open_hw_target
 set_property PROGRAM.FILE {/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/impl_1/Oscilloscope_v1.bit} [lindex [get_hw_devices] 0]
-set_property PROBES.FILE {/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/impl_1/debug_nets.ltx} [lindex [get_hw_devices] 0]
 current_hw_device [lindex [get_hw_devices] 0]
-refresh_hw_device [lindex [get_hw_devices] 0]
-display_hw_ila_data [ get_hw_ila_data hw_ila_data_1 -of_objects [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"u_ila_0"}]]
-set_property PROBES.FILE {/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/impl_1/debug_nets.ltx} [lindex [get_hw_devices] 0]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices] 0]
+set_property PROBES.FILE {} [lindex [get_hw_devices] 0]
 set_property PROGRAM.FILE {/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/impl_1/Oscilloscope_v1.bit} [lindex [get_hw_devices] 0]
 program_hw_devices [lindex [get_hw_devices] 0]
 refresh_hw_device [lindex [get_hw_devices] 0]
-reset_run synth_1
-launch_runs synth_1 -jobs 4
-wait_on_run synth_1
-launch_runs impl_1 -jobs 4
-wait_on_run impl_1
-open_run synth_1 -name synth_1
 reset_run synth_1
 launch_runs impl_1 -to_step write_bitstream -jobs 4
 wait_on_run impl_1
-set_property PROBES.FILE {/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/impl_1/debug_nets.ltx} [lindex [get_hw_devices] 0]
+set_property PROBES.FILE {} [lindex [get_hw_devices] 0]
 set_property PROGRAM.FILE {/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/impl_1/Oscilloscope_v1.bit} [lindex [get_hw_devices] 0]
 program_hw_devices [lindex [get_hw_devices] 0]
 refresh_hw_device [lindex [get_hw_devices] 0]
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+wait_on_run impl_1
+set_property PROBES.FILE {} [lindex [get_hw_devices] 0]
+set_property PROGRAM.FILE {/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/impl_1/Oscilloscope_v1.bit} [lindex [get_hw_devices] 0]
+program_hw_devices [lindex [get_hw_devices] 0]
+refresh_hw_device [lindex [get_hw_devices] 0]
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+wait_on_run impl_1
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+wait_on_run impl_1
+update_compile_order -fileset sources_1
+update_compile_order -fileset sim_1
+update_compile_order -fileset sources_1
+update_compile_order -fileset sim_1
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+wait_on_run impl_1
+set_property PROBES.FILE {} [lindex [get_hw_devices] 0]
+set_property PROGRAM.FILE {/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.runs/impl_1/Oscilloscope_v1.bit} [lindex [get_hw_devices] 0]
+program_hw_devices [lindex [get_hw_devices] 0]
+refresh_hw_device [lindex [get_hw_devices] 0]
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+wait_on_run impl_1

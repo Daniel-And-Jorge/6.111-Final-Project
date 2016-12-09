@@ -55,7 +55,19 @@ module Oscilloscope_v1
                 X_VOLTAGE_PER_DIVISION_CHARACTER_1 = 60,
                 X_VOLTAGE_PER_DIVISION_CHARACTER_0 = 80,
                 
-                Y_CURSOR_1 = 80,
+                Y_MAX = 12,
+                X_MAX_CHARACTER_9 = 200,
+                X_MAX_CHARACTER_8 = 220,
+                X_MAX_CHARACTER_7 = 240,
+                X_MAX_CHARACTER_6 = 260,
+                X_MAX_CHARACTER_5 = 280,
+                X_MAX_CHARACTER_4 = 300,
+                X_MAX_CHARACTER_3 = 320,
+                X_MAX_CHARACTER_2 = 340,
+                X_MAX_CHARACTER_1 = 360,
+                X_MAX_CHARACTER_0 = 380,
+                
+                Y_CURSOR_1 = 12,
                 X_CURSOR_1_CHARACTER_15 = 940,
                 X_CURSOR_1_CHARACTER_14 = 960,
                 X_CURSOR_1_CHARACTER_13 = 980,
@@ -689,6 +701,27 @@ module Oscilloscope_v1
     wire [SELECT_CHARACTER_BITS-1:0] voltagePerDivisionCharacter0;
     assign voltagePerDivisionCharacter0 = 7'd54;  //V
     
+    wire [SELECT_CHARACTER_BITS-1:0] maxCharacter9;
+    assign maxCharacter9 = 7'd77;  //m
+    wire [SELECT_CHARACTER_BITS-1:0] maxCharacter8;
+    assign maxCharacter8 = 7'd65;  //a
+    wire [SELECT_CHARACTER_BITS-1:0] maxCharacter7;
+    assign maxCharacter7 = 7'd88;  //x
+    wire [SELECT_CHARACTER_BITS-1:0] maxCharacter6;
+    assign maxCharacter6 = 7'd26;  //:
+    wire [SELECT_CHARACTER_BITS-1:0] maxCharacter5;
+    assign maxCharacter5 = 7'd0;  //space
+    wire [SELECT_CHARACTER_BITS-1:0] maxCharacter4;
+    assign maxCharacter4 = 7'd16;  //0
+    wire [SELECT_CHARACTER_BITS-1:0] maxCharacter3;
+    assign maxCharacter3 = 7'd16;  //0
+    wire [SELECT_CHARACTER_BITS-1:0] maxCharacter3;
+    assign maxCharacter2 = 7'd16;  //0
+    wire [SELECT_CHARACTER_BITS-1:0] maxCharacter1;
+    assign maxCharacter1 = 7'd77;  //m
+    wire [SELECT_CHARACTER_BITS-1:0] maxCharacter0;
+    assign maxCharacter0 = 7'd54;  //V
+    
     wire [SELECT_CHARACTER_BITS-1:0] cursor1Character15;
     assign cursor1Character15 = 7'd35;  //C
     wire [SELECT_CHARACTER_BITS-1:0] cursor1Character14;
@@ -742,11 +775,16 @@ module Oscilloscope_v1
         .xVoltagePerDivision1(X_VOLTAGE_PER_DIVISION_CHARACTER_1), .yVoltagePerDivision1(Y_VOLTAGE_PER_DIVISION_CHARACTER), .voltagePerDivisionCharacter1(voltagePerDivisionCharacter1),
         .xVoltagePerDivision0(X_VOLTAGE_PER_DIVISION_CHARACTER_0), .yVoltagePerDivision0(Y_VOLTAGE_PER_DIVISION_CHARACTER), .voltagePerDivisionCharacter0(voltagePerDivisionCharacter0),
         
-        //.xMax7(X_MAX_CHARACTER_4), .yMax7(Y_MAX), .maxCharacter7(maxCharacter7),
-        //.xVoltagePerDivision3(X_VOLTAGE_PER_DIVISION_CHARACTER_3), .yVoltagePerDivision3(Y_VOLTAGE_PER_DIVISION_CHARACTER), .voltagePerDivisionCharacter3(voltagePerDivisionCharacter3),
-        //.xVoltagePerDivision2(X_VOLTAGE_PER_DIVISION_CHARACTER_2), .yVoltagePerDivision2(Y_VOLTAGE_PER_DIVISION_CHARACTER), .voltagePerDivisionCharacter2(voltagePerDivisionCharacter2),
-        //.xVoltagePerDivision1(X_VOLTAGE_PER_DIVISION_CHARACTER_1), .yVoltagePerDivision1(Y_VOLTAGE_PER_DIVISION_CHARACTER), .voltagePerDivisionCharacter1(voltagePerDivisionCharacter1),
-        //.xVoltagePerDivision0(X_VOLTAGE_PER_DIVISION_CHARACTER_0), .yVoltagePerDivision0(Y_VOLTAGE_PER_DIVISION_CHARACTER), .voltagePerDivisionCharacter0(voltagePerDivisionCharacter0),
+        .xMax9(X_MAX_CHARACTER_9), .yMax9(Y_MAX), .maxCharacter9(maxCharacter9),
+        .xMax8(X_MAX_CHARACTER_8), .yMax8(Y_MAX), .maxCharacter8(maxCharacter8),
+        .xMax7(X_MAX_CHARACTER_7), .yMax7(Y_MAX), .maxCharacter7(maxCharacter7),
+        .xMax6(X_MAX_CHARACTER_6), .yMax6(Y_MAX), .maxCharacter6(maxCharacter6),
+        .xMax5(X_MAX_CHARACTER_5), .yMax5(Y_MAX), .maxCharacter5(maxCharacter5),
+        .xMax4(X_MAX_CHARACTER_4), .yMax4(Y_MAX), .maxCharacter4(maxCharacter4),
+        .xMax3(X_MAX_CHARACTER_3), .yMax3(Y_MAX), .maxCharacter3(maxCharacter3),
+        .xMax2(X_MAX_CHARACTER_2), .yMax2(Y_MAX), .maxCharacter2(maxCharacter2),
+        .xMax1(X_MAX_CHARACTER_1), .yMax1(Y_MAX), .maxCharacter1(maxCharacter1),
+        .xMax0(X_MAX_CHARACTER_0), .yMax0(Y_MAX), .maxCharacter0(maxCharacter0),
         
         .xCursor1_15(X_CURSOR_1_CHARACTER_15), .yCursor1_15(Y_CURSOR_1), .cursor1Character15(cursor1Character15),
         .xCursor1_14(X_CURSOR_1_CHARACTER_14), .yCursor1_14(Y_CURSOR_1), .cursor1Character14(cursor1Character14),

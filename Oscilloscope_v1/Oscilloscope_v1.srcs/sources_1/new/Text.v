@@ -81,6 +81,37 @@ module Text
     input [DISPLAY_Y_BITS-1:0] yVoltagePerDivision0,
     input [SELECT_CHARACTER_BITS-1:0] voltagePerDivisionCharacter0,
     
+    input [DISPLAY_X_BITS-1:0] xMax9,
+    input [DISPLAY_Y_BITS-1:0] yMax9,
+    input [SELECT_CHARACTER_BITS-1:0] maxCharacter9,
+    input [DISPLAY_X_BITS-1:0] xMax8,
+    input [DISPLAY_Y_BITS-1:0] yMax8,
+    input [SELECT_CHARACTER_BITS-1:0] maxCharacter8,
+    input [DISPLAY_X_BITS-1:0] xMax7,
+    input [DISPLAY_Y_BITS-1:0] yMax7,
+    input [SELECT_CHARACTER_BITS-1:0] maxCharacter7,
+    input [DISPLAY_X_BITS-1:0] xMax6,
+    input [DISPLAY_Y_BITS-1:0] yMax6,
+    input [SELECT_CHARACTER_BITS-1:0] maxCharacter6,
+    input [DISPLAY_X_BITS-1:0] xMax5,
+    input [DISPLAY_Y_BITS-1:0] yMax5,
+    input [SELECT_CHARACTER_BITS-1:0] maxCharacter5,
+    input [DISPLAY_X_BITS-1:0] xMax4,
+    input [DISPLAY_Y_BITS-1:0] yMax4,
+    input [SELECT_CHARACTER_BITS-1:0] maxCharacter4,
+    input [DISPLAY_X_BITS-1:0] xMax3,
+    input [DISPLAY_Y_BITS-1:0] yMax3,
+    input [SELECT_CHARACTER_BITS-1:0] maxCharacter3,
+    input [DISPLAY_X_BITS-1:0] xMax2,
+    input [DISPLAY_Y_BITS-1:0] yMax2,
+    input [SELECT_CHARACTER_BITS-1:0] maxCharacter2,
+    input [DISPLAY_X_BITS-1:0] xMax1,
+    input [DISPLAY_Y_BITS-1:0] yMax1,
+    input [SELECT_CHARACTER_BITS-1:0] maxCharacter1,
+    input [DISPLAY_X_BITS-1:0] xMax0,
+    input [DISPLAY_Y_BITS-1:0] yMax0,
+    input [SELECT_CHARACTER_BITS-1:0] maxCharacter0,
+    
     input [DISPLAY_X_BITS-1:0] xCursor1_15,
     input [DISPLAY_Y_BITS-1:0] yCursor1_15,
     input [SELECT_CHARACTER_BITS-1:0] cursor1Character15,
@@ -242,6 +273,47 @@ module Text
           row <= displayY - yVoltagePerDivision0;
           column <= displayX - xVoltagePerDivision0;
           
+        end else if (xMax9 <= displayX && displayX < (xMax9 + CHARACTER_WIDTH) &&
+          yMax9 <= displayY && displayY < (yMax9 + CHARACTER_HEIGHT)) begin   
+          row <= displayY - yMax9;
+          column <= displayX - xMax9;
+        end else if (xMax8 <= displayX && displayX < (xMax8 + CHARACTER_WIDTH) &&
+          yMax8 <= displayY && displayY < (yMax8 + CHARACTER_HEIGHT)) begin   
+          row <= displayY - yMax8;
+          column <= displayX - xMax8;
+        end else if (xMax7 <= displayX && displayX < (xMax7 + CHARACTER_WIDTH) &&
+          yMax7 <= displayY && displayY < (yMax7 + CHARACTER_HEIGHT)) begin   
+          row <= displayY - yMax7;
+          column <= displayX - xMax7;
+        end else if (xMax6 <= displayX && displayX < (xMax6 + CHARACTER_WIDTH) &&
+          yMax6 <= displayY && displayY < (yMax6 + CHARACTER_HEIGHT)) begin   
+          row <= displayY - yMax6;
+          column <= displayX - xMax6;
+        end else if (xMax5 <= displayX && displayX < (xMax5 + CHARACTER_WIDTH) &&
+          yMax5 <= displayY && displayY < (yMax5 + CHARACTER_HEIGHT)) begin   
+          row <= displayY - yMax5;
+          column <= displayX - xMax5;
+        end else if (xMax4 <= displayX && displayX < (xMax4 + CHARACTER_WIDTH) &&
+          yMax4 <= displayY && displayY < (yMax4 + CHARACTER_HEIGHT)) begin   
+          row <= displayY - yMax4;
+          column <= displayX - xMax4;
+        end else if (xMax3 <= displayX && displayX < (xMax3 + CHARACTER_WIDTH) &&
+          yMax3 <= displayY && displayY < (yMax3 + CHARACTER_HEIGHT)) begin   
+          row <= displayY - yMax3;
+          column <= displayX - xMax3;
+        end else if (xMax2 <= displayX && displayX < (xMax2 + CHARACTER_WIDTH) &&
+          yMax2 <= displayY && displayY < (yMax2 + CHARACTER_HEIGHT)) begin   
+          row <= displayY - yMax2;
+          column <= displayX - xMax2;
+        end else if (xMax1 <= displayX && displayX < (xMax1 + CHARACTER_WIDTH) &&
+          yMax1 <= displayY && displayY < (yMax1 + CHARACTER_HEIGHT)) begin   
+          row <= displayY - yMax1;
+          column <= displayX - xMax1;
+        end else if (xMax0 <= displayX && displayX < (xMax0 + CHARACTER_WIDTH) &&
+          yMax0 <= displayY && displayY < (yMax0 + CHARACTER_HEIGHT)) begin   
+          row <= displayY - yMax0;
+          column <= displayX - xMax0;
+          
         end else if (xCursor1_15 <= displayX && displayX < (xCursor1_15 + CHARACTER_WIDTH) &&
           yCursor1_15 <= displayY && displayY < (yCursor1_15 + CHARACTER_HEIGHT)) begin   
           row <= displayY - yCursor1_15;
@@ -366,6 +438,37 @@ module Text
         end else if (xVoltagePerDivision0 <= displayX1 && displayX1 < (xVoltagePerDivision0 + CHARACTER_WIDTH) &&
             yVoltagePerDivision0 <= displayY1 && displayY1 < (yVoltagePerDivision0 + CHARACTER_HEIGHT)) begin   
             addressA <= {voltagePerDivisionCharacter0, row, column};
+        
+        end else if (xMax9 <= displayX1 && displayX1 < (xMax9 + CHARACTER_WIDTH) &&
+            yMax9 <= displayY1 && displayY1 < (yMax9 + CHARACTER_HEIGHT)) begin   
+            addressA <= {maxCharacter9, row, column};
+        end else if (xMax8 <= displayX1 && displayX1 < (xMax8 + CHARACTER_WIDTH) &&
+            yMax8 <= displayY1 && displayY1 < (yMax8 + CHARACTER_HEIGHT)) begin   
+            addressA <= {maxCharacter8, row, column};
+        end else if (xMax7 <= displayX1 && displayX1 < (xMax7 + CHARACTER_WIDTH) &&
+            yMax7 <= displayY1 && displayY1 < (yMax7 + CHARACTER_HEIGHT)) begin   
+            addressA <= {maxCharacter7, row, column};
+        end else if (xMax6 <= displayX1 && displayX1 < (xMax6 + CHARACTER_WIDTH) &&
+            yMax6 <= displayY1 && displayY1 < (yMax6 + CHARACTER_HEIGHT)) begin   
+            addressA <= {maxCharacter6, row, column};
+        end else if (xMax5 <= displayX1 && displayX1 < (xMax5 + CHARACTER_WIDTH) &&
+            yMax5 <= displayY1 && displayY1 < (yMax5 + CHARACTER_HEIGHT)) begin   
+            addressA <= {maxCharacter5, row, column};
+        end else if (xMax4 <= displayX1 && displayX1 < (xMax4 + CHARACTER_WIDTH) &&
+            yMax4 <= displayY1 && displayY1 < (yMax4 + CHARACTER_HEIGHT)) begin   
+            addressA <= {maxCharacter4, row, column};
+        end else if (xMax3 <= displayX1 && displayX1 < (xMax3 + CHARACTER_WIDTH) &&
+            yMax3 <= displayY1 && displayY1 < (yMax3 + CHARACTER_HEIGHT)) begin   
+            addressA <= {maxCharacter3, row, column};
+        end else if (xMax2 <= displayX1 && displayX1 < (xMax2 + CHARACTER_WIDTH) &&
+            yMax2 <= displayY1 && displayY1 < (yMax2 + CHARACTER_HEIGHT)) begin   
+            addressA <= {maxCharacter2, row, column};
+        end else if (xMax1 <= displayX1 && displayX1 < (xMax1 + CHARACTER_WIDTH) &&
+            yMax1 <= displayY1 && displayY1 < (yMax1 + CHARACTER_HEIGHT)) begin   
+            addressA <= {maxCharacter1, row, column};
+        end else if (xMax0 <= displayX1 && displayX1 < (xMax0 + CHARACTER_WIDTH) &&
+            yMax0 <= displayY1 && displayY1 < (yMax0 + CHARACTER_HEIGHT)) begin   
+            addressA <= {maxCharacter0, row, column};
             
         end else if (xCursor1_15 <= displayX1 && displayX1 < (xCursor1_15 + CHARACTER_WIDTH) &&
             yCursor1_15 <= displayY1 && displayY1 < (yCursor1_15 + CHARACTER_HEIGHT)) begin   
@@ -506,6 +609,47 @@ module Text
             pixel <= CHARACTER_COLOR;
         end else if (xVoltagePerDivision0 <= displayX4 && displayX4 < (xVoltagePerDivision0 + CHARACTER_WIDTH) &&
                 yVoltagePerDivision0 <= displayY4 && displayY4 < (yVoltagePerDivision0 + CHARACTER_HEIGHT) &&
+                dataOutA == 1) begin
+            pixel <= CHARACTER_COLOR;
+        
+        end else if (xMax9 <= displayX4 && displayX4 < (xMax9 + CHARACTER_WIDTH) &&
+                yMax9 <= displayY4 && displayY4 < (yMax9 + CHARACTER_HEIGHT) &&
+                dataOutA == 1) begin
+            pixel <= CHARACTER_COLOR;
+        end else if (xMax8 <= displayX4 && displayX4 < (xMax8 + CHARACTER_WIDTH) &&
+                yMax8 <= displayY4 && displayY4 < (yMax8 + CHARACTER_HEIGHT) &&
+                dataOutA == 1) begin
+            pixel <= CHARACTER_COLOR;    
+        end else if (xMax7 <= displayX4 && displayX4 < (xMax7 + CHARACTER_WIDTH) &&
+                yMax7 <= displayY4 && displayY4 < (yMax7 + CHARACTER_HEIGHT) &&
+                dataOutA == 1) begin
+            pixel <= CHARACTER_COLOR;
+        end else if (xMax6 <= displayX4 && displayX4 < (xMax6 + CHARACTER_WIDTH) &&
+                yMax6 <= displayY4 && displayY4 < (yMax6 + CHARACTER_HEIGHT) &&
+                dataOutA == 1) begin
+            pixel <= CHARACTER_COLOR;
+        end else if (xMax5 <= displayX4 && displayX4 < (xMax5 + CHARACTER_WIDTH) &&
+                yMax5 <= displayY4 && displayY4 < (yMax5 + CHARACTER_HEIGHT) &&
+                dataOutA == 1) begin
+            pixel <= CHARACTER_COLOR;
+        end else if (xMax4 <= displayX4 && displayX4 < (xMax4 + CHARACTER_WIDTH) &&
+                yMax4 <= displayY4 && displayY4 < (yMax4 + CHARACTER_HEIGHT) &&
+                dataOutA == 1) begin
+            pixel <= CHARACTER_COLOR;
+        end else if (xMax3 <= displayX4 && displayX4 < (xMax3 + CHARACTER_WIDTH) &&
+                yMax3 <= displayY4 && displayY4 < (yMax3 + CHARACTER_HEIGHT) &&
+                dataOutA == 1) begin
+            pixel <= CHARACTER_COLOR;
+        end else if (xMax2 <= displayX4 && displayX4 < (xMax2 + CHARACTER_WIDTH) &&
+                yMax2 <= displayY4 && displayY4 < (yMax2 + CHARACTER_HEIGHT) &&
+                dataOutA == 1) begin
+            pixel <= CHARACTER_COLOR;
+        end else if (xMax1 <= displayX4 && displayX4 < (xMax1 + CHARACTER_WIDTH) &&
+                yMax1 <= displayY4 && displayY4 < (yMax1 + CHARACTER_HEIGHT) &&
+                dataOutA == 1) begin
+            pixel <= CHARACTER_COLOR;
+        end else if (xMax0 <= displayX4 && displayX4 < (xMax0 + CHARACTER_WIDTH) &&
+                yMax0 <= displayY4 && displayY4 < (yMax0 + CHARACTER_HEIGHT) &&
                 dataOutA == 1) begin
             pixel <= CHARACTER_COLOR;
         

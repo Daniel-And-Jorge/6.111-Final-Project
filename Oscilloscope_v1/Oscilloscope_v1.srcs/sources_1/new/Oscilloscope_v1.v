@@ -84,7 +84,8 @@ module Oscilloscope_v1
                 SCALE_EXPONENT_BITS = 4,
                 TIME_PER_DIVISION_BITS = 10,
                 REAL_DISPLAY_WIDTH = 1688,
-                REAL_DISPLAY_HEIGHT = 1066) 
+                REAL_DISPLAY_HEIGHT = 1066,
+                PIXELS_PER_DIVISION = 8'sd100) 
    (input CLK100MHZ,
    input vauxp11,
    input vauxn11,
@@ -626,6 +627,42 @@ module Oscilloscope_v1
                         );
                         
     //compute characters to display voltage per division
+    wire signed [CURSOR_VOLTAGE_BITS-1:0] voltagePerDivision;
+    wire [CURSOR_VOLTAGE_BITS-1:0] voltagePerDivisionAbsoluteValue;
+    wire voltagePerDivisionIsNegative;
+    YPixelToVoltage pixelsPerDivisionToVoltage
+                (.clock(CLK108MHZ),
+                .y(PIXELS_PER_DIVISION),
+                .scaleExponent(verticalScaleExponentChannelSelected),
+                .scale(verticalScaleFactorTimes8ChannelSelected),
+                .voltage(voltagePerDivision),
+                .voltageAbsoluteValue(voltagePerDivisionAbsoluteValue),
+                .isNegative(voltagePerDivisionIsNegative)
+                );
+                
+    wire [DIGIT_BITS-1:0] voltagePerDivisionNumber2;
+    wire [DIGIT_BITS-1:0] voltagePerDivisionNumber1;
+    wire [DIGIT_BITS-1:0] voltagePerDivisionNumber0;
+    ConvertBCD voltagePerDivisionConvertBCD(
+            .clock(CLK108MHZ),
+            .data(voltagePerDivisionAbsoluteValue),
+            .d(voltagePerDivisionNumber0),
+            .d10(voltagePerDivisionNumber1),
+            .d100(voltagePerDivisionNumber2)
+            );
+     
+    wire [SELECT_CHARACTER_BITS-1:0] voltagePerDivisionCharacter4;
+    wire [SELECT_CHARACTER_BITS-1:0] voltagePerDivisionCharacter3;
+    wire [SELECT_CHARACTER_BITS-1:0] voltagePerDivisionCharacter2;
+    DecimalToROMLocation voltagePerDivisionDecimalToROMLocation(
+            .clock(CLK108MHZ),
+            .number2(voltagePerDivisionNumber2),
+            .number1(voltagePerDivisionNumber1),
+            .number0(voltagePerDivisionNumber0),
+            .character2(voltagePerDivisionCharacter4),
+            .character1(voltagePerDivisionCharacter3),
+            .character0(voltagePerDivisionCharacter2)
+            );
               
     wire textHsync, textVsync, textBlank;
     wire [RGB_BITS-1:0] textPixel;
@@ -647,12 +684,6 @@ module Oscilloscope_v1
     wire [SELECT_CHARACTER_BITS-1:0] timePerDivisionCharacter0;
     assign timePerDivisionCharacter0 = 7'd83;  //s
     
-    wire [SELECT_CHARACTER_BITS-1:0] voltagePerDivisionCharacter4;
-    assign voltagePerDivisionCharacter4 = 7'd16;  //0
-    wire [SELECT_CHARACTER_BITS-1:0] voltagePerDivisionCharacter3;
-    assign voltagePerDivisionCharacter3 = 7'd16;  //0
-    wire [SELECT_CHARACTER_BITS-1:0] voltagePerDivisionCharacter2;
-    assign voltagePerDivisionCharacter2 = 7'd16;  //0
     wire [SELECT_CHARACTER_BITS-1:0] voltagePerDivisionCharacter1;
     assign voltagePerDivisionCharacter1 = 7'd77;  //m
     wire [SELECT_CHARACTER_BITS-1:0] voltagePerDivisionCharacter0;
@@ -710,6 +741,12 @@ module Oscilloscope_v1
         .xVoltagePerDivision2(X_VOLTAGE_PER_DIVISION_CHARACTER_2), .yVoltagePerDivision2(Y_VOLTAGE_PER_DIVISION_CHARACTER), .voltagePerDivisionCharacter2(voltagePerDivisionCharacter2),
         .xVoltagePerDivision1(X_VOLTAGE_PER_DIVISION_CHARACTER_1), .yVoltagePerDivision1(Y_VOLTAGE_PER_DIVISION_CHARACTER), .voltagePerDivisionCharacter1(voltagePerDivisionCharacter1),
         .xVoltagePerDivision0(X_VOLTAGE_PER_DIVISION_CHARACTER_0), .yVoltagePerDivision0(Y_VOLTAGE_PER_DIVISION_CHARACTER), .voltagePerDivisionCharacter0(voltagePerDivisionCharacter0),
+        
+        //.xMax7(X_MAX_CHARACTER_4), .yMax7(Y_MAX), .maxCharacter7(maxCharacter7),
+        //.xVoltagePerDivision3(X_VOLTAGE_PER_DIVISION_CHARACTER_3), .yVoltagePerDivision3(Y_VOLTAGE_PER_DIVISION_CHARACTER), .voltagePerDivisionCharacter3(voltagePerDivisionCharacter3),
+        //.xVoltagePerDivision2(X_VOLTAGE_PER_DIVISION_CHARACTER_2), .yVoltagePerDivision2(Y_VOLTAGE_PER_DIVISION_CHARACTER), .voltagePerDivisionCharacter2(voltagePerDivisionCharacter2),
+        //.xVoltagePerDivision1(X_VOLTAGE_PER_DIVISION_CHARACTER_1), .yVoltagePerDivision1(Y_VOLTAGE_PER_DIVISION_CHARACTER), .voltagePerDivisionCharacter1(voltagePerDivisionCharacter1),
+        //.xVoltagePerDivision0(X_VOLTAGE_PER_DIVISION_CHARACTER_0), .yVoltagePerDivision0(Y_VOLTAGE_PER_DIVISION_CHARACTER), .voltagePerDivisionCharacter0(voltagePerDivisionCharacter0),
         
         .xCursor1_15(X_CURSOR_1_CHARACTER_15), .yCursor1_15(Y_CURSOR_1), .cursor1Character15(cursor1Character15),
         .xCursor1_14(X_CURSOR_1_CHARACTER_14), .yCursor1_14(Y_CURSOR_1), .cursor1Character14(cursor1Character14),

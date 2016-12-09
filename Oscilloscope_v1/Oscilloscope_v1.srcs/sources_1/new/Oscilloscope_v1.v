@@ -37,23 +37,23 @@ module Oscilloscope_v1
                 X_MIDDLE_VOLTAGE_CHARACTER_0 = 1_180,
                 Y_MIDDLE_VOLTAGE_CHARACTER_0 = 496,
                 
-                X_TIME_PER_DIVISION_CHARACTER_4 = 700,
+                X_TIME_PER_DIVISION_CHARACTER_4 = 200,
                 Y_TIME_PER_DIVISION_CHARACTER_4 = 980,
-                X_TIME_PER_DIVISION_CHARACTER_3 = 720,
+                X_TIME_PER_DIVISION_CHARACTER_3 = 220,
                 Y_TIME_PER_DIVISION_CHARACTER_3 = 980,
-                X_TIME_PER_DIVISION_CHARACTER_2 = 740,
+                X_TIME_PER_DIVISION_CHARACTER_2 = 240,
                 Y_TIME_PER_DIVISION_CHARACTER_2 = 980,
-                X_TIME_PER_DIVISION_CHARACTER_1 = 760,
+                X_TIME_PER_DIVISION_CHARACTER_1 = 260,
                 Y_TIME_PER_DIVISION_CHARACTER_1 = 980,
-                X_TIME_PER_DIVISION_CHARACTER_0 = 780,
+                X_TIME_PER_DIVISION_CHARACTER_0 = 280,
                 Y_TIME_PER_DIVISION_CHARACTER_0 = 980,
                 
-                Y_VOLTAGE_PER_DIVISION_CHARACTER = 644,
-                X_VOLTAGE_PER_DIVISION_CHARACTER_4 = 1180,
-                X_VOLTAGE_PER_DIVISION_CHARACTER_3 = 1200,
-                X_VOLTAGE_PER_DIVISION_CHARACTER_2 = 1220,
-                X_VOLTAGE_PER_DIVISION_CHARACTER_1 = 1240,
-                X_VOLTAGE_PER_DIVISION_CHARACTER_0 = 1260,
+                Y_VOLTAGE_PER_DIVISION_CHARACTER = 744,
+                X_VOLTAGE_PER_DIVISION_CHARACTER_4 = 0,
+                X_VOLTAGE_PER_DIVISION_CHARACTER_3 = 20,
+                X_VOLTAGE_PER_DIVISION_CHARACTER_2 = 40,
+                X_VOLTAGE_PER_DIVISION_CHARACTER_1 = 60,
+                X_VOLTAGE_PER_DIVISION_CHARACTER_0 = 80,
                 
                 Y_CURSOR_1 = 80,
                 X_CURSOR_1_CHARACTER_15 = 940,
@@ -593,6 +593,7 @@ module Oscilloscope_v1
             .spriteBlank(cursor1Blank)
             );
     
+    //compute characters to diplay time per division
     wire [TIME_PER_DIVISION_BITS-1:0] timePerDivision;  
     SamplePeriodToTimePerDivision mySamplePeriodToTimePerDivision
             (.clock(CLK108MHZ),
@@ -623,6 +624,8 @@ module Oscilloscope_v1
                         .character1(timePerDivisionCharacter3),
                         .character0(timePerDivisionCharacter2)
                         );
+                        
+    //compute characters to display voltage per division
               
     wire textHsync, textVsync, textBlank;
     wire [RGB_BITS-1:0] textPixel;
@@ -644,16 +647,16 @@ module Oscilloscope_v1
     wire [SELECT_CHARACTER_BITS-1:0] timePerDivisionCharacter0;
     assign timePerDivisionCharacter0 = 7'd83;  //s
     
-    wire [SELECT_CHARACTER_BITS-1:0] volatgePerDivisionCharacter4;
+    wire [SELECT_CHARACTER_BITS-1:0] voltagePerDivisionCharacter4;
     assign voltagePerDivisionCharacter4 = 7'd16;  //0
     wire [SELECT_CHARACTER_BITS-1:0] voltagePerDivisionCharacter3;
-    assign volatagePerDivisionCharacter3 = 7'd16;  //0
+    assign voltagePerDivisionCharacter3 = 7'd16;  //0
     wire [SELECT_CHARACTER_BITS-1:0] voltagePerDivisionCharacter2;
-    assign volatagePerDivisionCharacter2 = 7'd16;  //0
-    wire [SELECT_CHARACTER_BITS-1:0] volatgePerDivisionCharacter1;
+    assign voltagePerDivisionCharacter2 = 7'd16;  //0
+    wire [SELECT_CHARACTER_BITS-1:0] voltagePerDivisionCharacter1;
     assign voltagePerDivisionCharacter1 = 7'd77;  //m
     wire [SELECT_CHARACTER_BITS-1:0] voltagePerDivisionCharacter0;
-    assign volatagePerDivisionCharacter0 = 7'd54;  //V
+    assign voltagePerDivisionCharacter0 = 7'd54;  //V
     
     wire [SELECT_CHARACTER_BITS-1:0] cursor1Character15;
     assign cursor1Character15 = 7'd35;  //C
@@ -705,8 +708,8 @@ module Oscilloscope_v1
         .xVoltagePerDivision4(X_VOLTAGE_PER_DIVISION_CHARACTER_4), .yVoltagePerDivision4(Y_VOLTAGE_PER_DIVISION_CHARACTER), .voltagePerDivisionCharacter4(voltagePerDivisionCharacter4),
         .xVoltagePerDivision3(X_VOLTAGE_PER_DIVISION_CHARACTER_3), .yVoltagePerDivision3(Y_VOLTAGE_PER_DIVISION_CHARACTER), .voltagePerDivisionCharacter3(voltagePerDivisionCharacter3),
         .xVoltagePerDivision2(X_VOLTAGE_PER_DIVISION_CHARACTER_2), .yVoltagePerDivision2(Y_VOLTAGE_PER_DIVISION_CHARACTER), .voltagePerDivisionCharacter2(voltagePerDivisionCharacter2),
-        //.xVoltagePerDivision1(X_VOLTAGE_PER_DIVISION_CHARACTER_1), .yVoltagePerDivision1(Y_VOLTAGE_PER_DIVISION_CHARACTER), .voltagePerDivisionCharacter1(voltagePerDivisionCharacter1),
-        //.xVoltagePerDivision0(X_VOLTAGE_PER_DIVISION_CHARACTER_0), .yVoltagePerDivision0(Y_VOLTAGE_PER_DIVISION_CHARACTER), .voltagePerDivisionCharacter0(voltagePerDivisionCharacter0),
+        .xVoltagePerDivision1(X_VOLTAGE_PER_DIVISION_CHARACTER_1), .yVoltagePerDivision1(Y_VOLTAGE_PER_DIVISION_CHARACTER), .voltagePerDivisionCharacter1(voltagePerDivisionCharacter1),
+        .xVoltagePerDivision0(X_VOLTAGE_PER_DIVISION_CHARACTER_0), .yVoltagePerDivision0(Y_VOLTAGE_PER_DIVISION_CHARACTER), .voltagePerDivisionCharacter0(voltagePerDivisionCharacter0),
         
         .xCursor1_15(X_CURSOR_1_CHARACTER_15), .yCursor1_15(Y_CURSOR_1), .cursor1Character15(cursor1Character15),
         .xCursor1_14(X_CURSOR_1_CHARACTER_14), .yCursor1_14(Y_CURSOR_1), .cursor1Character14(cursor1Character14),

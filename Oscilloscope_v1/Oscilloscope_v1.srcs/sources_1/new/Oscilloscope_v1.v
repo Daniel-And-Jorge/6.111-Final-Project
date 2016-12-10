@@ -319,8 +319,7 @@ module Oscilloscope_v1
                 .readAddress(curveAddressOut2Channel1),
                 .dataOut(buffer2DataOutChannel1));
     
-    wire [11:0] bufferDataOutChannel2;    
-    wire [ADDRESS_BITS-1:0] curveAddressOutChannel2;    
+    wire [11:0] bufferDataOutChannel2;      
     buffer BufferChannel2 (.clock(CLK108MHZ), .ready(adcc_ready), .dataIn(ADCCdataOutChannel2),
                         .isTrigger(isTriggered), .disableCollection(0), .activeBramSelect(activeBramSelect),
                         .reset(reset),
@@ -329,7 +328,6 @@ module Oscilloscope_v1
                         .dataOut(bufferDataOutChannel2));
                         
     wire [11:0] buffer2DataOutChannel2;
-    wire [ADDRESS_BITS-1:0] curveAddressOut2Channel2; 
     buffer Buffer2Channel2 (.clock(CLK108MHZ), .ready(risingEdgeReadyChannel2), .dataIn(slopeChannel2),
                 .isTrigger(isTriggered), .disableCollection(0), .activeBramSelect(activeBramSelect),
                 .reset(reset),
@@ -675,6 +673,44 @@ module Oscilloscope_v1
             .character1(voltagePerDivisionCharacter3),
             .character0(voltagePerDivisionCharacter2)
             );
+            
+    //compute characters to display max value
+    wire signed [CURSOR_VOLTAGE_BITS-1:0] maxVoltageValue;
+    wire [CURSOR_VOLTAGE_BITS-1:0] maxVoltageAbsoluteValue;
+    wire maxVoltageIsNegative;
+    YPixelToVoltage signalMaxToVoltage
+                (.clock(CLK108MHZ),
+                .y(channelSelected ? signalMaxChannel2 : signalMaxChannel1),
+                .scaleExponent(verticalScaleExponentChannelSelected),
+                .scale(verticalScaleFactorTimes8ChannelSelected),
+                .voltage(maxVoltageValue),
+                .voltageAbsoluteValue(maxVoltageAbsoluteValue),
+                .isNegative(maxVoltageIsNegative)
+                );
+                
+    wire [DIGIT_BITS-1:0] maxVoltageNumber2;
+    wire [DIGIT_BITS-1:0] maxVoltageNumber1;
+    wire [DIGIT_BITS-1:0] vmaxVoltageNumber0;
+    ConvertBCD maxVoltageConvertBCD(
+            .clock(CLK108MHZ),
+            .data(maxVoltageAbsoluteValue),
+            .d(vmaxVoltageNumber0),
+            .d10(maxVoltageNumber1),
+            .d100(maxVoltageNumber2)
+            );
+     
+    wire [SELECT_CHARACTER_BITS-1:0] voltagePerDivisionCharacter4;
+    wire [SELECT_CHARACTER_BITS-1:0] voltagePerDivisionCharacter3;
+    wire [SELECT_CHARACTER_BITS-1:0] voltagePerDivisionCharacter2;
+    DecimalToROMLocation voltagePerDivisionDecimalToROMLocation(
+            .clock(CLK108MHZ),
+            .number2(voltagePerDivisionNumber2),
+            .number1(voltagePerDivisionNumber1),
+            .number0(voltagePerDivisionNumber0),
+            .character2(voltagePerDivisionCharacter4),
+            .character1(voltagePerDivisionCharacter3),
+            .character0(voltagePerDivisionCharacter2)
+            );
               
     wire textHsync, textVsync, textBlank;
     wire [RGB_BITS-1:0] textPixel;
@@ -715,7 +751,7 @@ module Oscilloscope_v1
     assign maxCharacter4 = 7'd16;  //0
     wire [SELECT_CHARACTER_BITS-1:0] maxCharacter3;
     assign maxCharacter3 = 7'd16;  //0
-    wire [SELECT_CHARACTER_BITS-1:0] maxCharacter3;
+    wire [SELECT_CHARACTER_BITS-1:0] maxCharacter2;
     assign maxCharacter2 = 7'd16;  //0
     wire [SELECT_CHARACTER_BITS-1:0] maxCharacter1;
     assign maxCharacter1 = 7'd77;  //m

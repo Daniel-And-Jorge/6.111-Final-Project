@@ -67,6 +67,18 @@ module Oscilloscope_v1
                 X_MAX_CHARACTER_1 = 360,
                 X_MAX_CHARACTER_0 = 380,
                 
+                Y_MIN = 44,
+                X_MIN_CHARACTER_9 = 200,
+                X_MIN_CHARACTER_8 = 220,
+                X_MIN_CHARACTER_7 = 240,
+                X_MIN_CHARACTER_6 = 260,
+                X_MIN_CHARACTER_5 = 280,
+                X_MIN_CHARACTER_4 = 300,
+                X_MIN_CHARACTER_3 = 320,
+                X_MIN_CHARACTER_2 = 340,
+                X_MIN_CHARACTER_1 = 360,
+                X_MIN_CHARACTER_0 = 380,
+                
                 Y_CURSOR_1 = 12,
                 X_CURSOR_1_CHARACTER_15 = 940,
                 X_CURSOR_1_CHARACTER_14 = 960,
@@ -675,42 +687,34 @@ module Oscilloscope_v1
             );
             
     //compute characters to display max value
-    wire signed [CURSOR_VOLTAGE_BITS-1:0] maxVoltageValue;
-    wire [CURSOR_VOLTAGE_BITS-1:0] maxVoltageAbsoluteValue;
-    wire maxVoltageIsNegative;
-    YPixelToVoltage signalMaxToVoltage
-                (.clock(CLK108MHZ),
-                .y(channelSelected ? signalMaxChannel2 : signalMaxChannel1),
-                .scaleExponent(verticalScaleExponentChannelSelected),
-                .scale(verticalScaleFactorTimes8ChannelSelected),
-                .voltage(maxVoltageValue),
-                .voltageAbsoluteValue(maxVoltageAbsoluteValue),
-                .isNegative(maxVoltageIsNegative)
-                );
-                
-    wire [DIGIT_BITS-1:0] maxVoltageNumber2;
-    wire [DIGIT_BITS-1:0] maxVoltageNumber1;
-    wire [DIGIT_BITS-1:0] vmaxVoltageNumber0;
-    ConvertBCD maxVoltageConvertBCD(
+    wire [SELECT_CHARACTER_BITS-1:0] maxCharacter4;
+    wire [SELECT_CHARACTER_BITS-1:0] maxCharacter3;
+    wire [SELECT_CHARACTER_BITS-1:0] maxCharacter2;
+    wire maxVoltageIsPositive;
+    SignalToVoltage getMaxVoltageCharacters(
             .clock(CLK108MHZ),
-            .data(maxVoltageAbsoluteValue),
-            .d(vmaxVoltageNumber0),
-            .d10(maxVoltageNumber1),
-            .d100(maxVoltageNumber2)
-            );
-     
-    wire [SELECT_CHARACTER_BITS-1:0] voltagePerDivisionCharacter4;
-    wire [SELECT_CHARACTER_BITS-1:0] voltagePerDivisionCharacter3;
-    wire [SELECT_CHARACTER_BITS-1:0] voltagePerDivisionCharacter2;
-    DecimalToROMLocation voltagePerDivisionDecimalToROMLocation(
+            .signal(chanelSelected ? signalMaxChannel2 : signalMaxChannel1),
+            .scaleExponent(verticalScaleExponentChannelSelected),
+            .scale(verticalScaleFactorTimes8ChannelSelected),
+            .character2(maxVoltageCharacter4),
+            .character1(maxVoltageCharacter3),
+            .character0(maxVoltageCharacter2),
+            .isPositive(maxVoltageIsPositive));
+            
+    //compute characters to display min value
+    wire [SELECT_CHARACTER_BITS-1:0] minCharacter4;
+    wire [SELECT_CHARACTER_BITS-1:0] minCharacter3;
+    wire [SELECT_CHARACTER_BITS-1:0] minCharacter2;
+    wire minVoltageIsPositive;
+    SignalToVoltage getminVoltageCharacters(
             .clock(CLK108MHZ),
-            .number2(voltagePerDivisionNumber2),
-            .number1(voltagePerDivisionNumber1),
-            .number0(voltagePerDivisionNumber0),
-            .character2(voltagePerDivisionCharacter4),
-            .character1(voltagePerDivisionCharacter3),
-            .character0(voltagePerDivisionCharacter2)
-            );
+            .signal(chanelSelected ? signalMinChannel2 : signalMinChannel1),
+            .scaleExponent(verticalScaleExponentChannelSelected),
+            .scale(verticalScaleFactorTimes8ChannelSelected),
+            .character2(minCharacter4),
+            .character1(minCharacter3),
+            .character0(minCharacter2),
+            .isPositive(minVoltageIsPositive));
               
     wire textHsync, textVsync, textBlank;
     wire [RGB_BITS-1:0] textPixel;
@@ -746,17 +750,38 @@ module Oscilloscope_v1
     wire [SELECT_CHARACTER_BITS-1:0] maxCharacter6;
     assign maxCharacter6 = 7'd26;  //:
     wire [SELECT_CHARACTER_BITS-1:0] maxCharacter5;
-    assign maxCharacter5 = 7'd0;  //space
-    wire [SELECT_CHARACTER_BITS-1:0] maxCharacter4;
-    assign maxCharacter4 = 7'd16;  //0
-    wire [SELECT_CHARACTER_BITS-1:0] maxCharacter3;
-    assign maxCharacter3 = 7'd16;  //0
-    wire [SELECT_CHARACTER_BITS-1:0] maxCharacter2;
-    assign maxCharacter2 = 7'd16;  //0
+    assign maxCharacter5 = 7'd0;  //maxVoltageIsPositive ? 7'd0 : 7'd13;  //space
+//    wire [SELECT_CHARACTER_BITS-1:0] maxCharacter4;
+//    assign maxCharacter4 = 7'd16;  //0
+//    wire [SELECT_CHARACTER_BITS-1:0] maxCharacter3;
+//    assign maxCharacter3 = 7'd16;  //0
+//    wire [SELECT_CHARACTER_BITS-1:0] maxCharacter2;
+//    assign maxCharacter2 = 7'd16;  //0
     wire [SELECT_CHARACTER_BITS-1:0] maxCharacter1;
     assign maxCharacter1 = 7'd77;  //m
     wire [SELECT_CHARACTER_BITS-1:0] maxCharacter0;
     assign maxCharacter0 = 7'd54;  //V
+    
+    wire [SELECT_CHARACTER_BITS-1:0] minCharacter9;
+    assign minCharacter9 = 7'd77;  //m
+    wire [SELECT_CHARACTER_BITS-1:0] minCharacter8;
+    assign minCharacter8 = 7'd73;  //i
+    wire [SELECT_CHARACTER_BITS-1:0] minCharacter7;
+    assign minCharacter7 = 7'd78;  //n
+    wire [SELECT_CHARACTER_BITS-1:0] minCharacter6;
+    assign minCharacter6 = 7'd26;  //:
+    wire [SELECT_CHARACTER_BITS-1:0] minCharacter5;
+    assign minCharacter5 = minVoltageIsPositive ? 7'd0 : 7'd13;  //space or -
+//    wire [SELECT_CHARACTER_BITS-1:0] minCharacter4;
+//    assign minCharacter4 = 7'd16;  //0
+//    wire [SELECT_CHARACTER_BITS-1:0] minCharacter3;
+//    assign minCharacter3 = 7'd16;  //0
+//    wire [SELECT_CHARACTER_BITS-1:0] minCharacter2;
+//    assign minCharacter2 = 7'd16;  //0
+    wire [SELECT_CHARACTER_BITS-1:0] minCharacter1;
+    assign minCharacter1 = 7'd77;  //m
+    wire [SELECT_CHARACTER_BITS-1:0] minCharacter0;
+    assign minCharacter0 = 7'd54;  //V
     
     wire [SELECT_CHARACTER_BITS-1:0] cursor1Character15;
     assign cursor1Character15 = 7'd35;  //C
@@ -822,6 +847,17 @@ module Oscilloscope_v1
         .xMax1(X_MAX_CHARACTER_1), .yMax1(Y_MAX), .maxCharacter1(maxCharacter1),
         .xMax0(X_MAX_CHARACTER_0), .yMax0(Y_MAX), .maxCharacter0(maxCharacter0),
         
+//        .xMin9(X_MIN_CHARACTER_9), .yMin9(Y_MIN), .minCharacter9(minCharacter9),
+//        .xMin8(X_MIN_CHARACTER_8), .yMin8(Y_MIN), .minCharacter8(minCharacter8),
+//        .xMin7(X_MIN_CHARACTER_7), .yMin7(Y_MIN), .minCharacter7(minCharacter7),
+//        .xMin6(X_MIN_CHARACTER_6), .yMin6(Y_MIN), .minCharacter6(minCharacter6),
+//        .xMin5(X_MIN_CHARACTER_5), .yMin5(Y_MIN), .minCharacter5(minCharacter5),
+//        .xMin4(X_MIN_CHARACTER_4), .yMin4(Y_MIN), .minCharacter4(minCharacter4),
+//        .xMin3(X_MIN_CHARACTER_3), .yMin3(Y_MIN), .minCharacter3(minCharacter3),
+//        .xMin2(X_MIN_CHARACTER_2), .yMin2(Y_MIN), .minCharacter2(minCharacter2),
+//        .xMin1(X_MIN_CHARACTER_1), .yMin1(Y_MIN), .minCharacter1(minCharacter1),
+//        .xMin0(X_MIN_CHARACTER_0), .yMin0(Y_MIN), .minCharacter0(minCharacter0),
+        
         .xCursor1_15(X_CURSOR_1_CHARACTER_15), .yCursor1_15(Y_CURSOR_1), .cursor1Character15(cursor1Character15),
         .xCursor1_14(X_CURSOR_1_CHARACTER_14), .yCursor1_14(Y_CURSOR_1), .cursor1Character14(cursor1Character14),
         .xCursor1_13(X_CURSOR_1_CHARACTER_13), .yCursor1_13(Y_CURSOR_1), .cursor1Character13(cursor1Character13),
@@ -843,6 +879,8 @@ module Oscilloscope_v1
         .hsync(cursor1Hsync), .vsync(cursor1Vsync), .blank(cursor1Blank), .previousPixel(cursor1Pixel),
         .displayXOut(textDisplayX), .displayYOut(textDisplayY), 
         .hsyncOut(textHsync), .vsyncOut(textVsync), .blankOut(textBlank), .pixel(textPixel), .addressA(addressA));
+        
+     //Text textMin
      
      always @(posedge CLK108MHZ) begin
         {VGA_R, VGA_G, VGA_B} <= !textBlank ? textPixel : 12'b0;

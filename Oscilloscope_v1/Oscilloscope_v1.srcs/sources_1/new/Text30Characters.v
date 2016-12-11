@@ -234,10 +234,10 @@ module Text30Characters
             yCharacter24 <= displayY && displayY < (yCharacter24 + CHARACTER_HEIGHT)) begin   
             row <= displayY - yCharacter24;
             column <= displayX - xCharacter24;
-        end  else if (yCharacter23 <= displayX && displayX < (yCharacter23 + CHARACTER_WIDTH) &&
-           xCharacter23 <= displayY && displayY < (xCharacter23 + CHARACTER_HEIGHT)) begin   
-           row <= displayY - xCharacter23;
-           column <= displayX - yCharacter23;
+        end  else if (xCharacter23 <= displayX && displayX < (xCharacter23 + CHARACTER_WIDTH) &&
+           yCharacter23 <= displayY && displayY < (yCharacter23 + CHARACTER_HEIGHT)) begin   
+           row <= displayY - yCharacter23;
+           column <= displayX - xCharacter23;
         end else if (xCharacter22 <= displayX && displayX < (xCharacter22 + CHARACTER_WIDTH) &&
           yCharacter22 <= displayY && displayY < (yCharacter22 + CHARACTER_HEIGHT)) begin   
           row <= displayY - yCharacter22;

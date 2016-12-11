@@ -755,7 +755,7 @@ module Oscilloscope_v1
     wire maxVoltageIsPositive;
     SignalToVoltage getMaxVoltageCharacters(
             .clock(CLK108MHZ),
-            .signal(chanelSelected ? signalMaxChannel2 : signalMaxChannel1),
+            .signal(channelSelected ? signalMaxChannel2 : signalMaxChannel1),
             .scaleExponent(verticalScaleExponentChannelSelected),
             .scale(verticalScaleFactorTimes8ChannelSelected),
             .character2(maxCharacter4),
@@ -770,7 +770,7 @@ module Oscilloscope_v1
     wire minVoltageIsPositive;
     SignalToVoltage getminVoltageCharacters(
             .clock(CLK108MHZ),
-            .signal(chanelSelected ? signalMinChannel2 : signalMinChannel1),
+            .signal(channelSelected ? signalMinChannel2 : signalMinChannel1),
             .scaleExponent(verticalScaleExponentChannelSelected),
             .scale(verticalScaleFactorTimes8ChannelSelected),
             .character2(minCharacter4),
@@ -1005,13 +1005,13 @@ module Oscilloscope_v1
         .xCharacter11(X_CURSOR_2_CHARACTER_7), .yCharacter11(Y_CURSOR_2), .character11(cursor2Character7), .character11Color(LIGHT_PURPLE),
         .xCharacter10(X_CURSOR_2_CHARACTER_6), .yCharacter10(Y_CURSOR_2), .character10(cursor2Character6), .character10Color(LIGHT_PURPLE),
         
-        .xCharacter9(X_CURSOR_2_CHARACTER_5), .yCharacter9(), .character9(cursor2Character4), .character9Color(LIGHT_PURPLE),
-        .xCharacter8(X_CURSOR_2_CHARACTER_4), .yCharacter8(), .character8(cursor2Character3), .character8Color(LIGHT_PURPLE),
-        .xCharacter7(X_CURSOR_2_CHARACTER_3), .yCharacter7(), .character7(cursor2Character2), .character7Color(LIGHT_PURPLE),
-        .xCharacter6(X_CURSOR_2_CHARACTER_2), .yCharacter6(), .character6(cursor2Character1), .character6Color(LIGHT_PURPLE),
-        .xCharacter5(X_CURSOR_2_CHARACTER_1), .yCharacter5(), .character5(cursor2Character0), .character5Color(LIGHT_PURPLE),
+        .xCharacter9(X_CURSOR_2_CHARACTER_5), .yCharacter9(Y_CURSOR_2), .character9(cursor2Character5), .character9Color(LIGHT_PURPLE),
+        .xCharacter8(X_CURSOR_2_CHARACTER_4), .yCharacter8(Y_CURSOR_2), .character8(cursor2Character4), .character8Color(LIGHT_PURPLE),
+        .xCharacter7(X_CURSOR_2_CHARACTER_3), .yCharacter7(Y_CURSOR_2), .character7(cursor2Character3), .character7Color(LIGHT_PURPLE),
+        .xCharacter6(X_CURSOR_2_CHARACTER_2), .yCharacter6(Y_CURSOR_2), .character6(cursor2Character2), .character6Color(LIGHT_PURPLE),
+        .xCharacter5(X_CURSOR_2_CHARACTER_1), .yCharacter5(Y_CURSOR_2), .character5(cursor2Character1), .character5Color(LIGHT_PURPLE),
         
-        .xCharacter4(X_CURSOR_2_CHARACTER_0), .yCharacter4(), .character4(), .character4Color(LIGHT_PURPLE),
+        .xCharacter4(X_CURSOR_2_CHARACTER_0), .yCharacter4(Y_CURSOR_2), .character4(cursor2Character0), .character4Color(LIGHT_PURPLE),
         .xCharacter3(X_CHANNEL_SELECTED), .yCharacter3(Y_CHANNEL_SELECTED), .character3(channelSelected ? 7'd18 : 7'd17), 
             .character3Color(channelSelected ? BLUE : YELLOW),
         .xCharacter2(), .yCharacter2(), .character2(), .character2Color(),

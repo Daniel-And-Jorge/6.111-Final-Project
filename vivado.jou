@@ -325,3 +325,12 @@ set_property PROGRAM.FILE {/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6
 program_hw_devices [lindex [get_hw_devices] 0]
 refresh_hw_device [lindex [get_hw_devices] 0]
 open_run impl_1
+current_design synth_1
+delete_debug_core [get_debug_cores {u_ila_0 }]
+save_constraints
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1

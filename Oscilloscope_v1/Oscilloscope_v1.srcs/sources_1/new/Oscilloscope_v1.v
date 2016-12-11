@@ -115,6 +115,9 @@ module Oscilloscope_v1
                 X_CURSOR_2_CHARACTER_1 = 1220,
                 X_CURSOR_2_CHARACTER_0 = 1240,
                 
+                X_CHANNEL_SELECTED = 12,
+                Y_CHANNEL_SELECTED = 12,
+                
                 SELECT_CHARACTER_BITS = 7,
                 DRP_ADDRESS_BITS = 7,
                 DRP_SAMPLE_BITS = 16,
@@ -642,9 +645,9 @@ module Oscilloscope_v1
             );
     
     //compute characters to display min value
-    (* mark_debug = "true" *) wire [SELECT_CHARACTER_BITS-1:0] cursor2Character4;
-    (* mark_debug = "true" *) wire [SELECT_CHARACTER_BITS-1:0] cursor2Character3;
-    (* mark_debug = "true" *) wire [SELECT_CHARACTER_BITS-1:0] cursor2Character2;
+    wire [SELECT_CHARACTER_BITS-1:0] cursor2Character4;
+    wire [SELECT_CHARACTER_BITS-1:0] cursor2Character3;
+    wire [SELECT_CHARACTER_BITS-1:0] cursor2Character2;
     wire cursor2IsPositive;
     SignalToVoltage getCursor2VoltageCharacters(
             .clock(CLK108MHZ),
@@ -749,9 +752,9 @@ module Oscilloscope_v1
             );
             
     //compute characters to display max value
-    (* mark_debug = "true" *) wire [SELECT_CHARACTER_BITS-1:0] maxCharacter4;
-    (* mark_debug = "true" *) wire [SELECT_CHARACTER_BITS-1:0] maxCharacter3;
-    (* mark_debug = "true" *) wire [SELECT_CHARACTER_BITS-1:0] maxCharacter2;
+    wire [SELECT_CHARACTER_BITS-1:0] maxCharacter4;
+    wire [SELECT_CHARACTER_BITS-1:0] maxCharacter3;
+    wire [SELECT_CHARACTER_BITS-1:0] maxCharacter2;
     wire maxVoltageIsPositive;
     SignalToVoltage getMaxVoltageCharacters(
             .clock(CLK108MHZ),
@@ -764,9 +767,9 @@ module Oscilloscope_v1
             .isPositive(maxVoltageIsPositive));
             
     //compute characters to display min value
-    (* mark_debug = "true" *) wire [SELECT_CHARACTER_BITS-1:0] minCharacter4;
-    (* mark_debug = "true" *) wire [SELECT_CHARACTER_BITS-1:0] minCharacter3;
-    (* mark_debug = "true" *) wire [SELECT_CHARACTER_BITS-1:0] minCharacter2;
+    wire [SELECT_CHARACTER_BITS-1:0] minCharacter4;
+    wire [SELECT_CHARACTER_BITS-1:0] minCharacter3;
+    wire [SELECT_CHARACTER_BITS-1:0] minCharacter2;
     wire minVoltageIsPositive;
     SignalToVoltage getminVoltageCharacters(
             .clock(CLK108MHZ),

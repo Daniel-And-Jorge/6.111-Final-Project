@@ -25,7 +25,7 @@ module SignalToVoltage
                 SCALE_EXPONENT_BITS = 4,
                 SCALE_FACTOR_SIZE = 10,
                 SELECT_CHARACTER_BITS = 7,
-                VOLTAGE_BITS = 10,
+                VOLTAGE_BITS = 12,
                 DIGIT_BITS = 4)
     (
     input clock,

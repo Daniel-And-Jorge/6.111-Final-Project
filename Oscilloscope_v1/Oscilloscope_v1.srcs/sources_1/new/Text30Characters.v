@@ -234,7 +234,7 @@ module Text30Characters
             yCharacter24 <= displayY && displayY < (yCharacter24 + CHARACTER_HEIGHT)) begin   
             row <= displayY - yCharacter24;
             column <= displayX - xCharacter24;
-        end  else if (xCharacter23 <= displayX && displayX < (xCharacter23 + CHARACTER_WIDTH) &&
+        end else if (xCharacter23 <= displayX && displayX < (xCharacter23 + CHARACTER_WIDTH) &&
            yCharacter23 <= displayY && displayY < (yCharacter23 + CHARACTER_HEIGHT)) begin   
            row <= displayY - yCharacter23;
            column <= displayX - xCharacter23;
@@ -367,8 +367,8 @@ module Text30Characters
         end else if (xCharacter24 <= displayX1 && displayX1 < (xCharacter24 + CHARACTER_WIDTH) &&
             yCharacter24 <= displayY1 && displayY1 < (yCharacter24 + CHARACTER_HEIGHT)) begin   
             addressA <= {character24, row, column};
-        end else if (yCharacter23 <= displayX1 && displayX1 < (yCharacter23 + CHARACTER_WIDTH) &&
-            xCharacter23 <= displayY1 && displayY1 < (xCharacter23 + CHARACTER_HEIGHT)) begin   
+        end else if (xCharacter23 <= displayX1 && displayX1 < (xCharacter23 + CHARACTER_WIDTH) &&
+            yCharacter23 <= displayY1 && displayY1 < (yCharacter23 + CHARACTER_HEIGHT)) begin   
             addressA <= {character23, row, column};
         end else if (xCharacter22 <= displayX1 && displayX1 < (xCharacter22 + CHARACTER_WIDTH) &&
             yCharacter22 <= displayY1 && displayY1 < (yCharacter22 + CHARACTER_HEIGHT)) begin   
@@ -500,8 +500,8 @@ module Text30Characters
                 yCharacter24 <= displayY4 && displayY4 < (yCharacter24 + CHARACTER_HEIGHT) &&
                 dataOutA == 1) begin
             pixel <= character24Color;
-        end else if (yCharacter23 <= displayX4 && displayX4 < (yCharacter23 + CHARACTER_WIDTH) &&
-                xCharacter23 <= displayY4 && displayY4 < (xCharacter23 + CHARACTER_HEIGHT) &&
+        end else if (xCharacter23 <= displayX4 && displayX4 < (xCharacter23 + CHARACTER_WIDTH) &&
+                yCharacter23 <= displayY4 && displayY4 < (yCharacter23 + CHARACTER_HEIGHT) &&
                 dataOutA == 1) begin
             pixel <= character23Color;
         end else if (xCharacter22 <= displayX4 && displayX4 < (xCharacter22 + CHARACTER_WIDTH) &&

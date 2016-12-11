@@ -115,6 +115,24 @@ module Oscilloscope_v1
                 X_CURSOR_2_CHARACTER_1 = 1220,
                 X_CURSOR_2_CHARACTER_0 = 1240,
                 
+                Y_VOLTAGE_CURSOR_DIFFERENCE = 76,
+                X_VOLTAGE_CURSOR_DIFFERENCE_CHARACTER_15 = 940,
+                X_VOLTAGE_CURSOR_DIFFERENCE_CHARACTER_14 = 960,
+                X_VOLTAGE_CURSOR_DIFFERENCE_CHARACTER_13 = 980,
+                X_VOLTAGE_CURSOR_DIFFERENCE_CHARACTER_12 = 1000,
+                X_VOLTAGE_CURSOR_DIFFERENCE_CHARACTER_11 = 1020,
+                X_VOLTAGE_CURSOR_DIFFERENCE_CHARACTER_10 = 1040,
+                X_VOLTAGE_CURSOR_DIFFERENCE_CHARACTER_9 = 1060,
+                X_VOLTAGE_CURSOR_DIFFERENCE_CHARACTER_8 = 1080,
+                X_VOLTAGE_CURSOR_DIFFERENCE_CHARACTER_7 = 1100,
+                X_VOLTAGE_CURSOR_DIFFERENCE_CHARACTER_6 = 1120,
+                X_VOLTAGE_CURSOR_DIFFERENCE_CHARACTER_5 = 1140,
+                X_VOLTAGE_CURSOR_DIFFERENCE_CHARACTER_4 = 1160,
+                X_VOLTAGE_CURSOR_DIFFERENCE_CHARACTER_3 = 1180,
+                X_VOLTAGE_CURSOR_DIFFERENCE_CHARACTER_2 = 1200,
+                X_VOLTAGE_CURSOR_DIFFERENCE_CHARACTER_1 = 1220,
+                X_VOLTAGE_CURSOR_DIFFERENCE_CHARACTER_0 = 1240,
+                
                 X_CHANNEL_SELECTED = 12,
                 Y_CHANNEL_SELECTED = 12,
                 
@@ -125,7 +143,7 @@ module Oscilloscope_v1
                 TOGGLE_CHANNELS_STATE_BITS = 2,
                 SCALE_FACTOR_BITS = 10,
                 DIGIT_BITS = 4,
-                CURSOR_VOLTAGE_BITS = 10,
+                CURSOR_VOLTAGE_BITS = 12,
                 SCALE_EXPONENT_BITS = 4,
                 TIME_PER_DIVISION_BITS = 10,
                 REAL_DISPLAY_WIDTH = 1688,
@@ -135,7 +153,8 @@ module Oscilloscope_v1
                 GREEN = 12'h0C0,
                 LIGHT_PURPLE = 12'hF6F,
                 YELLOW = 12'hFF0,
-                BLUE = 12'h0FF) 
+                BLUE = 12'h0FF,
+                VERY_LIGHT_PURPLE = 12'hFCF) 
    (input CLK100MHZ,
    input vauxp11,
    input vauxn11,
@@ -869,7 +888,7 @@ module Oscilloscope_v1
     wire [SELECT_CHARACTER_BITS-1:0] cursor1Character6;
     assign cursor1Character6 = 7'd0;  //Space
     wire [SELECT_CHARACTER_BITS-1:0] cursor1Character5;
-    assign cursor1Character5 = cursor1IsNegative ? 7'd0 : 7'd11;  //space or -
+    assign cursor1Character5 = cursor1IsNegative ? 7'd13 : 7'd0;  //- or space
     wire [SELECT_CHARACTER_BITS-1:0] cursor1Character4;
     assign cursor1Character4 = cursor1VoltageCharacter2;  //1
     wire [SELECT_CHARACTER_BITS-1:0] cursor1Character3;

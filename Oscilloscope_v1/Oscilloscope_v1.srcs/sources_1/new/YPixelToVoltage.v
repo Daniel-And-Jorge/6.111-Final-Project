@@ -21,7 +21,7 @@
 
 
 module YPixelToVoltage
-    #(parameter VOLTAGE_BITS = 10,
+    #(parameter VOLTAGE_BITS = 12,
                 DISPLAY_Y_BITS = 12,
                 SCALE_EXPONENT_BITS = 4,
                 Y_ZERO_VOLTS = 512,

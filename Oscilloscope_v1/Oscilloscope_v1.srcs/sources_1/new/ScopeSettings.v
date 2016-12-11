@@ -43,7 +43,8 @@ module ScopeSettings
      output reg [SAMPLE_PERIOD_BITS-1:0]samplePeriod = 0,
      output reg channelSelected,
      output wire xyDisplayMode,
-     output reg signed [DISPLAY_Y_BITS-1:0] yCursor1 = 12'd0
+     output reg signed [DISPLAY_Y_BITS-1:0] yCursor1 = 12'd0,
+     output reg signed [DISPLAY_Y_BITS-1:0] yCursor2 = 12'd0
     );
     
     wire [SCALE_FACTOR_SIZE-1:0] optimalScaleChannel1;
@@ -111,6 +112,25 @@ module ScopeSettings
             end else begin
                 count <= 0;
             end
+         5'b10001:
+            //adjust cursor 1
+             if (buttonUpClean) begin
+                 if (count > INCREASE_PIXEL_COUNT) begin
+                     count <= 0;
+                     yCursor2 <= yCursor2 + 1;
+                 end else begin
+                     count <= count + 1;
+                 end
+             end else if (buttonDownClean) begin
+                 if (count > INCREASE_PIXEL_COUNT) begin
+                     count <= 0;
+                     yCursor2 <= yCursor2 - 1;
+                 end else begin
+                     count <= count + 1;
+                 end
+             end else begin
+                 count <= 0;
+             end
          default:
             ;//do nothing
        endcase

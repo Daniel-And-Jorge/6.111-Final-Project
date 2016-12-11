@@ -10,31 +10,99 @@
    </db_ref_list>
    <zoom_setting>
       <ZoomStartTime time="0fs"></ZoomStartTime>
-      <ZoomEndTime time="1010800fs"></ZoomEndTime>
+      <ZoomEndTime time="1327617fs"></ZoomEndTime>
       <Cursor1Time time="0fs"></Cursor1Time>
    </zoom_setting>
-   <WVObjectSize size="3" />
+   <WVObjectSize size="13" />
    <wave_markers>
    </wave_markers>
-   <wvobject type="array" fp_name="verticalScaleExponentChannel1">
+   <wvobject type="array" fp_name="getMaxVoltageCharacters/signal">
       <obj_property name="DisplayName">FullPathName</obj_property>
-      <obj_property name="ElementShortName">verticalScaleExponentChannel1[3:0]</obj_property>
-      <obj_property name="ObjectShortName">verticalScaleExponentChannel1[3:0]</obj_property>
-      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="ElementShortName">getMaxVoltageCharacters/signal[11:0]</obj_property>
+      <obj_property name="ObjectShortName">signal[11:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
       <obj_property name="LABELRADIX">true</obj_property>
    </wvobject>
-   <wvobject type="array" fp_name="verticalScaleExponentChannel2">
+   <wvobject type="array" fp_name="getMaxVoltageCharacters/scaleExponent">
       <obj_property name="DisplayName">FullPathName</obj_property>
-      <obj_property name="ElementShortName">verticalScaleExponentChannel2[3:0]</obj_property>
-      <obj_property name="ObjectShortName">verticalScaleExponentChannel2[3:0]</obj_property>
-      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="ElementShortName">getMaxVoltageCharacters/scaleExponent[3:0]</obj_property>
+      <obj_property name="ObjectShortName">scaleExponent[3:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
       <obj_property name="LABELRADIX">true</obj_property>
    </wvobject>
-   <wvobject type="array" fp_name="verticalScaleExponentChannelSelected">
+   <wvobject type="array" fp_name="getMaxVoltageCharacters/scale">
       <obj_property name="DisplayName">FullPathName</obj_property>
-      <obj_property name="ElementShortName">verticalScaleExponentChannelSelected[3:0]</obj_property>
-      <obj_property name="ObjectShortName">verticalScaleExponentChannelSelected[3:0]</obj_property>
-      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="ElementShortName">getMaxVoltageCharacters/scale[9:0]</obj_property>
+      <obj_property name="ObjectShortName">scale[9:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="getMaxVoltageCharacters/voltage">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">getMaxVoltageCharacters/voltage[9:0]</obj_property>
+      <obj_property name="ObjectShortName">voltage[9:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="getMaxVoltageCharacters/voltageAbsoluteValue">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">getMaxVoltageCharacters/voltageAbsoluteValue[9:0]</obj_property>
+      <obj_property name="ObjectShortName">voltageAbsoluteValue[9:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="getMaxVoltageCharacters/voltageIsNegative">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">getMaxVoltageCharacters/voltageIsNegative</obj_property>
+      <obj_property name="ObjectShortName">voltageIsNegative</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="getMaxVoltageCharacters/voltageNumber2">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">getMaxVoltageCharacters/voltageNumber2[3:0]</obj_property>
+      <obj_property name="ObjectShortName">voltageNumber2[3:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="getMaxVoltageCharacters/voltageNumber1">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">getMaxVoltageCharacters/voltageNumber1[3:0]</obj_property>
+      <obj_property name="ObjectShortName">voltageNumber1[3:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="getMaxVoltageCharacters/voltageNumber0">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">getMaxVoltageCharacters/voltageNumber0[3:0]</obj_property>
+      <obj_property name="ObjectShortName">voltageNumber0[3:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="getMaxVoltageCharacters/character2">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">getMaxVoltageCharacters/character2[6:0]</obj_property>
+      <obj_property name="ObjectShortName">character2[6:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="getMaxVoltageCharacters/character1">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">getMaxVoltageCharacters/character1[6:0]</obj_property>
+      <obj_property name="ObjectShortName">character1[6:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="getMaxVoltageCharacters/character0">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">getMaxVoltageCharacters/character0[6:0]</obj_property>
+      <obj_property name="ObjectShortName">character0[6:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="getMaxVoltageCharacters/isPositive">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">getMaxVoltageCharacters/isPositive</obj_property>
+      <obj_property name="ObjectShortName">isPositive</obj_property>
       <obj_property name="LABELRADIX">true</obj_property>
    </wvobject>
 </wave_config>

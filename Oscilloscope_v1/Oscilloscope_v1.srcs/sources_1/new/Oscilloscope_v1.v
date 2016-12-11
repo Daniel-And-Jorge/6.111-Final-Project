@@ -97,6 +97,24 @@ module Oscilloscope_v1
                 X_CURSOR_1_CHARACTER_1 = 1220,
                 X_CURSOR_1_CHARACTER_0 = 1240,
                 
+                Y_CURSOR_2 = 44,
+                X_CURSOR_2_CHARACTER_15 = 940,
+                X_CURSOR_2_CHARACTER_14 = 960,
+                X_CURSOR_2_CHARACTER_13 = 980,
+                X_CURSOR_2_CHARACTER_12 = 1000,
+                X_CURSOR_2_CHARACTER_11 = 1020,
+                X_CURSOR_2_CHARACTER_10 = 1040,
+                X_CURSOR_2_CHARACTER_9 = 1060,
+                X_CURSOR_2_CHARACTER_8 = 1080,
+                X_CURSOR_2_CHARACTER_7 = 1100,
+                X_CURSOR_2_CHARACTER_6 = 1120,
+                X_CURSOR_2_CHARACTER_5 = 1140,
+                X_CURSOR_2_CHARACTER_4 = 1160,
+                X_CURSOR_2_CHARACTER_3 = 1180,
+                X_CURSOR_2_CHARACTER_2 = 1200,
+                X_CURSOR_2_CHARACTER_1 = 1220,
+                X_CURSOR_2_CHARACTER_0 = 1240,
+                
                 SELECT_CHARACTER_BITS = 7,
                 DRP_ADDRESS_BITS = 7,
                 DRP_SAMPLE_BITS = 16,
@@ -109,7 +127,12 @@ module Oscilloscope_v1
                 TIME_PER_DIVISION_BITS = 10,
                 REAL_DISPLAY_WIDTH = 1688,
                 REAL_DISPLAY_HEIGHT = 1066,
-                PIXELS_PER_DIVISION = 8'sd100) 
+                PIXELS_PER_DIVISION = 8'sd100,
+                
+                GREEN = 12'h0C0,
+                LIGHT_PURPLE = 12'hF6F,
+                YELLOW = 12'hFF0,
+                BLUE = 12'h0FF) 
    (input CLK100MHZ,
    input vauxp11,
    input vauxn11,
@@ -153,6 +176,7 @@ module Oscilloscope_v1
     assign LED[15] = channelSelected;
     wire xyDisplayMode;
     wire signed [DISPLAY_Y_BITS-1:0] yCursor1;
+    wire signed [DISPLAY_Y_BITS-1:0] yCursor2;
     
     // these come from MeasureSignal
     wire signed [11:0] signalMinChannel1;
@@ -173,7 +197,8 @@ module Oscilloscope_v1
                         .verticalScaleFactorTimes8Channel2(verticalScaleFactorTimes8Channel2),
                         .samplePeriod(samplePeriod), .channelSelected(channelSelected),
                         .xyDisplayMode(xyDisplayMode),
-                        .yCursor1(yCursor1)              
+                        .yCursor1(yCursor1),
+                        .yCursor2(yCursor2)              
                         );
     
     wire [3:0] verticalScaleExponentChannel1;
@@ -616,6 +641,43 @@ module Oscilloscope_v1
             .spriteBlank(cursor1Blank)
             );
     
+    //compute characters to display min value
+    (* mark_debug = "true" *) wire [SELECT_CHARACTER_BITS-1:0] cursor2Character4;
+    (* mark_debug = "true" *) wire [SELECT_CHARACTER_BITS-1:0] cursor2Character3;
+    (* mark_debug = "true" *) wire [SELECT_CHARACTER_BITS-1:0] cursor2Character2;
+    wire cursor2IsPositive;
+    SignalToVoltage getCursor2VoltageCharacters(
+            .clock(CLK108MHZ),
+            .signal(yCursor2),
+            .scaleExponent(verticalScaleExponentChannelSelected),
+            .scale(verticalScaleFactorTimes8ChannelSelected),
+            .character2(cursor2Character4),
+            .character1(cursor2Character3),
+            .character0(cursor2Character2),
+            .isPositive(cursor2IsPositive));
+            
+    wire [RGB_BITS-1:0] cursor2Pixel;
+    wire [DISPLAY_X_BITS-1:0] cursor2DisplayX;
+    wire [DISPLAY_Y_BITS-1:0] cursor2DisplayY;
+    wire cursor2Hsync, cursor2Vsync, cursor2Blank;
+    HorizontalLineSprite #(.RGB_COLOR(12'hF6F), //light purple
+    .ADDITIONAL_LINE_PIXELS(1'b0)) cursor2Line
+            (.clock(CLK108MHZ),
+            .level(yCursor2),
+            .displayX(cursor1DisplayX),
+            .displayY(cursor1DisplayY),
+            .hsync(cursor1Hsync),
+            .vsync(cursor1Vsync),
+            .blank(cursor1Blank),
+            .previousPixel(cursor1Pixel),
+            .pixel(cursor2Pixel),
+            .spriteDisplayX(cursor2DisplayX),
+            .spriteDisplayY(cursor2DisplayY),
+            .spriteHsync(cursor2Hsync),
+            .spriteVsync(cursor2Vsync),
+            .spriteBlank(cursor2Blank)
+            );
+    
     //compute characters to diplay time per division
     wire [TIME_PER_DIVISION_BITS-1:0] timePerDivision;  
     SamplePeriodToTimePerDivision mySamplePeriodToTimePerDivision
@@ -687,24 +749,24 @@ module Oscilloscope_v1
             );
             
     //compute characters to display max value
-    wire [SELECT_CHARACTER_BITS-1:0] maxCharacter4;
-    wire [SELECT_CHARACTER_BITS-1:0] maxCharacter3;
-    wire [SELECT_CHARACTER_BITS-1:0] maxCharacter2;
+    (* mark_debug = "true" *) wire [SELECT_CHARACTER_BITS-1:0] maxCharacter4;
+    (* mark_debug = "true" *) wire [SELECT_CHARACTER_BITS-1:0] maxCharacter3;
+    (* mark_debug = "true" *) wire [SELECT_CHARACTER_BITS-1:0] maxCharacter2;
     wire maxVoltageIsPositive;
     SignalToVoltage getMaxVoltageCharacters(
             .clock(CLK108MHZ),
             .signal(chanelSelected ? signalMaxChannel2 : signalMaxChannel1),
             .scaleExponent(verticalScaleExponentChannelSelected),
             .scale(verticalScaleFactorTimes8ChannelSelected),
-            .character2(maxVoltageCharacter4),
-            .character1(maxVoltageCharacter3),
-            .character0(maxVoltageCharacter2),
+            .character2(maxCharacter4),
+            .character1(maxCharacter3),
+            .character0(maxCharacter2),
             .isPositive(maxVoltageIsPositive));
             
     //compute characters to display min value
-    wire [SELECT_CHARACTER_BITS-1:0] minCharacter4;
-    wire [SELECT_CHARACTER_BITS-1:0] minCharacter3;
-    wire [SELECT_CHARACTER_BITS-1:0] minCharacter2;
+    (* mark_debug = "true" *) wire [SELECT_CHARACTER_BITS-1:0] minCharacter4;
+    (* mark_debug = "true" *) wire [SELECT_CHARACTER_BITS-1:0] minCharacter3;
+    (* mark_debug = "true" *) wire [SELECT_CHARACTER_BITS-1:0] minCharacter2;
     wire minVoltageIsPositive;
     SignalToVoltage getminVoltageCharacters(
             .clock(CLK108MHZ),
@@ -750,7 +812,7 @@ module Oscilloscope_v1
     wire [SELECT_CHARACTER_BITS-1:0] maxCharacter6;
     assign maxCharacter6 = 7'd26;  //:
     wire [SELECT_CHARACTER_BITS-1:0] maxCharacter5;
-    assign maxCharacter5 = 7'd0;  //maxVoltageIsPositive ? 7'd0 : 7'd13;  //space
+    assign maxCharacter5 = maxVoltageIsPositive ? 7'd0 : 7'd13;  //space or -
 //    wire [SELECT_CHARACTER_BITS-1:0] maxCharacter4;
 //    assign maxCharacter4 = 7'd16;  //0
 //    wire [SELECT_CHARACTER_BITS-1:0] maxCharacter3;
@@ -804,7 +866,7 @@ module Oscilloscope_v1
     wire [SELECT_CHARACTER_BITS-1:0] cursor1Character6;
     assign cursor1Character6 = 7'd0;  //Space
     wire [SELECT_CHARACTER_BITS-1:0] cursor1Character5;
-    assign cursor1Character5 = cursor1IsNegative ? 7'd13 : 7'd11;  //+ or -
+    assign cursor1Character5 = cursor1IsNegative ? 7'd0 : 7'd11;  //space or -
     wire [SELECT_CHARACTER_BITS-1:0] cursor1Character4;
     assign cursor1Character4 = cursor1VoltageCharacter2;  //1
     wire [SELECT_CHARACTER_BITS-1:0] cursor1Character3;
@@ -875,17 +937,97 @@ module Oscilloscope_v1
         .xCursor1_1(X_CURSOR_1_CHARACTER_1), .yCursor1_1(Y_CURSOR_1), .cursor1Character1(cursor1Character1),
         .xCursor1_0(X_CURSOR_1_CHARACTER_0), .yCursor1_0(Y_CURSOR_1), .cursor1Character0(cursor1Character0),
         
-        .displayX(cursor1DisplayX), .displayY(cursor1DisplayY), 
-        .hsync(cursor1Hsync), .vsync(cursor1Vsync), .blank(cursor1Blank), .previousPixel(cursor1Pixel),
+        .displayX(cursor2DisplayX), .displayY(cursor2DisplayY), 
+        .hsync(cursor2Hsync), .vsync(cursor2Vsync), .blank(cursor2Blank), .previousPixel(cursor2Pixel),
         .displayXOut(textDisplayX), .displayYOut(textDisplayY), 
-        .hsyncOut(textHsync), .vsyncOut(textVsync), .blankOut(textBlank), .pixel(textPixel), .addressA(addressA));
+        .hsyncOut(textHsync), .vsyncOut(textVsync), .blankOut(textBlank), .pixel(textPixel), .addressA());
         
-     //Text textMin
+     wire [SELECT_CHARACTER_BITS-1:0] cursor2Character15;
+     assign cursor2Character15 = 7'd35;  //C
+     wire [SELECT_CHARACTER_BITS-1:0] cursor2Character14;
+     assign cursor2Character14 = 7'd85;  //u
+     wire [SELECT_CHARACTER_BITS-1:0] cursor2Character13;
+     assign cursor2Character13 = 7'd82;  //r
+     wire [SELECT_CHARACTER_BITS-1:0] cursor2Character12;
+     assign cursor2Character12 = 7'd83;  //s
+     wire [SELECT_CHARACTER_BITS-1:0] cursor2Character11;
+     assign cursor2Character11 = 7'd79;  //o
+     wire [SELECT_CHARACTER_BITS-1:0] cursor2Character10;
+     assign cursor2Character10 = 7'd82;  //r
+     wire [SELECT_CHARACTER_BITS-1:0] cursor2Character9;
+     assign cursor2Character9 = 7'd0;  //Space
+     wire [SELECT_CHARACTER_BITS-1:0] cursor2Character8;
+     assign cursor2Character8 = 7'd18;  //2
+     wire [SELECT_CHARACTER_BITS-1:0] cursor2Character7;
+     assign cursor2Character7 = 7'd26;  //:
+     wire [SELECT_CHARACTER_BITS-1:0] cursor2Character6;
+     assign cursor2Character6 = 7'd0;  //Space
+     wire [SELECT_CHARACTER_BITS-1:0] cursor2Character5;
+     assign cursor2Character5 = cursor2IsPositive ? 7'd0 : 7'd13;  //space or -
+//     wire [SELECT_CHARACTER_BITS-1:0] cursor2Character4;
+//     assign cursor2Character4 = cursor1VoltageCharacter2;  //1
+//     wire [SELECT_CHARACTER_BITS-1:0] cursor2Character3;
+//     assign cursor2Character3 = cursor1VoltageCharacter1;  //2
+//     wire [SELECT_CHARACTER_BITS-1:0] cursor2Character2;
+//     assign cursor2Character2 = cursor1VoltageCharacter0;  //3
+     wire [SELECT_CHARACTER_BITS-1:0] cursor2Character1;
+     assign cursor2Character1 = 7'd77;  //m
+     wire [SELECT_CHARACTER_BITS-1:0] cursor2Character0;
+     assign cursor2Character0 = 7'd54;  //V
+     
+     wire text2Hsync, text2Vsync, text2Blank;
+     wire [RGB_BITS-1:0] text2Pixel;
+     wire [DISPLAY_X_BITS-1:0] text2DisplayX;
+     wire [DISPLAY_Y_BITS-1:0] text2DisplayY;
+     Text30Characters textMinCursor2ChannelSelected (.clock(CLK108MHZ), 
+     
+        .xCharacter29(X_MIN_CHARACTER_9), .yCharacter29(Y_MIN), .character29(minCharacter9), .character29Color(GREEN),
+        .xCharacter28(X_MIN_CHARACTER_8), .yCharacter28(Y_MIN), .character28(minCharacter8), .character28Color(GREEN),
+        .xCharacter27(X_MIN_CHARACTER_7), .yCharacter27(Y_MIN), .character27(minCharacter7), .character27Color(GREEN),
+        .xCharacter26(X_MIN_CHARACTER_6), .yCharacter26(Y_MIN), .character26(minCharacter6), .character26Color(GREEN),
+        .xCharacter25(X_MIN_CHARACTER_5), .yCharacter25(Y_MIN), .character25(minCharacter5), .character25Color(GREEN),
+        
+        .xCharacter24(X_MIN_CHARACTER_4), .yCharacter24(Y_MIN), .character24(minCharacter4), .character24Color(GREEN),
+        .xCharacter23(X_MIN_CHARACTER_3), .yCharacter23(Y_MIN), .character23(minCharacter3), .character23Color(GREEN),
+        .xCharacter22(X_MIN_CHARACTER_2), .yCharacter22(Y_MIN), .character22(minCharacter2), .character22Color(GREEN),
+        .xCharacter21(X_MIN_CHARACTER_1), .yCharacter21(Y_MIN), .character21(minCharacter1), .character21Color(GREEN),
+        .xCharacter20(X_MIN_CHARACTER_0), .yCharacter20(Y_MIN), .character20(minCharacter0), .character20Color(GREEN),
+        
+        .xCharacter19(X_CURSOR_2_CHARACTER_15), .yCharacter19(Y_CURSOR_2), .character19(cursor2Character15), .character19Color(LIGHT_PURPLE),
+        .xCharacter18(X_CURSOR_2_CHARACTER_14), .yCharacter18(Y_CURSOR_2), .character18(cursor2Character14), .character18Color(LIGHT_PURPLE),
+        .xCharacter17(X_CURSOR_2_CHARACTER_13), .yCharacter17(Y_CURSOR_2), .character17(cursor2Character13), .character17Color(LIGHT_PURPLE),
+        .xCharacter16(X_CURSOR_2_CHARACTER_12), .yCharacter16(Y_CURSOR_2), .character16(cursor2Character12), .character16Color(LIGHT_PURPLE),
+        .xCharacter15(X_CURSOR_2_CHARACTER_11), .yCharacter15(Y_CURSOR_2), .character15(cursor2Character11), .character15Color(LIGHT_PURPLE),
+        
+        .xCharacter14(X_CURSOR_2_CHARACTER_10), .yCharacter14(Y_CURSOR_2), .character14(cursor2Character10), .character14Color(LIGHT_PURPLE),    
+        .xCharacter13(X_CURSOR_2_CHARACTER_9), .yCharacter13(Y_CURSOR_2), .character13(cursor2Character9), .character13Color(LIGHT_PURPLE),
+        .xCharacter12(X_CURSOR_2_CHARACTER_8), .yCharacter12(Y_CURSOR_2), .character12(cursor2Character8), .character12Color(LIGHT_PURPLE),
+        .xCharacter11(X_CURSOR_2_CHARACTER_7), .yCharacter11(Y_CURSOR_2), .character11(cursor2Character7), .character11Color(LIGHT_PURPLE),
+        .xCharacter10(X_CURSOR_2_CHARACTER_6), .yCharacter10(Y_CURSOR_2), .character10(cursor2Character6), .character10Color(LIGHT_PURPLE),
+        
+        .xCharacter9(X_CURSOR_2_CHARACTER_5), .yCharacter9(), .character9(cursor2Character4), .character9Color(LIGHT_PURPLE),
+        .xCharacter8(X_CURSOR_2_CHARACTER_4), .yCharacter8(), .character8(cursor2Character3), .character8Color(LIGHT_PURPLE),
+        .xCharacter7(X_CURSOR_2_CHARACTER_3), .yCharacter7(), .character7(cursor2Character2), .character7Color(LIGHT_PURPLE),
+        .xCharacter6(X_CURSOR_2_CHARACTER_2), .yCharacter6(), .character6(cursor2Character1), .character6Color(LIGHT_PURPLE),
+        .xCharacter5(X_CURSOR_2_CHARACTER_1), .yCharacter5(), .character5(cursor2Character0), .character5Color(LIGHT_PURPLE),
+        
+        .xCharacter4(X_CURSOR_2_CHARACTER_0), .yCharacter4(), .character4(), .character4Color(LIGHT_PURPLE),
+        .xCharacter3(X_CHANNEL_SELECTED), .yCharacter3(Y_CHANNEL_SELECTED), .character3(channelSelected ? 7'd18 : 7'd17), 
+            .character3Color(channelSelected ? BLUE : YELLOW),
+        .xCharacter2(), .yCharacter2(), .character2(), .character2Color(),
+        .xCharacter1(), .yCharacter1(), .character1(), .character1Color(),
+        .xCharacter0(), .yCharacter0(), .character0(), .character0Color(),
+        
+        .displayX(textDisplayX), .displayY(textDisplayY), 
+        .hsync(textHsync), .vsync(textVsync), .blank(textBlank), .previousPixel(textPixel),
+        .displayXOut(text2DisplayX), .displayYOut(text2DisplayY), 
+        .hsyncOut(text2Hsync), .vsyncOut(text2Vsync), .blankOut(text2Blank), .pixel(text2Pixel), .addressA()
+     );
      
      always @(posedge CLK108MHZ) begin
-        {VGA_R, VGA_G, VGA_B} <= !textBlank ? textPixel : 12'b0;
-        VGA_HS <= tlsHsync;
-        VGA_VS <= tlsVsync;
+        {VGA_R, VGA_G, VGA_B} <= !text2Blank ? text2Pixel : 12'b0;
+        VGA_HS <= text2Hsync;
+        VGA_VS <= text2Vsync;
      end
          
 endmodule

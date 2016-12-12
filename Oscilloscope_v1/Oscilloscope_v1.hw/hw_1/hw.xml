@@ -4,18 +4,27 @@
 <!-- Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.        -->
 
 <hwsession version="1" minor="1">
-  <device name="xc7a100t_0" gui_info=""/>
+  <device name="xc7a100t_0" gui_info="dashboard1=hw_ila_1[xc7a100t_0/hw_ila_1/Settings=ILA_SETTINGS_1;xc7a100t_0/hw_ila_1/Trigger Setup=ILA_TRIGGER_1;xc7a100t_0/hw_ila_1/Capture Setup=ILA_CAPTURE_1;xc7a100t_0/hw_ila_1/Status=ILA_STATUS_1;xc7a100t_0/hw_ila_1/Waveform=ILA_WAVE_1;]"/>
   <ObjectList object_type="hw_device" gui_info="">
     <Object name="xc7a100t_0" gui_info="">
-      <Properties Property="PROBES.FILE" value=""/>
+      <Properties Property="PROBES.FILE" value="$_project_name_.runs/impl_1/debug_nets.ltx"/>
       <Properties Property="PROGRAM.HW_BITSTREAM" value="$_project_name_.runs/impl_1/$_project_name_.bit"/>
     </Object>
   </ObjectList>
   <ObjectList object_type="hw_ila" gui_info="">
+    <Object name="hw_ila_1" gui_info="">
+      <Properties Property="CONTROL.TRIGGER_CONDITION" value="AND"/>
+      <Properties Property="CORE_REFRESH_RATE_MS" value="500"/>
+    </Object>
     <Object name="u_ila_0" gui_info="">
       <Properties Property="CONTROL.TRIGGER_CONDITION" value="AND"/>
       <Properties Property="CORE_REFRESH_RATE_MS" value="500"/>
     </Object>
+  </ObjectList>
+  <ObjectList object_type="hw_probe" gui_info="">
+    <Object name="mysfft/dataOut[11:0]" gui_info="Trigger Setup=0"/>
+    <Object name="mysfft/haddr[9:0]" gui_info="Trigger Setup=0"/>
+    <Object name="mysfft/wea" gui_info="Trigger Setup=0"/>
   </ObjectList>
   <probeset name="hw project" active="false">
     <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
@@ -286,6 +295,511 @@
     </probe>
     <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
       <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq6&apos;hXX"/>
+        <Option Id="COMPARE_VALUE.0" value="eq6&apos;hXX"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_1"/>
+        <Option Id="MAP" value="probe2[9:4]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="netlist"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq6&apos;hXX"/>
+      </probeOptions>
+      <nets>
+        <net name="fftReadAddress[9]"/>
+        <net name="fftReadAddress[8]"/>
+        <net name="fftReadAddress[7]"/>
+        <net name="fftReadAddress[6]"/>
+        <net name="fftReadAddress[5]"/>
+        <net name="fftReadAddress[4]"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="bus" source="netlist" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq12&apos;hXXX"/>
+        <Option Id="COMPARE_VALUE.0" value="eq12&apos;hXXX"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_1"/>
+        <Option Id="MAP" value="probe1[11:0]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="netlist"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq12&apos;hXXX"/>
+      </probeOptions>
+      <nets>
+        <net name="mysfft/dataOut[11]"/>
+        <net name="mysfft/dataOut[10]"/>
+        <net name="mysfft/dataOut[9]"/>
+        <net name="mysfft/dataOut[8]"/>
+        <net name="mysfft/dataOut[7]"/>
+        <net name="mysfft/dataOut[6]"/>
+        <net name="mysfft/dataOut[5]"/>
+        <net name="mysfft/dataOut[4]"/>
+        <net name="mysfft/dataOut[3]"/>
+        <net name="mysfft/dataOut[2]"/>
+        <net name="mysfft/dataOut[1]"/>
+        <net name="mysfft/dataOut[0]"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="bus" source="netlist" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq12&apos;hXXX"/>
+        <Option Id="COMPARE_VALUE.0" value="eq12&apos;hXXX"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_1"/>
+        <Option Id="MAP" value="probe0[11:0]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="netlist"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq12&apos;hXXX"/>
+      </probeOptions>
+      <nets>
+        <net name="mysfft/frame_tdata[11]"/>
+        <net name="mysfft/frame_tdata[10]"/>
+        <net name="mysfft/frame_tdata[9]"/>
+        <net name="mysfft/frame_tdata[8]"/>
+        <net name="mysfft/frame_tdata[7]"/>
+        <net name="mysfft/frame_tdata[6]"/>
+        <net name="mysfft/frame_tdata[5]"/>
+        <net name="mysfft/frame_tdata[4]"/>
+        <net name="mysfft/frame_tdata[3]"/>
+        <net name="mysfft/frame_tdata[2]"/>
+        <net name="mysfft/frame_tdata[1]"/>
+        <net name="mysfft/frame_tdata[0]"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq12&apos;hXXX"/>
+        <Option Id="COMPARE_VALUE.0" value="eq12&apos;hXXX"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_1"/>
+        <Option Id="MAP" value="probe6[27:16]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="netlist"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq12&apos;hXXX"/>
+      </probeOptions>
+      <nets>
+        <net name="mysfft/frame_tdata[27]"/>
+        <net name="mysfft/frame_tdata[26]"/>
+        <net name="mysfft/frame_tdata[25]"/>
+        <net name="mysfft/frame_tdata[24]"/>
+        <net name="mysfft/frame_tdata[23]"/>
+        <net name="mysfft/frame_tdata[22]"/>
+        <net name="mysfft/frame_tdata[21]"/>
+        <net name="mysfft/frame_tdata[20]"/>
+        <net name="mysfft/frame_tdata[19]"/>
+        <net name="mysfft/frame_tdata[18]"/>
+        <net name="mysfft/frame_tdata[17]"/>
+        <net name="mysfft/frame_tdata[16]"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq32&apos;hXXXX_XXXX"/>
+        <Option Id="COMPARE_VALUE.0" value="eq32&apos;hXXXX_XXXX"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_1"/>
+        <Option Id="MAP" value="probe4[31:0]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="netlist"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq32&apos;hXXXX_XXXX"/>
+      </probeOptions>
+      <nets>
+        <net name="mysfft/frame_tdata[31]"/>
+        <net name="mysfft/frame_tdata[30]"/>
+        <net name="mysfft/frame_tdata[29]"/>
+        <net name="mysfft/frame_tdata[28]"/>
+        <net name="mysfft/frame_tdata[27]"/>
+        <net name="mysfft/frame_tdata[26]"/>
+        <net name="mysfft/frame_tdata[25]"/>
+        <net name="mysfft/frame_tdata[24]"/>
+        <net name="mysfft/frame_tdata[23]"/>
+        <net name="mysfft/frame_tdata[22]"/>
+        <net name="mysfft/frame_tdata[21]"/>
+        <net name="mysfft/frame_tdata[20]"/>
+        <net name="mysfft/frame_tdata[19]"/>
+        <net name="mysfft/frame_tdata[18]"/>
+        <net name="mysfft/frame_tdata[17]"/>
+        <net name="mysfft/frame_tdata[16]"/>
+        <net name="mysfft/frame_tdata[15]"/>
+        <net name="mysfft/frame_tdata[14]"/>
+        <net name="mysfft/frame_tdata[13]"/>
+        <net name="mysfft/frame_tdata[12]"/>
+        <net name="mysfft/frame_tdata[11]"/>
+        <net name="mysfft/frame_tdata[10]"/>
+        <net name="mysfft/frame_tdata[9]"/>
+        <net name="mysfft/frame_tdata[8]"/>
+        <net name="mysfft/frame_tdata[7]"/>
+        <net name="mysfft/frame_tdata[6]"/>
+        <net name="mysfft/frame_tdata[5]"/>
+        <net name="mysfft/frame_tdata[4]"/>
+        <net name="mysfft/frame_tdata[3]"/>
+        <net name="mysfft/frame_tdata[2]"/>
+        <net name="mysfft/frame_tdata[1]"/>
+        <net name="mysfft/frame_tdata[0]"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq12&apos;hXXX"/>
+        <Option Id="COMPARE_VALUE.0" value="eq12&apos;hXXX"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_1"/>
+        <Option Id="MAP" value="probe6[11:0]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="netlist"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq12&apos;hXXX"/>
+      </probeOptions>
+      <nets>
+        <net name="mysfft/frame_tdata_1[11]"/>
+        <net name="mysfft/frame_tdata_1[10]"/>
+        <net name="mysfft/frame_tdata_1[9]"/>
+        <net name="mysfft/frame_tdata_1[8]"/>
+        <net name="mysfft/frame_tdata_1[7]"/>
+        <net name="mysfft/frame_tdata_1[6]"/>
+        <net name="mysfft/frame_tdata_1[5]"/>
+        <net name="mysfft/frame_tdata_1[4]"/>
+        <net name="mysfft/frame_tdata_1[3]"/>
+        <net name="mysfft/frame_tdata_1[2]"/>
+        <net name="mysfft/frame_tdata_1[1]"/>
+        <net name="mysfft/frame_tdata_1[0]"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq1&apos;bX"/>
+        <Option Id="COMPARE_VALUE.0" value="eq1&apos;bX"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_1"/>
+        <Option Id="MAP" value="probe6[0]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="netlist"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq1&apos;bX"/>
+      </probeOptions>
+      <nets>
+        <net name="mysfft/frame_tlast"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq1&apos;bX"/>
+        <Option Id="COMPARE_VALUE.0" value="eq1&apos;bX"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_1"/>
+        <Option Id="MAP" value="probe7[0]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="netlist"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq1&apos;bX"/>
+      </probeOptions>
+      <nets>
+        <net name="mysfft/frame_tready"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq1&apos;bX"/>
+        <Option Id="COMPARE_VALUE.0" value="eq1&apos;bX"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_1"/>
+        <Option Id="MAP" value="probe8[0]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="netlist"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq1&apos;bX"/>
+      </probeOptions>
+      <nets>
+        <net name="mysfft/frame_tvalid"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="bus" source="netlist" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq10&apos;hXXX"/>
+        <Option Id="COMPARE_VALUE.0" value="eq10&apos;hXXX"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_1"/>
+        <Option Id="MAP" value="probe3[9:0]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="netlist"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq10&apos;hXXX"/>
+      </probeOptions>
+      <nets>
+        <net name="mysfft/haddr[9]"/>
+        <net name="mysfft/haddr[8]"/>
+        <net name="mysfft/haddr[7]"/>
+        <net name="mysfft/haddr[6]"/>
+        <net name="mysfft/haddr[5]"/>
+        <net name="mysfft/haddr[4]"/>
+        <net name="mysfft/haddr[3]"/>
+        <net name="mysfft/haddr[2]"/>
+        <net name="mysfft/haddr[1]"/>
+        <net name="mysfft/haddr[0]"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="bus" source="netlist" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq16&apos;hXXXX"/>
+        <Option Id="COMPARE_VALUE.0" value="eq16&apos;hXXXX"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_1"/>
+        <Option Id="MAP" value="probe4[15:0]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="netlist"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq16&apos;hXXXX"/>
+      </probeOptions>
+      <nets>
+        <net name="mysfft/hdata[15]"/>
+        <net name="mysfft/hdata[14]"/>
+        <net name="mysfft/hdata[13]"/>
+        <net name="mysfft/hdata[12]"/>
+        <net name="mysfft/hdata[11]"/>
+        <net name="mysfft/hdata[10]"/>
+        <net name="mysfft/hdata[9]"/>
+        <net name="mysfft/hdata[8]"/>
+        <net name="mysfft/hdata[7]"/>
+        <net name="mysfft/hdata[6]"/>
+        <net name="mysfft/hdata[5]"/>
+        <net name="mysfft/hdata[4]"/>
+        <net name="mysfft/hdata[3]"/>
+        <net name="mysfft/hdata[2]"/>
+        <net name="mysfft/hdata[1]"/>
+        <net name="mysfft/hdata[0]"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="bus" source="netlist" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq16&apos;hXXXX"/>
+        <Option Id="COMPARE_VALUE.0" value="eq16&apos;hXXXX"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_1"/>
+        <Option Id="MAP" value="probe5[15:0]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="netlist"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq16&apos;hXXXX"/>
+      </probeOptions>
+      <nets>
+        <net name="mysfft/magnitude_tdata[15]"/>
+        <net name="mysfft/magnitude_tdata[14]"/>
+        <net name="mysfft/magnitude_tdata[13]"/>
+        <net name="mysfft/magnitude_tdata[12]"/>
+        <net name="mysfft/magnitude_tdata[11]"/>
+        <net name="mysfft/magnitude_tdata[10]"/>
+        <net name="mysfft/magnitude_tdata[9]"/>
+        <net name="mysfft/magnitude_tdata[8]"/>
+        <net name="mysfft/magnitude_tdata[7]"/>
+        <net name="mysfft/magnitude_tdata[6]"/>
+        <net name="mysfft/magnitude_tdata[5]"/>
+        <net name="mysfft/magnitude_tdata[4]"/>
+        <net name="mysfft/magnitude_tdata[3]"/>
+        <net name="mysfft/magnitude_tdata[2]"/>
+        <net name="mysfft/magnitude_tdata[1]"/>
+        <net name="mysfft/magnitude_tdata[0]"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq24&apos;hXX_XXXX"/>
+        <Option Id="COMPARE_VALUE.0" value="eq24&apos;hXX_XXXX"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_1"/>
+        <Option Id="MAP" value="probe5[23:0]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="netlist"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq24&apos;hXX_XXXX"/>
+      </probeOptions>
+      <nets>
+        <net name="mysfft/magnitude_tdata[23]"/>
+        <net name="mysfft/magnitude_tdata[22]"/>
+        <net name="mysfft/magnitude_tdata[21]"/>
+        <net name="mysfft/magnitude_tdata[20]"/>
+        <net name="mysfft/magnitude_tdata[19]"/>
+        <net name="mysfft/magnitude_tdata[18]"/>
+        <net name="mysfft/magnitude_tdata[17]"/>
+        <net name="mysfft/magnitude_tdata[16]"/>
+        <net name="mysfft/magnitude_tdata[15]"/>
+        <net name="mysfft/magnitude_tdata[14]"/>
+        <net name="mysfft/magnitude_tdata[13]"/>
+        <net name="mysfft/magnitude_tdata[12]"/>
+        <net name="mysfft/magnitude_tdata[11]"/>
+        <net name="mysfft/magnitude_tdata[10]"/>
+        <net name="mysfft/magnitude_tdata[9]"/>
+        <net name="mysfft/magnitude_tdata[8]"/>
+        <net name="mysfft/magnitude_tdata[7]"/>
+        <net name="mysfft/magnitude_tdata[6]"/>
+        <net name="mysfft/magnitude_tdata[5]"/>
+        <net name="mysfft/magnitude_tdata[4]"/>
+        <net name="mysfft/magnitude_tdata[3]"/>
+        <net name="mysfft/magnitude_tdata[2]"/>
+        <net name="mysfft/magnitude_tdata[1]"/>
+        <net name="mysfft/magnitude_tdata[0]"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq1&apos;bX"/>
+        <Option Id="COMPARE_VALUE.0" value="eq1&apos;bX"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_1"/>
+        <Option Id="MAP" value="probe9[0]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="netlist"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq1&apos;bX"/>
+      </probeOptions>
+      <nets>
+        <net name="mysfft/magnitude_tlast"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="bus" source="netlist" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq12&apos;hXXX"/>
+        <Option Id="COMPARE_VALUE.0" value="eq12&apos;hXXX"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_1"/>
+        <Option Id="MAP" value="probe2[11:0]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="netlist"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq12&apos;hXXX"/>
+      </probeOptions>
+      <nets>
+        <net name="mysfft/magnitude_tuser[11]"/>
+        <net name="mysfft/magnitude_tuser[10]"/>
+        <net name="mysfft/magnitude_tuser[9]"/>
+        <net name="mysfft/magnitude_tuser[8]"/>
+        <net name="mysfft/magnitude_tuser[7]"/>
+        <net name="mysfft/magnitude_tuser[6]"/>
+        <net name="mysfft/magnitude_tuser[5]"/>
+        <net name="mysfft/magnitude_tuser[4]"/>
+        <net name="mysfft/magnitude_tuser[3]"/>
+        <net name="mysfft/magnitude_tuser[2]"/>
+        <net name="mysfft/magnitude_tuser[1]"/>
+        <net name="mysfft/magnitude_tuser[0]"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq1&apos;bX"/>
+        <Option Id="COMPARE_VALUE.0" value="eq1&apos;bX"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_1"/>
+        <Option Id="MAP" value="probe10[0]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="netlist"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq1&apos;bX"/>
+      </probeOptions>
+      <nets>
+        <net name="mysfft/magnitude_tvalid"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq4&apos;hX"/>
+        <Option Id="COMPARE_VALUE.0" value="eq4&apos;hX"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_1"/>
+        <Option Id="MAP" value="probe2[3:0]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="netlist"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq4&apos;hX"/>
+      </probeOptions>
+      <nets>
+        <net name="mysfft/readAddress[3]"/>
+        <net name="mysfft/readAddress[2]"/>
+        <net name="mysfft/readAddress[1]"/>
+        <net name="mysfft/readAddress[0]"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq10&apos;hXXX"/>
+        <Option Id="COMPARE_VALUE.0" value="eq10&apos;hXXX"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_1"/>
+        <Option Id="MAP" value="probe4[9:0]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="netlist"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq10&apos;hXXX"/>
+      </probeOptions>
+      <nets>
+        <net name="mysfft/readAddress[9]"/>
+        <net name="mysfft/readAddress[8]"/>
+        <net name="mysfft/readAddress[7]"/>
+        <net name="mysfft/readAddress[6]"/>
+        <net name="mysfft/readAddress[5]"/>
+        <net name="mysfft/readAddress[4]"/>
+        <net name="mysfft/readAddress[3]"/>
+        <net name="mysfft/readAddress[2]"/>
+        <net name="mysfft/readAddress[1]"/>
+        <net name="mysfft/readAddress[0]"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq1&apos;bX"/>
+        <Option Id="COMPARE_VALUE.0" value="eq1&apos;bX"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_1"/>
+        <Option Id="MAP" value="probe10[0]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="netlist"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq1&apos;bX"/>
+      </probeOptions>
+      <nets>
+        <net name="mysfft/sampleReady"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq1&apos;bX"/>
+        <Option Id="COMPARE_VALUE.0" value="eq1&apos;b1"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_1"/>
+        <Option Id="MAP" value="probe12[0]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="netlist"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq1&apos;b1"/>
+      </probeOptions>
+      <nets>
+        <net name="mysfft/wea"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
         <Option Id="CAPTURE_COMPARE_VALUE" value="eq2&apos;hX"/>
         <Option Id="COMPARE_VALUE.0" value="eq2&apos;hX"/>
         <Option Id="DISPLAY_HINT" value=""/>
@@ -304,6 +818,23 @@
     </probe>
     <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
       <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq1&apos;bX"/>
+        <Option Id="COMPARE_VALUE.0" value="eq1&apos;bX"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_1"/>
+        <Option Id="MAP" value="probe11[0]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="netlist"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq1&apos;bX"/>
+      </probeOptions>
+      <nets>
+        <net name="risingEdgeReadyChannel2"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
         <Option Id="CAPTURE_COMPARE_VALUE" value="eq2&apos;hX"/>
         <Option Id="COMPARE_VALUE.0" value="eq2&apos;hX"/>
         <Option Id="DISPLAY_HINT" value=""/>
@@ -318,6 +849,199 @@
       <nets>
         <net name="state[1]"/>
         <net name="state[0]"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq4&apos;hX"/>
+        <Option Id="COMPARE_VALUE.0" value="eq4&apos;hX"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_1"/>
+        <Option Id="MAP" value="probe4[31:28]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="netlist"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq4&apos;hX"/>
+      </probeOptions>
+      <nets>
+        <net name="u_ila_0_frame_tdata[31]"/>
+        <net name="u_ila_0_frame_tdata[30]"/>
+        <net name="u_ila_0_frame_tdata[29]"/>
+        <net name="u_ila_0_frame_tdata[28]"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq4&apos;hX"/>
+        <Option Id="COMPARE_VALUE.0" value="eq4&apos;hX"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_1"/>
+        <Option Id="MAP" value="probe6[15:12]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="netlist"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq4&apos;hX"/>
+      </probeOptions>
+      <nets>
+        <net name="u_ila_0_frame_tdata_1[15]"/>
+        <net name="u_ila_0_frame_tdata_1[14]"/>
+        <net name="u_ila_0_frame_tdata_1[13]"/>
+        <net name="u_ila_0_frame_tdata_1[12]"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq1&apos;bX"/>
+        <Option Id="COMPARE_VALUE.0" value="eq1&apos;bX"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_1"/>
+        <Option Id="MAP" value="probe5[0]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="netlist"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq1&apos;bX"/>
+      </probeOptions>
+      <nets>
+        <net name="u_ila_0_frame_tlast"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="bus" source="netlist" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq1&apos;bX"/>
+        <Option Id="COMPARE_VALUE.0" value="eq1&apos;bX"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_1"/>
+        <Option Id="MAP" value="probe5[23]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="netlist"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq1&apos;bX"/>
+      </probeOptions>
+      <nets>
+        <net name="u_ila_0_magnitude_tdata[16]"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="bus" source="netlist" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq1&apos;bX"/>
+        <Option Id="COMPARE_VALUE.0" value="eq1&apos;bX"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_1"/>
+        <Option Id="MAP" value="probe5[16]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="netlist"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq1&apos;bX"/>
+      </probeOptions>
+      <nets>
+        <net name="u_ila_0_magnitude_tdata_1[16]"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq1&apos;bX"/>
+        <Option Id="COMPARE_VALUE.0" value="eq1&apos;bX"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_1"/>
+        <Option Id="MAP" value="probe0[17]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="netlist"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq1&apos;bX"/>
+      </probeOptions>
+      <nets>
+        <net name="u_ila_0_magnitude_tdata_2[16]"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="bus" source="netlist" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq1&apos;bX"/>
+        <Option Id="COMPARE_VALUE.0" value="eq1&apos;bX"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_1"/>
+        <Option Id="MAP" value="probe5[18]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="netlist"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq1&apos;bX"/>
+      </probeOptions>
+      <nets>
+        <net name="u_ila_0_magnitude_tdata_3[16]"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="bus" source="netlist" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq1&apos;bX"/>
+        <Option Id="COMPARE_VALUE.0" value="eq1&apos;bX"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_1"/>
+        <Option Id="MAP" value="probe5[19]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="netlist"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq1&apos;bX"/>
+      </probeOptions>
+      <nets>
+        <net name="u_ila_0_magnitude_tdata_4[16]"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="bus" source="netlist" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq1&apos;bX"/>
+        <Option Id="COMPARE_VALUE.0" value="eq1&apos;bX"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_1"/>
+        <Option Id="MAP" value="probe5[20]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="netlist"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq1&apos;bX"/>
+      </probeOptions>
+      <nets>
+        <net name="u_ila_0_magnitude_tdata_5[16]"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="bus" source="netlist" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq1&apos;bX"/>
+        <Option Id="COMPARE_VALUE.0" value="eq1&apos;bX"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_1"/>
+        <Option Id="MAP" value="probe5[21]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="netlist"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq1&apos;bX"/>
+      </probeOptions>
+      <nets>
+        <net name="u_ila_0_magnitude_tdata_6[16]"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="bus" source="netlist" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq1&apos;bX"/>
+        <Option Id="COMPARE_VALUE.0" value="eq1&apos;bX"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_1"/>
+        <Option Id="MAP" value="probe5[22]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="netlist"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq1&apos;bX"/>
+      </probeOptions>
+      <nets>
+        <net name="u_ila_0_magnitude_tdata_7[16]"/>
       </nets>
     </probe>
     <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">

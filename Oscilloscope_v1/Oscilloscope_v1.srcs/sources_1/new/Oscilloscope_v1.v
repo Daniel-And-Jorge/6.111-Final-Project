@@ -141,6 +141,7 @@ module Oscilloscope_v1
                         .verticalScaleFactorTimes8Channel2(verticalScaleFactorTimes8Channel2),
                         .samplePeriod(samplePeriod), .channelSelected(channelSelected),
                         .xyDisplayMode(xyDisplayMode),
+                        .fftDisplayMode(fftDisplayMode),
                         .yCursor1(yCursor1)              
                         );
     
@@ -238,6 +239,21 @@ module Oscilloscope_v1
                              .dataOutChannel2(ADCCdataOutChannel2),
                              .rawDataOutChannel2(adccRawDataOutChannel2)
                              );
+   
+   // FFT
+   wire [9:0] fftReadAddress;
+   wire [15:0] fftDataOut;
+   SignalFFT mysfft
+       (
+       .clock(CLK108MHZ),
+       // input samples from the ADC
+       .sampleReady(adccRawReady),
+       .dataIn(adccRawDataOutChannel1),
+       // interface to get FFT results
+       .readAddress(fftReadAddress), // FFT bin (same type as Buffer for compatibility)
+       .dataOut(fftDataOut) // FFT magnitude (same type as Buffer for compatibility)
+       );
+       
 
    // edge type detector channel 1
    wire risingEdgeReadyChannel1;
@@ -491,6 +507,24 @@ module Oscilloscope_v1
                     .curveBlank(xyCurveBlank)
                     );
      
+     wire [RGB_BITS-1:0] fftPixel;
+     wire [DISPLAY_X_BITS-1:0] fftDisplayX;
+     wire [DISPLAY_Y_BITS-1:0] fftDisplayY;
+     wire fftHsync, fftVsync, fftBlank;
+     CurveFFT myCurveFFT
+            (.clock(CLK108MHZ),
+            .dataIn(fftDataOut),
+            .displayX(displayX), .displayY(displayY), .hsync(hsync), .vsync(vsync), .blank(blank),
+            .previousPixel('d0),
+            .pixel(fftPixel),
+            .address(fftReadAddress),
+            .curveDisplayX(fftDisplayX),
+            .curveDisplayY(fftDisplayY),
+            .curveHsync(fftHsync),
+            .curveVsync(fftVsync),
+            .curveBlank(fftBlank)
+            );
+     
      wire [RGB_BITS-1:0] tlsPixel;
      wire [DISPLAY_X_BITS-1:0] tlsDisplayX;
      wire [DISPLAY_Y_BITS-1:0] tlsDisplayY;
@@ -703,10 +737,17 @@ module Oscilloscope_v1
         .displayXOut(textDisplayX), .displayYOut(textDisplayY), 
         .hsyncOut(textHsync), .vsyncOut(textVsync), .blankOut(textBlank), .pixel(textPixel), .addressA(addressA));
      
+     wire [RGB_BITS-1:0] finalPixel;
+     wire finalHsync, finalVsync, finalBlank;
+     
+     assign {finalPixel, finalHsync, finalVsync, finalBlank} 
+        = fftDisplayMode ? {fftPixel, fftHsync, fftVsync, fftBlank}
+        : {textPixel, textHsync, textVsync, textBlank};
+     
      always @(posedge CLK108MHZ) begin
-        {VGA_R, VGA_G, VGA_B} <= !textBlank ? textPixel : 12'b0;
-        VGA_HS <= tlsHsync;
-        VGA_VS <= tlsVsync;
+        {VGA_R, VGA_G, VGA_B} <= !finalBlank ? finalPixel : 12'b0;
+        VGA_HS <= finalHsync;
+        VGA_VS <= finalVsync;
      end
          
 endmodule

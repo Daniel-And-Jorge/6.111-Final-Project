@@ -3,38 +3,101 @@
    <wave_state>
    </wave_state>
    <db_ref_list>
-      <db_ref path="/afs/athena.mit.edu/user/j/a/jatron/Documents/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.hw/hw_1/wave/hw_ila_data_1/hw_ila_data_1.wdb" id="1">
+      <db_ref path="/afs/athena.mit.edu/user/d/d/ddr/6.111/6.111-Final-Project/Oscilloscope_v1/Oscilloscope_v1.hw/hw_1/wave/hw_ila_data_1/hw_ila_data_1.wdb" id="1">
          <top_modules>
          </top_modules>
       </db_ref>
    </db_ref_list>
    <zoom_setting>
       <ZoomStartTime time="0fs"></ZoomStartTime>
-      <ZoomEndTime time="1010800fs"></ZoomEndTime>
-      <Cursor1Time time="0fs"></Cursor1Time>
+      <ZoomEndTime time="59400001fs"></ZoomEndTime>
+      <Cursor1Time time="1040000fs"></Cursor1Time>
    </zoom_setting>
-   <WVObjectSize size="3" />
+   <WVObjectSize size="12" />
    <wave_markers>
    </wave_markers>
-   <wvobject type="array" fp_name="verticalScaleExponentChannel1">
+   <wvobject type="array" fp_name="mysfft/dataOut">
       <obj_property name="DisplayName">FullPathName</obj_property>
-      <obj_property name="ElementShortName">verticalScaleExponentChannel1[3:0]</obj_property>
-      <obj_property name="ObjectShortName">verticalScaleExponentChannel1[3:0]</obj_property>
+      <obj_property name="ElementShortName">mysfft/dataOut[11:0]</obj_property>
+      <obj_property name="ObjectShortName">dataOut[11:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_ANALOG</obj_property>
+      <obj_property name="CellHeight">100</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="mysfft/frame_tdata">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">mysfft/frame_tdata[11:0]</obj_property>
+      <obj_property name="ObjectShortName">frame_tdata[11:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_ANALOG</obj_property>
+      <obj_property name="CellHeight">100</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="mysfft/frame_tlast">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">mysfft/frame_tlast</obj_property>
+      <obj_property name="ObjectShortName">frame_tlast</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="mysfft/frame_tready">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">mysfft/frame_tready</obj_property>
+      <obj_property name="ObjectShortName">frame_tready</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="mysfft/frame_tvalid">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">mysfft/frame_tvalid</obj_property>
+      <obj_property name="ObjectShortName">frame_tvalid</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="mysfft/haddr">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">mysfft/haddr[9:0]</obj_property>
+      <obj_property name="ObjectShortName">haddr[9:0]</obj_property>
       <obj_property name="Radix">HEXRADIX</obj_property>
       <obj_property name="LABELRADIX">true</obj_property>
    </wvobject>
-   <wvobject type="array" fp_name="verticalScaleExponentChannel2">
+   <wvobject type="array" fp_name="mysfft/hdata">
       <obj_property name="DisplayName">FullPathName</obj_property>
-      <obj_property name="ElementShortName">verticalScaleExponentChannel2[3:0]</obj_property>
-      <obj_property name="ObjectShortName">verticalScaleExponentChannel2[3:0]</obj_property>
+      <obj_property name="ElementShortName">mysfft/hdata[15:0]</obj_property>
+      <obj_property name="ObjectShortName">hdata[15:0]</obj_property>
       <obj_property name="Radix">HEXRADIX</obj_property>
       <obj_property name="LABELRADIX">true</obj_property>
    </wvobject>
-   <wvobject type="array" fp_name="verticalScaleExponentChannelSelected">
+   <wvobject type="array" fp_name="mysfft/magnitude_tdata">
       <obj_property name="DisplayName">FullPathName</obj_property>
-      <obj_property name="ElementShortName">verticalScaleExponentChannelSelected[3:0]</obj_property>
-      <obj_property name="ObjectShortName">verticalScaleExponentChannelSelected[3:0]</obj_property>
+      <obj_property name="ElementShortName">mysfft/magnitude_tdata[15:0]</obj_property>
+      <obj_property name="ObjectShortName">magnitude_tdata[15:0]</obj_property>
       <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_ANALOG</obj_property>
+      <obj_property name="CellHeight">100</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="mysfft/magnitude_tlast">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">mysfft/magnitude_tlast</obj_property>
+      <obj_property name="ObjectShortName">magnitude_tlast</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="mysfft/magnitude_tuser">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">mysfft/magnitude_tuser[11:0]</obj_property>
+      <obj_property name="ObjectShortName">magnitude_tuser[11:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="mysfft/magnitude_tvalid">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">mysfft/magnitude_tvalid</obj_property>
+      <obj_property name="ObjectShortName">magnitude_tvalid</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="mysfft/wea">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">mysfft/wea</obj_property>
+      <obj_property name="ObjectShortName">wea</obj_property>
       <obj_property name="LABELRADIX">true</obj_property>
    </wvobject>
 </wave_config>

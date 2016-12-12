@@ -33,17 +33,67 @@
     <Option Name="WTVcsLaunchSim" Val="0"/>
     <Option Name="WTRivieraLaunchSim" Val="0"/>
     <Option Name="WTActivehdlLaunchSim" Val="0"/>
-    <Option Name="WTXSimExportSim" Val="40"/>
-    <Option Name="WTModelSimExportSim" Val="40"/>
-    <Option Name="WTQuestaExportSim" Val="40"/>
-    <Option Name="WTIesExportSim" Val="40"/>
-    <Option Name="WTVcsExportSim" Val="40"/>
-    <Option Name="WTRivieraExportSim" Val="40"/>
-    <Option Name="WTActivehdlExportSim" Val="40"/>
+    <Option Name="WTXSimExportSim" Val="48"/>
+    <Option Name="WTModelSimExportSim" Val="48"/>
+    <Option Name="WTQuestaExportSim" Val="48"/>
+    <Option Name="WTIesExportSim" Val="48"/>
+    <Option Name="WTVcsExportSim" Val="48"/>
+    <Option Name="WTRivieraExportSim" Val="48"/>
+    <Option Name="WTActivehdlExportSim" Val="48"/>
   </Configuration>
   <FileSets Version="1" Minor="31">
     <FileSet Name="sources_1" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
       <Filter Type="Srcs"/>
+      <File Path="$PSRCDIR/sources_1/bd/fft_mag/fft_mag.bd">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../../Downloads/Nexys4FFTDemo-master/src/bd/fft_mag/fft_mag.bd"/>
+          <Attr Name="ImportTime" Val="1477407134"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+        <CompFileExtendedInfo CompFileName="fft_mag.bd" FileRelPathName="hw_handoff/fft_mag_bd.tcl"/>
+        <CompFileExtendedInfo CompFileName="fft_mag.bd" FileRelPathName="hw_handoff/fft_mag.hwh"/>
+        <CompFileExtendedInfo CompFileName="fft_mag.bd" FileRelPathName="fft_mag_ooc.xdc"/>
+        <CompFileExtendedInfo CompFileName="fft_mag.bd" FileRelPathName="hdl/fft_mag.v"/>
+        <CompFileExtendedInfo CompFileName="fft_mag.bd" FileRelPathName="ip/fft_mag_xlconcat_0_0/fft_mag_xlconcat_0_0.xci">
+          <Proxy FileSetName="fft_mag_xlconcat_0_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="fft_mag.bd" FileRelPathName="ip/fft_mag_xlslice_1_0/fft_mag_xlslice_1_0.xci">
+          <Proxy FileSetName="fft_mag_xlslice_1_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="fft_mag.bd" FileRelPathName="ip/fft_mag_xlslice_0_0/fft_mag_xlslice_0_0.xci">
+          <Proxy FileSetName="fft_mag_xlslice_0_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="fft_mag.bd" FileRelPathName="ip/fft_mag_xlconstant_2_0/fft_mag_xlconstant_2_0.xci">
+          <Proxy FileSetName="fft_mag_xlconstant_2_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="fft_mag.bd" FileRelPathName="ip/fft_mag_xlconstant_1_0/fft_mag_xlconstant_1_0.xci">
+          <Proxy FileSetName="fft_mag_xlconstant_1_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="fft_mag.bd" FileRelPathName="ip/fft_mag_xlconstant_0_0/fft_mag_xlconstant_0_0.xci">
+          <Proxy FileSetName="fft_mag_xlconstant_0_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="fft_mag.bd" FileRelPathName="ip/fft_mag_xfft_0_0/fft_mag_xfft_0_0.xci">
+          <Proxy FileSetName="fft_mag_xfft_0_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="fft_mag.bd" FileRelPathName="ip/fft_mag_mult_gen_1_0/fft_mag_mult_gen_1_0.xci">
+          <Proxy FileSetName="fft_mag_mult_gen_1_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="fft_mag.bd" FileRelPathName="ip/fft_mag_mult_gen_0_0/fft_mag_mult_gen_0_0.xci">
+          <Proxy FileSetName="fft_mag_mult_gen_0_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="fft_mag.bd" FileRelPathName="ip/fft_mag_cordic_0_0/fft_mag_cordic_0_0.xci">
+          <Proxy FileSetName="fft_mag_cordic_0_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="fft_mag.bd" FileRelPathName="ip/fft_mag_axis_register_slice_2_0/fft_mag_axis_register_slice_2_0.xci">
+          <Proxy FileSetName="fft_mag_axis_register_slice_2_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="fft_mag.bd" FileRelPathName="ip/fft_mag_c_addsub_0_0/fft_mag_c_addsub_0_0.xci">
+          <Proxy FileSetName="fft_mag_c_addsub_0_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="fft_mag.bd" FileRelPathName="hdl/fft_mag.hwdef"/>
+      </File>
       <File Path="$PSRCDIR/sources_1/new/XYCurve.v">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
@@ -77,6 +127,13 @@
         </FileInfo>
       </File>
       <File Path="$PSRCDIR/sources_1/new/SimultaneousSamplingXADC.v">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/new/SignalFFT.v">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
@@ -131,6 +188,13 @@
         <FileInfo>
           <Attr Name="ImportPath" Val="$PPRDIR/../../../Downloads/debounce.v"/>
           <Attr Name="ImportTime" Val="1476232733"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/new/CurveFFT.v">
+        <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -329,6 +393,98 @@
         <Option Name="UseBlackboxStub" Val="1"/>
       </Config>
     </FileSet>
+    <FileSet Name="fft_mag_axis_register_slice_2_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/fft_mag_axis_register_slice_2_0">
+      <Config>
+        <Option Name="TopModule" Val="fft_mag_axis_register_slice_2_0"/>
+        <Option Name="UseBlackboxStub" Val="1"/>
+      </Config>
+    </FileSet>
+    <FileSet Name="fft_mag_c_addsub_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/fft_mag_c_addsub_0_0">
+      <Config>
+        <Option Name="TopModule" Val="fft_mag_c_addsub_0_0"/>
+        <Option Name="UseBlackboxStub" Val="1"/>
+      </Config>
+    </FileSet>
+    <FileSet Name="fft_mag_cordic_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/fft_mag_cordic_0_0">
+      <Config>
+        <Option Name="TopModule" Val="fft_mag_cordic_0_0"/>
+        <Option Name="UseBlackboxStub" Val="1"/>
+      </Config>
+    </FileSet>
+    <FileSet Name="fft_mag_mult_gen_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/fft_mag_mult_gen_0_0">
+      <Config>
+        <Option Name="TopModule" Val="fft_mag_mult_gen_0_0"/>
+        <Option Name="UseBlackboxStub" Val="1"/>
+      </Config>
+    </FileSet>
+    <FileSet Name="fft_mag_mult_gen_1_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/fft_mag_mult_gen_1_0">
+      <Config>
+        <Option Name="TopModule" Val="fft_mag_mult_gen_1_0"/>
+        <Option Name="UseBlackboxStub" Val="1"/>
+      </Config>
+    </FileSet>
+    <FileSet Name="fft_mag_xfft_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/fft_mag_xfft_0_0">
+      <Config>
+        <Option Name="TopModule" Val="fft_mag_xfft_0_0"/>
+        <Option Name="UseBlackboxStub" Val="1"/>
+      </Config>
+    </FileSet>
+    <FileSet Name="fft_mag_xlconstant_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/fft_mag_xlconstant_0_0">
+      <Config>
+        <Option Name="TopModule" Val="fft_mag_xlconstant_0_0"/>
+        <Option Name="UseBlackboxStub" Val="1"/>
+      </Config>
+    </FileSet>
+    <FileSet Name="fft_mag_xlconstant_1_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/fft_mag_xlconstant_1_0">
+      <Config>
+        <Option Name="TopModule" Val="fft_mag_xlconstant_1_0"/>
+        <Option Name="UseBlackboxStub" Val="1"/>
+      </Config>
+    </FileSet>
+    <FileSet Name="fft_mag_xlconstant_2_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/fft_mag_xlconstant_2_0">
+      <Config>
+        <Option Name="TopModule" Val="fft_mag_xlconstant_2_0"/>
+        <Option Name="UseBlackboxStub" Val="1"/>
+      </Config>
+    </FileSet>
+    <FileSet Name="fft_mag_xlslice_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/fft_mag_xlslice_0_0">
+      <Config>
+        <Option Name="TopModule" Val="fft_mag_xlslice_0_0"/>
+        <Option Name="UseBlackboxStub" Val="1"/>
+      </Config>
+    </FileSet>
+    <FileSet Name="fft_mag_xlslice_1_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/fft_mag_xlslice_1_0">
+      <Config>
+        <Option Name="TopModule" Val="fft_mag_xlslice_1_0"/>
+        <Option Name="UseBlackboxStub" Val="1"/>
+      </Config>
+    </FileSet>
+    <FileSet Name="fft_mag_xlconcat_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/fft_mag_xlconcat_0_0">
+      <Config>
+        <Option Name="TopModule" Val="fft_mag_xlconcat_0_0"/>
+        <Option Name="UseBlackboxStub" Val="1"/>
+      </Config>
+    </FileSet>
+    <FileSet Name="blk_mem_fft" Type="BlockSrcs" RelSrcDir="$PSRCDIR/blk_mem_fft">
+      <File Path="$PSRCDIR/sources_1/ip/blk_mem_fft.xcix">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/ip/blk_mem_fft/blk_mem_fft.xci">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <Config>
+        <Option Name="TopModule" Val="blk_mem_fft"/>
+        <Option Name="UseBlackboxStub" Val="1"/>
+      </Config>
+    </FileSet>
   </FileSets>
   <Simulators>
     <Simulator Name="XSim">
@@ -356,9 +512,9 @@
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Flow_RuntimeOptimized" Flow="Vivado Synthesis 2016"/>
         <Step Id="synth_design">
-          <Option Id="Directive">0</Option>
           <Option Id="FsmExtraction">0</Option>
           <Option Id="FlattenHierarchy">1</Option>
+          <Option Id="Directive">0</Option>
         </Step>
       </Strategy>
       <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
@@ -384,16 +540,113 @@
       </Strategy>
       <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
     </Run>
-    <Run Id="impl_1" Type="Ft2:EntireDesign" Part="xc7a100tcsg324-3" ConstrsSet="constrs_1" Description="Default settings for Implementation." State="current" Dir="$PRUNDIR/impl_1" SynthRun="synth_1" IncludeInArchive="true">
+    <Run Id="fft_mag_axis_register_slice_2_0_synth_1" Type="Ft3:Synth" SrcSet="fft_mag_axis_register_slice_2_0" Part="xc7a100tcsg324-3" ConstrsSet="fft_mag_axis_register_slice_2_0" Description="Vivado Synthesis Defaults" Dir="$PRUNDIR/fft_mag_axis_register_slice_2_0_synth_1" IncludeInArchive="true">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2016"/>
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2016"/>
+        <Step Id="synth_design"/>
+      </Strategy>
+      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
+    </Run>
+    <Run Id="fft_mag_c_addsub_0_0_synth_1" Type="Ft3:Synth" SrcSet="fft_mag_c_addsub_0_0" Part="xc7a100tcsg324-3" ConstrsSet="fft_mag_c_addsub_0_0" Description="Vivado Synthesis Defaults" Dir="$PRUNDIR/fft_mag_c_addsub_0_0_synth_1" IncludeInArchive="true">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2016"/>
+        <Step Id="synth_design"/>
+      </Strategy>
+      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
+    </Run>
+    <Run Id="fft_mag_cordic_0_0_synth_1" Type="Ft3:Synth" SrcSet="fft_mag_cordic_0_0" Part="xc7a100tcsg324-3" ConstrsSet="fft_mag_cordic_0_0" Description="Vivado Synthesis Defaults" Dir="$PRUNDIR/fft_mag_cordic_0_0_synth_1" IncludeInArchive="true">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2016"/>
+        <Step Id="synth_design"/>
+      </Strategy>
+      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
+    </Run>
+    <Run Id="fft_mag_mult_gen_0_0_synth_1" Type="Ft3:Synth" SrcSet="fft_mag_mult_gen_0_0" Part="xc7a100tcsg324-3" ConstrsSet="fft_mag_mult_gen_0_0" Description="Vivado Synthesis Defaults" Dir="$PRUNDIR/fft_mag_mult_gen_0_0_synth_1" IncludeInArchive="true">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2016"/>
+        <Step Id="synth_design"/>
+      </Strategy>
+      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
+    </Run>
+    <Run Id="fft_mag_mult_gen_1_0_synth_1" Type="Ft3:Synth" SrcSet="fft_mag_mult_gen_1_0" Part="xc7a100tcsg324-3" ConstrsSet="fft_mag_mult_gen_1_0" Description="Vivado Synthesis Defaults" Dir="$PRUNDIR/fft_mag_mult_gen_1_0_synth_1" IncludeInArchive="true">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2016"/>
+        <Step Id="synth_design"/>
+      </Strategy>
+      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
+    </Run>
+    <Run Id="fft_mag_xfft_0_0_synth_1" Type="Ft3:Synth" SrcSet="fft_mag_xfft_0_0" Part="xc7a100tcsg324-3" ConstrsSet="fft_mag_xfft_0_0" Description="Vivado Synthesis Defaults" Dir="$PRUNDIR/fft_mag_xfft_0_0_synth_1" IncludeInArchive="true">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2016"/>
+        <Step Id="synth_design"/>
+      </Strategy>
+      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
+    </Run>
+    <Run Id="fft_mag_xlconstant_0_0_synth_1" Type="Ft3:Synth" SrcSet="fft_mag_xlconstant_0_0" Part="xc7a100tcsg324-3" ConstrsSet="fft_mag_xlconstant_0_0" Description="Vivado Synthesis Defaults" Dir="$PRUNDIR/fft_mag_xlconstant_0_0_synth_1" IncludeInArchive="true">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2016"/>
+        <Step Id="synth_design"/>
+      </Strategy>
+      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
+    </Run>
+    <Run Id="fft_mag_xlconstant_1_0_synth_1" Type="Ft3:Synth" SrcSet="fft_mag_xlconstant_1_0" Part="xc7a100tcsg324-3" ConstrsSet="fft_mag_xlconstant_1_0" Description="Vivado Synthesis Defaults" Dir="$PRUNDIR/fft_mag_xlconstant_1_0_synth_1" IncludeInArchive="true">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2016"/>
+        <Step Id="synth_design"/>
+      </Strategy>
+      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
+    </Run>
+    <Run Id="fft_mag_xlconstant_2_0_synth_1" Type="Ft3:Synth" SrcSet="fft_mag_xlconstant_2_0" Part="xc7a100tcsg324-3" ConstrsSet="fft_mag_xlconstant_2_0" Description="Vivado Synthesis Defaults" Dir="$PRUNDIR/fft_mag_xlconstant_2_0_synth_1" IncludeInArchive="true">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2016"/>
+        <Step Id="synth_design"/>
+      </Strategy>
+      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
+    </Run>
+    <Run Id="fft_mag_xlslice_0_0_synth_1" Type="Ft3:Synth" SrcSet="fft_mag_xlslice_0_0" Part="xc7a100tcsg324-3" ConstrsSet="fft_mag_xlslice_0_0" Description="Vivado Synthesis Defaults" Dir="$PRUNDIR/fft_mag_xlslice_0_0_synth_1" IncludeInArchive="true">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2016"/>
+        <Step Id="synth_design"/>
+      </Strategy>
+      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
+    </Run>
+    <Run Id="fft_mag_xlslice_1_0_synth_1" Type="Ft3:Synth" SrcSet="fft_mag_xlslice_1_0" Part="xc7a100tcsg324-3" ConstrsSet="fft_mag_xlslice_1_0" Description="Vivado Synthesis Defaults" Dir="$PRUNDIR/fft_mag_xlslice_1_0_synth_1" IncludeInArchive="true">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2016"/>
+        <Step Id="synth_design"/>
+      </Strategy>
+      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
+    </Run>
+    <Run Id="fft_mag_xlconcat_0_0_synth_1" Type="Ft3:Synth" SrcSet="fft_mag_xlconcat_0_0" Part="xc7a100tcsg324-3" ConstrsSet="fft_mag_xlconcat_0_0" Description="Vivado Synthesis Defaults" Dir="$PRUNDIR/fft_mag_xlconcat_0_0_synth_1" IncludeInArchive="true">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2016"/>
+        <Step Id="synth_design"/>
+      </Strategy>
+      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
+    </Run>
+    <Run Id="blk_mem_fft_synth_1" Type="Ft3:Synth" SrcSet="blk_mem_fft" Part="xc7a100tcsg324-3" ConstrsSet="blk_mem_fft" Description="Vivado Synthesis Defaults" Dir="$PRUNDIR/blk_mem_fft_synth_1" IncludeInArchive="true">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2016"/>
+        <Step Id="synth_design"/>
+      </Strategy>
+      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
+    </Run>
+    <Run Id="impl_1" Type="Ft2:EntireDesign" Part="xc7a100tcsg324-3" ConstrsSet="constrs_1" Description="Each implementation step trades design performance for better runtime. Physical optimization (phys_opt_design) is disabled." State="current" Dir="$PRUNDIR/impl_1" SynthRun="synth_1" IncludeInArchive="true">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Flow_RuntimeOptimized" Flow="Vivado Implementation 2016"/>
         <Step Id="init_design"/>
-        <Step Id="opt_design"/>
+        <Step Id="opt_design">
+          <Option Id="Directive">4</Option>
+        </Step>
         <Step Id="power_opt_design"/>
-        <Step Id="place_design"/>
+        <Step Id="place_design">
+          <Option Id="Directive">15</Option>
+        </Step>
         <Step Id="post_place_power_opt_design"/>
         <Step Id="phys_opt_design"/>
-        <Step Id="route_design"/>
+        <Step Id="route_design">
+          <Option Id="Directive">5</Option>
+        </Step>
         <Step Id="post_route_phys_opt_design"/>
         <Step Id="write_bitstream"/>
       </Strategy>
@@ -428,6 +681,188 @@
       </Strategy>
     </Run>
     <Run Id="clk_wiz_0_impl_1" Type="Ft2:EntireDesign" Part="xc7a100tcsg324-3" ConstrsSet="clk_wiz_0" Description="Default settings for Implementation." SynthRun="clk_wiz_0_synth_1" IncludeInArchive="false">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2016"/>
+        <Step Id="init_design"/>
+        <Step Id="opt_design"/>
+        <Step Id="power_opt_design"/>
+        <Step Id="place_design"/>
+        <Step Id="post_place_power_opt_design"/>
+        <Step Id="phys_opt_design"/>
+        <Step Id="route_design"/>
+        <Step Id="post_route_phys_opt_design"/>
+        <Step Id="write_bitstream"/>
+      </Strategy>
+    </Run>
+    <Run Id="fft_mag_axis_register_slice_2_0_impl_1" Type="Ft2:EntireDesign" Part="xc7a100tcsg324-3" ConstrsSet="fft_mag_axis_register_slice_2_0" Description="Default settings for Implementation." SynthRun="fft_mag_axis_register_slice_2_0_synth_1" IncludeInArchive="false">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2016"/>
+        <Step Id="init_design"/>
+        <Step Id="opt_design"/>
+        <Step Id="power_opt_design"/>
+        <Step Id="place_design"/>
+        <Step Id="post_place_power_opt_design"/>
+        <Step Id="phys_opt_design"/>
+        <Step Id="route_design"/>
+        <Step Id="post_route_phys_opt_design"/>
+        <Step Id="write_bitstream"/>
+      </Strategy>
+    </Run>
+    <Run Id="fft_mag_c_addsub_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7a100tcsg324-3" ConstrsSet="fft_mag_c_addsub_0_0" Description="Default settings for Implementation." SynthRun="fft_mag_c_addsub_0_0_synth_1" IncludeInArchive="false">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2016"/>
+        <Step Id="init_design"/>
+        <Step Id="opt_design"/>
+        <Step Id="power_opt_design"/>
+        <Step Id="place_design"/>
+        <Step Id="post_place_power_opt_design"/>
+        <Step Id="phys_opt_design"/>
+        <Step Id="route_design"/>
+        <Step Id="post_route_phys_opt_design"/>
+        <Step Id="write_bitstream"/>
+      </Strategy>
+    </Run>
+    <Run Id="fft_mag_cordic_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7a100tcsg324-3" ConstrsSet="fft_mag_cordic_0_0" Description="Default settings for Implementation." SynthRun="fft_mag_cordic_0_0_synth_1" IncludeInArchive="false">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2016"/>
+        <Step Id="init_design"/>
+        <Step Id="opt_design"/>
+        <Step Id="power_opt_design"/>
+        <Step Id="place_design"/>
+        <Step Id="post_place_power_opt_design"/>
+        <Step Id="phys_opt_design"/>
+        <Step Id="route_design"/>
+        <Step Id="post_route_phys_opt_design"/>
+        <Step Id="write_bitstream"/>
+      </Strategy>
+    </Run>
+    <Run Id="fft_mag_mult_gen_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7a100tcsg324-3" ConstrsSet="fft_mag_mult_gen_0_0" Description="Default settings for Implementation." SynthRun="fft_mag_mult_gen_0_0_synth_1" IncludeInArchive="false">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2016"/>
+        <Step Id="init_design"/>
+        <Step Id="opt_design"/>
+        <Step Id="power_opt_design"/>
+        <Step Id="place_design"/>
+        <Step Id="post_place_power_opt_design"/>
+        <Step Id="phys_opt_design"/>
+        <Step Id="route_design"/>
+        <Step Id="post_route_phys_opt_design"/>
+        <Step Id="write_bitstream"/>
+      </Strategy>
+    </Run>
+    <Run Id="fft_mag_mult_gen_1_0_impl_1" Type="Ft2:EntireDesign" Part="xc7a100tcsg324-3" ConstrsSet="fft_mag_mult_gen_1_0" Description="Default settings for Implementation." SynthRun="fft_mag_mult_gen_1_0_synth_1" IncludeInArchive="false">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2016"/>
+        <Step Id="init_design"/>
+        <Step Id="opt_design"/>
+        <Step Id="power_opt_design"/>
+        <Step Id="place_design"/>
+        <Step Id="post_place_power_opt_design"/>
+        <Step Id="phys_opt_design"/>
+        <Step Id="route_design"/>
+        <Step Id="post_route_phys_opt_design"/>
+        <Step Id="write_bitstream"/>
+      </Strategy>
+    </Run>
+    <Run Id="fft_mag_xfft_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7a100tcsg324-3" ConstrsSet="fft_mag_xfft_0_0" Description="Default settings for Implementation." SynthRun="fft_mag_xfft_0_0_synth_1" IncludeInArchive="false">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2016"/>
+        <Step Id="init_design"/>
+        <Step Id="opt_design"/>
+        <Step Id="power_opt_design"/>
+        <Step Id="place_design"/>
+        <Step Id="post_place_power_opt_design"/>
+        <Step Id="phys_opt_design"/>
+        <Step Id="route_design"/>
+        <Step Id="post_route_phys_opt_design"/>
+        <Step Id="write_bitstream"/>
+      </Strategy>
+    </Run>
+    <Run Id="fft_mag_xlconstant_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7a100tcsg324-3" ConstrsSet="fft_mag_xlconstant_0_0" Description="Default settings for Implementation." SynthRun="fft_mag_xlconstant_0_0_synth_1" IncludeInArchive="false">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2016"/>
+        <Step Id="init_design"/>
+        <Step Id="opt_design"/>
+        <Step Id="power_opt_design"/>
+        <Step Id="place_design"/>
+        <Step Id="post_place_power_opt_design"/>
+        <Step Id="phys_opt_design"/>
+        <Step Id="route_design"/>
+        <Step Id="post_route_phys_opt_design"/>
+        <Step Id="write_bitstream"/>
+      </Strategy>
+    </Run>
+    <Run Id="fft_mag_xlconstant_1_0_impl_1" Type="Ft2:EntireDesign" Part="xc7a100tcsg324-3" ConstrsSet="fft_mag_xlconstant_1_0" Description="Default settings for Implementation." SynthRun="fft_mag_xlconstant_1_0_synth_1" IncludeInArchive="false">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2016"/>
+        <Step Id="init_design"/>
+        <Step Id="opt_design"/>
+        <Step Id="power_opt_design"/>
+        <Step Id="place_design"/>
+        <Step Id="post_place_power_opt_design"/>
+        <Step Id="phys_opt_design"/>
+        <Step Id="route_design"/>
+        <Step Id="post_route_phys_opt_design"/>
+        <Step Id="write_bitstream"/>
+      </Strategy>
+    </Run>
+    <Run Id="fft_mag_xlconstant_2_0_impl_1" Type="Ft2:EntireDesign" Part="xc7a100tcsg324-3" ConstrsSet="fft_mag_xlconstant_2_0" Description="Default settings for Implementation." SynthRun="fft_mag_xlconstant_2_0_synth_1" IncludeInArchive="false">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2016"/>
+        <Step Id="init_design"/>
+        <Step Id="opt_design"/>
+        <Step Id="power_opt_design"/>
+        <Step Id="place_design"/>
+        <Step Id="post_place_power_opt_design"/>
+        <Step Id="phys_opt_design"/>
+        <Step Id="route_design"/>
+        <Step Id="post_route_phys_opt_design"/>
+        <Step Id="write_bitstream"/>
+      </Strategy>
+    </Run>
+    <Run Id="fft_mag_xlslice_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7a100tcsg324-3" ConstrsSet="fft_mag_xlslice_0_0" Description="Default settings for Implementation." SynthRun="fft_mag_xlslice_0_0_synth_1" IncludeInArchive="false">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2016"/>
+        <Step Id="init_design"/>
+        <Step Id="opt_design"/>
+        <Step Id="power_opt_design"/>
+        <Step Id="place_design"/>
+        <Step Id="post_place_power_opt_design"/>
+        <Step Id="phys_opt_design"/>
+        <Step Id="route_design"/>
+        <Step Id="post_route_phys_opt_design"/>
+        <Step Id="write_bitstream"/>
+      </Strategy>
+    </Run>
+    <Run Id="fft_mag_xlslice_1_0_impl_1" Type="Ft2:EntireDesign" Part="xc7a100tcsg324-3" ConstrsSet="fft_mag_xlslice_1_0" Description="Default settings for Implementation." SynthRun="fft_mag_xlslice_1_0_synth_1" IncludeInArchive="false">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2016"/>
+        <Step Id="init_design"/>
+        <Step Id="opt_design"/>
+        <Step Id="power_opt_design"/>
+        <Step Id="place_design"/>
+        <Step Id="post_place_power_opt_design"/>
+        <Step Id="phys_opt_design"/>
+        <Step Id="route_design"/>
+        <Step Id="post_route_phys_opt_design"/>
+        <Step Id="write_bitstream"/>
+      </Strategy>
+    </Run>
+    <Run Id="fft_mag_xlconcat_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7a100tcsg324-3" ConstrsSet="fft_mag_xlconcat_0_0" Description="Default settings for Implementation." SynthRun="fft_mag_xlconcat_0_0_synth_1" IncludeInArchive="false">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2016"/>
+        <Step Id="init_design"/>
+        <Step Id="opt_design"/>
+        <Step Id="power_opt_design"/>
+        <Step Id="place_design"/>
+        <Step Id="post_place_power_opt_design"/>
+        <Step Id="phys_opt_design"/>
+        <Step Id="route_design"/>
+        <Step Id="post_route_phys_opt_design"/>
+        <Step Id="write_bitstream"/>
+      </Strategy>
+    </Run>
+    <Run Id="blk_mem_fft_impl_1" Type="Ft2:EntireDesign" Part="xc7a100tcsg324-3" ConstrsSet="blk_mem_fft" Description="Default settings for Implementation." SynthRun="blk_mem_fft_synth_1" IncludeInArchive="false">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2016"/>
         <Step Id="init_design"/>

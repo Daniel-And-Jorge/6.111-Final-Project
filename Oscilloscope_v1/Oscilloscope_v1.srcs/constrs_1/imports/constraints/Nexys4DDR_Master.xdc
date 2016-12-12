@@ -326,3 +326,75 @@ set_property MARK_DEBUG false [get_nets {yCursor1ToVoltage/voltageAbsoluteValue[
 set_property MARK_DEBUG false [get_nets {yCursor1ToVoltage/voltageAbsoluteValue[0]}]
 connect_debug_port u_ila_0/probe5 [get_nets [list {cursor1Voltage[0]} {cursor1Voltage[1]} {cursor1Voltage[2]} {cursor1Voltage[3]} {cursor1Voltage[4]} {cursor1Voltage[5]} {cursor1Voltage[6]} {cursor1Voltage[7]} {cursor1Voltage[8]} {cursor1Voltage[9]}]]
 
+
+
+
+
+connect_debug_port u_ila_0/probe4 [get_nets [list {mysfft/readAddress[0]} {mysfft/readAddress[1]} {mysfft/readAddress[2]} {mysfft/readAddress[3]} {mysfft/readAddress[4]} {mysfft/readAddress[5]} {mysfft/readAddress[6]} {mysfft/readAddress[7]} {mysfft/readAddress[8]} {mysfft/readAddress[9]}]]
+
+create_debug_core u_ila_0 ila
+set_property ALL_PROBE_SAME_MU true [get_debug_cores u_ila_0]
+set_property ALL_PROBE_SAME_MU_CNT 1 [get_debug_cores u_ila_0]
+set_property C_ADV_TRIGGER false [get_debug_cores u_ila_0]
+set_property C_DATA_DEPTH 16384 [get_debug_cores u_ila_0]
+set_property C_EN_STRG_QUAL false [get_debug_cores u_ila_0]
+set_property C_INPUT_PIPE_STAGES 0 [get_debug_cores u_ila_0]
+set_property C_TRIGIN_EN false [get_debug_cores u_ila_0]
+set_property C_TRIGOUT_EN false [get_debug_cores u_ila_0]
+set_property port_width 1 [get_debug_ports u_ila_0/clk]
+connect_debug_port u_ila_0/clk [get_nets [list ClockDivider/inst/clk_out1]]
+set_property PROBE_TYPE DATA_AND_TRIGGER [get_debug_ports u_ila_0/probe0]
+set_property port_width 12 [get_debug_ports u_ila_0/probe0]
+connect_debug_port u_ila_0/probe0 [get_nets [list {mysfft/frame_tdata[0]} {mysfft/frame_tdata[1]} {mysfft/frame_tdata[2]} {mysfft/frame_tdata[3]} {mysfft/frame_tdata[4]} {mysfft/frame_tdata[5]} {mysfft/frame_tdata[6]} {mysfft/frame_tdata[7]} {mysfft/frame_tdata[8]} {mysfft/frame_tdata[9]} {mysfft/frame_tdata[10]} {mysfft/frame_tdata[11]}]]
+create_debug_port u_ila_0 probe
+set_property PROBE_TYPE DATA_AND_TRIGGER [get_debug_ports u_ila_0/probe1]
+set_property port_width 12 [get_debug_ports u_ila_0/probe1]
+connect_debug_port u_ila_0/probe1 [get_nets [list {mysfft/dataOut[0]} {mysfft/dataOut[1]} {mysfft/dataOut[2]} {mysfft/dataOut[3]} {mysfft/dataOut[4]} {mysfft/dataOut[5]} {mysfft/dataOut[6]} {mysfft/dataOut[7]} {mysfft/dataOut[8]} {mysfft/dataOut[9]} {mysfft/dataOut[10]} {mysfft/dataOut[11]}]]
+create_debug_port u_ila_0 probe
+set_property PROBE_TYPE DATA_AND_TRIGGER [get_debug_ports u_ila_0/probe2]
+set_property port_width 12 [get_debug_ports u_ila_0/probe2]
+connect_debug_port u_ila_0/probe2 [get_nets [list {mysfft/magnitude_tuser[0]} {mysfft/magnitude_tuser[1]} {mysfft/magnitude_tuser[2]} {mysfft/magnitude_tuser[3]} {mysfft/magnitude_tuser[4]} {mysfft/magnitude_tuser[5]} {mysfft/magnitude_tuser[6]} {mysfft/magnitude_tuser[7]} {mysfft/magnitude_tuser[8]} {mysfft/magnitude_tuser[9]} {mysfft/magnitude_tuser[10]} {mysfft/magnitude_tuser[11]}]]
+create_debug_port u_ila_0 probe
+set_property PROBE_TYPE DATA_AND_TRIGGER [get_debug_ports u_ila_0/probe3]
+set_property port_width 10 [get_debug_ports u_ila_0/probe3]
+connect_debug_port u_ila_0/probe3 [get_nets [list {mysfft/haddr[0]} {mysfft/haddr[1]} {mysfft/haddr[2]} {mysfft/haddr[3]} {mysfft/haddr[4]} {mysfft/haddr[5]} {mysfft/haddr[6]} {mysfft/haddr[7]} {mysfft/haddr[8]} {mysfft/haddr[9]}]]
+create_debug_port u_ila_0 probe
+set_property PROBE_TYPE DATA_AND_TRIGGER [get_debug_ports u_ila_0/probe4]
+set_property port_width 16 [get_debug_ports u_ila_0/probe4]
+connect_debug_port u_ila_0/probe4 [get_nets [list {mysfft/hdata[0]} {mysfft/hdata[1]} {mysfft/hdata[2]} {mysfft/hdata[3]} {mysfft/hdata[4]} {mysfft/hdata[5]} {mysfft/hdata[6]} {mysfft/hdata[7]} {mysfft/hdata[8]} {mysfft/hdata[9]} {mysfft/hdata[10]} {mysfft/hdata[11]} {mysfft/hdata[12]} {mysfft/hdata[13]} {mysfft/hdata[14]} {mysfft/hdata[15]}]]
+create_debug_port u_ila_0 probe
+set_property PROBE_TYPE DATA_AND_TRIGGER [get_debug_ports u_ila_0/probe5]
+set_property port_width 24 [get_debug_ports u_ila_0/probe5]
+connect_debug_port u_ila_0/probe5 [get_nets [list {mysfft/magnitude_tdata[0]} {mysfft/magnitude_tdata[1]} {mysfft/magnitude_tdata[2]} {mysfft/magnitude_tdata[3]} {mysfft/magnitude_tdata[4]} {mysfft/magnitude_tdata[5]} {mysfft/magnitude_tdata[6]} {mysfft/magnitude_tdata[7]} {mysfft/magnitude_tdata[8]} {mysfft/magnitude_tdata[9]} {mysfft/magnitude_tdata[10]} {mysfft/magnitude_tdata[11]} {mysfft/magnitude_tdata[12]} {mysfft/magnitude_tdata[13]} {mysfft/magnitude_tdata[14]} {mysfft/magnitude_tdata[15]} {mysfft/magnitude_tdata[16]} {mysfft/magnitude_tdata[17]} {mysfft/magnitude_tdata[18]} {mysfft/magnitude_tdata[19]} {mysfft/magnitude_tdata[20]} {mysfft/magnitude_tdata[21]} {mysfft/magnitude_tdata[22]} {mysfft/magnitude_tdata[23]}]]
+create_debug_port u_ila_0 probe
+set_property PROBE_TYPE DATA_AND_TRIGGER [get_debug_ports u_ila_0/probe6]
+set_property port_width 1 [get_debug_ports u_ila_0/probe6]
+connect_debug_port u_ila_0/probe6 [get_nets [list mysfft/frame_tlast]]
+create_debug_port u_ila_0 probe
+set_property PROBE_TYPE DATA_AND_TRIGGER [get_debug_ports u_ila_0/probe7]
+set_property port_width 1 [get_debug_ports u_ila_0/probe7]
+connect_debug_port u_ila_0/probe7 [get_nets [list mysfft/frame_tready]]
+create_debug_port u_ila_0 probe
+set_property PROBE_TYPE DATA_AND_TRIGGER [get_debug_ports u_ila_0/probe8]
+set_property port_width 1 [get_debug_ports u_ila_0/probe8]
+connect_debug_port u_ila_0/probe8 [get_nets [list mysfft/frame_tvalid]]
+create_debug_port u_ila_0 probe
+set_property PROBE_TYPE DATA_AND_TRIGGER [get_debug_ports u_ila_0/probe9]
+set_property port_width 1 [get_debug_ports u_ila_0/probe9]
+connect_debug_port u_ila_0/probe9 [get_nets [list mysfft/magnitude_tlast]]
+create_debug_port u_ila_0 probe
+set_property PROBE_TYPE DATA_AND_TRIGGER [get_debug_ports u_ila_0/probe10]
+set_property port_width 1 [get_debug_ports u_ila_0/probe10]
+connect_debug_port u_ila_0/probe10 [get_nets [list mysfft/magnitude_tvalid]]
+create_debug_port u_ila_0 probe
+set_property PROBE_TYPE DATA_AND_TRIGGER [get_debug_ports u_ila_0/probe11]
+set_property port_width 1 [get_debug_ports u_ila_0/probe11]
+connect_debug_port u_ila_0/probe11 [get_nets [list mysfft/sampleReady]]
+create_debug_port u_ila_0 probe
+set_property PROBE_TYPE DATA_AND_TRIGGER [get_debug_ports u_ila_0/probe12]
+set_property port_width 1 [get_debug_ports u_ila_0/probe12]
+connect_debug_port u_ila_0/probe12 [get_nets [list mysfft/wea]]
+set_property C_CLK_INPUT_FREQ_HZ 300000000 [get_debug_cores dbg_hub]
+set_property C_ENABLE_CLK_DIVIDER false [get_debug_cores dbg_hub]
+set_property C_USER_SCAN_CHAIN 1 [get_debug_cores dbg_hub]
+connect_debug_port dbg_hub/clk [get_nets CLK108MHZ]

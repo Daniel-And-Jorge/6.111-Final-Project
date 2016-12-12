@@ -43,6 +43,7 @@ module ScopeSettings
      output reg [SAMPLE_PERIOD_BITS-1:0]samplePeriod = 0,
      output reg channelSelected,
      output wire xyDisplayMode,
+     output wire fftDisplayMode,
      output reg signed [DISPLAY_Y_BITS-1:0] yCursor1 = 12'd0,
      output reg signed [DISPLAY_Y_BITS-1:0] yCursor2 = 12'd0
     );
@@ -63,6 +64,7 @@ module ScopeSettings
     reg [COUNT_BITS-1:0] count;
     
     assign xyDisplayMode = sw[8];
+    assign fftDisplayMode = sw[9];
     
     always @(posedge clock) begin
         // manual adjust

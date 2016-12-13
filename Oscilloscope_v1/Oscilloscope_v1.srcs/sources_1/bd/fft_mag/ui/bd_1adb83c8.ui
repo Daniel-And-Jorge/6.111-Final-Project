@@ -1,0 +1,43 @@
+{
+   guistr: "# # String gsaved with Nlview 6.5.12  2016-01-29 bk=1.3547 VDI=39 GEI=35 GUI=JA:1.6
+#  -string -flagsOSRD
+preplace port frame -pg 1 -y 290 -defaultsOSRD
+preplace port event_tlast_missing -pg 1 -y 20 -defaultsOSRD
+preplace port clk -pg 1 -y 490 -defaultsOSRD
+preplace port magnitude -pg 1 -y 290 -defaultsOSRD
+preplace portBus scaling -pg 1 -y 390 -defaultsOSRD
+preplace inst xlslice_0 -pg 1 -lvl 4 -y 40 -defaultsOSRD
+preplace inst xlslice_1 -pg 1 -lvl 4 -y 130 -defaultsOSRD
+preplace inst xlconstant_0 -pg 1 -lvl 3 -y 520 -defaultsOSRD
+preplace inst xlconstant_1 -pg 1 -lvl 1 -y 440 -defaultsOSRD
+preplace inst xlconstant_2 -pg 1 -lvl 1 -y 340 -defaultsOSRD
+preplace inst xlconcat_0 -pg 1 -lvl 2 -y 390 -defaultsOSRD
+preplace inst mult_gen_0 -pg 1 -lvl 5 -y 80 -defaultsOSRD
+preplace inst c_addsub_0 -pg 1 -lvl 6 -y 210 -defaultsOSRD
+preplace inst xfft_0 -pg 1 -lvl 3 -y 330 -defaultsOSRD
+preplace inst mult_gen_1 -pg 1 -lvl 5 -y 210 -defaultsOSRD
+preplace inst cordic_0 -pg 1 -lvl 7 -y 290 -defaultsOSRD
+preplace inst axis_register_slice_2 -pg 1 -lvl 4 -y 270 -defaultsOSRD
+preplace netloc xlconstant_1_dout 1 1 3 160 320 380 460 810
+preplace netloc mult_gen_1_P 1 5 1 N
+preplace netloc xlconstant_2_dout 1 1 1 NJ
+preplace netloc xlslice_1_Dout 1 4 1 1100
+preplace netloc scaling_1 1 0 2 NJ 390 NJ
+preplace netloc S_AXIS_DATA_1 1 0 3 NJ 290 NJ 290 NJ
+preplace netloc xfft_0_M_AXIS_DATA 1 3 1 N
+preplace netloc xlconcat_0_dout 1 2 1 370
+preplace netloc xlconstant_0_dout 1 3 1 NJ
+preplace netloc clk_1 1 0 7 NJ 490 NJ 470 390 470 830 350 1140 340 NJ 340 NJ
+preplace netloc xfft_0_m_axis_data_tdata 1 3 1 810
+preplace netloc xfft_0_event_tlast_missing 1 3 5 NJ 180 NJ 10 NJ 10 NJ 10 NJ
+preplace netloc mult_gen_0_P 1 5 1 1300
+preplace netloc axis_register_slice_2_m_axis_tlast 1 4 3 N 280 NJ 280 NJ
+preplace netloc axis_register_slice_2_m_axis_tvalid 1 4 3 1110 0 NJ 0 NJ
+preplace netloc cordic_0_M_AXIS_DOUT 1 7 1 NJ
+preplace netloc axis_register_slice_2_m_axis_tuser 1 4 3 N 300 NJ 300 NJ
+preplace netloc c_addsub_0_S 1 6 1 1480
+preplace netloc xlslice_0_Dout 1 4 1 1130
+levelinfo -pg 1 0 90 270 600 970 1220 1390 1680 1890 -top -10 -bot 570
+",
+}
+0

@@ -30,6 +30,11 @@ module CurveFFT
     );
 
     // 1 bin per pixel, with the selected range
+    wire inHorizontalRange;
+    //assign inHorizontalRange = curveDisplayX < 1024;
+    
+    //wire [DISPLAY_Y_BITS-1:0]dataScreenLocation = inHorizontalRange ? DISPLAY_HEIGHT - (dataIn >> 4) : DISPLAY_HEIGHT;
+    
     wire [DISPLAY_Y_BITS-1:0]dataScreenLocation = DISPLAY_HEIGHT - (dataIn >> 4);
     reg pixelOn;
     

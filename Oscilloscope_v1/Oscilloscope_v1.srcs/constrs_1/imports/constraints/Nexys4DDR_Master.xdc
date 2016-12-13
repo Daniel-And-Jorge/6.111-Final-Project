@@ -252,97 +252,69 @@ set_property -dict {PACKAGE_PIN B12 IOSTANDARD LVCMOS33} [get_ports VGA_VS]
 #set_property -dict { PACKAGE_PIN L13   IOSTANDARD LVCMOS33 } [get_ports { QSPI_CSN }]; #IO_L6P_T0_FCS_B_14 Sch=qspi_csn
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-connect_debug_port u_ila_0/probe0 [get_nets [list {state[0]} {state[1]}]]
-connect_debug_port u_ila_0/probe1 [get_nets [list {previousState[0]} {previousState[1]}]]
-
-
-connect_debug_port u_ila_0/probe1 [get_nets [list {cursor1VoltageCharacter1[0]} {cursor1VoltageCharacter1[1]} {cursor1VoltageCharacter1[2]} {cursor1VoltageCharacter1[3]} {cursor1VoltageCharacter1[4]} {cursor1VoltageCharacter1[5]} {cursor1VoltageCharacter1[6]}]]
-connect_debug_port u_ila_0/probe2 [get_nets [list {cursor1VoltageCharacter0[0]} {cursor1VoltageCharacter0[1]} {cursor1VoltageCharacter0[2]} {cursor1VoltageCharacter0[3]} {cursor1VoltageCharacter0[4]} {cursor1VoltageCharacter0[5]} {cursor1VoltageCharacter0[6]}]]
-connect_debug_port u_ila_0/probe3 [get_nets [list {cursor1Voltage[0]} {cursor1Voltage[1]} {cursor1Voltage[2]} {cursor1Voltage[3]} {cursor1Voltage[4]} {cursor1Voltage[5]} {cursor1Voltage[6]} {cursor1Voltage[7]} {cursor1Voltage[8]} {cursor1Voltage[9]}]]
-connect_debug_port u_ila_0/probe4 [get_nets [list {cursor1Number2[0]} {cursor1Number2[1]} {cursor1Number2[2]} {cursor1Number2[3]}]]
-connect_debug_port u_ila_0/probe5 [get_nets [list {cursor1Number1[0]} {cursor1Number1[1]} {cursor1Number1[2]} {cursor1Number1[3]}]]
-connect_debug_port u_ila_0/probe6 [get_nets [list {cursor1Number0[0]} {cursor1Number0[1]} {cursor1Number0[2]} {cursor1Number0[3]}]]
-
-
-
-
-
-
-set_property MARK_DEBUG true [get_nets {cursor1Voltage[9]}]
-set_property MARK_DEBUG true [get_nets {cursor1Voltage[8]}]
-set_property MARK_DEBUG true [get_nets {cursor1Voltage[7]}]
-set_property MARK_DEBUG true [get_nets {cursor1Voltage[6]}]
-set_property MARK_DEBUG true [get_nets {cursor1Voltage[5]}]
-set_property MARK_DEBUG true [get_nets {cursor1Voltage[4]}]
-set_property MARK_DEBUG true [get_nets {cursor1Voltage[3]}]
-set_property MARK_DEBUG true [get_nets {cursor1Voltage[2]}]
-set_property MARK_DEBUG true [get_nets {cursor1Voltage[1]}]
-set_property MARK_DEBUG true [get_nets {cursor1Voltage[0]}]
-set_property MARK_DEBUG false [get_nets {yCursor1ToVoltage/voltage[9]}]
-set_property MARK_DEBUG false [get_nets {yCursor1ToVoltage/voltage[8]}]
-set_property MARK_DEBUG false [get_nets {yCursor1ToVoltage/voltage[2]}]
-set_property MARK_DEBUG false [get_nets {yCursor1ToVoltage/voltage[0]}]
-set_property MARK_DEBUG false [get_nets {yCursor1ToVoltage/voltage[7]}]
-set_property MARK_DEBUG false [get_nets {yCursor1ToVoltage/voltage[5]}]
-set_property MARK_DEBUG false [get_nets {yCursor1ToVoltage/voltage[1]}]
-set_property MARK_DEBUG false [get_nets {yCursor1ToVoltage/voltage[6]}]
-set_property MARK_DEBUG false [get_nets {yCursor1ToVoltage/voltage[3]}]
-set_property MARK_DEBUG false [get_nets {yCursor1ToVoltage/voltage[4]}]
-set_property MARK_DEBUG false [get_nets {yCursor1ToVoltage/voltageAbsoluteValue[9]}]
-set_property MARK_DEBUG false [get_nets {yCursor1ToVoltage/voltageAbsoluteValue[7]}]
-set_property MARK_DEBUG false [get_nets {yCursor1ToVoltage/voltageAbsoluteValue[5]}]
-set_property MARK_DEBUG false [get_nets {yCursor1ToVoltage/voltageAbsoluteValue[3]}]
-set_property MARK_DEBUG false [get_nets {yCursor1ToVoltage/voltageAbsoluteValue[1]}]
-set_property MARK_DEBUG false [get_nets {yCursor1ToVoltage/voltageAbsoluteValue[6]}]
-set_property MARK_DEBUG false [get_nets {yCursor1ToVoltage/voltageAbsoluteValue[4]}]
-set_property MARK_DEBUG false [get_nets {yCursor1ToVoltage/voltageAbsoluteValue[2]}]
-set_property MARK_DEBUG false [get_nets {yCursor1ToVoltage/voltageAbsoluteValue[8]}]
-set_property MARK_DEBUG false [get_nets {yCursor1ToVoltage/voltageAbsoluteValue[0]}]
-connect_debug_port u_ila_0/probe5 [get_nets [list {cursor1Voltage[0]} {cursor1Voltage[1]} {cursor1Voltage[2]} {cursor1Voltage[3]} {cursor1Voltage[4]} {cursor1Voltage[5]} {cursor1Voltage[6]} {cursor1Voltage[7]} {cursor1Voltage[8]} {cursor1Voltage[9]}]]
-
-
-set_property MARK_DEBUG false [get_nets {yCursor1[10]}]
-set_property MARK_DEBUG false [get_nets {yCursor1[9]}]
-set_property MARK_DEBUG false [get_nets {yCursor1[11]}]
-set_property MARK_DEBUG false [get_nets {yCursor1[8]}]
-set_property MARK_DEBUG false [get_nets {yCursor1[7]}]
-set_property MARK_DEBUG false [get_nets {yCursor1[6]}]
-set_property MARK_DEBUG false [get_nets {yCursor1[4]}]
-set_property MARK_DEBUG false [get_nets {yCursor1[3]}]
-set_property MARK_DEBUG false [get_nets {yCursor1[2]}]
-set_property MARK_DEBUG false [get_nets {yCursor1[0]}]
-set_property MARK_DEBUG false [get_nets {yCursor1[5]}]
-set_property MARK_DEBUG false [get_nets {yCursor1[1]}]
-
-connect_debug_port u_ila_0/probe0 [get_nets [list {getMaxVoltageCharacters/signal[0]} {getMaxVoltageCharacters/signal[1]} {getMaxVoltageCharacters/signal[2]} {getMaxVoltageCharacters/signal[3]} {getMaxVoltageCharacters/signal[4]} {getMaxVoltageCharacters/signal[5]} {getMaxVoltageCharacters/signal[6]} {getMaxVoltageCharacters/signal[7]} {getMaxVoltageCharacters/signal[8]} {getMaxVoltageCharacters/signal[9]} {getMaxVoltageCharacters/signal[10]} {getMaxVoltageCharacters/signal[11]}]]
-connect_debug_port u_ila_0/probe1 [get_nets [list {getMaxVoltageCharacters/character0[0]} {getMaxVoltageCharacters/character0[1]} {getMaxVoltageCharacters/character0[2]} {getMaxVoltageCharacters/character0[3]} {getMaxVoltageCharacters/character0[4]} {getMaxVoltageCharacters/character0[5]} {getMaxVoltageCharacters/character0[6]}]]
-connect_debug_port u_ila_0/probe2 [get_nets [list {getMaxVoltageCharacters/character2[0]} {getMaxVoltageCharacters/character2[1]} {getMaxVoltageCharacters/character2[2]} {getMaxVoltageCharacters/character2[3]} {getMaxVoltageCharacters/character2[4]} {getMaxVoltageCharacters/character2[5]} {getMaxVoltageCharacters/character2[6]}]]
-connect_debug_port u_ila_0/probe3 [get_nets [list {getMaxVoltageCharacters/character1[0]} {getMaxVoltageCharacters/character1[1]} {getMaxVoltageCharacters/character1[2]} {getMaxVoltageCharacters/character1[3]} {getMaxVoltageCharacters/character1[4]} {getMaxVoltageCharacters/character1[5]} {getMaxVoltageCharacters/character1[6]}]]
-connect_debug_port u_ila_0/probe4 [get_nets [list {getMaxVoltageCharacters/scale[0]} {getMaxVoltageCharacters/scale[1]} {getMaxVoltageCharacters/scale[2]} {getMaxVoltageCharacters/scale[3]} {getMaxVoltageCharacters/scale[4]} {getMaxVoltageCharacters/scale[5]} {getMaxVoltageCharacters/scale[6]} {getMaxVoltageCharacters/scale[7]} {getMaxVoltageCharacters/scale[8]} {getMaxVoltageCharacters/scale[9]}]]
-connect_debug_port u_ila_0/probe5 [get_nets [list {getMaxVoltageCharacters/scaleExponent[0]} {getMaxVoltageCharacters/scaleExponent[1]} {getMaxVoltageCharacters/scaleExponent[2]} {getMaxVoltageCharacters/scaleExponent[3]}]]
-connect_debug_port u_ila_0/probe9 [get_nets [list {getminVoltageCharacters/scale[0]} {getminVoltageCharacters/scale[1]} {getminVoltageCharacters/scale[2]} {getminVoltageCharacters/scale[3]} {getminVoltageCharacters/scale[4]} {getminVoltageCharacters/scale[5]} {getminVoltageCharacters/scale[6]} {getminVoltageCharacters/scale[7]} {getminVoltageCharacters/scale[8]} {getminVoltageCharacters/scale[9]}]]
-connect_debug_port u_ila_0/probe12 [get_nets [list {getMaxVoltageCharacters/voltageAbsoluteValue[0]} {getMaxVoltageCharacters/voltageAbsoluteValue[1]} {getMaxVoltageCharacters/voltageAbsoluteValue[2]} {getMaxVoltageCharacters/voltageAbsoluteValue[3]} {getMaxVoltageCharacters/voltageAbsoluteValue[4]} {getMaxVoltageCharacters/voltageAbsoluteValue[5]} {getMaxVoltageCharacters/voltageAbsoluteValue[6]} {getMaxVoltageCharacters/voltageAbsoluteValue[7]} {getMaxVoltageCharacters/voltageAbsoluteValue[8]} {getMaxVoltageCharacters/voltageAbsoluteValue[9]}]]
-connect_debug_port u_ila_0/probe13 [get_nets [list {getminVoltageCharacters/voltage[0]} {getminVoltageCharacters/voltage[1]} {getminVoltageCharacters/voltage[2]} {getminVoltageCharacters/voltage[3]} {getminVoltageCharacters/voltage[4]} {getminVoltageCharacters/voltage[5]} {getminVoltageCharacters/voltage[6]} {getminVoltageCharacters/voltage[7]} {getminVoltageCharacters/voltage[8]} {getminVoltageCharacters/voltage[9]}]]
-connect_debug_port u_ila_0/probe14 [get_nets [list {getMaxVoltageCharacters/voltageNumber0[0]} {getMaxVoltageCharacters/voltageNumber0[1]} {getMaxVoltageCharacters/voltageNumber0[2]} {getMaxVoltageCharacters/voltageNumber0[3]}]]
-connect_debug_port u_ila_0/probe16 [get_nets [list {getMaxVoltageCharacters/voltageNumber2[0]} {getMaxVoltageCharacters/voltageNumber2[1]} {getMaxVoltageCharacters/voltageNumber2[2]} {getMaxVoltageCharacters/voltageNumber2[3]}]]
-connect_debug_port u_ila_0/probe17 [get_nets [list {getMaxVoltageCharacters/voltageNumber1[0]} {getMaxVoltageCharacters/voltageNumber1[1]} {getMaxVoltageCharacters/voltageNumber1[2]} {getMaxVoltageCharacters/voltageNumber1[3]}]]
-connect_debug_port u_ila_0/probe20 [get_nets [list {getMaxVoltageCharacters/voltage[0]} {getMaxVoltageCharacters/voltage[1]} {getMaxVoltageCharacters/voltage[2]} {getMaxVoltageCharacters/voltage[3]} {getMaxVoltageCharacters/voltage[4]} {getMaxVoltageCharacters/voltage[5]} {getMaxVoltageCharacters/voltage[6]} {getMaxVoltageCharacters/voltage[7]} {getMaxVoltageCharacters/voltage[8]} {getMaxVoltageCharacters/voltage[9]}]]
-connect_debug_port u_ila_0/probe23 [get_nets [list getMaxVoltageCharacters/isPositive]]
-connect_debug_port u_ila_0/probe24 [get_nets [list getMaxVoltageCharacters/voltageIsNegative]]
-
-
-
+create_debug_core u_ila_0 ila
+set_property ALL_PROBE_SAME_MU true [get_debug_cores u_ila_0]
+set_property ALL_PROBE_SAME_MU_CNT 1 [get_debug_cores u_ila_0]
+set_property C_ADV_TRIGGER false [get_debug_cores u_ila_0]
+set_property C_DATA_DEPTH 8192 [get_debug_cores u_ila_0]
+set_property C_EN_STRG_QUAL false [get_debug_cores u_ila_0]
+set_property C_INPUT_PIPE_STAGES 0 [get_debug_cores u_ila_0]
+set_property C_TRIGIN_EN false [get_debug_cores u_ila_0]
+set_property C_TRIGOUT_EN false [get_debug_cores u_ila_0]
+set_property port_width 1 [get_debug_ports u_ila_0/clk]
+connect_debug_port u_ila_0/clk [get_nets [list ClockDivider/inst/clk_out1]]
+set_property PROBE_TYPE DATA_AND_TRIGGER [get_debug_ports u_ila_0/probe0]
+set_property port_width 32 [get_debug_ports u_ila_0/probe0]
+connect_debug_port u_ila_0/probe0 [get_nets [list {mysfft/frame_tdata[0]} {mysfft/frame_tdata[1]} {mysfft/frame_tdata[2]} {mysfft/frame_tdata[3]} {mysfft/frame_tdata[4]} {mysfft/frame_tdata[5]} {mysfft/frame_tdata[6]} {mysfft/frame_tdata[7]} {mysfft/frame_tdata[8]} {mysfft/frame_tdata[9]} {mysfft/frame_tdata[10]} {mysfft/frame_tdata[11]} {mysfft/frame_tdata[12]} {mysfft/frame_tdata[13]} {mysfft/frame_tdata[14]} {mysfft/frame_tdata[15]} {mysfft/frame_tdata[16]} {mysfft/frame_tdata[17]} {mysfft/frame_tdata[18]} {mysfft/frame_tdata[19]} {mysfft/frame_tdata[20]} {mysfft/frame_tdata[21]} {mysfft/frame_tdata[22]} {mysfft/frame_tdata[23]} {mysfft/frame_tdata[24]} {mysfft/frame_tdata[25]} {mysfft/frame_tdata[26]} {mysfft/frame_tdata[27]} {mysfft/frame_tdata[28]} {mysfft/frame_tdata[29]} {mysfft/frame_tdata[30]} {mysfft/frame_tdata[31]}]]
+create_debug_port u_ila_0 probe
+set_property PROBE_TYPE DATA_AND_TRIGGER [get_debug_ports u_ila_0/probe1]
+set_property port_width 10 [get_debug_ports u_ila_0/probe1]
+connect_debug_port u_ila_0/probe1 [get_nets [list {mysfft/haddr[0]} {mysfft/haddr[1]} {mysfft/haddr[2]} {mysfft/haddr[3]} {mysfft/haddr[4]} {mysfft/haddr[5]} {mysfft/haddr[6]} {mysfft/haddr[7]} {mysfft/haddr[8]} {mysfft/haddr[9]}]]
+create_debug_port u_ila_0 probe
+set_property PROBE_TYPE DATA_AND_TRIGGER [get_debug_ports u_ila_0/probe2]
+set_property port_width 16 [get_debug_ports u_ila_0/probe2]
+connect_debug_port u_ila_0/probe2 [get_nets [list {mysfft/hdata[0]} {mysfft/hdata[1]} {mysfft/hdata[2]} {mysfft/hdata[3]} {mysfft/hdata[4]} {mysfft/hdata[5]} {mysfft/hdata[6]} {mysfft/hdata[7]} {mysfft/hdata[8]} {mysfft/hdata[9]} {mysfft/hdata[10]} {mysfft/hdata[11]} {mysfft/hdata[12]} {mysfft/hdata[13]} {mysfft/hdata[14]} {mysfft/hdata[15]}]]
+create_debug_port u_ila_0 probe
+set_property PROBE_TYPE DATA_AND_TRIGGER [get_debug_ports u_ila_0/probe3]
+set_property port_width 24 [get_debug_ports u_ila_0/probe3]
+connect_debug_port u_ila_0/probe3 [get_nets [list {mysfft/magnitude_tdata[0]} {mysfft/magnitude_tdata[1]} {mysfft/magnitude_tdata[2]} {mysfft/magnitude_tdata[3]} {mysfft/magnitude_tdata[4]} {mysfft/magnitude_tdata[5]} {mysfft/magnitude_tdata[6]} {mysfft/magnitude_tdata[7]} {mysfft/magnitude_tdata[8]} {mysfft/magnitude_tdata[9]} {mysfft/magnitude_tdata[10]} {mysfft/magnitude_tdata[11]} {mysfft/magnitude_tdata[12]} {mysfft/magnitude_tdata[13]} {mysfft/magnitude_tdata[14]} {mysfft/magnitude_tdata[15]} {mysfft/magnitude_tdata[16]} {mysfft/magnitude_tdata[17]} {mysfft/magnitude_tdata[18]} {mysfft/magnitude_tdata[19]} {mysfft/magnitude_tdata[20]} {mysfft/magnitude_tdata[21]} {mysfft/magnitude_tdata[22]} {mysfft/magnitude_tdata[23]}]]
+create_debug_port u_ila_0 probe
+set_property PROBE_TYPE DATA_AND_TRIGGER [get_debug_ports u_ila_0/probe4]
+set_property port_width 12 [get_debug_ports u_ila_0/probe4]
+connect_debug_port u_ila_0/probe4 [get_nets [list {mysfft/magnitude_tuser[0]} {mysfft/magnitude_tuser[1]} {mysfft/magnitude_tuser[2]} {mysfft/magnitude_tuser[3]} {mysfft/magnitude_tuser[4]} {mysfft/magnitude_tuser[5]} {mysfft/magnitude_tuser[6]} {mysfft/magnitude_tuser[7]} {mysfft/magnitude_tuser[8]} {mysfft/magnitude_tuser[9]} {mysfft/magnitude_tuser[10]} {mysfft/magnitude_tuser[11]}]]
+create_debug_port u_ila_0 probe
+set_property PROBE_TYPE DATA_AND_TRIGGER [get_debug_ports u_ila_0/probe5]
+set_property port_width 12 [get_debug_ports u_ila_0/probe5]
+connect_debug_port u_ila_0/probe5 [get_nets [list {mysfft/dataOut[0]} {mysfft/dataOut[1]} {mysfft/dataOut[2]} {mysfft/dataOut[3]} {mysfft/dataOut[4]} {mysfft/dataOut[5]} {mysfft/dataOut[6]} {mysfft/dataOut[7]} {mysfft/dataOut[8]} {mysfft/dataOut[9]} {mysfft/dataOut[10]} {mysfft/dataOut[11]}]]
+create_debug_port u_ila_0 probe
+set_property PROBE_TYPE DATA_AND_TRIGGER [get_debug_ports u_ila_0/probe6]
+set_property port_width 1 [get_debug_ports u_ila_0/probe6]
+connect_debug_port u_ila_0/probe6 [get_nets [list mysfft/frame_tlast]]
+create_debug_port u_ila_0 probe
+set_property PROBE_TYPE DATA_AND_TRIGGER [get_debug_ports u_ila_0/probe7]
+set_property port_width 1 [get_debug_ports u_ila_0/probe7]
+connect_debug_port u_ila_0/probe7 [get_nets [list mysfft/frame_tready]]
+create_debug_port u_ila_0 probe
+set_property PROBE_TYPE DATA_AND_TRIGGER [get_debug_ports u_ila_0/probe8]
+set_property port_width 1 [get_debug_ports u_ila_0/probe8]
+connect_debug_port u_ila_0/probe8 [get_nets [list mysfft/frame_tvalid]]
+create_debug_port u_ila_0 probe
+set_property PROBE_TYPE DATA_AND_TRIGGER [get_debug_ports u_ila_0/probe9]
+set_property port_width 1 [get_debug_ports u_ila_0/probe9]
+connect_debug_port u_ila_0/probe9 [get_nets [list mysfft/magnitude_tlast]]
+create_debug_port u_ila_0 probe
+set_property PROBE_TYPE DATA_AND_TRIGGER [get_debug_ports u_ila_0/probe10]
+set_property port_width 1 [get_debug_ports u_ila_0/probe10]
+connect_debug_port u_ila_0/probe10 [get_nets [list mysfft/magnitude_tvalid]]
+create_debug_port u_ila_0 probe
+set_property PROBE_TYPE DATA_AND_TRIGGER [get_debug_ports u_ila_0/probe11]
+set_property port_width 1 [get_debug_ports u_ila_0/probe11]
+connect_debug_port u_ila_0/probe11 [get_nets [list mysfft/sampleReady]]
+create_debug_port u_ila_0 probe
+set_property PROBE_TYPE DATA_AND_TRIGGER [get_debug_ports u_ila_0/probe12]
+set_property port_width 1 [get_debug_ports u_ila_0/probe12]
+connect_debug_port u_ila_0/probe12 [get_nets [list mysfft/wea]]
+set_property C_CLK_INPUT_FREQ_HZ 300000000 [get_debug_cores dbg_hub]
+set_property C_ENABLE_CLK_DIVIDER false [get_debug_cores dbg_hub]
+set_property C_USER_SCAN_CHAIN 1 [get_debug_cores dbg_hub]
+connect_debug_port dbg_hub/clk [get_nets CLK108MHZ]

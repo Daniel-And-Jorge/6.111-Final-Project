@@ -158,6 +158,9 @@ module ScopeSettings
             verticalScaleFactorTimes8Channel1 <= 8;
             verticalScaleFactorTimes8Channel2 <= 8;
             samplePeriod <= 0;
+            
+            yCursor1 <= 0;
+            yCursor2 <= 0;
        end
     end
     

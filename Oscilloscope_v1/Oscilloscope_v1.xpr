@@ -17,6 +17,7 @@
     <Option Name="CompiledLibDirRiviera" Val="$PCACHEDIR/compile_simlib/riviera"/>
     <Option Name="CompiledLibDirActivehdl" Val="$PCACHEDIR/compile_simlib/activehdl"/>
     <Option Name="BoardPart" Val=""/>
+    <Option Name="SourceMgmtMode" Val="DisplayOnly"/>
     <Option Name="ActiveSimSet" Val="sim_1"/>
     <Option Name="DefaultLib" Val="xil_defaultlib"/>
     <Option Name="EnableCoreContainer" Val="TRUE"/>
@@ -71,27 +72,12 @@
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
-        <CompFileExtendedInfo CompFileName="fft_mag.bd" FileRelPathName="ip/fft_mag_axis_register_slice_2_0/fft_mag_axis_register_slice_2_0.xci">
-          <Proxy FileSetName="fft_mag_axis_register_slice_2_0"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="fft_mag.bd" FileRelPathName="hw_handoff/fft_mag_bd.tcl"/>
-        <CompFileExtendedInfo CompFileName="fft_mag.bd" FileRelPathName="hw_handoff/fft_mag.hwh"/>
-        <CompFileExtendedInfo CompFileName="fft_mag.bd" FileRelPathName="hdl/fft_mag.hwdef"/>
-        <CompFileExtendedInfo CompFileName="fft_mag.bd" FileRelPathName="hdl/fft_mag.v"/>
-        <CompFileExtendedInfo CompFileName="fft_mag.bd" FileRelPathName="ip/fft_mag_xlconcat_0_0/fft_mag_xlconcat_0_0.xci"/>
-        <CompFileExtendedInfo CompFileName="fft_mag.bd" FileRelPathName="ip/fft_mag_xlslice_1_0/fft_mag_xlslice_1_0.xci"/>
-        <CompFileExtendedInfo CompFileName="fft_mag.bd" FileRelPathName="ip/fft_mag_xlslice_0_0/fft_mag_xlslice_0_0.xci"/>
-        <CompFileExtendedInfo CompFileName="fft_mag.bd" FileRelPathName="ip/fft_mag_xlconstant_2_0/fft_mag_xlconstant_2_0.xci"/>
-        <CompFileExtendedInfo CompFileName="fft_mag.bd" FileRelPathName="ip/fft_mag_xlconstant_1_0/fft_mag_xlconstant_1_0.xci"/>
-        <CompFileExtendedInfo CompFileName="fft_mag.bd" FileRelPathName="ip/fft_mag_xlconstant_0_0/fft_mag_xlconstant_0_0.xci"/>
         <CompFileExtendedInfo CompFileName="fft_mag.bd" FileRelPathName="ip/fft_mag_xfft_0_0/fft_mag_xfft_0_0.xci">
           <Proxy FileSetName="fft_mag_xfft_0_0"/>
         </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="fft_mag.bd" FileRelPathName="ip/fft_mag_mult_gen_1_0/fft_mag_mult_gen_1_0.xci"/>
-        <CompFileExtendedInfo CompFileName="fft_mag.bd" FileRelPathName="ip/fft_mag_mult_gen_0_0/fft_mag_mult_gen_0_0.xci"/>
-        <CompFileExtendedInfo CompFileName="fft_mag.bd" FileRelPathName="ip/fft_mag_cordic_0_0/fft_mag_cordic_0_0.xci"/>
-        <CompFileExtendedInfo CompFileName="fft_mag.bd" FileRelPathName="ip/fft_mag_c_addsub_0_0/fft_mag_c_addsub_0_0.xci"/>
-        <CompFileExtendedInfo CompFileName="fft_mag.bd" FileRelPathName="fft_mag_ooc.xdc"/>
+        <CompFileExtendedInfo CompFileName="fft_mag.bd" FileRelPathName="ip/fft_mag_axis_register_slice_2_0/fft_mag_axis_register_slice_2_0.xci">
+          <Proxy FileSetName="fft_mag_axis_register_slice_2_0"/>
+        </CompFileExtendedInfo>
       </File>
       <File Path="$PSRCDIR/sources_1/ip/blk_mem_fft.xcix">
         <FileInfo>
@@ -101,6 +87,20 @@
         </FileInfo>
       </File>
       <File Path="$PSRCDIR/sources_1/ip/blk_mem_fft/blk_mem_fft.xci">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/new/SignalToVoltage.v">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/new/CurveFFT.v">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
@@ -161,13 +161,6 @@
         </FileInfo>
       </File>
       <File Path="$PSRCDIR/sources_1/new/SimultaneousSamplingXADC.v">
-        <FileInfo>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="implementation"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
-      <File Path="$PSRCDIR/sources_1/new/SignalToVoltage.v">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
@@ -287,22 +280,6 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PSRCDIR/sources_1/new/CurveFFT.v">
-        <FileInfo>
-          <Attr Name="AutoDisabled" Val="1"/>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="implementation"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
-      <File Path="$PSRCDIR/sources_1/new/SignalToVoltage.v">
-        <FileInfo>
-          <Attr Name="AutoDisabled" Val="1"/>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="implementation"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
       <File Path="$PPRDIR/character32x32.coe">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
@@ -312,6 +289,13 @@
       <File Path="$PSRCDIR/sources_1/ip/character32x32.coe">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/new/Oscilloscope_v1.v">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
@@ -339,7 +323,7 @@
       <Filter Type="Srcs"/>
       <Config>
         <Option Name="DesignMode" Val="RTL"/>
-        <Option Name="TopModule" Val="Oscilloscope_v1"/>
+        <Option Name="TopModule" Val="SignalToVoltage"/>
         <Option Name="TopLib" Val="xil_defaultlib"/>
         <Option Name="TopAutoSet" Val="TRUE"/>
         <Option Name="TransportPathDelay" Val="0"/>
@@ -402,19 +386,6 @@
         <Option Name="UseBlackboxStub" Val="1"/>
       </Config>
     </FileSet>
-    <FileSet Name="characterBRAM2" Type="BlockSrcs" RelSrcDir="$PSRCDIR/characterBRAM2">
-      <File Path="$PSRCDIR/sources_1/ip/characterBRAM2.xcix">
-        <FileInfo>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="implementation"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
-      <Config>
-        <Option Name="TopModule" Val="characterBRAM2"/>
-        <Option Name="UseBlackboxStub" Val="1"/>
-      </Config>
-    </FileSet>
     <FileSet Name="fft_mag_axis_register_slice_2_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/fft_mag_axis_register_slice_2_0">
       <Config>
         <Option Name="TopModule" Val="fft_mag_axis_register_slice_2_0"/>
@@ -452,9 +423,7 @@
   <Runs Version="1" Minor="10">
     <Run Id="synth_1" Type="Ft3:Synth" SrcSet="sources_1" Part="xc7a100tcsg324-3" ConstrsSet="constrs_1" Description="Vivado Synthesis Defaults" State="current" Dir="$PRUNDIR/synth_1" IncludeInArchive="true">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2016">
-          <Desc>Vivado Synthesis Defaults</Desc>
-        </StratHandle>
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2016"/>
         <Step Id="synth_design"/>
       </Strategy>
       <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
@@ -480,32 +449,21 @@
       </Strategy>
       <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
     </Run>
-    <Run Id="characterBRAM2_synth_1" Type="Ft3:Synth" SrcSet="characterBRAM2" Part="xc7a100tcsg324-3" ConstrsSet="characterBRAM2" Description="Vivado Synthesis Defaults" IncludeInArchive="true">
-      <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2016"/>
-        <Step Id="synth_design"/>
-      </Strategy>
-    </Run>
     <Run Id="fft_mag_axis_register_slice_2_0_synth_1" Type="Ft3:Synth" SrcSet="fft_mag_axis_register_slice_2_0" Part="xc7a100tcsg324-3" ConstrsSet="fft_mag_axis_register_slice_2_0" Description="Vivado Synthesis Defaults" Dir="$PRUNDIR/fft_mag_axis_register_slice_2_0_synth_1" IncludeInArchive="true">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2016">
-          <Desc>Vivado Synthesis Defaults</Desc>
-        </StratHandle>
-        <Step Id="synth_design"/>
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2016"/>
         <Step Id="synth_design"/>
       </Strategy>
       <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
     </Run>
     <Run Id="fft_mag_xfft_0_0_synth_1" Type="Ft3:Synth" SrcSet="fft_mag_xfft_0_0" Part="xc7a100tcsg324-3" ConstrsSet="fft_mag_xfft_0_0" Description="Vivado Synthesis Defaults" Dir="$PRUNDIR/fft_mag_xfft_0_0_synth_1" IncludeInArchive="true">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2016">
-          <Desc>Vivado Synthesis Defaults</Desc>
-        </StratHandle>
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2016"/>
         <Step Id="synth_design"/>
       </Strategy>
       <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
     </Run>
-    <Run Id="impl_1" Type="Ft2:EntireDesign" Part="xc7a100tcsg324-3" ConstrsSet="constrs_1" Description="Default settings for Implementation." State="current" Dir="$PRUNDIR/impl_1" SynthRun="synth_1" IncludeInArchive="true">
+    <Run Id="impl_1" Type="Ft2:EntireDesign" Part="xc7a100tcsg324-3" ConstrsSet="constrs_1" Description="Default settings for Implementation." State="current" SynthRun="synth_1" IncludeInArchive="true">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2016"/>
         <Step Id="init_design"/>
@@ -518,7 +476,6 @@
         <Step Id="post_route_phys_opt_design"/>
         <Step Id="write_bitstream"/>
       </Strategy>
-      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
     </Run>
     <Run Id="blk_mem_gen_0_impl_1" Type="Ft2:EntireDesign" Part="xc7a100tcsg324-3" ConstrsSet="blk_mem_gen_0" Description="Default settings for Implementation." SynthRun="blk_mem_gen_0_synth_1" IncludeInArchive="false">
       <Strategy Version="1" Minor="2">
@@ -562,7 +519,7 @@
         <Step Id="write_bitstream"/>
       </Strategy>
     </Run>
-    <Run Id="characterBRAM2_impl_1" Type="Ft2:EntireDesign" Part="xc7a100tcsg324-3" ConstrsSet="characterBRAM2" Description="Default settings for Implementation." SynthRun="characterBRAM2_synth_1" IncludeInArchive="false">
+    <Run Id="fft_mag_axis_register_slice_2_0_impl_1" Type="Ft2:EntireDesign" Part="xc7a100tcsg324-3" ConstrsSet="fft_mag_axis_register_slice_2_0" Description="Default settings for Implementation." SynthRun="fft_mag_axis_register_slice_2_0_synth_1" IncludeInArchive="false">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2016"/>
         <Step Id="init_design"/>
@@ -576,27 +533,9 @@
         <Step Id="write_bitstream"/>
       </Strategy>
     </Run>
-    <Run Id="fft_mag_axis_register_slice_2_0_impl_1" Type="Ft2:EntireDesign" Part="xc7a100tcsg324-3" ConstrsSet="fft_mag_axis_register_slice_2_0" Description="Default settings for Implementation." SynthRun="fft_mag_axis_register_slice_2_0_synth_1" IncludeInArchive="false">
-      <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2016">
-          <Desc>Default settings for Implementation.</Desc>
-        </StratHandle>
-        <Step Id="init_design"/>
-        <Step Id="opt_design"/>
-        <Step Id="power_opt_design"/>
-        <Step Id="place_design"/>
-        <Step Id="post_place_power_opt_design"/>
-        <Step Id="phys_opt_design"/>
-        <Step Id="route_design"/>
-        <Step Id="post_route_phys_opt_design"/>
-        <Step Id="write_bitstream"/>
-      </Strategy>
-    </Run>
     <Run Id="fft_mag_xfft_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7a100tcsg324-3" ConstrsSet="fft_mag_xfft_0_0" Description="Default settings for Implementation." SynthRun="fft_mag_xfft_0_0_synth_1" IncludeInArchive="false">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2016">
-          <Desc>Default settings for Implementation.</Desc>
-        </StratHandle>
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2016"/>
         <Step Id="init_design"/>
         <Step Id="opt_design"/>
         <Step Id="power_opt_design"/>
